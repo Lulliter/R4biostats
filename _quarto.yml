@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs # to publish website on GithubPages
+
+execute:
+  freeze: auto  # re-render only when source changes
+
+website:
+  title: "R 4 biostats"
+  site-url: "https://lulliter.github.io/R4biostats"
+  # repo-url: "https://github.com/Lulliter/rassegna"
+  favicon: img/icons8_grafico_combinato_96.png
+  page-footer:
+    left: "Made with [Quarto](https://quarto.org/), by Luisa M. Mimmi. License: [CC BY-SA 4.0 Deed](https://creativecommons.org/licenses/by-sa/4.0/)"
+    right:
+    - icon: github
+      href: https://github.com/Lulliter/R4biostats
+
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+
+format:
+  html:
+    toc: true
+    toc-location: "left"
+    code-link: true
+    anchor-sections: true
+    fig-cap-location: margin
+    reference-location: margin
+    mainfont: "Lato"
+    monofont: "Fira Mono"
+    footnotes-hover: true
+    fontsize: 1em
+    theme: theme/my-litera.scss
+    css: theme/styles.css
+
+
+

@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R4biostats",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "ReadMe.html",
+    "href": "ReadMe.html",
+    "title": "README",
+    "section": "",
+    "text": "Rassegna stampa website\nMADE WITH QUARTO\n\n\nNotes\n\n✅ Per creare un nuovo post ho salvato una funzione apposta in _R/new_post.R creata e condivisa da Tom Mock 🙌\n\n\n\nTO DO (content)\n\n✅ Articolo x Il Ticino su natalita e famiglia al centro nel fisco (delega fiscale?)\n☑️ entita del debito (in funzione del PIL) | quanto ci condiziona in realta? sole 24 14sett2023 | Donato Masciandaro (Bocconi)\n☑️ entita e variazione dei flussi migratori …. (sito istituzionale)\n\n\n\nTO DO (nerd)\n\n☑️ funzione (o Github action x fare un nuovo post)\n✅ .\n\n\n\nResources\n\nAdding a blog to your existing Quarto website, by Sam Csik Rapp\nThe ultimate guide to starting a Quarto blog, by Albert Rapp\n\n\n\nAttributions\nFavicon Grafico combinato icona di Icons8"
+  }
+]
