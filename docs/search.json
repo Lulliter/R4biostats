@@ -4,28 +4,28 @@
     "href": "about.html",
     "title": "About the Instructors",
     "section": "",
-    "text": "Andrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\n\nRebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at www.rebeccabarter.com."
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
   },
   {
     "objectID": "about.html#teaching-team",
     "href": "about.html#teaching-team",
     "title": "About the Instructors",
-    "section": "",
-    "text": "Andrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\n\nRebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at www.rebeccabarter.com."
+    "section": "Teaching Team",
+    "text": "Teaching Team\n\nAndrew Bray\nAndrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\nRebecca Barter\nRebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at www.rebeccabarter.com."
   },
   {
     "objectID": "install.html",
     "href": "install.html",
     "title": "Installation and setup",
     "section": "",
-    "text": "R is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update."
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
   },
   {
     "objectID": "install.html#install",
     "href": "install.html#install",
     "title": "Installation and setup",
-    "section": "",
-    "text": "R is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update."
+    "section": "Install \n",
+    "text": "Install \n\nR is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update."
   },
   {
     "objectID": "install.html#install-rstudio-ide",
@@ -102,14 +102,14 @@
     "href": "materials/index.html",
     "title": "Materials",
     "section": "",
-    "text": "This source code and license for all of the materials found on this website can be found on Github ."
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
   },
   {
     "objectID": "materials/index.html#about-these-materials",
     "href": "materials/index.html#about-these-materials",
     "title": "Materials",
-    "section": "",
-    "text": "This source code and license for all of the materials found on this website can be found on Github ."
+    "section": "About these materials",
+    "text": "About these materials\nThis source code and license for all of the materials found on this website can be found on Github ."
   },
   {
     "objectID": "materials/1-Day-1/slides/polishing-documents.html#what-happens-when-you-pandoc-it",
@@ -361,7 +361,7 @@
     "href": "index.html",
     "title": "Intro to Biostatistics with R",
     "section": "",
-    "text": "Introduction\nThis website collects the materials for a two day workshop taking place during the rstudio::conf 2022 in July 2024 at the University of ??? , The Netherlands.\n\nLocation: Xxxx Zzzzz 1/1 Whatever PLace ….\nTime: 9 am - 5 pm July 25th and July26\n\n\n\nWorkshop Overview\nxxxx\nThe workshop will focus on using R to ….\nxxxx\nTopics covered include simple variance components models, mixed models, using random coefficients and cross-level interactions, and more.\nAfter completing the course, you will:\n\nKnow the technical and substantive difference between fixed and random effects. Understand random intercepts and random coefficients and know when to use each one.~~\nKnow how to combine the strengths of random-effects and fixed effects approaches into a single model.\nKnow how to estimate these models and interpret the results.\n\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\nPractical information\nPlease, do bring your laptop as no computer will be available.\n\n\nSchedule\nDay Session Start End June 2nd 2016 Beginner 08:30 12:30 June 2nd 2016 Intermediate 13:30 18:00 June 3rd 2016 Advanced 08:00 12:15\nHot & cold drinks will be served during the morning breaks."
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\n\n\n\n\nIntroduction\nThis website collects the materials for a two day workshop taking place during the rstudio::conf 2022 in July 2024 at the University of ??? , The Netherlands.\n\nLocation: Xxxx Zzzzz 1/1 Whatever PLace ….\nTime: 9 am - 5 pm July 25th and July26\n\n\n\nWorkshop Overview\nxxxx\nThe workshop will focus on using R to ….\nxxxx\nTopics covered include simple variance components models, mixed models, using random coefficients and cross-level interactions, and more.\nAfter completing the course, you will:\n\nKnow the technical and substantive difference between fixed and random effects. Understand random intercepts and random coefficients and know when to use each one.~~\nKnow how to combine the strengths of random-effects and fixed effects approaches into a single model.\nKnow how to estimate these models and interpret the results.\n\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\nPractical information\nPlease, do bring your laptop as no computer will be available.\n\n\nSchedule\nDay Session Start End June 2nd 2016 Beginner 08:30 12:30 June 2nd 2016 Intermediate 13:30 18:00 June 3rd 2016 Advanced 08:00 12:15\nHot & cold drinks will be served during the morning breaks."
   },
   {
     "objectID": "ReadMe.html",

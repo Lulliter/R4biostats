@@ -3,6 +3,12 @@ title: "Intro to Biostatistics with R"
 subtitle: "15-18 of July, 2024"
 ---
 
+
+::: {.callout-caution collapse="false"}
+Website constrution in progress...
+:::
+
+
 # Introduction 
 
 This website collects the materials for a two day workshop taking place during the [rstudio::conf 2022](https://www.rstudio.com/conference/) in July 2024 at the University of ??? , The Netherlands.

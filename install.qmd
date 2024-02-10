@@ -2,6 +2,14 @@
 title: "Installation and setup"
 ---
 
+
+
+::: {.callout-caution collapse="false"}
+Website constrution in progress...
+:::
+
+
+
 ## Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
 
 R is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update.
