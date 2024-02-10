@@ -1,0 +1,8 @@
+---
+title: "My Favorite Vacation Spot"
+format: html
+---
+
+![A caption](dog-watch.png){#fig-dogwatch width=300}
+
+A novelty clock, watch [dogwatch](#fig-dogwatch),

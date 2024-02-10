@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.3.433">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
-<title>R 4 biostats - README</title>
+<title>R 4 biostats - Installation and setup</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,8 +17,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
@@ -40,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -59,18 +89,12 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
-<link rel="stylesheet" href="theme/styles.css">
+}</script><link rel="stylesheet" href="theme/styles.css">
 </head>
-
-<body class="floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg navbar-dark "><div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R 4 biostats</span>
@@ -82,12 +106,12 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./install.html" rel="" target="">
+    <a class="nav-link active" href="./install.html" rel="" target="" aria-current="page">
  <span class="menu-text">Install</span></a>
   </li>  
   <li class="nav-item">
@@ -99,39 +123,47 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
+<div class="quarto-navbar-tools">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install.html">Installation and setup</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"><div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Installation and setup</span></a>
+  </div>
+</li>
+    </ul>
+</div>
+    <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rassegna-stampa-website" id="toc-rassegna-stampa-website" class="nav-link active" data-scroll-target="#rassegna-stampa-website">Rassegna stampa website</a></li>
-  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">Notes</a></li>
-  <li><a href="#to-do-content" id="toc-to-do-content" class="nav-link" data-scroll-target="#to-do-content">TO DO (content)</a></li>
-  <li><a href="#to-do-nerd" id="toc-to-do-nerd" class="nav-link" data-scroll-target="#to-do-nerd">TO DO (nerd)</a></li>
-  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#attributions" id="toc-attributions" class="nav-link" data-scroll-target="#attributions">Attributions</a></li>
-  </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5F85A7;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></a></li>
+  <li><a href="#install-rstudio-ide" id="toc-install-rstudio-ide" class="nav-link" data-scroll-target="#install-rstudio-ide">Install RStudio IDE</a></li>
+  <li><a href="#install-r-packages-from-the-cran" id="toc-install-r-packages-from-the-cran" class="nav-link" data-scroll-target="#install-r-packages-from-the-cran">Install R packages from the CRAN</a></li>
+  <li><a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a></li>
+  <li><a href="#install-quarto" id="toc-install-quarto" class="nav-link" data-scroll-target="#install-quarto">Install [Quarto]</a></li>
+  <li><a href="#about-the-materials" id="toc-about-the-materials" class="nav-link" data-scroll-target="#about-the-materials">About the materials</a></li>
+  </ul></nav>
+</nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">README</h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
+<h1 class="title">Installation and setup</h1>
 </div>
 
 
@@ -144,50 +176,52 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-</header>
-
-<section id="rassegna-stampa-website" class="level1">
-<h1>Rassegna stampa website</h1>
-<p>MADE WITH QUARTO</p>
-</section>
-<section id="notes" class="level1">
-<h1>Notes</h1>
+</header><section id="install" class="level2"><h2 class="anchored" data-anchor-id="install">Install <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5F85A7;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg>
+</h2>
+<p>R is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update.</p>
+</section><section id="install-rstudio-ide" class="level2"><h2 class="anchored" data-anchor-id="install-rstudio-ide">Install RStudio IDE</h2>
+<p>RStudio Desktop is an Integrated Development Editor wrapping and interfacing R that needs to be installed first. The free-version contains everything you need.</p>
+<p>As for now, the latest version is 2023.06.2.+561. We recommend updating if you’re using older versions.</p>
+</section><section id="install-r-packages-from-the-cran" class="level2"><h2 class="anchored" data-anchor-id="install-r-packages-from-the-cran">Install R packages from the CRAN</h2>
+<p>CRAN - the Comprehensive R Archive Network - is the general package repository for R.</p>
+<p>The bottom-right panel holds five tabs.</p>
 <ul>
-<li>✅ Per creare un nuovo post ho salvato una funzione apposta in <code>_R/new_post.R</code> creata e condivisa da <a href="https://themockup.blog/posts/2022-11-08-use-r-to-generate-a-quarto-blogpost/">Tom Mock</a> 🙌</li>
+<li>Files</li>
+<li>Plots</li>
+<li>Packages</li>
+<li>Help</li>
+<li>Viewer</li>
 </ul>
-</section>
-<section id="to-do-content" class="level1">
-<h1>TO DO (content)</h1>
+<p>Click on the <code>Packages</code> tab (1.) and select the select the <code>Install</code> button (2.). Type <code>dplyr</code> in (3.). You will see the word auto-completion that helps.</p>
+<p><img src="images/installPck.png" class="img-fluid"></p>
+</section><section id="r-packages-that-will-be-required-for-the-workshop" class="level2"><h2 class="anchored" data-anchor-id="r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</h2>
+<p>To prepare, please install the following on your machine:</p>
 <ul>
-<li>✅ Articolo x Il Ticino su natalita e famiglia al centro nel fisco (delega fiscale?)</li>
-<li>☑️ entita del debito (in funzione del PIL) | quanto ci condiziona in realta? sole 24 14sett2023 | Donato Masciandaro (Bocconi)</li>
-<li>☑️ entita e variazione dei flussi migratori …. (sito istituzionale)</li>
-</ul>
-</section>
-<section id="to-do-nerd" class="level1">
-<h1>TO DO (nerd)</h1>
+<li><p>Install latest version of <a href="https://www.rstudio.com/products/rstudio/download/#download">RStudio</a>, v2022.07.0-548 or later</p></li>
+<li>
+<p>Install these R packages:</p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"quarto"</span>, <span class="st">"rmarkdown"</span>, <span class="st">"palmerpenguins"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</li>
+</ul></section><section id="install-quarto" class="level2"><h2 class="anchored" data-anchor-id="install-quarto">Install [Quarto]</h2>
 <ul>
-<li>☑️ funzione (o Github action x fare un nuovo post)</li>
-<li>✅ .</li>
-</ul>
-</section>
-<section id="resources" class="level1">
-<h1>Resources</h1>
+<li>Install latest version of <a href="https://quarto.org/docs/get-started/">Quarto</a> (v1.0.36 or greater)</li>
+<li>After installing Quarto, open the terminal in RStudio and:
 <ul>
-<li><a href="https://samanthacsik.github.io/posts/2022-10-24-quarto-blogs/">Adding a blog to your existing Quarto website, by Sam Csik Rapp</a></li>
-<li><a href="https://albert-rapp.de/posts/13_quarto_blog_writing_guide/13_quarto_blog_writing_guide.html">The ultimate guide to starting a Quarto blog, by Albert Rapp</a></li>
+<li>See <a href="https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE">this guide</a> for details on using the terminal</li>
+<li>Install/Update TinyTeX for PDFs with <code>quarto install tool tinytex</code>
+</li>
+<li>Install/Update Chromium with <code>quarto install tool chromium</code>
+</li>
 </ul>
-</section>
-<section id="attributions" class="level1">
-<h1>Attributions</h1>
-<p>Favicon1 (giallo) <a target="_blank" href="https://icons8.com/icon/110187/grafico-combinato">Grafico combinato</a> icona di <a target="_blank" href="https://icons8.com">Icons8</a></p>
-<p>Favicon1 (hidt blu) <a target="_blank" href="https://icons8.com/icon/lmhleiXG9ioV/analitica">analitica</a> icona di <a target="_blank" href="https://icons8.com">Icons8</a></p>
+</li>
+</ul></section><section id="about-the-materials" class="level2"><h2 class="anchored" data-anchor-id="about-the-materials">About the materials</h2>
+<p>This source code and license for all of the materials found on this website can be found on Github <a href="https://github.com/Lulliter/R4biostats"><i class="fa-brands fa-github"></i></a>.</p>
 
 
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -421,25 +455,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">Made with <a href="https://quarto.org/">Quarto</a>, by Luisa M. Mimmi. License: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 Deed</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
-    <li class="nav-item compact">
+<li class="nav-item compact">
     <a class="nav-link" href="https://github.com/Lulliter/R4biostats">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
   </li>  
 </ul>
-    </div>
+</div>
   </div>
 </footer>
-
 
 
 </body></html>
