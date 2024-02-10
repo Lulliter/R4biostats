@@ -2,14 +2,14 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About the Workshop",
+    "title": "About the Instructors",
     "section": "",
     "text": "Andrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\n\nRebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at www.rebeccabarter.com."
   },
   {
     "objectID": "about.html#teaching-team",
     "href": "about.html#teaching-team",
-    "title": "About the Workshop",
+    "title": "About the Instructors",
     "section": "",
     "text": "Andrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.\n\n\n\nRebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at www.rebeccabarter.com."
   },
@@ -368,6 +368,6 @@
     "href": "ReadMe.html",
     "title": "README",
     "section": "",
-    "text": "Rassegna stampa website\nMADE WITH QUARTO\n\n\nNotes\n\n✅ Per creare un nuovo post ho salvato una funzione apposta in _R/new_post.R creata e condivisa da Tom Mock 🙌\n\n\n\nTO DO (content)\n\n✅ Articolo x Il Ticino su natalita e famiglia al centro nel fisco (delega fiscale?)\n☑️ entita del debito (in funzione del PIL) | quanto ci condiziona in realta? sole 24 14sett2023 | Donato Masciandaro (Bocconi)\n☑️ entita e variazione dei flussi migratori …. (sito istituzionale)\n\n\n\nTO DO (nerd)\n\n☑️ funzione (o Github action x fare un nuovo post)\n✅ .\n\n\n\nResources\n\nAdding a blog to your existing Quarto website, by Sam Csik Rapp\nThe ultimate guide to starting a Quarto blog, by Albert Rapp\n\n\n\nAttributions\nFavicon1 (giallo) Grafico combinato icona di Icons8\nFavicon1 (hidt blu) analitica icona di Icons8"
+    "text": "Intro to Biostatistics with R\nThis website collects the materials for a two day workshop taking place during the…..\n\n\nAttributions\nFavicon1 (giallo) Grafico combinato icona di Icons8\nFavicon1 (hidt blu) analitica icona di Icons8"
   }
 ]

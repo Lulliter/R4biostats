@@ -1,11 +1,48 @@
 ---
-title: "R4biostats"
+title: "Intro to Biostatistics with R"
+subtitle: "15-18 of July, 2024"
 ---
 
-This is a Quarto website.
+# Introduction 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This website collects the materials for a two day workshop taking place during the [rstudio::conf 2022](https://www.rstudio.com/conference/) in July 2024 at the University of ??? , The Netherlands.
 
-```{r}
-1 + 1
-```
+- [Location:]{.smallcaps} Xxxx Zzzzz 1/1\ Whatever PLace .... 
+- [Time:]{.smallcaps} 9 am - 5 pm July 25^th^ and July^26^
+
+
+# Workshop Overview
+
+xxxx
+
+The workshop will focus on using R to ....
+
+xxxx
+
+Topics covered include simple variance components models, mixed models, using random coefficients and cross-level interactions, and more.
+ 
+After completing the course, you will:
+
++ ~~Know the technical and substantive difference between fixed and random effects.~~
+Understand random intercepts and random coefficients and know when to use each one.~~
++ ~~Know how to combine the strengths of random-effects and fixed effects approaches into a single model.~~
++ ~~Know how to estimate these models and interpret the results.~~
+
+Though the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises. 
+
+
+# Practical information
+
+Please, do bring your laptop as no computer will be available.  
+
+
+# Schedule
+Day 	Session 	Start 	End
+June 2nd 2016 	Beginner 	08:30 	12:30
+June 2nd 2016 	Intermediate 	13:30 	18:00
+June 3rd 2016 	Advanced 	08:00 	12:15
+
+Hot & cold drinks will be served during the morning breaks.
+
+
+ 

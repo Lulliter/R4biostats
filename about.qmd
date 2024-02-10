@@ -1,9 +1,17 @@
 ---
-title: "About"
+title: "About the Instructors"
 ---
 
-About this site
 
-```{r}
-1 + 1
-```
+## Teaching Team
+
+#### Andrew Bray
+
+Andrew Bray is a statistician at UC Berkeley where he develops and teaches courses in statistics and data science. His gets excited about empowering students to use data to understand the world and enjoys being part of a community of people developing open source software and open source educational resources. Though primarily an R user, last year he taught a large data science class to 1100 students in Python, which had him sorely missing the R Markdown ecosystem. The experience made him particularly grateful for Quarto as a bridge to other communities of data scientists.
+
+#### Rebecca Barter
+
+Rebecca is a statistician, data scientist, educator, and communicator who has a dual passion for empowering others by teaching critical thinking and technical skills for data science, and for uncovering the hidden patterns and stories that live inside complex datasets (primarily related to healthcare and medicine). She is currently a postdoc at UC Berkeley and she sometimes writes about data science and R on her website at [www.rebeccabarter.com](https://www.rebeccabarter.com).
+
+
+

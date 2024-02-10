@@ -9,7 +9,7 @@ website:
   title: "R 4 biostats"
   site-url: "https://lulliter.github.io/R4biostats"
   # repo-url: "https://github.com/Lulliter/rassegna"
-  favicon: img/icons8_grafico_combinato_96.png
+  favicon: images/icons8_hist_96.png
   page-footer:
     left: "Made with [Quarto](https://quarto.org/), by Luisa M. Mimmi. License: [CC BY-SA 4.0 Deed](https://creativecommons.org/licenses/by-sa/4.0/)"
     right:
@@ -17,10 +17,34 @@ website:
       href: https://github.com/Lulliter/R4biostats
 
   navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "Install"
+        href: install.qmd
+      - text: "Materials"
+        href: materials/index.qmd
+      - text: "About"
+        href: about.qmd
+
+  sidebar:
+    - id: install
+      contents:
+        - install.qmd
+    - id: materials
+      title: "Materials"
+      style: "floating"
+      align: left
+      contents:
+          - text: "Materials"
+            href: materials/index.qmd
+          - text: "1. Day 1"
+            href: materials/1-Day-1/index.qmd
+          - text: "2. Day 2"
+            href: materials/2-Day-2/index.qmd
+    - id: about
+      contents:
+        - about.qmd
 
 format:
   html:
