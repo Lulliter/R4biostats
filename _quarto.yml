@@ -19,12 +19,16 @@ website:
   navbar:
     right:
       - text: "Home"
+        icon: house-fill # https://icons.getbootstrap.com/?q=home
         href: index.qmd
       - text: "Install"
+        icon: code-square # https://icons.getbootstrap.com/?q=home
         href: install.qmd
       - text: "Materials"
+        icon: archive-fill # https://icons.getbootstrap.com/?q=home
         href: materials/index.qmd
       - text: "About"
+        icon: file-earmark-person-fill # https://icons.getbootstrap.com/?q=home
         href: about.qmd
 
   sidebar:
