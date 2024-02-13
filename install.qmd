@@ -9,57 +9,83 @@ Website constrution in progress...
 :::
 
 
+# Configuration 
 
-## Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
+This workshop showcases introductory bio statistics concepts using the free and opensource software `R`. Each session of the workshop features exercises that will help you learn by doing using. Therefore, it is recommended that you pre-install the following on your machine.
 
-R is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update.
+
+## Installing `r fontawesome::fa("r-project", fill = "#5F85A7")`
+
+R is available for free for Windows  `r fontawesome::fa("fab fa-windows", fill = "steelblue")`, GNU/Linux  `r fontawesome::fa("fab fa-linux", fill = "steelblue")` and macOS `r fontawesome::fa("fab fa-apple", fill = "steelblue")`.  
+
++ To install it, you can go to this **[link](https://cloud.r-project.org/)**. 
+The latest available release is **R 4.3.2 "Eye Holes" released on 2023/10/31**, but any (fairly recent) version will do.  
+
+If you have previously installed R on your machine, you can check which version you are running by executing this command in `R`:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# In R console
+base::R.version.string
+```
+
+...or by executing this command in your `CLI` (Command Line Interface):
+
+```{bash}
+#| eval: false
+#| echo: true
+
+# In Terminal/Powershell/bash
+R --version
+```
+
 
 ## Install RStudio IDE
 
-RStudio Desktop is an Integrated Development Editor wrapping and interfacing R that needs to be installed first. The free-version contains everything you need.
+While this is not required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor wrapping and interfacing R (which needs to be installed first). 
 
-As for now, the latest version is 2023.06.2.+561. We recommend updating if you're using older versions.
++ To install it you can go to this **[link](https://posit.co/download/rstudio-desktop/)**. The free-version contains everything you need.
 
 ## Install R packages from the CRAN
 
-CRAN - the Comprehensive R Archive Network - is the general package repository for R.
+Many useful R function come in *packages*, free libraries of code written by R's active user community. **CRAN** - the Comprehensive R Archive Network - is the general package repository for R.
 
-The bottom-right panel holds five tabs.
+<!-- The bottom-right panel holds five tabs. -->
 
--   Files
--   Plots
--   Packages
--   Help
--   Viewer
+<!-- -   Files -->
+<!-- -   Plots -->
+<!-- -   Packages -->
+<!-- -   Help -->
+<!-- -   Viewer -->
 
-Click on the `Packages` tab (1.) and select the select the `Install` button (2.). Type `dplyr` in (3.). You will see the word auto-completion that helps.
+<!-- Click on the `Packages` tab (1.) and select the select the `Install` button (2.). Type `dplyr` in (3.). You will see the word auto-completion that helps. -->
 
-![](images/installPck.png)
+<!-- ![](images/installPck.png) -->
 
 
 ## R packages that will be required for the workshop 
 
-To prepare, please install the following on your machine:
+To install an R package, open an R session execute: 
 
-- Install latest version of [RStudio](https://www.rstudio.com/products/rstudio/download/#download), v2022.07.0-548 or later
-- Install these R packages:
-  
-  ```{r}
-  #| eval: false
-  #| echo: true
-  pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
-  install.packages(pkg_list)
-  ```
+```{r}
+#| eval: false
+#| echo: true
 
-## Install [Quarto]
+pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
+install.packages(pkg_list)
+```
 
- - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater)
-- After installing Quarto, open the terminal in RStudio and:
-  - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal
-  - Install/Update TinyTeX for PDFs with `quarto install tool tinytex`
-  - Install/Update Chromium with `quarto install tool chromium`
-   
-  
+<!-- ## Install [Quarto] -->
+
+<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
+<!-- - After installing Quarto, open the terminal in RStudio and: -->
+<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
+<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
+<!--   - Install/Update Chromium with `quarto install tool chromium` -->
+
+
 ## About the materials
 
 This source code and license for all of the materials found on this website can be found on Github [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats).

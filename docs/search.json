@@ -25,28 +25,28 @@
     "href": "install.html#install",
     "title": "Installation and setup",
     "section": "Install \n",
-    "text": "Install \n\nR is available for free for Windows, GNU/Linux and macOS. The version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update."
+    "text": "Install \n\nR is available for free for Windows, GNU/Linux and macOS. If you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\nbase::R.version.string\n\n…or by executingthis command in Terminal:\n\nR --version\n\nR version 4.2.2 (2022-10-31) -- \"Innocent and Trusting\"\nCopyright (C) 2022 The R Foundation for Statistical Computing\nPlatform: x86_64-apple-darwin17.0 (64-bit)\n\nR is free software and comes with ABSOLUTELY NO WARRANTY.\nYou are welcome to redistribute it under the terms of the\nGNU General Public License versions 2 or 3.\nFor more information about these matters see\nhttps://www.gnu.org/licenses/.\n\n\nit installed on\nThe version required for this course is 4.3.1. As for now, the latest version is 4.3.2 but there is no need to update. Participants using earlier versions (in particular 4.1.2 and before) will not be able to complete all examples presented. Please update."
   },
   {
     "objectID": "install.html#install-rstudio-ide",
     "href": "install.html#install-rstudio-ide",
     "title": "Installation and setup",
     "section": "Install RStudio IDE",
-    "text": "Install RStudio IDE\nRStudio Desktop is an Integrated Development Editor wrapping and interfacing R that needs to be installed first. The free-version contains everything you need.\nAs for now, the latest version is 2023.06.2.+561. We recommend updating if you’re using older versions."
+    "text": "Install RStudio IDE\nWhile this is not required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor wrapping and interfacing R (which needs to be installed first).\n\nTo install it you can go to this link. The free-version contains everything you need."
   },
   {
     "objectID": "install.html#install-r-packages-from-the-cran",
     "href": "install.html#install-r-packages-from-the-cran",
     "title": "Installation and setup",
     "section": "Install R packages from the CRAN",
-    "text": "Install R packages from the CRAN\nCRAN - the Comprehensive R Archive Network - is the general package repository for R.\nThe bottom-right panel holds five tabs.\n\nFiles\nPlots\nPackages\nHelp\nViewer\n\nClick on the Packages tab (1.) and select the select the Install button (2.). Type dplyr in (3.). You will see the word auto-completion that helps."
+    "text": "Install R packages from the CRAN\nMany useful R function come in packages, free libraries of code written by R’s active user community. CRAN - the Comprehensive R Archive Network - is the general package repository for R."
   },
   {
     "objectID": "install.html#r-packages-that-will-be-required-for-the-workshop",
     "href": "install.html#r-packages-that-will-be-required-for-the-workshop",
     "title": "Installation and setup",
     "section": "R packages that will be required for the workshop",
-    "text": "R packages that will be required for the workshop\nTo prepare, please install the following on your machine:\n\nInstall latest version of RStudio, v2022.07.0-548 or later\n\nInstall these R packages:\n\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)"
+    "text": "R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)"
   },
   {
     "objectID": "install.html#install-quarto",
@@ -369,5 +369,12 @@
     "title": "README",
     "section": "",
     "text": "Intro to Biostatistics with R\nThis website collects the materials for a two day workshop taking place during the…..\n\n\nAttributions\nFavicon1 (giallo) Grafico combinato icona di Icons8\nFavicon1 (hidt blu) analitica icona di Icons8"
+  },
+  {
+    "objectID": "install.html#installing",
+    "href": "install.html#installing",
+    "title": "Installation and setup",
+    "section": "Installing \n",
+    "text": "Installing \n\nR is available for free for Windows , GNU/Linux  and macOS .\n\nTo install it, you can go to this link. The latest available release is R 4.3.2 “Eye Holes” released on 2023/10/31, but any (fairly recent) version will do.\n\nIf you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\n# In R console\nbase::R.version.string\n\n…or by executing this command in your CLI (Command Line Interface):\n\n# In Terminal/Powershell/bash\nR --version"
   }
 ]
