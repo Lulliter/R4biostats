@@ -9,8 +9,6 @@ Website constrution in progress...
 :::
 
 
-# Configuration 
-
 This workshop showcases introductory bio statistics concepts using the free and opensource software {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.
 
 

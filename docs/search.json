@@ -18,7 +18,7 @@
     "href": "install.html",
     "title": "Installation and setup",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\nThis workshop showcases introductory bio statistics concepts using the free and opensource software . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine."
   },
   {
     "objectID": "install.html#installing",
@@ -56,32 +56,46 @@
     "text": "About the materials\nThis source code and license for all of the materials found on this website can be found on Github ."
   },
   {
-    "objectID": "materials/1-Day-1/exercises/sandbox.html",
-    "href": "materials/1-Day-1/exercises/sandbox.html",
-    "title": "sandbox",
-    "section": "",
-    "text": "Feel free to to play along while we explore some elements in Quarto.\n\nPaths to images\nYour browser dimensions will be different than my slides, so play around with different sizes.\n\nimages/dog-watch.png\nimages/dog-watch-mondo.png\nimages/dog-watch-small.png\nimages/circuit.png\nimages/circuit-mondo.png\nimages/circuit-small.png\nimages/watch-face.png\nimages/watch-face-mondo.png\nimages/watch-face-small.png\n\n\n\nSample Text\nAnimals, such as dogs, live shorter lives as measured by human time than people. A dog that lives ten years has lived a full life; a man might live 77 years to live a full life. The relationship between the lifetimes of humans and dogs can be related by stating a period of time in “dog years.” Two human years is fourteen “dog years.” Although this relationship might perhaps be helpful in determining whether a dog or other animal is full grown or not, it does little to help the owner of a pet put the proper value on the animal’s time. Various animals have different lifetimes. For example, seahorses and rats live an average of three human years; pigeons live three and one-half years; goldfish and hamsters live five human years; hogs, 9 years; dogs, 11 years; cats, 18 years, beavers, 12 years; lobsters, 15 years; bats, lions, and horses live 20 years; dolphins live 25 years; brown bears live 47 years and polar bears live 33 years; gorillas live 45 years; alligators, 50 years; elephants, 60 years; and giant tortoises, 100 years. All of these have a corresponding multiple to relate to them to human time.\n. . ."
-  },
-  {
-    "objectID": "materials/1-Day-1/exercises/ex-3.html",
-    "href": "materials/1-Day-1/exercises/ex-3.html",
-    "title": "My Favorite Vacation Spot",
-    "section": "",
-    "text": "Modify this file to create a document that describes your favorite place to visit on a vacation.\nNo need to author the content itself. You can pull text from the Wikipedia page for your destination. A wonderful resource for free images is https://unsplash.com/.\nPlease add to your document each of the following:\n\nAt least two levels of headers.\nSeveral paragraphs of text.\nA callout box with attributes: (see https://quarto.org/docs/authoring/callouts.html)\n\n(for HTML only) box collapses on click\nchange the appearance\nremove the icon\n\nOne solo image with attributes: (see https://quarto.org/docs/authoring/figures.html)\n\ncentered\ndimensions 400 by 400 pixels\nlinks to Wikipedia page location\nannotate with alt-text\n\nA few images stitched together as sub-figures of a larger plot with the following layout and attributes:\n\ncentered\ncaptioned (main figure and sub-figures)\nannotated with alt-text\n\nSome cha\nAn inline or block element as margin content (e.g. list, image, text).\nAt least two references to different labeled elements. Try referencing the subfigures or exploring the other auto-populated reference types in Quarto (see https://quarto.org/docs/authoring/cross-references.html).\nOne new element that we haven’t discussed (search the list by typing / on a new line in the visual editor).\n\nWhen you’re done, please share a screenshot of your document in the GitHub Discussion thread “Exercise 3”.\nIf you’d like more of a challenge…\n\nSwitch out one of the images in a sub-figure panel with an iframe of a youtube video from that place.\nTry to take one paragraph of text and have it occupy only the middle third of the body column (hint: fenced divs with the layout attribute can have empty cells)."
-  },
-  {
-    "objectID": "materials/1-Day-1/exercises/ex-3.html#remove-these-instructions-when-youre-done",
-    "href": "materials/1-Day-1/exercises/ex-3.html#remove-these-instructions-when-youre-done",
-    "title": "My Favorite Vacation Spot",
-    "section": "",
-    "text": "Modify this file to create a document that describes your favorite place to visit on a vacation.\nNo need to author the content itself. You can pull text from the Wikipedia page for your destination. A wonderful resource for free images is https://unsplash.com/.\nPlease add to your document each of the following:\n\nAt least two levels of headers.\nSeveral paragraphs of text.\nA callout box with attributes: (see https://quarto.org/docs/authoring/callouts.html)\n\n(for HTML only) box collapses on click\nchange the appearance\nremove the icon\n\nOne solo image with attributes: (see https://quarto.org/docs/authoring/figures.html)\n\ncentered\ndimensions 400 by 400 pixels\nlinks to Wikipedia page location\nannotate with alt-text\n\nA few images stitched together as sub-figures of a larger plot with the following layout and attributes:\n\ncentered\ncaptioned (main figure and sub-figures)\nannotated with alt-text\n\nSome cha\nAn inline or block element as margin content (e.g. list, image, text).\nAt least two references to different labeled elements. Try referencing the subfigures or exploring the other auto-populated reference types in Quarto (see https://quarto.org/docs/authoring/cross-references.html).\nOne new element that we haven’t discussed (search the list by typing / on a new line in the visual editor).\n\nWhen you’re done, please share a screenshot of your document in the GitHub Discussion thread “Exercise 3”.\nIf you’d like more of a challenge…\n\nSwitch out one of the images in a sub-figure panel with an iframe of a youtube video from that place.\nTry to take one paragraph of text and have it occupy only the middle third of the body column (hint: fenced divs with the layout attribute can have empty cells)."
-  },
-  {
     "objectID": "materials/1-Day-1/index.html",
     "href": "materials/1-Day-1/index.html",
     "title": "Day 1",
     "section": "",
-    "text": "Warning\n\n\n\nUnder construction.\n\n\n\nLearn how to create generic block and inline elements, leverage id labels, set classes and attributes, practice using Quarto-specific elements in RStudio’s visual editor, and customize the appearance of your documents with elementary CSS.\n\n\nOutline\n\nGeneric Elements\n\nBracketed Spans\nFenced Divs\n\nCross Referening with Labels\nQuarto-specific Elements\nSetting Attributes with YAML\nRStudio’s Visual Editor\nCustomizing Appearance with CSS\n\n\n\nExercises"
+    "text": "Warning\n\n\n\nUnder construction."
+  },
+  {
+    "objectID": "materials/1-Day-1/index.html#topics",
+    "href": "materials/1-Day-1/index.html#topics",
+    "title": "Day 1",
+    "section": "Topics",
+    "text": "Topics\n\nLearn how to …. ."
+  },
+  {
+    "objectID": "materials/1-Day-1/index.html#slides",
+    "href": "materials/1-Day-1/index.html#slides",
+    "title": "Day 1",
+    "section": "Slides",
+    "text": "Slides\n\nDownload “*.pdf” file\nDownload “*.pptx” file"
+  },
+  {
+    "objectID": "materials/1-Day-1/index.html#exercises",
+    "href": "materials/1-Day-1/index.html#exercises",
+    "title": "Day 1",
+    "section": "Exercises",
+    "text": "Exercises\n\nDay 1 Exercises - xxx"
+  },
+  {
+    "objectID": "materials/1-Day-1/index.html#lab-code",
+    "href": "materials/1-Day-1/index.html#lab-code",
+    "title": "Day 1",
+    "section": "Lab code",
+    "text": "Lab code\n\nDownload “*.R” file"
+  },
+  {
+    "objectID": "materials/1-Day-1/index.html#linking-other-stuff",
+    "href": "materials/1-Day-1/index.html#linking-other-stuff",
+    "title": "Day 1",
+    "section": "Linking other stuff",
+    "text": "Linking other stuff"
   },
   {
     "objectID": "materials/2-Day-2/index.html",
@@ -103,251 +117,6 @@
     "title": "Materials",
     "section": "About these materials",
     "text": "About these materials\nThis source code and license for all of the materials found on this website can be found on Github ."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#what-happens-when-you-pandoc-it",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#what-happens-when-you-pandoc-it",
-    "title": "Day 1",
-    "section": "What happens when you pandoc it?",
-    "text": "What happens when you pandoc it?\nFrom the last exercise . . .\nquarto pandoc -f html -t markdown ex-2-goal.html -o ex-2-answer.md\n\n\n\n\n\n\n\n\nThis looks familiar!"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#what-happens-when-you-pandoc-it-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#what-happens-when-you-pandoc-it-1",
-    "title": "Day 1",
-    "section": "What happens when you pandoc it?",
-    "text": "What happens when you pandoc it?\nFrom the last exercise . . .\nquarto pandoc -f html -t markdown ex-2-goal.html -o ex-2-answer.md\n\n\n\n\n\n\n\n\nThis looks familiar!\n\n\n            . . . but this does not."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span",
-    "title": "Day 1",
-    "section": "The Bracketed Span",
-    "text": "The Bracketed Span"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-1",
-    "title": "Day 1",
-    "section": "The Bracketed Span",
-    "text": "The Bracketed Span"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-2",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-2",
-    "title": "Day 1",
-    "section": "The Bracketed Span",
-    "text": "The Bracketed Span"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-3",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-3",
-    "title": "Day 1",
-    "section": "The Bracketed Span",
-    "text": "The Bracketed Span"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-4",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-bracketed-span-4",
-    "title": "Day 1",
-    "section": "The Bracketed Span",
-    "text": "The Bracketed Span"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#the-fenced-div",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#the-fenced-div",
-    "title": "Day 1",
-    "section": "The Fenced Div",
-    "text": "The Fenced Div"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#section",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#section",
-    "title": "Day 1",
-    "section": "",
-    "text": "What you’re about to see . . .\n\nMost of the elements work across the main output formats (html, pdf, docx, pptx)\nMany of the attributes work across multiple element types\nMost of this is new Quarto functionality. Some of it is original Pandoc.\nThis is a subset of the elements available. See the Quarto Guide for the full list."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks",
-    "title": "Day 1",
-    "section": "Callout Blocks",
-    "text": "Callout Blocks\nHighlight content for the reader in multiple formats.\n\n\nMarkdown\n:::{.callout-note}\nLook - a squirrel!\n:::\n\n:::{.callout-important}\nLook - a squirrel!\n:::\n\n:::{.callout-tip}\nLook - a squirrel!\n:::\n\n\nHTML output\n\n\n\n\n\n\nNote\n\n\nLook - a squirrel!\n\n\n\n\n\n\n\n\n\nImportant\n\n\nLook - a squirrel!\n\n\n\n\n\n\n\n\n\nTip\n\n\nLook - a squirrel!"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks-1",
-    "title": "Day 1",
-    "section": "Callout Blocks",
-    "text": "Callout Blocks\nHighlight content for the reader in multiple formats.\n\n\nMarkdown\n:::{.callout-note}\nLook - a squirrel!\n:::\n\n:::{.callout-important}\nLook - a squirrel!\n:::\n\n:::{.callout-tip}\nLook - a squirrel!\n:::\n\nPDF output"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks-2",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#callout-blocks-2",
-    "title": "Day 1",
-    "section": "Callout Blocks",
-    "text": "Callout Blocks\nHighlight content for the reader in multiple formats.\n\n\nMarkdown\n:::{.callout-note}\nLook - a squirrel!\n:::\n\n:::{.callout-important}\nLook - a squirrel!\n:::\n\n:::{.callout-tip}\nLook - a squirrel!\n:::\n\nDOCX output"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layouts",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layouts",
-    "title": "Day 1",
-    "section": "Element Layouts",
-    "text": "Element Layouts\nQuarto makes available several layout attributes that apply to broad range of block elements.\n\nlayout-ncol: split elements across n columns (2, 3, …).\nlayout-nrow: split elements across n rows (2, 3, …).\nlayout-valign: align elements (top, center, bottom, default).\nlayout: Split elements into a 2D array by rows and columns1.\n\nFor more control, see {.grid} which relies up the CSS Bootstrap Grid system. See the [Guide]{https://quarto.org/docs/output-formats/page-layout.html#article}."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-1",
-    "title": "Day 1",
-    "section": "Element Layouts",
-    "text": "Element Layouts\nlayout-ncol\n\n\nMarkdown\n:::{layout-ncol=2}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n\n![](images/dog-watch.png)\n:::\n\nHTML output\n\n\n\nA clock for keeping time at an animal’s rate. The multiple for dogs is seven, for example."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-2",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-2",
-    "title": "Day 1",
-    "section": "Element Layouts",
-    "text": "Element Layouts\nlayout-ncol + layout-valign\n\n\nMarkdown\n:::{layout-ncol=2 layout-valign=middle}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n\n![](images/dog-watch.png)\n:::\n\nHTML output\n\n\n\nA clock for keeping time at an animal’s rate. The multiple for dogs is seven, for example."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-3",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layouts-3",
-    "title": "Day 1",
-    "section": "Element Layouts",
-    "text": "Element Layouts\nlayout-ncol with small image\n\n\nMarkdown\n:::{layout-ncol=2}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n\n![](images/dog-watch-small.png)\n:::\n\nHTML output\n\n\n\nA clock for keeping time at an animal’s rate. The multiple for dogs is seven, for example."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array",
-    "title": "Day 1",
-    "section": "Element Layout Array",
-    "text": "Element Layout Array\nlayout: The layout attribute1 is a 2-dimensional array where the first dimension defines rows and the second columns.\n\n\n\nlayout=\"[[1,1], [1]]\" translates to: create two rows, the first of which has two columns of equal size and the second of which has a single column.\nYou can scale the relative dimension of each panel by changing the 1s.\n\nFor more control with HTML output, see {.grid} which relies up the CSS Bootstrap Grid system. See the [Guide]{https://quarto.org/docs/output-formats/page-layout.html#article}."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array-1",
-    "title": "Day 1",
-    "section": "Element Layout Array",
-    "text": "Element Layout Array\n\n\nMarkdown\n:::{layout=\"[[1,1], [1]]\"}\n![](images/watch-face.png)\n\n![](images/dog-watch.png)\n\n![](images/circuit.png)\n:::\n\n\nHTML output\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat would layout=\"[[1,5], [1]]\" do?"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array-2",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#element-layout-array-2",
-    "title": "Day 1",
-    "section": "Element Layout Array",
-    "text": "Element Layout Array\n\n\nMarkdown\n:::{layout=\"[[1,5], [1]]\"}\n![](images/watch-face.png)\n\n![](images/dog-watch.png)\n\n![](images/circuit.png)\n:::\n\nHTML output"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#document-layout-column-classes",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#document-layout-column-classes",
-    "title": "Day 1",
-    "section": "Document Layout: column classes",
-    "text": "Document Layout: column classes\nModify the width of the main body column for individual block elements (e.g. paragraph, figures).\n\n\n\nMarkdown\n:::{.column-body}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n:::\n\n:::{.column-screen}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n:::\n\n\nHTML output"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#document-layout-column-classes-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#document-layout-column-classes-1",
-    "title": "Day 1",
-    "section": "Document Layout: column classes",
-    "text": "Document Layout: column classes\nModify the width of the main body column for individual block elements (e.g. paragraph, figures).\n\n\n\nMarkdown\n:::{.column-body}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n:::\n\n:::{.column-screen}\nA novelty clock, watch, and the like for \nkeeping time at an animal's rate, defined\nin terms of a multiple of human rate by \ndividing the average lifetime of a \nparticular animal into the average \nlifetime of a human being. The multiple\nfor dogs is seven, for example.\n:::\n\n\nHTML output"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#document-layout-margin-classes",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#document-layout-margin-classes",
-    "title": "Day 1",
-    "section": "Document Layout: margin classes",
-    "text": "Document Layout: margin classes\nPlace any inline or block element from the body to the margin.\n\n\n\nMarkdown\n![](images/dog-watch.png)\n\nWhat a brilliant idea.\n\nOutput"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#document-layout-margin-classes-1",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#document-layout-margin-classes-1",
-    "title": "Day 1",
-    "section": "Document Layout: margin classes",
-    "text": "Document Layout: margin classes\nPlace any inline or block element from the body to the margin.\n\n\nMarkdown\n![](images/dog-watch.png)\n\n:::{.column-margin}\nWhat a brilliant idea.\n:::\n\nOutput"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#poll",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#poll",
-    "title": "Day 1",
-    "section": "Poll",
-    "text": "Poll\n\nWhat is your preferred method of adding a figure to an Rmd so that it displays in HTML at 300 pixels wide?\n\nA. markdown\n![A nice image.](foo/bar.png){width=300}\nB. html\n&lt;img src=\"foo/bar.png\" width=\"300\"&gt;\nC: knitr\n```{r, out.width=\"300px\"}\nknitr::includegraphics(\"foo/bar.png\")\n```"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#figures",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#figures",
-    "title": "Day 1",
-    "section": "Figures",
-    "text": "Figures\nQuarto expands the functionality of markdown. Set width, height, fig-align, add link, caption, and alt-text.\n![A caption](images/dog-watch.png){width=300 fig-align=right fig-alt=\"Dog watching a watch.\"}\n\n\n\n\nA caption\n\n\n\n\n\n\nUnits default to px.\nOther choices 300in, 300% (relative to image size), 3em (relative to font size).\nEntire fig can be nested inside the link syntax ([fig](url)) to link the image"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#labels-for-links",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#labels-for-links",
-    "title": "Day 1",
-    "section": "Labels for Links",
-    "text": "Labels for Links\nIn additional to external resources, links can go to elements of the same doc through its #id.\n\n\n\nMarkdown\n![A caption](images/dog-watch.png){#dogwatch}\n\n&lt; Much more text &gt;\n\nA novelty clock, [watch](#dogwatch), and the\nlike for keeping time at an animal's rate . . .\n\n\nHTML output\n\n\n\n\nA caption\n\n\n\n&lt; Much more text &gt;\nA novelty clock, watch, and the like for keeping time at an animal’s rate . . .\n\n\n\n\n\n\nWorks for many elements,\nnot just figs!"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#labels-for-references",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#labels-for-references",
-    "title": "Day 1",
-    "section": "Labels for References",
-    "text": "Labels for References\nReferences can be made dynamic using #&lt;type&gt;-id and @&lt;type&gt;-id.\n\n\n\nMarkdown\n![Caption](images/dog-watch.png){#fig-dogwatch}\n\n&lt; Much more text &gt;\n\nA novelty clock, watch (@fig-dogwatch), and the like for \nkeeping time at an animal's rate . . .\n\n\nHTML output\n\n\n\n\nFigure 1: A caption\n\n\n\n&lt; Much more text &gt;\nA novelty clock, watch (Figure 1), and the like for keeping time at an animal’s rate . . .\n\n\n\n\n\n\nUnlike a link, a reference changes\nwith the ordering of the element\nas well as its type.\nOther &lt;type&gt; include @tbl-,\n@sec-, @eq-, @thm-, and many\nmore for math."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#customized-references",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#customized-references",
-    "title": "Day 1",
-    "section": "Customized References",
-    "text": "Customized References\nYou can customize the appearance of inline references by either changing the syntax of the inline reference or by setting options.\n\n\n\nType\nSyntax\nOutput\n\n\n\n\nDefault\n@fig-elephant\nFigure 1\n\n\nCustom Prefix\n[Fig @fig-elephant]\nFig 1\n\n\nNo Prefix\n[-@fig-elephant]\n1"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#section-2",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#section-2",
-    "title": "Day 1",
-    "section": "",
-    "text": "Let’s play around in the RStudio Visual Editor!"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#easy-table-generation",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#easy-table-generation",
-    "title": "Day 1",
-    "section": "Easy Table Generation",
-    "text": "Easy Table Generation\nHave the editor write the markdown for you!"
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#catalog-of-elements",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#catalog-of-elements",
-    "title": "Day 1",
-    "section": "Catalog of Elements",
-    "text": "Catalog of Elements\nType / on a new line to search the element types."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#reminder-of-attributes",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#reminder-of-attributes",
-    "title": "Day 1",
-    "section": "Reminder of Attributes",
-    "text": "Reminder of Attributes\nClick ... next to elements to see the attributes you can change."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#yaml-intelligence",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#yaml-intelligence",
-    "title": "Day 1",
-    "section": "YAML Intelligence",
-    "text": "YAML Intelligence\nCtrl + space to see all available options then tab-complete. Also works in VSCode."
-  },
-  {
-    "objectID": "materials/1-Day-1/slides/polishing-documents.html#references-and-further-reading",
-    "href": "materials/1-Day-1/slides/polishing-documents.html#references-and-further-reading",
-    "title": "Day 1",
-    "section": "References and further reading",
-    "text": "References and further reading\n\nClient Side Web Developent Ch. 5-7: approachable and concise introduction to how CSS work.\nClock for keeping time at a rate other than human time: US patent by Rodney Metts and Barry Thomas\nhttps://patents.google.com/patent/US3811677A/en?q=stilts&oq=stilts\nhttps://patents.google.com/patent/US6688257B2/en?q=pet+dog&oq=pet+dog"
-  },
-  {
-    "objectID": "materials/1-Day-1/exercises/ex-4.html",
-    "href": "materials/1-Day-1/exercises/ex-4.html",
-    "title": "My Favorite Vacation Spot",
-    "section": "",
-    "text": "Figure 1: A caption\n\n\nA novelty clock, watch dogwatch,"
   },
   {
     "objectID": "index.html",
