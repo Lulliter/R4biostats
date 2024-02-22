@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lulliter.github.io/R4biostats/about.html</loc>
-    <lastmod>2024-02-22T14:04:37.033Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/install.html</loc>
-    <lastmod>2024-02-14T14:46:27.569Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/1-Day-1/index.html</loc>
-    <lastmod>2024-02-14T16:02:59.529Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/2-Day-2/exercises/ex-1.html</loc>
-    <lastmod>2024-02-22T14:04:34.411Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/2-Day-2/slides/dagstat-2022.html</loc>
-    <lastmod>2024-02-22T14:04:32.581Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/2-Day-2/index.html</loc>
-    <lastmod>2024-02-22T13:31:02.717Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/2-Day-2/slides/Pres_test.html</loc>
-    <lastmod>2024-02-22T14:04:34.181Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/materials/index.html</loc>
-    <lastmod>2024-02-10T15:43:16.268Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lulliter.github.io/R4biostats/index.html</loc>
-    <lastmod>2024-02-22T14:01:18.450Z</lastmod>
+    <loc>https://lulliter.github.io/R4biostats/materials2.html</loc>
+    <lastmod>2024-02-22T14:54:35.266Z</lastmod>
   </url>
   <url>
     <loc>https://lulliter.github.io/R4biostats/ReadMe.html</loc>
-    <lastmod>2024-02-22T14:04:36.777Z</lastmod>
+    <lastmod>2024-02-22T14:54:34.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/slides/dagstat-2022.html</loc>
+    <lastmod>2024-02-22T14:54:33.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/index.html</loc>
+    <lastmod>2024-02-22T14:54:27.531Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/zzz_old/materials/2-Day-2/slides/Pres_test.html</loc>
+    <lastmod>2024-02-22T14:54:26.594Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/zzz_old/materials/2-Day-2/index.html</loc>
+    <lastmod>2024-02-22T14:54:20.985Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/zzz_old/materials/2-Day-2/slides/dagstat-2022.html</loc>
+    <lastmod>2024-02-22T14:54:25.157Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/zzz_old/materials/2-Day-2/exercises/ex-1.html</loc>
+    <lastmod>2024-02-22T14:54:26.813Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/zzz_old/materials/1-Day-1/index.html</loc>
+    <lastmod>2024-02-22T14:54:27.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/install.html</loc>
+    <lastmod>2024-02-22T14:54:28.987Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/slides/Pres_test.html</loc>
+    <lastmod>2024-02-22T14:54:34.565Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lulliter.github.io/R4biostats/about.html</loc>
+    <lastmod>2024-02-22T14:54:35.041Z</lastmod>
   </url>
 </urlset>

@@ -14,11 +14,11 @@ about:
     - icon: github
       text: Github (Lula)
       href: https://github.com/Lulliter
-    - text: "{{< fa brands fa-google-scholar >}} Google Scholar (Lula)"
+    - text: "{{< fa brands googlescholar >}} Google Scholar (Lula)"
       href: https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao
     - text: "{{< fa brands researchgate >}} Research Gate"
       href: https://www.researchgate.net/profile/Maria-Mimmi-2
-    - text: "{{< fa brands fa-orcid >}} Orcid"
+    - text: "{{< fa brands orcid >}} Orcid"
       href: https://orcid.org/0000-0002-5165-9230
 ---
 

@@ -7,6 +7,7 @@ execute:
 
 website:
   title: "R 4 biostats"
+  description: "Code and supplementary materials for the ...."
   site-url: "https://lulliter.github.io/R4biostats"
   # repo-url: "https://github.com/Lulliter/rassegna"
   favicon: images/icons8_hist_96.png
@@ -26,29 +27,25 @@ website:
         href: install.qmd
       - text: "Materials"
         icon: archive-fill # https://icons.getbootstrap.com/?q=home
-        href: materials/index.qmd
+        href: materials2.qmd
       - text: "About"
         icon: file-earmark-person-fill # https://icons.getbootstrap.com/?q=home
         href: about.qmd
 
-  sidebar:
-    - id: install
-      contents:
-        - install.qmd
-    - id: materials
-      title: "Materials"
-      style: "floating"
-      align: left
-      contents:
-          - text: "Materials"
-            href: materials/index.qmd
-          - text: "1. Day 1"
-            href: materials/1-Day-1/index.qmd
-          - text: "2. Day 2"
-            href: materials/2-Day-2/index.qmd
-    - id: about
-      contents:
-        - about.qmd
+  # sidebar:
+  #   - id: install
+  #     contents:
+  #       - install.qmd
+  #   - id: materials
+  #     title: "Materials"
+  #     style: "docked"
+  #     contents:
+  #         - materials/index.qmd
+  #         - materials/1-Day-1/index.qmd
+  #         - materials/2-Day-2/index.qmd
+  #   - id: about
+  #     contents:
+  #       - about.qmd
 
 format:
   html:

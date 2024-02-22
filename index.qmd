@@ -50,5 +50,6 @@ June 3rd 2016 	Advanced 	08:00 	12:15
 
 Hot & cold drinks will be served during the morning breaks.
 
+## Materials
 
- 
+This source code and license for all of the materials found on this website can be found on Github [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats).
