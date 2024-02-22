@@ -1,0 +1,50 @@
+---
+title: "Materials"
+---
+
+::: {.callout-caution collapse="false"}
+Website constrution in progress...
+:::
+
+
+# Day 1 
+
+
+## Topics
+
+> Learn how to .... .
+
+## Slides
+
+1.  [Download "*.pdf" file](slides/Presentazione standard1.pdf)
+2.  [Download "*.pptx" file](slides/Presentazione standard1.pptx)
+
+
+## Lab code
+
+1.  [Download "*.R" file](exercises/labs_day1.R)
+2.  
+
+# Day 2 
+
+
+## Topics
+
+> Learn how to .... .
+
+## Slides
+
+1.  [Mine Slides](slides/dagstat-2022.html)
+2.  [Pres_test](slides/Pres_test.html) 
+
+
+## Lab code
+
+1.  
+2.  
+
+
+## Linking other stuff
+
+![Dog with watch](exercises/images/dog-watch-mondo.png)
+![Dog with watch small](exercises/images/dog-watch-small.png)
