@@ -1,8 +1,12 @@
 project:
   type: website
   output-dir: docs # to publish website on GithubPages
+
 execute:
-  freeze: auto  # re-render only when source changes
+  freeze: auto  # Re-render only when source changes
+
+# bibliography: files/bib/references.bib
+# csl: files/bib/chicago-author-date.csl
 
 website:
   title: "R 4 biostats"
@@ -12,7 +16,7 @@ website:
   favicon: images/icons8_hist_96.png
   page-footer:
     left: |
-      {{< fa brands creative-commons >}} 2024 M.Chiara Mimmi<br>
+      {{< fa brands creative-commons >}} 2024 M. Chiara Mimmi<br>
       License {{< fa brands creative-commons >}}
       {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
       [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
@@ -20,8 +24,11 @@ website:
       Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
       [View source at {{< fa brands github >}} GitHub](https://github.com/Lulliter/R4biostats)
 
-
+  page-navigation: true
+  
   navbar:
+    pinned: true # non si muove quando scorro la pagina 
+    background: "#72aed8" # "#0084e6" "#EE6A24"
     right:
       - text: "Home"
         icon: house-fill # https://icons.getbootstrap.com/?q=home
