@@ -25,6 +25,8 @@ Website constrution in progress...
 1.  [Download "*.R" file](exercises/labs_day1.R)
 2.  
 
+\newpage
+
 # Day 2 
 
 

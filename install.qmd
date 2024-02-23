@@ -9,7 +9,7 @@ Website constrution in progress...
 :::
 
 
-This workshop showcases introductory bio statistics concepts using the free and opensource software {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.
+This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.
 
 
 ## Installing `r fontawesome::fa("r-project", fill = "#5F85A7")`
@@ -42,13 +42,13 @@ R --version
 
 ## Install RStudio IDE
 
-While this is not required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor wrapping and interfacing R (which needs to be installed first). 
+While this is not required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE) wrapping and interfacing R (which needs to be installed first). 
 
 + To install it you can go to this **[link](https://posit.co/download/rstudio-desktop/)**. The free-version contains everything you need.
 
 ## Install R packages from the CRAN
 
-Many useful R function come in *packages*, free libraries of code written by R's active user community. **CRAN** - the Comprehensive R Archive Network - is the general package repository for R.
+Many useful R function come in *packages*, free libraries of code written by R's active user community. **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: [https://cran.r-project.org/](https://cran.r-project.org/).
 
 <!-- The bottom-right panel holds five tabs. -->
 

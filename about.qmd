@@ -1,7 +1,7 @@
 ---
 title: "About the Instructor"
 about:
-  id: hero-heading
+  id: hero-heading #about-block 
   template: jolla
   image: images/dog-watch-mondo.png
   links:

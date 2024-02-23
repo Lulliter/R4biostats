@@ -1,16 +1,18 @@
 ---
-title: "an educator's perspective of the tidyverse"
-subtitle: "[bit.ly/tidyperspective-dagstat](https://bit.ly/tidyperspective-dagstat)"
-author: "mine çetinkaya-rundel"
+title: "Day 2 ... tidyverse"
+subtitle: "[https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/)"
+author: "Name Last Name"
 format:
   revealjs:
     # # ------------- x salvare come PDF 
+    slide-number: true
     standalone: true
     embed-resources: true
     theme: slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
     transition: fade
     background-transition: fade
     highlight-style: ayu-mirage
+    footer: <https://lulliter.github.io/R4biostats/materials.html>
 code-link: true
 execute:
   echo: true
@@ -47,15 +49,15 @@ theme_set(theme_gray(base_size = 18))
 
 ::: columns
 ::: {.column width="50%" style="text-align: center;"}
-![](images/icons8-code-64.png)
-
+![](imgs_slides/icons8-code-64.png)
+ 
 **Assumption 1:**
 
 Teach authentic tools
 :::
 
 ::: {.column width="50%" style="text-align: center;"}
-![](images/icons8-code-R-64.png)
+![](imgs_slides/icons8-code-R-64.png)
 
 **Assumption 2:**
 
@@ -84,11 +86,13 @@ Teach R as the authentic tool
 :::
 
 ::: {.column width="20%"}
-![](images/tidyverse.png){fig-align="center"}
+![](imgs_slides/tidyverse.png){fig-align="center"}
 :::
 :::
 
-![](images/data-science.png){fig-align="center"}
+## tidyverse flow
+
+![](imgs_slides/data-science.png){fig-align="center"}
 
 ## setup
 
@@ -779,7 +783,7 @@ Get SQL for free with **dplyr** verbs!
 
 -   [Lifecycle stages](https://lifecycle.r-lib.org/articles/stages.html) and badges
 
-    ![](images/lifecycle.png)
+    ![](imgs_slides/lifecycle.png)
 
 ## coda {.smaller}
 
@@ -789,7 +793,7 @@ Get SQL for free with **dplyr** verbs!
 :::
 
 ::: {.column width="40%"}
-![](images/paper.png)
+![](imgs_slides/paper.png)
 :::
 :::
 

@@ -1,6 +1,76 @@
 ---
-title: "TEST_pres"
-format: revealjs
+title: "Day 1 ... xxxxxx"
+subtitle: "[https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/)"
+author: "Name Last Name"
+format:
+  revealjs:
+    # # ------------- x salvare come PDF 
+    slide-number: true
+    standalone: true
+    embed-resources: true
+    theme: slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    footer: <https://lulliter.github.io/R4biostats/materials.html>
+code-link: true
+execute:
+  echo: true
+  freeze: auto
 ---
 
-![Caption](images/lifecycle.png){fig-alt="ALT CAption"}
+# introduction
+
+```{r}
+#| echo: false
+library(tidyverse)
+library(scales)
+library(knitr)
+library(kableExtra)
+
+# remotes::install_github("wilkelab/cowplot")
+# install.packages("colorspace", repos = "http://R-Forge.R-project.org")
+# remotes::install_github("clauswilke/colorblindr")
+library(colorblindr)
+
+options(dplyr.print_min = 6, dplyr.print_max = 6)
+theme_set(theme_gray(base_size = 18))
+```
+
+## collaborators
+
+-   Johanna Hardin, Pomona College
+-   Benjamin S. Baumer, Smith College
+-   Amelia McNamara, University of St Thomas
+-   Nicholas J. Horton, Amherst College
+-   Colin W. Rundel, Duke University
+
+## setting the scene
+
+::: columns
+::: {.column width="50%" style="text-align: center;"}
+![](imgs_slides/icons8-code-64.png)
+ 
+**Assumption 1:**
+
+Teach authentic tools
+:::
+
+::: {.column width="50%" style="text-align: center;"}
+![](imgs_slides/icons8-code-R-64.png)
+
+**Assumption 2:**
+
+Teach R as the authentic tool
+:::
+:::
+
+## takeaway
+
+<br><br>
+
+> The tidyverse provides an effective and efficient pathway for undergraduate students at all levels and majors to gain computational skills and thinking needed throughout the data science cycle.
+
+::: aside
+Çetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator's perspective of the tidyverse. arXiv preprint arXiv:2108.03510. [arxiv.org/abs/2108.03510](https://arxiv.org/abs/2108.03510)
+:::

@@ -11,10 +11,15 @@ website:
   # repo-url: "https://github.com/Lulliter/rassegna"
   favicon: images/icons8_hist_96.png
   page-footer:
-    left: "Made with [Quarto](https://quarto.org/), by Luisa M. Mimmi. License: [CC BY-SA 4.0 Deed](https://creativecommons.org/licenses/by-sa/4.0/)"
-    right:
-    - icon: github
-      href: https://github.com/Lulliter/R4biostats
+    left: |
+      {{< fa brands creative-commons >}} 2024 M.Chiara Mimmi<br>
+      License {{< fa brands creative-commons >}}
+      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
+      [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)
+    right: |
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
+      [View source at {{< fa brands github >}} GitHub](https://github.com/Lulliter/R4biostats)
+
 
   navbar:
     right:
@@ -26,7 +31,7 @@ website:
         href: install.qmd
       - text: "Materials"
         icon: archive-fill # https://icons.getbootstrap.com/?q=home
-        href: materials2.qmd
+        href: materials.qmd
       - text: "About"
         icon: file-earmark-person-fill # https://icons.getbootstrap.com/?q=home
         href: about.qmd
@@ -60,6 +65,7 @@ format:
     fontsize: 1em
     theme: theme/my-litera.scss
     css: theme/styles.css
+    highlight-style: monokai
 
 
 
