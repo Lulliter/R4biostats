@@ -18,7 +18,7 @@ Favicon1 (blu)  <a target="_blank" href="https://icons8.com/icon/lmhleiXG9ioV/an
 
 # How this website was built 
 
-This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via Github Pages [{{< fa brands github >}}](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) at this [link](https://lulliter.github.io/R4biostats/).
+This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be rendered at this [link](https://lulliter.github.io/R4biostats/).
 
 The main content of the website pages is contained in *Quarto Markdown* files (`*.qmd`). This is very similar to regular Markdown (`*.md`) and R Markdown (`*.rmd`) files, except they are designed to be language agnostic.
 

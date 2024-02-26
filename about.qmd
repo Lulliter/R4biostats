@@ -5,22 +5,31 @@ about:
   template: jolla
   image: images/dog-watch-mondo.png
   links:
+    - icon: file-pdf
+      text: CV (tbd)
+      href: https://www.linkedin.com/in/maria-chiara-mimmi-b0aa9233/  
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/maria-chiara-mimmi-b0aa9233/
     - icon: envelope
       text: Email
-      href: chiara_mimmi@yahoo.it
+      href: mailto:chiara_mimmi@yahoo.it
     - icon: github
-      text: Github (Lula)
+      text: Github (EXE Lula)
       href: https://github.com/Lulliter
-    - text: "{{< fa brands googlescholar >}} Google Scholar (Lula)"
-      href: https://scholar.google.com/citations?user=OBYla5gAAAAJ&hl=en&oi=ao
+    # - text: "{{< fa brands google >}} Google Scholar"
+    - text: "![](images/icons8-google-scholar-16.jpg) Google Scholar"
+      href: https://scholar.google.com/citations?user=a5BhtocAAAAJ&hl=en&oi=ao
     - text: "{{< fa brands researchgate >}} Research Gate"
       href: https://www.researchgate.net/profile/Maria-Mimmi-2
     - text: "{{< fa brands orcid >}} Orcid"
       href: https://orcid.org/0000-0002-5165-9230
 ---
+
+::: {.callout-caution collapse="false"}
+Website constrution in progress...
+:::
+ 
 
 :::{#hero-heading}
 
@@ -42,9 +51,6 @@ GeoScynce | Chief Analyst | Sept 2012 - April 2018
 
 :::
 
-::: {.callout-caution collapse="false"}
-Website constrution in progress...
-:::
 
 
 
