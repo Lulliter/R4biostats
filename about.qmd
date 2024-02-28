@@ -14,9 +14,9 @@ about:
     - icon: envelope
       text: Email
       href: mailto:chiara_mimmi@yahoo.it
-    - icon: github
-      text: Github (EXE Lula)
-      href: https://github.com/Lulliter
+    # - icon: github
+    #   text: Github (EXE Lula)
+    #   href: https://github.com/Lulliter
     # - text: "{{< fa brands google >}} Google Scholar"
     - text: "![](images/icons8-google-scholar-16.jpg) Google Scholar"
       href: https://scholar.google.com/citations?user=a5BhtocAAAAJ&hl=en&oi=ao
@@ -33,21 +33,27 @@ Website constrution in progress...
 
 :::{#hero-heading}
 
-Maria Chiara Mimmiis the Chief Data Scientist at Wengo Analytics. When not innovating on data platforms, Maria Chiara enjoys spending time unicycling and playing with her pet iguana.
+**Maria Chiara Mimmi**, Ph.D., is a Research Fellow at University of Pavia - Dept. of Molecular Medicine, as well as NMR Expert at Fondazione IRCCS Policlinico San Matteo. She has twenty years of experience working in life science research, with a focus on NMR and Mass Spectrometry applied to metabolomics/lipidomics.
+
+In 2020, she joined the University of Pavia, at the Molecular Medicine Dept., to work with the recently acquired 700 MHz NMR spectrometer. Since then she focused on NMR applied to either metabolomics and to structure/dynamics of amyloidogenic proteins.
 
 ## Education
 
-University of California, San Diego | San Diego, CA
-PhD in Mathematics | Sept 2011 - June 2015
+Università degli Studi di Pavia | Pavia, Italy 
+**Master of Biostatistics** | 2018-2019
 
-Macalester College | St. Paul MA
-B.A in Economics | Sept 2007 - June 2011
+Università degli Studi di Milano | Milano, Italy 
+**Ph.D. in Chemical Sciences** | 2001 - 2003
 
-## Experience
+Institut National de la Recherche Agronomique |  Versailles-Grignon, France 
+**Visiting scholar** | 2003 - 2003
 
-Wengo Analytics | Head Data Scientist | April 2018 - present
+Università degli Studi di Pavia | Pavia, Italy 
+**BSc Degree in Chemistry** | 1994 - 2000
 
-GeoScynce | Chief Analyst | Sept 2012 - April 2018
+Universiteit Leiden | Leiden, The Netherlands 
+**Erasmus exchange student** (6 months) | 1999 - 1999
+
 
 :::
 

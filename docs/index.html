@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.550">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-
-
 <title>R 4 biostats - Intro to Biostatistics with R</title>
 <style>
 code{white-space: pre-wrap;}
@@ -21,7 +18,6 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 </style>
-
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
@@ -39,8 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
@@ -66,18 +61,13 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
-
-
+}</script><script src="site_libs/kePrint-0.0.1/kePrint.js"></script><link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <link rel="stylesheet" href="theme/styles.css">
 </head>
-
 <body class="floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
-      <div class="navbar-container container-fluid">
+  <header id="quarto-header" class="headroom fixed-top"><nav class="navbar navbar-expand-lg " data-bs-theme="dark"><div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">R 4 biostats</span>
@@ -89,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item">
+<li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
@@ -110,39 +100,31 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
+</div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
-    </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+    </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+<li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome!</a></li>
   <li><a href="#workshop-overview" id="toc-workshop-overview" class="nav-link" data-scroll-target="#workshop-overview">Workshop Overview</a></li>
   <li><a href="#practical-information" id="toc-practical-information" class="nav-link" data-scroll-target="#practical-information">Practical information</a></li>
-  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a>
+  <li>
+<a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a>
   <ul class="collapse">
-  <li><a href="#materials" id="toc-materials" class="nav-link" data-scroll-target="#materials">Materials</a></li>
-  </ul></li>
+<li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
   </ul>
-</nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</li>
+  </ul></nav>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <h1 class="title">Intro to Biostatistics with R</h1>
 <p class="subtitle lead">15-18 of July, 2024</p>
 </div>
@@ -158,10 +140,7 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
-
-
-<div class="callout callout-style-default callout-caution callout-titled">
+</header><div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -177,46 +156,99 @@ Caution
 </div>
 </div>
 </div>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>This website collects the materials for a two day workshop taking place during the <a href="https://www.rstudio.com/conference/">rstudio::conf 2022</a> in July 2024 at the University of ??? , The Netherlands.</p>
+<section id="welcome" class="level1"><h1>Welcome!</h1>
+<p>This website collects the materials for a four day workshop organized by <a href="https://www.mitgest.eu/">MITGEST Doctoral Network</a> in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.</p>
 <ul>
-<li><span class="smallcaps">Location:</span> Xxxx Zzzzz 1/1&nbsp;Whatever PLace ….</li>
-<li><span class="smallcaps">Time:</span> 9 am - 5 pm July 25<sup>th</sup> and July<sup>26</sup></li>
-</ul>
-</section>
-<section id="workshop-overview" class="level1">
-<h1>Workshop Overview</h1>
-<p>xxxx</p>
-<p>The workshop will focus on using R to ….</p>
-<p>xxxx</p>
-<p>Topics covered include simple variance components models, mixed models, using random coefficients and cross-level interactions, and more.</p>
-<p>After completing the course, you will:</p>
-<ul>
-<li><del>Know the technical and substantive difference between fixed and random effects.</del> Understand random intercepts and random coefficients and know when to use each one.~~</li>
-<li><del>Know how to combine the strengths of random-effects and fixed effects approaches into a single model.</del></li>
-<li><del>Know how to estimate these models and interpret the results.</del></li>
-</ul>
+<li>
+<span class="smallcaps">Location:</span> Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland</li>
+<li>
+<span class="smallcaps">Time:</span> 9 am - 5 pm July 24<sup>th</sup> to July 27<sup>th</sup>, 2024</li>
+</ul></section><section id="workshop-overview" class="level1"><h1>Workshop Overview</h1>
+<p>This Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.</p>
+<p>Specific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.</p>
+<p>While there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.</p>
 <p>Though the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.</p>
-</section>
-<section id="practical-information" class="level1">
-<h1>Practical information</h1>
+<!-- After completing the course, you will: -->
+<!-- + ~~Know the technical and substantive difference between fixed and random effects.~~ -->
+<!-- Understand random intercepts and random coefficients and know when to use each one.~~ -->
+<!-- + ~~Know how to combine the strengths of random-effects and fixed effects approaches into a single model.~~ -->
+<!-- + ~~Know how to estimate these models and interpret the results.~~ -->
+</section><section id="practical-information" class="level1"><h1>Practical information</h1>
 <p>Please, do bring your laptop as no computer will be available.</p>
-</section>
-<section id="schedule" class="level1">
-<h1>Schedule</h1>
-<p>Day Session Start End June 2nd 2016 Beginner 08:30 12:30 June 2nd 2016 Intermediate 13:30 18:00 June 3rd 2016 Advanced 08:00 12:15</p>
+</section><section id="schedule" class="level1"><h1>Schedule</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<table class="table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Tentative Schedule</caption>
+<thead><tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Day</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Time</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Activity</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Location</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">24 July, 2024</td>
+<td style="text-align: left;">9am - 12am</td>
+<td style="text-align: left; font-weight: bold;">Lesson 1 ~ Working with data (in R)</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">""</td>
+<td style="text-align: left;">2pm - 5pm</td>
+<td style="text-align: left;">Practice Session 1</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">25 July, 2024</td>
+<td style="text-align: left;">9am - 12am</td>
+<td style="text-align: left; font-weight: bold;">Lesson 2 ~ Inference</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">""</td>
+<td style="text-align: left;">2pm - 5pm</td>
+<td style="text-align: left;">Practice Session 2</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">26 July, 2024</td>
+<td style="text-align: left;">9am - 12am</td>
+<td style="text-align: left; font-weight: bold;">Lesson 3 ~ Modeling correlation and regression</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">""</td>
+<td style="text-align: left;">2pm - 5pm</td>
+<td style="text-align: left;">Practice Session 3</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">27 July, 2024</td>
+<td style="text-align: left;">9am - 12am</td>
+<td style="text-align: left; font-weight: bold;">Lesson 4 ~ Intro to machine learning</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">""</td>
+<td style="text-align: left;">2pm - 5pm</td>
+<td style="text-align: left;">Practice Session 4</td>
+<td style="text-align: left;">Building ??, Room ?</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 <p>Hot &amp; cold drinks will be served during the morning breaks.</p>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
-<p>This source code and license for all of the materials on this website can be found on a dedicated Github repo <a href="https://github.com/Lulliter/R4biostats"><i class="fa-brands fa-github"></i></a>.</p>
+<section id="license" class="level2"><h2 class="anchored" data-anchor-id="license">License</h2>
+<p>The work presented in this website is licensed under a <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>, except for the borrowed and mentioned with proper <em>“Source:”</em> statements.</p>
+<!-- ## Materials -->
+<!-- This source code and license for all of the materials on this website can be found on a dedicated Github repo [](https://github.com/Lulliter/R4biostats). -->
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
-<script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -604,8 +636,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
+<footer class="footer"><div class="nav-footer">
     <div class="nav-footer-left">
 <p><i class="fa-brands fa-creative-commons"></i> 2024 M. Chiara Mimmi<br> License <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i> <i class="fa-brands fa-creative-commons-nc"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a></p>
 </div>   
@@ -613,12 +644,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       &nbsp;
     </div>
     <div class="nav-footer-right">
-<p>Made with <i class="fa-brands fa-r-project"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/Lulliter/R4biostats">View source at <i class="fa-brands fa-github"></i> GitHub</a></p>
+<p>Made with <i class="fa-brands fa-r-project"></i> and <a href="https://quarto.org/">Quarto</a><br><a href="https://github.com/Lulliter/R4biostats">View source at <i class="fa-brands fa-github"></i> GitHub</a></p>
 </div>
   </div>
 </footer>
-
-
 
 
 </body></html>

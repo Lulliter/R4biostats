@@ -1,75 +1,5 @@
 [
   {
-    "objectID": "materials.html",
-    "href": "materials.html",
-    "title": "Materials",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
-  },
-  {
-    "objectID": "materials.html#topics",
-    "href": "materials.html#topics",
-    "title": "Materials",
-    "section": "Topics",
-    "text": "Topics\n\nLearn how to …. ."
-  },
-  {
-    "objectID": "materials.html#slides",
-    "href": "materials.html#slides",
-    "title": "Materials",
-    "section": "Slides",
-    "text": "Slides\n\nDownload “*.pdf” file\nDownload “*.pptx” file"
-  },
-  {
-    "objectID": "materials.html#lab-code",
-    "href": "materials.html#lab-code",
-    "title": "Materials",
-    "section": "Lab code",
-    "text": "Lab code\n\nDownload “*.R” file"
-  },
-  {
-    "objectID": "materials.html#topics-1",
-    "href": "materials.html#topics-1",
-    "title": "Materials",
-    "section": "Topics",
-    "text": "Topics\n\nLearn how to …. ."
-  },
-  {
-    "objectID": "materials.html#slides-1",
-    "href": "materials.html#slides-1",
-    "title": "Materials",
-    "section": "Slides",
-    "text": "Slides\n\nMine Slides\nPres_test"
-  },
-  {
-    "objectID": "materials.html#lab-code-1",
-    "href": "materials.html#lab-code-1",
-    "title": "Materials",
-    "section": "Lab code",
-    "text": "Lab code"
-  },
-  {
-    "objectID": "materials.html#linking-other-stuff",
-    "href": "materials.html#linking-other-stuff",
-    "title": "Materials",
-    "section": "Linking other stuff",
-    "text": "Linking other stuff"
-  },
-  {
-    "objectID": "ReadMe.html",
-    "href": "ReadMe.html",
-    "title": "README",
-    "section": "",
-    "text": "This website collects the materials for a two day workshop taking place during the….."
-  },
-  {
-    "objectID": "ReadMe.html#things-needed",
-    "href": "ReadMe.html#things-needed",
-    "title": "README",
-    "section": "Things needed",
-    "text": "Things needed\n\nInstall Quarto (an open source tool that can be used from RStudio, Jupyter, CLI, etc.)… Most R users will use RStudio\nInstall git (distributed version control software)… here some instructions\nCreate a Github account\nFollow instructions/examples available here…"
-  },
-  {
     "objectID": "slides/dagstat-2022.html#collaborators",
     "href": "slides/dagstat-2022.html#collaborators",
     "title": "Day 2 … tidyverse",
@@ -420,6 +350,62 @@
     "text": "coda\n\n\n\nWe are all converts to the tidyverse and have made a conscious choice to use it in our research and our teaching. We each learned R without the tidyverse and have all spent quite a few years teaching without it at a variety of levels from undergraduate introductory statistics courses to graduate statistical computing courses. This paper is a synthesis of the reasons supporting our tidyverse choice, along with benefits and challenges associated with teaching statistics with the tidyverse.\n\n\n\n\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
+    "objectID": "materials.html",
+    "href": "materials.html",
+    "title": "Materials",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
+  },
+  {
+    "objectID": "materials.html#topics",
+    "href": "materials.html#topics",
+    "title": "Materials",
+    "section": "Topics",
+    "text": "Topics\n\nLearn how to …. ."
+  },
+  {
+    "objectID": "materials.html#slides",
+    "href": "materials.html#slides",
+    "title": "Materials",
+    "section": "Slides",
+    "text": "Slides\n\nDownload “*.pdf” file\nDownload “*.pptx” file"
+  },
+  {
+    "objectID": "materials.html#lab-code",
+    "href": "materials.html#lab-code",
+    "title": "Materials",
+    "section": "Lab code",
+    "text": "Lab code\n\nDownload “*.R” file"
+  },
+  {
+    "objectID": "materials.html#topics-1",
+    "href": "materials.html#topics-1",
+    "title": "Materials",
+    "section": "Topics",
+    "text": "Topics\n\nLearn how to …. ."
+  },
+  {
+    "objectID": "materials.html#slides-1",
+    "href": "materials.html#slides-1",
+    "title": "Materials",
+    "section": "Slides",
+    "text": "Slides\n\nMine Slides\nPres_test"
+  },
+  {
+    "objectID": "materials.html#lab-code-1",
+    "href": "materials.html#lab-code-1",
+    "title": "Materials",
+    "section": "Lab code",
+    "text": "Lab code"
+  },
+  {
+    "objectID": "materials.html#linking-other-stuff",
+    "href": "materials.html#linking-other-stuff",
+    "title": "Materials",
+    "section": "Linking other stuff",
+    "text": "Linking other stuff"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Intro to Biostatistics with R",
@@ -427,11 +413,25 @@
     "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
   },
   {
-    "objectID": "index.html#materials",
-    "href": "index.html#materials",
+    "objectID": "index.html#license",
+    "href": "index.html#license",
     "title": "Intro to Biostatistics with R",
-    "section": "Materials",
-    "text": "Materials\nThis source code and license for all of the materials on this website can be found on a dedicated Github repo ."
+    "section": "License",
+    "text": "License\nThe work presented in this website is licensed under a    Creative Commons Attribution-ShareAlike 4.0 International License, except for the borrowed and mentioned with proper “Source:” statements."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About the Instructor",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About the Instructor",
+    "section": "Education",
+    "text": "Education\nUniversità degli Studi di Pavia | Pavia, Italy Master of Biostatistics | 2018-2019\nUniversità degli Studi di Milano | Milano, Italy Ph.D. in Chemical Sciences | 2001 - 2003\nInstitut National de la Recherche Agronomique | Versailles-Grignon, France Visiting scholar | 2003 - 2003\nUniversità degli Studi di Pavia | Pavia, Italy BSc Degree in Chemistry | 1994 - 2000\nUniversiteit Leiden | Leiden, The Netherlands Erasmus exchange student (6 months) | 1999 - 1999"
   },
   {
     "objectID": "install.html",
@@ -495,26 +495,5 @@
     "title": "Day 1 … xxxxxx",
     "section": "takeaway",
     "text": "takeaway\n\n\nThe tidyverse provides an effective and efficient pathway for undergraduate students at all levels and majors to gain computational skills and thinking needed throughout the data science cycle.\n\n\n\n\n\nhttps://lulliter.github.io/R4biostats/materials.html\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About the Instructor",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About the Instructor",
-    "section": "Education",
-    "text": "Education\nUniversity of California, San Diego | San Diego, CA PhD in Mathematics | Sept 2011 - June 2015\nMacalester College | St. Paul MA B.A in Economics | Sept 2007 - June 2011"
-  },
-  {
-    "objectID": "about.html#experience",
-    "href": "about.html#experience",
-    "title": "About the Instructor",
-    "section": "Experience",
-    "text": "Experience\nWengo Analytics | Head Data Scientist | April 2018 - present\nGeoScynce | Chief Analyst | Sept 2012 - April 2018"
   }
 ]

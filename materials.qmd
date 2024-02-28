@@ -25,7 +25,7 @@ Website constrution in progress...
 1.  [Download "*.R" file](exercises/labs_day1.R)
 2.  
 
-\newpage
+{{< pagebreak >}}
 
 # Day 2 
 
@@ -45,8 +45,8 @@ Website constrution in progress...
 1.  
 2.  
 
+# Bonus materials
+<!-- ## Linking other stuff -->
 
-## Linking other stuff
-
-![Dog with watch](exercises/images/dog-watch-mondo.png)
-![Dog with watch small](exercises/images/dog-watch-small.png)
+<!-- ![Dog with watch](exercises/images/dog-watch-mondo.png) -->
+<!-- ![Dog with watch small](exercises/images/dog-watch-small.png) -->
