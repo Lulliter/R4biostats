@@ -7,7 +7,6 @@ title: "README"
 This website collects the materials for a two day workshop taking place during the..... 
 
 
-
 # How this website was built 
 
 This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be rendered at this [link](https://lulliter.github.io/R4biostats/).
@@ -23,12 +22,10 @@ The main content of the website pages is contained in *Quarto Markdown* files (`
 5. Font-Awsome Icons downloaded in `./images/*` from [Font-Awsome GH repo /svgs](https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs). 
 To use in:
   + `*.md` 
-    + `![fa-crown](fa-crown.svg)`
-    + `<img src="fa-crown.svg" width="50" height="50">`
+    + ~~`![fa-crown](images/copyright-regular.svg)`~~ (no size spec!!!)
+    + `<img src="images/copyright-regular.svg" width="16" height="16">` (yes size spec!!!)
   + `*.qmd` 
-    + `\{\{< fa brands creative-commons >\}\}`
-
-
+    + `\{\{< fa brands copyright >\}\}`
 
 # Attributions
 The content of this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements.
@@ -37,13 +34,9 @@ The content of this website is licensed under a [Creative Commons Attribution-No
 
 I acknowledge inputs taken from these very valuable sources:
 
-+ [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials**  (License {{< fa brands creative-commons >}})
-+ [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyright ![fa-copyright](images/copyright-regular.svg) )
++ [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials**  (Licensed <img src="images/creative-commons.svg" width="16" height="16">)
++ [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyrighted <img src="images/copyright-regular.svg" width="16" height="16">)
 
-1/2
-<i class="fa-regular fa-copyright"></i>
-2/2
-<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/copyright.svg" width="16" height="16">
 
 
 ## Web stuff 

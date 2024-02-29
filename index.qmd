@@ -83,10 +83,20 @@ Hot & cold drinks will be served during the morning breaks.
 
 Please, do bring your laptop as no computer will be available.  
 
+# Acknowledgements
 
-## License
+The materials presented in this workshops have been prepared drawing from various sources: 
 
-The work presented in this website is licensed under a {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}} [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements.
+* ccc
+* mmm
+* xxxx
+
+<!-- # TEST  -->
+<!-- [Download "*.R" file](practice/Rcode/labs_day1.R) -->
+
+<!-- ## License -->
+
+<!-- The work presented in this website is licensed under a {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}} [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements. -->
 
 <!-- ## Materials -->
 

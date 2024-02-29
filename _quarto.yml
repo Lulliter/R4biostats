@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: docs # to publish website on GithubPages
+# --- By default, all valid Quarto input files (.qmd, .ipynb, .md, .Rmd) 
+#  will be rendered (NO .file, _dir/)
   render:
     - "*.qmd"
     - "!R_stuff/"
@@ -9,8 +11,8 @@ project:
 execute:
   freeze: auto  # Re-render only when source changes
 
-# bibliography: files/bib/references.bib
-# csl: files/bib/chicago-author-date.csl
+bibliography: bib/R4biostats.bib
+csl: bib/apa-6th-edition.csl
 
 website:
   title: "R 4 biostats"
@@ -18,15 +20,19 @@ website:
   site-url: "https://lulliter.github.io/R4biostats"
   # repo-url: "https://github.com/Lulliter/rassegna"
   favicon: images/icons8_hist_96.png
+
   page-footer:
     left: |
-      {{< fa brands creative-commons >}} 2024 M. Chiara Mimmi<br>
-      License {{< fa brands creative-commons >}}
-      {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}}
-      [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+      {{< fa regular copyright >}} M. Chiara Mimmi 2024
+#     left: |
+#       {{< fa brands creative-commons >}} 2024 M. Chiara Mimmi<br>
+#       License {{< fa brands creative-commons >}}
+#       {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}}
+#       [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
     right: |
-      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)<br>
-      [View source at {{< fa brands github >}} GitHub](https://github.com/Lulliter/R4biostats)
+      Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/) 
+#      <br>[Code at {{< fa brands github >}} GitHub](https://github.com/Lulliter/R4biostats)
+    background: "#e3eff7"
 
   page-navigation: true
   
@@ -40,12 +46,32 @@ website:
       - text: "Pre-Workshop"
         icon: code-square # https://icons.getbootstrap.com/?q=home
         href: install.qmd
-      - text: "Materials"
+      - text: "Lessons"
+        icon: easel-fill # https://icons.getbootstrap.com/?q=home
+        menu: 
+          - text: "Intro to R and data analysis"
+            href: lessons/lec01_data_with_R.qmd
+          - text: "Statistical inference & hypothesis testing"
+            href: lessons/lec02_inference.qmd
+          - text: "Modeling correlation and regression"
+            href: lessons/lec03_corr_regress.qmd
+          - text: "Intro to machine learning"
+            href: lessons/lec04_intro_ML.qmd
+      - text: "Labs"
         icon: archive-fill # https://icons.getbootstrap.com/?q=home
-        href: materials.qmd
+        # href: practice.qmd
+        menu: 
+          - text: "Lab: Intro to R and data analysis"
+            href: practice/lab01_data_with_R.qmd
+          - text: "Lab: Statistical inference & hypothesis testing"
+            href: practice/lab02_inference.qmd
+          - text: "Lab: Modeling correlation and regression"
+            href: practice/lab03_corr_regress.qmd
+          - text: "Lab: Intro to machine learning"
+            href: practice/lab04_intro_ML.qmd
       - text: "About"
         icon: file-earmark-person-fill # https://icons.getbootstrap.com/?q=home
-        href: about.qmd
+        href: teacher.qmd
 
   # sidebar:
   #   - id: install

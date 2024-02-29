@@ -1,0 +1,23 @@
+---
+title: "Intro to machine learning"
+subtitle: "<span class='code'>15:30-17:00</span>"
+date: "2024-07-27"
+image: "images/04-guide.png"
+tbl-colwidths: [5,20,75]
+---
+
+
+<!-- ma NOT OK anche .pptx  -->
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src="../lessons_slides/04_Pres_std1.pptx" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+
+<a href='../lessons_slides/04_Pres_std1.pptx' target="_blank"> Download "*.pptx" file </a>
+
+# Lesson's outline
+
+- Introduction to Machine Learning
+- Linear Regression
+- Classification
+- Model Selection 
+- Unsupervised Learning

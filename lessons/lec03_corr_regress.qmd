@@ -1,0 +1,30 @@
+---
+title: "Modeling correlation and regression"
+subtitle: "<span class='code'>13:30-15:00</span>"
+date: "2024-07-26"
+image: "images/03-design.png"
+tbl-colwidths: [5,20,75]
+---
+
+<!-- Shortcode for embedding a Quarto RevealJS presentation inside of a website -->
+<!-- see [GH issue ](https://github.com/quarto-dev/quarto-cli/discussions/7410) -->
+
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src="../lessons_slides/03-design.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+ 
+```{=html}
+<iframe class="slide-deck" src="../lessons_slides/03_Pres_std1.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+<a href='../lessons_slides/03_Pres_std1.pdf' target="_blank">View slides in full screen</a>
+
+
+# Lesson's outline
+
+- Chi-Square Tests
+- Regression
+- ANOVA
+- Power calculations for basic study designs
+- Use power and sample size calculations as the basis of argument in support of study design, feasibility and testing
+
