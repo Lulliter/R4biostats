@@ -399,13 +399,6 @@
     "text": "Lab code"
   },
   {
-    "objectID": "materials.html#linking-other-stuff",
-    "href": "materials.html#linking-other-stuff",
-    "title": "Materials",
-    "section": "Linking other stuff",
-    "text": "Linking other stuff"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Intro to Biostatistics with R",
@@ -417,7 +410,7 @@
     "href": "index.html#license",
     "title": "Intro to Biostatistics with R",
     "section": "License",
-    "text": "License\nThe work presented in this website is licensed under a    Creative Commons Attribution-ShareAlike 4.0 International License, except for the borrowed and mentioned with proper “Source:” statements."
+    "text": "License\nThe work presented in this website is licensed under a     Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License, except for the borrowed and mentioned with proper “Source:” statements."
   },
   {
     "objectID": "about.html",
