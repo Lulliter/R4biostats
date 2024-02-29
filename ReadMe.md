@@ -38,7 +38,11 @@ The content of this website is licensed under a [Creative Commons Attribution-No
 I acknowledge inputs taken from these very valuable sources:
 
 + [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials**  (License {{< fa brands creative-commons >}})
-+ [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyright ![fa-copyright](images/copyright.svg) )
++ [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyright ![fa-copyright](images/copyright-regular.svg) )
+
+<i class="fa-regular fa-copyright"></i>
+
+<img src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/6.x/svgs/regular/copyright.svg" width="50" height="50">
 
 
 ## Web stuff 
