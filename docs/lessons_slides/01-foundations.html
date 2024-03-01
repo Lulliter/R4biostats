@@ -11,8 +11,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <meta name="author" content="Cédric Scherer // posit::conf // September 2023">
-  <title>R 4 biostats - Designing Data Visualizations to Successfully Tell a Story</title>
+  <meta name="author" content="M. Chiara Mimmi, Ph.D. | Università degli Studi di Pavia">
+  <meta name="dcterms.date" content="2024-07-24">
+  <title>R 4 biostats - Day 1: Intro to R and data analysis with R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,157 +328,41 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Designing Data Visualizations<br> to Successfully Tell a Story</h1>
-  <p class="subtitle"><span style="font-size:2em;">Foundations of Data Visualization</span></p>
+  <h1 class="title">Day 1: Intro to R and data analysis with R</h1>
+  <p class="subtitle"><span style="font-size:2em;"> …. more details </span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://www.cedricscherer.com" style="color:#28a87d;font-weight:600;">Cédric Scherer</a> // posit::conf // September 2023 
+<a href="https://lulliter.github.io/R4biostats/teacher.html" style="color:#72aed8;font-weight:600;">M. Chiara Mimmi, Ph.D.</a> | Università degli Studi di Pavia 
 </div>
 </div>
 </div>
 
+  <p class="date">July 24, 2024</p>
 </section>
-<section id="data-visualization-is-any-graphical-representation-of-information-and-data." class="title-slide slide level1 center" data-background-color="#000000">
-<h1>Data Visualization<br><br><span style="color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;">is any graphical representation<br>of information and data.</span></h1>
-
-</section>
-
-<section id="data-visualization-helps-to-amplify-cognition-gain-insights-discover-explain-and-make-decisions." class="title-slide slide level1 center" data-background-color="#000000">
-<h1>Data Visualization<br><br><span style="color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;">helps to amplify cognition, gain insights, discover, explain, and make decisions.</span></h1>
-
-</section>
-
-<section id="data-visualization-converts-information-into-visual-forms-as-quantifiable-features." class="title-slide slide level1 center" data-background-color="#000000">
-<h1>Data Visualization<br><br><span style="color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;">converts information into visual forms<br>as quantifiable features.</span></h1>
-
-</section>
-
 <section>
-<section id="data-visualization-is-part-art-and-part-science.-." class="title-slide slide level1 center" data-background-color="#000000">
-<h1>Data Visualization<br><br><span style="color:#e2e2e2;font-size:.6em;Asap;font-stretch:87.5%;font-weight:500;">is part art and part science.<br><span style="color:#000000;">.</span></span></h1>
+<section id="why-is-r-so-great-it-is-free-system-agnostic-extremely-versatile-and-used-by-many-statisticians-and-biostatisticians-all-over-the-world." class="title-slide slide level1 center" data-background-color="#000000">
+<h1>Why is R so great? <br><br><span style="color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;"> it is free, system-agnostic, extremely versatile and used by many statisticians and biostatisticians all over the world.</span></h1>
 
 </section>
-<section id="dataviz-office" class="slide level2" data-menu-title="DataViz Office">
-<h2></h2>
-<p><br><br></p>
-
-<img data-src="img/dataviz-office-eazybi.png" class="r-stretch quarto-figure-center"><p class="caption">Source: eazybi</p></section>
 <section id="dataviz-science" class="slide level2" data-menu-title="DataViz Science">
 <h2></h2>
 <p><br></p>
-
-<img data-src="img/scatterplot-ranganathan-2014.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.researchgate.net/figure/Country-based-correlation-scatter-plot-for-log-GDP-per-capita-and-Democracy-for-the-year_fig1_259920542">Ranganathan et al.&nbsp;2014</a></p></section>
-<section id="dataviz-dashboard" class="slide level2" data-menu-title="DataViz Dashboard">
-<h2></h2>
-
-<img data-src="img/dashboard-datameer.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.datameer.com/blog/data-visualization/">datameer.com</a></p></section>
-<section id="dataviz-beach" class="slide level2" data-menu-title="DataViz Beach">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/perpetual-plastic.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://perpetual-plastic.net/">“Perpetual Plastic”</a> by Liina Klauss, Skye Morét &amp; Moritz Stefaner</p></section>
-<section id="dataviz-artistic" class="slide level2" data-menu-title="DataViz Artistic">
-<h2></h2>
-
-<img data-src="img/patchwork-kingdom.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.visualcinnamon.com/collection/patchwork-kingdoms/">“Patchwork Kingdoms”</a> by Nadieh Bremer</p></section>
-<section id="dataviz-history-minard-napoleon" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/minard-napoleon.png" class="r-stretch quarto-figure-center"><p class="caption">“Carte figurative des pertes successives en hommes de l’Armée Française dans la campagne de Russie 1812–1813” by Charles Joseph Minard (1869)</p></section>
-<section id="dataviz-history-minard-napoleon-hannibal" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-
-<img data-src="img/minard-full.png" class="r-stretch quarto-figure-center"><p class="caption">“Carte figurative des pertes successives en hommes de l’Armée qu’Annibal conduisit d’Espagne en Italie en traversant les Gaules (selon Polybe)” (top) and “Carte figurative des pertes successives en hommes de l’Armée Française dans la campagne de Russie 1812–1813” (bottom) by Charles Joseph Minard (1869)</p><div class="fragment">
-<ul>
-<li style="font-size:.6em;">
-shows the force levels of the armies of Hannibal (218 BC) and Napoleon (1812-1813), respectively
-</li>
-<li style="font-size:.6em;">
-some data visualization practioners call it (one of) <b>the best statistical drawings ever created</b>
-</li>
-</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/scatterplot-ranganathan-2014.png"></p>
+<figcaption>Source: <a href="https://www.researchgate.net/figure/Country-based-correlation-scatter-plot-for-log-GDP-per-capita-and-Democracy-for-the-year_fig1_259920542">Ranganathan et al.&nbsp;2014</a></figcaption>
+</figure>
 </div>
-</section>
-<section id="dataviz-history-minard-cotton" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/minard-cotton.jpg" class="r-stretch quarto-figure-center"><p class="caption">“Carte figurative et approximative des quantités de coton brut importées en Europe en 1858, en 1864 et en 1865” by Charles Joseph Minard (1866)</p></section>
-<section id="dataviz-history-minard-paris" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-
-<img data-src="img/minard-paris.jpg" class="r-stretch quarto-figure-center"><p class="caption">“Carte figurative et approximative des poids des bestiaux venus á Paris sur les chemins de fer en 1862” by Charles Joseph Minard (1864)</p></section>
-<section id="dataviz-history-minard-canal" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-
-<img data-src="img/minard-canal.jpg" class="r-stretch quarto-figure-center"><p class="caption">“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)</p></section>
-<section id="dataviz-history-minard-canal-quote" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-
-<img data-src="img/minard-canal-quote.jpg" class="r-stretch quarto-figure-center"><p class="caption">“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)</p></section></section>
-<section>
-<section id="exercise" class="title-slide slide level1 center" data-background-color="#e6d9f2">
-<h1>Exercise</h1>
-
-</section>
-<section id="mental-calendar-exercise" class="slide level2" data-menu-title="Exercise: Mental Calender">
-<h2></h2>
-<p><br></p>
-<blockquote style="font-size:1.3em;font-weight:600;font-family:literata;font-style:italic;">
-If the year is a circle—where’s March and December in your mind?
-</blockquote>
-<div class="fragment">
-<p><br></p>
-<div>
-<div class="question">
-<ul>
-<li class="fragment">Imagine you had to create a polar representation of the months.</li>
-<li class="fragment">Draw a circle and indicate the position of March and December.</li>
-<li class="fragment">Use an arrow to illustrate the direciton of time.</li>
-<li class="fragment">Compare the results with your neighbors.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="mental-calendar-results-1" class="slide level2" data-menu-title="Mental Calender: Results">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/mental-calendars-results-position.png" class="r-stretch quarto-figure-center"><p class="caption">Wheel diagram of 76,922 placements of the months of December and March on the circumference of an empty circle.<br>Graphics by Henrik Lied at NRKbeta. <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02634/full">Laeng &amp; Hofseth, <em>Front Psychol.</em> 2019</a></p></section>
-<section id="mental-calendar-results-coxcomb" class="slide level2" data-menu-title="Mental Calender: Results">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/mental-calendars-results-direction.png" class="r-stretch quarto-figure-center"><p class="caption">Proportion of respondents choosing opposite direction of time on the year’s wheel.<br> Graphics by Vidar Kvien, NRK. <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02634/full">Laeng &amp; Hofseth, <em>Front Psychol.</em> 2019</a></p></section>
-<section id="dataviz-history-nightingale-1" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/nightingale-mortality.jpg" class="r-stretch quarto-figure-center"><p class="caption">“Diagram of the causes and mortality in the army in the East” (a so-called <em>coxcomb diagram</em>) by Florence Nightingale (1858)</p></section>
-<section id="dataviz-history-nightingale-bars" class="slide level2" data-menu-title="DataViz History">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/nightingale-bars.png" class="r-stretch quarto-figure-center"><p class="caption">“Relative mortality of the army at home and of the English male population at corresponding ages” by Florence Nightingale (1858)</p></section></section>
-<section id="visualize-your-data" class="title-slide slide level1 center">
-<h1>Visualize Your Data</h1>
-
-</section>
-
-<section id="quote-anscombe" class="title-slide slide level1 center" data-menu-title="Quote F. J. Anscombe" data-background-color="#000000">
-<h1><span style="font-size:.5em;color:#BBBBBB;line-height:.9;font-weight:500;">… make both <b style="color:#EDCBA0;font-weight:700;">calculations and graphs</b>.<br>Both sorts of output should be studied;<br>each will <b style="color:#EDCBA0;font-weight:700;">contribute to understanding</b>.</span><br><br><span style="font-size:.3em;color:#e2e2e2;line-height:.9;font-weight:300;font-style:normal;">F. J. Anscombe (1973)</span></h1>
 
 <div class="quarto-auto-generated-content">
-<p><img src="img/logo.png" class="slide-logo"></p>
+<p><img src="imgs_slides/mitgest_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://cedricscherer.com">Cédric Scherer</a> // posit::conf(2023)</p>
+<p><a href="https://lulliter.github.io/R4biostats/teacher.html">Maria Chiara Mimmi, Ph.D.</a> // MITGEST::training(2024)</p>
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 

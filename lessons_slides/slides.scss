@@ -4,13 +4,13 @@
 
 $font-family-sans-serif: 'Asap', 'Asap Condensed', 'Spline Sans', 'Tahoma', 'Arial', sans-serif;
 $font-family-serif: 'Literata', 'Bodoni MT', 'Bodoni 72', 'Georgia', 'Times', serif;
-$presentation-heading-color: #28A87D;
+$presentation-heading-color: #5b8bac; /*#28A87D; */
 $presentation-heading-font-weight: 800;
-$link-color: #28a87d;
-$link-color-dark: #79dfbd;
-$link-color-visited: #28A87D;
-$link-color-hover: #28A87D;
-$presentation-selection-background-color: #C2D8D0;
+$link-color: #d8717b; /*#28A87D; */
+$link-color-dark: #ac5a62;
+$link-color-visited: #d89b71;
+$link-color-hover: #d89b71;
+$presentation-selection-background-color: #d4e6f3; /*#C2D8D0; */
 $presentation-title-slide-text-align: "left";
 $presentation-block-margin: .0375rem;
 
@@ -21,7 +21,7 @@ h1.title {
   font-size: 1.7em;
   font-style: italic;
   font-weight: 800;
-  color: #28A87D;
+  color: #5b8bac; /*#28A87D; */
   line-height: 1.07;
   text-align: center;
   margin-bottom: .4em;

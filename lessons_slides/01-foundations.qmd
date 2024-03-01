@@ -1,12 +1,14 @@
 ---
-title: "Designing Data Visualizations<br> to Successfully Tell a Story"
-subtitle: "<span style='font-size:2em;'>Foundations of Data Visualization</span>"
-author: "<a href='https://www.cedricscherer.com' style='color:#28a87d;font-weight:600;'>Cédric Scherer</a>&ensp;//&ensp;posit::conf&ensp;//&ensp;September 2023"
+title: "Day 1: Intro to R and data analysis with R"
+subtitle: "<span style='font-size:2em;'> .... more details </span>"
+author: "<a href='https://lulliter.github.io/R4biostats/teacher.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
+date: 2024-07-24
+date-format: long
 format:
   revealjs:
     theme: slides.scss
-    logo: img/logo.png
-    footer: '[Cédric Scherer](https://cedricscherer.com) // posit::conf(2023)'
+    logo: imgs_slides/mitgest_logo.png
+    footer: '[Maria Chiara Mimmi, Ph.D.](https://lulliter.github.io/R4biostats/teacher.html) // MITGEST::training(2024)'
     transition: fade
     progress: true
     multiplex: false
@@ -36,27 +38,7 @@ execute:
 ---
 
 
-# Data Visualization<br><br><span style='color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;'>is any graphical representation<br>of information and data.</span>{background-color="#000000"}
-
-
-
-# Data Visualization<br><br><span style='color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;'>helps to amplify cognition, gain insights, discover, explain, and make decisions.</span>{background-color="#000000"}
-
-
-
-# Data Visualization<br><br><span style='color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;'>converts information into visual forms<br>as quantifiable features.</span>{background-color="#000000"}
-
-
-
-# Data Visualization<br><br><span style='color:#e2e2e2;font-size:.6em;Asap;font-stretch:87.5%;font-weight:500;'>is part art and part science.<br><span style='color:#000000;'>.</span></span>{background-color="#000000"}
-
-
-
-## {#dataviz-office data-menu-title="DataViz Office"}
-
-<br><br>
-
-![Source: eazybi](img/dataviz-office-eazybi.png)
+# Why is R so great? <br><br><span style='color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;'> it is free, system-agnostic, extremely versatile and used by many statisticians and biostatisticians all over the world.</span>{background-color="#000000"}
 
 
 
@@ -65,138 +47,6 @@ execute:
 <br>
 
 ![Source: [Ranganathan et al. 2014](https://www.researchgate.net/figure/Country-based-correlation-scatter-plot-for-log-GDP-per-capita-and-Democracy-for-the-year_fig1_259920542)](img/scatterplot-ranganathan-2014.png)
-
-
-
-## {#dataviz-dashboard data-menu-title="DataViz Dashboard"}
-
-![Source: [datameer.com](https://www.datameer.com/blog/data-visualization/ )](img/dashboard-datameer.png)
-
-
-
-## {#dataviz-beach data-menu-title="DataViz Beach"}
-
-<br>
-
-![Source: [“Perpetual Plastic”](https://perpetual-plastic.net/) by Liina Klauss, Skye Morét & Moritz Stefaner](img/perpetual-plastic.png)
-
-
-
-## {#dataviz-artistic data-menu-title="DataViz Artistic"}
-
-![Source: [“Patchwork Kingdoms”](https://www.visualcinnamon.com/collection/patchwork-kingdoms/) by Nadieh Bremer](img/patchwork-kingdom.png)
-
-
-
-## {#dataviz-history-minard-napoleon data-menu-title="DataViz History"}
-
-<br>
-
-![“Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812–1813” by Charles Joseph Minard (1869)](img/minard-napoleon.png)
-
-
-
-## {#dataviz-history-minard-napoleon-hannibal data-menu-title="DataViz History"}
-
-![“Carte figurative des pertes successives en hommes de l'Armée qu'Annibal conduisit d'Espagne en Italie en traversant les Gaules (selon Polybe)” (top) and “Carte figurative des pertes successives en hommes de l'Armée Française dans la campagne de Russie 1812–1813” (bottom) by Charles Joseph Minard (1869)](img/minard-full.png)
-
-. . .
-
-<ul>
-<li style='font-size:.6em;'>shows the force levels of the armies of Hannibal (218 BC) and Napoleon (1812-1813), respectively</li>
-<li style='font-size:.6em;'>some data visualization practioners call it (one of) <b>the best statistical drawings ever created</b></li>
-</ul>
-
-
-
-## {#dataviz-history-minard-cotton data-menu-title="DataViz History"}
-
-<br>
-
-![“Carte figurative et approximative des quantités de coton brut importées en Europe en 1858, en 1864 et en 1865” by Charles Joseph Minard (1866)](img/minard-cotton.jpg)
-
-
-
-## {#dataviz-history-minard-paris data-menu-title="DataViz History"}
-
-![“Carte figurative et approximative des poids des bestiaux venus á Paris sur les chemins de fer en 1862” by Charles Joseph Minard (1864)](img/minard-paris.jpg)
-
-
-
-## {#dataviz-history-minard-canal data-menu-title="DataViz History"}
-
-![“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)](img/minard-canal.jpg)
-
-
-
-## {#dataviz-history-minard-canal-quote data-menu-title="DataViz History"}
-
-![“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)](img/minard-canal-quote.jpg)
-
-
-
-# Exercise {background-color="#e6d9f2"}
-
-
-
-## {#mental-calendar-exercise data-menu-title="Exercise: Mental Calender"}
-
-<br>
-
-<blockquote style="font-size:1.3em;font-weight:600;font-family:literata;font-style:italic;">If the year is a circle—where’s March and December in your mind?</blockquote>
-
-. . .
-
-<br>
-
-::: incremental
-::: question
--  Imagine you had to create a polar representation of the months.
--  Draw a circle and indicate the position of March and December.
--  Use an arrow to illustrate the direciton of time.
--  Compare the results with your neighbors.
-:::
-:::
-
-
-
-## {#mental-calendar-results-1 data-menu-title="Mental Calender: Results"}
-
-<br>
-
-![Wheel diagram of 76,922 placements of the months of December and March on the circumference of an empty circle.<br>Graphics by Henrik Lied at NRKbeta. [Laeng & Hofseth, *Front Psychol.* 2019](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02634/full)](img/mental-calendars-results-position.png)
-
-
-
-## {#mental-calendar-results-coxcomb data-menu-title="Mental Calender: Results"}
-
-<br>
-
-![Proportion of respondents choosing opposite direction of time on the year’s wheel.<br> Graphics by Vidar Kvien, NRK. [Laeng & Hofseth, *Front Psychol.* 2019](https://www.frontiersin.org/articles/10.3389/fpsyg.2019.02634/full)](img/mental-calendars-results-direction.png)
-
-
-
-## {#dataviz-history-nightingale-1 data-menu-title="DataViz History"}
-
-<br>
-
-![“Diagram of the causes and mortality in the army in the East” (a so-called *coxcomb diagram*) by Florence Nightingale (1858)](img/nightingale-mortality.jpg)
-
-
-
-## {#dataviz-history-nightingale-bars data-menu-title="DataViz History"}
-
-<br>
-
-![“Relative mortality of the army at home and of the English male population at corresponding ages” by Florence Nightingale (1858)](img/nightingale-bars.png)
-
-
-
-# Visualize Your Data
-
-
-
-# <span style='font-size:.5em;color:#BBBBBB;line-height:.9;font-weight:500;'>... make both <b style='color:#EDCBA0;font-weight:700;'>calculations and graphs</b>.<br>Both sorts of output should be studied;<br>each will <b style='color:#EDCBA0;font-weight:700;'>contribute to understanding</b>.</span><br><br><span style='font-size:.3em;color:#e2e2e2;line-height:.9;font-weight:300;font-style:normal;'>F. J. Anscombe (1973)</span>{#quote-anscombe data-menu-title="Quote F. J. Anscombe" background-color="#000000" }
 
 
 

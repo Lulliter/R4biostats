@@ -25,7 +25,8 @@ To use in:
     + ~~`![fa-crown](images/copyright-regular.svg)`~~ (no size spec!!!)
     + `<img src="images/copyright-regular.svg" width="16" height="16">` (yes size spec!!!)
   + `*.qmd` 
-    + `\{\{< fa brands copyright >\}\}`
+    + quarto wrap `{{< fa brands copyright > }}`
+    + r inline code `r fontawesome::fa("fab fa-windows", fill = "steelblue")`
 
 # Attributions
 The content of this website is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements.

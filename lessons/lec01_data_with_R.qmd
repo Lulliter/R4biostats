@@ -18,8 +18,8 @@ tbl-colwidths: [5,20,75]
 
 # Lesson's outline
 
-• Introduction to R and R-studio
-• Manipulation of R objects: vectors, matrix, data.frame
-• Descriptive statistics (position measures, variability measures, basic plots)
-• Basics of inferential statistics
+- Introduction to R and R-studio
+- Manipulation of R objects: vectors, matrix, data.frame
+- Descriptive statistics (position measures, variability measures, basic plots)
+- Basics of inferential statistics
 

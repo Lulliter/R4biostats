@@ -11,8 +11,9 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.550">
 
-  <meta name="author" content="Cédric Scherer // posit::conf // September 2023">
-  <title>R 4 biostats - Designing Data Visualizations to Successfully Tell a Story</title>
+  <meta name="author" content="M. Chiara Mimmi, Ph.D. | Università degli Studi di Pavia">
+  <meta name="dcterms.date" content="2024-07-27">
+  <title>R 4 biostats - Day 4: Intro to ML</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -327,230 +328,19 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Designing Data Visualizations<br> to Successfully Tell a Story</h1>
-  <p class="subtitle"><span style="font-size:2em;">Guide the View(er)</span></p>
+  <h1 class="title">Day 4: Intro to ML</h1>
+  <p class="subtitle"><span style="font-size:2em;"> …. more details </span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<a href="https://www.cedricscherer.com" style="color:#28a87d;font-weight:600;">Cédric Scherer</a> // posit::conf // September 2023 
+<a href="https://lulliter.github.io/R4biostats/teacher.html" style="color:#72aed8;font-weight:600;">M. Chiara Mimmi, Ph.D.</a> | Università degli Studi di Pavia 
 </div>
 </div>
 </div>
 
+  <p class="date">July 27, 2024</p>
 </section>
-<section>
-<section id="guide-the-viewer" class="title-slide slide level1 center" data-menu-title="Guide the View(er)" data-background-image="img/section-guide-viewer.png" data-background-position="center">
-<h1></h1>
-<div class="foooter">
-
-</div>
-</section>
-<section id="power-of-annotation-iib-blank" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/breakup-times-facebook-blank.png" class="r-stretch quarto-figure-center"><p class="caption">David McCandless &amp; Lee Byron, <a href="https://informationisbeautiful.net/2010/peak-break-up-times-on-facebook/">Information is Beautiful</a> (modified)</p></section>
-<section id="power-of-annotation-iib" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/breakup-times-facebook.png" class="r-stretch quarto-figure-center"><p class="caption">David McCandless &amp; Lee Byron, <a href="https://informationisbeautiful.net/2010/peak-break-up-times-on-facebook/">Information is Beautiful</a></p></section>
-<section id="power-of-annotation-popularity-neil" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-<p><br><br></p>
-
-<img data-src="img/neil-popularity.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://questionsindataviz.com/2018/01/06/is-white-space-always-your-friend/">“Is white space always your friend?”</a> by Neil Richards</p></section>
-<section id="power-of-annotation-ft-john-burn-murdoch" class="slide level2" data-menu-title="The Power of Annotations" data-background-color="black">
-<h2></h2>
-<p><br></p>
-
-<img data-src="img/text-ft-john-burn-murdoch.png" class="r-stretch"></section>
-<section id="annotations-playfair" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="img/playfair-line-annotations.png" class="r-stretch quarto-figure-center"><p class="caption">Time series with annotations by William Playfair from “The Commercial and Political Atlas and Statistical Breviary” (1786)</p></section>
-<section id="power-of-annotation-nyt-arctiv-ice" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="img/annotation-climate-change.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0">“Yearly Fluctuations in Area of Arctic Covered by Ice”</a> by Derek Watkins (New York Times)</p></section>
-<section id="annotations-gapminder-example-0" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-emphasis-again-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-1" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-1-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-2" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-2-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-3" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-3-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-4" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-4-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-5" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-5-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-gapminder-example-6" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/gapminder-example-guide-6-1.png" width="2400" class="r-stretch"></section>
-<section id="annotations-cars-example-1" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/stacked-bars-cars-annotated-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2800"></section>
-<section id="annotations-cars-example-2" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/stacked-bars-cars-annotated-colors-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2800"></section>
-<section id="annotations-cars-example-3" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/stacked-bars-cars-facet-annotated-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2800"></section>
-<section id="annotations-cars-example-4" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="04-guide_files/figure-revealjs/stacked-bars-cars-facet-annotated-color-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2800"></section>
-<section id="annotations-cars-example-5" class="slide level2" data-menu-title="The Power of Annotations">
-<h2></h2>
-
-<img data-src="img/stacked-bars-cars-facet-annotated-color-labels.png" class="quarto-figure quarto-figure-center r-stretch"></section>
-<section id="confuse-with-colors" class="slide level2 center">
-<h2>Confuse with Colors</h2>
-
-<img data-src="img/owid-carbon-footprint-travel.png" class="center r-stretch quarto-figure-center"><p class="caption">OurWorldInData 2020 <a href="https://ourworldindata.org/travel-carbon-footprint">(new version)</a></p></section>
-<section id="confuse-with-colors-1" class="slide level2 center">
-<h2>Confuse with Colors</h2>
-
-<img data-src="img/owid-carbon-footprint-travel-div.png" class="center r-stretch quarto-figure-center"><p class="caption">OurWorldInData 2020, suggested fix</p></section>
-<section id="dont-confuse-with-color" class="slide level2 center">
-<h2>Don’t Confuse with Color</h2>
-
-<img data-src="04-guide_files/figure-revealjs/bar-example-colors-1-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2020"></section>
-<section id="guide-with-colors" class="slide level2 center">
-<h2>Guide with Colors</h2>
-
-<img data-src="04-guide_files/figure-revealjs/bar-example-colors-2-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2020"></section>
-<section id="guide-with-colors-1" class="slide level2 center">
-<h2>Guide with Colors</h2>
-
-<img data-src="04-guide_files/figure-revealjs/bar-example-colors-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="2020"></section>
-<section id="assist-the-viewer" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/ft-heatmap.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.ft.com/content/3f3ce35e-8c9b-11e6-8aa5-f79f5696c731">“Frankfurt vies for UK banking jobs post-Brexit”</a> by Alan Smith &amp; Laura Noonan (Financial Times)</p></section>
-<section id="assist-the-viewer-1" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/ft-heatmap-zoom.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.ft.com/content/3f3ce35e-8c9b-11e6-8aa5-f79f5696c731">“Frankfurt vies for UK banking jobs post-Brexit”</a> by Alan Smith &amp; Laura Noonan (Financial Times)</p></section>
-<section id="assist-the-viewer-2" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/yougov-heatmap.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://yougov.co.uk/topics/consumer/articles-reports/2019/04/05/tesco-nations-primary-secondary-supermarket">“Tesco is the nation’s primary AND secondary supermarket”</a> by Matthew Smith (YouGov)</p></section>
-<section id="assist-the-viewer-3" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/yougov-heatmap-highlight-1.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://yougov.co.uk/topics/consumer/articles-reports/2019/04/05/tesco-nations-primary-secondary-supermarket">“Tesco is the nation’s primary AND secondary supermarket”</a> by Matthew Smith (YouGov)</p></section>
-<section id="assist-the-viewer-4" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/yougov-heatmap-highlight-2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://yougov.co.uk/topics/consumer/articles-reports/2019/04/05/tesco-nations-primary-secondary-supermarket">“Tesco is the nation’s primary AND secondary supermarket”</a> by Matthew Smith (YouGov)</p></section>
-<section id="assist-the-viewer-5" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/yougov-heatmap-highlight-3.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://yougov.co.uk/topics/consumer/articles-reports/2019/04/05/tesco-nations-primary-secondary-supermarket">“Tesco is the nation’s primary AND secondary supermarket”</a> by Matthew Smith (YouGov)</p></section>
-<section id="assist-the-viewer-6" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/nyt-arctic-ice-assist-1.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0">“Yearly Fluctuations in Area of Arctic Covered by Ice”</a> by Derek Watkins (New York Times)</p></section>
-<section id="assist-the-viewer-7" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/nyt-arctic-ice-assist-2.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://www.nytimes.com/interactive/2015/03/24/science/earth/arctic-ice-low-winter-maximum.html?_r=0">“Yearly Fluctuations in Area of Arctic Covered by Ice”</a> by Derek Watkins (New York Times)</p></section>
-<section id="assist-the-viewer-8" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/usgs-streamflow-droughts.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">“100 Years of Streamflow Drought”, in collaboration with USGS</p></section>
-<section id="assist-the-viewer-9" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/usgs-streamflow-droughts-insets.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">“100 Years of Streamflow Drought”, in collaboration with USGS</p></section>
-<section id="assist-the-viewer-10" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/richest-people-germany.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: <a href="https://www.linkedin.com/posts/jankuehn_datavisualization-activity-7108374728871948288-X7la">Jan Kühn</a></p></section>
-<section id="assist-the-viewer-11" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/richest-people-germany-zoom.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: <a href="https://www.linkedin.com/posts/jankuehn_datavisualization-activity-7108374728871948288-X7la">Jan Kühn</a></p></section>
-<section id="assist-the-viewer-12" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/richest-people-germany-zoom.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: <a href="https://www.linkedin.com/posts/jankuehn_datavisualization-activity-7108374728871948288-X7la">Jan Kühn</a></p></section>
-<section id="assist-the-viewer-13" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/datawrapper-direct-labels.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: Lisa Charlotte Muth, <a href="https://blog.datawrapper.de/text-in-data-visualizations/">DataWrapper Blog</a></p></section>
-<section id="assist-the-viewer-14" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/datawrapper-axis-placement.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: Lisa Charlotte Muth, <a href="https://blog.datawrapper.de/text-in-data-visualizations/">DataWrapper Blog</a></p></section>
-<section id="assist-the-viewer-15" class="slide level2 center">
-<h2>Assist the Viewer</h2>
-
-<img data-src="img/datawrapper-axis-units.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Source: Lisa Charlotte Muth, <a href="https://blog.datawrapper.de/text-in-data-visualizations/">DataWrapper Blog</a></p></section>
-<section id="illustrate-with-images" class="slide level2 center">
-<h2>Illustrate with Images</h2>
-
-<img data-src="img/penguins.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption">Modified #TidyTuesday Contribution | Images: Allison Horst</p></section>
-<section id="illustrate-with-images-1" class="slide level2 center">
-<h2>Illustrate with Images</h2>
-
-<img data-src="img/coffee-ratings.png" class="quarto-figure quarto-figure-center r-stretch"><p class="caption"><a href="https://www.behance.net/gallery/100638417/Not-My-Cup-of-Coffee">“Not my Cup of Coffee”</a> (#TidyTuesday Contribution)</p></section></section>
-<section>
-<section id="wrap-up" class="title-slide slide level1 center" data-background-color="black">
-<h1>Wrap-Up</h1>
-
-</section>
-<section id="wrap-up-wp-air-quality" class="slide level2" data-menu-title="Wrap-Up">
-<h2></h2>
-
-<img data-src="img/wp-air-quality.png" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.washingtonpost.com/business/2019/06/06/why-crowded-meetings-conference-rooms-make-you-so-so-tired/">“Clearing the Air”</a> by Adam Ginsburg (Washington Post)</p></section>
-<section id="wrap-up-wp-air-quality-notes" class="slide level2" data-menu-title="Wrap-Up">
-<h2></h2>
-
-<img data-src="img/wp-air-quality-notes.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://twitter.com/chezVoila/status/1136629250528862208">Notes by Francis Gagnon</a> (Voilà)</p></section>
-<section id="summary" class="slide level2" data-menu-title="Summary">
-<h2></h2>
-
-<img data-src="img/summary.png" class="r-stretch"></section></section>
-<section>
-<section id="exercises" class="title-slide slide level1 center">
-<h1>Exercises</h1>
-
-</section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise 1</h2>
-<div class="question">
-<p><b style="font-size:1.3em;">Take notes on the following fun graphic.</b></p>
-<ul>
-<li>What is the take-home message you learn from the chart.</li>
-<li>What are elements used to guide and assist the viewer?</li>
-<li>Does the graphic work for you?</li>
-</ul>
-</div>
-</section>
-<section id="exercise-1-1" class="slide level2">
-<h2>Exercise 1</h2>
-
-<img data-src="img/exercise-wp-hot-dogs.jpg" class="r-stretch quarto-figure-center"><p class="caption">Source: <a href="https://www.washingtonpost.com/sports/2023/07/01/hot-dog-eating-contest-competitive-eater/">“How hot dog contestants went from eating 10 to 76 hot dogs in 10 minutes”</a> by Carson TerBush (Washington Post)</p></section>
 <section id="exercise-2" class="slide level2">
 <h2>Exercise 2</h2>
 <div class="question">
@@ -564,18 +354,17 @@
 </section>
 <section id="exercise-2-1" class="slide level2">
 <h2>Exercise 2</h2>
-
-<img data-src="img/exercise-stacked-bars.png" class="r-stretch quarto-figure-center"><p class="caption">Source: Storytelling with Data</p></section>
-<section id="section" class="slide level2" data-background-image="img/exercise-what-now.png" data-background-position="center" data-background-size="75%">
+</section>
+<section id="section" class="slide level2" data-background-image="imgs_slides/exercise-what-now.png" data-background-position="center" data-background-size="75%">
 <h2></h2>
 
 <div class="quarto-auto-generated-content">
-<p><img src="img/logo.png" class="slide-logo"></p>
+<p><img src="imgs_slides/mitgest_logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://cedricscherer.com">Cédric Scherer</a> // posit::conf(2023)</p>
+<p><a href="https://lulliter.github.io/R4biostats/teacher.html">Maria Chiara Mimmi, Ph.D.</a> // MITGEST::training(2024)</p>
 </div>
 </div>
-</section></section>
+</section>
     </div>
   </div>
 

@@ -1,17 +1,25 @@
 ---
 title: "Intro to Biostatistics with R"
-subtitle: "15-18 of July, 2024"
+subtitle: "24-27 July, 2024"
+## -------  general Output Options
 execute:     
-  eval: true
-  echo: false     #  include source code in output
+  eval: false
+  echo: true     #  include source code in output
   warning: false  #  include warning code in output
   error: false    #  include error code in output
-  output: true   # include output code in output (CHG in BLOCKS)
+  output: false   # include output code in output (CHG in BLOCKS)
   # include: false   # R still runs but code and results DON"T appear in output  
-  cache: false # normalmnte false
+  # cache: false
 fig-cap-location: top
 tbl-cap-location: top
-
+toc: true
+format:
+  html:
+    code-fold: false # redundant IF echo false 
+    toc-depth: 2
+    toc_float: true
+    toc-location: left
+    toc-title: ""
 ---
 
 
@@ -47,10 +55,17 @@ Though the vast majority of what you will learn in this course can be applied in
 <!-- + ~~Know how to combine the strengths of random-effects and fixed effects approaches into a single model.~~ -->
 <!-- + ~~Know how to estimate these models and interpret the results.~~ -->
 
+# Why use R?
+
+
+
 
 # Schedule
 
 ```{r sched}
+#| eval: true
+#| echo: false
+#| output: true
 
 library (tibble)
 library (kableExtra)

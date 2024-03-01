@@ -56,597 +56,373 @@
     "text": "Lab code"
   },
   {
-    "objectID": "lessons_slides/04-guide.html#power-of-annotation-iib-blank",
-    "href": "lessons_slides/04-guide.html#power-of-annotation-iib-blank",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "David McCandless & Lee Byron, Information is Beautiful (modified)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#power-of-annotation-iib",
-    "href": "lessons_slides/04-guide.html#power-of-annotation-iib",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "David McCandless & Lee Byron, Information is Beautiful"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#power-of-annotation-popularity-neil",
-    "href": "lessons_slides/04-guide.html#power-of-annotation-popularity-neil",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Is white space always your friend?” by Neil Richards"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#annotations-playfair",
-    "href": "lessons_slides/04-guide.html#annotations-playfair",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Time series with annotations by William Playfair from “The Commercial and Political Atlas and Statistical Breviary” (1786)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#power-of-annotation-nyt-arctiv-ice",
-    "href": "lessons_slides/04-guide.html#power-of-annotation-nyt-arctiv-ice",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Yearly Fluctuations in Area of Arctic Covered by Ice” by Derek Watkins (New York Times)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#confuse-with-colors",
-    "href": "lessons_slides/04-guide.html#confuse-with-colors",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Confuse with Colors",
-    "text": "Confuse with Colors\n\nOurWorldInData 2020 (new version)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#confuse-with-colors-1",
-    "href": "lessons_slides/04-guide.html#confuse-with-colors-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Confuse with Colors",
-    "text": "Confuse with Colors\n\nOurWorldInData 2020, suggested fix"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#dont-confuse-with-color",
-    "href": "lessons_slides/04-guide.html#dont-confuse-with-color",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Don’t Confuse with Color",
-    "text": "Don’t Confuse with Color"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#guide-with-colors",
-    "href": "lessons_slides/04-guide.html#guide-with-colors",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Guide with Colors",
-    "text": "Guide with Colors"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#guide-with-colors-1",
-    "href": "lessons_slides/04-guide.html#guide-with-colors-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Guide with Colors",
-    "text": "Guide with Colors"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Frankfurt vies for UK banking jobs post-Brexit” by Alan Smith & Laura Noonan (Financial Times)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-1",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Frankfurt vies for UK banking jobs post-Brexit” by Alan Smith & Laura Noonan (Financial Times)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-2",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Tesco is the nation’s primary AND secondary supermarket” by Matthew Smith (YouGov)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-3",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Tesco is the nation’s primary AND secondary supermarket” by Matthew Smith (YouGov)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-4",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-4",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Tesco is the nation’s primary AND secondary supermarket” by Matthew Smith (YouGov)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-5",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-5",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Tesco is the nation’s primary AND secondary supermarket” by Matthew Smith (YouGov)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-6",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-6",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Yearly Fluctuations in Area of Arctic Covered by Ice” by Derek Watkins (New York Times)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-7",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-7",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“Yearly Fluctuations in Area of Arctic Covered by Ice” by Derek Watkins (New York Times)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-8",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-8",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“100 Years of Streamflow Drought”, in collaboration with USGS"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-9",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-9",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\n“100 Years of Streamflow Drought”, in collaboration with USGS"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-10",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-10",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Jan Kühn"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-11",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-11",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Jan Kühn"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-12",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-12",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Jan Kühn"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-13",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-13",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-14",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-14",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#assist-the-viewer-15",
-    "href": "lessons_slides/04-guide.html#assist-the-viewer-15",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Assist the Viewer",
-    "text": "Assist the Viewer\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#illustrate-with-images",
-    "href": "lessons_slides/04-guide.html#illustrate-with-images",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Illustrate with Images",
-    "text": "Illustrate with Images\n\nModified #TidyTuesday Contribution | Images: Allison Horst"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#illustrate-with-images-1",
-    "href": "lessons_slides/04-guide.html#illustrate-with-images-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Illustrate with Images",
-    "text": "Illustrate with Images\n\n“Not my Cup of Coffee” (#TidyTuesday Contribution)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#wrap-up-wp-air-quality",
-    "href": "lessons_slides/04-guide.html#wrap-up-wp-air-quality",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Clearing the Air” by Adam Ginsburg (Washington Post)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#wrap-up-wp-air-quality-notes",
-    "href": "lessons_slides/04-guide.html#wrap-up-wp-air-quality-notes",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Notes by Francis Gagnon (Voilà)"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#exercise-1",
-    "href": "lessons_slides/04-guide.html#exercise-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nTake notes on the following fun graphic.\n\nWhat is the take-home message you learn from the chart.\nWhat are elements used to guide and assist the viewer?\nDoes the graphic work for you?"
-  },
-  {
-    "objectID": "lessons_slides/04-guide.html#exercise-1-1",
-    "href": "lessons_slides/04-guide.html#exercise-1-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nSource: “How hot dog contestants went from eating 10 to 76 hot dogs in 10 minutes” by Carson TerBush (Washington Post)"
-  },
-  {
     "objectID": "lessons_slides/04-guide.html#exercise-2",
     "href": "lessons_slides/04-guide.html#exercise-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "title": "Day 4: Intro to ML",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nTake look at the following stacked bar graph.\n\nWhat elements are used to guide the viewer? Does it work?\nDraw a version that makes it easier for a viewer to see the main message.\nHow could you improve the aesthetic appeal of the graphic?"
   },
   {
     "objectID": "lessons_slides/04-guide.html#exercise-2-1",
     "href": "lessons_slides/04-guide.html#exercise-2-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "title": "Day 4: Intro to ML",
     "section": "Exercise 2",
-    "text": "Exercise 2\n\nSource: Storytelling with Data"
+    "text": "Exercise 2"
   },
   {
     "objectID": "lessons_slides/04-guide.html#section",
     "href": "lessons_slides/04-guide.html#section",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "title": "Day 4: Intro to ML",
     "section": "",
-    "text": "Cédric Scherer // posit::conf(2023)"
+    "text": "Maria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#collaborators",
     "href": "lessons_slides/02_mine.html#collaborators",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "collaborators",
     "text": "collaborators\n\nJohanna Hardin, Pomona College\nBenjamin S. Baumer, Smith College\nAmelia McNamara, University of St Thomas\nNicholas J. Horton, Amherst College\nColin W. Rundel, Duke University"
   },
   {
     "objectID": "lessons_slides/02_mine.html#setting-the-scene",
     "href": "lessons_slides/02_mine.html#setting-the-scene",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "setting the scene",
     "text": "setting the scene\n\n\n\nAssumption 1:\nTeach authentic tools\n\n\nAssumption 2:\nTeach R as the authentic tool"
   },
   {
     "objectID": "lessons_slides/02_mine.html#takeaway",
     "href": "lessons_slides/02_mine.html#takeaway",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "takeaway",
     "text": "takeaway\n\n\nThe tidyverse provides an effective and efficient pathway for undergraduate students at all levels and majors to gain computational skills and thinking needed throughout the data science cycle.\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
     "objectID": "lessons_slides/02_mine.html#tidyverse",
     "href": "lessons_slides/02_mine.html#tidyverse",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidyverse",
     "text": "tidyverse\n\n\n\nmeta R package that loads eight core packages when invoked and also bundles numerous other packages upon installation\ntidyverse packages share a design philosophy, common grammar, and data structures"
   },
   {
     "objectID": "lessons_slides/02_mine.html#tidyverse-flow",
     "href": "lessons_slides/02_mine.html#tidyverse-flow",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidyverse flow",
     "text": "tidyverse flow"
   },
   {
     "objectID": "lessons_slides/02_mine.html#setup",
     "href": "lessons_slides/02_mine.html#setup",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "setup",
     "text": "setup\nData: Thousands of loans made through the Lending Club, a peer-to-peer lending platform available in the openintro package, with a few modifications.\n\nlibrary(tidyverse)\nlibrary(openintro)\n\nloans &lt;- loans_full_schema %&gt;%\n  mutate(\n    homeownership = str_to_title(homeownership), \n    bankruptcy = if_else(public_record_bankrupt &gt;= 1, \"Yes\", \"No\")\n  ) %&gt;%\n  filter(annual_income &gt;= 10) %&gt;%\n  select(\n    loan_amount, homeownership, bankruptcy,\n    application_type, annual_income, interest_rate\n  )"
   },
   {
     "objectID": "lessons_slides/02_mine.html#start-with-a-data-frame",
     "href": "lessons_slides/02_mine.html#start-with-a-data-frame",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "start with a data frame",
     "text": "start with a data frame\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;"
   },
   {
     "objectID": "lessons_slides/02_mine.html#tidy-data",
     "href": "lessons_slides/02_mine.html#tidy-data",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidy data",
     "text": "tidy data\n\nEach variable forms a column\nEach observation forms a row\nEach type of observational unit forms a table\n\n\n\nWickham, H. . (2014). Tidy Data. Journal of Statistical Software, 59(10), 1–23. doi.org/10.18637/jss.v059.i10."
   },
   {
     "objectID": "lessons_slides/02_mine.html#task-calculate-a-summary-statistic",
     "href": "lessons_slides/02_mine.html#task-calculate-a-summary-statistic",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: calculate a summary statistic",
     "text": "task: calculate a summary statistic\n\nCalculate the mean loan amount.\n\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;\n\n\n\n\nmean(loan_amount)\n\n\n\n\n\nError in mean(loan_amount): object 'loan_amount' not found"
   },
   {
     "objectID": "lessons_slides/02_mine.html#accessing-a-variable",
     "href": "lessons_slides/02_mine.html#accessing-a-variable",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 1: With attach():\n\nattach(loans)\nmean(loan_amount)\n\n[1] 16357.53\n\n\n\n\nNot recommended. What if you had another data frame you’re working with concurrently called car_loans that also had a variable called loan_amount in it?"
   },
   {
     "objectID": "lessons_slides/02_mine.html#accessing-a-variable-1",
     "href": "lessons_slides/02_mine.html#accessing-a-variable-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 2: Using $:\n\nmean(loans$loan_amount)\n\n[1] 16357.53\n\n\n\n\nApproach 3: Using with():\n\nwith(loans, mean(loan_amount))\n\n[1] 16357.53"
   },
   {
     "objectID": "lessons_slides/02_mine.html#accessing-a-variable-2",
     "href": "lessons_slides/02_mine.html#accessing-a-variable-2",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 4: The tidyverse approach:\n\nloans %&gt;%\n  summarise(mean_loan_amount = mean(loan_amount))\n\n# A tibble: 1 × 1\n  mean_loan_amount\n             &lt;dbl&gt;\n1           16358.\n\n\n\n\nMore verbose\nBut also more expressive and extensible"
   },
   {
     "objectID": "lessons_slides/02_mine.html#the-tidyverse-approach",
     "href": "lessons_slides/02_mine.html#the-tidyverse-approach",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "the tidyverse approach",
     "text": "the tidyverse approach\n\n\ntidyverse functions take a data argument that allows them to localize computations inside the specified data frame\ndoes not muddy the concept of what is in the current environment: variables always accessed from within in a data frame without the use of an additional function (like with()) or quotation marks, never as a vector"
   },
   {
     "objectID": "lessons_slides/02_mine.html#task-grouped-summary",
     "href": "lessons_slides/02_mine.html#task-grouped-summary",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: grouped summary",
     "text": "task: grouped summary\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\n\n\n\n\n\n\nHomeownership\nNumber of applicants\nAverage loan amount\n\n\n\nMortgage\n$18,132\n4,778\n\n\nOwn\n$15,665\n1,350\n\n\nRent\n$14,396\n3,848"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-i",
     "href": "lessons_slides/02_mine.html#break-it-down-i",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down I",
     "text": "break it down I\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-ii",
     "href": "lessons_slides/02_mine.html#break-it-down-ii",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down II",
     "text": "break it down II\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\n\n[input] data frame\n\n\n\n\nloans %&gt;%\n  group_by(homeownership)\n\n# A tibble: 9,976 × 6\n# Groups:   homeownership [3]\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;\n\n\n\n\n\ndata frame [output]"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-iii",
     "href": "lessons_slides/02_mine.html#break-it-down-iii",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down III",
     "text": "break it down III\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount)\n    )\n\n# A tibble: 3 × 2\n  homeownership avg_loan_amount\n  &lt;chr&gt;                   &lt;dbl&gt;\n1 Mortgage               18132.\n2 Own                    15665.\n3 Rent                   14396."
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-iv",
     "href": "lessons_slides/02_mine.html#break-it-down-iv",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    )\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-v",
     "href": "lessons_slides/02_mine.html#break-it-down-v",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down V",
     "text": "break it down V\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    ) %&gt;%\n  arrange(desc(avg_loan_amount))\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848"
   },
   {
     "objectID": "lessons_slides/02_mine.html#putting-it-back-together",
     "href": "lessons_slides/02_mine.html#putting-it-back-together",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "putting it back together",
     "text": "putting it back together\n\n[input] data frame\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    ) %&gt;%\n  arrange(desc(avg_loan_amount))\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848\n\n\n\n[output] data frame"
   },
   {
     "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate",
     "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\nres1 &lt;- aggregate(loan_amount ~ homeownership, \n                  data = loans, FUN = length)\nres1\n\n  homeownership loan_amount\n1      Mortgage        4778\n2           Own        1350\n3          Rent        3848\n\nnames(res1)[2] &lt;- \"n_applicants\"\nres1\n\n  homeownership n_applicants\n1      Mortgage         4778\n2           Own         1350\n3          Rent         3848"
   },
   {
     "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-1",
     "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\nres2 &lt;- aggregate(loan_amount ~ homeownership, \n                  data = loans, FUN = mean)\nnames(res2)[2] &lt;- \"avg_loan_amount\"\n\nres2\n\n  homeownership avg_loan_amount\n1      Mortgage        18132.45\n2           Own        15665.44\n3          Rent        14396.44\n\n\n\n\nres &lt;- merge(res1, res2)\nres[order(res$avg_loan_amount, decreasing = TRUE), ]\n\n  homeownership n_applicants avg_loan_amount\n1      Mortgage         4778        18132.45\n2           Own         1350        15665.44\n3          Rent         3848        14396.44"
   },
   {
     "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-2",
     "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-2",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\n\nres1 &lt;- aggregate(loan_amount ~ homeownership, data = loans, FUN = length)\nnames(res1)[2] &lt;- \"n_applicants\"\nres2 &lt;- aggregate(loan_amount ~ homeownership, data = loans, FUN = mean)\nnames(res2)[2] &lt;- \"avg_loan_amount\"\nres &lt;- merge(res1, res2)\nres[order(res$avg_loan_amount, decreasing = TRUE), ]\n\n\n\n\n\nGood: Inputs and outputs are data frames\n\nNot so good: Need to introduce\n\nformula syntax\npassing functions as arguments\nmerging datasets\nsquare bracket notation for accessing rows"
   },
   {
     "objectID": "lessons_slides/02_mine.html#grouped-summary-with-tapply",
     "href": "lessons_slides/02_mine.html#grouped-summary-with-tapply",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with tapply()\n",
     "text": "grouped summary with tapply()\n\n\nsort(\n  tapply(loans$loan_amount, loans$homeownership, mean),\n  decreasing = TRUE\n  )\n\nMortgage      Own     Rent \n18132.45 15665.44 14396.44 \n\n\n\n\nNot so good:\n\npassing functions as arguments\ndistinguishing between the various apply() functions\nending up with a new data structure (array)\nreading nested functions"
   },
   {
     "objectID": "lessons_slides/02_mine.html#task-data-visualization",
     "href": "lessons_slides/02_mine.html#task-data-visualization",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: data visualization",
     "text": "task: data visualization\n\nCreate side-by-side box plots that shows the relationship between loan amount and application type, faceted by homeownership."
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-i-1",
     "href": "lessons_slides/02_mine.html#break-it-down-i-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down I",
     "text": "break it down I\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-ii-1",
     "href": "lessons_slides/02_mine.html#break-it-down-ii-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down II",
     "text": "break it down II\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type))"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-iii-1",
     "href": "lessons_slides/02_mine.html#break-it-down-iii-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down III",
     "text": "break it down III\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount))"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-iv-1",
     "href": "lessons_slides/02_mine.html#break-it-down-iv-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount)) +\n  geom_boxplot()"
   },
   {
     "objectID": "lessons_slides/02_mine.html#break-it-down-iv-2",
     "href": "lessons_slides/02_mine.html#break-it-down-iv-2",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount)) +\n  geom_boxplot() +\n  facet_wrap(~ homeownership)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-ggplot",
     "href": "lessons_slides/02_mine.html#plotting-with-ggplot",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with ggplot()\n",
     "text": "plotting with ggplot()\n\n\nggplot(loans, \n       aes(x = application_type, y = loan_amount)) +\n  geom_boxplot() +\n  facet_wrap(~ homeownership)\n\n\n\nEach layer produces a valid plot\nFaceting by a third variable takes only one new function"
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-boxplot",
     "href": "lessons_slides/02_mine.html#plotting-with-boxplot",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with boxplot()\n",
     "text": "plotting with boxplot()\n\n\nlevels &lt;- sort(unique(loans$homeownership))\nlevels\n\n[1] \"Mortgage\" \"Own\"      \"Rent\"    \n\nloans1 &lt;- loans[loans$homeownership == levels[1],]\nloans2 &lt;- loans[loans$homeownership == levels[2],]\nloans3 &lt;- loans[loans$homeownership == levels[3],]"
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-boxplot-1",
     "href": "lessons_slides/02_mine.html#plotting-with-boxplot-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with boxplot()\n",
     "text": "plotting with boxplot()\n\n\npar(mfrow = c(1, 3))\n\nboxplot(loan_amount ~ application_type, \n        data = loans1, main = levels[1])\nboxplot(loan_amount ~ application_type, \n        data = loans2, main = levels[2])\nboxplot(loan_amount ~ application_type, \n        data = loans3, main = levels[3])"
   },
   {
     "objectID": "lessons_slides/02_mine.html#visualizing-a-different-relationship",
     "href": "lessons_slides/02_mine.html#visualizing-a-different-relationship",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "visualizing a different relationship",
     "text": "visualizing a different relationship\n\nVisualize the relationship between interest rate and annual income, conditioned on whether the applicant had a bankruptcy."
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-ggplot-1",
     "href": "lessons_slides/02_mine.html#plotting-with-ggplot-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with ggplot()\n",
     "text": "plotting with ggplot()\n\n\nggplot(loans, \n       aes(y = interest_rate, x = annual_income, \n           color = bankruptcy)) +\n  geom_point(alpha = 0.1) + \n  geom_smooth(method = \"lm\", linewidth = 2, se = FALSE) + \n  scale_x_log10()"
   },
   {
     "objectID": "lessons_slides/02_mine.html#further-customizing-ggplot",
     "href": "lessons_slides/02_mine.html#further-customizing-ggplot",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "further customizing ggplot()\n",
     "text": "further customizing ggplot()\n\n\nggplot(loans, \n       aes(y = interest_rate, x = annual_income, \n           color = bankruptcy)) +\n  geom_point(alpha = 0.1) + \n  geom_smooth(method = \"lm\", linewidth = 2, se = FALSE) + \n  scale_x_log10(labels = scales::label_dollar()) +\n  scale_y_continuous(labels = scales::label_percent(scale = 1)) +\n  scale_color_OkabeIto() +\n  labs(x = \"Annual Income\", y = \"Interest Rate\", \n       color = \"Previous\\nBankruptcy\") +\n  theme_minimal(base_size = 18)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-plot",
     "href": "lessons_slides/02_mine.html#plotting-with-plot",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with plot()\n",
     "text": "plotting with plot()\n\n\n# From the OkabeIto palette\ncols = c(No = \"#e6a003\", Yes = \"#57b4e9\")\n\nplot(\n  loans$annual_income,\n  loans$interest_rate,\n  pch = 16,\n  col = adjustcolor(cols[loans$bankruptcy], alpha.f = 0.1),\n  log = \"x\",\n  xlab = \"Annual Income ($)\",\n  ylab = \"Interest Rate (%)\",\n  xaxp = c(1000, 10000000, 1)\n)\n\nlm_b_no = lm(\n  interest_rate ~ log10(annual_income), \n  data = loans[loans$bankruptcy == \"No\",]\n)\nlm_b_yes = lm(\n  interest_rate ~ log10(annual_income), \n  data = loans[loans$bankruptcy == \"Yes\",]\n)\n\nabline(lm_b_no, col = cols[\"No\"], lwd = 3)\nabline(lm_b_yes, col = cols[\"Yes\"], lwd = 3)\n\nlegend(\n  \"topright\", \n  legend = c(\"Yes\", \"No\"), \n  title = \"Previous\\nBankruptcy\", \n  col = cols[c(\"Yes\", \"No\")], \n  pch = 16, lwd = 1\n)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#plotting-with-plot-1",
     "href": "lessons_slides/02_mine.html#plotting-with-plot-1",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with plot()\n",
     "text": "plotting with plot()"
   },
   {
     "objectID": "lessons_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
     "href": "lessons_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "beyond wrangling, summaries, visualizations",
     "text": "beyond wrangling, summaries, visualizations\nModeling and inference with tidymodels:\n\nA unified interface to modeling functions available in a large variety of packages\nSticking to the data frame in / data frame out paradigm\nGuardrails for methodology"
   },
   {
     "objectID": "lessons_slides/02_mine.html#consistency",
     "href": "lessons_slides/02_mine.html#consistency",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "consistency",
     "text": "consistency\n\nNo matter which approach or tool you use, you should strive to be consistent in the classroom whenever possible\ntidyverse offers consistency, something we believe to be of the utmost importance, allowing students to move knowledge about function arguments to their long-term memory"
   },
   {
     "objectID": "lessons_slides/02_mine.html#teaching-consistently",
     "href": "lessons_slides/02_mine.html#teaching-consistently",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "teaching consistently",
     "text": "teaching consistently\n\nChallenge: Google and Stack Overflow can be less useful – demo problem solving\nCounter-proposition: teach all (or multiple) syntaxes at once – trying to teach two (or more!) syntaxes at once will slow the pace of the course, introduce unnecessary syntactic confusion, and make it harder for students to complete their work.\n“Disciplined in what we teach, liberal in what we accept”\n\n\n\nPostel, J. (1980). DoD standard internet protocol. ACM SIGCOMM Computer Communication Review, 10(4), 12-51. datatracker.ietf.org/doc/html/rfc760"
   },
   {
     "objectID": "lessons_slides/02_mine.html#mixability",
     "href": "lessons_slides/02_mine.html#mixability",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "mixability",
     "text": "mixability\n\nMix with base R code or code from other packages\nIn fact, you can’t not mix with base R code!"
   },
   {
     "objectID": "lessons_slides/02_mine.html#scalability",
     "href": "lessons_slides/02_mine.html#scalability",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "scalability",
     "text": "scalability\nAdding a new variable to a visualization or a new summary statistic doesn’t require introducing a numerous functions, interfaces, and data structures"
   },
   {
     "objectID": "lessons_slides/02_mine.html#user-centered-design",
     "href": "lessons_slides/02_mine.html#user-centered-design",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "user-centered design",
     "text": "user-centered design\n\nInterfaces designed with user experience (and learning) in mind\nContinuous feedback collection and iterative improvements based on user experiences improve functions’ and packages’ usability (and learnability)"
   },
   {
     "objectID": "lessons_slides/02_mine.html#readability",
     "href": "lessons_slides/02_mine.html#readability",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "readability",
     "text": "readability\nInterfaces that are designed to produce readable code"
   },
   {
     "objectID": "lessons_slides/02_mine.html#community",
     "href": "lessons_slides/02_mine.html#community",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "community",
     "text": "community\n\nThe encouraging and inclusive tidyverse community is one of the benefits of the paradigm\nEach package comes with a website, each of these websites are similarly laid out, and results of example code are displayed, and extensive vignettes describe how to use various functions from the package together"
   },
   {
     "objectID": "lessons_slides/02_mine.html#shared-syntax",
     "href": "lessons_slides/02_mine.html#shared-syntax",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "shared syntax",
     "text": "shared syntax\nGet SQL for free with dplyr verbs!"
   },
   {
     "objectID": "lessons_slides/02_mine.html#building-a-curriculum",
     "href": "lessons_slides/02_mine.html#building-a-curriculum",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "building a curriculum",
     "text": "building a curriculum\n\nStart with library(tidyverse)\nTeach by learning goals, not packages"
   },
   {
     "objectID": "lessons_slides/02_mine.html#keeping-up-with-the-tidyverse",
     "href": "lessons_slides/02_mine.html#keeping-up-with-the-tidyverse",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "keeping up with the tidyverse",
     "text": "keeping up with the tidyverse\n\nBlog posts highlight updates, along with the reasoning behind them and worked examples\n\nLifecycle stages and badges"
   },
   {
     "objectID": "lessons_slides/02_mine.html#coda",
     "href": "lessons_slides/02_mine.html#coda",
-    "title": "Day 2 … tidyverse",
+    "title": "Day 2: Inference and Hypothesis testing",
     "section": "coda",
     "text": "coda\n\n\n\nWe are all converts to the tidyverse and have made a conscious choice to use it in our research and our teaching. We each learned R without the tidyverse and have all spent quite a few years teaching without it at a variety of levels from undergraduate introductory statistics courses to graduate statistical computing courses. This paper is a synthesis of the reasons supporting our tidyverse choice, along with benefits and challenges associated with teaching statistics with the tidyverse.\n\n\n\n\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
@@ -669,56 +445,28 @@
     "href": "install.html",
     "title": "Installation and setup",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine."
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
   },
   {
-    "objectID": "install.html#installing",
-    "href": "install.html#installing",
+    "objectID": "install.html#installing-and-using-r-packages",
+    "href": "install.html#installing-and-using-r-packages",
     "title": "Installation and setup",
-    "section": "Installing \n",
-    "text": "Installing \n\nR is available for free for Windows , GNU/Linux  and macOS .\n\nTo install it, you can go to this link. The latest available release is R 4.3.2 “Eye Holes” released on 2023/10/31, but any (fairly recent) version will do.\n\nIf you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\n# In R console\nbase::R.version.string\n\n…or by executing this command in your CLI (Command Line Interface):\n\n# In Terminal/Powershell/bash\nR --version"
-  },
-  {
-    "objectID": "install.html#install-rstudio-ide",
-    "href": "install.html#install-rstudio-ide",
-    "title": "Installation and setup",
-    "section": "Install RStudio IDE",
-    "text": "Install RStudio IDE\nWhile this is not required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor (IDE) wrapping and interfacing R (which needs to be installed first).\n\nTo install it you can go to this link. The free-version contains everything you need."
-  },
-  {
-    "objectID": "install.html#install-r-packages-from-the-cran",
-    "href": "install.html#install-r-packages-from-the-cran",
-    "title": "Installation and setup",
-    "section": "Install R packages from the CRAN",
-    "text": "Install R packages from the CRAN\nMany useful R function come in packages, free libraries of code written by R’s active user community. CRAN - the Comprehensive R Archive Network - is the general package repository for R: https://cran.r-project.org/."
-  },
-  {
-    "objectID": "install.html#r-packages-that-will-be-required-for-the-workshop",
-    "href": "install.html#r-packages-that-will-be-required-for-the-workshop",
-    "title": "Installation and setup",
-    "section": "R packages that will be required for the workshop",
-    "text": "R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
-  },
-  {
-    "objectID": "install.html#about-the-materials",
-    "href": "install.html#about-the-materials",
-    "title": "Installation and setup",
-    "section": "About the materials",
-    "text": "About the materials\nThis source code and license for all of the materials found on this website can be found on Github ."
+    "section": "Installing and using R packages",
+    "text": "Installing and using R packages\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (corrplot)\n\n# ... or with \"\"\nbase::library (\"corrplot\")\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nInstall/Update pckgs from RStudio"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Intro to Biostatistics with R",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\nccc\nmmm\nxxxx"
+    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\nWhy use R?\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\nccc\nmmm\nxxxx"
   },
   {
     "objectID": "lessons/lec01_data_with_R.html",
     "href": "lessons/lec01_data_with_R.html",
     "title": "Intro to R and data analysis",
     "section": "",
-    "text": "View slides in full screen\n\nLesson’s outline\n• Introduction to R and R-studio • Manipulation of R objects: vectors, matrix, data.frame • Descriptive statistics (position measures, variability measures, basic plots) • Basics of inferential statistics"
+    "text": "View slides in full screen\n\nLesson’s outline\n\nIntroduction to R and R-studio\nManipulation of R objects: vectors, matrix, data.frame\nDescriptive statistics (position measures, variability measures, basic plots)\nBasics of inferential statistics"
   },
   {
     "objectID": "lessons/lec03_corr_regress.html",
@@ -728,690 +476,25 @@
     "text": "View slides in full screen\n\nLesson’s outline\n\nChi-Square Tests\nRegression\nANOVA\nPower calculations for basic study designs\nUse power and sample size calculations as the basis of argument in support of study design, feasibility and testing"
   },
   {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-office",
-    "href": "lessons_slides/01-foundations.html#dataviz-office",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: eazybi"
-  },
-  {
     "objectID": "lessons_slides/01-foundations.html#dataviz-science",
     "href": "lessons_slides/01-foundations.html#dataviz-science",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "title": "Day 1: Intro to R and data analysis with R",
     "section": "",
-    "text": "Source: Ranganathan et al. 2014"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-dashboard",
-    "href": "lessons_slides/01-foundations.html#dataviz-dashboard",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: datameer.com"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-beach",
-    "href": "lessons_slides/01-foundations.html#dataviz-beach",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Perpetual Plastic” by Liina Klauss, Skye Morét & Moritz Stefaner"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-artistic",
-    "href": "lessons_slides/01-foundations.html#dataviz-artistic",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Patchwork Kingdoms” by Nadieh Bremer"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-napoleon",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-napoleon",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Carte figurative des pertes successives en hommes de l’Armée Française dans la campagne de Russie 1812–1813” by Charles Joseph Minard (1869)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-napoleon-hannibal",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-napoleon-hannibal",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Carte figurative des pertes successives en hommes de l’Armée qu’Annibal conduisit d’Espagne en Italie en traversant les Gaules (selon Polybe)” (top) and “Carte figurative des pertes successives en hommes de l’Armée Française dans la campagne de Russie 1812–1813” (bottom) by Charles Joseph Minard (1869)\n\n\nshows the force levels of the armies of Hannibal (218 BC) and Napoleon (1812-1813), respectively\n\n\nsome data visualization practioners call it (one of) the best statistical drawings ever created"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-cotton",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-cotton",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Carte figurative et approximative des quantités de coton brut importées en Europe en 1858, en 1864 et en 1865” by Charles Joseph Minard (1866)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-paris",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-paris",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Carte figurative et approximative des poids des bestiaux venus á Paris sur les chemins de fer en 1862” by Charles Joseph Minard (1864)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-canal",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-canal",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-minard-canal-quote",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-minard-canal-quote",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Tableau figuratif du mouvement commercial du Canal du Centre en 1844” by Charles Joseph Minard (1845)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#mental-calendar-exercise",
-    "href": "lessons_slides/01-foundations.html#mental-calendar-exercise",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "If the year is a circle—where’s March and December in your mind?\n\n\n\n\n\n\nImagine you had to create a polar representation of the months.\nDraw a circle and indicate the position of March and December.\nUse an arrow to illustrate the direciton of time.\nCompare the results with your neighbors."
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#mental-calendar-results-1",
-    "href": "lessons_slides/01-foundations.html#mental-calendar-results-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Wheel diagram of 76,922 placements of the months of December and March on the circumference of an empty circle.Graphics by Henrik Lied at NRKbeta. Laeng & Hofseth, Front Psychol. 2019"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#mental-calendar-results-coxcomb",
-    "href": "lessons_slides/01-foundations.html#mental-calendar-results-coxcomb",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Proportion of respondents choosing opposite direction of time on the year’s wheel. Graphics by Vidar Kvien, NRK. Laeng & Hofseth, Front Psychol. 2019"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-nightingale-1",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-nightingale-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Diagram of the causes and mortality in the army in the East” (a so-called coxcomb diagram) by Florence Nightingale (1858)"
-  },
-  {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-history-nightingale-bars",
-    "href": "lessons_slides/01-foundations.html#dataviz-history-nightingale-bars",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Relative mortality of the army at home and of the English male population at corresponding ages” by Florence Nightingale (1858)"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-figure-and-ground",
-    "href": "lessons_slides/03-design.html#principle-of-figure-and-ground",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Figure and Ground",
-    "text": "Principle of Figure and Ground"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-proximity",
-    "href": "lessons_slides/03-design.html#principle-of-proximity",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Proximity",
-    "text": "Principle of Proximity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-similarity",
-    "href": "lessons_slides/03-design.html#principle-of-similarity",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Similarity",
-    "text": "Principle of Similarity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-common-region",
-    "href": "lessons_slides/03-design.html#principle-of-common-region",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Common Region",
-    "text": "Principle of Common Region"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principles-of-continuity-and-closure",
-    "href": "lessons_slides/03-design.html#principles-of-continuity-and-closure",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principles of Continuity and Closure",
-    "text": "Principles of Continuity and Closure"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-figure-and-ground-1",
-    "href": "lessons_slides/03-design.html#principle-of-figure-and-ground-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Figure and Ground",
-    "text": "Principle of Figure and Ground"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-figure-and-ground-2",
-    "href": "lessons_slides/03-design.html#principle-of-figure-and-ground-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Figure and Ground",
-    "text": "Principle of Figure and Ground"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-closure",
-    "href": "lessons_slides/03-design.html#principle-of-closure",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Closure",
-    "text": "Principle of Closure"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-closure-1",
-    "href": "lessons_slides/03-design.html#principle-of-closure-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Closure",
-    "text": "Principle of Closure"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-closure-2",
-    "href": "lessons_slides/03-design.html#principle-of-closure-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Closure",
-    "text": "Principle of Closure"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-similarity-1",
-    "href": "lessons_slides/03-design.html#principle-of-similarity-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Similarity",
-    "text": "Principle of Similarity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-similarity-2",
-    "href": "lessons_slides/03-design.html#principle-of-similarity-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Similarity",
-    "text": "Principle of Similarity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-proximity-1",
-    "href": "lessons_slides/03-design.html#principle-of-proximity-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Proximity",
-    "text": "Principle of Proximity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-proximity-2",
-    "href": "lessons_slides/03-design.html#principle-of-proximity-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Proximity",
-    "text": "Principle of Proximity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-connectivity",
-    "href": "lessons_slides/03-design.html#principle-of-connectivity",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Connectivity",
-    "text": "Principle of Connectivity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#principle-of-connectivity-1",
-    "href": "lessons_slides/03-design.html#principle-of-connectivity-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Principle of Connectivity",
-    "text": "Principle of Connectivity"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter",
-    "href": "lessons_slides/03-design.html#declutter",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-1",
-    "href": "lessons_slides/03-design.html#declutter-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-2",
-    "href": "lessons_slides/03-design.html#declutter-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-3",
-    "href": "lessons_slides/03-design.html#declutter-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-4",
-    "href": "lessons_slides/03-design.html#declutter-4",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-5",
-    "href": "lessons_slides/03-design.html#declutter-5",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-6",
-    "href": "lessons_slides/03-design.html#declutter-6",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-7",
-    "href": "lessons_slides/03-design.html#declutter-7",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-8",
-    "href": "lessons_slides/03-design.html#declutter-8",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-9",
-    "href": "lessons_slides/03-design.html#declutter-9",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#declutter-10",
-    "href": "lessons_slides/03-design.html#declutter-10",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Declutter!",
-    "text": "Declutter!"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#exercise-1",
-    "href": "lessons_slides/03-design.html#exercise-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Exercise 1",
-    "text": "Exercise 1\n\nEliminate the clutter from the line chart on the next slide.\n\nAfterwards, answer the following:\n\n\nWhat is the main message?\nIs all the data relevant?\nWhat would you change?\nHow can you emphasize the main message?"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#wheres-waldo",
-    "href": "lessons_slides/03-design.html#wheres-waldo",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Where’s Waldo?” by Martin Handford © Kilburn & Strode LLP"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#wheres-waldo-solutions",
-    "href": "lessons_slides/03-design.html#wheres-waldo-solutions",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Where’s Waldo?” by Martin Handford © Kilburn & Strode LLP"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#preattentive-attributes-overview",
-    "href": "lessons_slides/03-design.html#preattentive-attributes-overview",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Adapted from Stephen Few and others"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#main-principles-of-graphic-design",
-    "href": "lessons_slides/03-design.html#main-principles-of-graphic-design",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Main Principles of Graphic Design",
-    "text": "Main Principles of Graphic Design\n\n     → Unity     → Variety     → Hierarchy \n\n The balance between unity and variety can lead to hierarchy."
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-layout",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-layout",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Created by Lindsay Betzendahl\n\n\n\n\n\n\n\nCreated by Lindsay Betzendahl"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-charts-1",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-charts-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Ernest & Young"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-charts-2",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-charts-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Reworked version of the charts by Ernest & Young"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-charts-3",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-charts-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Reworked version of the charts by Ernest & Young"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-table-1",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-table-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Credit Suisse"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-table-2",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-table-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Reworked version of the table by Credit Suisse"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#graphic-design-principles-table-3",
-    "href": "lessons_slides/03-design.html#graphic-design-principles-table-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Reworked version of the table by Credit Suisse"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts",
-    "href": "lessons_slides/03-design.html#alignment-in-charts",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-1",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-2",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-3",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-4",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-4",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-5",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-5",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-6",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-6",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-7",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-7",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#alignment-in-charts-8",
-    "href": "lessons_slides/03-design.html#alignment-in-charts-8",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Alignment in Charts",
-    "text": "Alignment in Charts"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#modular-design",
-    "href": "lessons_slides/03-design.html#modular-design",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Modular Design",
-    "text": "Modular Design\n\n\nSource: londonphotography.org.uk"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#rainbow-4",
-    "href": "lessons_slides/03-design.html#rainbow-4",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Modified example from Fabio Crameri"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#rainbow-7",
-    "href": "lessons_slides/03-design.html#rainbow-7",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "“Turbo, An Improved Rainbow Colormap for Visualization” by Anton Mikhailov (Google Research)"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#be-consistent",
-    "href": "lessons_slides/03-design.html#be-consistent",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Be Consistent",
-    "text": "Be Consistent\n\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#use-intuitive-colors",
-    "href": "lessons_slides/03-design.html#use-intuitive-colors",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Use Intuitive Colors (?)",
-    "text": "Use Intuitive Colors (?)\n\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#use-intuitive-colors-1",
-    "href": "lessons_slides/03-design.html#use-intuitive-colors-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Use Intuitive Colors (?)",
-    "text": "Use Intuitive Colors (?)\n\n\nSource: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#faithland",
-    "href": "lessons_slides/03-design.html#faithland",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Vivid Maps"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#faithland-true",
-    "href": "lessons_slides/03-design.html#faithland-true",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Vivid Maps"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#design-with-the-colorblind-in-mind",
-    "href": "lessons_slides/03-design.html#design-with-the-colorblind-in-mind",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Design with the Colorblind in Mind",
-    "text": "Design with the Colorblind in Mind\n\nSource: “Fundamentals of Data Visualization” by Claus O. Wilke"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#design-with-the-colorblind-in-mind-1",
-    "href": "lessons_slides/03-design.html#design-with-the-colorblind-in-mind-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Design with the Colorblind in Mind",
-    "text": "Design with the Colorblind in Mind\n\nSource: “Fundamentals of Data Visualization” by Claus O. Wilke"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-example",
-    "href": "lessons_slides/03-design.html#cvd-test-example",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Contribution to the SWDchallenge by Alex Varlamoff — tested with a color-blindness simulator"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-tool",
-    "href": "lessons_slides/03-design.html#cvd-test-tool",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Contribution to the SWDchallenge by Alex Varlamoff — tested with a color-blindness simulator"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-vizpalette",
-    "href": "lessons_slides/03-design.html#cvd-test-vizpalette",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The VizPalette tool tests color palettes for legibility for different chart types, line weights, backgrounds, and font colors."
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-vizpalette-deuteranopia",
-    "href": "lessons_slides/03-design.html#cvd-test-vizpalette-deuteranopia",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The VizPalette tool tests color palettes for legibility for different chart types, line weights, backgrounds, and font colors."
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-vizpalette-greyscale",
-    "href": "lessons_slides/03-design.html#cvd-test-vizpalette-greyscale",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The VizPalette tool tests color palettes for legibility for different chart types, line weights, backgrounds, and font colors."
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-vizpalette-dark-bg",
-    "href": "lessons_slides/03-design.html#cvd-test-vizpalette-dark-bg",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The VizPalette tool tests color palettes for legibility for different chart types, line weights, backgrounds, and font colors."
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-test-apca-1",
-    "href": "lessons_slides/03-design.html#contrast-test-apca-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The Myndex APCA Contrast Calculator displays modern contrast ratios for various combinations of text size and font weight"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper",
-    "href": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-test-apca-2",
-    "href": "lessons_slides/03-design.html#contrast-test-apca-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The Myndex APCA Contrast Calculator displays modern contrast ratios for various combinations of text size and font weight"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-test-apca-3",
-    "href": "lessons_slides/03-design.html#contrast-test-apca-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The Myndex APCA Contrast Calculator displays modern contrast ratios for various combinations of text size and font weight"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper-2",
-    "href": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper-2",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper-3",
-    "href": "lessons_slides/03-design.html#contrast-apca-viz-datawrapper-3",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-test-apca-4",
-    "href": "lessons_slides/03-design.html#contrast-test-apca-4",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The Myndex APCA Contrast Calculator displays modern contrast ratios for various combinations of text size and font weight"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#contrast-test-apca-5",
-    "href": "lessons_slides/03-design.html#contrast-test-apca-5",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "The Myndex APCA Contrast Calculator displays modern contrast ratios for various combinations of text size and font weight"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-test-vizpalette-viridis",
-    "href": "lessons_slides/03-design.html#cvd-test-vizpalette-viridis",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Viridis colors, tested with VizPalette"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#cvd-width",
-    "href": "lessons_slides/03-design.html#cvd-width",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Fundamentals of Data Visualization” by Claus O. Wilke"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#typography-keep-it-simple-fontsizes",
-    "href": "lessons_slides/03-design.html#typography-keep-it-simple-fontsizes",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#font-readability",
-    "href": "lessons_slides/03-design.html#font-readability",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: Lisa Charlotte Muth, DataWrapper Blog"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#the-1il-test",
-    "href": "lessons_slides/03-design.html#the-1il-test",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "The 1Il Test",
-    "text": "The 1Il Test"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#the-1il-test-1",
-    "href": "lessons_slides/03-design.html#the-1il-test-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "The 1Il Test",
-    "text": "The 1Il Test"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#exercise-2-1",
-    "href": "lessons_slides/03-design.html#exercise-2-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "Exercise 2",
-    "text": "Exercise 2\n\nRevisit the line chart from exercise 1 of the first session.\n\nWhat are preattentive attributes used in this graphic?\nHow do you like the layout and alignment of the graphic? Is there anything you would change?\n\n\n\n\n\nRevisit the pie chart from exercise 1 of the first session.\n\nWhich design decisions are potentially problematic?\nHow could you use preattentive attributes to tell a story using the same data?"
-  },
-  {
-    "objectID": "lessons_slides/03-design.html#line-chart-arctic-ice",
-    "href": "lessons_slides/03-design.html#line-chart-arctic-ice",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
-    "section": "",
-    "text": "Source: “Yearly Fluctuations in Area of Arctic Covered by Ice” by Derek Watkins (New York Times)"
+    "text": "Source: Ranganathan et al. 2014\n\n\n\n\n\n\nMaria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
     "objectID": "lessons_slides/03-design.html#pie-charts-emissions",
     "href": "lessons_slides/03-design.html#pie-charts-emissions",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "title": "Day 3: Modeling correlation and regression",
     "section": "",
     "text": "Source: Dr. Robert Rohde (Tweet)"
   },
   {
-    "objectID": "lessons_slides/03-design.html#section-1",
-    "href": "lessons_slides/03-design.html#section-1",
-    "title": "Designing Data Visualizations to Successfully Tell a Story",
+    "objectID": "lessons_slides/03-design.html#section",
+    "href": "lessons_slides/03-design.html#section",
+    "title": "Day 3: Modeling correlation and regression",
     "section": "",
-    "text": "Cédric Scherer // posit::conf(2023)"
+    "text": "Maria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
     "objectID": "lessons_slides/Pres_test.html#collaborators",

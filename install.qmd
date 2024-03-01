@@ -1,23 +1,43 @@
 ---
 title: "Installation and setup"
+# general Output Options
+execute:     
+  eval: false
+  echo: true     #  include source code in output
+  warning: false  #  include warning code in output
+  error: false    #  include error code in output
+  output: false   # include output code in output (CHG in BLOCKS)
+  # include: false   # R still runs but code and results DON"T appear in output  
+  # cache: false
+toc: true
+format:
+  html:
+    code-fold: false # redundant IF echo false 
+    toc-depth: 2
+    toc_float: true
+    toc-location: left
+    toc-title: ""
 ---
-
-
 
 ::: {.callout-caution collapse="false"}
 Website constrution in progress...
 :::
 
-
 This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.
 
+Below is quick step by step process that can help you get started.
 
-## Installing `r fontawesome::fa("r-project", fill = "#5F85A7")`
+# Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
 
-R is available for free for Windows `r fontawesome::fa("fab fa-windows", fill = "steelblue")`, GNU/Linux  `r fontawesome::fa("fab fa-linux", fill = "steelblue")` and macOS `r fontawesome::fa("fab fa-apple", fill = "steelblue")`.  
+<!-- `r fontawesome::fa("fab fa-windows", fill = "steelblue")` -->
 
-+ To install it, you can go to this **[link](https://cloud.r-project.org/)**. 
-The latest available release is **R 4.3.2 "Eye Holes" released on 2023/10/31**, but any (fairly recent) version will do.  
+<!-- `r fontawesome::fa("fab fa-linux", fill = "steelblue")` -->
+
+<!-- `r fontawesome::fa("fab fa-apple", fill = "steelblue")` -->
+
+**R** is available for free for Windows [{{< fa brands windows >}}]{style="color:#d8717b"}, GNU/Linux [{{< fa brands linux >}}]{style="color:#d8717b"}, and macOS [{{< fa brands apple >}}]{style="color:#d8717b"}.
+
+-   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
 
 If you have previously installed R on your machine, you can check which version you are running by executing this command in `R`:
 
@@ -25,8 +45,10 @@ If you have previously installed R on your machine, you can check which version 
 #| eval: false
 #| echo: true
 
-# In R console
+# From the R console
 base::R.version.string
+    # (This is the version on my own machine)
+    # [1] "R version 4.2.2 (2022-10-31)"
 ```
 
 ...or by executing this command in your `CLI` (Command Line Interface):
@@ -35,23 +57,33 @@ base::R.version.string
 #| eval: false
 #| echo: true
 
-# In Terminal/Powershell/bash
+# From Terminal/Powershell/bash
 R --version
 ```
 
+# Install RStudio IDE
 
-## Install RStudio IDE
+While not strictly required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
 
-While this is not required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE) wrapping and interfacing R (which needs to be installed first). 
+::: {.callout-tip collapse="true"}
+R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.
+:::
 
-+ To install it you can go to this **[link](https://posit.co/download/rstudio-desktop/)**. The free-version contains everything you need.
+-   To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
 
-## Install R packages from the CRAN
+![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](images/rstudio-panes-labeled.jpeg) 
 
-Many useful R function come in *packages*, free libraries of code written by R's active user community. **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: [https://cran.r-project.org/](https://cran.r-project.org/).
+# Install R packages from the CRAN
+
+An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
+
+-   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: <https://cran.r-project.org/>.
+
+-   **Bioconductor** -
+
+-   **Github** -
 
 <!-- The bottom-right panel holds five tabs. -->
-
 <!-- -   Files -->
 <!-- -   Plots -->
 <!-- -   Packages -->
@@ -62,10 +94,54 @@ Many useful R function come in *packages*, free libraries of code written by R's
 
 <!-- ![](images/installPck.png) -->
 
+## Installing and using R packages
 
-## R packages that will be required for the workshop 
+Let's take for example the R package `corr`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
 
-To install an R package, open an R session execute: 
+```{r}
+#| eval: false
+#| echo: true
+
+# Installing (ONLY the 1st time)
+utils::install.packages('corrplot')
+```
+
+::: {.callout-tip collapse="true"}
+Here you are actually using a ***function*** (`install.packages`) of a pre-installed ***package*** (`utils`) using the syntax `packagename::function_name`
+:::
+
+Once you have installed a package, at every subsequent R session, you will only need to load it, like so:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Loading a package (at every session) 
+base::library (corrplot)
+
+# ... or with ""
+base::library ("corrplot")
+```
+
+To inquire about a package and/or its functions, you can again write in your console `?package_name` or `?function_name` and RStudio will open up a help page in the dedicated pane of Rstudio:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Opening Help page on package/function
+?corrplot
+```
+
+::: {.callout-tip collapse="true"}
+You can also install and update packages using the "Packages" tab on the lower righ pane of RStudio
+
+[Install/Update pckgs from RStudio](images/RStudio_install_pckg.png) 
+:::
+
+# R packages that will be required for the workshop
+
+To install an R package, open an R session execute:
 
 ```{r}
 #| eval: false
@@ -82,13 +158,26 @@ library ("tidyverse")
 <!-- ## Install [Quarto] -->
 
 <!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
+
 <!-- - After installing Quarto, open the terminal in RStudio and: -->
+
 <!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
+
 <!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
+
 <!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
 
-## About the materials
+# Managing files and projects (in a reproducible manner)
+
+R provides a fantastic tool for organizing all the files pertaining to a project called "R project"  
+
+<!-- # R objects  -->
+
+
+# Objects and functions
+
+
+# About the materials
 
 This source code and license for all of the materials found on this website can be found on Github [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats).
-

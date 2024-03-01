@@ -1,29 +1,31 @@
 ---
-title: "Day 2 ... tidyverse"
-subtitle: "[https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/)"
-author: "Name Last Name"
+title: "Day 2: Inference and Hypothesis testing"
+subtitle: "<span style='font-size:2em;'> .... more details </span>"
+author: "<a href='https://lulliter.github.io/R4biostats/teacher.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
 date: 2024-07-25
 date-format: long
 code-link: true
-execute:
-  echo: true
-  freeze: auto
 format:
   revealjs:
-    # # ------------- x salvare come PDF 
+    theme: slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
+#    logo: imgs_slides/mitgest_logo.png
+    footer: '[R 4 Biostatistics](https://lulliter.github.io/R4biostats/) | MITGEST::training(2024)'
+#    footer: <https://lulliter.github.io/R4biostats/lessons.html>
+## ------------- x salvare come PDF 
     standalone: false
     ## -------Produce a standalone HTML file with no external dependencies,
     embed-resources: false
-    theme: slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
     transition: fade
     background-transition: fade
     highlight-style: ayu-mirage
-    footer: <https://lulliter.github.io/R4biostats/lessons.html>
     slide-number: true
     fig-cap-location: top
     # fig-format: svg
     pdf-separate-fragments: false
     # fig-align: center
+execute:
+  echo: true
+  freeze: auto
 ---
 
 # introduction
