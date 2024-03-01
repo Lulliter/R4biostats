@@ -196,7 +196,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </li>
   <li><a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a></li>
-  <li><a href="#managing-files-and-projects-in-a-reproducible-manner" id="toc-managing-files-and-projects-in-a-reproducible-manner" class="nav-link" data-scroll-target="#managing-files-and-projects-in-a-reproducible-manner">Managing files and projects (in a reproducible manner)</a></li>
+  <li>
+<a href="#managing-files-and-projects" id="toc-managing-files-and-projects" class="nav-link" data-scroll-target="#managing-files-and-projects">Managing files and projects</a>
+  <ul class="collapse">
+<li><a href="#creating-an-r-project" id="toc-creating-an-r-project" class="nav-link" data-scroll-target="#creating-an-r-project">Creating an R Project</a></li>
+  <li><a href="#defining-reproducible-file-paths" id="toc-defining-reproducible-file-paths" class="nav-link" data-scroll-target="#defining-reproducible-file-paths">Defining (reproducible) file paths</a></li>
+  </ul>
+</li>
   <li><a href="#objects-and-functions" id="toc-objects-and-functions" class="nav-link" data-scroll-target="#objects-and-functions">Objects and functions</a></li>
   <li><a href="#about-the-materials" id="toc-about-the-materials" class="nav-link" data-scroll-target="#about-the-materials">About the materials</a></li>
   </ul></nav>
@@ -232,7 +238,7 @@ Caution
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
-<p>Website constrution in progress…</p>
+<p>Website construction in progress…</p>
 </div>
 </div>
 </div>
@@ -316,10 +322,10 @@ Tip
 <p>Once you have installed a package, at every subsequent R session, you will only need to load it, like so:</p>
 <div class="cell">
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading a package (at every session) </span></span>
-<span><span class="fu">base</span><span class="fu">::</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="va">corrplot</span><span class="op">)</span></span>
+<span><span class="fu">base</span><span class="fu">::</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st">"corrplot"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># ... or with ""</span></span>
-<span><span class="fu">base</span><span class="fu">::</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st">"corrplot"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co"># ... or</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="va"><a href="https://github.com/taiyun/corrplot">corrplot</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To inquire about a package and/or its functions, you can again write in your console <code>?package_name</code> or <code>?function_name</code> and RStudio will open up a help page in the dedicated pane of Rstudio:</p>
 <div class="cell">
@@ -359,10 +365,53 @@ Tip
 <!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
 <!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
 <!--   - Install/Update Chromium with `quarto install tool chromium` -->
-</section><section id="managing-files-and-projects-in-a-reproducible-manner" class="level1"><h1>Managing files and projects (in a reproducible manner)</h1>
-<p>R provides a fantastic tool for organizing all the files pertaining to a project called “R project”</p>
+</section><section id="managing-files-and-projects" class="level1"><h1>Managing files and projects</h1>
+<p>In any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as <code>input_data</code>, <code>output_data</code>, <code>R_scripts</code>, <code>paper</code>, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called “R project”</p>
 <!-- # R objects  -->
-</section><section id="objects-and-functions" class="level1"><h1>Objects and functions</h1>
+<section id="creating-an-r-project" class="level2"><h2 class="anchored" data-anchor-id="creating-an-r-project">Creating an R Project</h2>
+<p>Creating an <strong>R Project</strong> will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path.</p>
+<p><img src="images/Rproj.png" class="img-fluid"></p>
+</section><section id="defining-reproducible-file-paths" class="level2"><h2 class="anchored" data-anchor-id="defining-reproducible-file-paths">Defining (reproducible) file paths</h2>
+<p>It is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [NOT REPRODUCIBLE] hard coding your file path  --------------------------</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># File path on Mac:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/testuser/R4biostats/input_data/dataset.csv"</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Same file path on Windows:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:\Users</span><span class="sc">\t</span><span class="st">estuser\R4biostats\input_data\dataset.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>This is where the fantastic <a href="https://here.r-lib.org/"><code>here</code></a> package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Check where is my Working Directory?</span></span>
+<span><span class="fu">here</span><span class="fu">::</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>    <span class="co"># [1] "/Users/testuser/R4biostats"</span></span>
+<span></span>
+<span><span class="co"># Then define file path as ("subfolder_name", "file_name")</span></span>
+<span><span class="co"># No "\" or "/" needed!</span></span>
+<span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="fu"><a href="https://here.r-lib.org//reference/here.html">here</a></span><span class="op">(</span><span class="st">"input_data"</span>, <span class="st">"dataset.csv"</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <code>here</code> package uses the top-level directory of a project (where you have placed your <code>proj_name.Rproj</code>) as the reference to easily, and portably, build paths to files.</p>
+</div>
+</div>
+</div>
+</section></section><section id="objects-and-functions" class="level1"><h1>Objects and functions</h1>
 </section><section id="about-the-materials" class="level1"><h1>About the materials</h1>
 <p>This source code and license for all of the materials found on this website can be found on Github <a href="https://github.com/Lulliter/R4biostats"><i class="fa-brands fa-github"></i></a>.</p>
 

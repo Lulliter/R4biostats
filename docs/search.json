@@ -445,14 +445,28 @@
     "href": "install.html",
     "title": "Installation and setup",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
   },
   {
     "objectID": "install.html#installing-and-using-r-packages",
     "href": "install.html#installing-and-using-r-packages",
     "title": "Installation and setup",
     "section": "Installing and using R packages",
-    "text": "Installing and using R packages\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (corrplot)\n\n# ... or with \"\"\nbase::library (\"corrplot\")\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nInstall/Update pckgs from RStudio"
+    "text": "Installing and using R packages\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nInstall/Update pckgs from RStudio"
+  },
+  {
+    "objectID": "install.html#creating-an-r-project",
+    "href": "install.html#creating-an-r-project",
+    "title": "Installation and setup",
+    "section": "Creating an R Project",
+    "text": "Creating an R Project\nCreating an R Project will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path."
+  },
+  {
+    "objectID": "install.html#defining-reproducible-file-paths",
+    "href": "install.html#defining-reproducible-file-paths",
+    "title": "Installation and setup",
+    "section": "Defining (reproducible) file paths",
+    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\nThis is where the fantastic here package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files."
   },
   {
     "objectID": "index.html",
@@ -464,9 +478,9 @@
   {
     "objectID": "lessons/lec01_data_with_R.html",
     "href": "lessons/lec01_data_with_R.html",
-    "title": "Intro to R and data analysis",
+    "title": "Day 1: Intro to R and data analysis",
     "section": "",
-    "text": "View slides in full screen\n\nLesson’s outline\n\nIntroduction to R and R-studio\nManipulation of R objects: vectors, matrix, data.frame\nDescriptive statistics (position measures, variability measures, basic plots)\nBasics of inferential statistics"
+    "text": "Lesson’s outline\n\nIntroduction to R and R-studio\nUnderstanding different types of variables\nHandling R objects: vectors, matrix, data.frame\nDescriptive statistics\n\nmeasures of central tendency, measures of variability (or spread), and frequency distribution\n\nVisual data exploration\n\n{ggplot2}\n\nFoundations of inference\n\n\nView slides in full screen"
   },
   {
     "objectID": "lessons/lec03_corr_regress.html",
