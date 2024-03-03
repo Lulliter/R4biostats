@@ -1,5 +1,5 @@
 ---
-title: "Lab: Intro to R and data analysis"
+title: "Lab 1: Intro to R and data analysis"
 editor: source
 ## ------  general Output Options
 execute:     
@@ -44,5 +44,90 @@ Website construction in progress...
 {{< pagebreak >}}
 
 ## Lab code
-<!-- NON FUNZIONA!!!! -->
-<!-- [Download "\*.R" file](../Rcode/labs_day1.R) -->
+
+Here you will find the solved problems  addressed in Lab 1
+
+-   as `.qmd` file (commented solutions)
+
+```{r}
+library(downloadthis)
+```
+
+
+```{r}
+#| output: false
+#| eval: false
+
+
+# pero sara un po' recursive 
+download_file(
+  path =  here::here("practice",  "lab01_data_with_R.qmd" ),
+  output_name = "lab01_data_with_R", # no extension.... 
+  output_extension = ".qmd",  
+  button_label = "Download solution as .qmd file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
+
+-   as `.R` file
+
+```{r}
+#| output: true
+
+download_file(
+  path =  here::here("practice", "Rcode", "lab01_code.R" ),
+  output_name = "lab01_code", # no extension.... 
+  output_extension = ".R",  
+  button_label = "Download solution as .R file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
+
+{{< pagebreak >}}
+
+## Lab datasets
+
+<!-- using {downloadthis} + https://fontawesome.com/search?q=directory&o=r -->
+<!-- Button type + default, warning, primary, success, info, warning, danger -->
+Below are the datasets used in the Practice session: 
+
+
++ `.csv` file
+
+```{r}
+#| output: true
+
+library(downloadthis)
+
+mtcars %>%
+  download_this(path =  here::here("practice", "data", "autism_data"), 
+    output_name =  "autism_data", # no extension.... 
+    output_extension = ".csv",
+    button_label = "Download input data  .csv",
+    button_type = "danger",
+    has_icon = TRUE,
+    icon = "fa-solid fa-file-csv" # "fa-solid fa-file-excel"
+  )
+```
+
++ local `subfolder`
+
+```{r}
+#| output: true
+
+download_dir(
+  path = here::here("practice", "data", "01_datasets"),
+  output_name = "labs input data",
+  button_label = "Download input data directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa-solid fa-folder-open",
+  self_contained = FALSE
+)
+```

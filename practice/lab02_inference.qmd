@@ -1,5 +1,5 @@
 ---
-title: "Lab: Statistical inference & hypothesis testing"
+title: "Lab 2: Statistical inference & hypothesis testing"
 editor: source
 ## ------  general Output Options
 execute:     

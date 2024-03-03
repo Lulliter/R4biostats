@@ -18,8 +18,10 @@ website:
   title: "R 4 biostats"
   description: "Code and supplementary materials for the ...."
   site-url: "https://lulliter.github.io/R4biostats"
-  # repo-url: "https://github.com/Lulliter/rassegna"
+#  repo-url: "https://github.com/Lulliter/R4biostats"
+#  repo-actions: [edit, issue]
   favicon: images/icons8_hist_96.png
+  search: false # no magnifier on navbar 
 
   page-footer:
     left: |
@@ -39,6 +41,7 @@ website:
   page-navigation: true
   
   navbar:
+#    logo: images/MITGEST_logo.jpeg
     pinned: true # non si muove quando scorro la pagina 
     background: "#72aed8" # "#0084e6" "#EE6A24"
     right:
@@ -46,9 +49,9 @@ website:
         icon: house-fill # https://icons.getbootstrap.com/?q=home
         href: index.qmd
       - text: "Pre-Workshop"
-        icon: code-square # https://icons.getbootstrap.com/?q=home
+        icon: download # code-square # https://icons.getbootstrap.com/?q=home
         href: install.qmd
-      - text: "Lessons"
+      - text: "Lectures"
         icon: easel-fill # https://icons.getbootstrap.com/?q=home
         menu: 
           - text: "Intro to R and data analysis"
@@ -60,7 +63,7 @@ website:
           - text: "Intro to machine learning"
             href: lessons/lec04_intro_ML.qmd
       - text: "Labs"
-        icon: archive-fill # https://icons.getbootstrap.com/?q=home
+        icon: terminal-fill #  archive-fill # https://icons.getbootstrap.com/?q=home
         # href: practice.qmd
         menu: 
           - text: "Lab: Intro to R and data analysis"
@@ -72,23 +75,16 @@ website:
           - text: "Lab: Intro to machine learning"
             href: practice/lab04_intro_ML.qmd
       - text: "About"
-        icon: file-earmark-person-fill # https://icons.getbootstrap.com/?q=home
+        icon: mortarboard-fill #person-circle # https://icons.getbootstrap.com/?q=home
         href: teacher.qmd
-
-  # sidebar:
-  #   - id: install
-  #     contents:
-  #       - install.qmd
-  #   - id: materials
-  #     title: "Materials"
-  #     style: "docked"
-  #     contents:
-  #         - materials/index.qmd
-  #         - materials/1-Day-1/index.qmd
-  #         - materials/2-Day-2/index.qmd
-  #   - id: about
-  #     contents:
-  #       - about.qmd
+        
+# ## ---- non mi piace sul lato 
+#   sidebar:
+#     tools:
+#       - icon: github
+#         menu:
+#           - text: Source Code
+#             url:  https://github.com/Lulliter/R4biostats
 
 format:
   html:
@@ -98,13 +94,14 @@ format:
     anchor-sections: true
     fig-cap-location: margin
     reference-location: margin
-    mainfont: "Lato"
-    monofont: "Fira Mono"
     footnotes-hover: true
     fontsize: 1em
-    theme: theme/my-litera.scss
-    css: theme/styles.css
-    highlight-style: monokai
+    theme: theme/Lulas_theme.scss
+    # css: theme/styles.css
+    ##----- code highlighting style 
+    highlight-style: monokai # atom-one # github # dracula  
+    mainfont: "Lato"
+    monofont: "Fira Mono" 
 
 
 

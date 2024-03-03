@@ -16,44 +16,51 @@
   {
     "objectID": "practice/lab03_corr_regress.html",
     "href": "practice/lab03_corr_regress.html",
-    "title": "Lab: Modeling correlation and regression",
+    "title": "Lab 3: Modeling correlation and regression",
     "section": "",
     "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
     "objectID": "practice/lab03_corr_regress.html#topics",
     "href": "practice/lab03_corr_regress.html#topics",
-    "title": "Lab: Modeling correlation and regression",
+    "title": "Lab 3: Modeling correlation and regression",
     "section": "Topics",
     "text": "Topics\n\nLearn how to …. ."
   },
   {
     "objectID": "practice/lab03_corr_regress.html#lab-code",
     "href": "practice/lab03_corr_regress.html#lab-code",
-    "title": "Lab: Modeling correlation and regression",
+    "title": "Lab 3: Modeling correlation and regression",
     "section": "Lab code",
     "text": "Lab code"
   },
   {
     "objectID": "practice/lab01_data_with_R.html",
     "href": "practice/lab01_data_with_R.html",
-    "title": "Lab: Intro to R and data analysis",
+    "title": "Lab 1: Intro to R and data analysis",
     "section": "",
     "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
     "objectID": "practice/lab01_data_with_R.html#topics",
     "href": "practice/lab01_data_with_R.html#topics",
-    "title": "Lab: Intro to R and data analysis",
+    "title": "Lab 1: Intro to R and data analysis",
     "section": "Topics",
     "text": "Topics\n\nLearn how to …. ."
   },
   {
     "objectID": "practice/lab01_data_with_R.html#lab-code",
     "href": "practice/lab01_data_with_R.html#lab-code",
-    "title": "Lab: Intro to R and data analysis",
+    "title": "Lab 1: Intro to R and data analysis",
     "section": "Lab code",
-    "text": "Lab code"
+    "text": "Lab code\nHere you will find the solved problems addressed in Lab 1\n\nas .qmd file (commented solutions)\n\n\nas .R file\n\n\n\n Download solution as .R file"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#lab-datasets",
+    "href": "practice/lab01_data_with_R.html#lab-datasets",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Lab datasets",
+    "text": "Lab datasets\n\n\nBelow are the datasets used in the Practice session:\n\n\n.csv file\n\n\n\n Download input data  .csv\n\n\n\nlocal subfolder\n\n\n\n\n Download input data directory"
   },
   {
     "objectID": "lessons_slides/04-guide.html#exercise-2",
@@ -452,7 +459,7 @@
     "href": "install.html#installing-and-using-r-packages",
     "title": "Installation and setup",
     "section": "Installing and using R packages",
-    "text": "Installing and using R packages\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nInstall/Update pckgs from RStudio"
+    "text": "Installing and using R packages\n#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nScreenshot Install/Update pckgs from RStudio"
   },
   {
     "objectID": "install.html#creating-an-r-project",
@@ -466,7 +473,7 @@
     "href": "install.html#defining-reproducible-file-paths",
     "title": "Installation and setup",
     "section": "Defining (reproducible) file paths",
-    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\nThis is where the fantastic here package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files."
+    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\nThis is where the fantastic here package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
   },
   {
     "objectID": "index.html",
@@ -534,42 +541,42 @@
   {
     "objectID": "practice/lab02_inference.html",
     "href": "practice/lab02_inference.html",
-    "title": "Lab: Statistical inference & hypothesis testing",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "",
     "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
     "objectID": "practice/lab02_inference.html#topics",
     "href": "practice/lab02_inference.html#topics",
-    "title": "Lab: Statistical inference & hypothesis testing",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Topics",
     "text": "Topics\n\nLearn how to …. ."
   },
   {
     "objectID": "practice/lab02_inference.html#lab-code",
     "href": "practice/lab02_inference.html#lab-code",
-    "title": "Lab: Statistical inference & hypothesis testing",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Lab code",
     "text": "Lab code"
   },
   {
     "objectID": "practice/lab04_intro_ML.html",
     "href": "practice/lab04_intro_ML.html",
-    "title": "Lab: Intro to machine learning",
+    "title": "Lab 4: Intro to machine learning",
     "section": "",
     "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
     "objectID": "practice/lab04_intro_ML.html#topics",
     "href": "practice/lab04_intro_ML.html#topics",
-    "title": "Lab: Intro to machine learning",
+    "title": "Lab 4: Intro to machine learning",
     "section": "Topics",
     "text": "Topics\n\nLearn how to …. ."
   },
   {
     "objectID": "practice/lab04_intro_ML.html#lab-code",
     "href": "practice/lab04_intro_ML.html#lab-code",
-    "title": "Lab: Intro to machine learning",
+    "title": "Lab 4: Intro to machine learning",
     "section": "Lab code",
     "text": "Lab code"
   }

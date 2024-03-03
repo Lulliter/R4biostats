@@ -1,5 +1,5 @@
 ---
-title: "Lab: Intro to machine learning"
+title: "Lab 4: Intro to machine learning"
 #editor: source
 ## ------  general Output Options
 execute:     
@@ -15,12 +15,12 @@ fig-cap-location: top
 tbl-cap-location: top
 format:
   html:
- #   theme: flatly #spacelab
+    # theme: flatly #spacelab
     code-fold: true # redundant bc echo false 
     toc-depth: 3
     toc_float: true
     toc-location: left
-    toc-title: Indice
+    toc-title: Outline
     embed-resources: true # external dependencies embedded (Not in ..._files/)
   # pdf:
   #   toc-depth: 2

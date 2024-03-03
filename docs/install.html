@@ -54,12 +54,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
 <link href="./images/icons8_hist_96.png" rel="icon" type="image/png">
+<script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -70,18 +66,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
-  "location": "navbar",
-  "copy-button": false,
-  "collapse-after": 3,
-  "panel-placement": "end",
-  "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -95,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script><link rel="stylesheet" href="theme/styles.css">
+}</script>
 </head>
 <body class="floating nav-fixed slimcontent">
 
@@ -106,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <span class="navbar-title">R 4 biostats</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
@@ -118,17 +101,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./install.html" aria-current="page"> <i class="bi bi-code-square" role="img">
+    <a class="nav-link active" href="./install.html" aria-current="page"> <i class="bi bi-download" role="img">
 </i> 
 <span class="menu-text">Pre-Workshop</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lectures" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-easel-fill" role="img">
 </i> 
- <span class="menu-text">Lessons</span>
+ <span class="menu-text">Lectures</span>
     </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-lessons">
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-lectures">
 <li>
     <a class="dropdown-item" href="./lessons/lec01_data_with_R.html">
  <span class="dropdown-text">Intro to R and data analysis</span></a>
@@ -149,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-archive-fill" role="img">
+      <i class="bi bi-terminal-fill" role="img">
 </i> 
  <span class="menu-text">Labs</span>
     </a>
@@ -173,7 +156,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
 </li>
   <li class="nav-item">
-    <a class="nav-link" href="./teacher.html"> <i class="bi bi-file-earmark-person-fill" role="img">
+    <a class="nav-link" href="./teacher.html"> <i class="bi bi-mortarboard-fill" role="img">
 </i> 
 <span class="menu-text">About</span></a>
   </li>  
@@ -195,7 +178,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#installing-and-using-r-packages" id="toc-installing-and-using-r-packages" class="nav-link" data-scroll-target="#installing-and-using-r-packages">Installing and using R packages</a></li>
   </ul>
 </li>
-  <li><a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a></li>
   <li>
 <a href="#managing-files-and-projects" id="toc-managing-files-and-projects" class="nav-link" data-scroll-target="#managing-files-and-projects">Managing files and projects</a>
   <ul class="collapse">
@@ -203,8 +185,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#defining-reproducible-file-paths" id="toc-defining-reproducible-file-paths" class="nav-link" data-scroll-target="#defining-reproducible-file-paths">Defining (reproducible) file paths</a></li>
   </ul>
 </li>
-  <li><a href="#objects-and-functions" id="toc-objects-and-functions" class="nav-link" data-scroll-target="#objects-and-functions">Objects and functions</a></li>
-  <li><a href="#about-the-materials" id="toc-about-the-materials" class="nav-link" data-scroll-target="#about-the-materials">About the materials</a></li>
   </ul></nav>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -298,6 +278,7 @@ Tip
 <li><p><strong>Github</strong> -</p></li>
 </ul>
 <!-- The bottom-right panel holds five tabs. --><!-- -   Files --><!-- -   Plots --><!-- -   Packages --><!-- -   Help --><!-- -   Viewer --><!-- Click on the `Packages` tab (1.) and select the select the `Install` button (2.). Type `dplyr` in (3.). You will see the word auto-completion that helps. --><!-- ![](images/installPck.png) --><section id="installing-and-using-r-packages" class="level2"><h2 class="anchored" data-anchor-id="installing-and-using-r-packages">Installing and using R packages</h2>
+<p>#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html</p>
 <p>Let’s take for example the R package <code>corr</code>, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Installing (ONLY the 1st time)</span></span>
@@ -345,27 +326,11 @@ Tip
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>You can also install and update packages using the “Packages” tab on the lower righ pane of RStudio</p>
-<p><a href="images/RStudio_install_pckg.png">Install/Update pckgs from RStudio</a></p>
+<p><a href="images/RStudio_install_pckg.png">Screenshot Install/Update pckgs from RStudio</a></p>
 </div>
 </div>
 </div>
-</section></section><section id="r-packages-that-will-be-required-for-the-workshop" class="level1"><h1>R packages that will be required for the workshop</h1>
-<p>To install an R package, open an R session execute:</p>
-<div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Installing (only the 1st time)</span></span>
-<span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"quarto"</span>, <span class="st">"rmarkdown"</span>, <span class="st">"palmerpenguins"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Loading a package (at every session) </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<!-- ## Install [Quarto] -->
-<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
-<!-- - After installing Quarto, open the terminal in RStudio and: -->
-<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
-<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
-<!--   - Install/Update Chromium with `quarto install tool chromium` -->
-</section><section id="managing-files-and-projects" class="level1"><h1>Managing files and projects</h1>
+</section></section><section id="managing-files-and-projects" class="level1"><h1>Managing files and projects</h1>
 <p>In any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as <code>input_data</code>, <code>output_data</code>, <code>R_scripts</code>, <code>paper</code>, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called “R project”</p>
 <!-- # R objects  -->
 <section id="creating-an-r-project" class="level2"><h2 class="anchored" data-anchor-id="creating-an-r-project">Creating an R Project</h2>
@@ -374,16 +339,16 @@ Tip
 </section><section id="defining-reproducible-file-paths" class="level2"><h2 class="anchored" data-anchor-id="defining-reproducible-file-paths">Defining (reproducible) file paths</h2>
 <p>It is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [NOT REPRODUCIBLE] hard coding your file path  --------------------------</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># File path on Mac:</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/testuser/R4biostats/input_data/dataset.csv"</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Same file path on Windows:</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:\Users</span><span class="sc">\t</span><span class="st">estuser\R4biostats\input_data\dataset.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># [NOT REPRODUCIBLE] hard coding your file path  --------------------------</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># File path on Mac:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"/Users/testuser/R4biostats/input_data/dataset.csv"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Same file path on Windows:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>dataset <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"C:\Users</span><span class="sc">\t</span><span class="st">estuser\R4biostats\input_data\dataset.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This is where the fantastic <a href="https://here.r-lib.org/"><code>here</code></a> package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.</p>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------</span></span>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://readr.tidyverse.org">readr</a></span><span class="op">)</span></span>
 <span></span>
@@ -411,12 +376,26 @@ Tip
 </div>
 </div>
 </div>
-</section></section><section id="objects-and-functions" class="level1"><h1>Objects and functions</h1>
-</section><section id="about-the-materials" class="level1"><h1>About the materials</h1>
-<p>This source code and license for all of the materials found on this website can be found on Github <a href="https://github.com/Lulliter/R4biostats"><i class="fa-brands fa-github"></i></a>.</p>
+<p>#? Objects and functions</p>
+<p>#? R packages that will be required for the workshop</p>
+<p>To install an R package, open an R session execute:</p>
+<div class="cell">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Installing (only the 1st time)</span></span>
+<span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyverse"</span>, <span class="st">"quarto"</span>, <span class="st">"rmarkdown"</span>, <span class="st">"palmerpenguins"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Loading a package (at every session) </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://tidyverse.tidyverse.org">"tidyverse"</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<!-- ## Install [Quarto] -->
+<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
+<!-- - After installing Quarto, open the terminal in RStudio and: -->
+<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
+<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
+<!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

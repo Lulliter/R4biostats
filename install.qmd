@@ -96,6 +96,8 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 ## Installing and using R packages
 
+#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html 
+
 Let's take for example the R package `corr`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
 
 ```{r}
@@ -136,36 +138,8 @@ To inquire about a package and/or its functions, you can again write in your con
 ::: {.callout-tip collapse="true"}
 You can also install and update packages using the "Packages" tab on the lower righ pane of RStudio
 
-[Install/Update pckgs from RStudio](images/RStudio_install_pckg.png) 
+[Screenshot Install/Update pckgs from RStudio](images/RStudio_install_pckg.png) 
 :::
-
-# R packages that will be required for the workshop
-
-To install an R package, open an R session execute:
-
-```{r}
-#| eval: false
-#| echo: true
-
-# Installing (only the 1st time)
-pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
-install.packages(pkg_list)
-
-# Loading a package (at every session) 
-library ("tidyverse")
-```
-
-<!-- ## Install [Quarto] -->
-
-<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
-
-<!-- - After installing Quarto, open the terminal in RStudio and: -->
-
-<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
-
-<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
-
-<!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
 
 # Managing files and projects
@@ -210,14 +184,38 @@ dataset <- read_csv(here("input_data", "dataset.csv"))
 
 ```
 
-
 ::: {.callout-tip collapse="true"}
 The `here` package uses the top-level directory of a project (where you have placed your `proj_name.Rproj`) as the reference to easily, and portably, build paths to files.
 :::
 
-# Objects and functions
+#? Objects and functions
+
+#? R packages that will be required for the workshop
+
+To install an R package, open an R session execute:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installing (only the 1st time)
+pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
+install.packages(pkg_list)
+
+# Loading a package (at every session) 
+library ("tidyverse")
+```
+
+<!-- ## Install [Quarto] -->
+
+<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
+
+<!-- - After installing Quarto, open the terminal in RStudio and: -->
+
+<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
+
+<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
+
+<!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
 
-# About the materials
-
-This source code and license for all of the materials found on this website can be found on Github [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats).

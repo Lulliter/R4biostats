@@ -38,6 +38,7 @@ I acknowledge inputs taken from these very valuable sources:
 + [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials**  (Licensed <img src="images/creative-commons.svg" width="16" height="16">)
 + [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyrighted <img src="images/copyright-regular.svg" width="16" height="16">)
 
++ [Autism](Sydney-informatics-hub-github.io)
 
 
 ## Web stuff 
@@ -45,3 +46,4 @@ I acknowledge inputs taken from these very valuable sources:
 + Favicon1 (giallo) <a target="_blank" href="https://icons8.com/icon/110187/grafico-combinato">Grafico combinato</a> icona di <a target="_blank" href="https://icons8.com">Icons8</a>
 + Favicon1 (blu)  <a target="_blank" href="https://icons8.com/icon/lmhleiXG9ioV/analitica">analitica</a> icona di <a target="_blank" href="https://icons8.com">Icons8</a>
 + Font-Awsome Icons downloaded in `./images/*` from [Font-Awsome svgs](https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs)
++ Quarto website cusomization [slides](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)

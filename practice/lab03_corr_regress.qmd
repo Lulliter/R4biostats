@@ -1,5 +1,5 @@
 ---
-title: "Lab: Modeling correlation and regression"
+title: "Lab 3: Modeling correlation and regression"
 editor: source
 ## ------  general Output Options
 execute:     
@@ -20,7 +20,7 @@ format:
     toc-depth: 3
     toc_float: true
     toc-location: left
-    toc-title: Indice
+    toc-title: Outline
     embed-resources: true # external dependencies embedded (Not in ..._files/)
   # pdf:
   #   toc-depth: 2
