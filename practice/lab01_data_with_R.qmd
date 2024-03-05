@@ -145,7 +145,7 @@ This workshop showcases introductory bio statistics concepts using the open sour
 
 Below is quick step by step process that can help you get started.
 
-{{< pagebreak >}}
+
 
 
 # Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
@@ -192,7 +192,7 @@ R, which is a command line driven program, can be executed via its native interf
 
 -   To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
 
-![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](images/rstudio-panes-labeled.jpeg) 
+![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](../images/rstudio-panes-labeled.jpeg) 
 
 # Install R packages from the CRAN
 
@@ -217,7 +217,7 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 ## Installing and using R packages
 
-#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html 
+## ? https://r-training.pages.uni.lu/biostat1/install_tutorial.html 
 
 Let's take for example the R package `corr`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
 
@@ -257,9 +257,9 @@ To inquire about a package and/or its functions, you can again write in your con
 ```
 
 ::: {.callout-tip collapse="true"}
-You can also install and update packages using the "Packages" tab on the lower righ pane of RStudio
+You can also install and update packages using the "Packages" tab on the lower right pane of RStudio
 
-[Screenshot Install/Update pckgs from RStudio](images/RStudio_install_pckg.png) 
+![Screenshot Install/Update pckgs from RStudio](../images/RStudio_install_pckg_2way.png) 
 :::
 
 

@@ -67,7 +67,14 @@
     "href": "practice/lab01_data_with_R.html#installing-and-using-r-packages",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Installing and using R packages",
-    "text": "Installing and using R packages\n#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nScreenshot Install/Update pckgs from RStudio"
+    "text": "Installing and using R packages"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#httpsr-training.pages.uni.lubiostat1install_tutorial.html",
+    "href": "practice/lab01_data_with_R.html#httpsr-training.pages.uni.lubiostat1install_tutorial.html",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "? https://r-training.pages.uni.lu/biostat1/install_tutorial.html",
+    "text": "? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower right pane of RStudio\n\nScreenshot Install/Update pckgs from RStudio"
   },
   {
     "objectID": "practice/lab01_data_with_R.html#creating-an-r-project",
