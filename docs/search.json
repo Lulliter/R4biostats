@@ -46,7 +46,7 @@
     "href": "practice/lab01_data_with_R.html#topics",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Topics",
-    "text": "Topics\n\nLearn how to …. ."
+    "text": "Topics\n\nIntroduction to R and R-studio\n\nWhy R?\n\n\nUnderstanding different types of variables\nHandling R objects: vectors, matrix, data.frame\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and frequency distribution\n\n\nVisual data exploration\n\n{ggplot2}\n\n\nFoundations of inference"
   },
   {
     "objectID": "practice/lab01_data_with_R.html#lab-code",
@@ -60,389 +60,410 @@
     "href": "practice/lab01_data_with_R.html#lab-datasets",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Lab datasets",
-    "text": "Lab datasets\n\n\nBelow are the datasets used in the Practice session:\n\n\n.csv file\n\n\n\n Download input data  .csv\n\n\n\nlocal subfolder\n\n\n\n\n Download input data directory"
+    "text": "Lab datasets\n\n\nBelow are the datasets used in the Practice session:\n\n\n.csv file\n\n\n\n Download input data  .csv\n\n\n\nlocal subfolder\n\n\n\n\n Download input data directory\n\n\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
   },
   {
-    "objectID": "lessons_slides/04-guide.html#exercise-2",
-    "href": "lessons_slides/04-guide.html#exercise-2",
+    "objectID": "practice/lab01_data_with_R.html#installing-and-using-r-packages",
+    "href": "practice/lab01_data_with_R.html#installing-and-using-r-packages",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Installing and using R packages",
+    "text": "Installing and using R packages\n#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nScreenshot Install/Update pckgs from RStudio"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#creating-an-r-project",
+    "href": "practice/lab01_data_with_R.html#creating-an-r-project",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Creating an R Project",
+    "text": "Creating an R Project\nCreating an R Project will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path."
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#defining-reproducible-file-paths",
+    "href": "practice/lab01_data_with_R.html#defining-reproducible-file-paths",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Defining (reproducible) file paths",
+    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\nThis is where the fantastic here package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
+  },
+  {
+    "objectID": "lectures_slides/04-guide.html#exercise-2",
+    "href": "lectures_slides/04-guide.html#exercise-2",
     "title": "Day 4: Intro to ML",
     "section": "Exercise 2",
     "text": "Exercise 2\n\nTake look at the following stacked bar graph.\n\nWhat elements are used to guide the viewer? Does it work?\nDraw a version that makes it easier for a viewer to see the main message.\nHow could you improve the aesthetic appeal of the graphic?"
   },
   {
-    "objectID": "lessons_slides/04-guide.html#exercise-2-1",
-    "href": "lessons_slides/04-guide.html#exercise-2-1",
+    "objectID": "lectures_slides/04-guide.html#exercise-2-1",
+    "href": "lectures_slides/04-guide.html#exercise-2-1",
     "title": "Day 4: Intro to ML",
     "section": "Exercise 2",
     "text": "Exercise 2"
   },
   {
-    "objectID": "lessons_slides/04-guide.html#section",
-    "href": "lessons_slides/04-guide.html#section",
+    "objectID": "lectures_slides/04-guide.html#section",
+    "href": "lectures_slides/04-guide.html#section",
     "title": "Day 4: Intro to ML",
     "section": "",
     "text": "Maria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#collaborators",
-    "href": "lessons_slides/02_mine.html#collaborators",
+    "objectID": "lectures_slides/02_mine.html#collaborators",
+    "href": "lectures_slides/02_mine.html#collaborators",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "collaborators",
     "text": "collaborators\n\nJohanna Hardin, Pomona College\nBenjamin S. Baumer, Smith College\nAmelia McNamara, University of St Thomas\nNicholas J. Horton, Amherst College\nColin W. Rundel, Duke University"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#setting-the-scene",
-    "href": "lessons_slides/02_mine.html#setting-the-scene",
+    "objectID": "lectures_slides/02_mine.html#setting-the-scene",
+    "href": "lectures_slides/02_mine.html#setting-the-scene",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "setting the scene",
     "text": "setting the scene\n\n\n\nAssumption 1:\nTeach authentic tools\n\n\nAssumption 2:\nTeach R as the authentic tool"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#takeaway",
-    "href": "lessons_slides/02_mine.html#takeaway",
+    "objectID": "lectures_slides/02_mine.html#takeaway",
+    "href": "lectures_slides/02_mine.html#takeaway",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "takeaway",
     "text": "takeaway\n\n\nThe tidyverse provides an effective and efficient pathway for undergraduate students at all levels and majors to gain computational skills and thinking needed throughout the data science cycle.\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#tidyverse",
-    "href": "lessons_slides/02_mine.html#tidyverse",
+    "objectID": "lectures_slides/02_mine.html#tidyverse",
+    "href": "lectures_slides/02_mine.html#tidyverse",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidyverse",
     "text": "tidyverse\n\n\n\nmeta R package that loads eight core packages when invoked and also bundles numerous other packages upon installation\ntidyverse packages share a design philosophy, common grammar, and data structures"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#tidyverse-flow",
-    "href": "lessons_slides/02_mine.html#tidyverse-flow",
+    "objectID": "lectures_slides/02_mine.html#tidyverse-flow",
+    "href": "lectures_slides/02_mine.html#tidyverse-flow",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidyverse flow",
     "text": "tidyverse flow"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#setup",
-    "href": "lessons_slides/02_mine.html#setup",
+    "objectID": "lectures_slides/02_mine.html#setup",
+    "href": "lectures_slides/02_mine.html#setup",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "setup",
     "text": "setup\nData: Thousands of loans made through the Lending Club, a peer-to-peer lending platform available in the openintro package, with a few modifications.\n\nlibrary(tidyverse)\nlibrary(openintro)\n\nloans &lt;- loans_full_schema %&gt;%\n  mutate(\n    homeownership = str_to_title(homeownership), \n    bankruptcy = if_else(public_record_bankrupt &gt;= 1, \"Yes\", \"No\")\n  ) %&gt;%\n  filter(annual_income &gt;= 10) %&gt;%\n  select(\n    loan_amount, homeownership, bankruptcy,\n    application_type, annual_income, interest_rate\n  )"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#start-with-a-data-frame",
-    "href": "lessons_slides/02_mine.html#start-with-a-data-frame",
+    "objectID": "lectures_slides/02_mine.html#start-with-a-data-frame",
+    "href": "lectures_slides/02_mine.html#start-with-a-data-frame",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "start with a data frame",
     "text": "start with a data frame\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#tidy-data",
-    "href": "lessons_slides/02_mine.html#tidy-data",
+    "objectID": "lectures_slides/02_mine.html#tidy-data",
+    "href": "lectures_slides/02_mine.html#tidy-data",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "tidy data",
     "text": "tidy data\n\nEach variable forms a column\nEach observation forms a row\nEach type of observational unit forms a table\n\n\n\nWickham, H. . (2014). Tidy Data. Journal of Statistical Software, 59(10), 1–23. doi.org/10.18637/jss.v059.i10."
   },
   {
-    "objectID": "lessons_slides/02_mine.html#task-calculate-a-summary-statistic",
-    "href": "lessons_slides/02_mine.html#task-calculate-a-summary-statistic",
+    "objectID": "lectures_slides/02_mine.html#task-calculate-a-summary-statistic",
+    "href": "lectures_slides/02_mine.html#task-calculate-a-summary-statistic",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: calculate a summary statistic",
     "text": "task: calculate a summary statistic\n\nCalculate the mean loan amount.\n\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;\n\n\n\n\nmean(loan_amount)\n\n\n\n\n\nError in mean(loan_amount): object 'loan_amount' not found"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#accessing-a-variable",
-    "href": "lessons_slides/02_mine.html#accessing-a-variable",
+    "objectID": "lectures_slides/02_mine.html#accessing-a-variable",
+    "href": "lectures_slides/02_mine.html#accessing-a-variable",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 1: With attach():\n\nattach(loans)\nmean(loan_amount)\n\n[1] 16357.53\n\n\n\n\nNot recommended. What if you had another data frame you’re working with concurrently called car_loans that also had a variable called loan_amount in it?"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#accessing-a-variable-1",
-    "href": "lessons_slides/02_mine.html#accessing-a-variable-1",
+    "objectID": "lectures_slides/02_mine.html#accessing-a-variable-1",
+    "href": "lectures_slides/02_mine.html#accessing-a-variable-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 2: Using $:\n\nmean(loans$loan_amount)\n\n[1] 16357.53\n\n\n\n\nApproach 3: Using with():\n\nwith(loans, mean(loan_amount))\n\n[1] 16357.53"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#accessing-a-variable-2",
-    "href": "lessons_slides/02_mine.html#accessing-a-variable-2",
+    "objectID": "lectures_slides/02_mine.html#accessing-a-variable-2",
+    "href": "lectures_slides/02_mine.html#accessing-a-variable-2",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "accessing a variable",
     "text": "accessing a variable\nApproach 4: The tidyverse approach:\n\nloans %&gt;%\n  summarise(mean_loan_amount = mean(loan_amount))\n\n# A tibble: 1 × 1\n  mean_loan_amount\n             &lt;dbl&gt;\n1           16358.\n\n\n\n\nMore verbose\nBut also more expressive and extensible"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#the-tidyverse-approach",
-    "href": "lessons_slides/02_mine.html#the-tidyverse-approach",
+    "objectID": "lectures_slides/02_mine.html#the-tidyverse-approach",
+    "href": "lectures_slides/02_mine.html#the-tidyverse-approach",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "the tidyverse approach",
     "text": "the tidyverse approach\n\n\ntidyverse functions take a data argument that allows them to localize computations inside the specified data frame\ndoes not muddy the concept of what is in the current environment: variables always accessed from within in a data frame without the use of an additional function (like with()) or quotation marks, never as a vector"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#task-grouped-summary",
-    "href": "lessons_slides/02_mine.html#task-grouped-summary",
+    "objectID": "lectures_slides/02_mine.html#task-grouped-summary",
+    "href": "lectures_slides/02_mine.html#task-grouped-summary",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: grouped summary",
     "text": "task: grouped summary\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\n\n\n\n\n\n\nHomeownership\nNumber of applicants\nAverage loan amount\n\n\n\nMortgage\n$18,132\n4,778\n\n\nOwn\n$15,665\n1,350\n\n\nRent\n$14,396\n3,848"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-i",
-    "href": "lessons_slides/02_mine.html#break-it-down-i",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-i",
+    "href": "lectures_slides/02_mine.html#break-it-down-i",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down I",
     "text": "break it down I\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans\n\n# A tibble: 9,976 × 6\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-ii",
-    "href": "lessons_slides/02_mine.html#break-it-down-ii",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-ii",
+    "href": "lectures_slides/02_mine.html#break-it-down-ii",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down II",
     "text": "break it down II\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\n\n[input] data frame\n\n\n\n\nloans %&gt;%\n  group_by(homeownership)\n\n# A tibble: 9,976 × 6\n# Groups:   homeownership [3]\n  loan_amount homeownership bankruptcy application_type annual_income\n        &lt;int&gt; &lt;chr&gt;         &lt;chr&gt;      &lt;fct&gt;                    &lt;dbl&gt;\n1       28000 Mortgage      No         individual               90000\n2        5000 Rent          Yes        individual               40000\n3        2000 Rent          No         individual               40000\n4       21600 Rent          No         individual               30000\n5       23000 Rent          No         joint                    35000\n6        5000 Own           No         individual               34000\n# ℹ 9,970 more rows\n# ℹ 1 more variable: interest_rate &lt;dbl&gt;\n\n\n\n\n\ndata frame [output]"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-iii",
-    "href": "lessons_slides/02_mine.html#break-it-down-iii",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-iii",
+    "href": "lectures_slides/02_mine.html#break-it-down-iii",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down III",
     "text": "break it down III\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount)\n    )\n\n# A tibble: 3 × 2\n  homeownership avg_loan_amount\n  &lt;chr&gt;                   &lt;dbl&gt;\n1 Mortgage               18132.\n2 Own                    15665.\n3 Rent                   14396."
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-iv",
-    "href": "lessons_slides/02_mine.html#break-it-down-iv",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-iv",
+    "href": "lectures_slides/02_mine.html#break-it-down-iv",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    )\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-v",
-    "href": "lessons_slides/02_mine.html#break-it-down-v",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-v",
+    "href": "lectures_slides/02_mine.html#break-it-down-v",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down V",
     "text": "break it down V\n\n\nBased on the applicants’ home ownership status, compute the average loan amount and the number of applicants. Display the results in descending order of average loan amount.\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    ) %&gt;%\n  arrange(desc(avg_loan_amount))\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#putting-it-back-together",
-    "href": "lessons_slides/02_mine.html#putting-it-back-together",
+    "objectID": "lectures_slides/02_mine.html#putting-it-back-together",
+    "href": "lectures_slides/02_mine.html#putting-it-back-together",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "putting it back together",
     "text": "putting it back together\n\n[input] data frame\n\n\nloans %&gt;%\n  group_by(homeownership) %&gt;% \n  summarize(\n    avg_loan_amount = mean(loan_amount),\n    n_applicants = n()\n    ) %&gt;%\n  arrange(desc(avg_loan_amount))\n\n# A tibble: 3 × 3\n  homeownership avg_loan_amount n_applicants\n  &lt;chr&gt;                   &lt;dbl&gt;        &lt;int&gt;\n1 Mortgage               18132.         4778\n2 Own                    15665.         1350\n3 Rent                   14396.         3848\n\n\n\n[output] data frame"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate",
-    "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate",
+    "objectID": "lectures_slides/02_mine.html#grouped-summary-with-aggregate",
+    "href": "lectures_slides/02_mine.html#grouped-summary-with-aggregate",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\nres1 &lt;- aggregate(loan_amount ~ homeownership, \n                  data = loans, FUN = length)\nres1\n\n  homeownership loan_amount\n1      Mortgage        4778\n2           Own        1350\n3          Rent        3848\n\nnames(res1)[2] &lt;- \"n_applicants\"\nres1\n\n  homeownership n_applicants\n1      Mortgage         4778\n2           Own         1350\n3          Rent         3848"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-1",
-    "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-1",
+    "objectID": "lectures_slides/02_mine.html#grouped-summary-with-aggregate-1",
+    "href": "lectures_slides/02_mine.html#grouped-summary-with-aggregate-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\nres2 &lt;- aggregate(loan_amount ~ homeownership, \n                  data = loans, FUN = mean)\nnames(res2)[2] &lt;- \"avg_loan_amount\"\n\nres2\n\n  homeownership avg_loan_amount\n1      Mortgage        18132.45\n2           Own        15665.44\n3          Rent        14396.44\n\n\n\n\nres &lt;- merge(res1, res2)\nres[order(res$avg_loan_amount, decreasing = TRUE), ]\n\n  homeownership n_applicants avg_loan_amount\n1      Mortgage         4778        18132.45\n2           Own         1350        15665.44\n3          Rent         3848        14396.44"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-2",
-    "href": "lessons_slides/02_mine.html#grouped-summary-with-aggregate-2",
+    "objectID": "lectures_slides/02_mine.html#grouped-summary-with-aggregate-2",
+    "href": "lectures_slides/02_mine.html#grouped-summary-with-aggregate-2",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with aggregate()\n",
     "text": "grouped summary with aggregate()\n\n\n\nres1 &lt;- aggregate(loan_amount ~ homeownership, data = loans, FUN = length)\nnames(res1)[2] &lt;- \"n_applicants\"\nres2 &lt;- aggregate(loan_amount ~ homeownership, data = loans, FUN = mean)\nnames(res2)[2] &lt;- \"avg_loan_amount\"\nres &lt;- merge(res1, res2)\nres[order(res$avg_loan_amount, decreasing = TRUE), ]\n\n\n\n\n\nGood: Inputs and outputs are data frames\n\nNot so good: Need to introduce\n\nformula syntax\npassing functions as arguments\nmerging datasets\nsquare bracket notation for accessing rows"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#grouped-summary-with-tapply",
-    "href": "lessons_slides/02_mine.html#grouped-summary-with-tapply",
+    "objectID": "lectures_slides/02_mine.html#grouped-summary-with-tapply",
+    "href": "lectures_slides/02_mine.html#grouped-summary-with-tapply",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "grouped summary with tapply()\n",
     "text": "grouped summary with tapply()\n\n\nsort(\n  tapply(loans$loan_amount, loans$homeownership, mean),\n  decreasing = TRUE\n  )\n\nMortgage      Own     Rent \n18132.45 15665.44 14396.44 \n\n\n\n\nNot so good:\n\npassing functions as arguments\ndistinguishing between the various apply() functions\nending up with a new data structure (array)\nreading nested functions"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#task-data-visualization",
-    "href": "lessons_slides/02_mine.html#task-data-visualization",
+    "objectID": "lectures_slides/02_mine.html#task-data-visualization",
+    "href": "lectures_slides/02_mine.html#task-data-visualization",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "task: data visualization",
     "text": "task: data visualization\n\nCreate side-by-side box plots that shows the relationship between loan amount and application type, faceted by homeownership."
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-i-1",
-    "href": "lessons_slides/02_mine.html#break-it-down-i-1",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-i-1",
+    "href": "lectures_slides/02_mine.html#break-it-down-i-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down I",
     "text": "break it down I\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-ii-1",
-    "href": "lessons_slides/02_mine.html#break-it-down-ii-1",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-ii-1",
+    "href": "lectures_slides/02_mine.html#break-it-down-ii-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down II",
     "text": "break it down II\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type))"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-iii-1",
-    "href": "lessons_slides/02_mine.html#break-it-down-iii-1",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-iii-1",
+    "href": "lectures_slides/02_mine.html#break-it-down-iii-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down III",
     "text": "break it down III\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount))"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-iv-1",
-    "href": "lessons_slides/02_mine.html#break-it-down-iv-1",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-iv-1",
+    "href": "lectures_slides/02_mine.html#break-it-down-iv-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount)) +\n  geom_boxplot()"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#break-it-down-iv-2",
-    "href": "lessons_slides/02_mine.html#break-it-down-iv-2",
+    "objectID": "lectures_slides/02_mine.html#break-it-down-iv-2",
+    "href": "lectures_slides/02_mine.html#break-it-down-iv-2",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "break it down IV",
     "text": "break it down IV\n\n\nCreate side-by-side box plots that shows the relationship between annual income and application type, faceted by homeownership.\n\n\nggplot(loans, \n       aes(x = application_type,\n           y = loan_amount)) +\n  geom_boxplot() +\n  facet_wrap(~ homeownership)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-ggplot",
-    "href": "lessons_slides/02_mine.html#plotting-with-ggplot",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-ggplot",
+    "href": "lectures_slides/02_mine.html#plotting-with-ggplot",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with ggplot()\n",
     "text": "plotting with ggplot()\n\n\nggplot(loans, \n       aes(x = application_type, y = loan_amount)) +\n  geom_boxplot() +\n  facet_wrap(~ homeownership)\n\n\n\nEach layer produces a valid plot\nFaceting by a third variable takes only one new function"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-boxplot",
-    "href": "lessons_slides/02_mine.html#plotting-with-boxplot",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-boxplot",
+    "href": "lectures_slides/02_mine.html#plotting-with-boxplot",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with boxplot()\n",
     "text": "plotting with boxplot()\n\n\nlevels &lt;- sort(unique(loans$homeownership))\nlevels\n\n[1] \"Mortgage\" \"Own\"      \"Rent\"    \n\nloans1 &lt;- loans[loans$homeownership == levels[1],]\nloans2 &lt;- loans[loans$homeownership == levels[2],]\nloans3 &lt;- loans[loans$homeownership == levels[3],]"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-boxplot-1",
-    "href": "lessons_slides/02_mine.html#plotting-with-boxplot-1",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-boxplot-1",
+    "href": "lectures_slides/02_mine.html#plotting-with-boxplot-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with boxplot()\n",
     "text": "plotting with boxplot()\n\n\npar(mfrow = c(1, 3))\n\nboxplot(loan_amount ~ application_type, \n        data = loans1, main = levels[1])\nboxplot(loan_amount ~ application_type, \n        data = loans2, main = levels[2])\nboxplot(loan_amount ~ application_type, \n        data = loans3, main = levels[3])"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#visualizing-a-different-relationship",
-    "href": "lessons_slides/02_mine.html#visualizing-a-different-relationship",
+    "objectID": "lectures_slides/02_mine.html#visualizing-a-different-relationship",
+    "href": "lectures_slides/02_mine.html#visualizing-a-different-relationship",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "visualizing a different relationship",
     "text": "visualizing a different relationship\n\nVisualize the relationship between interest rate and annual income, conditioned on whether the applicant had a bankruptcy."
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-ggplot-1",
-    "href": "lessons_slides/02_mine.html#plotting-with-ggplot-1",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-ggplot-1",
+    "href": "lectures_slides/02_mine.html#plotting-with-ggplot-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with ggplot()\n",
     "text": "plotting with ggplot()\n\n\nggplot(loans, \n       aes(y = interest_rate, x = annual_income, \n           color = bankruptcy)) +\n  geom_point(alpha = 0.1) + \n  geom_smooth(method = \"lm\", linewidth = 2, se = FALSE) + \n  scale_x_log10()"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#further-customizing-ggplot",
-    "href": "lessons_slides/02_mine.html#further-customizing-ggplot",
+    "objectID": "lectures_slides/02_mine.html#further-customizing-ggplot",
+    "href": "lectures_slides/02_mine.html#further-customizing-ggplot",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "further customizing ggplot()\n",
     "text": "further customizing ggplot()\n\n\nggplot(loans, \n       aes(y = interest_rate, x = annual_income, \n           color = bankruptcy)) +\n  geom_point(alpha = 0.1) + \n  geom_smooth(method = \"lm\", linewidth = 2, se = FALSE) + \n  scale_x_log10(labels = scales::label_dollar()) +\n  scale_y_continuous(labels = scales::label_percent(scale = 1)) +\n  scale_color_OkabeIto() +\n  labs(x = \"Annual Income\", y = \"Interest Rate\", \n       color = \"Previous\\nBankruptcy\") +\n  theme_minimal(base_size = 18)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-plot",
-    "href": "lessons_slides/02_mine.html#plotting-with-plot",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-plot",
+    "href": "lectures_slides/02_mine.html#plotting-with-plot",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with plot()\n",
     "text": "plotting with plot()\n\n\n# From the OkabeIto palette\ncols = c(No = \"#e6a003\", Yes = \"#57b4e9\")\n\nplot(\n  loans$annual_income,\n  loans$interest_rate,\n  pch = 16,\n  col = adjustcolor(cols[loans$bankruptcy], alpha.f = 0.1),\n  log = \"x\",\n  xlab = \"Annual Income ($)\",\n  ylab = \"Interest Rate (%)\",\n  xaxp = c(1000, 10000000, 1)\n)\n\nlm_b_no = lm(\n  interest_rate ~ log10(annual_income), \n  data = loans[loans$bankruptcy == \"No\",]\n)\nlm_b_yes = lm(\n  interest_rate ~ log10(annual_income), \n  data = loans[loans$bankruptcy == \"Yes\",]\n)\n\nabline(lm_b_no, col = cols[\"No\"], lwd = 3)\nabline(lm_b_yes, col = cols[\"Yes\"], lwd = 3)\n\nlegend(\n  \"topright\", \n  legend = c(\"Yes\", \"No\"), \n  title = \"Previous\\nBankruptcy\", \n  col = cols[c(\"Yes\", \"No\")], \n  pch = 16, lwd = 1\n)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#plotting-with-plot-1",
-    "href": "lessons_slides/02_mine.html#plotting-with-plot-1",
+    "objectID": "lectures_slides/02_mine.html#plotting-with-plot-1",
+    "href": "lectures_slides/02_mine.html#plotting-with-plot-1",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "plotting with plot()\n",
     "text": "plotting with plot()"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
-    "href": "lessons_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
+    "objectID": "lectures_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
+    "href": "lectures_slides/02_mine.html#beyond-wrangling-summaries-visualizations",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "beyond wrangling, summaries, visualizations",
     "text": "beyond wrangling, summaries, visualizations\nModeling and inference with tidymodels:\n\nA unified interface to modeling functions available in a large variety of packages\nSticking to the data frame in / data frame out paradigm\nGuardrails for methodology"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#consistency",
-    "href": "lessons_slides/02_mine.html#consistency",
+    "objectID": "lectures_slides/02_mine.html#consistency",
+    "href": "lectures_slides/02_mine.html#consistency",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "consistency",
     "text": "consistency\n\nNo matter which approach or tool you use, you should strive to be consistent in the classroom whenever possible\ntidyverse offers consistency, something we believe to be of the utmost importance, allowing students to move knowledge about function arguments to their long-term memory"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#teaching-consistently",
-    "href": "lessons_slides/02_mine.html#teaching-consistently",
+    "objectID": "lectures_slides/02_mine.html#teaching-consistently",
+    "href": "lectures_slides/02_mine.html#teaching-consistently",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "teaching consistently",
     "text": "teaching consistently\n\nChallenge: Google and Stack Overflow can be less useful – demo problem solving\nCounter-proposition: teach all (or multiple) syntaxes at once – trying to teach two (or more!) syntaxes at once will slow the pace of the course, introduce unnecessary syntactic confusion, and make it harder for students to complete their work.\n“Disciplined in what we teach, liberal in what we accept”\n\n\n\nPostel, J. (1980). DoD standard internet protocol. ACM SIGCOMM Computer Communication Review, 10(4), 12-51. datatracker.ietf.org/doc/html/rfc760"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#mixability",
-    "href": "lessons_slides/02_mine.html#mixability",
+    "objectID": "lectures_slides/02_mine.html#mixability",
+    "href": "lectures_slides/02_mine.html#mixability",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "mixability",
     "text": "mixability\n\nMix with base R code or code from other packages\nIn fact, you can’t not mix with base R code!"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#scalability",
-    "href": "lessons_slides/02_mine.html#scalability",
+    "objectID": "lectures_slides/02_mine.html#scalability",
+    "href": "lectures_slides/02_mine.html#scalability",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "scalability",
     "text": "scalability\nAdding a new variable to a visualization or a new summary statistic doesn’t require introducing a numerous functions, interfaces, and data structures"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#user-centered-design",
-    "href": "lessons_slides/02_mine.html#user-centered-design",
+    "objectID": "lectures_slides/02_mine.html#user-centered-design",
+    "href": "lectures_slides/02_mine.html#user-centered-design",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "user-centered design",
     "text": "user-centered design\n\nInterfaces designed with user experience (and learning) in mind\nContinuous feedback collection and iterative improvements based on user experiences improve functions’ and packages’ usability (and learnability)"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#readability",
-    "href": "lessons_slides/02_mine.html#readability",
+    "objectID": "lectures_slides/02_mine.html#readability",
+    "href": "lectures_slides/02_mine.html#readability",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "readability",
     "text": "readability\nInterfaces that are designed to produce readable code"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#community",
-    "href": "lessons_slides/02_mine.html#community",
+    "objectID": "lectures_slides/02_mine.html#community",
+    "href": "lectures_slides/02_mine.html#community",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "community",
     "text": "community\n\nThe encouraging and inclusive tidyverse community is one of the benefits of the paradigm\nEach package comes with a website, each of these websites are similarly laid out, and results of example code are displayed, and extensive vignettes describe how to use various functions from the package together"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#shared-syntax",
-    "href": "lessons_slides/02_mine.html#shared-syntax",
+    "objectID": "lectures_slides/02_mine.html#shared-syntax",
+    "href": "lectures_slides/02_mine.html#shared-syntax",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "shared syntax",
     "text": "shared syntax\nGet SQL for free with dplyr verbs!"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#building-a-curriculum",
-    "href": "lessons_slides/02_mine.html#building-a-curriculum",
+    "objectID": "lectures_slides/02_mine.html#building-a-curriculum",
+    "href": "lectures_slides/02_mine.html#building-a-curriculum",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "building a curriculum",
     "text": "building a curriculum\n\nStart with library(tidyverse)\nTeach by learning goals, not packages"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#keeping-up-with-the-tidyverse",
-    "href": "lessons_slides/02_mine.html#keeping-up-with-the-tidyverse",
+    "objectID": "lectures_slides/02_mine.html#keeping-up-with-the-tidyverse",
+    "href": "lectures_slides/02_mine.html#keeping-up-with-the-tidyverse",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "keeping up with the tidyverse",
     "text": "keeping up with the tidyverse\n\nBlog posts highlight updates, along with the reasoning behind them and worked examples\n\nLifecycle stages and badges"
   },
   {
-    "objectID": "lessons_slides/02_mine.html#coda",
-    "href": "lessons_slides/02_mine.html#coda",
+    "objectID": "lectures_slides/02_mine.html#coda",
+    "href": "lectures_slides/02_mine.html#coda",
     "title": "Day 2: Inference and Hypothesis testing",
     "section": "coda",
     "text": "coda\n\n\n\nWe are all converts to the tidyverse and have made a conscious choice to use it in our research and our teaching. We each learned R without the tidyverse and have all spent quite a few years teaching without it at a variety of levels from undergraduate introductory statistics courses to graduate statistical computing courses. This paper is a synthesis of the reasons supporting our tidyverse choice, along with benefits and challenges associated with teaching statistics with the tidyverse.\n\n\n\n\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
-    "objectID": "lessons/lec04_intro_ML.html",
-    "href": "lessons/lec04_intro_ML.html",
+    "objectID": "lectures/lec04_intro_ML.html",
+    "href": "lectures/lec04_intro_ML.html",
     "title": "Intro to machine learning",
     "section": "",
     "text": "Download “*.pptx” file \n\nLesson’s outline\n\nIntroduction to Machine Learning\nLinear Regression\nClassification\nModel Selection\nUnsupervised Learning"
   },
   {
-    "objectID": "lessons/lec02_inference.html",
-    "href": "lessons/lec02_inference.html",
+    "objectID": "lectures/lec02_inference.html",
+    "href": "lectures/lec02_inference.html",
     "title": "Statistical inference & hypothesis testing",
     "section": "",
     "text": "View slides in full screen\n\nLesson’s outline\n\nPrinciples of statistical inference\nStatistical tests on samples mean\n\nZ-test\nt-test\nMann Whitney U- test\n\nParametric vs non-parametric statistical tests"
@@ -452,28 +473,7 @@
     "href": "install.html",
     "title": "Installation and setup",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
-  },
-  {
-    "objectID": "install.html#installing-and-using-r-packages",
-    "href": "install.html#installing-and-using-r-packages",
-    "title": "Installation and setup",
-    "section": "Installing and using R packages",
-    "text": "Installing and using R packages\n#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corr, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower righ pane of RStudio\nScreenshot Install/Update pckgs from RStudio"
-  },
-  {
-    "objectID": "install.html#creating-an-r-project",
-    "href": "install.html#creating-an-r-project",
-    "title": "Installation and setup",
-    "section": "Creating an R Project",
-    "text": "Creating an R Project\nCreating an R Project will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path."
-  },
-  {
-    "objectID": "install.html#defining-reproducible-file-paths",
-    "href": "install.html#defining-reproducible-file-paths",
-    "title": "Installation and setup",
-    "section": "Defining (reproducible) file paths",
-    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\nThis is where the fantastic here package comes in to help, as it will define file paths in a “reproducible manner” as long as you have created an R Project.\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\n\n\n\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but it would be best if you could install the required software on your machine in advance.\nBelow is quick step by step process that can guide you with the installation.\nInstall \n\n\n\n\nR is available for free for Windows , GNU/Linux , and macOS .\n\nTo install R, you can go to this link. The latest available release is R 4.3.3 “Angel Food Cake” released on 2024-02/29, but any (fairly recent) version will do.\n\nIf you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\n# From the R console\nbase::R.version.string\n    # (This is the version on my own machine)\n    # [1] \"R version 4.2.2 (2022-10-31)\"\n\n…or by executing this command in your CLI (Command Line Interface):\n\n# From Terminal/Powershell/bash\nR --version\n\nInstall RStudio IDE\nWhile not strictly required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).\n\n\n\n\n\n\nTip\n\n\n\n\n\nR, which is a command line driven program, can be executed via its native interface (R GUI), as well as from many other code editors, like VS Code, Sublime Text, Jupyter Notebook, etc. RStudio remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.\n\n\n\n\nTo install RStudio you can go to this link.\nThe free RStudio DEsktop version contains everything you need.\nAgain, you don’t need to have the latest RStudio version, but I recommend v2022.07.1 or later (it also includes the installation of Quarto)\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nQuarto is a multi-language, next-generation version of R Markdown from Posit (former RSTUDIO company). While for R users it is not much different form Rmarkdown (you can author files with extension .qmd which are very similar), its key feature is that is It is available also for Python, Julia, and Observable languages.\n\nQuarto is not an R package so it has to be downloaded separately. However Rstudio v2022.07.1 or later come with Quarto included\nThe www.R4biostats.com is actually a quarto website 😊\n\n\n\n\n\n\nRStudio Pane Layout Source: Posit’s RStudio User Guide\n\n? Install R packages from the CRAN\nAn R package is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the base package), many useful R functions come in free libraries of code (or packages) written by R’s user community.\n\nCRAN - the Comprehensive R Archive Network - is the general package repository for R: https://cran.r-project.org/.\nBioconductor -\nGithub -\n? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
   },
   {
     "objectID": "index.html",
@@ -483,57 +483,57 @@
     "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\nWhy use R?\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\nccc\nmmm\nxxxx"
   },
   {
-    "objectID": "lessons/lec01_data_with_R.html",
-    "href": "lessons/lec01_data_with_R.html",
+    "objectID": "lectures/lec01_data_with_R.html",
+    "href": "lectures/lec01_data_with_R.html",
     "title": "Day 1: Intro to R and data analysis",
     "section": "",
     "text": "Lesson’s outline\n\nIntroduction to R and R-studio\nUnderstanding different types of variables\nHandling R objects: vectors, matrix, data.frame\nDescriptive statistics\n\nmeasures of central tendency, measures of variability (or spread), and frequency distribution\n\nVisual data exploration\n\n{ggplot2}\n\nFoundations of inference\n\n\nView slides in full screen"
   },
   {
-    "objectID": "lessons/lec03_corr_regress.html",
-    "href": "lessons/lec03_corr_regress.html",
+    "objectID": "lectures/lec03_corr_regress.html",
+    "href": "lectures/lec03_corr_regress.html",
     "title": "Modeling correlation and regression",
     "section": "",
     "text": "View slides in full screen\n\nLesson’s outline\n\nChi-Square Tests\nRegression\nANOVA\nPower calculations for basic study designs\nUse power and sample size calculations as the basis of argument in support of study design, feasibility and testing"
   },
   {
-    "objectID": "lessons_slides/01-foundations.html#dataviz-science",
-    "href": "lessons_slides/01-foundations.html#dataviz-science",
+    "objectID": "lectures_slides/01-foundations.html#dataviz-science",
+    "href": "lectures_slides/01-foundations.html#dataviz-science",
     "title": "Day 1: Intro to R and data analysis with R",
     "section": "",
     "text": "Source: Ranganathan et al. 2014\n\n\n\n\n\n\nMaria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
-    "objectID": "lessons_slides/03-design.html#pie-charts-emissions",
-    "href": "lessons_slides/03-design.html#pie-charts-emissions",
+    "objectID": "lectures_slides/03-design.html#pie-charts-emissions",
+    "href": "lectures_slides/03-design.html#pie-charts-emissions",
     "title": "Day 3: Modeling correlation and regression",
     "section": "",
     "text": "Source: Dr. Robert Rohde (Tweet)"
   },
   {
-    "objectID": "lessons_slides/03-design.html#section",
-    "href": "lessons_slides/03-design.html#section",
+    "objectID": "lectures_slides/03-design.html#section",
+    "href": "lectures_slides/03-design.html#section",
     "title": "Day 3: Modeling correlation and regression",
     "section": "",
     "text": "Maria Chiara Mimmi, Ph.D. // MITGEST::training(2024)"
   },
   {
-    "objectID": "lessons_slides/Pres_test.html#collaborators",
-    "href": "lessons_slides/Pres_test.html#collaborators",
+    "objectID": "lectures_slides/Pres_test.html#collaborators",
+    "href": "lectures_slides/Pres_test.html#collaborators",
     "title": "Day 1 … xxxxxx",
     "section": "collaborators",
     "text": "collaborators\n\nJohanna Hardin, Pomona College\nBenjamin S. Baumer, Smith College\nAmelia McNamara, University of St Thomas\nNicholas J. Horton, Amherst College\nColin W. Rundel, Duke University"
   },
   {
-    "objectID": "lessons_slides/Pres_test.html#setting-the-scene",
-    "href": "lessons_slides/Pres_test.html#setting-the-scene",
+    "objectID": "lectures_slides/Pres_test.html#setting-the-scene",
+    "href": "lectures_slides/Pres_test.html#setting-the-scene",
     "title": "Day 1 … xxxxxx",
     "section": "setting the scene",
     "text": "setting the scene\n\n\n\nAssumption 1:\nTeach authentic tools\n\n\nAssumption 2:\nTeach R as the authentic tool"
   },
   {
-    "objectID": "lessons_slides/Pres_test.html#takeaway",
-    "href": "lessons_slides/Pres_test.html#takeaway",
+    "objectID": "lectures_slides/Pres_test.html#takeaway",
+    "href": "lectures_slides/Pres_test.html#takeaway",
     "title": "Day 1 … xxxxxx",
     "section": "takeaway",
     "text": "takeaway\n\n\nThe tidyverse provides an effective and efficient pathway for undergraduate students at all levels and majors to gain computational skills and thinking needed throughout the data science cycle.\n\n\n\n\n\nhttps://lulliter.github.io/R4biostats/materials.html\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"

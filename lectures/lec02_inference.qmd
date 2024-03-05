@@ -1,0 +1,24 @@
+---
+title: "Statistical inference & hypothesis testing"
+subtitle: "<span class='code'>11:00-12:30</span>"
+date: "2024-07-25"
+image: "images/02-display.png"
+tbl-colwidths: [5,20,75]
+---
+
+```{=html}
+<iframe class="slide-deck" src="../lectures_slides/02_mine.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+<a href='../lectures_slides/02_mine.html' target="_blank">View slides in full screen</a>
+
+
+# Lesson's outline
+
+- Principles of statistical inference
+- Statistical tests on samples mean
+  - Z-test
+  - t-test
+  - Mann Whitney U- test
+- Parametric vs non-parametric statistical tests
+

@@ -16,7 +16,7 @@ tbl-cap-location: top
 format:
   html:
     # theme: flatly #spacelab
-    code-fold: true # redundant bc echo false 
+    code-fold: false # redundant bc echo false 
     toc-depth: 3
     toc_float: true
     toc-location: left
@@ -39,7 +39,16 @@ Website construction in progress...
 
 ## Topics
 
-> Learn how to .... .
++ Introduction to R and R-studio
+  + Why R?
++ Understanding different types of variables
++ Handling R objects: vectors, matrix, data.frame
++ Descriptive statistics
+  + Measures of central tendency, measures of variability (or spread), and frequency distribution
++ Visual data exploration
+  + {`ggplot2`}
++ Foundations of inference
+
 
 {{< pagebreak >}}
 
@@ -57,7 +66,6 @@ library(downloadthis)
 ```{r}
 #| output: false
 #| eval: false
-
 
 # pero sara un po' recursive 
 download_file(
@@ -131,3 +139,209 @@ download_dir(
   self_contained = FALSE
 )
 ```
+
+
+This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.
+
+Below is quick step by step process that can help you get started.
+
+{{< pagebreak >}}
+
+
+# Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
+
+<!-- `r fontawesome::fa("fab fa-windows", fill = "steelblue")` -->
+
+<!-- `r fontawesome::fa("fab fa-linux", fill = "steelblue")` -->
+
+<!-- `r fontawesome::fa("fab fa-apple", fill = "steelblue")` -->
+
+**R** is available for free for Windows [{{< fa brands windows >}}]{style="color:#d8717b"}, GNU/Linux [{{< fa brands linux >}}]{style="color:#d8717b"}, and macOS [{{< fa brands apple >}}]{style="color:#d8717b"}.
+
+-   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
+
+If you have previously installed R on your machine, you can check which version you are running by executing this command in `R`:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# From the R console
+base::R.version.string
+    # (This is the version on my own machine)
+    # [1] "R version 4.2.2 (2022-10-31)"
+```
+
+...or by executing this command in your `CLI` (Command Line Interface):
+
+```{bash}
+#| eval: false
+#| echo: true
+
+# From Terminal/Powershell/bash
+R --version
+```
+
+# Install RStudio IDE
+
+While not strictly required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
+
+::: {.callout-tip collapse="true"}
+R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.
+:::
+
+-   To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
+
+![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](images/rstudio-panes-labeled.jpeg) 
+
+# Install R packages from the CRAN
+
+An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
+
+-   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: <https://cran.r-project.org/>.
+
+-   **Bioconductor** -
+
+-   **Github** -
+
+<!-- The bottom-right panel holds five tabs. -->
+<!-- -   Files -->
+<!-- -   Plots -->
+<!-- -   Packages -->
+<!-- -   Help -->
+<!-- -   Viewer -->
+
+<!-- Click on the `Packages` tab (1.) and select the select the `Install` button (2.). Type `dplyr` in (3.). You will see the word auto-completion that helps. -->
+
+<!-- ![](images/installPck.png) -->
+
+## Installing and using R packages
+
+#? https://r-training.pages.uni.lu/biostat1/install_tutorial.html 
+
+Let's take for example the R package `corr`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installing (ONLY the 1st time)
+utils::install.packages('corrplot')
+```
+
+::: {.callout-tip collapse="true"}
+Here you are actually using a ***function*** (`install.packages`) of a pre-installed ***package*** (`utils`) using the syntax `packagename::function_name`
+:::
+
+Once you have installed a package, at every subsequent R session, you will only need to load it, like so:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Loading a package (at every session) 
+base::library ("corrplot")
+
+# ... or
+library (corrplot)
+```
+
+To inquire about a package and/or its functions, you can again write in your console `?package_name` or `?function_name` and RStudio will open up a help page in the dedicated pane of Rstudio:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Opening Help page on package/function
+?corrplot
+```
+
+::: {.callout-tip collapse="true"}
+You can also install and update packages using the "Packages" tab on the lower righ pane of RStudio
+
+[Screenshot Install/Update pckgs from RStudio](images/RStudio_install_pckg.png) 
+:::
+
+
+# Managing files and projects
+
+In any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as `input_data`, `output_data`, `R_scripts`, `paper`, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called "R project"   
+
+<!-- # R objects  -->
+
+## Creating an R Project 
+
+Creating an **R Project** will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the "working directory", which is incredibly important when you need to load or output files, specifying their file path.  
+
+![](../images/Rproj.png)
+
+## Defining (reproducible) file paths
+
+It is never good practice to "hard code" the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.
+
+```{r}
+#| eval: false
+#| echo: true
+
+# [NOT REPRODUCIBLE] hard coding your file path  --------------------------
+library(readr)
+# File path on Mac:
+dataset <- read_csv("/Users/testuser/R4biostats/input_data/dataset.csv")
+# Same file path on Windows:
+dataset <- read_csv("C:\Users\testuser\R4biostats\input_data\dataset.csv")
+```
+
+This is where the fantastic [`here`](https://here.r-lib.org/) package comes in to help, as it will define file paths in a "reproducible manner" as long as you have created an R Project. 
+
+```{r}
+#| eval: false
+#| echo: true
+
+# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------
+library(here)
+library(readr)
+
+# Check where is my Working Directory?
+here::here()
+    # [1] "/Users/testuser/R4biostats"
+
+# Then define file path as ("subfolder_name", "file_name")
+# No "\" or "/" needed!
+dataset <- read_csv(here("input_data", "dataset.csv"))
+
+```
+
+::: {.callout-tip collapse="true"}
+The `here` package uses the top-level directory of a project (where you have placed your `proj_name.Rproj`) as the reference to easily, and portably, build paths to files.
+:::
+
+#? Objects and functions
+
+#? R packages that will be required for the workshop
+
+To install an R package, open an R session execute:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Installing (only the 1st time)
+pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
+install.packages(pkg_list)
+
+# Loading a package (at every session) 
+library ("tidyverse")
+```
+
+<!-- ## Install [Quarto] -->
+
+<!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
+
+<!-- - After installing Quarto, open the terminal in RStudio and: -->
+
+<!--   - See [this guide](https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal-in-the-RStudio-IDE) for details on using the terminal -->
+
+<!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
+
+<!--   - Install/Update Chromium with `quarto install tool chromium` -->
+

@@ -55,13 +55,13 @@ website:
         icon: easel-fill # https://icons.getbootstrap.com/?q=home
         menu: 
           - text: "Intro to R and data analysis"
-            href: lessons/lec01_data_with_R.qmd
+            href: lectures/lec01_data_with_R.qmd
           - text: "Statistical inference & hypothesis testing"
-            href: lessons/lec02_inference.qmd
+            href: lectures/lec02_inference.qmd
           - text: "Modeling correlation and regression"
-            href: lessons/lec03_corr_regress.qmd
+            href: lectures/lec03_corr_regress.qmd
           - text: "Intro to machine learning"
-            href: lessons/lec04_intro_ML.qmd
+            href: lectures/lec04_intro_ML.qmd
       - text: "Labs"
         icon: terminal-fill #  archive-fill # https://icons.getbootstrap.com/?q=home
         # href: practice.qmd

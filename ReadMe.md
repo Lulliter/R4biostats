@@ -39,7 +39,13 @@ I acknowledge inputs taken from these very valuable sources:
 + [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials**  (Copyrighted <img src="images/copyright-regular.svg" width="16" height="16">)
 
 + [Autism](Sydney-informatics-hub-github.io)
++ [Introductory Biostatistics with R](https://tuos-bio-data-skills.github.io/intro-stats-book/index.html) by Dylan Z. Childs, Bethan J. Hindle and Philip H. Warren
 
++ [Biostatistics - Concepts and approaches for collecting good data and turning it into knowledge](https://jsgosnell.github.io/cuny_biostats_book/content/getting_started/getting_started.html) by J. Stephen Gosnell 
+
+## Cool Stuff you should check out 
+
++ [R package {metabolic}](https://fmmattioni.github.io/metabolic/) by Felipe Mattioni Maturana, Ph.D
 
 ## Web stuff 
 
@@ -47,3 +53,4 @@ I acknowledge inputs taken from these very valuable sources:
 + Favicon1 (blu)  <a target="_blank" href="https://icons8.com/icon/lmhleiXG9ioV/analitica">analitica</a> icona di <a target="_blank" href="https://icons8.com">Icons8</a>
 + Font-Awsome Icons downloaded in `./images/*` from [Font-Awsome svgs](https://github.com/FortAwesome/Font-Awesome/tree/6.x/svgs)
 + Quarto website cusomization [slides](https://ucsb-meds.github.io/customizing-quarto-websites/#/select-fonts)
++ [Google Sholar icon ](https://icons8.com/icon/pU44R9xgF3wq/google-scholar)
