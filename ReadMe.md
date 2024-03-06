@@ -1,10 +1,3 @@
----
-title: "README"
----
-
-
-test 
-
 
 # Intro to Biostatistics with R
 

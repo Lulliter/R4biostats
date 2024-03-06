@@ -17,7 +17,7 @@ csl: bib/apa-6th-edition.csl
 website:
   title: "R 4 biostats"
   description: "Code and supplementary materials for the ...."
-  site-url: "https://lulliter.github.io/R4biostats"
+  site-url: "http://r4biostats.com/" # "https://lulliter.github.io/R4biostats"
 #  repo-url: "https://github.com/Lulliter/R4biostats"
 #  repo-actions: [edit, issue]
   favicon: images/icons8_hist_96.png
