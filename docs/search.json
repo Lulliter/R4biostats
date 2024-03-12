@@ -42,32 +42,11 @@
     "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#topics",
-    "href": "practice/lab01_data_with_R.html#topics",
+    "objectID": "practice/lab01_data_with_R.html#introduction-to-r-and-r-studio",
+    "href": "practice/lab01_data_with_R.html#introduction-to-r-and-r-studio",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Topics",
-    "text": "Topics\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\n\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and frequency distribution\n\n\nVisual data exploration\n\n{ggplot2}\n\n\nFoundations of inference"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#lab-code",
-    "href": "practice/lab01_data_with_R.html#lab-code",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Lab code",
-    "text": "Lab code\nHere you will find the solved problems addressed in Lab 1\n\nas .qmd file (commented solutions)\n\n\nas .R file\n\n\n\n Download solution as .R file"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#lab-datasets",
-    "href": "practice/lab01_data_with_R.html#lab-datasets",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Lab datasets",
-    "text": "Lab datasets\n\n\nBelow are the datasets used in the Practice session:\n\n\n.csv file\n\n\n\n Download input data  .csv\n\n\n\nlocal subfolder\n\n\n\n\n Download input data directory\n\n\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing. Therefore, it is recommended that you pre-install the following on your machine.\nBelow is quick step by step process that can help you get started."
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#installing-and-using-r-packages",
-    "href": "practice/lab01_data_with_R.html#installing-and-using-r-packages",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Installing and using R packages",
-    "text": "Installing and using R packages"
+    "section": "Introduction to R and R-studio",
+    "text": "Introduction to R and R-studio\nInstall \n\n\n\n\nR is available for free for Windows , GNU/Linux , and macOS .\n\nTo install R, you can go to this link. The latest available release is R 4.3.3 “Angel Food Cake” released on 2024-02/29, but any (fairly recent) version will do.\n\nIf you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\n# From the R console\nbase::R.version.string\n    # (This is the version on my own machine)\n    # [1] \"R version 4.2.2 (2022-10-31)\"\n\n…or by executing this command in your CLI (Command Line Interface):\n\n# From Terminal/Powershell/bash\nR --version\n\nInstall RStudio IDE\nWhile not strictly required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).\n\n\n\n\n\n\nTip\n\n\n\n\n\nR, which is a command line driven program, can be executed via its native interface (R GUI), as well as from many other code editors, like VS Code, Sublime Text, Jupyter Notebook, etc. RStudio remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.\n\n\n\n\nTo install RStudio you can go to this link. The free-version contains everything you need.\n\n\nRStudio Pane Layout Source: Posit’s RStudio User Guide\n\n\nInstall R packages from the CRAN\nAn R package is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the base package), many useful R functions come in free libraries of code (or packages) written by R’s user community.\n\nCRAN - the Comprehensive R Archive Network - is the general package repository for R: https://cran.r-project.org/.\nBioconductor -\nGithub -\n\nInstalling and using R packages"
   },
   {
     "objectID": "practice/lab01_data_with_R.html#httpsr-training.pages.uni.lubiostat1install_tutorial.html",
@@ -77,18 +56,18 @@
     "text": "? https://r-training.pages.uni.lu/biostat1/install_tutorial.html\nLet’s take for example the R package corrplot, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:\n\n# Installing (ONLY the 1st time)\nutils::install.packages('corrplot')\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name\n\n\n\nOnce you have installed a package, at every subsequent R session, you will only need to load it, like so:\n\n# Loading a package (at every session) \nbase::library (\"corrplot\")\n\n# ... or\nlibrary (corrplot)\n\nTo inquire about a package and/or its functions, you can again write in your console ?package_name or ?function_name and RStudio will open up a help page in the dedicated pane of Rstudio:\n\n# Opening Help page on package/function\n?corrplot\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nYou can also install and update packages using the “Packages” tab on the lower right pane of RStudio\n\nScreenshot Install/Update pckgs from RStudio\n\n\n\n\n\nManaging files and projects\nIn any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as input_data, output_data, R_scripts, paper, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called “R project”\n\nCreating an R Project\nCreating an R Project will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path.\n\nDefining (reproducible) file paths: here\nIt is never good practice to “hard code” the file’s absolute path: most likely this will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.\nSo if you source a file like this:\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\n…it won’t work on someone else’s computer since they don’t have that same file structure!\nThis is where the fantastic here package comes in, as it will define file paths in a “reproducible manner” (anchored on the R Project).\n\nIt let’s you use relative paths, i.e. specify the file path relative to the project folder.\n\nNo more “/” v. “\\” issue (where Windows and Linus/Mac OSs differ)\n\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#creating-an-r-project",
-    "href": "practice/lab01_data_with_R.html#creating-an-r-project",
+    "objectID": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame",
+    "href": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Creating an R Project",
-    "text": "Creating an R Project\nCreating an R Project will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the “working directory”, which is incredibly important when you need to load or output files, specifying their file path."
+    "section": "Manipulation of R objects: vectors, matrix, data.frame",
+    "text": "Manipulation of R objects: vectors, matrix, data.frame\nExample of problem | solution tab\n\n\n\n\n\n\nLoading input data in your workspace\n\n\n\n\n\nProblem\nHint\nSolution\n\n\n\n\nLoad the dataset autism_data.csv in your workspace with code that won’t break on another machine / OS\n\n\n\nPackage here will help\n\n# --- if needed\n# install.packages(\"here\")\n\nlibrary(here)\n\n# --- Where is my wd?\nhere()\n# --- or\ngetwd()\n\n\n\nHere is the file path of my .csv file inside R4biostats project folder (~ working directory):\n\npractice/data/01_datasets/autism_data.csv\n\n\nautism_data &lt;- read.csv(file = here::here(\"practice\",\n                                          \"data\",\n                                          \"01_datasets\",\n                                          \"autism_data.csv\"), \n                        header = TRUE, \n                        sep = \",\", \n                        na.strings = \"?\")"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#defining-reproducible-file-paths",
-    "href": "practice/lab01_data_with_R.html#defining-reproducible-file-paths",
+    "objectID": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame-1",
+    "href": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame-1",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Defining (reproducible) file paths",
-    "text": "Defining (reproducible) file paths\nIt is never good practice to “hard code” the file’s absolute path: most likely this will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.\nSo if you source a file like this:\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\n…it won’t work on someone else’s computer since they don’t have that same file structure!\nThis is where the fantastic here package comes in, as it will define file paths in a “reproducible manner” (anchored on the R Project).\n\nIt let’s you use relative paths, i.e. specify the file path relative to the project folder.\nIt drops the “/” or “\" issue (where Windows and Linus/Mac OSs differ)\n\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
+    "section": "Manipulation of R objects: vectors, matrix, data.frame",
+    "text": "Manipulation of R objects: vectors, matrix, data.frame\ncccc"
   },
   {
     "objectID": "lectures_slides/04-guide.html#exercise-2",
@@ -586,33 +565,5 @@
     "title": "Lab 4: Intro to machine learning",
     "section": "Lab code",
     "text": "Lab code"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#defining-reproducible-file-paths-here",
-    "href": "practice/lab01_data_with_R.html#defining-reproducible-file-paths-here",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Defining (reproducible) file paths: here",
-    "text": "Defining (reproducible) file paths: here\nIt is never good practice to “hard code” the file’s absolute path: most likely this will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.\nSo if you source a file like this:\n\n# [NOT REPRODUCIBLE] hard coding your file path  --------------------------\nlibrary(readr)\n# File path on Mac:\ndataset &lt;- read_csv(\"/Users/testuser/R4biostats/input_data/dataset.csv\")\n# Same file path on Windows:\ndataset &lt;- read_csv(\"C:\\Users\\testuser\\R4biostats\\input_data\\dataset.csv\")\n\n…it won’t work on someone else’s computer since they don’t have that same file structure!\nThis is where the fantastic here package comes in, as it will define file paths in a “reproducible manner” (anchored on the R Project).\n\nIt let’s you use relative paths, i.e. specify the file path relative to the project folder.\n\nNo more “/” v. “\\” issue (where Windows and Linus/Mac OSs differ)\n\n\n# [REPRODUCIBLE!!] Expressing your file path in a system agnostic way! --------\nlibrary(here)\nlibrary(readr)\n\n# Check where is my Working Directory?\nhere::here()\n    # [1] \"/Users/testuser/R4biostats\"\n\n# Then define file path as (\"subfolder_name\", \"file_name\")\n# No \"\\\" or \"/\" needed!\ndataset &lt;- read_csv(here(\"input_data\", \"dataset.csv\"))\n\n\n\n\n\n\n\nTip\n\n\n\n\n\nThe here package uses the top-level directory of a project (where you have placed your proj_name.Rproj) as the reference to easily, and portably, build paths to files.\n\n\n\n#? Objects and functions\n#? R packages that will be required for the workshop\nTo install an R package, open an R session execute:\n\n# Installing (only the 1st time)\npkg_list &lt;- c(\"tidyverse\", \"quarto\", \"rmarkdown\", \"palmerpenguins\")\ninstall.packages(pkg_list)\n\n# Loading a package (at every session) \nlibrary (\"tidyverse\")"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#introduction-to-r-and-r-studio",
-    "href": "practice/lab01_data_with_R.html#introduction-to-r-and-r-studio",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Introduction to R and R-studio",
-    "text": "Introduction to R and R-studio\nInstall \n\n\n\n\nR is available for free for Windows , GNU/Linux , and macOS .\n\nTo install R, you can go to this link. The latest available release is R 4.3.3 “Angel Food Cake” released on 2024-02/29, but any (fairly recent) version will do.\n\nIf you have previously installed R on your machine, you can check which version you are running by executing this command in R:\n\n# From the R console\nbase::R.version.string\n    # (This is the version on my own machine)\n    # [1] \"R version 4.2.2 (2022-10-31)\"\n\n…or by executing this command in your CLI (Command Line Interface):\n\n# From Terminal/Powershell/bash\nR --version\n\nInstall RStudio IDE\nWhile not strictly required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).\n\n\n\n\n\n\nTip\n\n\n\n\n\nR, which is a command line driven program, can be executed via its native interface (R GUI), as well as from many other code editors, like VS Code, Sublime Text, Jupyter Notebook, etc. RStudio remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.\n\n\n\n\nTo install RStudio you can go to this link. The free-version contains everything you need.\n\n\nRStudio Pane Layout Source: Posit’s RStudio User Guide\n\n\nInstall R packages from the CRAN\nAn R package is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the base package), many useful R functions come in free libraries of code (or packages) written by R’s user community.\n\nCRAN - the Comprehensive R Archive Network - is the general package repository for R: https://cran.r-project.org/.\nBioconductor -\nGithub -\n\nInstalling and using R packages"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame",
-    "href": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Manipulation of R objects: vectors, matrix, data.frame",
-    "text": "Manipulation of R objects: vectors, matrix, data.frame\nExample of problem | solution tab\n\n\n\n\n\n\nLoading input data in your workspace\n\n\n\n\n\nProblem\nHint\nSolution\n\n\n\n\nLoad the dataset autism_data.csv in your workspace with code that won’t break on another machine / OS\n\n\n\nPackage here will help\n\n# --- if needed\n# install.packages(\"here\")\n\nlibrary(here)\n\n# --- Where is my wd?\nhere()\n# --- or\ngetwd()\n\n\n\nHere is the file path of my .csv file inside R4biostats project folder (~ working directory):\n\npractice/data/01_datasets/autism_data.csv\n\n\nautism_data &lt;- read.csv(file = here::here(\"practice\",\n                                          \"data\",\n                                          \"01_datasets\",\n                                          \"autism_data.csv\"), \n                        header = TRUE, \n                        sep = \",\", \n                        na.strings = \"?\")"
-  },
-  {
-    "objectID": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame-1",
-    "href": "practice/lab01_data_with_R.html#manipulation-of-r-objects-vectors-matrix-data.frame-1",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Manipulation of R objects: vectors, matrix, data.frame",
-    "text": "Manipulation of R objects: vectors, matrix, data.frame\ncccc"
   }
 ]

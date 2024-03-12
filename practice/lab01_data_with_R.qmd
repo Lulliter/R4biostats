@@ -59,39 +59,6 @@ library(downloadthis)
 ```
 
 
-```{r}
-#| output: false
-#| eval: false
-
-# pero sara un po' recursive 
-download_file(
-  path =  here::here("practice",  "lab01_data_with_R.qmd" ),
-  output_name = "lab01_data_with_R", # no extension.... 
-  output_extension = ".qmd",  
-  button_label = "Download solution as .qmd file",
-  button_type = "primary",
-  has_icon = TRUE,
-  icon = "fa-brands fa-r-project",
-  self_contained = FALSE
-)
-```
-
--   as `.R` file
-
-```{r}
-#| output: true
-
-download_file(
-  path =  here::here("practice", "Rcode", "lab01_code.R" ),
-  output_name = "lab01_code", # no extension.... 
-  output_extension = ".R",  
-  button_label = "Download solution as .R file",
-  button_type = "primary",
-  has_icon = TRUE,
-  icon = "fa-brands fa-r-project",
-  self_contained = FALSE
-)
-```
 
 {{< pagebreak >}}
 
@@ -411,4 +378,41 @@ autism_data <- read.csv(file = here::here("practice",
 
 Here you will find the solved problems  addressed in Lab 1
 
+
+-   as `.R` file
+
+```{r}
+#| output: true
+
+download_file(
+  path =  here::here("practice", "Rcode", "lab01_code.R" ),
+  output_name = "lab01_code", # no extension.... 
+  output_extension = ".R",  
+  button_label = "Download solution as .R file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
+
+
 -   as `.qmd` file (commented solutions)
+
+[not yet]
+```{r}
+#| output: false
+#| eval: false
+
+# pero sara un po' recursive 
+download_file(
+  path =  here::here("practice",  "lab01_data_with_R.qmd" ),
+  output_name = "lab01_data_with_R", # no extension.... 
+  output_extension = ".qmd",  
+  button_label = "Download solution as .qmd file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
