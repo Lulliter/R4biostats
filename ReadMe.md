@@ -33,8 +33,8 @@ The content of this website is licensed under a [Creative Commons Attribution-No
 
 I acknowledge inputs received from these very valuable sources:
 
-- An **Introduction ro R software** course taught by Davide Guido's, instructor of the [Master in Biostatistics and Epidemiology Methods](https://spmsf.unipv.it/master/bioepic/index.html), I attended in 2018/2019
-- <https://www.r4epi.com/>"R for Epidemiology!", **electronic book** by the University of Texas Health Science Center School of Public Health\
+- An **Introduction ro R software course** taught by Davide Guido, an instructor of the [Master in Biostatistics and Epidemiology Methods](https://spmsf.unipv.it/master/bioepic/index.html), I attended in 2018/2019
+- [R for Epidemiology](https://www.r4epi.com/), **electronic book** by the University of Texas Health Science Center School of Public Health\
 - [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials** (Licensed <img src="images/creative-commons.svg" width="16" height="16"/>)
 - [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials** (Copyrighted <img src="images/copyright-regular.svg" width="16" height="16"/>)
 - [Autism](Sydney-informatics-hub-github.io)

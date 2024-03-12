@@ -1,0 +1,52 @@
+---
+title: "Day 1: Intro to R and data analysis with R"
+subtitle: "<span style='font-size:2em;'> .... more details </span>"
+author: "<a href='https://lulliter.github.io/R4biostats/teacher.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
+date: 2024-07-24
+date-format: long
+format:
+  revealjs:
+    theme: slides.scss
+    logo: imgs_slides/mitgest_logo.png
+    footer: '[Maria Chiara Mimmi, Ph.D.](https://lulliter.github.io/R4biostats/teacher.html) // MITGEST::training(2024)'
+    transition: fade
+    progress: true
+    multiplex: false
+    preview-links: true
+    scrollable: false
+    hide-inactive-cursor: true
+    highlight-style: printing
+    embed-resources: false  # FALSE - rallenta | TRUE conflicts with  chalkboard: TRUE!   
+#    chalkboard: false
+      # theme: whiteboard
+      # boardmarker-width: 4
+      # buttons: true
+    # pause: true
+editor: source
+knitr:
+  opts_chunk:
+    dev: "ragg_png"
+    retina: 3
+    dpi: 200
+execute:
+  freeze: auto
+  cache: true
+  echo: true
+  fig-width: 10.1
+  fig-height: 6.3
+  fig-align: center
+---
+
+
+# Why is R so great? <br><br><span style='color:#e2e2e2;font-size:.6em;font-family:Asap;font-stretch:87.5%;font-weight:500;'> it is free, system-agnostic, extremely versatile and used by many statisticians and biostatisticians all over the world.</span>{background-color="#000000"}
+
+
+
+## {#dataviz-science data-menu-title="DataViz Science"}
+
+<br>
+
+![Source: [Ranganathan et al. 2014](https://www.researchgate.net/figure/Country-based-correlation-scatter-plot-for-log-GDP-per-capita-and-Democracy-for-the-year_fig1_259920542)](img/scatterplot-ranganathan-2014.png)
+
+
+
