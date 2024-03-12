@@ -35,14 +35,14 @@ format-links: false
 Website construction in progress...
 :::
 
-# Day 1
-
-## Topics
+# Day 1: topics illustrated in class
 
 + Introduction to R and R-studio
   + Why R?
+  + Principles of reproducible analysis with R + RStudio 
++ R objects, functions, packages
 + Understanding different types of variables
-+ Handling R objects: vectors, matrix, data.frame
+  + Principles of “tidy data”
 + Descriptive statistics
   + Measures of central tendency, measures of variability (or spread), and frequency distribution
 + Visual data exploration
@@ -52,11 +52,7 @@ Website construction in progress...
 
 {{< pagebreak >}}
 
-## Lab code
 
-Here you will find the solved problems  addressed in Lab 1
-
--   as `.qmd` file (commented solutions)
 
 ```{r}
 library(downloadthis)
@@ -99,7 +95,7 @@ download_file(
 
 {{< pagebreak >}}
 
-## Lab datasets
+# Lab 1 datasets
 
 <!-- using {downloadthis} + https://fontawesome.com/search?q=directory&o=r -->
 <!-- Button type + default, warning, primary, success, info, warning, danger -->
@@ -146,9 +142,11 @@ This workshop showcases introductory bio statistics concepts using the open sour
 Below is quick step by step process that can help you get started.
 
 
+# Lab 1 objectives
 
+## Introduction to R and R-studio
 
-# Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
+### Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
 
 <!-- `r fontawesome::fa("fab fa-windows", fill = "steelblue")` -->
 
@@ -182,7 +180,7 @@ base::R.version.string
 R --version
 ```
 
-# Install RStudio IDE
+### Install RStudio IDE
 
 While not strictly required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
 
@@ -194,7 +192,7 @@ R, which is a command line driven program, can be executed via its native interf
 
 ![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](../images/rstudio-panes-labeled.jpeg) 
 
-# Install R packages from the CRAN
+### Install R packages from the CRAN
 
 An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
 
@@ -215,11 +213,11 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 <!-- ![](images/installPck.png) -->
 
-## Installing and using R packages
+### Installing and using R packages
 
 ## ? https://r-training.pages.uni.lu/biostat1/install_tutorial.html 
 
-Let's take for example the R package `corr`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
+Let's take for example the R package `corrplot`, a package for graphically exploring correlations. To install it for the first time, open an R session and execute:
 
 ```{r}
 #| eval: false
@@ -263,22 +261,23 @@ You can also install and update packages using the "Packages" tab on the lower r
 :::
 
 
-# Managing files and projects
+### Managing files and projects
 
 In any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as `input_data`, `output_data`, `R_scripts`, `paper`, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called "R project"   
 
 <!-- # R objects  -->
 
-## Creating an R Project 
+### Creating an R Project 
 
 Creating an **R Project** will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the "working directory", which is incredibly important when you need to load or output files, specifying their file path.  
 
 ![](../images/Rproj.png)
 
-## Defining (reproducible) file paths
+### Defining (reproducible) file paths: here
 
-It is never good practice to "hard code" the complete file path of a file: most likely this will break your code as soon as you (or someone else) need to run it on a different machine, let alone within a different OS.
+It is never good practice to "hard code" the file's *absolute path*: most likely this will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.
 
+So if you source a file like this:
 ```{r}
 #| eval: false
 #| echo: true
@@ -291,7 +290,12 @@ dataset <- read_csv("/Users/testuser/R4biostats/input_data/dataset.csv")
 dataset <- read_csv("C:\Users\testuser\R4biostats\input_data\dataset.csv")
 ```
 
-This is where the fantastic [`here`](https://here.r-lib.org/) package comes in to help, as it will define file paths in a "reproducible manner" as long as you have created an R Project. 
+...it won’t work on someone else’s computer since they don’t have that same file structure!
+
+This is where the fantastic [`here`](https://here.r-lib.org/) package comes in, as it will define file paths in a "reproducible manner" (anchored on the R Project). 
+
+1. It let's you use **relative paths**, i.e. specify the file path relative to the project folder. 
+2. **No more "/" v. "\\"** issue (where Windows and Linus/Mac OSs differ)
 
 ```{r}
 #| eval: false
@@ -345,3 +349,66 @@ library ("tidyverse")
 
 <!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
+## Manipulation of R objects: vectors, matrix, data.frame
+
+### Example of problem | solution tab
+
+::: {#exercise-autism .callout-tip}
+## Loading input data in your workspace
+
+::: panel-tabset
+## Problem
+
+1.  Load the dataset `autism_data.csv` in your workspace with code that won't break on another machine / OS
+
+## Hint
+
+Package `here` will help 
+```{r}
+#| label: set-up
+#| echo: true
+
+# --- if needed
+# install.packages("here")
+
+library(here)
+
+# --- Where is my wd?
+here()
+# --- or
+getwd()
+```
+
+## Solution
+
+Here is the file path of my .csv file inside **`R4biostats`** project folder (~ working directory): 
+
++ `practice/data/01_datasets/autism_data.csv`
+
+```{r}
+#| label: load-data
+#| echo: true
+autism_data <- read.csv(file = here::here("practice",
+                                          "data",
+                                          "01_datasets",
+                                          "autism_data.csv"), 
+                        header = TRUE, 
+                        sep = ",", 
+                        na.strings = "?") 
+```
+
+
+:::
+:::
+
+
+## Manipulation of R objects: vectors, matrix, data.frame
+
+### cccc
+
+
+# Lab 1 complete R code
+
+Here you will find the solved problems  addressed in Lab 1
+
+-   as `.qmd` file (commented solutions)
