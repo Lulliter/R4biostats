@@ -16,7 +16,7 @@ format:
 ## ------------- x salvare come PDF 
     standalone: false
     ## -------Produce a standalone HTML file with no external dependencies,
-    embed-resources: false
+    embed-resources: true
     transition: fade
     background-transition: fade
     highlight-style: ayu-mirage
@@ -26,7 +26,9 @@ format:
     pdf-separate-fragments: false
     # fig-align: center
 execute:
+  # Quarto pre code blocks do not echo their source code by default
   echo: true
+  include: true
   freeze: auto
 ---
 
