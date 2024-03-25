@@ -27,8 +27,6 @@ format:
     # fig-align: center
 execute:
   echo: true
-  eval: true # set to false in specific code chunks
-  output: true
   freeze: auto
 ---
 
@@ -69,17 +67,18 @@ R.Version()
 
 **R** is available for free for Windows [{{< fa brands windows >}}]{style="color:#d8717b"}, GNU/Linux [{{< fa brands linux >}}]{style="color:#d8717b"}, and macOS [{{< fa brands apple >}}]{style="color:#d8717b"}.
 
--   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
+-   To install **R**, you can go to this [**https://cloud.r-project.org/**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
 
 ## Install RStudio IDE
 
-While not strictly required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
+**RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
 
-::: {.callout-tip collapse="true"}
-R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.
-:::
+Besides RStudio, R (which is a command line driven program) can be executed:
 
--   To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
++ via its native interface (**R GUI**)
++ from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook** 
+
+-   To install **RStudio** you can go to this [**https://posit.co/download/rstudio-desktop/**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
 
 ## Use RStudio IDE
 
@@ -107,7 +106,6 @@ To install a package use `utils` function `install.packages("package_name)`
 
 ```{r}
 #| eval: false
-#| echo: true
 
 # Installing (ONLY the 1st time)
 utils::install.packages('here')
@@ -904,6 +902,7 @@ Histograms (and density plots) are often used to show the distribution of a cont
 
 ```{r}
 #| output-location: slide
+
 ggplot(data = autism_pids, mapping = aes(x=age_inputed)) + 
   geom_histogram() + 
   theme_bw()
@@ -914,7 +913,7 @@ ggplot(data = autism_pids, mapping = aes(x=age_inputed)) +
 
 ```{r}
 #| output-location: slide
- 
+
 # notice the  `%>%`  before using ggplot2...
 autism_pids %>% 
   # then `+` when using ggplot2
@@ -941,6 +940,7 @@ autism_pids %>%
 
 ```{r}
 #| output-location: slide
+
 
 autism_pids %>% 
   ggplot(aes(x = age_inputed )) + 
@@ -1020,6 +1020,7 @@ autism_pids %>%
 ```{r}
 #| output-location: slide
 
+
 # trying to improve readability 
 autism_pids %>% 
   ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
@@ -1082,6 +1083,7 @@ group_stats_long
 
 ```{r}
 #| output-location: slide
+
 hist_plot <- autism_pids %>% 
   ggplot(aes(x = age_inputed, fill = gender)) + 
   geom_histogram(bins=30,color="#e9ecef", alpha=0.8, position = 'dodge') + 
@@ -1114,6 +1116,7 @@ As an alternative, you can use the {ggridges} package to make ridge plots. The g
 
 ```{r}
 #| output-location: slide
+
 
 # library(ggridges)
 autism_pids %>% 

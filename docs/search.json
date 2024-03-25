@@ -46,14 +46,14 @@
     "href": "practice/lab01_slide.html#install",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Install \n",
-    "text": "Install \n\n\n\n\nR is available for free for Windows , GNU/Linux , and macOS .\n\nTo install R, you can go to this link. The latest available release is R 4.3.3 “Angel Food Cake” released on 2024-02/29, but any (fairly recent) version will do."
+    "text": "Install \n\n\n\n\nR is available for free for Windows , GNU/Linux , and macOS .\n\nTo install R, you can go to this https://cloud.r-project.org/. The latest available release is R 4.3.3 “Angel Food Cake” released on 2024-02/29, but any (fairly recent) version will do."
   },
   {
     "objectID": "practice/lab01_slide.html#install-rstudio-ide",
     "href": "practice/lab01_slide.html#install-rstudio-ide",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Install RStudio IDE",
-    "text": "Install RStudio IDE\nWhile not strictly required, it is highly recommended that you also install RStudio to facilitate your work. RStudio Desktop is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).\n\n\n\n\n\n\nTip\n\n\nR, which is a command line driven program, can be executed via its native interface (R GUI), as well as from many other code editors, like VS Code, Sublime Text, Jupyter Notebook, etc. RStudio remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.\n\n\n\n\nTo install RStudio you can go to this link. The free-version contains everything you need."
+    "text": "Install RStudio IDE\nRStudio Desktop is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).\nBesides RStudio, R (which is a command line driven program) can be executed:\n\nvia its native interface (R GUI)\nfrom many other code editors, like VS Code, Sublime Text, Jupyter Notebook\nTo install RStudio you can go to this https://posit.co/download/rstudio-desktop/. The free-version contains everything you need."
   },
   {
     "objectID": "practice/lab01_slide.html#use-rstudio-ide",
