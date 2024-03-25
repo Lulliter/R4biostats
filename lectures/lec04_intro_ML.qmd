@@ -2,19 +2,21 @@
 title: "Intro to machine learning"
 subtitle: "<span class='code'>15:30-17:00</span>"
 date: "2024-07-27"
-image: "images/04-guide.png"
+# image: "images/04-guide.png"
 tbl-colwidths: [5,20,75]
 ---
 
 
-<!-- ma NOT OK anche .pptx  -->
-<!-- ```{=html} -->
-<!-- <iframe class="slide-deck" src="../lectures_slides/04_Pres_std1.pptx" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
-<!-- ``` -->
+# Lecture slides 
 
-<a href='../lectures_slides/04_Pres_std1.pptx' target="_blank"> Download "*.pptx" file </a>
+```{=html}
+<iframe class="slide-deck" src="../lectures_slides/00_Pres_placeholder.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
 
-# Lesson's outline
+<a href='../lectures_slides/00_Pres_placeholder.pdf' target="_blank">View slides in full screen</a>
+
+
+# Lecture's outline
 
 - Introduction to Machine Learning
 - Linear Regression

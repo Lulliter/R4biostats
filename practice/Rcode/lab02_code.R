@@ -1,7 +1,7 @@
 library(here)
 library(readxl)
 
-Genes <- read_excel(here("practice","data","Genes.xlsx"))
+Genes <- read_excel(here("practice","data_input","Genes.xlsx"))
 #View(Genes)
 
 summary(Genes)

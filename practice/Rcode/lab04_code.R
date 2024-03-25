@@ -24,7 +24,7 @@ write.csv(x = autism_data,
 
 # ESERCITAZIONE -----------------------------------------------------------
 #linelist <- read.csv(here::here("~/Documents/AAA_LAVORO_UNIPV/BIOSTATISTICS_UNIUD/TRAINING_4/linelist.csv"))
-linelist <- read.csv(here::here("practice", "data","linelist.csv"))
+linelist <- read.csv(here::here("practice", "data_input","linelist.csv"))
 
 #Correlation covariance on continous variable
 colnames(linelist)
@@ -93,7 +93,7 @@ library(corrplot)
 #import dataset gait_clean
 # gait <- read.csv("~/Documents/AAA_LAVORO_UNIPV/BIOSTATISTICS_UNIUD/TRAINING_4/gait.csv", na.strings="NaN")
 
-gait <- read.csv(here::here("practice", "data","gait.csv"), na.strings="NaN")
+gait <- read.csv(here::here("practice", "data_input","gait.csv"), na.strings="NaN")
 
 gait_clin<-gait[,c("HoehnYahr","UPDRS","UPDRSM", 
                    "TUAG", "Speed_01..m.sec.","Speed_10")]

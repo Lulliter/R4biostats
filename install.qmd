@@ -98,20 +98,26 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
  
 
-# ? R packages that will be required for the workshop
+# R packages that will be required for the workshop
 
-To install an R package, open an R session execute:
+Below are the R packages, that we will need for the workshop's practical sessions. Ideally, you can pre-install them... it will also serve as a test to check whether the R version you have is compatible. 
+
 
 ```{r}
 #| eval: false
 #| echo: true
 
-# Installing (only the 1st time)
-pkg_list <- c("tidyverse", "quarto", "rmarkdown", "palmerpenguins")
+# Installing (only the 1st time you use them)
+pkg_list <- c("here", "dplyr", "janitor", "skimr")
 install.packages(pkg_list)
 
-# Loading a package (at every session) 
-library ("tidyverse")
+# Loading a package (at the beginning of every R session) 
+library ("here")
+library ("dplyr")
+library ("janitor")
+library ("skimr")
+# library ("dplyr")
+# library ("readr")
 ```
 
 <!-- ## Install [Quarto] -->

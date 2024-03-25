@@ -1,57 +1,16 @@
 ---
 title: "Lab 1: Intro to R and data analysis"
-editor: source
-## ------  general Output Options
-execute:     
-  eval: false
-  echo: true     #  include source code in output
-  warning: false  #  include warning code in output
-  error: false    #  include error code in output
-  output: false   # include output code in output (CHG in BLOCKS)
-  # include: false   # R still runs but code and results DON"T appear in output  
-  cache: false # normalmnte false
-toc: true
-fig-cap-location: top
-tbl-cap-location: top
-format:
-  html:
-    # theme: flatly #spacelab
-    code-fold: false # redundant bc echo false 
-    toc-depth: 3
-    toc_float: true
-    toc-location: left
-    toc-title: Outline
-    embed-resources: true # external dependencies embedded (Not in ..._files/)
-  # pdf:
-  #   toc-depth: 2
-  #   toc-title: Indice
-  #   highlight-style: github
-  #   #lang: it
-  #   embed-resources: true # external dependencies embedded (Not in ..._files/)
-format-links: false
+subtitle: "<span class='code'>2024-07-24</span>"
+#date: "2024-07-24"
+image: "images/01-foundations.png"
+tbl-colwidths: [5,20,75]
 ---
 
-::: {.callout-caution collapse="false"}
-Website construction in progress...
-:::
+```{=html}
+<iframe class="slide-deck" src="lab01_slide.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
 
-
-# Lecture 1: topics illustrated in class
-
-+ Introduction to R and R-studio
-  + Why R?
-  + Principles of reproducible analysis with R + RStudio 
-+ R objects, functions, packages
-+ Understanding different types of variables
-  + Principles of “tidy data”
-+ Descriptive statistics
-  + Measures of central tendency, measures of variability (or spread), and frequency distribution
-+ Visual data exploration
-  + {`ggplot2`}
-+ Foundations of inference
-
-
-{{< pagebreak >}}
+<a href='lab01_slide.html' target="_blank">View slides in full screen</a>
 
 \pagebreak
 
@@ -63,43 +22,9 @@ Website construction in progress...
 library(downloadthis)
 ```
 
+{{< pagebreak >}}
 
-
-{{< pagebreak >}} <!-- doesn't work -->
-
-
-# ___
-
-# Lab 1 datasets
-
-<!-- using {downloadthis} + https://fontawesome.com/search?q=directory&o=r -->
-<!-- Button type + default, warning, primary, success, info, warning, danger -->
-
-Below are the datasets used in the Practice session: 
-
-<!-- + Download a `.csv` file -->
-
-```{r nope}
-#| eval: false
-#| echo: false
-#| output: false
-
-library(downloadthis)
-
-autism_data <- read_csv("practice/data/01_datasets/autism_data.csv")
-
-autism_data %>% 
-  download_this(path =  here::here("practice", "data", "autism_data"), 
-    output_name =  "autism_data", # no extension.... 
-    output_extension = ".csv",
-    button_label = "Download input data  .csv",
-    button_type = "danger",
-    has_icon = TRUE,
-    icon = "fa-solid fa-file-csv" # "fa-solid fa-file-excel"
-  )
-```
-
-+ Download a whole `subfolder`
+## Lab 1 Download input data (as `subfolder`)
 
 ```{r}
 #| eval: true
@@ -107,7 +32,7 @@ autism_data %>%
 #| output: true
 
 download_dir(
-  path = here::here("practice", "data", "01_datasets"),
+  path = here::here("practice", "data_input", "01_datasets"),
   output_name = "labs input data",
   button_label = "Download input data directory",
   button_type = "success",
@@ -117,312 +42,8 @@ download_dir(
 )
 ```
 
-<br><br>
 
-The first section is a quick review of the installation process.  
-
-# ___
-
-# Introduction to R and R-studio
-
-## Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
-
-<!-- `r fontawesome::fa("fab fa-windows", fill = "steelblue")` -->
-
-<!-- `r fontawesome::fa("fab fa-linux", fill = "steelblue")` -->
-
-<!-- `r fontawesome::fa("fab fa-apple", fill = "steelblue")` -->
-
-**R** is available for free for Windows [{{< fa brands windows >}}]{style="color:#d8717b"}, GNU/Linux [{{< fa brands linux >}}]{style="color:#d8717b"}, and macOS [{{< fa brands apple >}}]{style="color:#d8717b"}.
-
--   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
-
-If you have previously installed R on your machine, you can check which version you are running by executing this command in `R`:
-
-```{r}
-#| eval: false
-#| echo: true
-
-# From the R console
-base::R.version.string
-    # (This is the version on my own machine)
-    # [1] "R version 4.2.2 (2022-10-31)"
-```
-
-...or by executing this command in your `CLI` (Command Line Interface):
-
-```{bash}
-#| eval: false
-#| echo: true
-
-# From Terminal/Powershell/bash
-R --version
-```
-
-## Install RStudio IDE
-
-While not strictly required, it is highly recommended that you also install RStudio to facilitate your work. **RStudio Desktop** is an Integrated Development Editor (IDE), basically a graphical interface wrapping and interfacing R (which needs to be installed first).
-
-::: {.callout-tip collapse="true"}
-R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface.
-:::
-
--   To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/). The free-version contains everything you need.
-
-![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](../images/rstudio-panes-labeled.jpeg) 
-
-
-## Managing files and projects
-
-In any analytical endeavor it is very likely that you will handle a collection of files (likely organized in folders, such as `input_data`, `output_data`, `R_scripts`, `paper`, etc.). R provides a fantastic tool for organizing all the files pertaining to a project called "R project"   
-
-<!-- # R objects  -->
-
-## Creating an R Project 
-
-An **R Project** will keep all the files associated with a project (including invisible ones!) organized together – input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the "working directory", which is incredibly important when you need to load or output files, specifying their file path.  
-
-In @fig-Rproj_cre you can see how easy it is just following RStudio prompts:
-
-- Create a new directory for each project 
-- Select parent folder
-
-![Creating an R project](../images/RProj_new_proj.png){#fig-Rproj_cre}
-
-- Notice that, now, in the `Files` tab you see file with the extension `.Rproj` which is telling R that all folder’s files belong together. 
-
-
-# Install R packages
-
-An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's users. You can find them in different repositories:
-
-- **CRAN** (Comprehensive R Archive Network) - the general package repository for R: <https://cran.r-project.org/>.
-- **Bioconductor** - a package repository geared towards biostatistics <https://www.bioconductor.org/>.
-- **GitHub** <https://github.com/> - a website and cloud-based service that helps developers store and manage their code. Here you will find R package in development stage or the newest version of an existing one (it may be less stable!).
-- and more...
-
-<!-- ## ? https://r-training.pages.uni.lu/biostat1/install_tutorial.html  -->
-
-Let's take for example the R package `here`, a package that hlps handling files' paths in a reproducible manner. To install it for the first time, open an R session and execute:
-
-## From CRAN (stable version)
-```{r}
-#| eval: false
-#| echo: true
-
-# Installing (ONLY the 1st time)
-utils::install.packages('here')
-
-# OR (same)
-install.packages('here')
-
-```
-
-::: {.callout-tip collapse="true"}
-Here you are actually using a ***function*** (`install.packages`) of a pre-installed ***package*** (`utils`) using the syntax `packagename::function_name`. This prevents any ambiguity in case of dplicate funciton name... also helps you see what you are using. 
-:::
-
-Once you have installed a package, at every subsequent R session, you will only need to load it, like so:
-
-```{r}
-#| eval: false
-#| echo: true
-
-# Loading a package (at every session) 
-base::library ("here")
-# ... or
-library (here)
-```
-
-#### Using the graphical interface
-You can also install and update packages using the "Packages" tab on the lower right pane of RStudio.
-
-![Screenshot Install/Update pckgs from RStudio](../images/RStudio_install_pckg_2way.png) 
-
-## From GitHub (testing version)
-You can use the package `devtools` and its function `install_github` to install from the remote repository of GitHub the developer's version of a package. Let's try it with a nice little package `paint` (which colors the structure of dataset when printing). 
-
-
-::: panel-tabset
-### Code
-```{r}
-# Installing devtools (ONLY the 1st time)
-utils::install.packages('devtools')
-
-# Installing paint from GitHub 
-library(devtools)
-devtools::install_github("MilesMcBain/paint")
-
-# test paint out
-library(paint)
-# it will show me the structure of a data.frame like this... 
-paint(mtcars)
-# ... instead of plain old 
-print(str(mtcars))
-```
- 
-> After `devtools::install_github("MilesMcBain/paint")`, R asks me if I want to update related packages... respond in the console choosing the preferred answer. 
- 
-### Output
-![](../images/paint.png)
-:::
-
- 
-## Help on R package/function
-
-To inquire about a package and/or its functions, you can again write in your console `?package_name` or `??package_name` and RStudio will open up the `Help` page in the lower right pane.
-
-```{r}
-# Opening Help page on package/function
-?here
-
-??here
-```
-
-
-# Defining (reproducible) file paths: here
-
-It is never good practice to "hard code" the file's *absolute path*: most likely this will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.
-
-So if your code to read & load a file is written like this:
-```{r}
-# [NOT REPRODUCIBLE] hard coding your file path  -----------------------
-
-# File path on Mac:
-dataset <- readr::read_csv(
-  "/Users/testuser/R4biostats/input_data/dataset.csv")
-# Same file path on Windows:
-dataset <- readr::read_csv(
-  "C:\Users\testuser\R4biostats\input_data\dataset.csv")
-```
-
-...it won’t work on someone else’s computer since they don’t have that same file structure!
-
-This is where the fantastic [`here`](https://here.r-lib.org/) package intervenes and lets you reference file paths in a *reproducible* manner (anchored on the R Project's folder as the *root*). 
-1. It let's you use **relative paths**, i.e. specify the file path relative to the project folder containing `project_name.Rproj`. 
-2. **No more "/" v. "\\"** issue (where Windows and Linus/Mac OSs differ)
-3. Add sub folder levels separated by **","**
-
-```{r}
-#| eval: false
-#| echo: true
-
-# [REPRODUCIBLE] reference to file path
-library(here)
-library(readr)
-
-# Check where is my Working Directory?
-here::here()
-    # [1] "/Users/testuser/R4biostats"
-
-# Then define file path as ("subfolder_name", "file_name")
-# No "\" or "/" needed!
-dataset <- read_csv(here("input_data", "dataset.csv"))
-
-```
-
-# Make sure we have R packages needed for the Lab
-
-To install an R package, open an R session execute:
-
-```{r}
-#| eval: false
-#| echo: true
-
-# Installing (only the 1st time)
-pkg_list <- c("here", "dplyr", "readr")
-install.packages(pkg_list)
-
-# Loading a package (at every session) 
-library ("here")
-library ("dplyr")
-library ("readr")
-```
-
-<!-- # Or using require -> like library, but gives TRUE or FALSE  -->
-<!-- if (!require(pkg_list)) install.packages(pkg_list) -->
-
-
-# ___
-
-# R objects, functions, packages
-
-This was discussed in Lecture 1). 
-
-Now we will... 
-
-## Read a dataset into R workspace 
-
-Let's start by loading the file we will work on. 
-
-
-::: {.callout-tip icon=false}
-### {{< fa brands r-project >}} Loading input data in your workspace
-
-::: panel-tabset
-### Goal
-Load the dataset `autism_data.csv` in your workspace with code that won't break on another machine / OS
-
-### Solution
-
-Here is the file path of my .csv file inside **`R4biostats`** project folder (~ working directory): 
-
-+ `practice/data/01_datasets/autism_data.csv`
-
-```{r}
-#| label: load-data
-
-autism_data <- read.csv(file = here::here("practice",
-                                          "data",
-                                          "01_datasets",
-                                          "autism_data.csv"), 
-                        header = TRUE, 
-                        sep = ",", 
-                        na.strings = "?") 
-```
-:::
-:::
-
-
-## >>>>>>>>>  [[[[ QUI! ]]]]
-
-
-# Understanding different types of variables
-
-## Principles of “tidy data”
-
-# ___
-
-# Descriptive statistics
-
-## Measures of central tendency, measures of variability (or spread), and frequency distribution
-
-# ___
-
-# Visual data exploration
-
-## `ggplot2` 
-
-# ___
-
-# Foundations of inference 
-
-
-
-
-
-
-
-
-# ___
-
-# Lab 1 complete R code
-
-Here you will find the solved problems  addressed in Lab 1
-
-
--   as `.R` file
-
+## Find Lab 1 R code (as `.R` file)
 ```{r}
 #| echo: false
 #| eval: true
@@ -433,27 +54,6 @@ download_file(
   output_name = "lab01_code", # no extension.... 
   output_extension = ".R",  
   button_label = "Download solution as .R file",
-  button_type = "primary",
-  has_icon = TRUE,
-  icon = "fa-brands fa-r-project",
-  self_contained = FALSE
-)
-```
-
- 
-<!-- -   as `.qmd` file (commented solutions) >>>>> [not yet] -->
-
-```{r maybe}
-#| echo: false
-#| eval: false
-#| output: false
-
-# pero sara un po' recursive 
-download_file(
-  path =  here::here("practice",  "lab01_data_with_R.qmd" ),
-  output_name = "lab01_data_with_R", # no extension.... 
-  output_extension = ".qmd",  
-  button_label = "Download solution as .qmd file",
   button_type = "primary",
   has_icon = TRUE,
   icon = "fa-brands fa-r-project",

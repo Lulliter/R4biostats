@@ -47,3 +47,19 @@ Website construction in progress...
 <!-- NON FUNZIONA!!!! -->
 <!-- [Download "\*.R" file](Rcode/labs_day2.R) -->
  
+## Reference
+
++ Benjamin Soltoff [Linear regression with a single predictor](https://info2950.infosci.cornell.edu/slides/16-models-single-predictor.html#/goals)
+
++ [biostats](https://biostats.w.uib.no/up-in-the-r-2/basic-statistics-in-r/)
+
+Modelling vocabulary
+
+    Predictor/feature/explanatory variable/independent variable
+    Outcome/dependent variable/response variable
+    Correlation
+    Regression line (for linear models)
+        Slope
+        Intercept
+
++ Benjamin Soltoff [Linear regression with multiple predictors](https://info2950.infosci.cornell.edu/slides/17-models-multiple-predictors.html#/title-slide)

@@ -1,14 +1,14 @@
 ---
 title: "Day 3: Modeling correlation and regression"
 subtitle: "<span style='font-size:2em;'> .... more details </span>"
-author: "<a href='https://lulliter.github.io/R4biostats/teacher.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
+author: "<a href='https://r4biostats.com/teacher.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
 date: 2024-07-26
 date-format: long
 format:
   revealjs:
     theme: slides.scss
     logo: imgs_slides/mitgest_logo.png
-    footer: '[Maria Chiara Mimmi, Ph.D.](https://lulliter.github.io/R4biostats/teacher.html) // MITGEST::training(2024)'
+    footer: '[Maria Chiara Mimmi, Ph.D.](https://r4biostats.com/teacher.html) // MITGEST::training(2024)'
     transition: fade
     progress: true
     multiplex: false

@@ -1,8 +1,8 @@
 ---
-title: "Day 1: Intro to R and data analysis"
+title: "Lecture 1: Intro to R and data analysis"
 subtitle: "<span class='code'>2024-07-24</span>"
 #date: "2024-07-24"
-image: "images/01-foundations.png"
+# image: "images/01-foundations.png"
 tbl-colwidths: [5,20,75]
 ---
 
@@ -10,21 +10,27 @@ tbl-colwidths: [5,20,75]
 <!-- see [GH issue ](https://github.com/quarto-dev/quarto-cli/discussions/7410) -->
 
 
-# Lesson's outline
+# Lecture slides 
+
+```{=html}
+<iframe class="slide-deck" src="../lectures_slides/Lecture_01.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+<a href='../lectures_slides/Lecture_01.pdf' target="_blank">View slides in full screen</a>
+
+# Lecture's outline
 
 + Introduction to R and R-studio
+  + Why R?
+  + Principles of reproducible analysis with R + RStudio
++ R objects, functions, packages
 + Understanding different types of variables
-+ Handling R objects: vectors, matrix, data.frame
+  + Principles of “tidy data”
+  + Data cleaning and manipulation
 + Descriptive statistics
-  + measures of central tendency, measures of variability (or spread), and frequency distribution
+  + Measures of central tendency, measures of variability (or spread), and
++ Frequency distribution
 + Visual data exploration
   + {ggplot2}
 + Foundations of inference
-
-
-```{=html}
-<iframe class="slide-deck" src="../lectures_slides/01-foundations.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
-```
-
-<a href='../lectures_slides/01-foundations.html' target="_blank">View slides in full screen</a>
 
