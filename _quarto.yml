@@ -76,7 +76,7 @@ website:
             href: practice/lab04_intro_ML.qmd
       - text: "About"
         icon: mortarboard-fill #person-circle # https://icons.getbootstrap.com/?q=home
-        href: teacher.qmd
+        href: me.qmd
         
 # ## ---- non mi piace sul lato 
 #   sidebar:

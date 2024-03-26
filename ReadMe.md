@@ -2,9 +2,20 @@
 
 This website collects the materials for a two day workshop taking place during the.....
 
+
+## TO DO
+
++ size of PDF presentation
+<!-- + non editable PDF  -->
++ move Lecture 1 inference 2 lecture 2
++ make  `_variable.yml`
+  + nome sito 
++ parametrize `.qmd`  [check](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
++ decidere dove tengo le immagini
+
 ## How this website was built
 
-This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be rendered at this [link](https://lulliter.github.io/R4biostats/). Now - upon buying a "custom domain" - I deploy GitHub Pages website is now deployed over a custom domain registered with AWS Route 53: <https://r4biostats.com/>.
+This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be rendered at this link [https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/). Now - after buying a "custom domain" - I deploy GitHub Pages website is now deployed over a custom domain registered with AWS Route 53: <https://r4biostats.com/>.
 
 The main content of the website pages is contained in *Quarto Markdown* files (`*.qmd`). `*.qmd` files are very similar to regular Markdown (`*.md`) and R Markdown (`*.rmd`) files, except they are designed to be language agnostic.
 
@@ -37,13 +48,21 @@ I acknowledge inputs received from these very valuable sources:
 - [R for Epidemiology](https://www.r4epi.com/), **electronic book** by the University of Texas Health Science Center School of Public Health\
 - [Appplied Epi](https://appliedepi.org/tutorial/) **Interactive R Tutorials** (Licensed <img src="images/creative-commons.svg" width="16" height="16"/>)
 - [Statology](https://www.statology.org/) **Introduction to Statistics with R Tutorials** (Copyrighted <img src="images/copyright-regular.svg" width="16" height="16"/>)
-- [Autism](Sydney-informatics-hub-github.io)
+- [Autism dataset analysis](Sydney-informatics-hub-github.io)
 - [Introductory Biostatistics with R](https://tuos-bio-data-skills.github.io/intro-stats-book/index.html) by Dylan Z. Childs, Bethan J. Hindle and Philip H. Warren
 - [Biostatistics - Concepts and approaches for collecting good data and turning it into knowledge](https://jsgosnell.github.io/cuny_biostats_book/content/getting_started/getting_started.html) by J. Stephen Gosnell
 
 ## Cool Stuff you should check out
 
 - [R package {metabolic}](https://fmmattioni.github.io/metabolic/) by Felipe Mattioni Maturana, Ph.D
+
+## Quarto relevant resources
+
+- Mandy Norrbo's **tutorial** [Generate multiple presentations with Quarto parameters](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
+- Mine Çetinkaya-Rundel's **blog** [ A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/)
+- Cornell University's **lesson** [Publishing reproducible documents with Quarto](https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance) 
+https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
+https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance
 
 ## Web input attributions
 

@@ -6,11 +6,20 @@ image: "images/01-foundations.png"
 tbl-colwidths: [5,20,75]
 ---
 
+
+<!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
 ```{=html}
-<iframe class="slide-deck" src="lab01_slide.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="slides_lab01.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='lab01_slide.html' target="_blank">View slides in full screen</a>
+<!-- <!-- 2/2 DIAPOSITIVA STD (4:3) -->
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src="slides_lab01.html" height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+
+<a href='slides_lab01.html' target="_blank">View slides in full screen</a>
+
+
 
 \pagebreak
 
@@ -60,3 +69,5 @@ download_file(
   self_contained = FALSE
 )
 ```
+
+

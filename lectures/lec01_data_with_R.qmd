@@ -10,15 +10,22 @@ tbl-colwidths: [5,20,75]
 <!-- see [GH issue ](https://github.com/quarto-dev/quarto-cli/discussions/7410) -->
 
 
-# Lecture slides 
+<!-- ### Lecture slides  -->
 
+<!-- 1/2 DIAPOSITIVA STD (16:9) --> 
+
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src="../lectures_slides/Lecture_01.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+
+<!-- 2/2 DIAPOSITIVA STD (4:3) -->
 ```{=html}
-<iframe class="slide-deck" src="../lectures_slides/Lecture_01.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="../lectures_slides/Lecture_01.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 <a href='../lectures_slides/Lecture_01.pdf' target="_blank">View slides in full screen</a>
 
-# Lecture's outline
+## Lecture's outline
 
 + Introduction to R and R-studio
   + Why R?
@@ -32,5 +39,6 @@ tbl-colwidths: [5,20,75]
 + Frequency distribution
 + Visual data exploration
   + {ggplot2}
-+ Foundations of inference
+  
+<!-- + Foundations of inference -->
 
