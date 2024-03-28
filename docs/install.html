@@ -79,7 +79,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
-}</script>
+}</script><link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 </head>
 <body class="floating nav-fixed slimcontent">
 
@@ -174,6 +175,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#install-rstudio-ide" id="toc-install-rstudio-ide" class="nav-link" data-scroll-target="#install-rstudio-ide">Install RStudio IDE</a></li>
   <li><a href="#install-r-packages-from-the-cran" id="toc-install-r-packages-from-the-cran" class="nav-link" data-scroll-target="#install-r-packages-from-the-cran">? Install R packages from the CRAN</a></li>
   <li><a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a></li>
+  <li>
+<a href="#r-coding-tips-and-tricks" id="toc-r-coding-tips-and-tricks" class="nav-link" data-scroll-target="#r-coding-tips-and-tricks">R coding tips and tricks</a>
+  <ul class="collapse">
+<li><a href="#useful-keyboard-shortcuts-in-rstudio" id="toc-useful-keyboard-shortcuts-in-rstudio" class="nav-link" data-scroll-target="#useful-keyboard-shortcuts-in-rstudio">Useful keyboard shortcuts in RStudio</a></li>
+  </ul>
+</li>
   </ul></nav>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -285,23 +292,79 @@ Tip
 </section><section id="install-r-packages-from-the-cran" class="level1"><h1>? Install R packages from the CRAN</h1>
 <p>An <strong>R <em>package</em></strong> is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e.&nbsp;the <code>base</code> package), many useful R functions come in free libraries of code (or <em>packages</em>) written by R’s user community.</p>
 <ul>
-<li><p><strong>CRAN</strong> - the Comprehensive R Archive Network - is the general package repository for R: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a>.</p></li>
-<li><p><strong>Bioconductor</strong> -</p></li>
-<li><p><strong>Github</strong> -</p></li>
+<li><p><strong>CRAN</strong> - the Comprehensive R Archive Network - is the general package repository for R: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a></p></li>
+<li><p><strong>Bioconductor</strong> - a package repository geared towards biostatistics: <a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></p></li>
+<li><p><strong>Github</strong> - a repository where you can find developer’s version of a package: <a href="https://github.com/">https://github.com/</a></p></li>
 </ul></section><section id="r-packages-that-will-be-required-for-the-workshop" class="level1"><h1>R packages that will be required for the workshop</h1>
 <p>Below are the R packages, that we will need for the workshop’s practical sessions. Ideally, you can pre-install them… it will also serve as a test to check whether the R version you have is compatible.</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Installing (only the 1st time you use them)</span></span>
-<span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"here"</span>, <span class="st">"dplyr"</span>, <span class="st">"janitor"</span>, <span class="st">"skimr"</span><span class="op">)</span></span>
+<span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"here"</span>, <span class="st">"fs"</span>, <span class="st">"janitor"</span>, <span class="st">"skimr"</span>,</span>
+<span>              <span class="st">"dplyr"</span>, <span class="st">"forcats"</span>, <span class="st">"ggplot2"</span>,<span class="st">"ggridges"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Loading a package (at the beginning of every R session) </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://here.r-lib.org/">"here"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://dplyr.tidyverse.org">"dplyr"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://github.com/sfirke/janitor">"janitor"</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span> <span class="op">(</span><span class="st"><a href="https://docs.ropensci.org/skimr/">"skimr"</a></span><span class="op">)</span></span>
-<span><span class="co"># library ("dplyr")</span></span>
-<span><span class="co"># library ("readr")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span>     <span class="co"># A Simpler Way to Find Your Files      </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span>       <span class="co"># Cross-Platform File System Operations     </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span>  <span class="co"># Simple Tools for Examining and Cleaning Data   </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span>    <span class="co"># Compact and Flexible Summaries of Data     </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>    <span class="co"># {tidyverse} A Grammar of Data Manipulation     </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span>  <span class="co"># {tidyverse} Tools for Categorical Var.(Factors)   </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>  <span class="co"># {tidyverse} Tools for Data Visualizations    </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggridges/">ggridges</a></span><span class="op">)</span> <span class="co"># Ridgeline Plots in 'ggplot2' (density functions)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="r-coding-tips-and-tricks" class="level1"><h1>R coding tips and tricks</h1>
+<section id="useful-keyboard-shortcuts-in-rstudio" class="level2"><h2 class="anchored" data-anchor-id="useful-keyboard-shortcuts-in-rstudio">Useful keyboard shortcuts in RStudio</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="tabwid">
+<style>.cl-9a6ae086{}.cl-9a65e842{font-family:'Helvetica';font-size:14pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-9a65e86a{font-family:'Helvetica';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-9a684542{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-9a685262{width:2.508in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68526c{width:1.905in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68526d{width:2.897in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68526e{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685276{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685277{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685278{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685280{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685281{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685282{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685283{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68528a{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68528b{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68528c{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68528d{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a68528e{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685294{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-9a685295{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-9a6ae086">
+<thead><tr style="overflow-wrap:break-word;">
+<th class="cl-9a685262"><p class="cl-9a684542"><span class="cl-9a65e842">Description</span></p></th>
+<th class="cl-9a68526c"><p class="cl-9a684542"><span class="cl-9a65e842">Windows &amp; Linux</span></p></th>
+<th class="cl-9a68526d"><p class="cl-9a684542"><span class="cl-9a65e842">Mac</span></p></th>
+</tr></thead>
+<tbody>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a68526e"><p class="cl-9a684542"><span class="cl-9a65e86a">Insert code section</span></p></td>
+<td class="cl-9a685276"><p class="cl-9a684542"><span class="cl-9a65e86a">Ctrl+Shift+R</span></p></td>
+<td class="cl-9a685277"><p class="cl-9a684542"><span class="cl-9a65e86a">Shift+Command+R  or Ctrl+Shift+R</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a685278"><p class="cl-9a684542"><span class="cl-9a65e86a">Run current line/selection</span></p></td>
+<td class="cl-9a685280"><p class="cl-9a684542"><span class="cl-9a65e86a">Ctrl+Enter</span></p></td>
+<td class="cl-9a685281"><p class="cl-9a684542"><span class="cl-9a65e86a">Command+Return</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a685278"><p class="cl-9a684542"><span class="cl-9a65e86a">Reindent lines</span></p></td>
+<td class="cl-9a685280"><p class="cl-9a684542"><span class="cl-9a65e86a">Ctrl+I</span></p></td>
+<td class="cl-9a685281"><p class="cl-9a684542"><span class="cl-9a65e86a">Command+I</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a685282"><p class="cl-9a684542"><span class="cl-9a65e86a">Insert &lt;- operator</span></p></td>
+<td class="cl-9a685283"><p class="cl-9a684542"><span class="cl-9a65e86a">Alt+-</span></p></td>
+<td class="cl-9a68528a"><p class="cl-9a684542"><span class="cl-9a65e86a">Option+-</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a68528b"><p class="cl-9a684542"><span class="cl-9a65e86a">Insert %&gt;% operator</span></p></td>
+<td class="cl-9a68528c"><p class="cl-9a684542"><span class="cl-9a65e86a">Ctrl+Shift+M</span></p></td>
+<td class="cl-9a68528d"><p class="cl-9a684542"><span class="cl-9a65e86a">Shift+Command+M</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a685282"><p class="cl-9a684542"><span class="cl-9a65e86a">Code completion</span></p></td>
+<td class="cl-9a685283"><p class="cl-9a684542"><span class="cl-9a65e86a">Tab</span></p></td>
+<td class="cl-9a68528a"><p class="cl-9a684542"><span class="cl-9a65e86a">Tab</span></p></td>
+</tr>
+<tr style="overflow-wrap:break-word;">
+<td class="cl-9a68528e"><p class="cl-9a684542"><span class="cl-9a65e86a">File path completion (console)</span></p></td>
+<td class="cl-9a685294"><p class="cl-9a684542"><span class="cl-9a65e86a">"+Tab</span></p></td>
+<td class="cl-9a685295"><p class="cl-9a684542"><span class="cl-9a65e86a">"+Tab</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <!-- ## Install [Quarto] -->
 <!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
@@ -311,7 +374,7 @@ Tip
 <!--   - Install/Update Chromium with `quarto install tool chromium` -->
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

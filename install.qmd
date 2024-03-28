@@ -90,11 +90,11 @@ R, which is a command line driven program, can be executed via its native interf
 
 An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
 
--   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: <https://cran.r-project.org/>.
+-   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: [https://cran.r-project.org/](https://cran.r-project.org/)
 
--   **Bioconductor** -
+-   **Bioconductor** - a  package repository geared towards biostatistics: [https://www.bioconductor.org/](https://www.bioconductor.org/)
 
--   **Github** -
+-   **Github** - a repository where you can find developer’s version of a package: [https://github.com/](https://github.com/)
 
  
 
@@ -108,16 +108,66 @@ Below are the R packages, that we will need for the workshop's practical session
 #| echo: true
 
 # Installing (only the 1st time you use them)
-pkg_list <- c("here", "dplyr", "janitor", "skimr")
+pkg_list <- c("here", "fs", "janitor", "skimr",
+              "dplyr", "forcats", "ggplot2","ggridges")
 install.packages(pkg_list)
 
 # Loading a package (at the beginning of every R session) 
-library ("here")
-library ("dplyr")
-library ("janitor")
-library ("skimr")
-# library ("dplyr")
-# library ("readr")
+library(here)     # A Simpler Way to Find Your Files      
+library(fs)       # Cross-Platform File System Operations     
+library(janitor)  # Simple Tools for Examining and Cleaning Data   
+library(skimr)    # Compact and Flexible Summaries of Data     
+library(dplyr)    # {tidyverse} A Grammar of Data Manipulation     
+library(forcats)  # {tidyverse} Tools for Categorical Var.(Factors)   
+library(ggplot2)  # {tidyverse} Tools for Data Visualizations    
+library(ggridges) # Ridgeline Plots in 'ggplot2' (density functions)
+
+ 
+```
+
+
+# R coding tips and tricks 
+
+## Useful keyboard shortcuts in RStudio
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: true
+
+library(tibble)
+library(flextable)
+
+key_short <- tibble::tribble (
+  ~Description, 	             ~'Windows & Linux',     ~'Mac', 
+  "Insert code section", 	     "Ctrl+Shift+R",       	"Shift+Command+R  or Ctrl+Shift+R",
+  "Run current line/selection", "Ctrl+Enter",     "Command+Return",
+  "Reindent lines", 	             "Ctrl+I", 	"Command+I",
+  
+  "Insert <- operator", 	"Alt+-", 	"Option+-",
+  "Insert %>% operator", 	    "Ctrl+Shift+M", 	"Shift+Command+M",
+  
+  "Code completion",          "Tab", "Tab", 
+  "File path completion (console)",    "\"+Tab", "\"+Tab"
+)
+
+ 	
+key_short_ft <- key_short %>% 
+  # adorn_percentages(  denominator = 'row', na.rm = TRUE) %>%
+  flextable() %>% 
+ #   flextable::set_header_labels(key_stakes_types = "Type of agencies most frequently involved", N = "N. of cases") %>% 
+  bold( bold = TRUE,   part = "header") %>% 
+  color( color = "white",   part = "header") %>% 
+  bg( bg = "#d8717b",   part = "header") %>% 
+  bg( bg = "#F2F2F2", part = "body", source = j) %>% 
+  fontsize( i = NULL, j = NULL, size = 11, part = "body") %>% 
+  # bg(bg =bordeaux_light, i = ~  `Type of agencies most frequently involved` %in%  c ( "more than 1 agency involved" ), part = "body") %>% 
+  fontsize(size = 14, part = "header") %>% 
+  fontsize(size = 12, part = "body") %>% 
+  autofit() 
+
+
+key_short_ft
 ```
 
 <!-- ## Install [Quarto] -->
