@@ -1,6 +1,6 @@
 ---
 title: "Lab 1: Intro to R and data analysis"
-subtitle: "<span style='font-size:2em;'> .... more details </span>"
+subtitle: "<span style='font-size:2em;'> Practice session covering topics discussed in Lecture 1 </span>"
 author: "<a href='https://r4biostats.com/me.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
 date: 2024-07-25
 date-format: long
@@ -32,7 +32,7 @@ execute:
   freeze: auto
 ---
 
-# Lecture 1: topics illustrated in class
+## Lecture 1: topics 
 
 -   Introduction to R and R-studio
     -   Why R?
@@ -124,7 +124,7 @@ Here you are actually using a ***function*** (`install.packages`) of a pre-insta
 
 ## Install R packages from GitHub (testing version)
 
-With the package `devtools` and its function `install_github` to install the developer's version of a package. Let's try it with a little package `paint` (which colors the structure of dataset when printing).
+With the package `devtools` and its function `install_github`^[After `devtools::install_github("MilesMcBain/paint")`, R asks me if I want to update related packages... respond in the console choosing the preferred answer.] to install the developer's version of a package. Let's try it with a little package `paint` (which colors the structure of dataset when printing).
 
 ::: panel-tabset
 ### Code
@@ -143,10 +143,9 @@ devtools::install_github("MilesMcBain/paint")
 library(paint)
 ```
 
-
-::: {.aside}
-After `devtools::install_github("MilesMcBain/paint")`, R asks me if I want to update related packages... respond in the console choosing the preferred answer.
-:::
+<!-- ::: {.aside} -->
+<!-- After `devtools::install_github("MilesMcBain/paint")`, R asks me if I want to update related packages... respond in the console choosing the preferred answer. -->
+<!-- ::: -->
 
 ### Output {str} function
 ```{r}
@@ -191,7 +190,7 @@ library(fs)        # file/directory interactions
 
 ## Help on R package/function
 
-To inquire about a package and/or its functions, you can again write in your console `?package_name` or `??package_name` and RStudio will open up the `Help` page in the lower right pane.
+To inquire about a package and/or its functions, you can again write in your console `?package_name` or `??package_name` and RStudio will open up the `Help` tab in the lower right pane.
 
 ```{r}
 # Opening Help page on package/function
@@ -203,6 +202,8 @@ To inquire about a package and/or its functions, you can again write in your con
 ## File paths logistics
 
 It is never good practice to "hard code" the file's *absolute path*: most likely it will break your code as soon as you (or someone else) need to run it on a different computer, let alone within a different OS.
+
+<br><br>
 
 So if your code to read & load a file is written like this:
 
@@ -222,8 +223,8 @@ dataset <- readr::read_csv(
 ...it won't work on someone else's computer since they don't have that same file structure!
 
 
-## (Reproducible) file paths with `here` \[in Rstudio\]
-The [`here`](https://here.r-lib.org/) package lets you reference file paths in a *reproducible* manner (anchored on the R Project's folder as the *root*). 
+## [(Reproducible) file paths with `here` (in Rstudio)]{.r-fit-text}
+The [`here`](https://here.r-lib.org/) package lets you reference file paths in a **reproducible** manner (anchored on the R Project's folder as the **root**). 
 
 <!-- 1. It let's you use **relative paths**, i.e. specify the file path relative to the project folder containing `project_name.Rproj`.  -->
 <!-- 2. **No more "/" v. "\\"** issue (where Windows and Linus/Mac OSs differ) 3. Add sub folder levels separated by **","** -->
@@ -235,9 +236,9 @@ Where is my Working Directory?
 here::here()
 ```
 
-You should get **"/Users/dir/sub_dir/proj_name"**
-
-Create a Sub-Directory with `fs` package (for saving input data and output data)
+You should get: **"/Users/YourName/RProj_Dir"** <br><br>
+Now, you can embed `here(dir,subdir)` specifications in other functions.  
+For example, create a sub-directory with `fs` package (for saving input data and output data)
 
 ```{r}
 #| eval: false
@@ -256,16 +257,14 @@ fs::dir_delete(here("practice", "test"))
 ## Importing data into R workspace
 
 We are using real data provided by Thabtah,Fadi. (2017). Autism Screening Adult. UCI Machine Learning Repository. [https://doi.org/10.24432/C5F019](https://doi.org/10.24432/C5F019)
-
+<br><br>
 We use `utils::read.csv` to load a csv file
 
 ```{r}
 ?read.csv # to learn about function and arguments 
 ```
 
-## Option 1: from a url
-
-+ `head` extract the first 6 rows 
+## Option 1: Importing from a url
 
 ```{r}
 #| eval: false
@@ -277,7 +276,9 @@ autism_data_url <- read.csv(
 )
 ```
 
-## Option 2: from my folder (upon downloading)
+## Option 2: Importing from my folder (if you previously downloaded the file)
+
++ `here` lets me specify the complete path of the destination folder
 
 ```{r}
 # Check my working directory location
@@ -294,13 +295,14 @@ autism_data_file <- read.csv(
 
 # DATA OBSERVATION & MANIPULATION
 
-## Viewing the dataset
+## Viewing the dataset and variables
 
 ```{r}
 #| eval: false
 View(autism_data_file)  # (or click on it in Enviroment tab)
 ```
 
++ Or click on the object in Environment tab (upper right pane of RStudio)
 
 ```{r}
 # What data type is this data?
@@ -310,9 +312,12 @@ class(autism_data_file)
 base::colnames(autism_data_file)
 ```
 
++ Notice the var name formatting inconsistency: `Class.ASD`
+
 ## Manipulate / clean the dataframe
 
-I want a more consistent naming (no ".", only "\_"), so I use a very handy function `clean_names` from the {janitor} package
+I want consistent name formatting for variables: no "`.`", only "`_`" separator.
+So, I use a very handy function `clean_names` from the `janitor` package
 
 ```{r}
 autism_data <- janitor::clean_names(autism_data_file, 
@@ -322,33 +327,45 @@ colnames(autism_data)
 dim(autism_data)
 ```
 
--   The option `case = "none"` leaves the case as is, but only uses "\_" separator (you can also use it with no arguments )
+- By default `clean_names` renames cols into **"snake"** format (i.e. "abc_xyz")
+-   The option `case` is for capitalization preferences  
+    - `case = "none"` leaves the case as is, but only uses "`_`" separator 
 
 ## Isolate a variable (column)
 
+You can use the `$` sign to extract a variable (column name)
 ```{r}
-# With the `$` sign I extract a variable (column name)
+#| eval: false
+
 autism_data$id
 autism_data$A1_Score
+autism_data$gender
+autism_data$autism
 ```
 
 ## Add a new column
 
-I prefer to rename the dataframe when I make changes
-
+(I prefer to rename the dataframe when I make changes)
 ```{r}
 # rename dataframe 
 autism_pids <- autism_data
+```
+
+Create a **new column**, using `paste` (function to concatenate strings)
+```{r}
 # create a new column 
 autism_pids$pids <- paste("PatientID_" , autism_data$id, sep = "")
-base::colnames(autism_pids)
+```
 
+Check results:
+```{r}
 # check change in df structure
+base::colnames(autism_pids)
 dim(autism_data)
 dim(autism_pids)
 ```
 
-## (optional) Clean up my workspace^[Warning: you will not have these objects in your workspace anymore]
+## (optional) Clean up my workspace
 
 ```{r}
 # what do I have in the environment? 
@@ -357,13 +374,17 @@ ls()
 rm("autism_data", "autism_data_file", "autism_data_url" ) 
 ```
 
-. . .
+<br><br>
 
-<br>
+::: aside
+(Warning: mind that after `rm()`, you will not have these objects in your workspace anymore.)
+:::  
+ 
 
-# Different ways to select rows &/or columns
 
-## Option 1 using the `$` sign from `base`
+# [Different ways to select rows &/or columns (from `base`)]{.smaller}
+
+## [Option 1 Extract cols with `$`]{.r-fit-text}
 
 ```{r}
 # With the `$` sign I extract a variable (column name)
@@ -373,8 +394,9 @@ head(autism_pids$A1_Score)
 head(autism_pids$ethnicity)
 ```
 
-## Option 2 using indexing `[ , #col]` from `base`
+## [Option 2a Extract cols with `[,#col]`]{.r-fit-text}
 
++ This is called "indexing"
 ```{r}
 # Indexing to pick `[ , #col]`  
 head(autism_pids[ ,1] )# empty rows means all 
@@ -383,7 +405,7 @@ head(autism_pids[ ,2])
 head(autism_pids[ ,14])
 ```
 
-## Option 2 using indexing `[#row, ]` from `base`"
+## [Option 2b Extract rows with `[#row,]`]{.r-fit-text}
 ```{r}
 # Indexing to pick `[#row, ]`  
 head(autism_pids[1 , ] ) # empty cols means all 
@@ -391,7 +413,8 @@ head(autism_pids[50,])
 head(autism_pids[25:26 ,])
 ```
 
-## Option 2 using indexing `[#row, #col]`  from `base`"
+## [Option 3 Extract rows & cols with `[#row,#col]`]{.r-fit-text}
+
 ```{r}
 # Indexing to pick `[#row, #col]`  
 autism_pids[1:3,1]
@@ -400,17 +423,21 @@ autism_pids[1:3,2]
 autism_pids[1:3,14]
 ```
 
-# What are the data types of the variables?
+# [What are the data types of the variables?]{.smaller}
 
 
 ## Option 1 using `base` functions 
 
++ on the whole dataset
 ```{r}
 # What are the data types of the variables? ---------------------------------
 str(autism_pids) # integer and character
 ```
 
 ## Option 1 using `base` functions (cont.)
+
++ on specific columns
+
 ```{r}
 # What values can the variables take? ---------------------------------
 summary(autism_pids$pids)
@@ -422,13 +449,14 @@ length(unique(autism_pids$ethnicity)) # N unique values
 sum(is.na(autism_pids$ethnicity)) # N missing values
 ```
 
-## Option 2 using {skimr} function `skim`
+## Option 2 using `skimr` function `skim`
 
++ on specific columns
 ```{r}
 #| output-location: fragment
 
 autism_pids %>% 
-  skimr::skim(pids) %>%
+  skimr::skim(pids, ethnicity) %>%
   dplyr::select(#skim_variable, 
                 skim_type, 
                 complete_rate,
@@ -436,37 +464,41 @@ autism_pids %>%
                 character.n_unique)
 ```
 
-## Option 2 using {skimr} function `skim` (cont.)
-```{r}
-#| output-location: fragment
+## [Option 2 using `skimr` function `skim` (cont.)]{.r-fit-text}
++ on the whole dataset
 
-autism_pids %>% 
-  skimr::skim(ethnicity) %>%
-  dplyr::select(#skim_variable, 
-                skim_type, 
-                complete_rate,
-                n_missing, 
-                character.n_unique)
-
-```
-
-## Option 2 using {skimr} function `skim` (cont.)
 ```{r}
 #| eval: false
-#| output-location: fragment
+#| echo: true
+
+# Barbatrucco  !!!!!
+autism_pids %>% 
+  skimr::skim() 
+```
+
+```{r}
+#| eval: true
+#| echo: false
+#| output-location: slide
+#| out-width: 0.5\\textwidth
 
 # I can use it for the WHOLE dataframe!
 autism_pids %>% 
-  skimr::skim()
+  skimr::skim_without_charts() %>% 
+  print(., include_summary = FALSE,
+        width = "skimr_table_header_width"#,summary_rule_width = getOption("skimr_summary_rule_width", default = 20)
+        )
 ```
+
+
  
 
 # Recoding some variables
 
-## from char to factor
+## From character to factor
 
 ::: panel-tabset
-### from char to factor using `base`
+### char to factor using `base`
 
 ```{r}
 #### char 2 factor -------------------------------------------------------------
@@ -485,7 +517,7 @@ class(autism_pids$relation)
 # now I have Variable type: factor
 ```
 
-### from char to factor (n cols) using `base`
+### char to factor (n cols) using `base`
 
 ```{r}
 autism_pids_temp <- autism_pids # copy df for test 
@@ -504,28 +536,28 @@ class(autism_pids_temp$relation)
 
 ## Inspect factors levels (3 different ways)
 
--   using {base} `levels` functions
+-   using `base::levels` function
 ```{r}
 levels(autism_pids$ethnicity)
 ```
 
--   using {base} `table` functions
+-   using `base::table` function
 ```{r}
 table(autism_pids$ethnicity,useNA = "ifany")
 ```
 
 ## Inspect factors levels -- 3 different ways (cont.)
 
--   using {janitor} function `tabyl`, which uses the "pipe" operator `%>%` which takes the output of a function as input of the next one
+-   using `janitor` function `tabyl`, which uses the "pipe" operator `%>%` which takes the output of a function as input of the next one
 ```{r}
 janitor::tabyl(autism_pids$ethnicity) %>% 
   adorn_totals() %>% 
   adorn_pct_formatting()
 ```
 
-## Inspect factors levels -- 3 different ways (cont.)
+## Identify missing values 
 
-- check if the 95 missing obs are the same missing for ethnicity and relation
+Use `is.na` to check if the 95 missing obs are the same missing for `ethnicity` and `relation`
 ```{r}
 which(is.na(autism_pids$ethnicity)) # indices of TRUE elements in vector
 which(is.na(autism_pids$relation))  # indices of TRUE elements in vector
@@ -533,8 +565,8 @@ which(is.na(autism_pids$relation))  # indices of TRUE elements in vector
 
 ...indeed they are!
 
-## from char to logical
-
+## From character to logical
+I may prefer to code a variable as logical. Let's recode  `age_desc`
 ```{r}
 # observe a subset of some columns 
 autism_subset <- autism_pids [1:5, c("gender","jaundice", "autism", "age_desc", "Class_ASD","pids")]
@@ -546,9 +578,9 @@ class(autism_pids$age_desc)
 class(autism_pids$age_desc_log)
 ```
 
-## from char to dummy [0,1]
+## From character to dummy [0,1]
 
-I also may need my binary variables expressed as 01 (e.g. to incorporate nominal variables into regression analysis)
+I also may need my binary variables expressed as [0,1] (e.g. to incorporate nominal variables into regression analysis). Let's recode `autism`.
 
 ```{r}
 autism_pids$autism_dummy <- ifelse(autism_pids$autism == 'yes', 1, 0)
@@ -556,14 +588,14 @@ class(autism_pids$autism)
 class(autism_pids$autism_dummy)
 ```
 
-# Subsetting the data for further investigation
+## Subsetting the data for further investigation
 Recall how to view the names of columns / variables
 
 ```{r}
 colnames(autism_pids)
 ```
 
-## using {utils} `head` or `tail`
+## using `head` or `tail` from `utils` 
 
 ```{r}
 #| eval: false
@@ -571,7 +603,7 @@ head(autism_pids)   #return fist 6 obs
 tail(autism_pids)   #return last 6 obs
 ```
 
-## using {utils} `head` or `tail` (cont.)
+## using `head` or `tail` from `utils` (cont.)
 
 ```{r}
 head(autism_pids, n = 2) #return fist 2 obs
@@ -589,7 +621,8 @@ sum(is.na(autism_pids$age))
 skimr::n_missing(autism_pids$age)
 ```
 
-Next, I want to ID those patients with missing `age`
+<br><br>
+So, next, I want to ID those patients with missing `age`.
 
 ## New df (only the patients with missing `age`) as SUBSET of the given df
 
@@ -625,7 +658,7 @@ missing_age_subset2
 # Creates a SUBSET based on MORE conditions (`age` and `ethnicity`)
 subset_2cond <- subset(x = autism_pids, 
                        # 2 logical conditions      
-                       subset = age < 50 & contry_of_res == "Brazil", 
+                       subset = age < 25 & contry_of_res == "Brazil", 
                        # pick a few cols 
                        select = c("pids", "age", "contry_of_res",
                                   "autism_dummy")
@@ -635,7 +668,7 @@ subset_2cond
 ```
 
 
-## Subset using {dplyr} `filter` and `select`
+## Subset using `dplyr` `filter` and `select`
 
 Switching to the package `dplyr` and embracing the "pipe" (`%>%`) operator logic, in which the filtering (rows) and selecting (columns) is done in sequence
 
@@ -653,10 +686,11 @@ twocond_dplyr_subset
 
 ## Input values where missing
 
-⚠︎ WARNING ⚠︎ This is a very delicate step, because any data that is modified or imputed beyond the original collection can affect the result of subsequent analysis and statistical modeling.
+⚠︎ WARNING︎: This is a very delicate step⚠︎
 
-Furthermore, it will be necessary to document and justify whichever approach is used to deal with missing data.
-
++ any data that are modified or imputed beyond the *original collection* can affect the result of subsequent analysis and statistical modeling 
++ it will be necessary to document and justify whichever approach is used to deal with missing data.
+ 
 ```{r}
 # 1/2 create a new variable 
 autism_pids$age_inputed <- autism_pids$age
@@ -676,25 +710,32 @@ skimr::n_missing(autism_pids$age_inputed)
 
 ## Summarizing all variables
 
-::: columns
+Try these 2 options:
+<br><br>
+
+:::: {.columns}
+
 ::: {.column width="50%"}
-### {base} `summary`
+### `base::c`
 ```{r}
 #| eval: false
 summary(autism_pids)
 ```
 :::
-
+  
 ::: {.column width="50%"}
-### {skimr} `skim`
+### `skimr::skim`
 ```{r}
 #| eval: false
 skimr::skim(autism_pids)
 ```
 :::
-:::
+  
+::::
 
-## Notice the different treatment according to the variable type
+
+
+## Notice `summary` different behavior according to the variable's type
 
 The function's results depend on the class of the object
 
@@ -712,7 +753,7 @@ summary(autism_pids$ethnicity)    # counts of levels' frequency (included NA!)
 
 ```
 
-## Notice the different treatment according to the variable type
+## Notice `summary` different behavior according to the variable's type (cont.)
 
 -   logical (age_desc_log)
 
@@ -721,7 +762,7 @@ summary(autism_pids$age_desc_log) # counts of TRUE
 ```
 
 
-## Frequency tables
+## Frequency distributions with `table`
 
 -   Frequency distributions can be used for nominal, ordinal, or interval/ration variables
 
@@ -732,7 +773,7 @@ table(autism_pids$age, useNA = "ifany") #...unless specified
 
 ```
 
-## Cross tabulation
+## Cross tabulation  with `table` (2 vars)
 
 -   Cross tabulation
 
@@ -742,9 +783,9 @@ table(autism_pids$ethnicity, autism_pids$autism_dummy)
 
 ```
 
-## Grouping and summarizing with {base}
+## Grouping and summarizing with `base`
 
-E.g. I want to know the average age of men and women
+E.g. I want to know the average age of men and women sub-groups.
 
 Here are 3 ways using `base R
 
@@ -772,7 +813,7 @@ sapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # retu
 ```
 :::
 
-## Grouping and summarizing with {dplyr}
+## Grouping and summarizing with `dplyr`
 
 <!-- -   {dplyr} is a key package in the {tidyverse} collection -->
 <!-- -   it uses the "pipe" `%>%` and doesn't require to specify the `dataframe$col_name` but simply `col_name` -->
@@ -799,19 +840,18 @@ autism_pids %>%
 
 ## Mean and median
 
-Recall that
+Recall that: <br><br>
 
-**MEAN** 
+**Population MEAN** $\mu=\frac{\sum_{i=1}^n x_{i}}n$  
+**Sample MEAN** $\bar{x}=\frac{\sum_{i=1}^n x_{i}}n$ 
+<br><br>
+**Sample MEDIAN** 
 
-Sample $\mu=\frac{\sum_{i=1}^n x_{i}}n$ & Population $\bar{x}=\frac{\sum_{i=1}^n x_{i}}n$
+For uneven $n$: $Mdn = \frac{x_{(n+1)}}2$ For even $n$: $Mdn = \frac{x_{(n/2)} + x_{(n/2+1)}}2$
 
-**MEDIAN** 
+## Mean/Median using `base` R
 
-For uneven $n$: $\frac{x_{(n+1)}}2$ For even $n$: $\frac{x_{(n/2)} + x_{(n/2+1)}}2$
-
-## Mean/Median using `base`
-
-+ Important to specify the argument `na.rm = TRUE` or the function won't work
++ Important to specify the argument `na.rm = TRUE` or the functions won't work
 ```{r}
 ## Let's use `age` and `age_inputed` to see what inputed missing values did 
 mean(autism_pids$age)
@@ -827,7 +867,7 @@ median(autism_pids$age_inputed)
 
 ## Create custom function to calculate statistical mode
 
-R doesn't have it so we need a custom function for the "mode"
+R doesn't have a built-in function for the statistical mode, so we can create a custom one: `f_calc_mode`
 
 ::: panel-tabset
 ### Create custom function
@@ -857,19 +897,22 @@ f_calc_mode(autism_pids$age_inputed)
 
 ## Variance and Standard deviation
 
-Recall that
+Recall that: <br>
+**Population Variance** $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$ <br><br>
+**Sample Variance** $s^2 =\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
+<br><br>
+**Population Standard deviation** $\sigma = \sqrt\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$ <br><br>
+**Sample Standard deviation**  $s = \sqrt\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
 
-**Variance** Sample $s^2 =\frac{\sum{(x_i-\bar{x})^2}}{n-1}$ & Population $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$
+## Variance and Standard deviation using `base` R
 
-**Standard deviation** Sample $s = \sqrt\frac{\sum{(x_i-\bar{x})^2}}{n-1}$ & Population $\sigma = \sqrt\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$
-
-
++ Important to specify the argument `na.rm = TRUE` or the functions won't work (or use the `age_inputed` variable)
 ```{r}
 
-var(autism_pids$age)
+var(autism_pids$age, na.rm = TRUE)
 var(autism_pids$age_inputed)
 
-sd(autism_pids$age)
+sd(autism_pids$age, na.rm = TRUE)
 sd(autism_pids$age_inputed)
 ```
 
@@ -898,7 +941,7 @@ a layered approach!
 
 ```{r}
 two_col_palette <-  c("#9b2339", "#005ca1")
-other_cols <- c("#E7B800","#239b85", "#85239b", "#9b8523","#23399b",
+contrast_cols_palette <- c("#E7B800","#239b85", "#85239b", "#9b8523","#23399b",
                 "#d8e600", "#0084e6", "#399B23", "#e60066",
                 "#00d8e6", "#e68000")
 ```
@@ -909,31 +952,36 @@ other_cols <- c("#E7B800","#239b85", "#85239b", "#9b8523","#23399b",
 
 Histograms (and density plots) are often used to show the distribution of a continuous variable.
 
++  Option 1) `data` inside the `ggplot()` function 
 ```{r}
-#| output-location: slide
+#| eval: false 
 
 ggplot(data = autism_pids, mapping = aes(x=age_inputed)) + 
   geom_histogram() + 
   theme_bw()
 ```
 
-
-## ... or (piped data)
++ Option 2) `data` before the pipe `%>%`  
 
 ```{r}
 #| output-location: slide
 
-# notice the  `%>%`  before using ggplot2...
 autism_pids %>% 
-  # then `+` when using ggplot2
   ggplot(aes(x = age_inputed )) + 
   geom_histogram() + 
   theme_bw()
 ```
 
-## ... bin width
+::: aside
+notice that after calling `ggplot()`, subsequent layers are added with `+`
+:::  
+
+## ... define bin width
 
 Histograms split the data into ranges (bins) and show the number of observations in each. Hence, it's important to pick widths that represents the data well.
+
++ The default value is 30
++ We can change it using the argument `bins = #`
 
 ```{r}
 #| output-location: slide
@@ -945,64 +993,78 @@ autism_pids %>%
   theme_bw()
 ```
 
-## ... mean vertical line
+## ... add mean and std dev vertical lines
+
++ using `geom_vline()` to add a vertical line for the *mean*, and the range between -1 and +1 *sd* from the mean.
++ using `annotate()` for adding small annotations (such as text labels) 
 
 ```{r}
 #| output-location: slide
 
-
 autism_pids %>% 
   ggplot(aes(x = age_inputed )) + 
-  # specify to avoid warning if we fail to specify the number of bins 
   geom_histogram(bins=40) + 
   # add mean vertical line
   geom_vline(xintercept = mean(autism_pids$age_inputed),
              na.rm = FALSE,
              lwd=1,
-             linetype=2,
              color="#9b2339") +
-  # add small annotations (such as text labels) 
+  # add annotations with the mean value
   annotate("text",                        
-           # coordinates for positioning aesthetics on the graph
-           x = mean(autism_pids$age_inputed) * 1.4,
-           y = mean(autism_pids$age_inputed) * 1.7,
+           x = mean(autism_pids$age_inputed) * 1.2, # coordinates for positioning
+           y = mean(autism_pids$age_inputed) * 2.5,
            label = paste("Mean =", round(mean(autism_pids$age_inputed), digits = 2)),
            col = "#9b2339",
            size = 4)+
-theme_bw() 
+  # add also sd +1 and -1 
+  geom_vline(aes(xintercept = mean(autism_pids$age_inputed) + sd(autism_pids$age_inputed)), 
+             color = "#000000", size = 1, linetype = "dashed") +
+  geom_vline(aes(xintercept = mean(autism_pids$age_inputed) - sd(autism_pids$age_inputed)), 
+             color = "#000000", size = 1, linetype = "dashed") +
+  theme_bw() 
 
 ```
 
 ## Density plot
 
++ specifying `x` (the continuous variable)
++ using `geom_density()`, in which we 
+
 ```{r}
 #| output-location: slide
 
 autism_pids %>% 
-  ggplot(aes( x=age_inputed)) +
+  ggplot(aes(x = age_inputed)) +
   geom_density()+
   theme_bw() 
 ```
 
 ## Density plot (cont.)
 
++ specifying shape colors with the arguments inside `geom_density(...)`
++ `color` for the line color 
++ `fill` for area color  
++ `alpha` to specify the degree of transparency in the density fill area
+
 ```{r}
 #| output-location: slide
 
 autism_pids %>% 
   ggplot(aes( x=age_inputed)) +
-  geom_density(fill="#85239b", color="#e9ecef", alpha=0.5)+
+  geom_density(fill="#85239b", color="#4c4c4c", alpha=0.5)+
   theme_bw() 
 ```
 
 ## ... increase \# of x-axis ticks
 
++ specifying the amount of breaks inside `scale_x_continuous()`
+
 ```{r}
 #| output-location: slide
 
 autism_pids %>% 
   ggplot(aes( x=age_inputed)) +
-  geom_density(fill="#85239b", color="#e9ecef", alpha=0.5)+
+  geom_density(fill="#85239b", color="#4c4c4c", alpha=0.5)+
   theme_bw() + 
   # increase number of x axis ticks 
   scale_x_continuous(breaks = seq(10, 100,5 ), limits = c(16, 86))
@@ -1014,33 +1076,47 @@ autism_pids %>%
 
 ## Histograms with `fill = category`
 
+1. indicate the categorical group as `fill = ` in the aesthetic mapping
+2. specify custom colors for each group: 
+
+  + use `scale_color_manual()` for changing line color
+  + use `scale_fill_manual()` for changing area fill colors.
+
+
 ```{r}
 #| output-location: slide
 
-# specifying `fill` = gender
 autism_pids %>% 
+  # specifying `fill` = gender
   ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
   geom_histogram(bins=40) + 
+  scale_fill_manual(values = c("#e07689","#57b7ff")) +
+  scale_color_manual(values = c("#9b2339","#005ca1")) +
   theme_bw()  
 ```
 
 ## ... shifting bars by group
 
++ using the specification `position = 'dodge'` inside `geom_histogram()`
 ```{r}
 #| output-location: slide
-
 
 # trying to improve readability 
 autism_pids %>% 
   ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
   # bars next to each other with `position = 'dodge'`
-  geom_histogram(bins=40, position = 'dodge') + 
-  theme_bw()
+  geom_histogram(bins=40, position = 'dodge')  + 
+  scale_fill_manual(values = c("#e07689","#57b7ff")) +
+  scale_color_manual(values = c("#9b2339","#005ca1")) +
+  theme_bw()  
 ```
 
 ## ...facet by gender
 
 That's still not very easy to digest. Instead of only filling, you can separate the data into multiple plots to improve readability
+
++ adding `facet_wrap()` with the  the specification of `~categ_var`
++ also `ncol = 1` requires the subplot to be in 1 column 
 
 ```{r}
 #| output-location: slide
@@ -1054,9 +1130,9 @@ autism_pids %>%
   scale_fill_cyclical(values = c("#9b2339","#005ca1"))
 ```
 
-## ... adding 2 mean vert lines (by gender)
+## ... adding 2 mean/median vert lines (by gender)
 
-I want to see the mean vertical line for each of the subgroups, but now, I need to create a small dataframae of summary statistics.
+I want to see the mean vertical line for each of the subgroups, but in this case, I need to create a small dataframe of summary statistics (`group_stats`).
 
 I do so by using `dplyr` add a column `mean_age` with the group mean
 
@@ -1070,11 +1146,11 @@ group_stats <- autism_pids %>%
 group_stats
 ```
 
-## ...(Introducing tidyr::pivot_longer)
+## (Introducing tidyr::pivot_longer)
 
-This is a case in which I need to reshape this small dataframe into `long` form. I do so using `tidyr::pivot_longer` function
+First, I need to reformat `group_stats`, changing it from a "wide" format with each variable in its own column to a "long" format, where you use one column for all the *measures names* and another for all the *measures values*.
 
-My next plot will have two `data` sources
++ This can be done using `tidyr::pivot_longer` function
 
 ```{r}
 #| output-location: fragment
@@ -1088,34 +1164,60 @@ group_stats_long <- group_stats %>%
 group_stats_long 
 ```
 
-## ...facet by gender + 2 mean vert lines + `scales`
 
+## ...facet by gender + vert lines by group
+
+Notice that now the plot will have 2 `data` sources:
+
++ `autism_pids`
++ `group_stats_long`
+
+```{r}
+#| output-location: slide
+
+autism_pids %>% 
+  ggplot(aes(x = age_inputed, fill = gender)) + 
+  # geom_histogram from dataframe 1
+  geom_histogram(bins=30,color="#e9ecef", alpha=0.8, position = 'dodge') + 
+  facet_wrap(~gender, ncol = 1) + 
+  scale_fill_manual(values = c("#9b2339","#005ca1"))  +
+  # geom_vline from dataframe 2
+  geom_vline(data = group_stats_long, 
+             mapping = aes(xintercept = Value, color = Stat),
+             lwd=1.5,
+             linetype=6) + 
+  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
+  theme_bw()  
+```
+
+## ... finishing touches
+
++ using `labs()` and `theme()` layers
 ```{r}
 #| output-location: slide
 
 hist_plot <- autism_pids %>% 
   ggplot(aes(x = age_inputed, fill = gender)) + 
+  # geom_histogram from dataframe 1
   geom_histogram(bins=30,color="#e9ecef", alpha=0.8, position = 'dodge') + 
-  facet_wrap(~gender, ncol = 1 ) + 
+  facet_wrap(~gender, ncol = 1) + 
   scale_fill_manual(values = c("#9b2339","#005ca1"))  +
-  # adding vline 
+  # geom_vline from dataframe 2
   geom_vline(data = group_stats_long, 
              mapping = aes(xintercept = Value, color = Stat),
              lwd=1.5,
-             linetype=6,
-  ) + 
+             linetype=6) + 
+  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
+  # increase number of x axis ticks 
+  scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86)) +
+  # Additional theme details 
   labs(x = "age brackets", y = "n of individuals",
        color = "Stats",
        title = "Distribution of observations by gender",
        subtitle = "",
-       caption = "Autism study") +
-  theme_bw() + 
+       caption = "Source: Thabtah,Fadi. (2017). Autism Screening Adult. UCI Machine Learning Repository. https://doi.org/10.24432/C5F019.") +
   theme(legend.position = "right",
-        plot.title = element_text(face = "bold")) + 
-  # increase number of x axis ticks 
-  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
-  scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86))
-
+        plot.title = element_text(face = "bold")) 
 hist_plot
 ```
 
@@ -1148,17 +1250,15 @@ autism_pids %>%
 
 Bar charts provide a visual presentation of categorical data, with `geom_bar()` (height of the bar proportional to the number of cases in each group) 
 
-```{r}
-#| output-location: fragment
-
-# Let's take a variable that we recoded as `factor`
-class(autism_pids$ethnicity)
-```
+![Difference barchart v. histogram Source: [https://www.biorender.com/](https://www.biorender.com/template/bar-chart-vs-histogram)](../images/bar_v_hist.png){#fig-hist_bar}
 
 ## Barchart (cont.)
 
 ```{r}
-#### ...bare minimum ---------------------------------- 
+# Let's take a variable that we recoded as `factor`
+class(autism_pids$ethnicity)
+
+#### ... no formatting ---------------------------------- 
 autism_pids %>% 
   ggplot(aes(x = ethnicity )) + 
   geom_bar() +   
@@ -1187,9 +1287,11 @@ autism_pids %>%
         axis.text.y = element_text(size=10,face="bold"))  
 ```
 
-## ...improve readability (reorder)
+## ...improve readability (reorder bars)
 
-Reordering the bars by count using the package `forcats` and its function `fct_infreq` + (which we can do because ethnicity is coded as factor)
+Reordering the bars by count using the package `forcats` and its function `fct_infreq` 
+
++ (which we can do because ethnicity is coded as factor)
 
 ```{r}
 #| output-location: slide
@@ -1247,33 +1349,83 @@ autism_pids %>%
 
 ## Boxplot
 
-As discussed in lecture 1, the boxplot is packed with information about a distribution.
+The boxplot is one of the simplest ways of representing a distribution of a continuous variable and it is packed with information. It consists of two parts:
+
++ **Box** — Extending from the 1st to the 3rd quartile (Q1 to Q3) with a line in the middle that represents the median.
++ **Whiskers** — Lines extending from both ends of the box (minimum/maximum whisker values are calculated as Q1/Q3 -/+ 1.5 * IQR)
++ Everything outside is represented as an **outlier**
+
+![Boxplot Source: [https://www.appsilon.com/post/ggplot2-boxplots](https://www.appsilon.com/post/ggplot2-boxplots)](../images/boxplot.png){#fig-boxplot}
+
+
+## Boxplot example 1
+
+Let's use a boxplot to explore how the continuous variable `result` is distributed in the autism dataset.
+
++ in the aesthetic mapping we specify only `x` (continuous variable)
++ switch to vertical orientation with `coord_flip()` 
+```{r}
+#| output-location: slide
+
+autism_pids %>% 
+  ggplot(aes(x = result )) +
+  geom_boxplot(alpha=0.5)+
+  # switch to vertical orientation
+  coord_flip() +
+  theme_bw()    
+```
+
+
+## Boxplot example 2
+
+Let's also explore how the continuous variable `result` is distributed by the categorical variable (factor) `ethnicity`.
+
++ in the aesthetic mapping we specify `y` (continuous variable), plus `x` and `fill` (categorical variable)
++ make x axis labels readable with `theme(axis.text.x (...))` layer 
++ I specify colors that I had previously saved in a color palette ` contrast_cols_palette`
+
 
 ```{r}
 #| output-location: slide
 
 autism_pids %>% 
-  ggplot(aes(x = gender,  y= age_inputed, fill = gender)) +
+  ggplot(aes(x = ethnicity,  y= result, fill = ethnicity)) +
   geom_boxplot(alpha=0.5)+
-  theme_bw()   + 
-  scale_fill_cyclical(values = c("#9b2339","#005ca1"))
+  scale_fill_manual(values =  contrast_cols_palette)   +
+  theme_bw()+
+  # make x axis labes readable
+  theme(axis.text.x = element_text(angle=50, vjust=0.75)) +
+  # drop legend and Y-axis title
+  theme(legend.position = "none") 
 ```
+
 
 <!-- # https://datavizf23.classes.andrewheiss.com/lesson/06-lesson.html -->
 
 ## Violin plot
 
-Similarly, the violin plot is an interesting alternative, and it can be enriched by adding the `geom_point` geometry.
+Similarly, the violin plot is an interesting alternative to show the distribution of a continuous variable along one or more categorical variables. Here, the kernel density plot shows the smoothed curve of the **probability density function (PDF)** of the data. <br><br> 
+
+Compared to the box plot, a violin plot provides more information, as it shows not only the summary statistics but also the shape and variability of the data (i.e. helping to identify any **skewness** or **multimodality** in the data).
+
+## Violin plot example
+
++ it requires the `geom_violin` function 
++ it can be enriched by adding with other `geoms`, such as points, lines, or box plots, to create more complex and informative plots
++ let's add points with the `geom_point` layer
 
 ```{r}
 #| output-location: slide
 
 autism_pids %>% 
-  ggplot(mapping = aes(y = age_inputed, x = gender, fill = gender)) +
+  ggplot(mapping = aes(y = age_inputed, x = ethnicity, fill = ethnicity)) +
   geom_violin(alpha=0.5) +
   geom_point(position = position_jitter(width = 0.1), size = 0.5)+ 
-  scale_fill_cyclical(values = c("#9b2339","#005ca1")) +
-  theme_bw()
+  scale_fill_manual(values =  contrast_cols_palette)  +
+  # make x axis labes readable
+  theme(axis.text.x = element_text(angle=50, vjust=0.75)) +
+  # drop legend and Y-axis title
+  theme(legend.position = "none") 
 
 ```
 
@@ -1284,6 +1436,7 @@ autism_pids %>%
 If I want to use these output files later, I can easily save in the output folder created at the beginning.
 
 - save a plot with `ggplot2::ggsave`
+- specifying the output directory with `here::here(...)`
 
 ```{r}
 #| eval: false
@@ -1295,6 +1448,7 @@ ggsave (hist_plot,
 ## Saving a `.Rds` data file.
 
 - save a dataframe with `base::saveRDS`
+- specifying the output directory with `here::here(...)`
 
 ```{r}
 #| eval: false
@@ -1302,6 +1456,8 @@ ggsave (hist_plot,
 saveRDS (object = autism_pids, 
          file =  here::here("practice",  "data_output", "autism_pids_v2.Rds"))
 ```
+
+<br><br>
 
 - (later) load a saved dataframe with `base::readRDS`
 

@@ -170,6 +170,7 @@ key_short_ft <- key_short %>%
 key_short_ft
 ```
 
+Here you find the complete list of [RStudio Keyboard Shortcuts](https://docs.posit.co/ide/user/ide/reference/shortcuts.html)
 <!-- ## Install [Quarto] -->
 
 <!--  - Install latest version of [Quarto](https://quarto.org/docs/get-started/) (v1.0.36 or greater) -->
