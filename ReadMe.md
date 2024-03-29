@@ -8,7 +8,7 @@ This website collects the materials for a two day workshop taking place during t
 + ~~size of PDF presentation~~
 <!-- + non editable PDF  -->
 + ~~move Lecture 1 inference 2 lecture 2~~
-+ upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`
++ ~~upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`~~
 + make  `_variable.yml`
   + nome sito 
 + parametrize `.qmd`  [check](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)

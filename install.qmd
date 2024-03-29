@@ -25,9 +25,9 @@ Website construction in progress...
 
 This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. 
 
-We will quickly go over this at our first Practice session, but it would be best if you could install the required software on your machine in advance.
+We will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine **before** the workshop.
 
-Below is quick step by step process that can guide you with the installation.
+Below is a step by step process that should guide you through the needed installation steps.
 
 # Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
 
@@ -86,17 +86,18 @@ R, which is a command line driven program, can be executed via its native interf
 
 ![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](images/rstudio-panes-labeled.jpeg) 
 
-# ? Install R packages from the CRAN
+# Install R packages from the CRAN
 
-An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contianed in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
+An **R *package*** is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's user community.
 
 -   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: [https://cran.r-project.org/](https://cran.r-project.org/)
+
+(We only use packages from CRAN for our purposes) 
 
 -   **Bioconductor** - a  package repository geared towards biostatistics: [https://www.bioconductor.org/](https://www.bioconductor.org/)
 
 -   **Github** - a repository where you can find developer’s version of a package: [https://github.com/](https://github.com/)
 
- 
 
 # R packages that will be required for the workshop
 
@@ -109,7 +110,8 @@ Below are the R packages, that we will need for the workshop's practical session
 
 # Installing (only the 1st time you use them)
 pkg_list <- c("here", "fs", "janitor", "skimr",
-              "dplyr", "forcats", "ggplot2","ggridges")
+              "dplyr", "tidyr","forcats", "ggplot2","ggridges")
+
 install.packages(pkg_list)
 
 # Loading a package (at the beginning of every R session) 
@@ -118,11 +120,10 @@ library(fs)       # Cross-Platform File System Operations
 library(janitor)  # Simple Tools for Examining and Cleaning Data   
 library(skimr)    # Compact and Flexible Summaries of Data     
 library(dplyr)    # {tidyverse} A Grammar of Data Manipulation     
+library(tidyr)    # {tidyverse} Tools tocreate tidy data 
 library(forcats)  # {tidyverse} Tools for Categorical Var.(Factors)   
 library(ggplot2)  # {tidyverse} Tools for Data Visualizations    
 library(ggridges) # Ridgeline Plots in 'ggplot2' (density functions)
-
- 
 ```
 
 

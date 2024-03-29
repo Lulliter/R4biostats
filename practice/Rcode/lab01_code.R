@@ -1,17 +1,26 @@
-# INTRO TO R AND RSTUDIO --------------------------------------------------
+# Lab 1 INTRO TO R AND DATA ANALYSIS -------------------------------------------
+# Practice session covering topics discussed in Lecture 1 
 
-# R  & RStudio installation ----------------------------------------------------------
-# check your R version
+
+# _________---------------------------------------------------------------------
+# INTRO TO R AND RSTUDIO ------------------------------------------------- 
+
+# R & RStudio installation ---------------------------------------------------- 
+    ## --- (see instructions in website https://r4biostats.com/install.html)
+
+# check your R version ---------------------------------------------------- 
 R.Version()
 # or just
 R.version.string
 
 
-# Creating an R Project --------------------------------------------------------
-    ## --- [in Rstudio]
+# Creating an R Project [in Rstudio] ------------------------------------------
+    ## --- (see instructions in lab slides https://r4biostats.com/practice/lab01_data_with_R.html)
 
 
-# R Packages --------------------------------------------------------------
+# (Install) & Load R Packages --------------------------------------------------
+    ## --- (see instructions in lab slides https://r4biostats.com/install.html)
+
 # to install a package use `utils` function `install.packages("package_name)`
 
 # We are mostly using {base} & {utils} (pre-installed and pre-loaded)
@@ -27,37 +36,36 @@ library(forcats)   # {tidyverse} tool for handling factors
 library(ggridges)  # alternative to plot density functions 
 library(fs)        # file/directory interactions
 
-mycolors_contrast <- c("#9b2339", "#005ca1","#E7B800","#239b85", "#85239b", 
-                       "#9b8523","#23399b", "#d8e600", "#0084e6",
-                       "#399B23",  "#e60066" , "#00d8e6", "#e68000")
-
 
 # Defining (reproducible) file paths with `here` -------------------------------
-## --- [in Rstudio]
 
 # Where is my Working Directory?
 here::here()
 
 # Create a Sub-Directory (e.g. for saving input data and ouptut data)
-## with here I simply add subfolder names relative to my wd 
-fs::dir_create(here("practice", "test","data_input"))
-# here we will put output files at the end
-fs::dir_create(here("practice", "test","data_output")) 
+## with here I simply add subfolder names relative to my WD 
+
+# (check the function documentation)
+?fs::dir_create
+# here we will save input files
+fs::dir_create(here("practice", "data", "data_input"))
+# here we will save output files at the end
+fs::dir_create(here("practice", "data", "data_output")) 
 
 ## --- [Then I remove, because I have them already]
-fs::dir_delete(here("practice", "test"))
+fs::dir_delete(here("practice", "data" ))
 
 # _________---------------------------------------------------------------------
-# R OBJECTS, FUNCTIONS, PACKAGES -------------------------------------------
-# Importing data into R workspace  ---------------------------------------------
+# R OBJECTS, FUNCTIONS, PACKAGES -----------------------------------------------
 
-# (We are using real data provided by Thabtah,Fadi. (2017). Autism Screening Adult. 
-  # UCI Machine Learning Repository. https://doi.org/10.24432/C5F019 )
+# Importing data into R workspace  ---------------------------------------------
+## --- (We are using real data provided by Thabtah,Fadi. (2017). Autism Screening Adult. 
+      # UCI Machine Learning Repository. https://doi.org/10.24432/C5F019 )
 
 # We use `utils::read.csv` to load a csv file 
 ?read.csv # to learn about function and arguments 
 
-#### 1/2 from a url ----------------------------------------------------------
+#### Option 1/2 from a url ----------------------------------------------------- 
 autism_data_url <- read.csv(file = "https://raw.githubusercontent.com/Sydney-Informatics-Hub/lessonbmc/gh-pages/_episodes_rmd/data/autism_data.csv", 
                                header = TRUE, # 1st line is the name of the variables
                                sep = ",", # which is the field separator character.
@@ -65,7 +73,7 @@ autism_data_url <- read.csv(file = "https://raw.githubusercontent.com/Sydney-Inf
                               
 ) 
 
-#### 2/2 from my folder (upon downloading)------------------------------------- 
+#### Option 2/2 from my folder (upon downloading)------------------------------- 
 # Check my working directory location
 here::here()
 
@@ -83,21 +91,23 @@ autism_data_file <- read.csv(file = here("practice", "data_input", "01_datasets"
 
 # Viewing the dataset -----------------------------------------------------
 View(autism_data_file)  
+# (or click on the object in Environment tab)
 
 # What data type is this data?
 class(autism_data_file)
 
 # What variables are included in this dataset?
 base::colnames(autism_data_file)
+    ## Notice the var name formatting inconsistency: Class.ASD
 
 # Manipulate / clean the dataframe ---------------------------------------------------
 
 # I want a more consistent naming (no ".", only "_")
 # I use very handy function `clean_names` from the {janitor} package
 autism_data <- janitor::clean_names(autism_data_file, 
-                                     case = "none") # leaves the case as is, but only uses "_" separator
-  ## (you can also use it with no arguments ) 
-
+                                     case = "none") ## (also OK with no arguments) 
+    ## case = "none" leaves the case as is, but only uses "_" separator
+  
 # check change
 colnames(autism_data)
 dim(autism_data)
@@ -119,10 +129,10 @@ dim(autism_data)
 dim(autism_pids)
 
 
-##### (Clean up my workspace) --------------------------------------------------
+##### (optional) Clean up my workspace -----------------------------------------
 # what do I have in the environment? 
 ls() 
-# remove all EXCEPT for "autism_pids" 
+# remove all EXCEPT for "autism_pids" which I am going to use 
 rm("autism_data", "autism_data_file", "autism_data_url" ) 
 
 # Different ways to select variables--------------------------------------------
@@ -152,8 +162,6 @@ autism_pids[1:3,23]
 autism_pids[1:3,2]
 autism_pids[1:3,14]
 
-# Recode variables into different types  -------=----------------------------------
-
 # What are the data types of the variables? ---------------------------------
 str(autism_pids) # integer and character
 
@@ -176,7 +184,7 @@ skimr::skim(autism_pids)
 (autism_pids$id)
 
 # _________-------------------------------------------------------------------
-# Recoding some variables (using {base} -------------------------------------- 
+# Recoding variables (using {base} -------------------------------------- 
 
 ###### using {base}  ----------------------------------------------------------
 
@@ -187,7 +195,7 @@ autism_pids$ethnicity <- as.factor(autism_pids$ethnicity)
 autism_pids$contry_of_res <- as.factor(autism_pids$contry_of_res)
 autism_pids$relation <- as.factor(autism_pids$relation)
 # check 
-skimr::skim(autism_pids) # now I have Variable type: factor
+skimr::skim(autism_pids) # now I have variable type: factor
 
 #### char 2 factor (n cols)-----------------------------------------------------
 autism_pids_temp <- autism_pids # copy df for test 
@@ -198,24 +206,25 @@ autism_pids_temp[ ,to_factor] <-  lapply(X =  autism_pids[ ,to_factor], FUN = as
 # check 
 skimr::skim(autism_pids_temp) # now I have Variable type: factor
 
-#### Inspect factors levels --------------------------------------------------
+#### Inspect factors levels (3 different ways) ---------------------------------
 
-# 3 different ways:
+# Option 1/3 using base::levels function
 levels(autism_pids$ethnicity)
 
+# Option 2/3 using base::table function
 table(autism_pids$ethnicity,useNA = "ifany")
 
-# with another {janitor} function `tabyl`
-  ## * {janitor} uses the "pipe operator %>% which takes the output of a funciton 
+# Option 3/3 using janitor::tabyl function 
+  ## * {janitor} uses the "pipe operator %>% which takes the output of a function 
   ## as input of the next one 
 janitor::tabyl(autism_pids$ethnicity) %>% 
   adorn_totals() %>% 
   adorn_pct_formatting()
 
-# Check whether the 95 missing obs are the same for ethnicity and relation
+# Use `is.na` to check if the 95 missing obs are the same missing for `ethnicity` and `relation`
 which(is.na(autism_pids$ethnicity)) # indices of TRUE elements in vector
 which(is.na(autism_pids$relation))  # indices of TRUE elements in vector
-  ## indeed they are 
+  ## indeed they are the same IDs!
 
 #### char 2 logical  --------------------------------------------------------
 # observe a subset of some columns 
@@ -247,12 +256,12 @@ colnames(autism_pids)
 head(autism_pids)   #return fist 6 obs
 tail(autism_pids)   #return last 6 obs
 
-head(autism_pids, n = 3) #return fist 3 obs
-tail(autism_pids, n = 3) #return last 3 obs
+head(autism_pids, n = 2) #return fist 2 obs
+tail(autism_pids, n = 2) #return last 2 obs
 
 
-# Investigating a subset of observations ----------------------------------
-# E.g. I learned that some patients have missing `age`...
+# Investigating a subset of observations ---------------------------------------
+# E.g. I learned that some patients have missing age… how many are they?
 sum(is.na(autism_pids$age)) # or 
 skimr::n_missing(autism_pids$age)
 
@@ -261,47 +270,52 @@ skimr::n_missing(autism_pids$age)
 # Create a new df (only the patients with missing `age`) as SUBSET of the given df 
 ## I choose the obs of interest and a few useful vars
 
-###### using {base} `[]`  -----------------------------------------------------
+###### Option 1/3 using {base} `[]`  ------------------------------------------- 
 missing_age_subset <- autism_pids[is.na(autism_pids$age), c("pids", "age", "autism_dummy") ]
 missing_age_subset
- 
-###### using {base} `subset` -----------------------------------------------------
+
+###### Option 2/3 using {base} `which` -----------------------------------------------------
+missing_age_subset2 <- autism_pids[which(is.na(autism_pids$age)), c("pids", "age", "autism_dummy")] 
+missing_age_subset2
+
+###### Option 3/3 using {base} `subset` ---------------------------------------- 
 # arguments allow me to specify rows and cols 
-missing_age_subset2 <- subset(x = autism_pids, 
+missing_age_subset3 <- subset(x = autism_pids, 
                               subset = is.na(autism_pids$age), # 1 logical condition
                               select = c("pids", "age", "autism_dummy") # which cols
                               ) 
-missing_age_subset2
-
-# Creates a SUBSET based on MORE conditions (`age` and `ethnicity`)
-subset_2cond <- subset(x = autism_pids, 
-                       # 2 logical conditions      
-                       subset = age < 50 & contry_of_res == "Brazil", 
-                       # pick a few cols 
-                       select = c("pids", "age", "contry_of_res",
-                                  "autism_dummy")
-) 
-
-subset_2cond
-
-###### using {base} `which` -----------------------------------------------------
-missing_age_subset3 <- autism_pids[which(is.na(autism_pids$age)), c("pids", "age", "autism_dummy")] 
 missing_age_subset3
 
-###### using {dplyr} `filter` and `select` -----------------------------------------------------
+
+# Creates a SUBSET based on MORE conditions (`age` and `ethnicity`)------------- 
+###### Option 1/2 using `base::subset` -----
+twocond_base_subset <- subset(x = autism_pids, 
+                              # 2 logical conditions      
+                              subset = age < 25 & contry_of_res == "Brazil", 
+                              # pick a few cols 
+                              select = c("pids", "age", "contry_of_res",
+                                         "autism_dummy")) 
+
+twocond_base_subset
+
+###### Option 2/2 using `dplyr` (`filter` + `select`) -----
 ## here the filtering (rows) and selecting (columns) is done in sequence
 twocond_dplyr_subset <- autism_pids %>% 
-  dplyr::filter(age < 50 & contry_of_res == "Brazil") %>%  # which rows
+  dplyr::filter(age < 25 & contry_of_res == "Brazil") %>%  # which rows
   dplyr::select (pids, age, contry_of_res, autism_dummy)   # which cols
 
+twocond_dplyr_subset
 
-# Input values where missing ----------------------------------------------
+# Dealing with missing data ----------------------------------------------
+
+# Explore how to input values where missing ----------------------------------------------
+
 # 1/2 create a new variable 
 autism_pids$age_inputed <- autism_pids$age
 # 2/2 replace value (presumably taken from other source) of `aged_inputed` 
   # CONDITIONAL on `pids`
 autism_pids$age_inputed[autism_pids$pids == "PatientID_63"] <-  65
-autism_pids$age_inputed[autism_pids$pids == "PatientID_92"] <-  75
+autism_pids$age_inputed[autism_pids$pids == "PatientID_92"] <-  45
 
 # check
 skimr::n_missing(autism_pids$age_inputed)  
@@ -321,13 +335,14 @@ summary(autism_pids$A1_Score)     # min, max quartiles, mean, median
 summary(autism_pids$ethnicity)    # counts of levels' frequency (included NA!)
 summary(autism_pids$age_desc_log) # counts of TRUE 
 
-# Frequency tables and Cross tabulation -----------------------------------
+# Frequency distributions with table (1 var) -----------------------------------
 ## Frequency distributions can be used for nominal, ordinal, or interval/ration variables 
 table(autism_pids$gender)
 table(autism_pids$age) # automatically drops missing...
 table(autism_pids$age, useNA = "ifany") #...unless specified
 
-# Cross tabulation 
+# Cross tabulation with table (2 vara) -----------------------------------
+table(autism_pids$gender, autism_pids$age, useNA = "ifany")
 table(autism_pids$gender, autism_pids$age_inputed)
 table(autism_pids$ethnicity, autism_pids$autism_dummy)
 
@@ -395,6 +410,7 @@ f_calc_mode  <- function(x) {
 # check
 f_calc_mode(autism_pids$age)
 f_calc_mode(autism_pids$age_inputed)
+f_calc_mode(autism_pids$ethnicity)
 
 # u <- unique(autism_pids$age_inputed)
 # m <- match(autism_pids$age_inputed, u)
@@ -412,78 +428,116 @@ sd(autism_pids$age)
 sd(autism_pids$age_inputed)
 
 
-# Frequency distribution --------------------------------------------------
-
-
-## Measures of central tendency, measures of variability (or spread), and frequency distribution
-
-
 # _________-------------------------------------------------------------------
 # VISUAL DATA EXPLORATION -------------------------------------------------
 
 # Plotting with ggplot2 ----------------------------------------------------------------
 
-# Distribution of continuous var  ----------------------------------------------------------------
+# Save some colors (for customizing plots) ---------------------------------
+
+# Colors are defined in the form of **Hexadecimal color values** 
+two_col_palette <-  c("#9b2339", "#005ca1")
+contrast_cols_palette <- c("#E7B800","#239b85", "#85239b", "#9b8523","#23399b",
+                           "#d8e600", "#0084e6", "#399B23", "#e60066",
+                           "#00d8e6", "#e68000")
+
+# Distribution of continuous var  ---------------------------------------------- 
 
 ### Histograms   ----------------------------------------------------------------
 # Histograms (and density plots) are often used to show the distribution of a continuous variable. 
+
+#### ... Option 1) data inside the ggplot() function --------------------------
+
 ggplot(data = autism_pids, mapping = aes(x=age_inputed)) + 
   geom_histogram() + 
   theme_bw()
 
-#### ... bin width -------------------------------------------------------------
-# Histograms split the data into ranges (bins) and show the number of observations in each. Hence the shape of the histogram will change depending on how wide or narrow these ranges (or bins, or buckets) are. Try to pick widths that represents the data well.
-
-# or (piped data)
+#### ... Option 2) data before the pipe %>% --------- --------------------------
 # notice the  `%>%`  before using ggplot2...
 autism_pids %>% 
   # then `+` when using ggplot2
-  ggplot(aes(x = age_inputed )) + 
-  # specify to avoid warning if we fail to specify the number of bins 
-  geom_histogram(bins=40) + 
-  # Add mean vertical line
-  geom_vline(xintercept = mean(autism_pids$age_inputed),
-             na.rm = FALSE,
-             lwd=1,
-             linetype=2,
-             color="#9b2339") +
-  # adding small annotations (such as text labels) 
-  annotate("text",                        
-           # coordinates for positioning aesthetics on the graph
-           x = mean(autism_pids$age_inputed) * 1.4,
-           y = mean(autism_pids$age_inputed) * 1.7,
-           label = paste("Mean =", round(mean(autism_pids$age_inputed), digits = 2)),
-           col = "#9b2339",
-           size = 4)+
-theme_bw() 
+  ggplot(aes(x = age_inputed )) +
+  geom_histogram() + 
+  theme_bw()
+
+
+#### ... define bin width ------------------------------------------------------
+# Histograms split the data into ranges (bins) and show the number of observations in each. Hence the shape of the histogram will change depending on how wide or narrow these ranges (or bins, or buckets) are. Try to pick widths that represents the data well.
+
+autism_pids %>% 
+    ggplot(aes(x = age_inputed )) + 
+    # specify to avoid warning if we fail to specify the number of bins 
+    geom_histogram(bins=40) + 
+    theme_bw()
+
+#### ... add mean and std dev vertical lines ----------------------------------
+# using geom_vline() to add a vertical line for the mean, and the range between -1 and +1 sd from the mean.
+# using annotate() for adding small annotations (such as text labels)
+  
+autism_pids %>% 
+    ggplot(aes(x = age_inputed )) + 
+    geom_histogram(bins=40) + 
+    # add mean vertical line
+    geom_vline(xintercept = mean(autism_pids$age_inputed),
+               na.rm = FALSE,
+               lwd=1,
+               color="#9b2339") +
+    # add annotations with the mean value
+    annotate("text",                        
+             x = mean(autism_pids$age_inputed) * 1.2, # coordinates for positioning
+             y = mean(autism_pids$age_inputed) * 2.5,
+             label = paste("Mean =", round(mean(autism_pids$age_inputed), digits = 2)),
+             col = "#9b2339",
+             size = 4)+
+    # add also sd +1 and -1 
+    geom_vline(aes(xintercept = mean(autism_pids$age_inputed) + sd(autism_pids$age_inputed)), 
+               color = "#000000", size = 1, linetype = "dashed") +
+    geom_vline(aes(xintercept = mean(autism_pids$age_inputed) - sd(autism_pids$age_inputed)), 
+               color = "#000000", size = 1, linetype = "dashed") +
+    theme_bw() 
 
 ### Density plot  ----------------------------------------------------------------
 autism_pids %>% 
+    ggplot(aes(x = age_inputed)) +
+    geom_density()+
+    theme_bw() 
+  
+  
+### Density plot + color + x axis ticks ----------------------------------------
+autism_pids %>% 
   ggplot(aes( x=age_inputed)) +
+  # add arguments   
   geom_density(fill="#85239b", color="#e9ecef", alpha=0.5)+
   theme_bw() + 
   # increase number of x axis ticks 
   scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86))
-#theme(axis.text.x = element_text(angle = 90, size=8, vjust = 0.5, hjust=1))
+
 
 # ___-------------------------------------------------------------------
 # Distribution of continuous var split by categorical var ------------
 
 ### Histograms  ----------------------------------------------------------------
 #### ... `fill =  category`------------------------------------------------------------------
-# specifying `fill` = gender
+
+# indicate the categorical group as fill = in the aesthetic mapping
+# specify custom colors for each group:
 autism_pids %>% 
-  ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
-  geom_histogram(bins=40) + 
-  theme_bw()  
+ # specifying `fill` = gender
+ ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
+ geom_histogram(bins=40) + 
+ scale_fill_manual(values = c("#e07689","#57b7ff")) +
+ scale_color_manual(values = c("#9b2339","#005ca1")) +
+ theme_bw() 
 
 #### ... shifting bars by group----------------------------------------------------
 # trying to improve readability 
 autism_pids %>% 
   ggplot(mapping = aes(x = age_inputed, fill = gender )) + 
   # bars next to each other with `position = 'dodge'`
-  geom_histogram(bins=40, position = 'dodge') + 
-  theme_bw()
+    geom_histogram(bins=40, position = 'dodge')  + 
+    scale_fill_manual(values = c("#e07689","#57b7ff")) +
+    scale_color_manual(values = c("#9b2339","#005ca1")) +
+    theme_bw()  
 
 #### ...facet by gender  ------------------------------------------------------- 
 # That’s not very easy to digest
@@ -497,9 +551,9 @@ autism_pids %>%
   scale_fill_cyclical(values = c("#9b2339","#005ca1"))
 
 #### ...extra step for 2 mean vert lines by gender  ---------------------------- 
-# I want to see the mean vertical line for each of the subgroups
-# so I create a small dataframae of summary statistics 
-
+#I want to see the mean vertical line for each of the subgroups, but in this case,
+#I need to create a small dataframe of summary statistics (group_stats).
+  
 # 1/3 using `dplyr` add a column `mean_age` with the group mean
 group_stats <- autism_pids %>% 
   dplyr::group_by(gender) %>% 
@@ -509,47 +563,65 @@ group_stats <- autism_pids %>%
 group_stats
 
 #### ...(Introducing tidyr::pivot_longer) -----------------------------------------
-# 2/3 using `tidyr` I rehape this small df to LONG form  
+# 2/3 using `tidyr` I reshape this small df to LONG form  
 group_stats_long <- group_stats %>% 
   tidyr::pivot_longer(cols = mean_age:median_age, 
                       names_to = "Stat", 
-                      values_to = "Value"
-  ) %>% 
+                      values_to = "Value") %>% 
   dplyr::mutate(label = as.character(glue::glue("{gender}_{Stat}")))
 
 group_stats_long
 
 
-#### ...facet by gender  + 2 mean vert lines + `scales` ---------------------------------- 
+#### ...facet by gender + vert lines by group ---------------------------------- 
 # 3/3 re do the plot 
-hist_plot <- autism_pids %>% 
+autism_pids %>% 
   ggplot(aes(x = age_inputed, fill = gender)) + 
+  # geom_histogram from dataframe 1
   geom_histogram(bins=30,color="#e9ecef", alpha=0.8, position = 'dodge') + 
-  facet_wrap(~gender, ncol = 1 ) + 
+  facet_wrap(~gender, ncol = 1) + 
   scale_fill_manual(values = c("#9b2339","#005ca1"))  +
-  # adding vline 
+  # geom_vline from dataframe 2
   geom_vline(data = group_stats_long, 
              mapping = aes(xintercept = Value, color = Stat),
              lwd=1.5,
-             linetype=6,
-  ) + 
+             linetype=6) + 
+  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
+  theme_bw() 
+
+#### ...finishing touches ---------------------------------- 
+# using labs() and theme() layers
+# saving plot as object 
+
+hist_plot <- autism_pids %>% 
+  ggplot(aes(x = age_inputed, fill = gender)) + 
+  # geom_histogram from dataframe 1
+  geom_histogram(bins=30,color="#e9ecef", alpha=0.8, position = 'dodge') + 
+  facet_wrap(~gender, ncol = 1) + 
+  scale_fill_manual(values = c("#9b2339","#005ca1"))  +
+  # geom_vline from dataframe 2
+  geom_vline(data = group_stats_long, 
+             mapping = aes(xintercept = Value, color = Stat),
+             lwd=1.5,
+             linetype=6) + 
+  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
+  # increase number of x axis ticks 
+  scale_x_continuous(breaks = seq(10, 100,10 ), 
+                     limits = c(10, 70)) +
+  # Additional theme details 
   labs(x = "age brackets", y = "n of individuals",
        color = "Stats",
        title = "Distribution of observations by gender",
        subtitle = "",
-       caption = "Autism study") +
-  theme_bw() + 
+       caption = "Source: Thabtah,Fadi. (2017). Autism Screening Adult. UCI Machine Learning Repository. https://doi.org/10.24432/C5F019.") +
   theme(legend.position = "right",
-        plot.title = element_text(face = "bold")) + 
-  # increase number of x axis ticks 
-  scale_color_manual(values = c( "#e68000", "#d8cf71")) +
-  scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86))
+        plot.title = element_text(face = "bold")) 
 
 hist_plot
 
+
 ### Density `ggridges` package ----------------------------------------------------------------
 # As an alternative, you can use the {ggridges} package to make ridge plots
-# library(ggridges)
 autism_pids %>% 
   # this takes also `y` = group
   ggplot(aes( x=age_inputed, y = gender, fill = gender)) +
@@ -560,9 +632,6 @@ autism_pids %>%
   scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86)) + 
   scale_fill_cyclical(values = c("#9b2339","#005ca1")) + 
   theme_bw() # or theme_ridges()
-#theme(axis.text.x = element_text(angle = 90, size=8, vjust = 0.5, hjust=1))
-
-# https://talks.andrewheiss.com/2021-seacen/02_data-visualization/slides/02_grammar-of-graphics.html#67
 
 
 ### Barchart ----------------------------------------------------------------
@@ -571,31 +640,33 @@ autism_pids %>%
 # let's take a variable that we recoded as `factor`
 class(autism_pids$ethnicity)
 
-#### ...bare minimum ---------------------------------- 
+#### ...bare minimum ---------------------------------------------------------- 
 autism_pids %>% 
   ggplot(aes(x = ethnicity )) + 
-  geom_bar()   
+  geom_bar() +  
   theme_bw() 
 
-#### ...improve theme  ---------------------------------- 
+#### ...improve theme  --------------------------------------------------------- 
 autism_pids %>% 
-    ggplot(aes(x = ethnicity )) + 
-    geom_bar(fill = "steelblue") +
-    geom_hline(yintercept=100, color = "#9b2339", size=0.5, ) +
-    labs(x = "ethnicity", y = "n of individuals",
-         color = "Stats",
-         title = "Distribution of observations by ethnicity",
-         subtitle = "",
-         caption = "Autism study")  +
-    # --- wrap long x labels (flipped ) !!!
-    #  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 10)) +
-    theme_bw() +
-    theme(axis.text.x = element_text(angle=50, vjust=0.75), 
-          axis.text.y = element_text(size=10,face="bold"))  
+  ggplot(aes(x = ethnicity )) + 
+  geom_bar(fill = "steelblue") +
+  # reference line  
+  geom_hline(yintercept=100, color = "#9b2339", size=0.5, ) +
+  # labels, title, etc 
+  labs(x = "ethnicity", y = "n of individuals",
+       color = "Stats",
+       title = "Distribution of observations by ethnicity",
+       subtitle = "",
+       caption = "Autism study")  +
+  theme_bw() +
+  # specification son axis labels
+  theme(axis.text.x = element_text(angle=50, vjust=0.75), 
+        axis.text.y = element_text(size=10,face="bold"))
   
 #### ...improve readability (reorder)  ---------------------------------- 
 # reordering the bars by count using the package `forcats`   
 # (this we can do because ethnicity is coded as factor)
+
 autism_pids %>% 
     # we modify our x like so 
     ggplot(aes(x = forcats::fct_infreq(ethnicity ))) + 
@@ -606,61 +677,81 @@ autism_pids %>%
          title = "Distribution of observations by ethnicity",
          subtitle = "",
          caption = "Autism study")  +
-    # --- wrap long x labels (flipped ) !!!
-    #  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 10)) +
     theme_bw() +
     theme(axis.text.x = element_text(angle=50, vjust=0.75), 
           axis.text.y = element_text(size=10,face="bold"))  
   
 #### ...improve readability (highlight NA)  ---------------------------------- 
 
-# Highlight "NA" as separate category
 autism_pids %>%
-    ## --- prep the dataframe 
-    # Add a factor variable with two levels to use as fill/highlight
-    dplyr::mutate(highlight = forcats::fct_other(ethnicity, keep = "NA", other_level = "All Groups"))  %>% 
-    ## --- ggplot 
-    # we ADD to `aes mapping` also `fill = highlight`
-    ggplot(aes(x = forcats::fct_infreq(ethnicity ), fill = highlight)) + 
-    geom_bar()+
-    # Use custom color palettes
-    scale_fill_manual(values=c("#0084e6")) +
-    # Add a line at a significant level 
-    geom_hline(yintercept=100, color = "#9b2339", size=0.5, ) +
-    labs(x = "ethnicity", y = "n of individuals",
-         color = "Stats",
-         title = "Distribution of observations by ethnicity",
-         subtitle = "",
-         caption = "Autism study")  +
-    # --- wrap long x labels (flipped ) !!!
-    #  scale_x_discrete(labels = function(x) stringr::str_wrap(x, width = 10)) +
-    theme_bw() +
-    theme(axis.text.x = element_text(angle=50, vjust=0.75), 
-          axis.text.y = element_text(size=10,face="bold"))  +
-     ## drop legend and Y-axis title
-    theme(legend.position = "none")  
+  ## --- prep the dataframe 
+  dplyr::mutate(# Add a factor variable with two levels
+    highlight = forcats::fct_other(ethnicity, 
+                                   keep = "NA", 
+                                   other_level = "All Groups")) %>% 
+  ## --- now plot 
+  # In `aes mapping` we map color to a variable (`fill = highlight`)
+  ggplot(aes(x = forcats::fct_infreq(ethnicity), fill = highlight)) + 
+  geom_bar()+
+  # Use custom color palettes
+  scale_fill_manual(values=c("#0084e6")) +
+  # Add a line at a significant level 
+  geom_hline(yintercept=100, color = "#9b2339", size=0.5, ) +
+  theme_bw() +
+  # make some more theme specifications  
+  labs(x = "ethnicity", y = "n of individuals",
+       color = "Stats",
+       title = "Distribution of observations by ethnicity",
+       subtitle = "",
+       caption = "Autism study")  +
+  theme(axis.text.x = element_text(angle=50, vjust=0.75), 
+        axis.text.y = element_text(size=10,face="bold"))  +
+  theme(legend.position = "none")   
  
     
 ### Boxplot   ----------------------------------------------------------------
-autism_pids %>% 
-  ggplot(aes(x = gender,  y= age_inputed, fill = gender)) +
-  geom_boxplot(alpha=0.5)+
-  theme_bw()   + 
-  scale_fill_cyclical(values = c("#9b2339","#005ca1"))
-  # increase number of x axis ticks 
-  #scale_x_continuous(breaks = seq(10, 100,10 ), limits = c(16, 86))
+# The boxplot is one of the simplest ways of representing a distribution of a continuous variable and it is packed with information. 
 
-# https://datavizf23.classes.andrewheiss.com/lesson/06-lesson.html
- 
+
+# Boxplot Example 1  ------------------------------------------------------
+# explore how the continuous variable `result` is distributed in the autism dataset.
+autism_pids %>% 
+  ggplot(aes(x = result )) +
+  geom_boxplot(alpha=0.5)+
+  # switch to vertical orientation
+  coord_flip() +
+  theme_bw()   
+
+
+# Boxplot Example 2  ------------------------------------------------------
+# Explore how the continuous variable `result` is distributed by the categorical variable (factor) `ethnicity`
+autism_pids %>% 
+  ggplot(aes(x = ethnicity, y = result, fill = ethnicity)) +
+  geom_boxplot(alpha=0.5)+
+  # using previously saved color palette 
+  scale_fill_manual(values =  contrast_cols_palette)   +
+  theme_bw()+
+  # make x axis labes readable
+  theme(axis.text.x = element_text(angle=50, vjust=0.75)) +
+  # drop legend and Y-axis title
+  theme(legend.position = "none") 
 
 ### Violin   ----------------------------------------------------------------
-ggplot(data = autism_pids, mapping = aes(y = age_inputed, x = gender, fill = gender)) +
-  geom_violin(alpha=0.5) +
+# the violin plot is an interesting alternative to show the distribution of a continuous variable along one or more categorical variables.
+# it shows not only the summary statistics but also the shape and variability of the data
+autism_pids %>% 
+  ggplot(mapping = aes(y = age_inputed, x = ethnicity, fill = ethnicity)) +
+  geom_violin(alpha=0.5, drop = FALSE) +
+  # it can be enriched by adding with other geoms (e.g. points)
   geom_point(position = position_jitter(width = 0.1), size = 0.5)+ 
-  scale_fill_cyclical(values = c("#9b2339","#005ca1"))
+  # Stat_summary() function adds mean marker on plot
+  scale_fill_manual(values =  contrast_cols_palette)  +
+  # make x axis labes readable
+  theme(axis.text.x = element_text(angle=50, vjust=0.75)) +
+  # drop legend and Y-axis title
+  theme(legend.position = "none")
 
-
-  # _________---------------------------------------------------------------------
+# _________---------------------------------------------------------------------
 # SAVING & EXPORTING OUTPUT ARTIFACTS ------------------------------------------
 # Now I want to save the most polished plot I made into my output folder 
 
