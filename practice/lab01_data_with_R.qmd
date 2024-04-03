@@ -2,22 +2,51 @@
 title: "Lab 1: Intro to R and data analysis"
 subtitle: "<span class='code'>2024-07-24</span>"
 #date: "2024-07-24"
-image: "images/01-foundations.png"
 tbl-colwidths: [5,20,75]
+## ------  general Output Options
+execute:     
+  eval: true
+  echo: false     #  include source code in output
+  warning: false  #  include warning code in output
+  error: false    #  include error code in output
+  output: false   # include output code in output (CHG in BLOCKS)
+  # include: false   # R still runs but code and results DON"T appear in output  
+  cache: false # normalmnte false
+## ------  parameters (for disclorsure or not of files)
+params:
+  src_slide_file: "slides_lab00.html" # default value (placeholder slide)
+  lab_R_code: "lab00_code.R"          # default value (placeholder R code)
 ---
+
+```{r}
+
+# This param is not in r, so I will use: `r params$src_slide_file`
+src_slide_file <- c("slides_lab00.html", # default closed 
+                    "slides_lab01.html",
+                    "slides_lab02.html",
+                    "slides_lab03.html",
+                    "slides_lab04.html")
+
+# This param is  in r, so I will use:   params$lab_R_code
+lab_R_code <- c("lab00_code.R",
+                "lab01_code.R",
+                "lab02_code.R" ,
+                "lab03_code.R" ,
+                "lab04_code.R")
+```
 
 
 <!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
 ```{=html}
-<iframe class="slide-deck" src="slides_lab01.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
 
 <!-- <!-- 2/2 DIAPOSITIVA STD (4:3) -->
 <!-- ```{=html} -->
-<!-- <iframe class="slide-deck" src="slides_lab01.html" height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- <iframe class="slide-deck" src= params$src_slide_file height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
 <!-- ``` -->
 
-<a href='slides_lab01.html' target="_blank">View slides in full screen</a>
+<a href=`r params$src_slide_file` target="_blank">View slides in full screen</a>
 
 
 
@@ -58,11 +87,14 @@ download_dir(
 #| eval: true
 #| output: true
 
+library(fs) 
+
+# using a param for which file 
 download_file(
-  path =  here::here("practice", "Rcode", "lab01_code.R" ),
-  output_name = "lab01_code", # no extension.... 
+  path =  here::here("practice", "Rcode", params$lab_R_code ), # param
+  output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
   output_extension = ".R",  
-  button_label = "Download solution as .R file",
+  button_label = "Download Lab session as .R file",
   button_type = "primary",
   has_icon = TRUE,
   icon = "fa-brands fa-r-project",

@@ -1,0 +1,61 @@
+---
+title: "Lab's slides placeholder"
+subtitle: "<span style='font-size:2em;'> Practice session slides will become available during the workshop </span>"
+author: "<a href='https://r4biostats.com/me.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
+date: 2024-07-25
+date-format: long
+code-link: true
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    theme: ../theme/slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
+#    logo: imgs_slides/mitgest_logo.png
+    footer: '[R 4 Biostatistics](https://r4biostats.com/) | MITGEST::training(2024)'
+#    footer: <https://lulliter.github.io/R4biostats/lectures.html>
+## ------------- x salvare come PDF 
+    standalone: false
+    ## -------Produce a standalone HTML file with no external dependencies,
+    embed-resources: true
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    slide-number: true
+    fig-cap-location: top
+    # fig-format: svg
+    pdf-separate-fragments: false
+    # fig-align: center
+execute:
+  # Quarto pre code blocks do not echo their source code by default
+  echo: true
+  include: true
+  freeze: auto
+---
+
+## WORKSHOP TOPICS 
+
+
+1. **Intro to R and data analysis**  
+
+   + Descriptive statistics and visual data exploration
+  
+2. **Statistical inference & hypothesis testing**
+
+   + probability, CI, comparing 1 sample to population, comparing 2 samples, tests 
+   
+3. **From association to prediction**
+
+   + Supervised ML (regression)
+   
+4. **Intro to ML, elements of power analysis** 
+
+   + Unsupervised ML algorithm (PCA)
+
+## WORKSHOP SCHEDULE
+
++ 4 days
++ Each day will include:
+
+    + Frontal class (MORNING)
+    + Practical training with R about the topics discussed in the morning. (AFTERNOON)
+

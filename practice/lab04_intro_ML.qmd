@@ -1,6 +1,5 @@
 ---
 title: "Lab 4: Intro to machine learning"
-#editor: source
 ## ------  general Output Options
 execute:     
   eval: true
@@ -10,42 +9,94 @@ execute:
   output: false   # include output code in output (CHG in BLOCKS)
   # include: false   # R still runs but code and results DON"T appear in output  
   cache: false # normalmnte false
-toc: true
-fig-cap-location: top
-tbl-cap-location: top
-format:
-  html:
-    # theme: flatly #spacelab
-    code-fold: true # redundant bc echo false 
-    toc-depth: 3
-    toc_float: true
-    toc-location: left
-    toc-title: Outline
-    embed-resources: true # external dependencies embedded (Not in ..._files/)
-  # pdf:
-  #   toc-depth: 2
-  #   toc-title: Indice
-  #   highlight-style: github
-  #   #lang: it
-  #   embed-resources: true # external dependencies embedded (Not in ..._files/)
-format-links: false
+tbl-colwidths: [5,20,75]
+## ------  parameters (for disclorsure or not of files)
+params:
+  src_slide_file: "slides_lab00.html" # default value (placeholder slide)
+  lab_R_code: "lab00_code.R"          # default value (placeholder R code)
 ---
 
-::: {.callout-caution collapse="false"}
-Website construction in progress...
-:::
+```{r}
+
+# This param is not in r, so I will use: `r params$src_slide_file`
+src_slide_file <- c("slides_lab00.html", # default closed 
+                    "slides_lab01.html",
+                    "slides_lab02.html",
+                    "slides_lab03.html",
+                    "slides_lab04.html")
+
+# This param is  in r, so I will use:   params$lab_R_code
+lab_R_code <- c("lab00_code.R",
+                "lab01_code.R",
+                "lab02_code.R" ,
+                "lab03_code.R" ,
+                "lab04_code.R")
+```
 
 
-# Day 4 
+<!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
+```{=html}
+<iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+<!-- <!-- 2/2 DIAPOSITIVA STD (4:3) -->
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src= params$src_slide_file height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+
+<a href=`r params$src_slide_file` target="_blank">View slides in full screen</a>
 
 
-## Topics
 
-> Learn how to .... .
+\pagebreak
 
- {{< pagebreak >}}
+```{r}
+#| eval: true
+#| echo: false
+#| output: true
 
-## Lab code
-<!-- NON FUNZIONA!!!! -->
-<!-- [Download "\*.R" file](Rcode/labs_day4.R) -->
- 
+library(downloadthis)
+```
+
+{{< pagebreak >}}
+
+## Lab 4 Download input data (as `subfolder`)
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: true
+
+download_dir(
+  path = here::here("practice", "data_input", "01_datasets"),
+  output_name = "labs input data",
+  button_label = "Download input data directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa-solid fa-folder-open",
+  self_contained = FALSE
+)
+```
+
+
+## Find Lab 4 R code (as `.R` file)
+```{r}
+#| echo: false
+#| eval: true
+#| output: true
+
+library(fs) 
+
+# using a param for which file 
+download_file(
+  path =  here::here("practice", "Rcode", params$lab_R_code ), # param
+  output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
+  output_extension = ".R",  
+  button_label = "Download Lab session as .R file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
+

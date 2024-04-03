@@ -11,7 +11,9 @@ This website collects the materials for a two day workshop taking place during t
 + ~~upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`~~
 + make  `_variable.yml`
   + nome sito 
-+ parametrize `.qmd`  [check](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
++ parameterize `.qmd`  [check](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
+  + ~~practice slides and code Done !~~
+  + lectures slides TO DO 
 + decidere dove tengo le immagini
 
 ## How this website was built

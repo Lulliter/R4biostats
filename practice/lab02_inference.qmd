@@ -1,6 +1,6 @@
 ---
 title: "Lab 2: Statistical inference & hypothesis testing"
-editor: source
+subtitle: "<span class='code'>2024-07-25</span>"
 ## ------  general Output Options
 execute:     
   eval: true
@@ -10,56 +10,94 @@ execute:
   output: false   # include output code in output (CHG in BLOCKS)
   # include: false   # R still runs but code and results DON"T appear in output  
   cache: false # normalmnte false
-toc: true
-fig-cap-location: top
-tbl-cap-location: top
-format:
-  html:
-    # theme: flatly #spacelab
-    code-fold: true # redundant bc echo false 
-    toc-depth: 3
-    toc_float: true
-    toc-location: left
-    toc-title: Outline
-    embed-resources: true # external dependencies embedded (Not in ..._files/)
-  # pdf:
-  #   toc-depth: 2
-  #   toc-title: Indice
-  #   highlight-style: github
-  #   #lang: it
-  #   embed-resources: true # external dependencies embedded (Not in ..._files/)
-format-links: false
+tbl-colwidths: [5,20,75]
+## ------  parameters (for disclorsure or not of files)
+params:
+  src_slide_file: "slides_lab00.html" # default value (placeholder slide)
+  lab_R_code: "lab00_code.R"          # default value (placeholder R code)
 ---
 
-::: {.callout-caution collapse="false"}
-Website construction in progress...
-:::
+```{r}
 
-# Day 2
+# This param is not in r, so I will use: `r params$src_slide_file`
+src_slide_file <- c("slides_lab00.html", # default closed 
+                    "slides_lab01.html",
+                    "slides_lab02.html",
+                    "slides_lab03.html",
+                    "slides_lab04.html")
 
-## Topics
+# This param is  in r, so I will use:   params$lab_R_code
+lab_R_code <- c("lab00_code.R",
+                "lab01_code.R",
+                "lab02_code.R" ,
+                "lab03_code.R" ,
+                "lab04_code.R")
+```
 
-> Learn how to .... .
+
+<!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
+```{=html}
+<iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+
+<!-- <!-- 2/2 DIAPOSITIVA STD (4:3) -->
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src= params$src_slide_file height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- ``` -->
+
+<a href=`r params$src_slide_file` target="_blank">View slides in full screen</a>
+
+
+
+\pagebreak
+
+```{r}
+#| eval: true
+#| echo: false
+#| output: true
+
+library(downloadthis)
+```
 
 {{< pagebreak >}}
 
-## Lab code
-<!-- NON FUNZIONA!!!! -->
-<!-- [Download "\*.R" file](Rcode/labs_day2.R) -->
- 
-## Reference
+## Lab 2 Download input data (as `subfolder`)
 
-+ Benjamin Soltoff [Linear regression with a single predictor](https://info2950.infosci.cornell.edu/slides/16-models-single-predictor.html#/goals)
+```{r}
+#| eval: true
+#| echo: false
+#| output: true
 
-+ [biostats](https://biostats.w.uib.no/up-in-the-r-2/basic-statistics-in-r/)
+download_dir(
+  path = here::here("practice", "data_input", "01_datasets"),
+  output_name = "labs input data",
+  button_label = "Download input data directory",
+  button_type = "success",
+  has_icon = TRUE,
+  icon = "fa-solid fa-folder-open",
+  self_contained = FALSE
+)
+```
 
-Modelling vocabulary
 
-    Predictor/feature/explanatory variable/independent variable
-    Outcome/dependent variable/response variable
-    Correlation
-    Regression line (for linear models)
-        Slope
-        Intercept
+## Find Lab 2 R code (as `.R` file)
+```{r}
+#| echo: false
+#| eval: true
+#| output: true
 
-+ Benjamin Soltoff [Linear regression with multiple predictors](https://info2950.infosci.cornell.edu/slides/17-models-multiple-predictors.html#/title-slide)
+library(fs) 
+
+# using a param for which file 
+download_file(
+  path =  here::here("practice", "Rcode", params$lab_R_code ), # param
+  output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
+  output_extension = ".R",  
+  button_label = "Download Lab session as .R file",
+  button_type = "primary",
+  has_icon = TRUE,
+  icon = "fa-brands fa-r-project",
+  self_contained = FALSE
+)
+```
+

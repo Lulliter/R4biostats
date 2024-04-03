@@ -55,7 +55,7 @@ Though the vast majority of what you will learn in this course can be applied in
 <!-- + ~~Know how to combine the strengths of random-effects and fixed effects approaches into a single model.~~ -->
 <!-- + ~~Know how to estimate these models and interpret the results.~~ -->
 
-# Why use R?
+<!-- # Why use R? -->
 
 
 
@@ -98,13 +98,16 @@ Hot & cold drinks will be served during the morning breaks.
 
 Please, do bring your laptop as no computer will be available.  
 
+Also, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions [here](https://r4biostats.com/install.html).  
+
+
 # Acknowledgements
 
 The materials presented in this workshops have been prepared drawing from various sources: 
 
+* aaa
+* bbb
 * ccc
-* mmm
-* xxxx
 
 
 <!-- ## Materials -->
