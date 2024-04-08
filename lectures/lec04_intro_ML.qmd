@@ -19,10 +19,14 @@ tbl-colwidths: [5,20,75]
 
 <a href='../lectures_slides/00_placeholder_pres.pdf' target="_blank">View slides in full screen</a>
 
-## Lecture's outline
+## Lecture 4 Outline
 
-- Introduction to Machine Learning
-- Linear Regression
-- Classification
-- Model Selection 
-- Unsupervised Learning
++ From association to prediction  -> Machine learning algorithms
+    + Unsupervised ML 
+      + Examples 
++ Elements of Statistical Power analysis
++ Useful R resources for metabolomics 
+
+  <!-- + `metaboanalyst`  -->
+  <!-- + `MetSizeR` -->
+ 

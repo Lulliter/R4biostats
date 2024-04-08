@@ -14,8 +14,8 @@ execute:
   cache: false # normalmnte false
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab00.html" # default value (placeholder slide)
-  lab_R_code: "lab00_code.R"          # default value (placeholder R code)
+  src_slide_file: "slides_lab01.html" # default value (placeholder slide)
+  lab_R_code: "lab01_code.R"          # default value (placeholder R code)
 ---
 
 ```{r}
@@ -33,6 +33,8 @@ lab_R_code <- c("lab00_code.R",
                 "lab02_code.R" ,
                 "lab03_code.R" ,
                 "lab04_code.R")
+
+params$src_slide_file
 ```
 
 
@@ -62,7 +64,7 @@ library(downloadthis)
 
 {{< pagebreak >}}
 
-## Lab 1 Download input data (as `subfolder`)
+## Practice session 1: input data (as `subfolder`)
 
 ```{r}
 #| eval: true
@@ -72,7 +74,7 @@ library(downloadthis)
 download_dir(
   path = here::here("practice", "data_input", "01_datasets"),
   output_name = "labs input data",
-  button_label = "Download input data directory",
+  button_label = "Download input data 1",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",
@@ -81,7 +83,7 @@ download_dir(
 ```
 
 
-## Find Lab 1 R code (as `.R` file)
+## Practice session 1: R code (as `.R` file)
 ```{r}
 #| echo: false
 #| eval: true
@@ -94,12 +96,10 @@ download_file(
   path =  here::here("practice", "Rcode", params$lab_R_code ), # param
   output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
   output_extension = ".R",  
-  button_label = "Download Lab session as .R file",
+  button_label = "Download Lab session 1 as .R file",
   button_type = "primary",
   has_icon = TRUE,
   icon = "fa-brands fa-r-project",
   self_contained = FALSE
 )
 ```
-
-

@@ -735,18 +735,18 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab04_intro_ML.html#lab-4-download-input-data-as-subfolder",
-    "href": "practice/lab04_intro_ML.html#lab-4-download-input-data-as-subfolder",
+    "objectID": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
+    "href": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
     "title": "Lab 4: Intro to machine learning",
-    "section": "Lab 4 Download input data (as subfolder)",
-    "text": "Lab 4 Download input data (as subfolder)\n\n\n Download input data directory"
+    "section": "Practice session 4: input data (as subfolder)",
+    "text": "Practice session 4: input data (as subfolder)"
   },
   {
-    "objectID": "practice/lab04_intro_ML.html#find-lab-4-r-code-as-.r-file",
-    "href": "practice/lab04_intro_ML.html#find-lab-4-r-code-as-.r-file",
+    "objectID": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
+    "href": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
     "title": "Lab 4: Intro to machine learning",
-    "section": "Find Lab 4 R code (as .R file)",
-    "text": "Find Lab 4 R code (as .R file)\n\n\n Download Lab session as .R file"
+    "section": "Practice session 4: R code (as .R file)",
+    "text": "Practice session 4: R code (as .R file)"
   },
   {
     "objectID": "practice/lab02_inference.html",
@@ -756,25 +756,25 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab02_inference.html#lab-2-download-input-data-as-subfolder",
-    "href": "practice/lab02_inference.html#lab-2-download-input-data-as-subfolder",
+    "objectID": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
+    "href": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Lab 2 Download input data (as subfolder)",
-    "text": "Lab 2 Download input data (as subfolder)\n\n\n Download input data directory"
+    "section": "Practice session 2: input data (as subfolder)",
+    "text": "Practice session 2: input data (as subfolder)"
   },
   {
-    "objectID": "practice/lab02_inference.html#find-lab-2-r-code-as-.r-file",
-    "href": "practice/lab02_inference.html#find-lab-2-r-code-as-.r-file",
+    "objectID": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
+    "href": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Find Lab 2 R code (as .R file)",
-    "text": "Find Lab 2 R code (as .R file)\n\n\n Download Lab session as .R file"
+    "section": "Practice session 2: R code (as .R file)",
+    "text": "Practice session 2: R code (as .R file)"
   },
   {
     "objectID": "me.html",
     "href": "me.html",
     "title": "About the Instructor",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…"
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
   },
   {
     "objectID": "me.html#education",
@@ -791,11 +791,11 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lec04_intro_ML.html#lectures-outline",
-    "href": "lectures/lec04_intro_ML.html#lectures-outline",
+    "objectID": "lectures/lec04_intro_ML.html#lecture-4-outline",
+    "href": "lectures/lec04_intro_ML.html#lecture-4-outline",
     "title": "Intro to machine learning",
-    "section": "Lecture’s outline",
-    "text": "Lecture’s outline\n\nIntroduction to Machine Learning\nLinear Regression\nClassification\nModel Selection\nUnsupervised Learning"
+    "section": "Lecture 4 Outline",
+    "text": "Lecture 4 Outline\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nUnsupervised ML\n\nExamples\n\n\nElements of Statistical Power analysis\nUseful R resources for metabolomics"
   },
   {
     "objectID": "lectures/lec02_inference.html",
@@ -805,11 +805,11 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lec02_inference.html#lectures-outline",
-    "href": "lectures/lec02_inference.html#lectures-outline",
+    "objectID": "lectures/lec02_inference.html#lecture-2-outline",
+    "href": "lectures/lec02_inference.html#lecture-2-outline",
     "title": "Statistical inference & hypothesis testing",
-    "section": "Lecture’s outline",
-    "text": "Lecture’s outline\n\nFoundations of inference\n\nPrinciples of statistical inference\n\nHypothesis testing\nStatistical tests\n\nZ-test\nt-test\nMann Whitney U- test\n\nParametric vs non-parametric statistical tests\nPower analysis"
+    "section": "Lecture 2 Outline",
+    "text": "Lecture 2 Outline\n\nPurpose of inferential statistics\n\nFoundations of inference\n\nHypothesis testing process and language\nHypothesis testing\n\nExamples\n\nHow to find the right hypothesis test?\n\nExamples"
   },
   {
     "objectID": "install.html",
@@ -830,7 +830,7 @@
     "href": "index.html",
     "title": "Intro to Biostatistics with R",
     "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite constrution in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAlso, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions here.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\naaa\nbbb\nccc"
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAlso, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions here.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\naaa\nbbb\nccc"
   },
   {
     "objectID": "lectures/lec01_data_with_R.html",
@@ -840,11 +840,11 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lec01_data_with_R.html#lectures-outline",
-    "href": "lectures/lec01_data_with_R.html#lectures-outline",
+    "objectID": "lectures/lec01_data_with_R.html#lecture-1-outline",
+    "href": "lectures/lec01_data_with_R.html#lecture-1-outline",
     "title": "Lecture 1: Intro to R and data analysis",
-    "section": "Lecture’s outline",
-    "text": "Lecture’s outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
+    "section": "Lecture 1 Outline",
+    "text": "Lecture 1 Outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
   },
   {
     "objectID": "lectures/lec03_corr_regress.html",
@@ -854,11 +854,11 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "lectures/lec03_corr_regress.html#lectures-outline",
-    "href": "lectures/lec03_corr_regress.html#lectures-outline",
+    "objectID": "lectures/lec03_corr_regress.html#lecture-3-outline",
+    "href": "lectures/lec03_corr_regress.html#lecture-3-outline",
     "title": "Modeling correlation and regression",
-    "section": "Lecture’s outline",
-    "text": "Lecture’s outline\n\nChi-Square Tests\nRegression\nANOVA\nPower calculations for basic study designs\nUse power and sample size calculations as the basis of argument in support of study design, feasibility and testing"
+    "section": "Lecture 3 Outline",
+    "text": "Lecture 3 Outline\n\nTesting for a correlation hypothesis (relationship of variables)\n\nPearson rho analysis (param)\nSpearman test (no param)\n\nMeasures of association\n\nFisher’s Exact Test\nChi-Square Test of Independence\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nSupervised ML\n\nExamples"
   },
   {
     "objectID": "lectures_slides/000_exe_mine.html#collaborators",
@@ -1218,18 +1218,18 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#lab-1-download-input-data-as-subfolder",
-    "href": "practice/lab01_data_with_R.html#lab-1-download-input-data-as-subfolder",
+    "objectID": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
+    "href": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Lab 1 Download input data (as subfolder)",
-    "text": "Lab 1 Download input data (as subfolder)\n\n\n Download input data directory"
+    "section": "Practice session 1: input data (as subfolder)",
+    "text": "Practice session 1: input data (as subfolder)\n\n\n Download input data 1"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#find-lab-1-r-code-as-.r-file",
-    "href": "practice/lab01_data_with_R.html#find-lab-1-r-code-as-.r-file",
+    "objectID": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
+    "href": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Find Lab 1 R code (as .R file)",
-    "text": "Find Lab 1 R code (as .R file)\n\n\n Download Lab session as .R file"
+    "section": "Practice session 1: R code (as .R file)",
+    "text": "Practice session 1: R code (as .R file)\n\n\n Download Lab session 1 as .R file"
   },
   {
     "objectID": "practice/lab03_corr_regress.html",
@@ -1239,18 +1239,18 @@
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab03_corr_regress.html#lab-3-download-input-data-as-subfolder",
-    "href": "practice/lab03_corr_regress.html#lab-3-download-input-data-as-subfolder",
+    "objectID": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
+    "href": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
     "title": "Lab 3: Modeling correlation and regression",
-    "section": "Lab 3 Download input data (as subfolder)",
-    "text": "Lab 3 Download input data (as subfolder)\n\n\n Download input data directory"
+    "section": "Practice session 3: input data (as subfolder)",
+    "text": "Practice session 3: input data (as subfolder)"
   },
   {
-    "objectID": "practice/lab03_corr_regress.html#find-lab-3-r-code-as-.r-file",
-    "href": "practice/lab03_corr_regress.html#find-lab-3-r-code-as-.r-file",
+    "objectID": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
+    "href": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
     "title": "Lab 3: Modeling correlation and regression",
-    "section": "Find Lab 3 R code (as .R file)",
-    "text": "Find Lab 3 R code (as .R file)\n\n\n Download Lab session as .R file"
+    "section": "Practice session 3: R code (as .R file)",
+    "text": "Practice session 3: R code (as .R file)"
   },
   {
     "objectID": "practice/slides_lab00.html#workshop-topics",

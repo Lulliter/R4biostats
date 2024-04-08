@@ -60,17 +60,19 @@ library(downloadthis)
 
 {{< pagebreak >}}
 
-## Lab 4 Download input data (as `subfolder`)
 
+## Practice session 4: input data (as `subfolder`)
+
+<!-- #| output: false  -->
 ```{r}
 #| eval: true
 #| echo: false
-#| output: true
+#| output: false 
 
 download_dir(
-  path = here::here("practice", "data_input", "01_datasets"),
+  path = here::here("practice", "data_input", "04_datasets"),
   output_name = "labs input data",
-  button_label = "Download input data directory",
+  button_label = "Download input data 4 directory",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",
@@ -79,11 +81,13 @@ download_dir(
 ```
 
 
-## Find Lab 4 R code (as `.R` file)
+## Practice session 4: R code (as `.R` file)
+
+<!-- #| output: false  -->
 ```{r}
 #| echo: false
 #| eval: true
-#| output: true
+#| output: false
 
 library(fs) 
 
@@ -92,7 +96,7 @@ download_file(
   path =  here::here("practice", "Rcode", params$lab_R_code ), # param
   output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
   output_extension = ".R",  
-  button_label = "Download Lab session as .R file",
+  button_label = "Download Lab session 4 as .R file",
   button_type = "primary",
   has_icon = TRUE,
   icon = "fa-brands fa-r-project",
@@ -100,3 +104,4 @@ download_file(
 )
 ```
 
+![](../images/coming_soon.png)

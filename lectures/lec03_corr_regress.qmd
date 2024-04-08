@@ -26,11 +26,16 @@ tbl-colwidths: [5,20,75]
 
 <a href='../lectures_slides/00_placeholder_pres.pdf' target="_blank">View slides in full screen</a>
 
-## Lecture's outline
+## Lecture 3 Outline
 
-- Chi-Square Tests
-- Regression
-- ANOVA
-- Power calculations for basic study designs
-- Use power and sample size calculations as the basis of argument in support of study design, feasibility and testing
++ Testing for a correlation hypothesis (relationship of variables)
+  + Pearson rho analysis (param)
+  + Spearman test (no param)
++ Measures of association 
+  + Fisher’s Exact Test
+  + Chi-Square Test of Independence
++ From association to prediction  -> Machine learning algorithms
+  + Supervised ML 
+    + Examples  
+
 

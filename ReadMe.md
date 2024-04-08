@@ -11,7 +11,7 @@ This website collects the materials for a two day workshop taking place during t
 + ~~upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`~~
 + make  `_variable.yml`
   + nome sito 
-+ parameterize `.qmd`  [check](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
++ parameterize `.qmd`  
   + ~~practice slides and code Done !~~
   + lectures slides TO DO 
 + decidere dove tengo le immagini
@@ -66,6 +66,10 @@ I acknowledge inputs received from these very valuable sources:
 - Cornell University's **lesson** [Publishing reproducible documents with Quarto](https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance) 
 https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
 https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance
+- Parameterized reports/slides 
+  + **R Medicine David Keyes workshop** [Presentation](https://static.sched.com/hosted_files/rmed2023a/9c/parameterized-reporting-slides.pdf)
+  + **Jumping Rivers Mandy Norrbo** [Presentation](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
+
 
 ## Web input attributions
 

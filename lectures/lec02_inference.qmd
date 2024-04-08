@@ -18,14 +18,12 @@ tbl-colwidths: [5,20,75]
 
 <a href='../lectures_slides/00_placeholder_pres.pdf' target="_blank">View slides in full screen</a>
 
-## Lecture's outline
+## Lecture 2 Outline
 
-+ Foundations of inference 
-  + Principles of statistical inference
++ Purpose of inferential statistics  
+  + Foundations of inference
++ Hypothesis testing process and language
 + Hypothesis testing 
-+ Statistical tests
-  + Z-test
-  + t-test
-  + Mann Whitney U- test
-+ Parametric vs non-parametric statistical tests
-+ Power analysis
+  + Examples 
++ How to find the right hypothesis test? 
+  + Examples  

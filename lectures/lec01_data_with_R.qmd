@@ -25,7 +25,7 @@ tbl-colwidths: [5,20,75]
 
 <a href='../lectures_slides/Lecture_01.pdf' target="_blank">View slides in full screen</a>
 
-## Lecture's outline
+## Lecture 1 Outline
 
 + Introduction to R and R-studio
   + Why R?

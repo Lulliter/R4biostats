@@ -25,7 +25,7 @@ website:
 
   page-footer:
     left: |
-      {{< fa regular copyright >}} M. Chiara Mimmi 2024
+      {{< fa regular copyright >}} M. Chiara Mimmi & Luisa M. Mimmi 2024
     right: |
       Made with {{< fa brands r-project >}} and [Quarto](https://quarto.org/)
     background: "#e3eff7"
