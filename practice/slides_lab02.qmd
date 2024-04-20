@@ -1,0 +1,545 @@
+---
+title: "Lab 2: Statistical inference & hypothesis testing"
+subtitle: "<span style='font-size:2em;'> Practice session covering topics discussed in Lecture 2 </span>"
+author: "<a href='https://r4biostats.com/me.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
+date: 2024-07-26
+date-format: long
+code-link: true
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    theme: ../theme/slidesMine.scss # QUARTO LOOKS IN SAME FOLDER 
+#    logo: imgs_slides/mitgest_logo.png
+    footer: '[R 4 Biostatistics](https://r4biostats.com/) | MITGEST::training(2024)'
+#    footer: <https://lulliter.github.io/R4biostats/lectures.html>
+## ------------- x salvare come PDF 
+    standalone: false
+    ## -------Produce a standalone HTML file with no external dependencies,
+    embed-resources: true
+    transition: fade
+    background-transition: fade
+    highlight-style: ayu-mirage
+    slide-number: true
+    fig-cap-location: top
+    # fig-format: svg
+    pdf-separate-fragments: false
+    # fig-align: center
+execute:
+  # Quarto pre code blocks do not echo their source code by default
+  echo: true
+  include: true
+  freeze: auto
+bibliography: ../bib/R4biostats.bib
+csl: ../bib/apaV2.csl 
+---
+
+
+
+
+
+# GOAL OF TODAY'S PRACTICE SESSION
+
+## [Consolidate understanding of inferential statistic, while learning how to conduct it in R]{.r-stretch}
+
+<br><br>
+
+### Lecture 2: topics 
+
++ **Purpose and foundations of inferential statistics**
+  <!-- + Probability and random variables  -->
+  <!-- + Meaningful probability distributions -->
+  <!-- + Sampling distributions and Central Limit Theorem -->
+  <!-- + Confidence Intervals -->
++ **Getting to know the “language” of hypothesis testing**
+  <!-- + The null and alternative hypothesis -->
+  <!-- + The probability of error? (*α* or "significance level") -->
+  <!-- + The *p-value* probability and tests interpretation -->
+  <!-- + Effective vs statistical significance -->
+  <!-- + Types of errors (Type 1 and Type 2) -->
++ **Hypothesis testing**
+  + review examples
+  
+  <!-- + Comparing sample mean to a hypothesized population mean (Z test & t test) -->
+  <!-- + Comparing two independent sample means (t test) -->
+  <!-- + Comparing sample means from 3 or more groups (ANOVA) <!-- (esempio metabolomica Catanzaro?) -->  
++ **A closer look at testing assumptions** 
+  + more examples dealing with assumptions' violation
+
+  <!-- + Testing two groups that are *not* independent  -->
+  <!-- + Testing if the data are *not* normally distributed: non-parametric tests -->
+  <!-- + Testing samples *without* homogeneous variance of observations -->
+    
+
+# R ENVIRONMENT SET UP & DATA
+
+## Needed R Packages
+::: {style="font-size: 85%;"}
++ We will use functions from packages `base`, `utils`, and `stats` (pre-installed and pre-loaded) 
++ We will also use the packages below (specifying `package::function` for clarity).
+:::
+
+```{r}
+# Load them for this R session
+library(fs)           # file/directory interactions
+library(here)         # tools find your project's files, based on working directory
+library(janitor)      # tools for examining and cleaning data
+library(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data 
+library(forcats)      # {tidyverse} tool for handling factors
+   
+library(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests
+library(car)          # Companion to Applied Regression
+library(broom)        # Convert Statistical Objects into Tidy Tibbles 
+library(multcomp)     # Simultaneous Inference in General Parametric Models 
+
+library(ggplot2)      # {tidyverse} tools for plotting
+#library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details 
+library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
+library(gridExtra)    # Miscellaneous Functions for "Grid" Graphics
+
+library(hrbrthemes)   # Additional Themes, Theme Components and Utilities for 'ggplot2' 
+library(viridis)      # Colorblind-Friendly Color Maps for R 
+#library(ggridges)    # alternative to plot density functions 
+library(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'
+library(RColorBrewer) # ColorBrewer Palettes 
+#library(kableExtra)  # Construct Complex Table with 'kable' and Pipe Syntax
+```
+
+
+## Our datasets for today 
+
+We are mostly using a real clinical dataset (for which a *Creative Commons license* was granted) discussed in two articles (also open access):  
+
++ Ahmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). ***Survival analysis of heart failure patients: A case study***. PLOS ONE, 12(7), e0181001. [https://doi.org/10.1371/journal.pone.0181001](https://doi.org/10.1371/journal.pone.0181001)
++ Chicco, D., & Jurman, G. (2020). ***Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone***. BMC Medical Informatics and Decision Making, 20(1), 16. [https://doi.org/10.1186/s12911-020-1023-5](https://doi.org/10.1186/s12911-020-1023-5)
+
+Here is the link to the dataset (or download from workshop website)
+
++ From the UC Irvine Machine Learning Repository [Heart Failure Clinical Records](https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records)
+
+<br><br>
+ 
+ 
+## Importing from your project folder (previously downloaded file)
+
+::: {.callout-tip}
+Make sure to adapt to your own folder structure! 
+:::
+
+<br>
+
++ The function `here` lets me specify the complete path of the destination folder
+
+```{r}
+# Check my working directory location
+# here::here()
+
+# Use `here` in specifying all the subfolders AFTER the working directory 
+heart_failure <- read.csv(file = here::here("practice", "data_input", "02_datasets",
+                                      "heart_failure_clinical_records_dataset.csv"), 
+                          header = TRUE, # 1st line is the name of the variables
+                          sep = ",", # which is the field separator character.
+                          na.strings = c("?","NA" ), # specific MISSING values  
+                          row.names = NULL) 
+```
+ 
+
+# INSPECTING THE "HEART FAILURE" DATASET
+
+## [What are the variables and their levels of measurement?]{.r-fit-text}
+
+::: {style="font-size: 70%;"}
+The data, containing the medical records of 299 heart failure patient, were collected at the Faisalabad Institute of Cardiology and at the Allied Hospital in Faisalabad (Punjab, Pakistan), during April–December 2015.  
+
+See Table 1 from [@chicco_machine_2020, p.3] for variables explanation
+:::
+
+
+
+![](../images/HEART_FAIL_vars.png) 
+
+
+## Recall some `base R` functions from Lab 1
+
+```{r}
+# What variables are included in this dataset?
+colnames(heart_failure)
+# How many observations & variables?
+nrow(heart_failure)
+# How many rows & columns?
+dim(heart_failure)
+```
+
+## Inspect the dataframe structure (`base R`)
+
+```{r}
+# What does the dataframe look like?
+str(heart_failure)
+```
+
+## Inspect the dataframe structure (`skimr`)
+
+Remember the `skimr` function `skim`?
+
+```{r}
+#| eval: false
+#| echo: true
+ 
+# some variables 
+heart_failure %>% skimr::skim( age, DEATH_EVENT ) 
+
+# the whole dataframe
+heart_failure %>% skimr::skim() 
+```
+
+<br><br>
+
+::: {.callout-warning icon=false}
+## {{< bi terminal-fill color=rgba(155,103,35,1.00) >}} You try...
+Run `skimr::skim()` on your own either on the whole dataset or on any specific variable
+:::
+
++ notice there are no (missing values) `NAs` in any of the variables
+
+## Recode some variables for later ease of analysis 
+
+I will use this categorical variable a lot, so I prefer to recode it as  `factor`, adding also labels.
+
++ use tidyverse packages `dplyr` and `forcats`
+
+```{r}
+heart_failure <-heart_failure %>% 
+  dplyr::mutate(DEATH_EVENT_f = as.factor(DEATH_EVENT) %>%
+                  forcats::fct_recode("died" = "1", "survived" = "0")) %>% 
+  dplyr::mutate(sex_f = as.factor(sex) %>%
+                  forcats::fct_recode("male" = "1", "female" = "0"))
+
+# check 
+table(heart_failure$DEATH_EVENT_f)
+table(heart_failure$sex_f)
+```
+
+
+## [Some more dummy variables recoded as factor]{.r-fit-text}
+
+::: {style="font-size: 85%;"}
+[This is mostly for illustration purposes, because it's totally fine (if not preferable) to keep these as binary [0,1] variables]
+
+  + Here we explore the useful `dplyr::across` function that allows us to make some transformation to several columns at once!
+:::
+
+```{r}
+# Recode as factor with levels "yes", "no"
+fct_cols = c("anaemia", "diabetes", "high_blood_pressure", "smoking" )
+
+## ---- 1st create new cols as "factor versions" of old cols
+heart_failure <- heart_failure  %>% 
+  dplyr::mutate(
+    # let's introduce `across` function 
+    dplyr::across(
+      # Columns to transform
+      fct_cols, 
+      # Functions to apply to each col  
+      ~as.factor (.x), 
+      # new name to apply where "{.col}" stands for the selected column
+      .names = "{.col}_fct")) %>% 
+  ## ---- 2nd create new cols as "factor versions" of old cols
+  dplyr::mutate(
+    dplyr::across(
+      # Columns to transform
+      ends_with("_fct"), 
+      # Functions to apply to each col(different syntax)
+      ~forcats::fct_recode(.x,  yes = "1", no = "0" )))
+```
+
+
+## [(Small digression on `dplyr::across`)]{.r-fit-text}
+
+::: {style="font-size: 80%;"}
+Notice how `across` requires these arguments:
+
+  + a selection of columns on which we want to operate (such as `fct_cols`)
+  + `~function(...)` where `~` is a "`purrr` style" operator that allows to specify  the `function`
+  + `.x` inside the function which replaces "each of the columns selected"
+  + [*optional*] `.names` allows to name the new cols created using where "{.col}" stands for the selected column
+
+:::
+
+
+```{r}
+#| code-line-numbers: "6|12|7"
+
+## ---- 1st create new cols as "factor versions" of old cols
+heart_failure <- heart_failure  %>% 
+  dplyr::mutate(
+    dplyr::across(
+      fct_cols, 
+      ~as.factor (.x), 
+      .names = "{.col}_fct")) %>% 
+  ## ---- 2nd create new cols as "factor versions" of old cols
+  dplyr::mutate(
+    dplyr::across(
+      ends_with("_fct"), 
+      ~forcats::fct_recode(.x,  yes = "1", no = "0" )))
+```
+
+
+# VISUAL DATA EXPLORATION FOR THE "HEART FAILURE" DATASET
+
+## Why is visual exploration important?
+
++ Gaining insight about the variables (range, outliers, missing data)
++ Preliminary check of assumptions for parametric hypothesis testing:
+  + normally distributed outcome variables
+  + homogeneity of variance across samples  
+
+Let's explore the **Heart failure dataset** with some visual data visualization...
+
++ Following the referenced articles (which were mostly interested in predict mortality based on patients' characteristics), we will take the categorical, binary variable `DEATH_EVENT` as our main criterion to split the sample (into survived and dead patients) and explore any meaningful difference between groups in the groups means of known quantitative features.   
+
+## Age 
+
+Introducing the handy package `patchwork` which lets us compose different plots in a very simple and intuitive way
+  + (check it out with `??patchwork`)
+
+```{r}
+#| output-location: slide
+
+age <-ggplot(heart_failure,aes(x = age ))+
+  geom_histogram(binwidth = 5, color = "white", fill = "grey",alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Age Distribution" )+
+  scale_x_continuous(breaks = seq(40,100,10))  
+  
+
+age2 <-ggplot(heart_failure, aes(x = age, fill = DEATH_EVENT_f))+
+  geom_histogram(binwidth = 5, position = "identity",alpha = 0.5,color = "white")+
+  theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  labs(title =  "Age Distribution by group (Death Event)")+
+  scale_x_continuous(breaks = seq(40,100,10))
+
+# patchwork
+library(patchwork)
+age + age2 + plot_layout(ncol = 1)
+```
+
+As the age increases, the incidence of death event seems to increase  
+
+## Creatinine Phosphokinase (CPK) 
+```{r}
+#| output-location: slide
+cpk <- ggplot(heart_failure,aes(x = creatinine_phosphokinase))+
+  geom_density(fill = "gray", alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Creatinine phosphokinase (density distribution)" )+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+
+cpk2 <- ggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT_f))+
+  geom_density(alpha = 0.5)+theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT == 0])),
+             color = "gray")+
+  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT==1])), 
+             color = "#d8717b")+
+  labs(title =  "Creatinine phosphokinase (density distribution) by group (Death Event)")+
+  theme_fivethirtyeight()
+
+cpk + cpk2 + plot_layout(ncol = 1)
+```
+
+
+This definitely doesn't look like a normal distribution!  
+
+## Ejection Fraction  
+
+```{r}
+#| output-location: slide
+ejf <- ggplot(heart_failure,aes(x = ejection_fraction))+
+  geom_density(fill = "gray", alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Ejection Fraction (density distribution)" )+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+
+ejf2 <- ggplot(heart_failure,aes(x = ejection_fraction,fill = DEATH_EVENT_f))+
+  geom_density(alpha = 0.5)+theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  geom_vline(aes(xintercept = mean(ejection_fraction[DEATH_EVENT == 0])),
+             color = "gray")+
+  geom_vline(aes(xintercept = mean(ejection_fraction[DEATH_EVENT==1])), 
+             color = "#d8717b")+
+  labs(title =  "Ejection Fraction (density distribution) by group (Death Event)")+
+  theme_fivethirtyeight()
+
+ejf + ejf2 + plot_layout(ncol = 1)
+```
+
+This also doesn’t look like a normal distribution... and there is a remarkable change in the distribution when we introduce the grouping variable
+
+## Platelets
+
+```{r}
+#| output-location: slide
+plat <- ggplot(heart_failure,aes(x = platelets))+
+  geom_density(fill = "gray", alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Platelets (density distribution)" )+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+
+plat2 <- ggplot(heart_failure,aes(x = platelets,fill = DEATH_EVENT_f))+
+  geom_density(alpha = 0.5)+theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  geom_vline(aes(xintercept = mean(platelets[DEATH_EVENT == 0])),
+             color = "gray")+
+  geom_vline(aes(xintercept = mean(platelets[DEATH_EVENT==1])), 
+             color = "#d8717b")+
+  labs(title =  "Platelets (density distribution) by group (Death Event)")+
+  theme_fivethirtyeight()
+
+plat + plat2 + plot_layout(ncol = 1)
+```
+
+Here the distributions resembles a normal one and we observe more uniformity in teh variance by group. 
+
+## Serum Creatinine
+
+```{r}
+#| output-location: slide
+ser_cr <- ggplot(heart_failure,aes(x = serum_creatinine))+
+  geom_density(fill = "gray", alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Serum Creatinine (density distribution)" )+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+
+ser_cr2 <- ggplot(heart_failure,aes(x = serum_creatinine,fill = DEATH_EVENT_f))+
+  geom_density(alpha = 0.5)+theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  geom_vline(aes(xintercept = mean(serum_creatinine[DEATH_EVENT == 0])),
+             color = "gray")+
+  geom_vline(aes(xintercept = mean(serum_creatinine[DEATH_EVENT==1])), 
+             color = "#d8717b")+
+  labs(title =  "Serum Creatinine (density distribution) by group (Death Event)")+
+  theme_fivethirtyeight()
+
+ser_cr + ser_cr2 + plot_layout(ncol = 1)
+```
+
+
+## Serum Sodium
+
+```{r}
+#| output-location: slide
+ser_sod <- ggplot(heart_failure,aes(x = serum_sodium))+
+  geom_density(fill = "gray", alpha = 0.5)+
+  theme_fivethirtyeight()+
+  labs(title = "Serum Sodium (density distribution)" )+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
+
+ser_sod2 <- ggplot(heart_failure,aes(x = serum_sodium,fill = DEATH_EVENT_f))+
+  geom_density(alpha = 0.5)+theme_fivethirtyeight()+
+  scale_fill_manual(values = c("#999999", "#d8717b"))+
+  geom_vline(aes(xintercept = mean(serum_sodium[DEATH_EVENT == 0])),
+             color = "gray")+
+  geom_vline(aes(xintercept = mean(serum_sodium[DEATH_EVENT==1])), 
+             color = "#d8717b")+
+  labs(title =  "Serum Sodium (density distribution) by group (Death Event)")+
+  theme_fivethirtyeight()
+
+ser_sod + ser_sod2 + plot_layout(ncol = 1)
+```
+
+
+
+<!-- # PURPOSE AND FOUNDATIONS OF INFERENTIAL STATISTICS -->
+
+<!-- ## Probability and random variables -->
+
+<!-- ## Meaningful probability distributions -->
+
+<!-- ## Sampling distributions and Central Limit Theorem -->
+
+<!-- ## Confidence Intervals -->
+  
+<!-- # GETTING TO KNOW THE “LANGUAGE” OF HYPOTHESIS TESTING -->
+
+<!-- ## The null and alternative hypothesis -->
+
+<!-- ## The probability of error? (*α* or "significance level") -->
+
+<!-- ## The *p-value* probability and tests interpretation -->
+
+<!-- ## Effective vs statistical significance -->
+
+<!-- ## Types of errors (Type 1 and Type 2) -->
+
+
+## 
+
+# HYPOTHESIS TESITNG - SOME EXAMPLES 
+
+## Comparing sample mean to a hypothesized population mean (Z test & t test)
+
+## Comparing two independent sample means (t test)
+
+## Comparing sample means from 3 or more groups (ANOVA)
+  
+    <!-- (esempio metabolomica Catanzaro?) -->  
+    
+# A CLOSER LOOK AT TESTING ASSUMPTIONS 
+
+## Testing two groups that are *not* independent
+
+## Testing if the data are *not* normally distributed: non-parametric tests
+
+## Testing samples *without* homogeneous variance of observations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Final thoughts/recommendations
+
++ Always **read the documentation** (`?package::function`, especially the examples at the bottom)
++ Always **inspect the data** / variables **before** and **after** making changes 
++ **Better rename** (i.e. create a new R object) when you recode/manipulate a column or a dataset
+
+  - *(this promotes reproducibility, because you will be able to retrace your coding steps)*
+
++ Always plot distributions for **visual data exploration** 
++ Make changes in **small increments** (like we saw in building `ggplot2` graph in subsequent layers)
+
+<!-- # FOUNDATIONS OF INFERENCE -->
+
+<!-- (lo lascerei x lab \# 2) -->

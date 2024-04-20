@@ -20,10 +20,22 @@ tbl-colwidths: [5,20,75]
 
 ## Lecture 2 Outline
 
-+ Purpose of inferential statistics  
-  + Foundations of inference
-+ Hypothesis testing process and language
-+ Hypothesis testing 
-  + Examples 
-+ How to find the right hypothesis test? 
-  + Examples  
++ **Purpose and foundations of inferential statistics**
+  + Probability and random variables 
+  + Meaningful probability distributions
+  + Sampling distributions and Central Limit Theorem
+  + Confidence Intervals
++ **Getting to know the “language” of hypothesis testing**
+  + The null and alternative hypothesis
+  + The probability of error? (*α* or "significance level")
+  + The *p-value* probability and tests interpretation
+  + Effective vs statistical significance
+  + Types of errors (Type 1 and Type 2)
++ **Hypothesis tests examples**
+  + Comparing sample mean to a hypothesized population mean (Z test & t test)
+  + Comparing two independent sample means (t test)
+  + Comparing sample means from 3 or more groups (ANOVA) <!-- (esempio metabolomica Catanzaro?) -->
++ **A closer look at testing assumptions (with examples)** 
+  + Testing two groups that are *not* independent 
+  + Testing if the data are *not* normally distributed: non-parametric tests
+  + Testing samples *without* homogeneous variance of observations

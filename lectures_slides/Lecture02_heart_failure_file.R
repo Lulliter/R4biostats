@@ -8,17 +8,25 @@ library(janitor)   # tools for examining and cleaning data
 library(skimr)     # tools for summary statistics 
 library(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data 
 library(forcats)   # {tidyverse} tool for handling factors
-library(tidyr)
-library(broom)
 
+library(tidyr)      # Tidy Messy Data
+library(data.table) # Extension of `data.frame`
+
+library(rstatix)   # Pipe-Friendly Framework for Basic Statistical Tests
+library(car)       # Companion to Applied Regression
+library(broom)     # Convert Statistical Objects into Tidy Tibbles 
+library(multcomp)  # Simultaneous Inference in General Parametric Models 
+
+library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details 
+library(viridis) # Colorblind-Friendly Color Maps for R 
+library(hrbrthemes) # Additional Themes, Theme Components and Utilities for 'ggplot2' 
 library(ggplot2)   # {tidyverse} tools for plotting
 #library(ggridges)  # alternative to plot density functions 
-library(ggthemes)
-library(RColorBrewer) 
-library(gridExtra)
-library(kableExtra)
-library(data.table)
-
+library(ggthemes) # Extra Themes, Scales and Geoms for 'ggplot2'
+library(RColorBrewer) # ColorBrewer Palettes 
+library(gridExtra) # Miscellaneous Functions for "Grid" Graphics
+library(kableExtra) # Construct Complex Table with 'kable' and Pipe Syntax
+library(ggpubr) # 'ggplot2' Based Publication Ready Plots 
 
 # Load dataset ------------------------------------------------------------
 # Use `here` in specifying all the subfolders AFTER the working directory 
@@ -53,7 +61,7 @@ heart_failure <- read.csv(file = here("practice", "data_input", "02_datasets", "
 
 # Platelets: A normal platelet count ranges from 150,000 to 450,000 platelets per microliter of blood.
  
-# Serum Sodium (Sodium is a min- eral that serves for the correct functioning of muscles and nerves.): 
+# Serum Sodium (Sodium is a mineral that serves for the correct functioning of muscles and nerves.): 
   # + A normal blood sodium level is between 135 and 145 milliequivalents per liter (mEq/L)
  
 # Death Event: states if the patient died or survived before the end of the follow-up period, that was 130 days on aver- age 
@@ -120,11 +128,11 @@ heart$censor_c <- ifelse(heart$DEATH_EVENT==0, "Censor", "Event")
 f_features = c("DEATH_EVENT","anaemiac_c", "diabetes_c", "high_blood_pressure_c", "sex_c", "smoking_c", "censor_c")
  
 heart <- heart %>%
-  mutate_at(f_features, as.factor) %>% 
+  dplyr::mutate_at(f_features, as.factor) %>% 
   # Reorder the column name alphabetically 
-  select(order(colnames(.))) %>% 
-  relocate (censor_c, .after = DEATH_EVENT) %>% 
-  relocate (id, .before = everything())
+  dplyr::select(order(colnames(.))) %>% 
+  dplyr::relocate (censor_c, .after = DEATH_EVENT) %>% 
+  dplyr::relocate (id, .before = everything())
 
 
 # _________--------------------------------------------------------------
@@ -136,20 +144,24 @@ heart <- heart %>%
 
   #!  # UdaySheel Zupudi https://www.kaggle.com/code/shootboyxxx/heart-attack-eda-and-modeling
 heart_failure$DEATH_EVENT <- factor(heart_failure$DEATH_EVENT)
+heart_failure <-heart_failure %>% 
+  mutate(DEATH_EVENT_f = as.factor(DEATH_EVENT) %>%
+           fct_recode("dead" = "1", "survived" = "0"))  
+
 
 
 #####  --- age -----------------------------------------------------------------
 # As the age increases, probability of death event increases as shown 
 
 
-a<-ggplot(heart_failure,aes(x = age))+
+age <-ggplot(heart_failure,aes(x = age))+
   geom_histogram(binwidth = 5, color = "white", fill = "grey",alpha = 0.5)+
   theme_fivethirtyeight()+
   labs(title = "Age Distribution", caption = "i. Age Distribution")+
   theme(plot.caption = element_text(hjust = 0.5,face = "italic"))+
   scale_x_continuous(breaks = seq(40,100,10))
 
-b<-ggplot(heart_failure,aes(x = age, fill = DEATH_EVENT))+
+age2 <-ggplot(heart_failure,aes(x = age, fill = DEATH_EVENT))+
   geom_histogram(binwidth = 5, position = "identity",alpha = 0.5,color = "white")+
   theme_fivethirtyeight()+
   scale_fill_manual(values = c("#999999", "#d8717b"))+
@@ -157,44 +169,48 @@ b<-ggplot(heart_failure,aes(x = age, fill = DEATH_EVENT))+
   theme(plot.caption = element_text(hjust = 0.5,face = "italic"))+
   scale_x_continuous(breaks = seq(40,100,10))
 
-gridExtra::grid.arrange(a,b)
+gridExtra::grid.arrange(age,age2)
 
 #####  --- CPK -----------------------------------------------------------------
 # Creatinine Phosphokinase (states the level of the CPK enzyme in blood. When a muscle tissue gets damaged, CPK flows into the blood. Therefore, high levels of CPK in the blood of a patient might indicate a heart failure or injury)
 # Although the distribution for the death event and non death event are similar average creatinine for the death event is slightly higher than for the non death event * 57% chances of death where creatinine greater than 4000
+mean(heart_failure$creatinine_phosphokinase)
+sd(heart_failure$creatinine_phosphokinase)
 
 heart_failure %>% 
   group_by(DEATH_EVENT) %>% 
   summarise(
     N = n(),
     mean_age = mean(age),
-    mean_cpk = mean(creatinine_phosphokinase))
+    mean_cpk = mean(creatinine_phosphokinase), 
+    sd_cpk = sd(creatinine_phosphokinase))
 
-a <- ggplot(heart_failure,aes(x = creatinine_phosphokinase))+
+cpk <- ggplot(heart_failure,aes(x = creatinine_phosphokinase))+
   geom_density(fill = "gray", alpha = 0.5)+
   theme_fivethirtyeight()+
   labs(title = "Distribution of creatinine phosphokinase", caption = "i. Density distribution")+
   theme(plot.caption = element_text(hjust = 0.5, face = "italic"))
 
-b <- ggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT))+
+cpk2 <- ggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT))+
   geom_density(alpha = 0.5)+theme_fivethirtyeight()+
   scale_fill_manual(values = c("#999999", "#d8717b"))+
   geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT == 0])), color = "gray")+
   geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT==1])), color = "#d8717b")+
-  geom_curve(xend = 540, yend = 0.0009, x = 2000, y = 0.0014, 
-             arrow = arrow(length = unit(0.2,"cm")),
-             linewidth = 0.5,
-             color = "gray")+
-  geom_curve(xend = 670, yend = 0.0013, x = 2000, y = 0.0016, 
-             arrow = arrow(length = unit(0.2,"cm")),
-             linewidth = 0.5, color = "#d8717b")+
-  geom_text(label = "mean for non death events", x = 2000, y = 0.0014,size = 2.5)+
-  geom_text(label = "mean for death events", x = 2000, y = 0.0016,size = 2.5)+
+  # geom_curve(xend = 540, yend = 0.0009, x = 2000, y = 0.0014, 
+  #            arrow = arrow(length = unit(0.2,"cm")),
+  #            linewidth = 0.5,
+  #            color = "gray")+
+  # geom_curve(xend = 670, yend = 0.0013, x = 2000, y = 0.0016, 
+  #            arrow = arrow(length = unit(0.2,"cm")),
+  #            linewidth = 0.5, color = "#d8717b")+
+  # geom_text(label = "mean for non death events", x = 2000, y = 0.0014,size = 2.5)+
+  # geom_text(label = "mean for death events", x = 2000, y = 0.0016,size = 2.5)+
   labs(caption = "ii. Density distribution with events of death",x = "creatinine kinase")+
-  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))+
-  annotate("text",x = 4000, y = 0.0010, label = "For creatinine >= 4000 \n57% chances of death")
+  theme_fivethirtyeight()+
+  theme(plot.caption = element_text(hjust = 0.5, face = "italic"))#+
+  #annotate("text",x = 4000, y = 0.0010, label = "For creatinine >= 4000 \n57% chances of death")
 
-gridExtra::grid.arrange(a,b)
+gridExtra::grid.arrange(cpk,cpk2)
 
 #####  --- Ejection Fraction -----------------------------------------------------------------
 # Ejection Fraction (proportion of blood pumped out of the heart during a single contraction) A normal ejection fraction is about 50% to 75%, according to the American Heart Association.: 
@@ -400,7 +416,7 @@ smoke <-ggplot(heart, aes(x = DEATH_EVENT, fill = smoking_c))+
   labs(subtitle = "Smoking")
 smoke 
 
-grid.arrange(a,b,c,d,e)
+grid.arrange(anem,hbp,sex,age65_c,smoke)
 
 # _________--------------------------------------------------------------
 
@@ -472,24 +488,24 @@ sample_64_1 <-  slice_sample(heart, n = 64, replace = FALSE)
 sample_pl_mu_1 <- mean(sample_64_1$plat_norm) # mu_0 260.3733
 sample_pl_sigma_1 <- sd(sample_64_1$plat_norm) #sigma_o 96.53336
 
-std_err_1 <- heart_pl_sigma/sqrt(64) # 12.22553
-z_stat_1 <-  (sample_pl_mu_1 - heart_pl_mu) / std_err_1 # -0.2441404
+std_err_1 <- sigma/sqrt(64) # 12.22553
+z_stat_1 <-  (sample_pl_mu_1 - mu) / std_err_1 # -0.2441404
   
 # sub_sample 2 std err  + Z stat   
 sample_64_2 <-  slice_sample(heart, n = 64, replace = FALSE)
 sample_pl_mu_2 <- mean(sample_64_2$plat_norm) # mu_0 265.7668
 sample_pl_sigma_2 <- sd(sample_64_2$plat_norm) #sigma_o 81.59953
 
-std_err_2 <- heart_pl_sigma/sqrt(64) # 12.22553
-z_stat_2 <-  (sample_pl_mu_2 - heart_pl_mu) / std_err_2 # 0.1970265
+std_err_2 <- sigma/sqrt(64) # 12.22553
+z_stat_2 <-  (sample_pl_mu_2 - mu) / std_err_2 # 0.1970265
 
 # sub_sample 3 std err  + Z stat   
 sample_64_3 <-  slice_sample(heart, n = 64, replace = FALSE)
 sample_pl_mu_3 <- mean(sample_64_3$plat_norm) # mu_0 265.1842
 sample_pl_sigma_3 <- sd(sample_64_3$plat_norm) #sigma_o 103.3775
 
-std_err_3 <- heart_pl_sigma/sqrt(64) # 12.22553
-z_stat_3 <-  (sample_pl_mu_3 - heart_pl_mu) / std_err_3 # 0.1493753
+std_err_3 <- sigma/sqrt(64) # 12.22553
+z_stat_3 <-  (sample_pl_mu_3 - mu) / std_err_3 # 0.1493753
 
   
 # 1 sample t-test, SMALL n known sigma (PLATELETS) ------------------------------------------------------
@@ -536,95 +552,212 @@ p_value_t_test <- 2*pt(t_stat_HF_1_30d, df, lower.tail = FALSE) # Two-tailed tes
 # z_stat_HF_30d <-  (x__HF_30d - mu) / std_err_HF_30d    # 4.776607
 
 
-# >>>>>> QUI  -------------------------------------------------------------
+# _________--------------------------------------------------------------
 
-
-# 1 sample t-test age ------------------------------------------------------
-# Literature Pakistan mean/median age in 2015 = 21
-
-# QUESTION: TEST IF THE MEAN OF OUR SAMPLE IS DIFFERENT FROM THE POPULATION PARAMETER
-# H0: THERE IS NO DIFFERENCE
-# H1 MY SAMPLE X_ > mu
-
-heart %>% 
-  mutate(age_median = median(age))
-
-t.test(heart$age, mu = 21, alternative = "greater")
-
-
-# PARAM: 2 sample means T TEST ------------------------------------------------------
+# PARAM: 2 sample indep T TEST (PLATELETS) ------------------------------------------------------
 # (I use Platelets bc the density plots seems Normal) 
 # (A normal platelet count ranges from 150,000 to 450,000 platelets per microliter of blood)
 # https://r-training.pages.uni.lu/biostat1/lectures/Compare_samples.html#6
 # https://www.statology.org/variance-ratio-test-in-r/
 
-
-# Assumptions 4 Student's t test: Comparing two means
+# Assumptions 4  -------
+# Student's t test: Comparing two means 
     # 1. Independence  --> presumed bc they are all different people ?!?!
     # 2. Similar variances (homoskedasticity) --->> Check!
     # 3. Normality    --> visually check 
     # (Errors must be normally distribute)
 
-# First, check the assumptions
+# DATA BY GROUP ---------
+heart %>% 
+  group_by(DEATH_EVENT) %>% 
+  # Compute summary statistics by group
+  summarise(n__group = n(), 
+            mean__group = mean(plat_norm),
+            sd__group= sd(plat_norm),
+            var__group = var(plat_norm)
+  ) %>% 
+  # Generate a confidence interval for the mean difference
+  summarise(stderror = sqrt(sum(sd__group^2 / n__group)),
+            lower = diff(mean__group) + qt(.025, sum(n__group) - 2) * stderror,
+            upper = diff(mean__group) + qt(.975, sum(n__group) - 2) * stderror)
 
-###### A2 Compare var between 2 samples (BY HAND) ---------
+
+
+
+
+###### Second, compute statistic 
+###### ____1/4 datatab.net/ -------
+# Levene's test 
+#https://datatab.net/statistics-calculator/hypothesis-test 
+# 
+#       Test 	                        F 	df1 	df2 	p
+#       Levene's Test (Mean) 	        3.07 	1 	297 	.081
+#       Brown-Forsythe-Test (Median) 	2.957 	1 	297 	.087
+# This table shows the results of two different tests for equality of variances: Levene's Test and the Brown-Forsythe Test. Both tests are used to assess whether two or more groups have equal variances, which is an important assumption in many statistical tests like the t-test or ANOVA. Let's interpret each part of your table:
+
+# Levene's Test using the mean checks if the variances are equal across your groups. A test statistic (F) of 3.07 is obtained, with degrees of freedom 1 and 297. The p-value is .081. Typically, a p-value threshold of 0.05 is used to determine statistical significance. Since .081 is greater than 0.05, this suggests that the test did not find statistically significant evidence to reject the null hypothesis of equal variances. Therefore, you may assume that the variances are equal for the purposes of further analysis like a t-test or an ANOVA.
+# Brown-Forsythe Test (Median)
+
+# In summary, both tests suggest that the assumption of equal variances holds for your data.
+
+#                                     t 	    df 	    p   Cohen's d
+# platelets 	Equal variances (OK)    0.761 	297 	.447 	0.094       
+# 	          Unequal variances 	    0.731 	169.046 	.466 	0.091
+
+# Equal and unequal variances
+
+# The table contains two rows, one row for the case where equal variance is assumed and one row for the case where unequal variance is assumed. The p-value of .081 calculated with the Levene test (previous table) is above the standard significance level of 0.05. This means that there is enough evidence to reject the null hypothesis of equal variance.  
+# 
+# A two tailed t-test for independent samples (equal variances assumed) showed that the difference between 0 and 1 with respect to the dependent variable platelets was not statistically significant, t(297) = 0.761, p = .447, 95% confidence interval [-0.039, 0.087]. Thus, the null hypothesis that there was no difference in the mean value between the two groups was not rejected. The Cohen's d value of 0.094 represents a very small effect size.
+
+
+###### ____2/4 manual -------
+
+# PARAM: 2 sample indep T TEST (PLATELETS) 
+# OR 
+n_dead <- nrow(heart[heart$DEATH_EVENT == 1,])
+mean_dead <- mean( heart$plat_norm [heart$DEATH_EVENT == 1 ])
+sd_dead <- sd(heart$plat_norm [heart$DEATH_EVENT == 1 ])
+var_dead <- var(heart$plat_norm [heart$DEATH_EVENT == 1 ])
+
+n_alive <- nrow(heart[heart$DEATH_EVENT == 0,])
+mean_alive <- mean( heart$plat_norm [heart$DEATH_EVENT == 0 ])
+sd_alive <- sd(heart$plat_norm [heart$DEATH_EVENT == 0 ])
+var_alive <- var(heart$plat_norm [heart$DEATH_EVENT == 0 ])
+
+###### ______ 1.a) check VAR equality {BY HAND}   -------
 # Fisher's F test
 # var.test(sample1, sample2)
 # # Divide the larger variance by the smaller one
 # # Example: compare the variances of garden A & C
 
-var_plat_dead <- var(heart$platelets[heart$DEATH_EVENT == 1])
-n_dead <- nrow(heart[heart$DEATH_EVENT == 1,])
-var_plat_alive <- var(heart$platelets[heart$DEATH_EVENT == 0])
-n_alive <- nrow(heart[heart$DEATH_EVENT == 0,])
-
 # If the variances in the groups are the same, this ratio should be close to 1.0
-F.ratio <- var_plat_dead / var_plat_alive
-F.ratio  # 1.020497 
-# If the variances in the groups are the same, this ratio should be close to 1.0
+var_plat_dead <- var(heart$plat_norm[heart$DEATH_EVENT == 1]) # 9707.31
+n_dead <- nrow(heart[heart$DEATH_EVENT == 1,])                # 96
 
-# F distribution with df=(n−1,n−1)
-  # The F distribution is defined only for non-negative values
-  # The F distribution is not symmetric.
+var_plat_alive <- var(heart$plat_norm[heart$DEATH_EVENT == 0])# 9512.335
+n_alive <- nrow(heart[heart$DEATH_EVENT == 0,])               # 203
+
+F_ratio <- var_plat_dead / var_plat_alive
+F_ratio  # 1.020497 
+# If the variances in the groups are the same, this ratio should be close to 1.0
+    # F distribution with df=(n−1,n−1)
+    # The F distribution is defined only for non-negative values
+    # The F distribution is not symmetric.
 
 # Variance test 
-# Define the critical value of F distribution for a risk of alpha=0.05
-qf(0.975, df1 = n_dead-1, df2 = n_alive-1) # critical value  1.398723
-# Compute the exact p-value
-2 * (1 - pf(F.ratio, df1 = (n_dead-1), df2 = (n_alive-1)))
-# 0.8914982
+# Define the critical value of F distribution for a risk of alpha = 0.05
+qf(0.95, df1 = n_dead-1, df2 = n_alive-1, lower.tail = TRUE) # F critical value RIGHT-Tailed: 1.3255
+# or STATOLOGY
+qf(p=.05, df1 = n_dead-1, df2 = n_alive-1, lower.tail = FALSE) # F critical value RIGHT-Tailed  1.325469
+qf(0.95, df1 = n_dead-1, df2 = n_alive-1, lower.tail = FALSE) # F critical value LEFT- Tailed: 0.741284
+qf(c(0.025, 0.975), df1 = n_dead-1, df2 = n_alive-1) # F critical value TWO-Tailed: [0.6994659 1.3987233]
 
-###### A2 Compare var between 2 samples (R function) ---------
-var.test(heart$platelets[heart$DEATH_EVENT == 1] , heart$platelets[heart$DEATH_EVENT == 0])
-    # F.ratio  # 1.020497 
+
+# Compute the exact p-value (two-tailed )
+2 * (1 - pf(F_ratio, df1 = (n_dead-1), df2 = (n_alive-1))) # 0.8914982
+
+###### ______ 1.b) check VAR equality {stats}  -------
+stats::var.test(heart$platelets[heart$DEATH_EVENT == 1] , heart$platelets[heart$DEATH_EVENT == 0])
+    # F_ratio  # 1.020497 calc 
     # p-value = 0.8915
     # 95% CI of ration [0.7295918 1.4589660]
     # I conclude Vars are the same ~ (Fail to reject H0 = The population variances are equal)
 
+# Define the critical value of F distribution for a risk of alpha=0.05
+qf(0.975, df1 = (n_dead-1), df2 = (n_alive-1),lower.tail = TRUE)  # critical value  1.398723
 
-###### A3 Normality (R function) ---------
-library(broom)
-tidy(shapiro.test(heart$platelets[heart$DEATH_EVENT == 1]))
-tidy(shapiro.test(heart$platelets[heart$DEATH_EVENT == 0]))
+qf(p = 0.05, df1 = (n_dead-1),# critical value  1.325469
+   df2 = (n_alive-1),
+   lower.tail = FALSE # If TRUE, the probability to the left of p in the F distribution is returned. 
+  )                     # If FALSE, the probability to the right is returned.   
+             
+
+# Compute the exact p-value (two-tailed ?)
+2 * (1 - pf(F_ratio, df1 = (n_dead-1), df2 = (n_alive-1))) # 0.8914982
 
 
+###### A3 Normality (R function) 
+library(broom) # Convert Statistical Objects into Tidy Tibbles # Convert Statistical Objects into Tidy Tibbles # Convert Statistical Objects into Tidy Tibbles
+broom::tidy(shapiro.test(heart$platelets[heart$DEATH_EVENT == 1]))
+broom::tidy(shapiro.test(heart$platelets[heart$DEATH_EVENT == 0]))
 
-######  2 samples t test (by hand) ---------
+
+######  2 samples t test (by hand) 
+# Step 1 - samples data 
+n_dead <- nrow(heart[heart$DEATH_EVENT == 1,])
+mean_dead <- mean( heart$plat_norm [heart$DEATH_EVENT == 1 ])
+sd_dead <- sd(heart$plat_norm [heart$DEATH_EVENT == 1 ])
+n_alive <- nrow(heart[heart$DEATH_EVENT == 0,])
+mean_alive <- mean( heart$plat_norm [heart$DEATH_EVENT == 0 ])
+sd_alive <- sd(heart$plat_norm [heart$DEATH_EVENT == 0 ])
+
 # Step 1 - compute difference of sample means
-diff <- mean(heart$platelets[heart$DEATH_EVENT == 1]) - mean(heart$platelets[heart$DEATH_EVENT == 0])
-diff # -10276.45
+mean_diff <- (mean_dead - mean_alive) # -10.27645 
 
 # Step 2 - Compute associated t-statistics
-t <- diff / (sqrt( (var_plat_dead / n_dead) + (var_plat_alive / n_alive)))
-t # -0.8447853   # sign does not matter, how many df?
+# pooled std error 
+pooled_stderror <- sqrt(sd_dead^2/(n_dead ) + sd_alive^2/(n_alive )) # 12.16456  | 
+pooled_stderror_gppi <- sqrt(sd_dead^2/(n_dead-1) + sd_alive^2/(n_alive-1)) # 12.21773
 
+###____ statistic p-value 
+t_calc <- (mean_dead - mean_alive) / pooled_stderror_gppi   #  -0.8447853 | -0.841109 # sign does not matter, how many df?
 
 # Step 3 - degrees of freedom
 # n1 + n2 - number of estimated parameters (2 means)
-degrfred <- n_dead + n_alive - 1 - 1 # 297
+d_f <- n_dead + n_alive - 1 - 1 # 297
 
+###____ DECIDE According to  p-value 
 # Step 4 - Deduced p-value
-2 * pt(t, df = degrfred) #  0.3989107
+2 * pt(t_calc, df = d_f) #  0.3989107 
+  # MY INTTERPRET: 0.3989107 > 0.05 so I fail to reject the null (equal populations means)
+
+###____ DECIDE According to CRITICAL REGION
+# CI of the means difference 
+CI_lower <- mean_diff + qt(.025, sum(n_dead+n_alive) - 2) * pooled_stderror # # -34.21611
+CI_upper <- mean_diff + qt(.975, sum(n_dead+n_alive) - 2) * pooled_stderror # 13.66322
+  # MY INTTERPRET: the (sample) mean_diff is well inside the 95% of = population mean, so I fail to reject the null 
+
+
+###### ____3/4 R {car + rstatix} -------
+
+######  ____ Levene {car}
+heart %>%                            # name of the data
+  car::leveneTest(platelets ~ DEATH_EVENT,   # continuous DV ~ 2-group IV
+                  data = .,            # pipe the data from above
+                  center = mean)       # default is median 
+
+# No evidence of violations of HOV were found, F(1, 8) = 0.05, p = .824.
+# Choose to do the pooled variance t-test (var.equal = TRUE)
+
+two_sample_t_test <-  heart  %>% 
+  rstatix::t_test(plat_norm ~ DEATH_EVENT, detailed = TRUE) %>%
+  add_significance()
+
+two_sample_t_test
+    # two_sample_t_test
+    # .y.         = the y variable 
+    # statistic   = test statistic (t-value) used to compute the p-value.
+    # p           =  p-value
+    # df          = degrees of freedom.
+    # conf.low    = 
+    # conf.high   = 
+    # method      = 
+    # alternative = two.sided
+    # p.signif    = ns ? not significant 
+
+###### ____4/4 R (base t.test welch_) -------
+two_sample_t_test <-  heart %>%              # name of the data
+  stats::t.test(plat_norm ~ DEATH_EVENT,     # continuous DV ~ 2-group IV        
+                data = .,                    # pipe the data from above
+                var.equal = TRUE)            # do the pooled-variance version
+
+two_sample_t_test
+# No evidence of a difference was found, t(297) = 0.84787,  p-value = 0.3972
+
+
+
+# _________ ALTRA VERSIONE--------------------------------------------------------------
 
 ######  2 samples t test (R function) ---------
 # With Welch correction (on by default) Unequal variance is compensated by lowering df
@@ -637,29 +770,86 @@ t.test(heart$platelets[heart$DEATH_EVENT == 1],
        heart$platelets[heart$DEATH_EVENT == 0],
        var.equal = TRUE) # df = 297
 
-
 # _________--------------------------------------------------------------
-# NON PARAM: 2 sample means Mann-Whitney / Wilcoxon ----------------------------
-# Recall conditions 
-
-####### ___ 1. Independence  --> VIOLATED --------------------------
+# 1. Independence  --> VIOLATED --------------------------
 # e.g. The Independence assumption is violated when the samples share more than they should | Two samples from a same individual
-# (PARAM): 2 sample means *PAIRED *t-test  ----------------------------
- 
-####### ___ 2. Similar variances (homoskedasticity) --->> VIOLATED -------
 
-####### ___ 3. Normality    --> VIOLATED -------
-####### ___CPK (a mano)  ----------------------------------------------------
+####### ___ TWO sample PAIRED t-test ------------------------ --------------------------------------------------
+# (vedi Statology )
 
-# e.g. When the errors are not normally distributed e.g. creatinine_phosphokinase
-library(broom)
+# serve un esempio before and after 
 
-# 1/2 Shapiro-Wilk Normality Test to verify normality 
-tidy(shapiro.test(heart$creatinine_phosphokinase)) # not normal 
-tidy(shapiro.test(heart$creatinine_phosphokinase[heart$DEATH_EVENT == 1]))
-tidy(shapiro.test(heart$creatinine_phosphokinase[heart$DEATH_EVENT == 0]))
 
-# 2/2  2sample Wilcoxon-Mann-Whitney test
+# # calculate the mean of differences 
+# n # = n_1 = n_2 (stesso gruppo che ritorna)
+# 
+# # mean difference b/w groups
+# x_diff
+# # calculate the sd of differences 
+# sd_diff
+# 
+# # calculate the test stat 
+# t_calc  <-  x_diff / (sd_diff / sqrt(n))
+# 
+# # calculate the critical value in the T distrib using a two-tailed test with α = .05 and df = n-1 degrees of freedom.
+# t_crit05   <-   ..... with α = .05 and df = n-1
+# 
+# #Confidence interval for the true mean difference 
+# t_crit025   <-   ..... with α = .025 and df = n-1
+# 
+# 
+# # CI = x_diff +- t X SE (mean_diff)
+# CI_lower <- x_diff - t_crit025 (sd_diff / sqrt(n))
+# CI_upper <- x_diff + t_crit025 (sd_diff / sqrt(n))
+
+
+
+# >>>>>> missing Example.... ----------------------------------------------------
+# _________--------------------------------------------------------------
+
+# 2. Normality    --> VIOLATED -------
+# Recall conditions 
+# FOR INDEPENDENT SAMPLES with variable is not normally distributed, we can perform Mann-Whitney U test (best for continuous vars)
+
+# ____ visually check NORMALITY ---------------------------------------------------------
+# ----Density plot
+# the density plot provides a visual judgment about whether the distribution is bell shaped.
+ggpubr::ggdensity(heart$creatinine_phosphokinase, fill = "lightgray")  
+  
+ggplot(heart_failure, aes(x = creatinine_phosphokinase, fill = DEATH_EVENT_f)) +
+    geom_density(alpha = 0.5) +
+    scale_fill_manual(values = c("#d8717b","#999999"))+
+    guides(fill = "none") +
+    facet_wrap(vars(DEATH_EVENT_f), nrow = 2) 
+  
+
+# ---- QQ plot 
+# QQ plot (or quantile-quantile plot) draws the correlation between a given sample and the normal distribution. A 45-degree reference line is also plotted. In a QQ plot, each observation is plotted as a single dot. If the data are normal, the dots should form a straight line.
+# !!!! #If normality was violated, points would consistently deviate from the dashed line.!!!!!
+ggpubr::ggqqplot(heart$creatinine_phosphokinase, 
+                 title = "Quantile-Quantile plot for CPK levels in blood",
+                 #subtitle = "Length by dose",
+                 # caption = "Source: ggpubr",
+                 xlab ="Theoretical", ylab = "Sample (CPK)")
+
+
+# ____ Shapiro-Wilk Normality Test to verify normality ----------------------------------------
+# It’s possible to use a significance test comparing the sample distribution to a normal one in order to ascertain whether data show or not a serious deviation from normality.
+# There are several methods for evaluate normality, including the Kolmogorov-Smirnov (K-S) normality test and the Shapiro-Wilk’s test.
+
+# Shapiro-Wilk’s method is widely recommended for normality test and it provides better power than K-S. It is based on the correlation between the data and the corresponding normal scores (Ghasemi and Zahediasl 2012).
+
+# The null hypothesis of these tests is that “sample distribution is normal”. If the test is significant, the distribution is non-normal.
+broom::tidy(stats::shapiro.test(heart$creatinine_phosphokinase)) # test SIGNIFICANT --> distrib not normal 
+broom::tidy(stats::shapiro.test(heart$creatinine_phosphokinase[heart$DEATH_EVENT == 1])) # ""
+broom::tidy(stats::shapiro.test(heart$creatinine_phosphokinase[heart$DEATH_EVENT == 0])) # "" 
+
+# ____ Shapiro-Wilk Normality Test BY group ----------------------------------------
+SW_t <- heart_failure %>%
+  group_by(DEATH_EVENT_f) %>%
+  rstatix::shapiro_test(creatinine_phosphokinase)
+
+# 2/2  2 INDEPENDENT sample Wilcoxon-Mann-Whitney test
     # The hypothesis define as:
     # H0: The mean value of specific feature between the death group and no death group is equal.
     # H1: The mean value of specific feature between the death group and no death group is not equal.
@@ -679,24 +869,48 @@ qwilcox(0.975, m = 203, n = 96) # 11111
 # If one of sum is higher than 11111 then we reject H0
 # Groups dead /alive have different means
 
+####### __ NON PARAM test: indep 2 sample (CPK)  ----------------------------
 
-####### ___CPK (R function )  ----------------------------------------------------
-# res <- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1
-#                    data = heart ,
-#                    exact = FALSE, alternative = "two.sided" )
-# res$p.value 
+####### ___CPK Mann-Whitney U test (a mano)  ----------------------------------------------------
+# e.g. When the errors are not normally distributed e.g. creatinine_phosphokinase
 
-res_less <- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1
+
+####### ___CPK Wilcoxon Rank Sum and Signed Rank (R function )  ----------------------------------------
+      # 1) Wilcoxon Rank Sum a.k.a. ‘Mann-Whitney U’ test -- > INDEPENDENT SAMPLES
+      # 2) Wilcoxon Signed Rank -- > PAIRED  SAMPLES
+# if both x and y are given and paired is FALSE, a Wilcoxon rank sum test (equivalent to the Mann-Whitney test: see the Note) is carried out. In this case, the null hypothesis is that the distributions of x and y differ by a location shift of mu and the alternative is that they differ by some other location shift (and the one-sided alternative "greater" is that x is shifted to the right of y).
+
+
+res <- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1
                    data = heart ,
-                   exact = FALSE, alternative = "less") # ! 
-res_less$p.value 
+                   exact = FALSE, alternative = "two.sided" )
+res
+# res$p.value
+
+#  
+# res_less <- stats::wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT_f, # immagino 0, 1
+#                    data = heart_failure ,
+#                    exact = FALSE, 
+#                    # specify alternative=”less” or alternative=“greater” to run a one-tailed test.
+#                    alternative = "greater", # levels(heart_failure$DEATH_EVENT_f) ~ DEATH 0 > DEATH 1 
+#                    paired = FALSE
+#                    ) # ! 
+# res_less
+# res_less$p.value > 0.05 # TRUE
+
+# Notice that both methods lead to the exact same result. Namely, the test statistic is W = 13 and the corresponding p-value is 0.468.
+# 
+# Since the p-value is greater than 0.05, we fail to reject the null hypothesis.
+
+
 
 # res_more <- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1
 #                    data = heart ,
 #                    exact = FALSE, alternative = "greater")
 # res_more$p.value 
 
-# The p-value of the test is 0.684, which is more than the significance level alpha = 0.05. We can conclude that creatinine_phosphokinase level is NOT significantly different between survived and dead patients with a p-value = 0.684
+levels(heart_failure$DEATH_EVENT) 
+# The p-value from one-sided Mann-Whitney U test is MORE  than significance level of 0.05 (W = 9460, p-value = 0.342), we can conclude that creatinine_phosphokinase level for  survived patients (mean = 540) is NOT significantly less that for dead patients  (mean = 670)
 
 
 ####### ___CPK (Compare Non-parametric versus parametric) ----------------------------
@@ -709,34 +923,341 @@ bind_rows(
     heart$creatinine_phosphokinase[heart$DEATH_EVENT == 0])))
 # --> p.value Non-parametric tests are more conservative with less power
 
-#####  --- Ejection Fraction -----------------------------------------------------------------
-# siccome dal grafico NON mi sembra che abbia andamento normale uso  U di Mann Whitney
-res <- wilcox.test(ejection_fraction ~ DEATH_EVENT, # immagino 0, 1
-                   data = heart ,
-                   exact = FALSE, alternative = "two.sided" )
-res
-res$p.value
-format(res$p.value, scientific=F)
+
+
+# _________--------------------------------------------------------------
+
+# 3. Similar variances HOV  --->> VIOLATED -------
+# >>>>>> QUI  -------------------------------------------------------------
+# ___ vis check HOV v1  ------------------------------------------------------
+
+ggbetweenstats(
+  data = heart_failure,
+  x = DEATH_EVENT_f,
+  y = serum_sodium,
+  type = "parametric", # ANOVA or Kruskal-Wallis
+  var.equal = FALSE, # ANOVA or Welch ANOVA
+  plot.type = "box",
+  pairwise.comparisons = TRUE,
+  pairwise.display = "significant",
+  centrality.plotting = FALSE,
+  bf.message = FALSE
+)
+# ___ vis check HOV  v2 ------------------------------------------------------
+ggplot(heart_failure, aes(x = serum_sodium, fill = DEATH_EVENT_f)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("#d8717b","#999999")) +
+    guides(fill = "none")  +
+   facet_wrap(vars(DEATH_EVENT_f), nrow = 2) 
+
  
 
-#### FOR categorical features V death testing   ----------------------------------------------------
-The hypothesis define as:
+
+
+# ___ vis check HOV v 3  ------------------------------------------------------
+
+#Compute means and 95% confidence intervals
+mean(heart_failure$serum_sodium)
+sd(heart_failure$serum_sodium)
+
+swstats <- heart_failure %>%
+  group_by(DEATH_EVENT_f) %>%
+  summarise(
+    count = n(),
+    mean = mean(serum_sodium,na.rm=TRUE),
+    stddev = sd(serum_sodium, na.rm=TRUE),
+    meansd_l = mean - stddev,
+    meansd_u = mean + stddev
+  )
+ 
+
+#The complete script with some styling added
+ggplot(swstats, aes(x=DEATH_EVENT_f, y=mean)) + 
+  geom_point(colour = "black" , size = 2) +
+  #Now plotting the individual data points before the mean values
+  geom_point(data=heart_failure, aes(x=DEATH_EVENT_f, y=serum_sodium, colour = DEATH_EVENT_f), 
+             position = position_jitter() ) +
+  scale_colour_manual(values = c("#999999","#d8717b") ) +
+  #Add the error bars
+  # The parameters ymin= and ymax= take the variables for the lower (mean – SD) and upper (mean + SD) bars, respectively.
+  geom_errorbar(aes(ymin = meansd_l, ymax = meansd_u), width=0.2, color = "black") +
+  # ylim(0, 3) +
+  labs(title = "Mean (-/+SD) serum sodium (mEq/L) by group", x = "", y = "Serum Sodium") +
+  guides(fill = "none")  +
+  coord_flip() +
+  theme_ipsum() +
+  theme(legend.position="none",
+        plot.title = element_text(size=14)
+  )
+
+# ___  check VAR equality {stats}   ------------------------------------------------------
+ stats::var.test(heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] ,
+                heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0])
+
+# F_ratio  1.5769 calc 
+# p-value = 0.007646
+# 95% CI of ration [1.127401 2.254466]
+# I conclude Vars are the same ~ (Fail to reject H0 = The population variances are equal)
+
+# Variance test 
+# Define the critical value of F distribution for a risk of alpha = 0.05
+# or STATOLOGY
+qf(p=.05, df1 = n_dead-1, df2 = n_alive-1, lower.tail = FALSE) # F critical value RIGHT-Tailed  1.325469
+qf(0.95, df1 = n_dead-1, df2 = n_alive-1, lower.tail = FALSE) # F critical value LEFT- Tailed: 0.741284
+qf(c(0.025, 0.975), df1 = n_dead-1, df2 = n_alive-1) # F critical value TWO-Tailed: 
+
+# --- 1/2 RESULTS  CI 95% [0.6994659 1.3987233] F_calc = 1.5769  outside 
+# --- 2/2 RESULTS # Compute the exact p-value (two-tailed ?)
+2 * (1 - pf(F_ratio, df1 = (n_dead-1), df2 = (n_alive-1))) # 0.8914982 /// p-value = 0.007646
+
+# ___  run 2 samples t test + WELCH   ------------------------------------------------------
+######  2 samples t test (R function)
+# With Welch correction (on by default) Unequal variance is compensated by lowering df
+t.test(heart$serum_sodium[heart$DEATH_EVENT == 1], 
+       heart$serum_sodium[heart$DEATH_EVENT == 0],
+       var.equal = FALSE
+       
+       ) # df = 184.79
+
+# _________--------------------------------------------------------------
+# _________--------------------------------------------------------------
+
+# One-way ANOVA -----------------------------------------------------------
+mice <- readxl::read_excel("lectures_slides/mice_exe_ANOVA.xlsx", col_types = c("numeric", "text", "skip"))
+
+
+# ____ Assumptions -------------------------------------------------------------
+
+# Independence OK 
+
+# NORMALITY 
+mice %>% 
+  ggplot(., aes(x = surv_days)) +
+  geom_histogram(bins = 20)
+
+ 
+
+# HOV
+library(viridis) # Colorblind-Friendly Color Maps for R # Colorblind-Friendly Color Maps for R
+library(hrbrthemes) # Additional Themes, Theme Components and Utilities for 'ggplot2' # Additional Themes, Theme Components and Utilities for 'ggplot2'
+mice %>% 
+  ggplot(., aes(x = group, y = surv_days, fill = group)) +
+  geom_boxplot() + 
+  scale_fill_viridis(discrete = TRUE, alpha=0.6, option="A") +
+  geom_jitter(color="black", size=0.4, alpha=0.9) +
+  theme_ipsum() +
+  theme(
+    legend.position="none",
+    plot.title = element_text(size=11)
+  ) +
+  ggtitle("Visually check HOV in populations' samples") +
+  xlab("") 
+
+mice %>%                            # name of the data
+  car::leveneTest(surv_days ~ group,   # continuous DV ~ 2-group IV
+                  data = .,            # pipe the data from above
+                  center = mean)       # default is median 
+
+# Levene H0 = several groups have the same variance (possible variance differences occur only by chance, since there are small differences in each sampling. )
+# No evidence of violations of HOV were found, F(2, 30) = 0.05, p = 0.8427
+# If the p-value for the Levene test is greater than .05, then the variances are not significantly different from each other (i.e., the homogeneity assumption of the variance is met). 
+# If the p-value for the Levene's test is less than .05, then there is a significant difference between the variances.
+# 
+#     H0: Groups have equal variances
+#     H1: Groups have different variances
+# 
+# It is important to note that the mean values of the individual groups have no influence on the result, they may differ. A big advantage of Levene's test is that it is very stable against violations of the normal distribution. Therefore, Levene's test is used in many statistics programs. 
+
+
+# manual - ANOVA ----------------------------------------------------------
+
+
+# ____ ANOVA calc F stat  -------------------------------------------------------------
+mice_calc <- mice %>% 
+  mutate(mean_all = mean(surv_days),
+         sd_all = sd (surv_days),
+         dfw = 33-3,
+         dfb = 3-1,
+         group_f = as.factor(group)
+         ) %>% 
+  group_by(group) %>% 
+  mutate(n_group = n(),
+         mean_group = mean(surv_days),
+         sd_group = sd (surv_days)) %>% 
+  ungroup() %>% 
+  mutate ( ST = (surv_days - mean_all)^2,
+           SW = (surv_days - mean_group)^2,
+           #SW_v2 = (n_group-1)*((sd_group)^2), 
+           SB = (mean_group - mean_all)^2
+  )
   
-  H0: The relationship between the following feature against heart_failure is independent
-H1: The relationship between the following feature against heart_failure is not independent -------
   
+SST <- sum(mice_calc$ST)
+SSB <- sum(mice_calc$SB)
+SSW <- sum(mice_calc$SW)
+dfw  <-  33-3  # df2
+dfb  <-  3-1 # df1
+ #SSW_v2 <- sum(mice_calc$SW_v2)
   
-# 2 sample t test  --------------------------------------------------------
-# https://rpubs.com/haroldchoi/677496
+SST  
+  
+F_calc <- (SSB/dfb)/(SSW/dfw) # 5.65
+  
+# find F critical value
+F_crit <- qf(p = 0.01, df1 = 2, df2 = 30, lower.tail = FALSE) # 5.390346
+  
+F_calc > F_crit # TRUE --> reject H0 
 
-E.g. understand is there statistical difference in the age of Male and Female of which have a higher chance of heart attack.
-The heart dataset is filtered for individuals who have a high likelihood of heart attack.
+# R - ANOVA ----------------------------------------------------------
+#https://statsandr.com/blog/anova-in-r/#anova-in-r
 
-# 1) test normality 
-# 2) test Test homogeneity of variance
-# 3) Student t test
+# ____ 1/2  oneway.test {stats}-------------------------------------------------------------
+# 1st method:
+oneway.test(surv_days ~ group_f,
+            data = mice_calc,
+            var.equal = TRUE # assuming equal variances
+)
+
+# ____ 2/2  summary() and aov(){stats}---------------------------------------------------------
+
+res_aov <- aov(surv_days ~ group_f,
+                 data = mice_calc)
+summary(res_aov) 
+# ( the p-value is smaller that 0.01: we CAN reject the null hypothesis that all means are equal --> we proved that at least one group is different. )
 
 
+# ____ re-check ASSUMPTIONS ---------------------------------------------------------
+par(mfrow = c(1, 2)) # combine plots
+# 1. Homogeneity of variances
+plot(res_aov, which = 3)
+# 2. Normality
+plot(res_aov, which = 2)
+
+# Plot on the left hand side shows that there is no evident relationships between residuals and fitted values (the mean of each group), so homogeneity of variances is assumed. If homogeneity of variances was violated, the red line would not be flat (horizontal).
+# 
+# Plot on the right hand side shows that residuals follow approximately a normal distribution, so normality is assumed. If normality was violated, points would consistently deviate from the dashed line.
+
+
+# ____ Bonferroni post-hoc tests ---------------------------------------------------
+# But most of the time, when we showed thanks to an ANOVA that at least one group is different, we are also interested in knowing which one(s) is(are) different. Results of an ANOVA, however, do NOT tell us which group(s) is(are) different from the others.
+
+# Post-hoc tests : 
+  
+# + Tukey HSD, used to compare all groups to each other (so all possible comparisons of 2 groups).
+# + Dunnett, used to make comparisons with a reference group. For example, consider 2 treatment groups and one control group. If you only want to compare the 2 treatment groups with respect to the control group, and you do not want to compare the 2 treatment groups to each other, the Dunnett’s test is preferred.
+# + Bonferroni correction if one has a set of planned comparisons to do.
+
+# ________ Bonferroni  test ---------------------------------------------
+# For Bonferroni you simply divide the desired global α level by the number of comparisons.
+bonf_alpha <- 0.01/3 # [1] 0.003333333
+# We can then simply perform a Student’s t-test for each comparison, and compare the obtained p-values with this new α′.
+
+t.test(surv_days~group,
+       data = mice[  mice$group!= "Treatment 1",], # p-value = 0.5567
+       var.equal = TRUE) 
+
+t.test(surv_days~group,
+       data = mice[  mice$group!= "Treatment 2",], # p-value = 0.02259
+       var.equal = TRUE) 
+
+t.test(surv_days~group,
+       data = mice[  mice$group!= "Control",], # p-value = 0.006154 
+       var.equal = TRUE) 
+# ________ Tukey  test{stats}---------------------------------------------
+tukey_res <- stats::TukeyHSD(res_aov)
+plot(tukey_res)
+
+# ________ Tukey  test{multcomp}---------------------------------------------
+library(multcomp) # Simultaneous Inference in General Parametric Models # Simultaneous Inference in General Parametric Models
+
+# Tukey HSD test:
+post_test <- glht(res_aov,
+                  linfct = mcp(group_f = "Tukey")
+)
+
+summary(post_test)
+
+# the last column (Pr(>|t|)) shows the adjusted7 p-values for each comparison (with the null hypothesis being the two groups are equal and the alternative hypothesis being the two groups are different).
+
+# The results of the post-hoc test can be visualized with the plot() function:
+  
+par(mar = c(3, 8, 3, 3))
+plot(post_test)
+
+# We see ONLY where the confidence intervals do not cross the zero line (Treatment 2 - Treatment 1), it indicate that a pair of groups are significantly different.
+
+# ________ Dunnett’s test---------------------------------------------
+# + the Tukey HSD test allows to compares all groups but at the cost of less power
+# + the Dunnett’s test allows to only make comparisons with a reference group, but with the benefit of more power
+
+# While comparing all possible groups with a Tukey HSD test is a common approach, many studies have a control group and several treatment groups. For these studies, you may need to compare the treatment groups only to the control group, which reduces the number of comparisons.
+
+# Dunnett’s test does precisely this—it only compares a group taken as reference to all other groups, but it does not compare all groups to each others.
+
+# Dunnett's test:
+post_test_D <- glht(res_aov,
+                  linfct = mcp(group_f = "Dunnett"))
+
+summary(post_test_D) # not stat sig diff againt control ?!?!?!
+
+# R, by default, the reference category for a factor variable is the first category in alphabetical order. This is the reason that, by default, the reference species is CONTROL !!! 
+# in case ...
+# Change reference category:
+mice_calc$group_f <- relevel(mice_calc$group_f, ref = "Control")
+# Check that Gentoo is the reference category:
+levels(mice_calc$group_f)
+
+
+# ____ Vis  ANOVA and post-hoc tests (1/2) ------------------------------------------------
+# Edit from here
+x <- which(names(mice_calc) == "group_f") # name of grouping variable
+y <- which(
+  names(mice_calc) == "surv_days" # names of variables to test
+)
+method1 <- "anova" # one of "anova" or "kruskal.test"
+method2 <- "t.test" # one of "wilcox.test" or "t.test"
+my_comparisons <- list(c("Treatment 1", "Control"), c("Treatment 2", "Control"), c("Treatment 2", "Treatment 1")) # comparisons for post-hoc tests
+# Edit until here
+
+
+# Edit at your own risk
+library(ggpubr) # 'ggplot2' Based Publication Ready Plots # 'ggplot2' Based Publication Ready Plots
+
+for (i in y) {
+  for (j in x) {
+    p <- ggboxplot(mice_calc,
+                   x = colnames(mice_calc[j]), 
+                   y = colnames(mice_calc[i]),
+                   color = colnames(mice_calc[j]),
+                   legend = "none",
+                   palette = "npg",
+                   add = "jitter"
+    )
+    print(
+      p + stat_compare_means(aes(label = paste0(after_stat(method), ", p-value = ", after_stat(p.format))),
+                             method = method1, label.y = max(mice_calc[, i], na.rm = TRUE)
+      )
+      + stat_compare_means(comparisons = my_comparisons, method = method2, label = "p.format") # remove if p-value of ANOVA or Kruskal-Wallis test >= alpha
+    )
+  }
+}
+
+# ____ Vis  ANOVA and post-hoc tests (2/2) NOPE ------------------------------------
+# install.packages("ggstatsplot") # require compilaton NO !
+library("ggstatsplot") # 'ggplot2' Based Plots with Statistical Details # 'ggplot2' Based Plots with Statistical Details
+
+ggbetweenstats(
+  data = mice_calc,
+  x = group_f,
+  y = surv_days,
+  type = "parametric", # ANOVA or Kruskal-Wallis
+  var.equal = TRUE, # ANOVA or Welch ANOVA
+  plot.type = "box",
+  pairwise.comparisons = TRUE,
+  pairwise.display = "significant",
+  centrality.plotting = FALSE,
+  bf.message = FALSE
+)
 # _________--------------------------------------------------------------
 
 # Possible correlation between two numeric columns? -----------------------
@@ -773,11 +1294,11 @@ calculate calculate the critical and test t value. The value of tval is the  val
 # Chicco e Jurman tests -----------
 We used common univariate tests such as 
 
-+ **Mann–Whitney U test**  - applied to each feature in relation to the death event target, detects whether we can reject the null hypothesis that the distribution of the each feature for the groups of samples defined by death event are the same. A low p-value of this test (close to 0) means that the ana- lyzed feature strongly relates to death event, while a high p-value (close to 1) means the opposite. 
++ **Mann–Whitney U test**  - applied to each feature in relation to the death event target, detects whether we can reject the null hypothesis that the distribution of the each feature for the groups of samples defined by death event are the same. A low p-value of this test (close to 0) means that the analyzed feature strongly relates to death event, while a high p-value (close to 1) means the opposite. 
 
-+ **Pearson correlation coefficient** (or Pearson product-moment correla- tion coefficient, PCC) [86] indicates the linear correlation between elements of two lists, showing the same elements on different positions. The absolute value of PCC generates a high value (close to 1) if the elements of the two lists have linear correlation, and a low value (close to 0) otherwise.
++ **Pearson correlation coefficient** (or Pearson product-moment correlation coefficient, PCC) [86] indicates the linear correlation between elements of two lists, showing the same elements on different positions. The absolute value of PCC generates a high value (close to 1) if the elements of the two lists have linear correlation, and a low value (close to 0) otherwise.
   
-+ chi square test [87] between two fea- tures checks how likely an observed distribution is due to chance [89]. A low p-value (close to 0) means that the two features have a strong relation; a high p-value (close to 1) means, instead, that the null hypothesis of independence cannot be discarded.
++ chi square test [87] between two features checks how likely an observed distribution is due to chance [89]. A low p-value (close to 0) means that the two features have a strong relation; a high p-value (close to 1) means, instead, that the null hypothesis of independence cannot be discarded.
 
 + plus the Shapiro–Wilk test [88] to assess if each feature was extracted from a normal distribution.
 

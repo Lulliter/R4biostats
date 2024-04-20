@@ -15,10 +15,15 @@ This website collects the materials for a two day workshop taking place during t
   + ~~practice slides and code Done !~~
   + lectures slides TO DO 
 + decidere dove tengo le immagini
++ Lecture 02 
+  + rifare grafici (sl 48, 49, 59 )
++ practice slides 
+  + inserire "Your turn" in practice lab   
+  + togliere tabs 
 
 ## How this website was built
 
-This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) to be rendered at this link [https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/). Now - after buying a "custom domain" - I deploy GitHub Pages website is now deployed over a custom domain registered with AWS Route 53: <https://r4biostats.com/>.
+This is a static website built with [Quarto](https://quarto.org/), shared on a Github [repo](https://github.com/Lulliter/R4biostats) and deployed via [Github Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) ~~to be rendered at this link [https://lulliter.github.io/R4biostats/](https://lulliter.github.io/R4biostats/)~~, or (after buying a "custom domain"), now deployed over a custom domain registered with AWS Route 53: <https://r4biostats.com/>.
 
 The main content of the website pages is contained in *Quarto Markdown* files (`*.qmd`). `*.qmd` files are very similar to regular Markdown (`*.md`) and R Markdown (`*.rmd`) files, except they are designed to be language agnostic.
 
