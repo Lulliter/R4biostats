@@ -62,8 +62,8 @@ website:
             href: lectures/lec03_corr_regress.qmd
           - text: "Intro to machine learning"
             href: lectures/lec04_intro_ML.qmd
-      - text: "Labs"
-        icon: terminal-fill #  archive-fill # https://icons.getbootstrap.com/?q=home
+      - text: "{{< fa brands r-project >}} Labs"
+        # icon: terminal-fill #  archive-fill # https://icons.getbootstrap.com/?q=home
         # href: practice.qmd
         menu: 
           - text: "Lab: Intro to R and data analysis"

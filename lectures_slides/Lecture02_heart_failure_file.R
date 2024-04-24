@@ -452,16 +452,16 @@ sigma  <- 59
 
 # SAMPLE HF patients
 n <- 299
-x__HF <- mean(heart$plat_norm)                 #    263.358
+x_HF <- mean(heart$plat_norm)                 #    263.358
 s_HF <- sd(heart$plat_norm)                    #    97.80424
 
 # IF large sample UNKNOWN sigma
 std_err_HF_1 <- s_HF /sqrt(n-1)                    #    5.6656
-z_stat_HF_1 <-  (x__HF - mu) / std_err_HF_1        # 4.8287
+z_stat_HF_1 <-  (x_HF - mu) / std_err_HF_1        # 4.8287
 
 # IF large sample KNOWN sigma
 std_err_HF <- sigma /sqrt(n)                    # 3.412058
-z_stat_HF <-  (x__HF - mu) / std_err_HF        # 8.018043
+z_calc_HF <-  (x_HF - mu) / std_err_HF        # 8.018043
 
 
 # To find the p-value associated with a z-score in R, we can use the pnorm() function, which uses the following syntax:
@@ -471,13 +471,13 @@ z_stat_HF <-  (x__HF - mu) / std_err_HF        # 8.018043
       # sd: The standard deviation of the normal distribution. Default is 1.
       # lower.tail: If TRUE, the probability to the left of q in the normal distribution is returned           # . If FALSE, the probability to the right is returned. Default is TRUE.
 
-pnorm(z_stat_HF, mean = 0, sd = 1, 
+pnorm(z_calc_HF, mean = 0, sd = 1, 
       lower.tail = TRUE) # Left-tailed test
 
-pnorm(z_stat_HF, mean = 0, sd = 1, 
+pnorm(z_calc_HF, mean = 0, sd = 1, 
       lower.tail = FALSE) # Right-tailed test
 
-2*pnorm(z_stat_HF, mean = 0, sd = 1, 
+2*pnorm(z_calc_HF, mean = 0, sd = 1, 
       lower.tail = FALSE) # Two-tailed test 0.00000000000000107443
 
 # SAMPLING DISTRIBUTION SIMULATON 
@@ -518,8 +518,8 @@ sigma  <- 59
 
 
 # SAMPLE HF patients followw up less 30 days 
-heart_30d <- heart %>% 
-  filter(time < 30) # 35 obs 
+heart_21d <- heart_failure %>% 
+  filter(time < 21) # 35 obs 
 
 n_30d <- nrow(heart_30d) # 35
 x__HF_30d <- mean(heart_30d$plat_norm)                 #    252.2981
@@ -581,9 +581,20 @@ heart %>%
             lower = diff(mean__group) + qt(.025, sum(n__group) - 2) * stderror,
             upper = diff(mean__group) + qt(.975, sum(n__group) - 2) * stderror)
 
+ 
 
-
-
+# Platelets boxplot -------------------------------------------------------
+ 
+heart_failure %>% 
+  ggplot(mapping = aes(y = plat_norm, x = DEATH_EVENT_f, fill = DEATH_EVENT_f)) +
+  geom_boxplot(alpha=0.5)+ 
+ #geom_violin(alpha=0.5) +
+  geom_point(position = position_jitter(width = 0.1), size = 0.5)+ 
+  scale_fill_manual(values = c("#999999", "#d8717b"))  +
+  # make x axis labes readable
+  theme(axis.text.x = element_text(angle=50, vjust=0.75)) +
+  # drop legend and Y-axis title
+  theme(legend.position = "none") 
 
 ###### Second, compute statistic 
 ###### ____1/4 datatab.net/ -------

@@ -60,7 +60,7 @@ R.Version()
 #R.version.string
 ```
 
-## Install `r fontawesome::fa("r-project", fill = "#5F85A7")`
+## Install {{< fa brands r-project >}}
 
 <!-- `r fontawesome::fa("fab fa-windows", fill = "steelblue")` -->
 
@@ -484,7 +484,6 @@ autism_pids %>%
 #| eval: false
 #| echo: true
 
-# Barbatrucco  !!!!!
 autism_pids %>% 
   skimr::skim() 
 ```
@@ -492,7 +491,6 @@ autism_pids %>%
 ```{r}
 #| eval: true
 #| echo: false
-#| output-location: slide
 #| out-width: 0.5\\textwidth
 
 # I can use it for the WHOLE dataframe!

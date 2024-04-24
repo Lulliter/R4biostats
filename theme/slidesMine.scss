@@ -86,14 +86,8 @@ details>summary {
 // FROM https://github.com/melissavanbussel/YouTube-Tutorials/blob/main/quarto_custom_callouts/custom.scss
 // ... 
 
-// lula 
-//.reveal .slides{
-//  
-//  b,strong {
-//		color: darken($primary,30);
-//	}
-//}
-
+// Lula's additions 
+// make the bold text more visible (also with color)
 .reveal .slide b, strong {
   color: #004a82;
   //font-family: "Source Sans Pro", Helvetica, sans-serif;
