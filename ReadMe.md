@@ -10,15 +10,13 @@ This website collects the materials for a two day workshop taking place during t
 + ~~move Lecture 1 inference 2 lecture 2~~
 + ~~upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`~~
 + **Lectures (pptx -> pdf)**
-  + Lecture 02 (90% done!)
+  + Lecture 02 (95% done!)
     + rifare grafici (9 sl con riquadri rossi)
   + Lecture 03  
   + Lecture 04  
 + **practice slides (revealjs)**
-  + Practice 01 (97% done!)  
-    + inserire "Your turn" in practice lab   
-    + togliere tabs in `practice/slides_lab01.qmd`
-  + Practice 02 (90% done!)  
+  + (general inserire "Your turn" in practice lab)❓❓ 
+  + Practice 02 (97% done!)  
   + Practice 03  
   + Practice 04  
 + **[optional]**

@@ -894,7 +894,8 @@ qwilcox(0.975, m = 203, n = 96) # 11111
 
 res <- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1
                    data = heart ,
-                   exact = FALSE, alternative = "two.sided" )
+                   exact = FALSE, 
+                   alternative = "two.sided" )
 res
 # res$p.value
 
