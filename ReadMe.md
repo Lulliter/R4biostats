@@ -78,6 +78,7 @@ I acknowledge inputs received from these very valuable sources:
 https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
 https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance
 - Parameterized reports/slides 
+  + **Jadey Ryan Talk** [website](https://jadeyryan.quarto.pub/rladies-dc-quarto-params/materials.html)
   + **R Medicine David Keyes workshop** [Presentation](https://static.sched.com/hosted_files/rmed2023a/9c/parameterized-reporting-slides.pdf)
   + **Jumping Rivers Mandy Norrbo** [Presentation](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
 

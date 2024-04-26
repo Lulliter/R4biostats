@@ -78,34 +78,31 @@ csl: ../bib/apaV2.csl
 
 ```{r}
 # Load them for this R session
+
+# General 
 library(fs)           # file/directory interactions
 library(here)         # tools find your project's files, based on working directory
 library(janitor)      # tools for examining and cleaning data
 library(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data 
 library(forcats)      # {tidyverse} tool for handling factors
 
+# Statistics
 library(BSDA)   
 library(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests
 library(car)          # Companion to Applied Regression
-library(broom)        # Convert Statistical Objects into Tidy Tibbles 
 library(multcomp)     # Simultaneous Inference in General Parametric Models 
 
+# Plotting
 library(ggplot2)      # {tidyverse} tools for plotting
 library(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details 
 library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
 library(patchwork)    # Functions for ""Grid" Graphics"composing" plots 
-#library(gridExtra)   # Miscellaneous Functions for "Grid" Graphics
-
-#library(hrbrthemes)   # Additional Themes, Theme Components and Utilities for 'ggplot2' 
 library(viridis)      # Colorblind-Friendly Color Maps for R 
-#library(ggridges)    # alternative to plot density functions 
 library(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'
-#library(RColorBrewer) # ColorBrewer Palettes 
-#library(kableExtra)  # Construct Complex Table with 'kable' and Pipe Syntax
 ```
 
 
-## Our datasets for today 
+## Our dataset for today 
 
 For the most part, we will refer to a real clinical dataset (for which a *Creative Commons license* was granted) discussed in two articles (also open access) :  
 
@@ -665,7 +662,7 @@ Stating the above hypotheses more formally:
   + $𝝁_{HF}$ ≠ 236 (two-sided test) 
 :::  
 
-## [1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?]{.r-fit-text}
+## [1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?]{.r-fit-text}
  
 
 ```{r}
@@ -700,6 +697,7 @@ General population data taken from the literature [See @wongsaengsak_significanc
 :::  
 
 ## 2.a Computation of the test statistic 
+::: {style="font-size: 90%;"}
 In this case, we have: 
 
 + a large sample $(n > 100)$
@@ -723,6 +721,7 @@ s_HF <- sd(heart_failure$plat_norm)           #    97.80424
 std_err_HF <- sigma /sqrt(n)                  # 3.412058
 z_calc_HF <-  (x_HF - mu) / std_err_HF        # 8.018043
 ```
+:::
 
 ## 2.b Computation of the p-value associated to the test statistic  
 
@@ -799,7 +798,7 @@ Stating the hypothesis more formally:
 :::
 
 
-## [1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?]{.r-fit-text}
+## [1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?]{.r-fit-text}
 ```{r}
 #| output-location: slide
 #| fig-cap: "For a general population, the Total Platelet Count (TPL) has 𝛍=236 (1000 /µL) and 𝛔= 59 (1000 /µL). Below is the smaller sample distribution:" 
@@ -856,8 +855,7 @@ $t_{calc} =\frac{\bar{x}-\mu}{\frac{s_\bar{x}}{\sqrt{n-1}}}$
 mu_pop <- 236 
 
 # SAMPLE HF patients follow up less 21 days 
-heart_21d <- heart_failure %>% 
-  filter(time <= 21)                                # 23 obs 
+heart_21d <- heart_failure %>% filter(time <= 21) 
 
 n_21d <- nrow(heart_21d)                            # 23
 x_HF_21d <- mean(heart_21d$plat_norm)               # 251.5094
@@ -879,7 +877,7 @@ t_calc_v2  <- t_stat_HF_21d_v2[["statistic"]][["t"]] # 0.7240093
 ```
 
 ::: {.aside}
-There is a small difference in the `t_calc ≠ t_calc_v2` due to the fact that I use the Bessel's correction `n-1` in the **sample standard deviation formula** denominator, while the R function uses `n`   
+There is a small difference in the `t_calc ≠ t_calc_v2` due to the fact that I use the Bessel's correction `n-1` in the **sample standard deviation formula** denominator, while the R function uses `n`
 :::
 
 ::: 
@@ -888,7 +886,7 @@ There is a small difference in the `t_calc ≠ t_calc_v2` due to the fact that I
 ## [2.c Computation of the p-value associated to the test statistic]{.r-fit-text} 
 
 ::: {style="font-size: 75%;"}
-+ Option 1:  "by hand" 
++ Option 1:  "by hand" ✍🏻
 
 To find the **p-value** associated with a t-score in R, we can use the `pt(q, df, lower.tail = TRUE)` function, which uses the following syntax:
 
@@ -911,7 +909,7 @@ To find the **p-value** associated with a t-score in R, we can use the `pt(q, df
 p_value_t_test <- 2*pt(t_calc, df_HF_21d, lower.tail = FALSE) # 0.4863214
 ```
 
-+ Option 2: from results of `stats::t.test`
++ Option 2: from results of `stats::t.test` 👩🏻‍💻
 ```{r}
 # ---- Option 2 
 # extract  p_value from results df
@@ -956,7 +954,7 @@ What changed testing a sample with smaller `n`, instead of a large one?
 ## [Comparing two independent sample means (t test)]{.r-fit-text}
 
 ::: {style="font-size: 80%;"}
-This time, we investigate if there a statistically significant difference between the Platelet Count means of the patients who died and of the patients who survived heart failure.
+This time, we investigate if there might be an actual difference in the Platelet Count means **between the patients who died and the patients who survived** heart failure.
 
 Stating the above hypotheses more formally:
 
@@ -973,7 +971,7 @@ Stating the above hypotheses more formally:
 
 ## [Comparing two independent sample means (t test) (cont.)]{.r-fit-text}
 
-[1. Question: is there a statistically significant difference between the Platelet Counts in the patients who died v. survived heart failure?]{.r-fit-text}
+[1. Question: Is there a statistically significant difference between the Platelet Counts in the patients who died v. survived heart failure?]{.r-fit-text}
 ```{r}
 #| output-location: slide
 #| fig-cap: "There seems to be no major difference in the two groups" 
@@ -1005,7 +1003,7 @@ heart_failure %>%
 
 ## [Preliminary Fisher's F test to check for variance equality]{.r-stretch}
 
-+ We can compute the Fisher test  "by hand"
++ We can compute the Fisher test "by hand" ✍🏻 
 ```{r}
 ## -- data by group
 n_died <- nrow(heart_failure[heart_failure$DEATH_EVENT == 1 ,])
@@ -1127,7 +1125,7 @@ mice <- readxl::read_excel(here::here("practice","data_input",
 ```
 
 
-## [1. Question:Is there a statistically significant difference between the mean values of the k populations? ]{.r-fit-text}
+## [1. Question: Is there a statistically significant difference between the mean values of the k populations? ]{.r-fit-text}
 
 Defining the question formally: 
 
@@ -1240,7 +1238,7 @@ $$𝑭_{calc}=\frac{Mean\, Square\, Between}{Mean, Square\, Within}=  \frac{MSB}
 
 ## [3.a Computation of ANOVA F-ratio ("by hand")]{.r-fit-text} 
 ::: {style="font-size: 80%;"}
-+ Option 1: Let's compute the ANOVA test "by hand" 
++ Option 1: Let's compute the ANOVA test "by hand" ✍🏻 
 
 ```{r}
 # Summary statistics
@@ -1277,9 +1275,9 @@ F_crit <- qf(p = 0.01, df1 = 2, df2 = 30, lower.tail = FALSE) # 5.390346
 ## [3.b Computation of ANOVA F-ratio (with R functions)]{.r-fit-text} 
 
 ::: {style="font-size: 90%;"}
-That was just to show how to build it step-by-step (🤓) but we don't have to! We have alternative R functions that can do ANOVA for us:
+That was just to show how to build it step-by-step (🤓), but we don't have to! We have alternative R functions that can do ANOVA for us:
 
-+ Option 2: With the `stats::aov` followed by the command `summary` 
++ Option 2: With the `stats::aov` followed by the command `summary` 👩🏻‍💻
 
 ```{r}
 aov_1 <- stats::aov(surv_days ~ group_f,
@@ -1287,7 +1285,7 @@ aov_1 <- stats::aov(surv_days ~ group_f,
 summary(aov_1) 
 ```
 
-+ Option 3: With the `stats::oneway.test()` function 
++ Option 3: With the `stats::oneway.test()` function 👩🏻‍💻
 
 ```{r}
 aov_2 <- stats::oneway.test(surv_days ~ group_f,
@@ -1392,7 +1390,7 @@ test
 
 We obtain the test statistic, the p-value and a reminder of the hypothesis tested.
 
-The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the grades are similar before and after the semester 😭.
+The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are similar before and after the semester (😭).
 
 
 ## Bonus function! 
@@ -1617,13 +1615,17 @@ INTERPRETATION: We therefore have sufficient evidence to say that the level of s
 
 
 ## Final thoughts/recommendations
-::: {.incremental}
+
+::: {style="font-size: 85%;"}
+
 + There are often **many ways to do the same thing in R** (which is both a blessing and a curse in open source software). *Which should you choose?* It depends on the situation, but you may want to consider:
 
   + how popular/well maintained is a `{package}` (this affects its stability) 
   + the more a function abstracts away complexity, the easier it is to use, but the harder it will get to handle it inside your own custom functions
   + different output formats may be more/less suitable for your analysis (check out your peers' choices!)
   + *(Always **read the documentation** to assess all of the above)* 
+
++ With easy equations, computing them "by hand" (at least once) can really help you understand them
 
 + It may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is **once you wrote a script, you will be able to easily re-use it in many more instances** 🙌🏻 😃 
 

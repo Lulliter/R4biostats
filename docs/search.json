@@ -11,14 +11,14 @@
     "href": "practice/slides_lab02.html#needed-r-packages",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\nlibrary(janitor)      # tools for examining and cleaning data\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)      # {tidyverse} tool for handling factors\n\nlibrary(BSDA)   \nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)          # Companion to Applied Regression\nlibrary(broom)        # Convert Statistical Objects into Tidy Tibbles \nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details \nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \n#library(gridExtra)   # Miscellaneous Functions for \"Grid\" Graphics\n\n#library(hrbrthemes)   # Additional Themes, Theme Components and Utilities for 'ggplot2' \nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \n#library(ggridges)    # alternative to plot density functions \nlibrary(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'\n#library(RColorBrewer) # ColorBrewer Palettes \n#library(kableExtra)  # Construct Complex Table with 'kable' and Pipe Syntax"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\nlibrary(janitor)      # tools for examining and cleaning data\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)      # {tidyverse} tool for handling factors\n\n# Statistics\nlibrary(BSDA)   \nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)          # Companion to Applied Regression\nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\n# Plotting\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details \nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'"
   },
   {
-    "objectID": "practice/slides_lab02.html#our-datasets-for-today",
-    "href": "practice/slides_lab02.html#our-datasets-for-today",
+    "objectID": "practice/slides_lab02.html#our-dataset-for-today",
+    "href": "practice/slides_lab02.html#our-dataset-for-today",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Our datasets for today",
-    "text": "Our datasets for today\nFor the most part, we will refer to a real clinical dataset (for which a Creative Commons license was granted) discussed in two articles (also open access) :\n\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001\n\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\n\n\nHere is the link to the dataset (or download from workshop website)\n\nFrom the UC Irvine Machine Learning Repository Heart Failure Clinical Records"
+    "section": "Our dataset for today",
+    "text": "Our dataset for today\nFor the most part, we will refer to a real clinical dataset (for which a Creative Commons license was granted) discussed in two articles (also open access) :\n\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001\n\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\n\n\nHere is the link to the dataset (or download from workshop website)\n\nFrom the UC Irvine Machine Learning Repository Heart Failure Clinical Records"
   },
   {
     "objectID": "practice/slides_lab02.html#importing-from-your-project-folder-previously-downloaded-file",
@@ -231,25 +231,25 @@
     "text": "Comparing sample mean to a hypothesized population mean (with Z test)\n\nStating the above hypotheses more formally:\nWhat is the population Total Platelet Count (TPC) mean for all people who suffered of heart failure (\\(𝝁_{HF}\\))?\n\n\n\\(𝑯_𝟎\\) : there is no difference in mean TPC between patients who suffered heart failure and the general population\n\n\n\\(𝝁_{HF}\\) = 236 -&gt; hypothesis of no effect or (“no difference”)\n\n\n\n\\(𝑯_𝒂\\) : there is a difference in mean TPC between patients who have suffered heart failure and the general population (“some effect”). This can be formalized as either:\n\n\n\\(𝝁_{HF}\\) &lt; 236 (one-sided test), or\n\n\n\\(𝝁_{HF}\\) &gt; 236 (one-sided test), or\n\n\\(𝝁_{HF}\\) ≠ 236 (two-sided test)"
   },
   {
-    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population",
-    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population",
+    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population",
+    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?",
-    "text": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?\n\n# compute mean & sd for plot\nmean_plat_p &lt;- round(mean(heart_failure$plat_norm), digits = 1)\nsd_plat_p &lt;- round(sd(heart_failure$plat_norm), digits = 1)\n \nheart_failure %&gt;% \n  ggplot(aes(x = plat_norm))+\n  geom_histogram(aes(y = ..density..), bins=30, alpha=0.25, colour = \"#4c4c4c\") + \n  geom_density(colour =\"#9b2339\", alpha=0.25, fill = \"#9b2339\") +\n  # add mean vertical line\n  geom_vline(xintercept = mean_plat_p, na.rm = FALSE,size = 1,color= \"#9b6723\") +\n  # add also +/- 1sd  \n  geom_vline(aes(xintercept = mean_plat_p + sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  geom_vline(aes(xintercept = mean_plat_p - sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  # add annotations with the mean value\n  geom_label(aes(x=mean_plat_p,  y=0.0085, label=paste0(\"Sample mean\\n\",mean_plat_p)),\n             color = \"#9b6723\") + \n  geom_label(aes(x=361,  y=0.0085, label=paste0(\"Sample sd\\n\",sd_plat_p)),\n             color = \"#23749b\") +\n  theme_bw() +  labs(y = \"Density\", x = \"Sample platelet count (x 1000/µL)\") \n\n\n\n\nGeneral population data taken from the literature (See Wongsaengsak, Dennis, Arevalo, Ball, & Nugent, 2019)."
+    "section": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?",
+    "text": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?\n\n# compute mean & sd for plot\nmean_plat_p &lt;- round(mean(heart_failure$plat_norm), digits = 1)\nsd_plat_p &lt;- round(sd(heart_failure$plat_norm), digits = 1)\n \nheart_failure %&gt;% \n  ggplot(aes(x = plat_norm))+\n  geom_histogram(aes(y = ..density..), bins=30, alpha=0.25, colour = \"#4c4c4c\") + \n  geom_density(colour =\"#9b2339\", alpha=0.25, fill = \"#9b2339\") +\n  # add mean vertical line\n  geom_vline(xintercept = mean_plat_p, na.rm = FALSE,size = 1,color= \"#9b6723\") +\n  # add also +/- 1sd  \n  geom_vline(aes(xintercept = mean_plat_p + sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  geom_vline(aes(xintercept = mean_plat_p - sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  # add annotations with the mean value\n  geom_label(aes(x=mean_plat_p,  y=0.0085, label=paste0(\"Sample mean\\n\",mean_plat_p)),\n             color = \"#9b6723\") + \n  geom_label(aes(x=361,  y=0.0085, label=paste0(\"Sample sd\\n\",sd_plat_p)),\n             color = \"#23749b\") +\n  theme_bw() +  labs(y = \"Density\", x = \"Sample platelet count (x 1000/µL)\") \n\n\n\n\nGeneral population data taken from the literature (See Wongsaengsak, Dennis, Arevalo, Ball, & Nugent, 2019)."
   },
   {
-    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-output",
-    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-output",
+    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-output",
+    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-output",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?",
-    "text": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?\n\n\nFor a general population, the Total Platelet Count (TPL) has 𝛍=236 (1000 /µL) and 𝛔= 59 (1000 /µL). Below is the sample distribution:"
+    "section": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?",
+    "text": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?\n\n\nFor a general population, the Total Platelet Count (TPL) has 𝛍=236 (1000 /µL) and 𝛔= 59 (1000 /µL). Below is the sample distribution:"
   },
   {
     "objectID": "practice/slides_lab02.html#a-computation-of-the-test-statistic",
     "href": "practice/slides_lab02.html#a-computation-of-the-test-statistic",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "2.a Computation of the test statistic",
-    "text": "2.a Computation of the test statistic\nIn this case, we have:\n\na large sample \\((n &gt; 100)\\)\n\na known \\(𝛔^𝟐\\) (of the reference population)\nthe observed sample mean \\(\\bar{x}\\) and sample sd \\(s\\).\n\nSo we can compute:\n\\(𝒁_{calc}=\\frac{\\bar{x}-\\mu}{\\frac{\\sigma}{\\sqrt{n}}}\\)\n\n✍🏻 Let’s do it “by hand” first to see the steps\n\n\n# General Population of reference \nmu &lt;- 236 \nsigma  &lt;- 59\n# Sample of HF patients\nn &lt;- 299\nx_HF &lt;- mean(heart_failure$plat_norm)         #    263.358\ns_HF &lt;- sd(heart_failure$plat_norm)           #    97.80424\n# IF large sample & KNOWN pop variance \nstd_err_HF &lt;- sigma /sqrt(n)                  # 3.412058\nz_calc_HF &lt;-  (x_HF - mu) / std_err_HF        # 8.018043"
+    "text": "2.a Computation of the test statistic\n\nIn this case, we have:\n\na large sample \\((n &gt; 100)\\)\n\na known \\(𝛔^𝟐\\) (of the reference population)\nthe observed sample mean \\(\\bar{x}\\) and sample sd \\(s\\).\n\nSo we can compute:\n\\(𝒁_{calc}=\\frac{\\bar{x}-\\mu}{\\frac{\\sigma}{\\sqrt{n}}}\\)\n\n✍🏻 Let’s do it “by hand” first to see the steps\n\n\n# General Population of reference \nmu &lt;- 236 \nsigma  &lt;- 59\n# Sample of HF patients\nn &lt;- 299\nx_HF &lt;- mean(heart_failure$plat_norm)         #    263.358\ns_HF &lt;- sd(heart_failure$plat_norm)           #    97.80424\n# IF large sample & KNOWN pop variance \nstd_err_HF &lt;- sigma /sqrt(n)                  # 3.412058\nz_calc_HF &lt;-  (x_HF - mu) / std_err_HF        # 8.018043"
   },
   {
     "objectID": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic",
@@ -257,6 +257,13 @@
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "2.b Computation of the p-value associated to the test statistic",
     "text": "2.b Computation of the p-value associated to the test statistic\nTo find the p-value associated with a z-score in R, we can use the pnorm() function, which uses the following syntax:\n\n\nq: The z-score\n\nmean: The mean of the normal distribution. Default is 0.\n\nsd: The standard deviation of the normal distribution. Default is 1.\n\nlower.tail:\n\nIf TRUE, the probability to the left of q in the normal distribution is returned\nIf FALSE, the probability to the right is returned. Default is TRUE.\n\n\n\n\n# Left-tailed test\np_value_l &lt;- stats::pnorm(z_calc_HF, mean = 0, sd = 1, lower.tail = TRUE) \n# Right-tailed test\np_value_r &lt;- stats::pnorm(z_calc_HF, mean = 0, sd = 1,lower.tail = FALSE) \n# Two-tailed test  (our case)\np_value_two &lt;- 2*stats::pnorm(z_calc_HF, mean = 0, sd = 1, lower.tail = FALSE)"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic",
+    "href": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "2.c Computation of the p-value associated to the test statistic",
+    "text": "2.c Computation of the p-value associated to the test statistic\n\n👩🏻‍💻 Let’s see how this could be done using an R function BSDA::z.test\n\n\n\nz_test_summary &lt;- BSDA::z.test(x = heart_failure$plat_norm,   \n             alternative='two.sided', \n             mu=236, \n             sigma.x=59, \n             conf.level=.95)\nz_test_summary\n\n\n    One-sample z-Test\n\ndata:  heart_failure$plat_norm\nz = 8.018, p-value = 1.074e-15\nalternative hypothesis: true mean is not equal to 236\n95 percent confidence interval:\n 256.6705 270.0455\nsample estimates:\nmean of x \n  263.358 \n\n\nSame results!"
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation",
@@ -273,32 +280,39 @@
     "text": "Comparing sample mean to a hypothesized population mean (with t test)\n\nSame question, but with a smaller sample to work on (this varies, but generally it means \\(n &lt; 30\\)). Imagine the patients were only observed over a follow-up period of 21 days, and also let’s assume we don’t know the population’s variance\nStating the hypothesis more formally:\nWhat is the population Total Platelet Count (TPC) mean for all people who suffered of heart failure (\\(𝝁_{HF21d}\\)) in the past 21 days or less?\n\n\n\\(𝑯_𝟎\\) : there is no difference in mean TPC between patients who suffered heart failure (visited in 21 days) and the general population\n\n\n\\(𝝁_{HF21d}\\) = 236 -&gt; hypothesis of no effect or (“no difference”)\n\n\n\n\\(𝑯_𝒂\\) : there is a difference in mean TPC between patients who have suffered heart failure and the general population (“some effect”). This can be formalized as:\n\n\n\\(𝝁_{HF21d}\\) ≠ 236 (two-sided test)"
   },
   {
-    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-1",
-    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-1",
+    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-1",
+    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-1",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?",
-    "text": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?\n\n# normalize the var for readability \nheart_21d  &lt;-  heart_failure %&gt;%  dplyr::mutate(plat_norm = platelets/1000) %&gt;% \n  filter(time &lt;= 21)                                # 23 obs \n# compute mean & sd for plot\nmean_plat_p &lt;- round(mean(heart_21d$plat_norm), digits = 1)\nsd_plat_p &lt;- round(sd(heart_21d$plat_norm), digits = 1)\n \nheart_21d %&gt;% \n  ggplot(aes(x = plat_norm))+\n  geom_histogram(aes(y = ..density..), bins=30, alpha=0.25, colour = \"#4c4c4c\") + \n  geom_density(colour =\"#9b2339\", alpha=0.25, fill = \"#9b2339\") +\n  # add mean vertical line\n  geom_vline(xintercept = mean_plat_p, na.rm = FALSE,size = 1,color= \"#9b6723\") +\n  # add also +/- 1sd  \n  geom_vline(aes(xintercept = mean_plat_p + sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  geom_vline(aes(xintercept = mean_plat_p - sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  # add annotations with the mean value\n  geom_label(aes(x=mean_plat_p,  y=0.014, label=paste0(\"Sample mean\\n\",mean_plat_p)),\n             color = \"#9b6723\") + \n  geom_label(aes(x=361,  y=0.014, label=paste0(\"Sample sd\\n\",sd_plat_p)),\n             color = \"#23749b\") +\n  theme_bw() +  labs(y = \"Density\", x = \"Sample platelet count (x 1000/µL)\")"
+    "section": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?",
+    "text": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?\n\n# normalize the var for readability \nheart_21d  &lt;-  heart_failure %&gt;%  dplyr::mutate(plat_norm = platelets/1000) %&gt;% \n  filter(time &lt;= 21)                                # 23 obs \n# compute mean & sd for plot\nmean_plat_p &lt;- round(mean(heart_21d$plat_norm), digits = 1)\nsd_plat_p &lt;- round(sd(heart_21d$plat_norm), digits = 1)\n \nheart_21d %&gt;% \n  ggplot(aes(x = plat_norm))+\n  geom_histogram(aes(y = ..density..), bins=30, alpha=0.25, colour = \"#4c4c4c\") + \n  geom_density(colour =\"#9b2339\", alpha=0.25, fill = \"#9b2339\") +\n  # add mean vertical line\n  geom_vline(xintercept = mean_plat_p, na.rm = FALSE,size = 1,color= \"#9b6723\") +\n  # add also +/- 1sd  \n  geom_vline(aes(xintercept = mean_plat_p + sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  geom_vline(aes(xintercept = mean_plat_p - sd_plat_p), \n             color = \"#23749b\", size = 1, linetype = \"dashed\") +\n  # add annotations with the mean value\n  geom_label(aes(x=mean_plat_p,  y=0.014, label=paste0(\"Sample mean\\n\",mean_plat_p)),\n             color = \"#9b6723\") + \n  geom_label(aes(x=361,  y=0.014, label=paste0(\"Sample sd\\n\",sd_plat_p)),\n             color = \"#23749b\") +\n  theme_bw() +  labs(y = \"Density\", x = \"Sample platelet count (x 1000/µL)\")"
   },
   {
-    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-1-output",
-    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-a-against-a-reference-population-1-output",
+    "objectID": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-1-output",
+    "href": "practice/slides_lab02.html#question-how-does-the-mean-platelets-count-in-the-patients-sample-compare-against-a-reference-population-1-output",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?",
-    "text": "1. Question: How does the mean platelets count in the patients’ sample compare a against a reference population?\n\n\nFor a general population, the Total Platelet Count (TPL) has 𝛍=236 (1000 /µL) and 𝛔= 59 (1000 /µL). Below is the smaller sample distribution:"
+    "section": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?",
+    "text": "1. Question: How does the mean platelets count in the patients’ sample compare against a reference population?\n\n\nFor a general population, the Total Platelet Count (TPL) has 𝛍=236 (1000 /µL) and 𝛔= 59 (1000 /µL). Below is the smaller sample distribution:"
   },
   {
-    "objectID": "practice/slides_lab02.html#a-computation-of-the-test-statistic-1",
-    "href": "practice/slides_lab02.html#a-computation-of-the-test-statistic-1",
+    "objectID": "practice/slides_lab02.html#a-picking-the-suitable-test",
+    "href": "practice/slides_lab02.html#a-picking-the-suitable-test",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.a Computation of the test statistic",
-    "text": "2.a Computation of the test statistic"
+    "section": "2.a Picking the suitable test",
+    "text": "2.a Picking the suitable test\nIn this case, we have:\n\na “small” sample \\(n = 23\\)\n\nan unknown \\(𝛔^𝟐\\) (of the reference population)\nWe obtained the sample mean \\(\\bar{x}\\) and sample sd \\(s\\).\n\nSo we can compute:\n\\(t_{calc} =\\frac{\\bar{x}-\\mu}{\\frac{s_\\bar{x}}{\\sqrt{n-1}}}\\)"
   },
   {
-    "objectID": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-1",
-    "href": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-1",
+    "objectID": "practice/slides_lab02.html#b-computation-of-the-test-statistic",
+    "href": "practice/slides_lab02.html#b-computation-of-the-test-statistic",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.b Computation of the p-value associated to the test statistic",
-    "text": "2.b Computation of the p-value associated to the test statistic"
+    "section": "2.b Computation of the test statistic",
+    "text": "2.b Computation of the test statistic\n\n\nOption 1: Let’s compute the t test “by hand” ✍🏻\n\n\n# General Population of reference \nmu_pop &lt;- 236 \n\n# SAMPLE HF patients follow up less 21 days \nheart_21d &lt;- heart_failure %&gt;% filter(time &lt;= 21) \n\nn_21d &lt;- nrow(heart_21d)                            # 23\nx_HF_21d &lt;- mean(heart_21d$plat_norm)               # 251.5094\ns_HF_21d &lt;- sd(heart_21d$plat_norm)                 # 102.7341\ndf_HF_21d &lt;- n_21d-1                                # 22   \n\n# IF SMALL sample UNKNOWN sigma\nstd_err_HF_21d &lt;- s_HF_21d /sqrt(n_21d -1)        # 21.90298\nt_calc &lt;-  (x_HF_21d - mu_pop) / std_err_HF_21d   # 0.7080951\n\n\nOption 2: Let’s compute the t test with stats::t.test 👩🏻‍💻\n\n\nt_stat_HF_21d_v2 &lt;- stats::t.test(x = heart_21d$plat_norm,\n                                  mu = mu_pop,\n                                  alternative = \"two.sided\")\n# extract t_calc from results df\nt_calc_v2  &lt;- t_stat_HF_21d_v2[[\"statistic\"]][[\"t\"]] # 0.7240093\n\n\n\n\nThere is a small difference in the t_calc ≠ t_calc_v2 due to the fact that I use the Bessel’s correction n-1 in the sample standard deviation formula denominator, while the R function uses n"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic-1",
+    "href": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic-1",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "2.c Computation of the p-value associated to the test statistic",
+    "text": "2.c Computation of the p-value associated to the test statistic\n\n\nOption 1: “by hand” ✍🏻\n\nTo find the p-value associated with a t-score in R, we can use the pt(q, df, lower.tail = TRUE) function, which uses the following syntax:\n\n\nq: The t-score\n\ndf: The degrees of freedom\n\nlower.tail:\n\nTRUE to calculate the probability to the left of q which is called as left-tailed test\nFALSE as right-tailed test.\n\n\n\n\n# ---- Option 1 \n# -- Left-tailed test\n#pt(t_stat_HF_21d, df_HF_21d, lower.tail = TRUE)\n\n# -- Right-tailed test\n#pt(t_stat_HF_21d, df_HF_21d, lower.tail = FALSE) \n\n# -- Two-tailed test  (our case)\np_value_t_test &lt;- 2*pt(t_calc, df_HF_21d, lower.tail = FALSE) # 0.4863214\n\n\nOption 2: from results of stats::t.test 👩🏻‍💻\n\n\n# ---- Option 2 \n# extract  p_value from results df\np_value_v2  &lt;- t_stat_HF_21d_v2[[\"p.value\"]] # 0.4766892"
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation-1",
@@ -312,14 +326,14 @@
     "href": "practice/slides_lab02.html#comparing-two-independent-sample-means-t-test",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Comparing two independent sample means (t test)",
-    "text": "Comparing two independent sample means (t test)\n\nThis time, we investigate if there a statistically significant difference between the Platelet Count means of the patients who died and of the patients who survived heart failure.\nStating the above hypotheses more formally:\nIs there a statistically significant difference between the mean values of two groups?\n\n\n\\(𝑯_𝟎\\) : The two population means are equal\n\n\n\\(𝝁_𝟏 = 𝝁_𝟎 ⟺ 𝝁_𝟏−𝝁_𝟎=𝟎\\)\n\n\n\n\n\\(𝑯_𝒂\\) : There is a mean difference between the two groups in the population. Possible directional difference formulation (two-tailed, left-tailed, right-tailed)\n\n\n\\(𝝁_𝟏≠𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎≠𝟎\\) (the two population means are not equal)\n\n\\(𝝁_𝟏 &lt; 𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎&lt;𝟎\\) (population 1 mean is less than population 0 mean)\n\n\\(𝝁_𝟏 &gt; 𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎&gt;𝟎\\) (population 1 mean is greater than population 0 mean)"
+    "text": "Comparing two independent sample means (t test)\n\nThis time, we investigate if there might be an actual difference in the Platelet Count means between the patients who died and the patients who survived heart failure.\nStating the above hypotheses more formally:\nIs there a statistically significant difference between the mean values of two groups?\n\n\n\\(𝑯_𝟎\\) : The two population means are equal\n\n\n\\(𝝁_𝟏 = 𝝁_𝟎 ⟺ 𝝁_𝟏−𝝁_𝟎=𝟎\\)\n\n\n\n\n\\(𝑯_𝒂\\) : There is a mean difference between the two groups in the population. Possible directional difference formulation (two-tailed, left-tailed, right-tailed)\n\n\n\\(𝝁_𝟏≠𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎≠𝟎\\) (the two population means are not equal)\n\n\\(𝝁_𝟏 &lt; 𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎&lt;𝟎\\) (population 1 mean is less than population 0 mean)\n\n\\(𝝁_𝟏 &gt; 𝝁_𝟎  ⟺ 𝝁_𝟏−𝝁_𝟎&gt;𝟎\\) (population 1 mean is greater than population 0 mean)"
   },
   {
     "objectID": "practice/slides_lab02.html#comparing-two-independent-sample-means-t-test-cont.",
     "href": "practice/slides_lab02.html#comparing-two-independent-sample-means-t-test-cont.",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Comparing two independent sample means (t test) (cont.)",
-    "text": "Comparing two independent sample means (t test) (cont.)\n1. Question: is there a statistically significant difference between the Platelet Counts in the patients who died v. survived heart failure?\n\n# boxplot by group\nheart_failure %&gt;% \n  ggplot(mapping = aes(y = plat_norm, x = DEATH_EVENT_f, fill = DEATH_EVENT_f)) +\n  geom_boxplot(alpha=0.5)+ \n  #geom_violin(alpha=0.5) +\n  geom_point(position = position_jitter(width = 0.1), size = 0.5)+ \n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))  +\n  # drop legend and Y-axis title\n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"),\n        legend.position = \"none\",\n        axis.text.x = element_text(size=12,face=\"bold\"), \n        axis.text.y = element_text(size=12,face=\"bold\")) + \n  labs(title = \"Boxplot of Total Platelet Count (TPL), grouping by DEATH_EVENT [0,1]\",\n       x = \"\", y  = \"Platelet count (1000 /µL)\")"
+    "text": "Comparing two independent sample means (t test) (cont.)\n1. Question: Is there a statistically significant difference between the Platelet Counts in the patients who died v. survived heart failure?\n\n# boxplot by group\nheart_failure %&gt;% \n  ggplot(mapping = aes(y = plat_norm, x = DEATH_EVENT_f, fill = DEATH_EVENT_f)) +\n  geom_boxplot(alpha=0.5)+ \n  #geom_violin(alpha=0.5) +\n  geom_point(position = position_jitter(width = 0.1), size = 0.5)+ \n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))  +\n  # drop legend and Y-axis title\n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"),\n        legend.position = \"none\",\n        axis.text.x = element_text(size=12,face=\"bold\"), \n        axis.text.y = element_text(size=12,face=\"bold\")) + \n  labs(title = \"Boxplot of Total Platelet Count (TPL), grouping by DEATH_EVENT [0,1]\",\n       x = \"\", y  = \"Platelet count (1000 /µL)\")"
   },
   {
     "objectID": "practice/slides_lab02.html#comparing-two-independent-sample-means-t-test-cont.-output",
@@ -340,7 +354,7 @@
     "href": "practice/slides_lab02.html#preliminary-fishers-f-test-to-check-for-variance-equality",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Preliminary Fisher’s F test to check for variance equality",
-    "text": "Preliminary Fisher’s F test to check for variance equality\n\nWe can compute the Fisher test “by hand”\n\n\n## -- data by group\nn_died &lt;- nrow(heart_failure[heart_failure$DEATH_EVENT == 1 ,])\nmean_died &lt;- mean(heart_failure [ heart_failure$DEATH_EVENT == 1,  \"plat_norm\"])\nsd_died &lt;- sd(heart_failure [heart_failure$DEATH_EVENT == 1 ,  \"plat_norm\"])\nvar_died &lt;- var(heart_failure [heart_failure$DEATH_EVENT == 1 ,  \"plat_norm\"])\n\nn_survived &lt;- nrow(heart_failure[heart_failure$DEATH_EVENT == 0, ])\nmean_survived &lt;- mean(heart_failure [ heart_failure$DEATH_EVENT == 0,  \"plat_norm\"])\nsd_survived &lt;- sd(heart_failure [heart_failure$DEATH_EVENT == 0 ,  \"plat_norm\"])\nvar_survived &lt;- var(heart_failure [heart_failure$DEATH_EVENT == 0 ,  \"plat_norm\"])\n\n## -- F TEST\nF_ratio &lt;- var_died / var_survived\nF_ratio  # 1.020497 \n\n[1] 1.020497"
+    "text": "Preliminary Fisher’s F test to check for variance equality\n\nWe can compute the Fisher test “by hand” ✍🏻\n\n\n## -- data by group\nn_died &lt;- nrow(heart_failure[heart_failure$DEATH_EVENT == 1 ,])\nmean_died &lt;- mean(heart_failure [ heart_failure$DEATH_EVENT == 1,  \"plat_norm\"])\nsd_died &lt;- sd(heart_failure [heart_failure$DEATH_EVENT == 1 ,  \"plat_norm\"])\nvar_died &lt;- var(heart_failure [heart_failure$DEATH_EVENT == 1 ,  \"plat_norm\"])\n\nn_survived &lt;- nrow(heart_failure[heart_failure$DEATH_EVENT == 0, ])\nmean_survived &lt;- mean(heart_failure [ heart_failure$DEATH_EVENT == 0,  \"plat_norm\"])\nsd_survived &lt;- sd(heart_failure [heart_failure$DEATH_EVENT == 0 ,  \"plat_norm\"])\nvar_survived &lt;- var(heart_failure [heart_failure$DEATH_EVENT == 0 ,  \"plat_norm\"])\n\n## -- F TEST\nF_ratio &lt;- var_died / var_survived\nF_ratio  # 1.020497 \n\n[1] 1.020497"
   },
   {
     "objectID": "practice/slides_lab02.html#preliminary-fishers-f-test-to-check-for-variance-equality-.cont",
@@ -378,18 +392,18 @@
     "text": "Comparing sample means from 3 or more groups (ANOVA)\nIn this example, we adopt the ANOVA (“Analysis Of Variance”) test, i.e. an extension of the previous test, but examined how means of a variable differ across 3 or more groups. We will use ‘one- way’ ANOVA, which serves when there is only one explanatory variable (“treatment”) with 3 or more levels, and only one level of treatment is applied for a given subject.\nFor this particular case, we use another realistic dataset showing the survival times of 33 laboratory mice with thymic leukemia who were randomly divided into 3 groups:\n\n1st group received Treatment 1\n2nd group received Treatment 2\n3rd group as Control\n\n\n# load new dataset\nmice &lt;- readxl::read_excel(here::here(\"practice\",\"data_input\",\n                                      \"02_datasets\",\"mice_exe_ANOVA.xlsx\"))"
   },
   {
-    "objectID": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations",
-    "href": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations",
+    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations",
+    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question:Is there a statistically significant difference between the mean values of the k populations?",
-    "text": "1. Question:Is there a statistically significant difference between the mean values of the k populations?\nDefining the question formally:\n\n\n\\(𝑯_𝟎\\) : \\(𝝁_𝟏 = 𝝁_𝟐 =  𝝁_3\\) all 3 population means are equal\n\n\\(𝑯_𝒂\\) : at least one of \\((𝝁_𝟏,𝝁_𝟐,𝝁_3)\\) is not equal to the other means\n\n\n# boxplot by group\nmice %&gt;% \nggplot(., aes(x = group, y = surv_days, fill = group)) +\n  geom_boxplot() + \n  scale_fill_viridis(discrete = TRUE, alpha=0.6, option=\"A\") +\n  geom_jitter(color=\"black\", size=0.4, alpha=0.9) +\n  # theme_minimal() +\n  # drop legend and Y-axis title\n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"),\n        axis.text.x = element_text(size=12,face=\"bold\"), \n        axis.text.y = element_text(size=12,face=\"bold\"),\n        legend.position = \"none\",\n        ) + \n  labs(title = \"Visually check mean and variance in populations' samples\" ) + \n  ylab(label = \"Survival (# days\") + xlab(label = \"\")"
+    "section": "1. Question: Is there a statistically significant difference between the mean values of the k populations?",
+    "text": "1. Question: Is there a statistically significant difference between the mean values of the k populations?\nDefining the question formally:\n\n\n\\(𝑯_𝟎\\) : \\(𝝁_𝟏 = 𝝁_𝟐 =  𝝁_3\\) all 3 population means are equal\n\n\\(𝑯_𝒂\\) : at least one of \\((𝝁_𝟏,𝝁_𝟐,𝝁_3)\\) is not equal to the other means\n\n\n# boxplot by group\nmice %&gt;% \nggplot(., aes(x = group, y = surv_days, fill = group)) +\n  geom_boxplot() + \n  scale_fill_viridis(discrete = TRUE, alpha=0.6, option=\"A\") +\n  geom_jitter(color=\"black\", size=0.4, alpha=0.9) +\n  # theme_minimal() +\n  # drop legend and Y-axis title\n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"),\n        axis.text.x = element_text(size=12,face=\"bold\"), \n        axis.text.y = element_text(size=12,face=\"bold\"),\n        legend.position = \"none\",\n        ) + \n  labs(title = \"Visually check mean and variance in populations' samples\" ) + \n  ylab(label = \"Survival (# days\") + xlab(label = \"\")"
   },
   {
-    "objectID": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations-output",
-    "href": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations-output",
+    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations-output",
+    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-the-mean-values-of-the-k-populations-output",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question:Is there a statistically significant difference between the mean values of the k populations?",
-    "text": "1. Question:Is there a statistically significant difference between the mean values of the k populations?\n\n\nThe boxplot suggests that the 3 groups might have some fairly different distributions"
+    "section": "1. Question: Is there a statistically significant difference between the mean values of the k populations?",
+    "text": "1. Question: Is there a statistically significant difference between the mean values of the k populations?\n\n\nThe boxplot suggests that the 3 groups might have some fairly different distributions"
   },
   {
     "objectID": "practice/slides_lab02.html#verify-the-assumptions-for-one-way-anova",
@@ -406,11 +420,18 @@
     "text": "Preliminary check for normality (visual)\n\n\nNormally-distributed response variable ✅\n\n\n(confirmed by visual inspection )"
   },
   {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test",
+    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-statsshapiro.test",
+    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-statsshapiro.test",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (test)",
-    "text": "Preliminary check for normality (test)\n\n\nNormally-distributed response variable ✅ (confirmed by Shapiro-Wilk normality test) [The null hypothesis of this test is that “sample distribution is normal”]\n\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 1 \nSW_t_g1 &lt;- stats::shapiro.test(mice[mice$group == \"Control\", \"surv_days\", drop=TRUE])\nSW_t_g1\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Control\", \"surv_days\", drop = TRUE]\nW = 0.99374, p-value = 0.9989\n\nSW_t_g2 &lt;- stats::shapiro.test(mice[mice$group == \"Treatment 1\", \"surv_days\", drop=TRUE])\nSW_t_g2\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 1\", \"surv_days\", drop = TRUE]\nW = 0.95716, p-value = 0.6106\n\nSW_t_g3 &lt;- stats::shapiro.test(mice[mice$group == \"Treatment 2\", \"surv_days\", drop=TRUE])\nSW_t_g3\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 2\", \"surv_days\", drop = TRUE]\nW = 0.97921, p-value = 0.9601\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 2 (all 3 groups at once)\nSW_t &lt;- mice %&gt;%\n  group_by(group) %&gt;%\n  rstatix::shapiro_test(surv_days)\nSW_t\n\n# A tibble: 3 × 4\n  group       variable  statistic     p\n  &lt;chr&gt;       &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt;\n1 Control     surv_days     0.994 0.999\n2 Treatment 1 surv_days     0.957 0.611\n3 Treatment 2 surv_days     0.979 0.960"
+    "section": "Preliminary check for normality (test) with stats::shapiro.test",
+    "text": "Preliminary check for normality (test) with stats::shapiro.test\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 1 \nstats::shapiro.test(mice[mice$group == \"Control\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Control\", \"surv_days\", drop = TRUE]\nW = 0.99374, p-value = 0.9989\n\nstats::shapiro.test(mice[mice$group == \"Treatment 1\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 1\", \"surv_days\", drop = TRUE]\nW = 0.95716, p-value = 0.6106\n\nstats::shapiro.test(mice[mice$group == \"Treatment 2\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 2\", \"surv_days\", drop = TRUE]\nW = 0.97921, p-value = 0.9601"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test",
+    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Preliminary check for normality (test) with rstatix::shapiro_test",
+    "text": "Preliminary check for normality (test) with rstatix::shapiro_test\n(same thing, but using a different R function)\n\n\nNormally-distributed response variable – ✅\n\n\n(confirmed by Shapiro-Wilk normality test)\n\n[The null hypothesis of this test is \\(H_0\\) = “sample distribution is normal” ]\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 2 (all 3 groups at once)\nmice %&gt;%\n  dplyr::group_by(group) %&gt;%\n  rstatix::shapiro_test(surv_days)\n\n# A tibble: 3 × 4\n  group       variable  statistic     p\n  &lt;chr&gt;       &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt;\n1 Control     surv_days     0.994 0.999\n2 Treatment 1 surv_days     0.957 0.611\n3 Treatment 2 surv_days     0.979 0.960"
   },
   {
     "objectID": "practice/slides_lab02.html#preliminary-check-variance-equality",
@@ -427,18 +448,18 @@
     "text": "3 Computation of ANOVA F-ratio\nANOVA in R can be done in several ways.\nSince it’s quite straightforward, let’s do all the steps by hand first. We need to obtain the needed “ingredients” to calculate the F-ratio:\n\\[𝑭_{calc}=\\frac{Mean\\, Square\\, Between}{Mean, Square\\, Within}=  \\frac{MSB}{MSW} = \\frac{\\frac{SSB}{df1}}{\\frac{SSW}{df2}} \\]"
   },
   {
-    "objectID": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-manually",
-    "href": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-manually",
+    "objectID": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-by-hand",
+    "href": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-by-hand",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "3.a Computation of ANOVA F-ratio (manually)",
-    "text": "3.a Computation of ANOVA F-ratio (manually)\n\n\nOption 1: Let’s compute the ANOVA test “manually”\n\n\n# Summary statistics\nmice_calc &lt;- mice %&gt;% \n  mutate(mean_all = mean(surv_days),\n         sd_all = sd (surv_days),\n         dfw = 33-3, # df1 = n-k\n         dfb = 3-1, # df2 = K−1 \n         group_f = as.factor(group)\n         ) %&gt;% \n  group_by(group) %&gt;% \n  mutate(n_group = n(),\n         mean_group = mean(surv_days),\n         sd_group = sd (surv_days)) %&gt;% \n  ungroup() %&gt;% \n  mutate (ST = (surv_days - mean_all)^2,\n          SW = (surv_days - mean_group)^2,\n          SB = (mean_group - mean_all)^2)\n\n# Sum of Squares \nSST &lt;- sum(mice_calc$ST)\nSSB &lt;- sum(mice_calc$SB)\nSSW &lt;- sum(mice_calc$SW)\ndfw &lt;- 33-3  # df2\ndfb &lt;- 3-1 # df1\n\n# calculated F statistic \nF_calc &lt;- (SSB/dfb)/(SSW/dfw) # 5.65\n# F critical value\nF_crit &lt;- qf(p = 0.01, df1 = 2, df2 = 30, lower.tail = FALSE) # 5.390346"
+    "section": "3.a Computation of ANOVA F-ratio (“by hand”)",
+    "text": "3.a Computation of ANOVA F-ratio (“by hand”)\n\n\nOption 1: Let’s compute the ANOVA test “by hand” ✍🏻\n\n\n# Summary statistics\nmice_calc &lt;- mice %&gt;% \n  dplyr::mutate(mean_all = mean(surv_days),\n         sd_all = sd (surv_days),\n         dfw = 33-3, # df1 = n-k\n         dfb = 3-1, # df2 = K−1 \n         group_f = as.factor(group)\n         ) %&gt;% \n  dplyr::group_by(group) %&gt;% \n  dplyr::mutate(n_group = n(),\n         mean_group = mean(surv_days),\n         sd_group = sd (surv_days)) %&gt;% \n  ungroup() %&gt;% \n  mutate (ST = (surv_days - mean_all)^2,\n          SW = (surv_days - mean_group)^2,\n          SB = (mean_group - mean_all)^2)\n\n# Sum of Squares \nSST &lt;- sum(mice_calc$ST)\nSSB &lt;- sum(mice_calc$SB)\nSSW &lt;- sum(mice_calc$SW)\ndfw &lt;- 33-3  # df2\ndfb &lt;- 3-1 # df1\n\n# calculated F statistic \nF_calc &lt;- (SSB/dfb)/(SSW/dfw) # 5.65\n# F critical value\nF_crit &lt;- qf(p = 0.01, df1 = 2, df2 = 30, lower.tail = FALSE) # 5.390346"
   },
   {
     "objectID": "practice/slides_lab02.html#b-computation-of-anova-f-ratio-with-r-functions",
     "href": "practice/slides_lab02.html#b-computation-of-anova-f-ratio-with-r-functions",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "3.b Computation of ANOVA F-ratio (with R functions)",
-    "text": "3.b Computation of ANOVA F-ratio (with R functions)\n\nThat was just to show how to build it step-by-step (🤓) but we don’t have to! We have alternative R functions that can do ANOVA for us:\n\nOption 2: With the stats::aov followed by the command summary\n\n\n\naov_1 &lt;- stats::aov(surv_days ~ group_f,\n                 data = mice_calc)\nsummary(aov_1) \n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \ngroup_f      2  434.6  217.32   5.652 0.00826 **\nResiduals   30 1153.4   38.45                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nOption 3: With the stats::oneway.test() function\n\n\naov_2 &lt;- stats::oneway.test(surv_days ~ group_f,\n            data = mice_calc,\n            # assuming equal variances\n            var.equal = TRUE)\naov_2\n\n\n    One-way analysis of means\n\ndata:  surv_days and group_f\nF = 5.6522, num df = 2, denom df = 30, p-value = 0.008258"
+    "text": "3.b Computation of ANOVA F-ratio (with R functions)\n\nThat was just to show how to build it step-by-step (🤓), but we don’t have to! We have alternative R functions that can do ANOVA for us:\n\nOption 2: With the stats::aov followed by the command summary 👩🏻‍💻\n\n\naov_1 &lt;- stats::aov(surv_days ~ group_f,\n                 data = mice_calc)\nsummary(aov_1) \n\n            Df Sum Sq Mean Sq F value  Pr(&gt;F)   \ngroup_f      2  434.6  217.32   5.652 0.00826 **\nResiduals   30 1153.4   38.45                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nOption 3: With the stats::oneway.test() function 👩🏻‍💻\n\n\naov_2 &lt;- stats::oneway.test(surv_days ~ group_f,\n            data = mice_calc,\n            # assuming equal variances\n            var.equal = TRUE)\naov_2\n\n\n    One-way analysis of means\n\ndata:  surv_days and group_f\nF = 5.6522, num df = 2, denom df = 30, p-value = 0.008258"
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation-3",
@@ -455,60 +476,88 @@
     "text": "Testing two groups that are not independent\nLet’s introduce another toy dataset just for demonstration purposes: imagine a statistics test is administered to the same group of 12 students before and after attending a workshop 😉.\n\n# toy dataset for paired groups\ngrades &lt;- data.frame(\n  before = c(16, 5, 15, 2, 14, 15, 4, 7, 15, 6, 7, 14),\n  after = c(19, 18, 9, 17, 8, 7, 16, 19, 20, 9, 11, 18)\n)\n\nWe need to reshape the dataframe into the long form using tidyr::pivot_longer\n\n# reshape into long form\ngrades_long &lt;- grades %&gt;% \n  dplyr::mutate(id = row_number()) %&gt;%\n  tidyr::pivot_longer(cols = before:after, \n                      names_to = \"time\", \n                      values_to = \"grade\") %&gt;% \n  dplyr::group_by(id) %&gt;% \n  # recode time as factor \n  dplyr::mutate(time_f = as_factor(time ))  %&gt;% \n  # reorder time_ levels  \n  dplyr::mutate(time_f =  fct_relevel(time_f, \"after\", after =  1))"
   },
   {
-    "objectID": "practice/slides_lab02.html#testing-if-the-data-are-not-normally-distributed-non-parametric-tests",
-    "href": "practice/slides_lab02.html#testing-if-the-data-are-not-normally-distributed-non-parametric-tests",
+    "objectID": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-samples-statistically-significant",
+    "href": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-samples-statistically-significant",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Testing if the data are not normally distributed: non-parametric tests",
-    "text": "Testing if the data are not normally distributed: non-parametric tests"
+    "section": "1. Question: Is the difference between two PAIRED samples statistically significant?",
+    "text": "1. Question: Is the difference between two PAIRED samples statistically significant?\n\nWhat a successful workshop! 😁"
   },
   {
-    "objectID": "practice/slides_lab02.html#question-.",
-    "href": "practice/slides_lab02.html#question-.",
+    "objectID": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples",
+    "href": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: …….?",
-    "text": "1. Question: …….?"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#a-computation-of-the-test-statistic-2",
-    "href": "practice/slides_lab02.html#a-computation-of-the-test-statistic-2",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.a Computation of the test statistic",
-    "text": "2.a Computation of the test statistic"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-2",
-    "href": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-2",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.b Computation of the p-value associated to the test statistic",
-    "text": "2.b Computation of the p-value associated to the test statistic"
+    "section": "2 Computation of the Wilcoxon signed-rank test for dependent samples",
+    "text": "2 Computation of the Wilcoxon signed-rank test for dependent samples\n\nIn this example, it is clear that the two samples are not independent since the same 12 students took the test before and after the workshop.\nSupposing also that the normality assumption is violated (and given the small sample size), we thus use the Wilcoxon test for paired samples, with the following hypotheses:\n\n\n\\(𝑯_𝟎\\) : grades before and after the workshop are equal\n\n\\(𝑯_𝒂\\) : grades before and after the workshop are different\n\n\n# Wilcoxon signed-rank test \ntest &lt;- stats::wilcox.test(grades_long$grade ~ grades_long$time_f,\n                           paired = TRUE)\n# results\ntest\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  grades_long$grade by grades_long$time_f\nV = 21, p-value = 0.1692\nalternative hypothesis: true location shift is not equal to 0"
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation-4",
     "href": "practice/slides_lab02.html#results-and-interpretation-4",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "3. Results and interpretation",
-    "text": "3. Results and interpretation\nWe obtain the test statistic, the p-value and a reminder of the hypothesis tested.\nThe p-value is 0.169. Therefore, at the 5% significance level, we do not reject the null hypothesis that the grades are similar before and after the semester 😭."
+    "text": "3. Results and interpretation\nWe obtain the test statistic, the p-value and a reminder of the hypothesis tested.\nThe p-value is 0.169. Therefore, at the 5% significance level, we do not reject the null hypothesis that the statistics’ grades are similar before and after the semester (😭)."
   },
   {
-    "objectID": "practice/slides_lab02.html#question-.-1",
-    "href": "practice/slides_lab02.html#question-.-1",
+    "objectID": "practice/slides_lab02.html#bonus-function",
+    "href": "practice/slides_lab02.html#bonus-function",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: …….?",
-    "text": "1. Question: …….?"
+    "section": "Bonus function!",
+    "text": "Bonus function!\nIt is worth mentioning the ggstatsplot package, which combines plots representing the distribution for each group—and the results of the statistical test displayed in the subtitle of the plot.\nBelow we check out the ggwithinstats() function for paired samples, respectively.\n\n# load package\nlibrary(ggstatsplot)\n\n# plot with statistical results\ngrades_long %&gt;% \n  # must ungroup the dataframe or it will give an error\n  ungroup () %&gt;% \n  ggstatsplot::ggwithinstats(.,\n                             x = time_f ,\n                             y = grade ,\n                             type = \"nonparametric\", # for wilcoxon\n                             centrality.plotting = FALSE # remove median\n  )"
   },
   {
-    "objectID": "practice/slides_lab02.html#a-computation-of-the-test-statistic-3",
-    "href": "practice/slides_lab02.html#a-computation-of-the-test-statistic-3",
+    "objectID": "practice/slides_lab02.html#bonus-function-output",
+    "href": "practice/slides_lab02.html#bonus-function-output",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.a Computation of the test statistic",
-    "text": "2.a Computation of the test statistic"
+    "section": "Bonus function!",
+    "text": "Bonus function!\n\n\nThe test results are rendered with the plot!"
   },
   {
-    "objectID": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-3",
-    "href": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-3",
+    "objectID": "practice/slides_lab02.html#testing-samples-without-normality-assumption",
+    "href": "practice/slides_lab02.html#testing-samples-without-normality-assumption",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.b Computation of the p-value associated to the test statistic",
-    "text": "2.b Computation of the p-value associated to the test statistic"
+    "section": "Testing samples without normality assumption",
+    "text": "Testing samples without normality assumption\nLet’s go back to the HEART FAILURE dataset but looking at the levels of Creatinine Phosphokinase (CPK) in the blood, an enzyme that might indicate a heart failure or injury"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
+    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
+    "text": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\nDefining the question formally:\n\n\\(𝑯_𝟎\\) : \\(𝝁_{CPK-died} = 𝝁_{CPK-surv}\\) there is no difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure\n\\(𝑯_𝒂\\) : \\(𝝁_{CPK-died} ≠ 𝝁_{CPK-surv}\\) there is a difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure (two-sided test)\n\n\nggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT_f))+\n  geom_density(alpha = 0.5)+theme_fivethirtyeight()+\n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))+\n  guides(fill = \"none\") +\n  scale_x_continuous(breaks = seq(0,8000, 500))+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT == 0])),\n             color = \"#4c4c4c\")+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT==1])), \n             color = \"#d8717b\")+\n  theme_fivethirtyeight()+\n  theme(axis.text.x = element_text(angle=50, vjust=0.75))+\n  labs(title =  \"Creatinine phosphokinase (density distribution) by group (Death Event)\") + \n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
+    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
+    "text": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\n\n\nThe density plot suggests non normality of the variable distribution"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1",
+    "href": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Preliminary check for normality (visual)",
+    "text": "Preliminary check for normality (visual)\n\n\nNormally-distributed response variable - ❌\n\nQQ plot (or quantile-quantile plot) draws the correlation between a given sample and the normal distribution. A 45-degree reference line is also plotted. In a QQ plot, each observation is plotted as a single dot.\n\nIf the data are normal, the dots should form a straight line.\n\n\n# visual verification with QQ plot \nggpubr::ggqqplot( \n  heart_failure$creatinine_phosphokinase, \n  title = \"QQ plot for CPK levels in blood\",\n  xlab =\"Theoretical\", ylab = \"Sample (CPK)\")"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1-output",
+    "href": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1-output",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Preliminary check for normality (visual)",
+    "text": "Preliminary check for normality (visual)\n\n\nIn a QQ plot, if the data are normal, the dots should follow a straight line."
+  },
+  {
+    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test-1",
+    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test-1",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Preliminary check for normality (test) with rstatix::shapiro_test",
+    "text": "Preliminary check for normality (test) with rstatix::shapiro_test\n(same thing, but using a different R function)\n\n\nNormally-distributed response variable - ❌\n\n(NOT normality confirmed by Shapiro-Wilk normality test)\n\n\n\n[The null hypothesis of this test is \\(H_0\\) = “sample distribution(s) is/are normal” ]\nGiven the p-value we reject the null hypothesis\n\n# Shapiro-Wilk Normality Test to verify normality  \nheart_failure %&gt;%\n  dplyr::group_by(DEATH_EVENT_f) %&gt;%\n  rstatix::shapiro_test(creatinine_phosphokinase)\n\n# A tibble: 2 × 4\n  DEATH_EVENT_f variable                 statistic        p\n  &lt;fct&gt;         &lt;chr&gt;                        &lt;dbl&gt;    &lt;dbl&gt;\n1 survived      creatinine_phosphokinase     0.628 8.51e-21\n2 died          creatinine_phosphokinase     0.439 1.99e-17"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#computation-of-the-wilcoxon-rank-sum-test-statistic",
+    "href": "practice/slides_lab02.html#computation-of-the-wilcoxon-rank-sum-test-statistic",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "3. Computation of the Wilcoxon Rank Sum test statistic",
+    "text": "3. Computation of the Wilcoxon Rank Sum test statistic\nThe Wilcoxon Rank Sum test is considered to be the nonparametric equivalent to the two-sample independent t-test\nIts ASSUMPTIONS are:\n\nOrdinal or Continuous dependent variable: e.g. CPK levels ✅\nIndependence: All of the observations from both groups are independent of each other ✅\nShape: The shapes of the distributions for the two groups are roughly the same ✅\n\n\nwrs_res &lt;- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1\n                   data = heart_failure ,\n                   exact = FALSE, \n                   alternative = \"two.sided\" )\nwrs_res\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  creatinine_phosphokinase by DEATH_EVENT\nW = 9460, p-value = 0.684\nalternative hypothesis: true location shift is not equal to 0\n\n\n\n\nThe Wilcoxon Rank Sum test is equivalent to the Mann-Whitney U test to compare two independent samples. Different software use one or the other."
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation-5",
@@ -525,25 +574,39 @@
     "text": "Testing samples without homogeneous variance of observations assumption"
   },
   {
-    "objectID": "practice/slides_lab02.html#question-.-2",
-    "href": "practice/slides_lab02.html#question-.-2",
+    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
+    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: …….?",
-    "text": "1. Question: …….?"
+    "section": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?",
+    "text": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?\nDefining the question formally:\n\n\\(𝑯_𝟎\\) : \\(𝝁_{sersod-died} = 𝝁_{sersod-surv}\\) there is no difference in mean serum sodium between patients who suffered heart failure and died versus patients who survived after heart failure\n\\(𝑯_𝒂\\) : \\(𝝁_{sersod-died} ≠ 𝝁_{sersod-surv}\\) there is a difference in mean serum sodium between patients who suffered heart failure and died versus patients who survived after heart failure (two-sided test)"
   },
   {
-    "objectID": "practice/slides_lab02.html#a-computation-of-the-test-statistic-4",
-    "href": "practice/slides_lab02.html#a-computation-of-the-test-statistic-4",
+    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual",
+    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.a Computation of the test statistic",
-    "text": "2.a Computation of the test statistic"
+    "section": "Preliminary check “HOV” assumption (visual)",
+    "text": "Preliminary check “HOV” assumption (visual)\n\n\n\nHomogeneity of Variance assumption - ❌ Plotting the data offers some graphical intuition that the variance of observations in the two groups seem not homogenous\n\n\n#Compute means and 95% confidence intervals\nswstats &lt;- heart_failure %&gt;%\n  group_by(DEATH_EVENT_f) %&gt;%\n  summarise(count = n(),\n    mean = mean(serum_sodium,na.rm=TRUE),\n    stddev = sd(serum_sodium, na.rm=TRUE),\n    meansd_l = mean - stddev,\n    meansd_u = mean + stddev)\n\n#The complete script with some styling added\nggplot(swstats, aes(x=DEATH_EVENT_f, y=mean)) + \n  geom_point(colour = \"black\" , size = 2) +\n  #Now plotting the individual data points before the mean values\n  geom_point(data=heart_failure, aes(x=DEATH_EVENT_f, y=serum_sodium, colour = DEATH_EVENT_f), \n             position = position_jitter() ) +\n  scale_colour_manual(values = c(\"#999999\",\"#d8717b\") ) +\n  #Add the error bars\n  geom_errorbar(aes(ymin = meansd_l, ymax = meansd_u), width=0.2, color = \"black\") +\n  labs(title = \"Mean (-/+SD) serum sodium (mEq/L) by group\", x = \"\", y = \"Serum Sodium\") +\n  guides(fill = \"none\")  +\n  coord_flip() +\n  labs(title =  \"Serum Sodium means and 95% confidence intervals by group (Death Event)\") + \n  theme(legend.position=\"none\",plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
   },
   {
-    "objectID": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-4",
-    "href": "practice/slides_lab02.html#b-computation-of-the-p-value-associated-to-the-test-statistic-4",
+    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual-output",
+    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual-output",
     "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.b Computation of the p-value associated to the test statistic",
-    "text": "2.b Computation of the p-value associated to the test statistic"
+    "section": "Preliminary check “HOV” assumption (visual)",
+    "text": "Preliminary check “HOV” assumption (visual)"
+  },
+  {
+    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-test",
+    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-test",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Preliminary check “HOV” assumption (test)",
+    "text": "Preliminary check “HOV” assumption (test)\nIt is always best to use an actual test, so we use also the Fisher’s F test to verify equal variances of Serum Sodium concentration in the two groups. [In this test \\(H_0\\) = “the ratio of variances is equal to 1”]\n\nf_test_res &lt;- stats::var.test(heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] ,\n                              heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0])\nf_test_res\n\n\n    F test to compare two variances\n\ndata:  heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] and heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0]\nF = 1.5769, num df = 95, denom df = 202, p-value = 0.007646\nalternative hypothesis: true ratio of variances is not equal to 1\n95 percent confidence interval:\n 1.127401 2.254466\nsample estimates:\nratio of variances \n          1.576922 \n\n\nGiven the p-value = 0.007646 (smaller than \\(\\alpha\\)) we reject the null hypothesis, hence the HOV assumption for the t test does not hold."
+  },
+  {
+    "objectID": "practice/slides_lab02.html#computation-of-the-t-test-with-the-welch-correction",
+    "href": "practice/slides_lab02.html#computation-of-the-t-test-with-the-welch-correction",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "2 Computation of the t test with the Welch correction",
+    "text": "2 Computation of the t test with the Welch correction\n\nWe can still run the t test but with Welch correction, i.e. the unequal variance condition is compensated by lowering the df. In fact the documentation (?t.test), reads:\n\nIf var.equal = TRUE, then the pooled variance is used to estimate the variance\nOtherwise (var.equal = FALSE), the Welch approximation to the degrees of freedom is used.\n\n\n# With Welch correction (on by default) Unequal variance is compensated by lowering df\nt_test_w &lt;- t.test(heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1], \n                   heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0],\n                   # here we specify the situation\n                   var.equal = FALSE,\n                   paired = FALSE, alternative = \"two.sided\") \n\nt_test_w\n\n\n    Welch Two Sample t-test\n\ndata:  heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] and heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0]\nt = -3.1645, df = 154.01, p-value = 0.001872\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -2.9914879 -0.6920096\nsample estimates:\nmean of x mean of y \n 135.3750  137.2167"
   },
   {
     "objectID": "practice/slides_lab02.html#results-and-interpretation-6",
@@ -557,7 +620,7 @@
     "href": "practice/slides_lab02.html#final-thoughtsrecommendations",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Final thoughts/recommendations",
-    "text": "Final thoughts/recommendations\n\n\n\nThere are often many ways to do the same thing in R (which is both a blessing and a curse in open source software). Which should you choose? It depends on the situation, but you may want to consider:\n\nhow popular/well maintained is a {package} (this affects its stability)\nthe more a function abstracts away complexity, the easier it is to use, but the harder it will get to handle it inside your own custom functions\ndifferent output formats may be more/less suitable for your analysis (check out your peers’ choices!)\n(Always read the documentation to assess all of the above)\n\n\nIt may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is once you wrote a script, you will be able to easily re-use it in many more instances 🙌🏻 😃\nSample size n has a very powerful impact on classical hypothesis testing results! More on this later…"
+    "text": "Final thoughts/recommendations\n\n\n\nThere are often many ways to do the same thing in R (which is both a blessing and a curse in open source software). Which should you choose? It depends on the situation, but you may want to consider:\n\nhow popular/well maintained is a {package} (this affects its stability)\nthe more a function abstracts away complexity, the easier it is to use, but the harder it will get to handle it inside your own custom functions\ndifferent output formats may be more/less suitable for your analysis (check out your peers’ choices!)\n(Always read the documentation to assess all of the above)\n\n\nWith easy equations, computing them “by hand” (at least once) can really help you understand them\nIt may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is once you wrote a script, you will be able to easily re-use it in many more instances 🙌🏻 😃\nSample size n has a very powerful impact on classical hypothesis testing results! More on this later…"
   },
   {
     "objectID": "practice/slides_lab02.html#references",
@@ -1075,7 +1138,7 @@
     "href": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Practice session 2: input data (as subfolder)",
-    "text": "Practice session 2: input data (as subfolder)"
+    "text": "Practice session 2: input data (as subfolder)\n\n\n\n Download input data directory"
   },
   {
     "objectID": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
@@ -1106,11 +1169,11 @@
     "text": "Practice session 4: R code (as .R file)"
   },
   {
-    "objectID": "practice/slides_lab01.html#lecture-1-topics",
-    "href": "practice/slides_lab01.html#lecture-1-topics",
+    "objectID": "practice/slides_lab01.html#goal-of-todays-practice-session",
+    "href": "practice/slides_lab01.html#goal-of-todays-practice-session",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Lecture 1: topics",
-    "text": "Lecture 1: topics\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\n\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and frequency distribution\n\n\nVisual data exploration\n\n{ggplot2}"
+    "section": "GOAL OF TODAY’S PRACTICE SESSION",
+    "text": "GOAL OF TODAY’S PRACTICE SESSION\n\nMotivate the choice of learning/using R for scientific quantitative analysis, and lay out some fundamental concepts in biostatistics with concrete R coding examples.\n\n\n\nLecture 1: topics\n\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\n\nR objects, functions, packages\n\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\n\n\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and frequency distribution\n\n\n\nVisual data exploration\n\n{ggplot2}"
   },
   {
     "objectID": "practice/slides_lab01.html#r-version",
@@ -1316,11 +1379,18 @@
     "text": "Option 2 using skimr function skim (cont.)\n\non the whole dataset\n\n\nautism_pids %&gt;% \n  skimr::skim() \n\n\n\n\n── Variable type: character ────────────────────────────────────────────────────\n   skim_variable   n_missing complete_rate min max empty n_unique whitespace\n 1 gender                  0         1       1   1     0        2          0\n 2 ethnicity              95         0.865   5  15     0       11          0\n 3 jaundice                0         1       2   3     0        2          0\n 4 autism                  0         1       2   3     0        2          0\n 5 contry_of_res           0         1       4  20     0       67          0\n 6 used_app_before         0         1       2   3     0        2          0\n 7 age_desc                0         1      11  11     0        1          0\n 8 relation               95         0.865   4  24     0        5          0\n 9 Class_ASD               0         1       2   3     0        2          0\n10 pids                    0         1      11  13     0      704          0\n\n── Variable type: numeric ──────────────────────────────────────────────────────\n   skim_variable n_missing complete_rate    mean      sd p0  p25  p50  p75 p100\n 1 id                    0         1     352.    203.     1 177. 352. 528.  704\n 2 A1_Score              0         1       0.722   0.449  0   0    1    1     1\n 3 A2_Score              0         1       0.453   0.498  0   0    0    1     1\n 4 A3_Score              0         1       0.457   0.499  0   0    0    1     1\n 5 A4_Score              0         1       0.496   0.500  0   0    0    1     1\n 6 A5_Score              0         1       0.499   0.500  0   0    0    1     1\n 7 A6_Score              0         1       0.284   0.451  0   0    0    1     1\n 8 A7_Score              0         1       0.418   0.494  0   0    0    1     1\n 9 A8_Score              0         1       0.649   0.478  0   0    1    1     1\n10 A9_Score              0         1       0.324   0.468  0   0    0    1     1\n11 A10_Score             0         1       0.574   0.495  0   0    1    1     1\n12 age                   2         0.997  29.2     9.71  17  21   27   35    64\n13 result                0         1       4.88    2.50   0   3    4    7    10"
   },
   {
-    "objectID": "practice/slides_lab01.html#from-character-to-factor",
-    "href": "practice/slides_lab01.html#from-character-to-factor",
+    "objectID": "practice/slides_lab01.html#from-character-to-factor-using-base-r",
+    "href": "practice/slides_lab01.html#from-character-to-factor-using-base-r",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "From character to factor",
-    "text": "From character to factor\n\n\nchar to factor using base\nchar to factor (n cols) using base\n\n\n\n\n#### char 2 factor -------------------------------------------------------------\n# Say I want to treat some variables as factors\nautism_pids$gender &lt;- as.factor(autism_pids$gender)\nautism_pids$ethnicity &lt;- as.factor(autism_pids$ethnicity)\nautism_pids$contry_of_res &lt;- as.factor(autism_pids$contry_of_res)\nautism_pids$relation &lt;- as.factor(autism_pids$relation)\n\n# check \nclass(autism_pids$gender)\n\n[1] \"factor\"\n\nclass(autism_pids$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids$relation)\n\n[1] \"factor\"\n\n\n\n\n\nautism_pids_temp &lt;- autism_pids # copy df for test \n\nto_factor &lt;- c(\"gender\", \"ethnicity\", \"contry_of_res\", \"relation\") # vector of col names \nautism_pids_temp[ ,to_factor] &lt;-  lapply(X =  autism_pids[ ,to_factor], FUN = as.factor)\n\n# check \nclass(autism_pids_temp$gender)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$relation)\n\n[1] \"factor\"\n\n# now I have Variable type: factor"
+    "section": "From character to factor using base R",
+    "text": "From character to factor using base R\n\n#### char 2 factor -------------------------------------------------------------\n# Say I want to treat some variables as factors\nautism_pids$gender &lt;- as.factor(autism_pids$gender)\nautism_pids$ethnicity &lt;- as.factor(autism_pids$ethnicity)\nautism_pids$contry_of_res &lt;- as.factor(autism_pids$contry_of_res)\nautism_pids$relation &lt;- as.factor(autism_pids$relation)\n\n# check \nclass(autism_pids$gender)\n\n[1] \"factor\"\n\nclass(autism_pids$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids$relation)\n\n[1] \"factor\""
+  },
+  {
+    "objectID": "practice/slides_lab01.html#from-character-to-factor-using-base-r-n-cols",
+    "href": "practice/slides_lab01.html#from-character-to-factor-using-base-r-n-cols",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "From character to factor using base R (n cols)",
+    "text": "From character to factor using base R (n cols)\n\nautism_pids_temp &lt;- autism_pids # copy df for test \n\nto_factor &lt;- c(\"gender\", \"ethnicity\", \"contry_of_res\", \"relation\") # vector of col names \nautism_pids_temp[ ,to_factor] &lt;-  lapply(X =  autism_pids[ ,to_factor], FUN = as.factor)\n\n# check \nclass(autism_pids_temp$gender)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$relation)\n\n[1] \"factor\"\n\n# now I have Variable type: factor"
   },
   {
     "objectID": "practice/slides_lab01.html#inspect-factors-levels-3-different-ways",
@@ -1386,11 +1456,25 @@
     "text": "Investigating a subset of observations\nE.g. I learned that some patients have missing age… how many are they?\n\n# run...\nsum(is.na(autism_pids$age)) \n\n[1] 2\n\n# or \nskimr::n_missing(autism_pids$age)\n\n[1] 2\n\n\n So, next, I want to ID those patients with missing age."
   },
   {
-    "objectID": "practice/slides_lab01.html#new-df-only-the-patients-with-missing-age-as-subset-of-the-given-df",
-    "href": "practice/slides_lab01.html#new-df-only-the-patients-with-missing-age-as-subset-of-the-given-df",
+    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df",
+    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "New df (only the patients with missing age) as SUBSET of the given df",
-    "text": "New df (only the patients with missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\n\n\nusing [] from base\nusing which from base\nusing subset from base\n\n\n\n\nmissing_age_subset &lt;- autism_pids[is.na(autism_pids$age), c(\"pids\", \"age\", \"autism_dummy\") ]\nmissing_age_subset\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0\n\n\n\n\n\nmissing_age_subset2 &lt;- autism_pids[which(is.na(autism_pids$age)), c(\"pids\", \"age\", \"autism_dummy\")] \nmissing_age_subset2\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0\n\n\n\n\n\n# arguments allow me to specify rows and cols \nmissing_age_subset3 &lt;- subset(x = autism_pids, \n                              subset = is.na(autism_pids$age), # 1 logical condition\n                              select = c(\"pids\", \"age\", \"autism_dummy\") # which cols\n                              ) \nmissing_age_subset3\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
+    "section": "New df (patients missing age) as SUBSET of the given df",
+    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 1) using [] from base\n\n\nmissing_age_subset &lt;- autism_pids[is.na(autism_pids$age), \n                                  c(\"pids\", \"age\", \"autism_dummy\") ]\nmissing_age_subset\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
+  },
+  {
+    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-1",
+    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-1",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "New df (patients missing age) as SUBSET of the given df",
+    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 2) using which from base\n\n\nmissing_age_subset2 &lt;- autism_pids[which(is.na(autism_pids$age)), \n                                   c(\"pids\", \"age\", \"autism_dummy\")] \nmissing_age_subset2\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
+  },
+  {
+    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-2",
+    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-2",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "New df (patients missing age) as SUBSET of the given df",
+    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 3) using subset from base\n\n\n# arguments allow me to specify rows and cols \nmissing_age_subset3 &lt;- subset(x = autism_pids, \n                              subset = is.na(autism_pids$age), # 1 logical condition\n                              select = c(\"pids\", \"age\", \"autism_dummy\") # which cols\n                              ) \nmissing_age_subset3\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
   },
   {
     "objectID": "practice/slides_lab01.html#new-df-filtering-on-2-conditions-as-subset-of-the-given-df",
@@ -1398,6 +1482,13 @@
     "title": "Lab 1: Intro to R and data analysis",
     "section": "New df (filtering on 2 conditions) as SUBSET of the given df",
     "text": "New df (filtering on 2 conditions) as SUBSET of the given df\nOption 1) using base::subset\n\n\n# Creates a SUBSET based on MORE conditions (`age` and `ethnicity`)\ntwocond_base_subset &lt;- subset(x = autism_pids, \n                       # 2 logical conditions      \n                       subset = age &lt; 25 & contry_of_res == \"Brazil\", \n                       # pick a few cols \n                       select = c(\"pids\", \"age\", \"contry_of_res\",\n                                  \"autism_dummy\")) \n\ntwocond_base_subset\n\n             pids age contry_of_res autism_dummy\n2     PatientID_2  24        Brazil            1\n54   PatientID_54  21        Brazil            1\n94   PatientID_94  19        Brazil            1\n429 PatientID_429  20        Brazil            0\n587 PatientID_587  21        Brazil            0\n588 PatientID_588  21        Brazil            0"
+  },
+  {
+    "objectID": "practice/slides_lab01.html#new-df-filtering-on-2-conditions-as-subset-of-the-given-df-1",
+    "href": "practice/slides_lab01.html#new-df-filtering-on-2-conditions-as-subset-of-the-given-df-1",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "New df (filtering on 2 conditions) as SUBSET of the given df",
+    "text": "New df (filtering on 2 conditions) as SUBSET of the given df\nOption 2) using dplyr (filter + select)\nSwitching to the package dplyr and embracing the “pipe” (%&gt;%) operator logic, in which the filtering (rows) and selecting (columns) is done in sequence\n\n## here the filtering (rows) and selecting (columns) is done in sequence\ntwocond_dplyr_subset &lt;- autism_pids %&gt;% \n  dplyr::filter(age &lt; 25 & contry_of_res == \"Brazil\") %&gt;%  # which rows\n  dplyr::select (pids, age, contry_of_res, autism_dummy)   # which cols\n\ntwocond_dplyr_subset\n\n           pids age contry_of_res autism_dummy\n1   PatientID_2  24        Brazil            1\n2  PatientID_54  21        Brazil            1\n3  PatientID_94  19        Brazil            1\n4 PatientID_429  20        Brazil            0\n5 PatientID_587  21        Brazil            0\n6 PatientID_588  21        Brazil            0"
   },
   {
     "objectID": "practice/slides_lab01.html#input-values-where-missing",
@@ -1442,11 +1533,18 @@
     "text": "Cross tabulation with table (2 vars)\n\nCross tabulation\n\n\ntable(autism_pids$gender, autism_pids$age_inputed)\n\n   \n    17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41\n  f  7 11 22 22 18 14 17 10 11 14 18 15 16 13  8 14  6  7 12  7 11  6  5  9  0\n  m 11 20 13 24 31 23 20 24 16 14 13  9 11 17 13  4 10  5  5  6  6  7  2  7  3\n   \n    42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 58 59 60 61 64 65\n  f  6  5  4  5  4  3  2  2  2  0  2  4  1  1  0  1  0  1  1  0  0\n  m  9  6  6  0  2  5  2  1  3  1  3  2  1  5  2  1  1  0  1  1  1\n\ntable(autism_pids$ethnicity, autism_pids$autism_dummy)\n\n                 \n                    0   1\n  Asian           118   5\n  Black            38   5\n  Hispanic         12   1\n  Latino           12   8\n  Middle Eastern   83   9\n  others            1   0\n  Others           28   2\n  Pasifika         10   2\n  South Asian      34   2\n  Turkish           5   1\n  White-European  183  50"
   },
   {
-    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base",
-    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base",
+    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r",
+    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Grouping and summarizing with base\n",
-    "text": "Grouping and summarizing with base\n\nE.g. I want to know the average age of men and women sub-groups.\nHere are 3 ways using `base R\n\n\nusing by\nusing tapply\nusing split + sapply\n\n\n\n\n# by(data$column, data$grouping_column, mean)\nby(data = autism_pids$age_inputed, INDICES = autism_pids$gender, FUN = mean)\n\nautism_pids$gender: f\n[1] 29.60237\n------------------------------------------------------------ \nautism_pids$gender: m\n[1] 28.98365\n\n\n\n\n\n# i.e. apply a function to subsets of a vector or array, split by one or more factors.\ntapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)\n\n       f        m \n29.60237 28.98365 \n\n\n\n\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
+    "section": "Grouping and summarizing with base R",
+    "text": "Grouping and summarizing with base R\nE.g. I want to know the average age of men and women sub-groups.\nOption 1) using by\n\n\n# by(data$column, data$grouping_column, mean)\nby(data = autism_pids$age_inputed, INDICES = autism_pids$gender, FUN = mean)\n\nautism_pids$gender: f\n[1] 29.60237\n------------------------------------------------------------ \nautism_pids$gender: m\n[1] 28.98365"
+  },
+  {
+    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-1",
+    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-1",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Grouping and summarizing with base R",
+    "text": "Grouping and summarizing with base R\nOption 2) using tapply\n\n\n# i.e. apply a function to subsets of a vector or array, split by one or more factors.\ntapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)\n\n       f        m \n29.60237 28.98365 \n\n\nOption 3) using split + sapply\n\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
   },
   {
     "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-dplyr",
@@ -1470,11 +1568,18 @@
     "text": "Mean/Median using base R\n\nImportant to specify the argument na.rm = TRUE or the functions won’t work\n\n\n## Let's use `age` and `age_inputed` to see what inputed missing values did \nmean(autism_pids$age)\n\n[1] NA\n\nmedian(autism_pids$age)\n\n[1] NA\n\nmean(autism_pids$age, na.rm = TRUE)\n\n[1] 29.20655\n\nmedian(autism_pids$age, na.rm = TRUE)\n\n[1] 27\n\nmean(autism_pids$age_inputed)\n\n[1] 29.27983\n\nmedian(autism_pids$age_inputed)\n\n[1] 27"
   },
   {
-    "objectID": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode",
-    "href": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode",
+    "objectID": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-12",
+    "href": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-12",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Create custom function to calculate statistical mode",
-    "text": "Create custom function to calculate statistical mode\nR doesn’t have a built-in function for the statistical mode, so we can create a custom one: f_calc_mode\n\n\nCreate custom function\nCall custom function\n\n\n\n\nf_calc_mode  &lt;- function(x) { \n  # `unique` returns a vector of unique values \n  uni_x &lt;- unique(x)  \n  # `match` returns the index positions of 1st vector against 2nd vector\n  match_x &lt;- match(x, uni_x)\n  # `tabulate` count the occurrences of integer values in a vector.\n  tab_x  &lt;-  tabulate(match_x) \n  # returns element of uni_x that corresponds to max occurrences\n  uni_x[tab_x == max(tab_x)]\n}\n\n\n\n\nf_calc_mode(autism_pids$age)\n\n[1] 21\n\nf_calc_mode(autism_pids$age_inputed)\n\n[1] 21\n\nf_calc_mode(autism_pids$ethnicity)\n\n[1] White-European\n11 Levels: Asian Black Hispanic Latino Middle Eastern  others ... White-European"
+    "section": "Create custom function to calculate statistical mode 1/2",
+    "text": "Create custom function to calculate statistical mode 1/2\nR doesn’t have a built-in function for the statistical mode, so we can create a custom one: f_calc_mode\nDefine the custom function\n\nf_calc_mode  &lt;- function(x) { \n  # `unique` returns a vector of unique values \n  uni_x &lt;- unique(x)  \n  # `match` returns the index positions of 1st vector against 2nd vector\n  match_x &lt;- match(x, uni_x)\n  # `tabulate` count the occurrences of integer values in a vector.\n  tab_x  &lt;-  tabulate(match_x) \n  # returns element of uni_x that corresponds to max occurrences\n  uni_x[tab_x == max(tab_x)]\n}"
+  },
+  {
+    "objectID": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-22",
+    "href": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-22",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Create custom function to calculate statistical mode 2/2",
+    "text": "Create custom function to calculate statistical mode 2/2\nCall the custom function\n\nf_calc_mode(autism_pids$age)\n\n[1] 21\n\nf_calc_mode(autism_pids$age_inputed)\n\n[1] 21\n\nf_calc_mode(autism_pids$ethnicity)\n\n[1] White-European\n11 Levels: Asian Black Hispanic Latino Middle Eastern  others ... White-European"
   },
   {
     "objectID": "practice/slides_lab01.html#variance-and-standard-deviation",
@@ -1645,11 +1750,11 @@
     "text": "… adding 2 mean/median vert lines (by gender)\nI want to see the mean vertical line for each of the subgroups, but in this case, I need to create a small dataframe of summary statistics (group_stats).\nI do so by using dplyr add a column mean_age with the group mean\n\ngroup_stats &lt;- autism_pids %&gt;% \n  dplyr::group_by(gender) %&gt;% \n  dplyr::summarize(mean_age = mean(age_inputed),\n                   median_age = median (age_inputed)) \n\ngroup_stats\n\n\n\n# A tibble: 2 × 3\n  gender mean_age median_age\n  &lt;fct&gt;     &lt;dbl&gt;      &lt;dbl&gt;\n1 f          29.6         28\n2 m          29.0         26"
   },
   {
-    "objectID": "practice/slides_lab01.html#introducing-tidyrpivot_longer",
-    "href": "practice/slides_lab01.html#introducing-tidyrpivot_longer",
+    "objectID": "practice/slides_lab01.html#small-digression-on-tidyrpivot_longer",
+    "href": "practice/slides_lab01.html#small-digression-on-tidyrpivot_longer",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "(Introducing tidyr::pivot_longer)",
-    "text": "(Introducing tidyr::pivot_longer)\nFirst, I need to reformat group_stats, changing it from a “wide” format with each variable in its own column to a “long” format, where you use one column for all the measures names and another for all the measures values.\n\nThis can be done using tidyr::pivot_longer function\n\n\ngroup_stats_long &lt;- group_stats %&gt;% \n  tidyr::pivot_longer(cols = mean_age:median_age, \n                      names_to = \"Stat\", \n                      values_to = \"Value\") %&gt;% \n  dplyr::mutate(label = as.character(glue::glue(\"{gender}_{Stat}\")))\n\ngroup_stats_long \n\n\n\n# A tibble: 4 × 4\n  gender Stat       Value label       \n  &lt;fct&gt;  &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;       \n1 f      mean_age    29.6 f_mean_age  \n2 f      median_age  28   f_median_age\n3 m      mean_age    29.0 m_mean_age  \n4 m      median_age  26   m_median_age"
+    "section": "(Small digression on tidyr::pivot_longer)",
+    "text": "(Small digression on tidyr::pivot_longer)\n\nThe new small dataframe group_stats offers an example of reshaping, i.e. turning a table from a “wide” form (with each variable in its own column) to a “long” form (one column for both the measures names and another for both the measures values).\n\nThis can be done using tidyr::pivot_longer function, where these arguments must be specified:\n\n\ncols: The names of the columns to pivot\n\nnames_to: The name for the new character column\n\nvalues_to: The name for the new values column\n\n\n\n\ngroup_stats_long &lt;- group_stats %&gt;% \n  tidyr::pivot_longer(cols = mean_age:median_age, \n                      names_to = \"Stat\", \n                      values_to = \"Value\") %&gt;% \n  dplyr::mutate(label = as.character(glue::glue(\"{gender}_{Stat}\")))\n\ngroup_stats_long \n\n# A tibble: 4 × 4\n  gender Stat       Value label       \n  &lt;fct&gt;  &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;       \n1 f      mean_age    29.6 f_mean_age  \n2 f      median_age  28   f_median_age\n3 m      mean_age    29.0 m_mean_age  \n4 m      median_age  26   m_median_age"
   },
   {
     "objectID": "practice/slides_lab01.html#facet-by-gender-vert-lines-by-group",
@@ -1832,334 +1937,5 @@
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Final thoughts/recommendations",
     "text": "Final thoughts/recommendations\n\nAlways read the documentation (?package::function, especially the examples at the bottom)\nAlways inspect the data / variables before and after making changes\n\nBetter rename (i.e. create a new R object) when you recode/manipulate a column or a dataset\n\n(this promotes reproducibility, since you will be able to retrace your coding steps)\n\n\nAlways plot distributions for visual data exploration\nMake changes in small increments (like we saw in building ggplot2 graph in subsequent layers)\n\n\n\n\nR 4 Biostatistics | MITGEST::training(2024)"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-by-hand",
-    "href": "practice/slides_lab02.html#a-computation-of-anova-f-ratio-by-hand",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "3.a Computation of ANOVA F-ratio (“by hand”)",
-    "text": "3.a Computation of ANOVA F-ratio (“by hand”)\n\n\nOption 1: Let’s compute the ANOVA test “by hand”\n\n\n# Summary statistics\nmice_calc &lt;- mice %&gt;% \n  dplyr::mutate(mean_all = mean(surv_days),\n         sd_all = sd (surv_days),\n         dfw = 33-3, # df1 = n-k\n         dfb = 3-1, # df2 = K−1 \n         group_f = as.factor(group)\n         ) %&gt;% \n  dplyr::group_by(group) %&gt;% \n  dplyr::mutate(n_group = n(),\n         mean_group = mean(surv_days),\n         sd_group = sd (surv_days)) %&gt;% \n  ungroup() %&gt;% \n  mutate (ST = (surv_days - mean_all)^2,\n          SW = (surv_days - mean_group)^2,\n          SB = (mean_group - mean_all)^2)\n\n# Sum of Squares \nSST &lt;- sum(mice_calc$ST)\nSSB &lt;- sum(mice_calc$SB)\nSSW &lt;- sum(mice_calc$SW)\ndfw &lt;- 33-3  # df2\ndfb &lt;- 3-1 # df1\n\n# calculated F statistic \nF_calc &lt;- (SSB/dfb)/(SSW/dfw) # 5.65\n# F critical value\nF_crit &lt;- qf(p = 0.01, df1 = 2, df2 = 30, lower.tail = FALSE) # 5.390346"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#a-picking-the-suitable-test",
-    "href": "practice/slides_lab02.html#a-picking-the-suitable-test",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.a Picking the suitable test",
-    "text": "2.a Picking the suitable test\nIn this case, we have:\n\na “small” sample \\(n = 23\\)\n\nan unknown \\(𝛔^𝟐\\) (of the reference population)\nWe obtained the sample mean \\(\\bar{x}\\) and sample sd \\(s\\).\n\nSo we can compute:\n\\(t_{calc} =\\frac{\\bar{x}-\\mu}{\\frac{s_\\bar{x}}{\\sqrt{n-1}}}\\)"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#b-computation-of-the-test-statistic",
-    "href": "practice/slides_lab02.html#b-computation-of-the-test-statistic",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.b Computation of the test statistic",
-    "text": "2.b Computation of the test statistic\n\n\nOption 1: Let’s compute the t test “by hand” ✍🏻\n\n\n# General Population of reference \nmu_pop &lt;- 236 \n\n# SAMPLE HF patients follow up less 21 days \nheart_21d &lt;- heart_failure %&gt;% \n  filter(time &lt;= 21)                                # 23 obs \n\nn_21d &lt;- nrow(heart_21d)                            # 23\nx_HF_21d &lt;- mean(heart_21d$plat_norm)               # 251.5094\ns_HF_21d &lt;- sd(heart_21d$plat_norm)                 # 102.7341\ndf_HF_21d &lt;- n_21d-1                                # 22   \n\n# IF SMALL sample UNKNOWN sigma\nstd_err_HF_21d &lt;- s_HF_21d /sqrt(n_21d -1)        # 21.90298\nt_calc &lt;-  (x_HF_21d - mu_pop) / std_err_HF_21d   # 0.7080951\n\n\nOption 2: Let’s compute the t test with stats::t.test 👩🏻‍💻\n\n\nt_stat_HF_21d_v2 &lt;- stats::t.test(x = heart_21d$plat_norm,\n                                  mu = mu_pop,\n                                  alternative = \"two.sided\")\n# extract t_calc from results df\nt_calc_v2  &lt;- t_stat_HF_21d_v2[[\"statistic\"]][[\"t\"]] # 0.7240093\n\n\n\n\nThere is a small difference in the t_calc ≠ t_calc_v2 due to the fact that I use the Bessel’s correction n-1 in the sample standard deviation formula denominator, while the R function uses n"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic",
-    "href": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.c Computation of the p-value associated to the test statistic",
-    "text": "2.c Computation of the p-value associated to the test statistic\n\n👩🏻‍💻 Let’s see how this could be done using an R function BSDA::z.test\n\n\n\nz_test_summary &lt;- BSDA::z.test(x = heart_failure$plat_norm,   \n             alternative='two.sided', \n             mu=236, \n             sigma.x=59, \n             conf.level=.95)\nz_test_summary\n\n\n    One-sample z-Test\n\ndata:  heart_failure$plat_norm\nz = 8.018, p-value = 1.074e-15\nalternative hypothesis: true mean is not equal to 236\n95 percent confidence interval:\n 256.6705 270.0455\nsample estimates:\nmean of x \n  263.358 \n\n\nSame results!"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic-1",
-    "href": "practice/slides_lab02.html#c-computation-of-the-p-value-associated-to-the-test-statistic-1",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2.c Computation of the p-value associated to the test statistic",
-    "text": "2.c Computation of the p-value associated to the test statistic\n\n\nOption 1: “by hand”\n\nTo find the p-value associated with a t-score in R, we can use the pt(q, df, lower.tail = TRUE) function, which uses the following syntax:\n\n\nq: The t-score\n\ndf: The degrees of freedom\n\nlower.tail:\n\nTRUE to calculate the probability to the left of q which is called as left-tailed test\nFALSE as right-tailed test.\n\n\n\n\n# ---- Option 1 \n# -- Left-tailed test\n#pt(t_stat_HF_21d, df_HF_21d, lower.tail = TRUE)\n\n# -- Right-tailed test\n#pt(t_stat_HF_21d, df_HF_21d, lower.tail = FALSE) \n\n# -- Two-tailed test  (our case)\np_value_t_test &lt;- 2*pt(t_calc, df_HF_21d, lower.tail = FALSE) # 0.4863214\n\n\nOption 2: from results of stats::t.test\n\n\n\n# ---- Option 2 \n# extract  p_value from results df\np_value_v2  &lt;- t_stat_HF_21d_v2[[\"p.value\"]] # 0.4766892"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-statsshapiro.test",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-statsshapiro.test",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (test) with stats::shapiro.test",
-    "text": "Preliminary check for normality (test) with stats::shapiro.test\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 1 \nstats::shapiro.test(mice[mice$group == \"Control\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Control\", \"surv_days\", drop = TRUE]\nW = 0.99374, p-value = 0.9989\n\nstats::shapiro.test(mice[mice$group == \"Treatment 1\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 1\", \"surv_days\", drop = TRUE]\nW = 0.95716, p-value = 0.6106\n\nstats::shapiro.test(mice[mice$group == \"Treatment 2\", \"surv_days\", drop=TRUE])\n\n\n    Shapiro-Wilk normality test\n\ndata:  mice[mice$group == \"Treatment 2\", \"surv_days\", drop = TRUE]\nW = 0.97921, p-value = 0.9601"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (test) with rstatix::shapiro_test",
-    "text": "Preliminary check for normality (test) with rstatix::shapiro_test\n(same thing, but using a different R function)\n\n\nNormally-distributed response variable – ✅\n\n\n(confirmed by Shapiro-Wilk normality test)\n\n[The null hypothesis of this test is \\(H_0\\) = “sample distribution is normal” ]\n\n# Shapiro-Wilk Normality Test to verify normality  \n# option 2 (all 3 groups at once)\nmice %&gt;%\n  dplyr::group_by(group) %&gt;%\n  rstatix::shapiro_test(surv_days)\n\n# A tibble: 3 × 4\n  group       variable  statistic     p\n  &lt;chr&gt;       &lt;chr&gt;         &lt;dbl&gt; &lt;dbl&gt;\n1 Control     surv_days     0.994 0.999\n2 Treatment 1 surv_days     0.957 0.611\n3 Treatment 2 surv_days     0.979 0.960"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-.-output",
-    "href": "practice/slides_lab02.html#question-.-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: …….?",
-    "text": "1. Question: …….?\n\n\nTWhat a succesful workshop! 😁"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-groups-statistically-significant",
-    "href": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-groups-statistically-significant",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is the difference between two PAIRED groups statistically significant?",
-    "text": "1. Question: Is the difference between two PAIRED groups statistically significant?\n\nWhat a successful workshop! 😁"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-groups-statistically-significant-output",
-    "href": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-groups-statistically-significant-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is the difference between two PAIRED groups statistically significant?",
-    "text": "1. Question: Is the difference between two PAIRED groups statistically significant?\n\n\nWhat a successful workshop! 😁"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples",
-    "href": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2 Computation of the Wilcoxon signed-rank test for dependent samples",
-    "text": "2 Computation of the Wilcoxon signed-rank test for dependent samples\n\nIn this example, it is clear that the two samples are not independent since the same 12 students took the test before and after the workshop.\nSupposing also that the normality assumption is violated (and given the small sample size), we thus use the Wilcoxon test for paired samples, with the following hypotheses:\n\n\n\\(𝑯_𝟎\\) : grades before and after the workshop are equal\n\n\\(𝑯_𝒂\\) : grades before and after the workshop are different\n\n\n# Wilcoxon signed-rank test \ntest &lt;- stats::wilcox.test(grades_long$grade ~ grades_long$time_f,\n                           paired = TRUE)\n# results\ntest\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  grades_long$grade by grades_long$time_f\nV = 21, p-value = 0.1692\nalternative hypothesis: true location shift is not equal to 0"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples-output",
-    "href": "practice/slides_lab02.html#computation-of-the-wilcoxon-signed-rank-test-for-dependent-samples-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2 Computation of the Wilcoxon signed-rank test for dependent samples",
-    "text": "2 Computation of the Wilcoxon signed-rank test for dependent samples\n\n\n    Wilcoxon signed rank test with continuity correction\n\ndata:  grades_long$grade by grades_long$time_f\nV = 21, p-value = 0.1692\nalternative hypothesis: true location shift is not equal to 0"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-samples-statistically-significant",
-    "href": "practice/slides_lab02.html#question-is-the-difference-between-two-paired-samples-statistically-significant",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is the difference between two PAIRED samples statistically significant?",
-    "text": "1. Question: Is the difference between two PAIRED samples statistically significant?\n\nWhat a successful workshop! 😁"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#testing-samples-without-normality-assumption",
-    "href": "practice/slides_lab02.html#testing-samples-without-normality-assumption",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Testing samples without normality assumption",
-    "text": "Testing samples without normality assumption\nLet’s go back to the HEART FAILURE dataset but looking at the levels of Creatinine Phosphokinase (CPK) in the blood, an enzyme that might indicate a heart failure or injury"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-test-statistic",
-    "href": "practice/slides_lab02.html#computation-of-the-test-statistic",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2 Computation of the test statistic",
-    "text": "2 Computation of the test statistic"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-test-statistic-1",
-    "href": "practice/slides_lab02.html#computation-of-the-test-statistic-1",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2 Computation of the test statistic",
-    "text": "2 Computation of the test statistic"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#bonus-function",
-    "href": "practice/slides_lab02.html#bonus-function",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Bonus function!",
-    "text": "Bonus function!\nIt is worth mentioning the ggstatsplot package, which combines plots representing the distribution for each group—and the results of the statistical test displayed in the subtitle of the plot.\nBelow we check out the ggwithinstats() function for paired samples, respectively.\n\n# load package\nlibrary(ggstatsplot)\n\n# plot with statistical results\ngrades_long %&gt;% \n  # must ungroup the dataframe or it will give an error\n  ungroup () %&gt;% \n  ggstatsplot::ggwithinstats(.,\n                             x = time_f ,\n                             y = grade ,\n                             type = \"nonparametric\", # for wilcoxon\n                             centrality.plotting = FALSE # remove median\n  )"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#bonus-function-output",
-    "href": "practice/slides_lab02.html#bonus-function-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Bonus function!",
-    "text": "Bonus function!\n\n\nThe test results are rendered with the plot!"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "href": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question:Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question:Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\nDefining the question formally:\n\n\\(𝑯_𝟎\\) : \\(𝝁_{CPK-died} = 𝝁_{CPK-surv}\\) there is no difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure\n\\(𝑯_𝒂\\) : \\(𝝁_{CPK-died} ≠ 𝝁_{CPK-surv}\\) there is a difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure (two-sided test)\n\n\nggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT_f))+\n  geom_density(alpha = 0.5)+theme_fivethirtyeight()+\n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))+\n  guides(fill = \"none\") +\n  scale_x_continuous(breaks = seq(0,8000, 500))+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT == 0])),\n             color = \"#4c4c4c\")+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT==1])), \n             color = \"#d8717b\")+\n  theme_fivethirtyeight()+\n  theme(axis.text.x = element_text(angle=50, vjust=0.75))+\n  labs(title =  \"Creatinine phosphokinase (density distribution) by group (Death Event)\") + \n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "href": "practice/slides_lab02.html#questionis-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question:Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question:Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\n\n\nThe boxplot suggests that the 3 groups might have some fairly different distributions"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (visual)",
-    "text": "Preliminary check for normality (visual)\n\n\nNormally-distributed response variable - ❌\n\nQQ plot (or quantile-quantile plot) draws the correlation between a given sample and the normal distribution. A 45-degree reference line is also plotted. In a QQ plot, each observation is plotted as a single dot.\n\nIf the data are normal, the dots should form a straight line.\n\n\n# visual verification with QQ plot \nggpubr::ggqqplot( \n  heart_failure$creatinine_phosphokinase, \n  title = \"QQ plot for CPK levels in blood\",\n  xlab =\"Theoretical\", ylab = \"Sample (CPK)\")"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test-1",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-test-with-rstatixshapiro_test-1",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (test) with rstatix::shapiro_test",
-    "text": "Preliminary check for normality (test) with rstatix::shapiro_test\n(same thing, but using a different R function)\n\n\nNormally-distributed response variable - ❌\n\n(NOT normality confirmed by Shapiro-Wilk normality test)\n\n\n\n[The null hypothesis of this test is \\(H_0\\) = “sample distribution(s) is/are normal” ]\nGiven the p-value we reject the null hypothesis\n\n# Shapiro-Wilk Normality Test to verify normality  \nheart_failure %&gt;%\n  dplyr::group_by(DEATH_EVENT_f) %&gt;%\n  rstatix::shapiro_test(creatinine_phosphokinase)\n\n# A tibble: 2 × 4\n  DEATH_EVENT_f variable                 statistic        p\n  &lt;fct&gt;         &lt;chr&gt;                        &lt;dbl&gt;    &lt;dbl&gt;\n1 survived      creatinine_phosphokinase     0.628 8.51e-21\n2 died          creatinine_phosphokinase     0.439 1.99e-17"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\nDefining the question formally:\n\n\\(𝑯_𝟎\\) : \\(𝝁_{CPK-died} = 𝝁_{CPK-surv}\\) there is no difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure\n\\(𝑯_𝒂\\) : \\(𝝁_{CPK-died} ≠ 𝝁_{CPK-surv}\\) there is a difference in mean CPK between patients who suffered heart failure and died versus patients who survived after heart failure (two-sided test)\n\n\nggplot(heart_failure,aes(x = creatinine_phosphokinase,fill = DEATH_EVENT_f))+\n  geom_density(alpha = 0.5)+theme_fivethirtyeight()+\n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))+\n  guides(fill = \"none\") +\n  scale_x_continuous(breaks = seq(0,8000, 500))+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT == 0])),\n             color = \"#4c4c4c\")+\n  geom_vline(aes(xintercept = mean(creatinine_phosphokinase[DEATH_EVENT==1])), \n             color = \"#d8717b\")+\n  theme_fivethirtyeight()+\n  theme(axis.text.x = element_text(angle=50, vjust=0.75))+\n  labs(title =  \"Creatinine phosphokinase (density distribution) by group (Death Event)\") + \n  theme(plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-cpk-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question: Is there a statistically significant difference between CPK levels in the blood of the survivors v. those who died after heart failure?\n\n\nThe density plot suggests non normality of the variable distribution"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1-output",
-    "href": "practice/slides_lab02.html#preliminary-check-for-normality-visual-1-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check for normality (visual)",
-    "text": "Preliminary check for normality (visual)\n\n\nIn a QQ plot, if the data are normal, the dots should follow a straight line."
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-wilcoxon-rank-sum-test-statistic",
-    "href": "practice/slides_lab02.html#computation-of-the-wilcoxon-rank-sum-test-statistic",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "3. Computation of the Wilcoxon Rank Sum test statistic",
-    "text": "3. Computation of the Wilcoxon Rank Sum test statistic\nThe Wilcoxon Rank Sum test is considered to be the nonparametric equivalent to the two-sample independent t-test\nIts ASSUMPTIONS are:\n\nOrdinal or Continuous dependent variable: e.g. CPK levels ✅\nIndependence: All of the observations from both groups are independent of each other ✅\nShape: The shapes of the distributions for the two groups are roughly the same ✅\n\n\nwrs_res &lt;- wilcox.test(creatinine_phosphokinase ~ DEATH_EVENT, # immagino 0, 1\n                   data = heart_failure ,\n                   exact = FALSE, \n                   alternative = \"two.sided\" )\nwrs_res\n\n\n    Wilcoxon rank sum test with continuity correction\n\ndata:  creatinine_phosphokinase by DEATH_EVENT\nW = 9460, p-value = 0.684\nalternative hypothesis: true location shift is not equal to 0\n\n\n\n\nThe Wilcoxon Rank Sum test is equivalent to the Mann-Whitney U test to compare two independent samples. Different software use one or the other."
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?\nDefining the question formally:\n\n\\(𝑯_𝟎\\) : \\(𝝁_{sersod-died} = 𝝁_{sersod-surv}\\) there is no difference in mean serum sodium between patients who suffered heart failure and died versus patients who survived after heart failure\n\\(𝑯_𝒂\\) : \\(𝝁_{sersod-died} ≠ 𝝁_{sersod-surv}\\) there is a difference in mean serum sodium between patients who suffered heart failure and died versus patients who survived after heart failure (two-sided test)"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "href": "practice/slides_lab02.html#question-is-there-a-statistically-significant-difference-between-serum-sodium-levels-in-the-blood-of-the-survivors-v.-those-who-died-after-heart-failure-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?",
-    "text": "1. Question: Is there a statistically significant difference between serum sodium levels in the blood of the survivors v. those who died after heart failure?\n\n\nThe density plot suggests non normality of the variable distribution"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#computation-of-the-t-test-with-the-welch-correction",
-    "href": "practice/slides_lab02.html#computation-of-the-t-test-with-the-welch-correction",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "2 Computation of the t test with the Welch correction",
-    "text": "2 Computation of the t test with the Welch correction\n\nWe can still run the t test but with Welch correction, i.e. the unequal variance condition is compensated by lowering the df. In fact the documentation (?t.test), reads:\n\nIf var.equal = TRUE, then the pooled variance is used to estimate the variance\nOtherwise (var.equal = FALSE), the Welch approximation to the degrees of freedom is used.\n\n\n# With Welch correction (on by default) Unequal variance is compensated by lowering df\nt_test_w &lt;- t.test(heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1], \n                   heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0],\n                   # here we specify the situation\n                   var.equal = FALSE,\n                   paired = FALSE, alternative = \"two.sided\") \n\nt_test_w\n\n\n    Welch Two Sample t-test\n\ndata:  heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] and heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0]\nt = -3.1645, df = 154.01, p-value = 0.001872\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -2.9914879 -0.6920096\nsample estimates:\nmean of x mean of y \n 135.3750  137.2167"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-of-hov-assumption-for-parametric-testing-visual",
-    "href": "practice/slides_lab02.html#preliminary-check-of-hov-assumption-for-parametric-testing-visual",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check of “HOV” assumption for parametric testing (visual)",
-    "text": "Preliminary check of “HOV” assumption for parametric testing (visual)\n\n\nHomogeneity of Variance assumption - ❌ Plotting the data offers some graphical intuition that the variance of observations in the two groups seem not homogenous\n\n\n#Compute means and 95% confidence intervals\nswstats &lt;- heart_failure %&gt;%\n  group_by(DEATH_EVENT_f) %&gt;%\n  summarise(count = n(),\n    mean = mean(serum_sodium,na.rm=TRUE),\n    stddev = sd(serum_sodium, na.rm=TRUE),\n    meansd_l = mean - stddev,\n    meansd_u = mean + stddev)\n\n#The complete script with some styling added\nggplot(swstats, aes(x=DEATH_EVENT_f, y=mean)) + \n  geom_point(colour = \"black\" , size = 2) +\n  #Now plotting the individual data points before the mean values\n  geom_point(data=heart_failure, aes(x=DEATH_EVENT_f, y=serum_sodium, colour = DEATH_EVENT_f), \n             position = position_jitter() ) +\n  scale_colour_manual(values = c(\"#999999\",\"#d8717b\") ) +\n  #Add the error bars\n  geom_errorbar(aes(ymin = meansd_l, ymax = meansd_u), width=0.2, color = \"black\") +\n  labs(title = \"Mean (-/+SD) serum sodium (mEq/L) by group\", x = \"\", y = \"Serum Sodium\") +\n  guides(fill = \"none\")  +\n  coord_flip() +\n  labs(title =  \"Serum Sodium means and 95% confidence intervals by group (Death Event)\") + \n  theme(legend.position=\"none\",plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-of-hov-assumption-for-parametric-testing-visual-output",
-    "href": "practice/slides_lab02.html#preliminary-check-of-hov-assumption-for-parametric-testing-visual-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check of “HOV” assumption for parametric testing (visual)",
-    "text": "Preliminary check of “HOV” assumption for parametric testing (visual)\n\n\nThe density plot suggests non normality of the variable distribution"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual",
-    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check “HOV” assumption (visual)",
-    "text": "Preliminary check “HOV” assumption (visual)\n\n\n\nHomogeneity of Variance assumption - ❌ Plotting the data offers some graphical intuition that the variance of observations in the two groups seem not homogenous\n\n\n#Compute means and 95% confidence intervals\nswstats &lt;- heart_failure %&gt;%\n  group_by(DEATH_EVENT_f) %&gt;%\n  summarise(count = n(),\n    mean = mean(serum_sodium,na.rm=TRUE),\n    stddev = sd(serum_sodium, na.rm=TRUE),\n    meansd_l = mean - stddev,\n    meansd_u = mean + stddev)\n\n#The complete script with some styling added\nggplot(swstats, aes(x=DEATH_EVENT_f, y=mean)) + \n  geom_point(colour = \"black\" , size = 2) +\n  #Now plotting the individual data points before the mean values\n  geom_point(data=heart_failure, aes(x=DEATH_EVENT_f, y=serum_sodium, colour = DEATH_EVENT_f), \n             position = position_jitter() ) +\n  scale_colour_manual(values = c(\"#999999\",\"#d8717b\") ) +\n  #Add the error bars\n  geom_errorbar(aes(ymin = meansd_l, ymax = meansd_u), width=0.2, color = \"black\") +\n  labs(title = \"Mean (-/+SD) serum sodium (mEq/L) by group\", x = \"\", y = \"Serum Sodium\") +\n  guides(fill = \"none\")  +\n  coord_flip() +\n  labs(title =  \"Serum Sodium means and 95% confidence intervals by group (Death Event)\") + \n  theme(legend.position=\"none\",plot.title = element_text(size = 14,face=\"bold\", color = \"#873c4a\"))"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual-output",
-    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-visual-output",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check “HOV” assumption (visual)",
-    "text": "Preliminary check “HOV” assumption (visual)"
-  },
-  {
-    "objectID": "practice/slides_lab02.html#preliminary-check-hov-assumption-test",
-    "href": "practice/slides_lab02.html#preliminary-check-hov-assumption-test",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Preliminary check “HOV” assumption (test)",
-    "text": "Preliminary check “HOV” assumption (test)\nIt is always best to use an actual test, so we use also the Fisher’s F test to verify equal variances of Serum Sodium concentration in the two groups. [In this test \\(H_0\\) = “the ratio of variances is equal to 1”]\n\nf_test_res &lt;- stats::var.test(heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] ,\n                              heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0])\nf_test_res\n\n\n    F test to compare two variances\n\ndata:  heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 1] and heart_failure$serum_sodium[heart_failure$DEATH_EVENT == 0]\nF = 1.5769, num df = 95, denom df = 202, p-value = 0.007646\nalternative hypothesis: true ratio of variances is not equal to 1\n95 percent confidence interval:\n 1.127401 2.254466\nsample estimates:\nratio of variances \n          1.576922 \n\n\nGiven the p-value = 0.007646 (smaller than \\(\\alpha\\)) we reject the null hypothesis, hence the HOV assumption for the t test does not hold."
-  },
-  {
-    "objectID": "practice/slides_lab01.html#goal-of-todays-practice-session",
-    "href": "practice/slides_lab01.html#goal-of-todays-practice-session",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "GOAL OF TODAY’S PRACTICE SESSION",
-    "text": "GOAL OF TODAY’S PRACTICE SESSION\n\nMotivate the choice of learning/using R for scientific quantitative analysis, and lay out some fundamental concepts in biostatistics with concrete R coding examples.\n\n\n\nLecture 1: topics\n\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\n\nR objects, functions, packages\n\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\n\n\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and frequency distribution\n\n\n\nVisual data exploration\n\n{ggplot2}"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#from-character-to-factor-using-base-r",
-    "href": "practice/slides_lab01.html#from-character-to-factor-using-base-r",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "From character to factor using base R",
-    "text": "From character to factor using base R\n\n#### char 2 factor -------------------------------------------------------------\n# Say I want to treat some variables as factors\nautism_pids$gender &lt;- as.factor(autism_pids$gender)\nautism_pids$ethnicity &lt;- as.factor(autism_pids$ethnicity)\nautism_pids$contry_of_res &lt;- as.factor(autism_pids$contry_of_res)\nautism_pids$relation &lt;- as.factor(autism_pids$relation)\n\n# check \nclass(autism_pids$gender)\n\n[1] \"factor\"\n\nclass(autism_pids$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids$relation)\n\n[1] \"factor\""
-  },
-  {
-    "objectID": "practice/slides_lab01.html#from-character-to-factor-using-base-r-n-cols",
-    "href": "practice/slides_lab01.html#from-character-to-factor-using-base-r-n-cols",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "From character to factor using base R (n cols)",
-    "text": "From character to factor using base R (n cols)\n\nautism_pids_temp &lt;- autism_pids # copy df for test \n\nto_factor &lt;- c(\"gender\", \"ethnicity\", \"contry_of_res\", \"relation\") # vector of col names \nautism_pids_temp[ ,to_factor] &lt;-  lapply(X =  autism_pids[ ,to_factor], FUN = as.factor)\n\n# check \nclass(autism_pids_temp$gender)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$ethnicity)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$contry_of_res)\n\n[1] \"factor\"\n\nclass(autism_pids_temp$relation)\n\n[1] \"factor\"\n\n# now I have Variable type: factor"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df",
-    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "New df (patients missing age) as SUBSET of the given df",
-    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 1) using [] from base\n\n\nmissing_age_subset &lt;- autism_pids[is.na(autism_pids$age), \n                                  c(\"pids\", \"age\", \"autism_dummy\") ]\nmissing_age_subset\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-1",
-    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-1",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "New df (patients missing age) as SUBSET of the given df",
-    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 2) using which from base\n\n\nmissing_age_subset2 &lt;- autism_pids[which(is.na(autism_pids$age)), \n                                   c(\"pids\", \"age\", \"autism_dummy\")] \nmissing_age_subset2\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-2",
-    "href": "practice/slides_lab01.html#new-df-patients-missing-age-as-subset-of-the-given-df-2",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "New df (patients missing age) as SUBSET of the given df",
-    "text": "New df (patients missing age) as SUBSET of the given df\nI want to extract only the obs (rows) of interest with a few useful vars (cols)\nOption 3) using subset from base\n\n\n# arguments allow me to specify rows and cols \nmissing_age_subset3 &lt;- subset(x = autism_pids, \n                              subset = is.na(autism_pids$age), # 1 logical condition\n                              select = c(\"pids\", \"age\", \"autism_dummy\") # which cols\n                              ) \nmissing_age_subset3\n\n           pids age autism_dummy\n63 PatientID_63  NA            0\n92 PatientID_92  NA            0"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#new-df-filtering-on-2-conditions-as-subset-of-the-given-df-1",
-    "href": "practice/slides_lab01.html#new-df-filtering-on-2-conditions-as-subset-of-the-given-df-1",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "New df (filtering on 2 conditions) as SUBSET of the given df",
-    "text": "New df (filtering on 2 conditions) as SUBSET of the given df\nOption 2) using dplyr (filter + select)\nSwitching to the package dplyr and embracing the “pipe” (%&gt;%) operator logic, in which the filtering (rows) and selecting (columns) is done in sequence\n\n## here the filtering (rows) and selecting (columns) is done in sequence\ntwocond_dplyr_subset &lt;- autism_pids %&gt;% \n  dplyr::filter(age &lt; 25 & contry_of_res == \"Brazil\") %&gt;%  # which rows\n  dplyr::select (pids, age, contry_of_res, autism_dummy)   # which cols\n\ntwocond_dplyr_subset\n\n           pids age contry_of_res autism_dummy\n1   PatientID_2  24        Brazil            1\n2  PatientID_54  21        Brazil            1\n3  PatientID_94  19        Brazil            1\n4 PatientID_429  20        Brazil            0\n5 PatientID_587  21        Brazil            0\n6 PatientID_588  21        Brazil            0"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r",
-    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Grouping and summarizing with base R",
-    "text": "Grouping and summarizing with base R\nE.g. I want to know the average age of men and women sub-groups.\nOption 1) using by\n\n\n# by(data$column, data$grouping_column, mean)\nby(data = autism_pids$age_inputed, INDICES = autism_pids$gender, FUN = mean)\n\nautism_pids$gender: f\n[1] 29.60237\n------------------------------------------------------------ \nautism_pids$gender: m\n[1] 28.98365"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-1",
-    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-1",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Grouping and summarizing with base R",
-    "text": "Grouping and summarizing with base R\nOption 2) using tapply\n\n\n# i.e. apply a function to subsets of a vector or array, split by one or more factors.\ntapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)\n\n       f        m \n29.60237 28.98365 \n\n\nOption 3) using split + sapply\n\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-2",
-    "href": "practice/slides_lab01.html#grouping-and-summarizing-with-base-r-2",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Grouping and summarizing with base R",
-    "text": "Grouping and summarizing with base R\nOption 3) using split + sapply\n\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-12",
-    "href": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-12",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Create custom function to calculate statistical mode 1/2",
-    "text": "Create custom function to calculate statistical mode 1/2\nR doesn’t have a built-in function for the statistical mode, so we can create a custom one: f_calc_mode\nDefine the custom function\n\nf_calc_mode  &lt;- function(x) { \n  # `unique` returns a vector of unique values \n  uni_x &lt;- unique(x)  \n  # `match` returns the index positions of 1st vector against 2nd vector\n  match_x &lt;- match(x, uni_x)\n  # `tabulate` count the occurrences of integer values in a vector.\n  tab_x  &lt;-  tabulate(match_x) \n  # returns element of uni_x that corresponds to max occurrences\n  uni_x[tab_x == max(tab_x)]\n}"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-22",
-    "href": "practice/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-22",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Create custom function to calculate statistical mode 2/2",
-    "text": "Create custom function to calculate statistical mode 2/2\nCall the custom function\n\nf_calc_mode(autism_pids$age)\n\n[1] 21\n\nf_calc_mode(autism_pids$age_inputed)\n\n[1] 21\n\nf_calc_mode(autism_pids$ethnicity)\n\n[1] White-European\n11 Levels: Asian Black Hispanic Latino Middle Eastern  others ... White-European"
-  },
-  {
-    "objectID": "practice/slides_lab01.html#small-digression-on-tidyrpivot_longer",
-    "href": "practice/slides_lab01.html#small-digression-on-tidyrpivot_longer",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "(Small digression on tidyr::pivot_longer)",
-    "text": "(Small digression on tidyr::pivot_longer)\n\nThe new small dataframe group_stats offers an example of reshaping, i.e. turning a table from a “wide” form (with each variable in its own column) to a “long” form (one column for both the measures names and another for both the measures values).\n\nThis can be done using tidyr::pivot_longer function, where these arguments must be specified:\n\n\ncols: The names of the columns to pivot\n\nnames_to: The name for the new character column\n\nvalues_to: The name for the new values column\n\n\n\n\ngroup_stats_long &lt;- group_stats %&gt;% \n  tidyr::pivot_longer(cols = mean_age:median_age, \n                      names_to = \"Stat\", \n                      values_to = \"Value\") %&gt;% \n  dplyr::mutate(label = as.character(glue::glue(\"{gender}_{Stat}\")))\n\ngroup_stats_long \n\n# A tibble: 4 × 4\n  gender Stat       Value label       \n  &lt;fct&gt;  &lt;chr&gt;      &lt;dbl&gt; &lt;chr&gt;       \n1 f      mean_age    29.6 f_mean_age  \n2 f      median_age  28   f_median_age\n3 m      mean_age    29.0 m_mean_age  \n4 m      median_age  26   m_median_age"
   }
 ]

@@ -13,29 +13,46 @@ execute:
 tbl-colwidths: [5,20,75]
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab00.html" # default value (placeholder slide)
-  lab_R_code: "lab00_code.R"          # default value (placeholder R code)
+  src_slide_file: "slides_lab02.html" 
+                  # "slides_lab00.html" # default value (placeholder slide)
+                  # "slides_lab01.html"
+                  # "slides_lab02.html"
+                  # "slides_lab03.html"
+                  # "slides_lab04.html"
+  lab_data_dir: "02_datasets"
+                  # "01_datasets" # default value (placeholder slide)
+                  # "02_datasets"
+                  # "03_datasets"
+                  # "04_datasets"
+  lab_R_code: "lab00_code.R"           
+              # "lab00_code.R"          # default value (placeholder R code)
+              # "lab01_code.R"
+              # "lab02_code.R"
+              # "lab03_code.R"
+              # "lab04_code.R"
 ---
 
 ```{r}
+#| eval: false
+#| echo: false
+#| output: false
 
-# This param is not in r, so I will use: `r params$src_slide_file`
-src_slide_file <- c("slides_lab00.html", # default closed 
-                    "slides_lab01.html",
-                    "slides_lab02.html",
-                    "slides_lab03.html",
-                    "slides_lab04.html")
+## ----------------- params 
+## ---  To use in chunk params$src_slide_file # [1] "slides_lab00.html"
+## ---  To use in line `r params$src_slide_file`# [1] "slides_lab00.html"
 
-# This param is  in r, so I will use:   params$lab_R_code
-lab_R_code <- c("lab00_code.R",
-                "lab01_code.R",
-                "lab02_code.R" ,
-                "lab03_code.R" ,
-                "lab04_code.R")
+## ----------------- Render this web apage 
+## --- Con Knitr (fa automaticamente quello in YAMl)
+## --- Con Quarto 
+quarto::quarto_render(
+  input = here::here("practice", "lab02_inference.qmd"),
+  execute_params =  list(
+    src_slide_file =  "slides_lab02.html", # "slides_lab00.html" ,
+    lab_R_code = "lab00_code.R"))
 ```
 
 
-<!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
+<!-- 1/2 DIAPOSITIVA WIDE (16:9) # param -->
 ```{=html}
 <iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
@@ -45,6 +62,7 @@ lab_R_code <- c("lab00_code.R",
 <!-- <iframe class="slide-deck" src= params$src_slide_file height="420" width="565" style="border: 1px solid #2e3846;"></iframe> -->
 <!-- ``` -->
 
+<!-- # param -->
 <a href=`r params$src_slide_file` target="_blank">View slides in full screen</a>
 
 
@@ -65,12 +83,12 @@ library(downloadthis)
 ```{r}
 #| eval: true
 #| echo: false
-#| output: false
+#| output: true
 
 download_dir(
-  path = here::here("practice", "data_input", "02_datasets"),
+  path = here::here("practice", "data_input", params$lab_data_dir), # param
   output_name = "labs input data",
-  button_label = "Download input data 2 directory",
+  button_label = "Download input data directory",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",

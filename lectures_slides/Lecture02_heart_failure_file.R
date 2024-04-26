@@ -480,34 +480,81 @@ pnorm(z_calc_HF, mean = 0, sd = 1,
 2*pnorm(z_calc_HF, mean = 0, sd = 1, 
       lower.tail = FALSE) # Two-tailed test 0.00000000000000107443
 
-# SAMPLING DISTRIBUTION SIMULATON 
-# Let's take a SRS of size n = 64
-set.seed(64)
-# sub_sample 1 std err  + Z stat 
-sample_64_1 <-  slice_sample(heart, n = 64, replace = FALSE)
-sample_pl_mu_1 <- mean(sample_64_1$plat_norm) # mu_0 260.3733
-sample_pl_sigma_1 <- sd(sample_64_1$plat_norm) #sigma_o 96.53336
 
-std_err_1 <- sigma/sqrt(64) # 12.22553
-z_stat_1 <-  (sample_pl_mu_1 - mu) / std_err_1 # -0.2441404
-  
-# sub_sample 2 std err  + Z stat   
-sample_64_2 <-  slice_sample(heart, n = 64, replace = FALSE)
-sample_pl_mu_2 <- mean(sample_64_2$plat_norm) # mu_0 265.7668
-sample_pl_sigma_2 <- sd(sample_64_2$plat_norm) #sigma_o 81.59953
+## Plot Z test result ------------------------------------------------------
+heart  %>% 
+  ggplot(aes(x = plat_norm))+
+  #ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                #xlim = c(-z_stat_HF_1, z_stat_HF_1)
+                )  +
+   xlim(-5, 5)
 
-std_err_2 <- sigma/sqrt(64) # 12.22553
-z_stat_2 <-  (sample_pl_mu_2 - mu) / std_err_2 # 0.1970265
+heart  %>% 
+  ggplot(aes(x = plat_norm))+
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",alpha = .5,
+                args = list( mean = x_HF, sd = s_HF
+                )) +  
+  stat_function(fun = dnorm,  geom = "line", linetype = 2,
+                fill = "steelblue", alpha = .5, 
+                args = list(mean = x_HF  )) +
+  labs( title = "Type I Error", x = "z-score", y = "Density" ) +
+  scale_x_continuous(limits = c(-3, 5))
 
-# sub_sample 3 std err  + Z stat   
-sample_64_3 <-  slice_sample(heart, n = 64, replace = FALSE)
-sample_pl_mu_3 <- mean(sample_64_3$plat_norm) # mu_0 265.1842
-sample_pl_sigma_3 <- sd(sample_64_3$plat_norm) #sigma_o 103.3775
+nhstplot::plotztest(
+  z = z_calc_HF,
+  tails = "two",
+  blank = FALSE,
+  xmax = "auto",
+  title = "z Test",
+  xlabel = "z",
+  ylabel = "Density of probability\nunder the null hypothesis",
+  colorcut = "#005ca1",
+  colormiddle = "aliceblue" ,
+  colormiddlecurve = "#005ca1",
+  colorsides = "#9b2356", 
+  colorplabel = "#9b2356" ,
+  fontfamily = "Helvetica"  ,
+  colorsidescurve = "#005ca1",
+  theme = "default",
+  signifdigitsz = 3,
+  curvelinesize = 0.4,
+  cutlinesize = 0.4
+)
 
-std_err_3 <- sigma/sqrt(64) # 12.22553
-z_stat_3 <-  (sample_pl_mu_3 - mu) / std_err_3 # 0.1493753
+## SAMPLING DISTRIBUTION SIMULATON ----------
+# # Let's take a SRS of size n = 64
+# set.seed(64)
+# # sub_sample 1 std err  + Z stat 
+# sample_64_1 <-  slice_sample(heart, n = 64, replace = FALSE)
+# sample_pl_mu_1 <- mean(sample_64_1$plat_norm) # mu_0 260.3733
+# sample_pl_sigma_1 <- sd(sample_64_1$plat_norm) #sigma_o 96.53336
+# 
+# std_err_1 <- sigma/sqrt(64) # 12.22553
+# z_stat_1 <-  (sample_pl_mu_1 - mu) / std_err_1 # -0.2441404
+#   
+# # sub_sample 2 std err  + Z stat   
+# sample_64_2 <-  slice_sample(heart, n = 64, replace = FALSE)
+# sample_pl_mu_2 <- mean(sample_64_2$plat_norm) # mu_0 265.7668
+# sample_pl_sigma_2 <- sd(sample_64_2$plat_norm) #sigma_o 81.59953
+# 
+# std_err_2 <- sigma/sqrt(64) # 12.22553
+# z_stat_2 <-  (sample_pl_mu_2 - mu) / std_err_2 # 0.1970265
+# 
+# # sub_sample 3 std err  + Z stat   
+# sample_64_3 <-  slice_sample(heart, n = 64, replace = FALSE)
+# sample_pl_mu_3 <- mean(sample_64_3$plat_norm) # mu_0 265.1842
+# sample_pl_sigma_3 <- sd(sample_64_3$plat_norm) #sigma_o 103.3775
+# 
+# std_err_3 <- sigma/sqrt(64) # 12.22553
+# z_stat_3 <-  (sample_pl_mu_3 - mu) / std_err_3 # 0.1493753
 
-  
+
+
 # 1 sample t-test, SMALL n known sigma (PLATELETS) ------------------------------------------------------
 # Let's consider a hypothetical situation where my sample was smaller 
 # Using the same dataset I apply a cutoff period of follow-up visit happening in <30 days 
@@ -781,6 +828,30 @@ t.test(heart$platelets[heart$DEATH_EVENT == 1],
        heart$platelets[heart$DEATH_EVENT == 0],
        var.equal = TRUE) # df = 297
 
+
+## Plot t test result ------------------------------------------------------
+nhstplot::plotttest(
+  t = 0.7080,
+  df = 22,
+  tails = "two",
+  blank = FALSE,
+  xmax = "auto",
+  title = "t Test",
+  xlabel = "t",
+  ylabel = "Density of probability\nunder the null hypothesis",
+  colorcut = "#005ca1",
+  colormiddle = "aliceblue" ,
+  colormiddlecurve = "#005ca1",
+  colorsides = "#9b2356", 
+  colorplabel = "#9b2356" ,
+  fontfamily = "Helvetica"  ,
+  colorsidescurve = "#005ca1",
+  theme = "default",
+  signifdigitst = 3, 
+  curvelinesize = 0.4,
+  cutlinesize = 0.4,
+  p_value_position = "auto"
+)
 # _________--------------------------------------------------------------
 # 1. Independence  --> VIOLATED --------------------------
 # e.g. The Independence assumption is violated when the samples share more than they should | Two samples from a same individual
