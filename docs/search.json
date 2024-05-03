@@ -494,7 +494,7 @@
     "href": "practice/slides_lab02.html#results-and-interpretation-4",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "3. Results and interpretation",
-    "text": "3. Results and interpretation\nWe obtain the test statistic, the p-value and a reminder of the hypothesis tested.\nThe p-value is 0.169. Therefore, at the 5% significance level, we do not reject the null hypothesis that the statistics’ grades are similar before and after the semester (😭)."
+    "text": "3. Results and interpretation\nWe obtain the test statistic, the p-value and a reminder of the hypothesis tested.\nThe p-value is 0.169. Therefore, at the 5% significance level, we do not reject the null hypothesis that the statistics’ grades are similar before and after the workshop (😭)."
   },
   {
     "objectID": "practice/slides_lab02.html#bonus-function",
@@ -620,7 +620,7 @@
     "href": "practice/slides_lab02.html#final-thoughtsrecommendations",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Final thoughts/recommendations",
-    "text": "Final thoughts/recommendations\n\n\n\nThere are often many ways to do the same thing in R (which is both a blessing and a curse in open source software). Which should you choose? It depends on the situation, but you may want to consider:\n\nhow popular/well maintained is a {package} (this affects its stability)\nthe more a function abstracts away complexity, the easier it is to use, but the harder it will get to handle it inside your own custom functions\ndifferent output formats may be more/less suitable for your analysis (check out your peers’ choices!)\n(Always read the documentation to assess all of the above)\n\n\nWith easy equations, computing them “by hand” (at least once) can really help you understand them\nIt may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is once you wrote a script, you will be able to easily re-use it in many more instances 🙌🏻 😃\nSample size n has a very powerful impact on classical hypothesis testing results! More on this later…"
+    "text": "Final thoughts/recommendations\n\n\n\nThere are often many ways to do the same thing in R (which is both a blessing and a curse in open source software). Which should you choose? It depends on the situation, but you may want to consider:\n\nhow recent/popular/well maintained is a {package} (this affects its stability)\nthe more a function abstracts away complexity, the easier it is to use interactively, but the harder it gets to handle inside your own custom functions\ndifferent function outputs may be more/less suitable for your analysis/publication requirements (check out your peers’ choices!)\n(Always read the documentation to assess all of the above)\n\n\nWith easy equations, breaking them down “by hand” (at least once!) can really help you understand them\nIt may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is once you wrote a script, you will be able to easily re-use it in many more instances 🙌🏻 😃\nSample size n has a very powerful impact on classical hypothesis testing results! More on this later…"
   },
   {
     "objectID": "practice/slides_lab02.html#references",
@@ -684,6 +684,111 @@
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Practice session 1: R code (as .R file)",
     "text": "Practice session 1: R code (as .R file)\n\n\n Download Lab session 1 as .R file"
+  },
+  {
+    "objectID": "license_etc.html",
+    "href": "license_etc.html",
+    "title": "Acknowledgments and use of the course materials",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…"
+  },
+  {
+    "objectID": "license_etc.html#acknowledgements",
+    "href": "license_etc.html#acknowledgements",
+    "title": "Acknowledgments and use of the course materials",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
+  },
+  {
+    "objectID": "license_etc.html#licensing-and-use-of-the-course-materials",
+    "href": "license_etc.html#licensing-and-use-of-the-course-materials",
+    "title": "Acknowledgments and use of the course materials",
+    "section": "Licensing and use of the course materials",
+    "text": "Licensing and use of the course materials\nsomething along the lines of MADA course"
+  },
+  {
+    "objectID": "license_etc.html#list-of-great-resources",
+    "href": "license_etc.html#list-of-great-resources",
+    "title": "Acknowledgments and use of the course materials",
+    "section": "List of great resources",
+    "text": "List of great resources\nSection Article\n\n\nWongsaengsak, S., Dennis, J., Arevalo, M., Ball, S., & Nugent, K. (2019). Significance of platelet counts in health and disease: Insights from a population study using data from the National Health and Nutrition Examination Survey [Article]. The Southwest Respiratory and Critical Care Chronicles, 7(30), 4–11. https://doi.org/10.12746/swrccc.v7i30.558\n\n\nKruschke, J. K., & Liddell, T. M. (2018). The Bayesian New Statistics: Hypothesis testing, estimation, meta-analysis, and power analysis from a Bayesian perspective [Article]. Psychonomic Bulletin & Review, 25(1), 178–206. https://doi.org/10.3758/s13423-016-1221-4\n\nMayne, J. W. (1957). Role of Statistics in Scientific Research [Article]. The Scientific Monthly, 84(1), 26–33. http://www.jstor.org/stable/22032\nSection course\n\n\nApplied Epi Team (2024). Applied Epi - Elevating frontline epidemiology [Course]. Training, support, tools. https://www.appliedepi.org/\n\n\nBobbitt, Z. (2024). Statology [Course]. Statology. https://www.statology.org/\n\n\ncsun.edu (2024). http://www.csun.edu/~an73773/SlidesClass10F09.pdf [Course]. http://www.csun.edu/~an73773/SlidesClass10F09.pdf\n\n\ncuemath (2024). Z-test/ [Course]. https://www.cuemath.com/data/z-test/\n\n\nDATAtab Team (2024). DATAtab [Course]. https://datatab.net/tutorial/get-started\n\n\nGinolhac, A. (2024). Biostatistics 1 [Course]. https://rworkshop.uni.lu\n\n\nhttps://statisticsbyjim.com (2024). Statisticsbyjim.com [Course]. https://statisticsbyjim.com. https://statisticsbyjim.com/hypothesis-testing/types-errors-hypothesis-testing/\n\n\nMatson, M. (2024). ICY0006 Probability Theory and Statistics [Course]. Department of Software Science at Tallinn University of Technology. https://cs.ioc.ee/ITKStat/#about\n\n\nrafalab (2024). Dsbook-part-1/ [Course]. http://rafalab.dfci.harvard.edu/dsbook-part-1/dataviz/distributions.html#distributions\n\n\nSelby, D., & 2021 (2024). Analytical Epidemiology II [Course]. David Selby. https://personalpages.manchester.ac.uk/staff/david.selby/analysis/2021-03-30-inference/\n\n\ntowardsdatascience_5-ways?–increase-statistical-power-_2024\n\ntuos-bio-data-skills (last) (2024). Scientific-process [Course]. https://tuos-bio-data-skills.github.io/intro-stats-book/scientific-process.html\n\n\nChilds, D. Z., Bethan J., & Warren, P. H. (2022). Introductory Biostatistics with R [Course]. https://tuos-bio-data-skills.github.io/intro-stats-book/index.html\n\n\nEdanz-Learning-Team (2022, September 20). Frequentist vs. Bayesian Statistics – Which should you use? [Course]. Edanz Learning Lab. https://learning.edanz.com/frequentist-bayesian-statistics/\n\nShahbaba, B. (2012). Biostatistics with R: An Introduction to Statistics Through Biological Data [Course]. Springer New York. https://doi.org/10.1007/978-1-4614-1302-8\nSection YT course\n\nNormal, V. (Director) (2024). Biostatistics course - YOUTUBE [YT course]. https://www.youtube.com/watch?v=1Q6_LRZwZrc&t=22249s\nSection R\n\n\nApplied Epi Team (2024). R for applied epidemiology and public health The Epidemiologist R Handbook [R]. https://epirhandbook.com/en/\n\n\nCodoni, A., Ginolhac, R., & Krause (2024, February). Course Biostatistics [R]. https://rworkshop.uni.lu\n\n\ndplyr vignette (2024). Programming with dplyr [R]. dplyr. https://dplyr.tidyverse.org/articles/programming.html#tidy-selection\n\nRStudio, & Posit (2024). Base-r-cheat-sheet.pdf [R]. https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf\n\n@coolbutuseless (2019, March 13). Anonymous Functions in R - Part 1 - coolbutuseless [R]. https://coolbutuseless.github.io/2019/03/13/anonymous-functions-in-r-part-1/\n\n\nWickham, H. (2014). Tidy Data [R]. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\n\nLogan, M. (2010). Biostatistical Design and Analysis Using R: A Practical Guide (1st ed.) [R]. Wiley. https://onlinelibrary.wiley.com/doi/book/10.1002/9781444319620\nSection Rdataset\n\n\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone [Dataset]. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\n\nWongsaengsak, S., Dennis, J., Arevalo, M., Ball, S., & Nugent, K. (2019). Significance of platelet counts in health and disease: Insights from a population study using data from the National Health and Nutrition Examination Survey [Dataset]. The Southwest Respiratory and Critical Care Chronicles, 7(30), 4–11. https://doi.org/10.12746/swrccc.v7i30.558\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study [Dataset]. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001"
+  },
+  {
+    "objectID": "lectures/lec04_intro_ML.html",
+    "href": "lectures/lec04_intro_ML.html",
+    "title": "Intro to machine learning",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec04_intro_ML.html#lecture-4-outline",
+    "href": "lectures/lec04_intro_ML.html#lecture-4-outline",
+    "title": "Intro to machine learning",
+    "section": "Lecture 4 Outline",
+    "text": "Lecture 4 Outline\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nUnsupervised ML\n\nExamples\n\n\nElements of Statistical Power analysis\nUseful R resources for metabolomics"
+  },
+  {
+    "objectID": "lectures/lec02_inference.html",
+    "href": "lectures/lec02_inference.html",
+    "title": "Statistical inference & hypothesis testing",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec02_inference.html#lecture-2-outline",
+    "href": "lectures/lec02_inference.html#lecture-2-outline",
+    "title": "Statistical inference & hypothesis testing",
+    "section": "Lecture 2 Outline",
+    "text": "Lecture 2 Outline\n\nPurpose and foundations of inferential statistics\n\nProbability and random variables\nMeaningful probability distributions\nSampling distributions and Central Limit Theorem\nConfidence Intervals\n\nGetting to know the “language” of hypothesis testing\n\nThe null and alternative hypothesis\nThe probability of error? (α or “significance level”)\nThe p-value probability and tests interpretation\nEffective vs statistical significance\nTypes of errors (Type 1 and Type 2)\n\nHypothesis tests examples\n\nComparing sample mean to a hypothesized population mean (Z test & t test)\nComparing two independent sample means (t test)\nComparing sample means from 3 or more groups (ANOVA) \n\nA closer look at testing assumptions (with examples)\n\nTesting two groups that are not independent\nTesting if the data are not normally distributed: non-parametric tests\nTesting samples without homogeneous variance of observations"
+  },
+  {
+    "objectID": "install.html",
+    "href": "install.html",
+    "title": "Installation and setup",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine before the workshop.\nBelow is a step by step process that should guide you through the needed installation steps."
+  },
+  {
+    "objectID": "install.html#useful-keyboard-shortcuts-in-rstudio",
+    "href": "install.html#useful-keyboard-shortcuts-in-rstudio",
+    "title": "Installation and setup",
+    "section": "Useful keyboard shortcuts in RStudio",
+    "text": "Useful keyboard shortcuts in RStudio\n\n\n\n\n\n\nDescription\nWindows & Linux\nMac\n\n\n\nInsert code section\nCtrl+Shift+R\nShift+Command+R  or Ctrl+Shift+R\n\n\nRun current line/selection\nCtrl+Enter\nCommand+Return\n\n\nReindent lines\nCtrl+I\nCommand+I\n\n\nInsert &lt;- operator\nAlt+-\nOption+-\n\n\nInsert %&gt;% operator\nCtrl+Shift+M\nShift+Command+M\n\n\nCode completion\nTab\nTab\n\n\nFile path completion (console)\n\"+Tab\n\"+Tab\n\n\n\n\n\n\nHere you find the complete list of RStudio Keyboard Shortcuts"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to Biostatistics with R",
+    "section": "",
+    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAlso, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions here.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\naaa\nbbb\nccc"
+  },
+  {
+    "objectID": "lectures/lec01_data_with_R.html",
+    "href": "lectures/lec01_data_with_R.html",
+    "title": "Lecture 1: Intro to R and data analysis",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec01_data_with_R.html#lecture-1-outline",
+    "href": "lectures/lec01_data_with_R.html#lecture-1-outline",
+    "title": "Lecture 1: Intro to R and data analysis",
+    "section": "Lecture 1 Outline",
+    "text": "Lecture 1 Outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
+  },
+  {
+    "objectID": "lectures/lec03_corr_regress.html",
+    "href": "lectures/lec03_corr_regress.html",
+    "title": "Modeling correlation and regression",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec03_corr_regress.html#lecture-3-outline",
+    "href": "lectures/lec03_corr_regress.html#lecture-3-outline",
+    "title": "Modeling correlation and regression",
+    "section": "Lecture 3 Outline",
+    "text": "Lecture 3 Outline\n\nTesting for a correlation hypothesis (relationship of variables)\n\nPearson rho analysis (param)\nSpearman test (no param)\n\nMeasures of association\n\nFisher’s Exact Test\nChi-Square Test of Independence\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nSupervised ML\n\nExamples"
   },
   {
     "objectID": "lectures_slides/000_exe_mine.html#collaborators",
@@ -1036,83 +1141,6 @@
     "text": "coda\n\n\n\nWe are all converts to the tidyverse and have made a conscious choice to use it in our research and our teaching. We each learned R without the tidyverse and have all spent quite a few years teaching without it at a variety of levels from undergraduate introductory statistics courses to graduate statistical computing courses. This paper is a synthesis of the reasons supporting our tidyverse choice, along with benefits and challenges associated with teaching statistics with the tidyverse.\n\n\n\n\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
-    "objectID": "lectures/lec03_corr_regress.html",
-    "href": "lectures/lec03_corr_regress.html",
-    "title": "Modeling correlation and regression",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec03_corr_regress.html#lecture-3-outline",
-    "href": "lectures/lec03_corr_regress.html#lecture-3-outline",
-    "title": "Modeling correlation and regression",
-    "section": "Lecture 3 Outline",
-    "text": "Lecture 3 Outline\n\nTesting for a correlation hypothesis (relationship of variables)\n\nPearson rho analysis (param)\nSpearman test (no param)\n\nMeasures of association\n\nFisher’s Exact Test\nChi-Square Test of Independence\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nSupervised ML\n\nExamples"
-  },
-  {
-    "objectID": "lectures/lec01_data_with_R.html",
-    "href": "lectures/lec01_data_with_R.html",
-    "title": "Lecture 1: Intro to R and data analysis",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec01_data_with_R.html#lecture-1-outline",
-    "href": "lectures/lec01_data_with_R.html#lecture-1-outline",
-    "title": "Lecture 1: Intro to R and data analysis",
-    "section": "Lecture 1 Outline",
-    "text": "Lecture 1 Outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Intro to Biostatistics with R",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\n\n\n\nWelcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland\n\nTime: 9 am - 5 pm July 24th to July 27th, 2024\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, statistical inference and survey design applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will mostly use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\nTentative Schedule\n\nDay\nTime\nActivity\nLocation\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (in R)\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 1\nBuilding ??, Room ?\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inference\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 2\nBuilding ??, Room ?\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 3\nBuilding ??, Room ?\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning\nBuilding ??, Room ?\n\n\n\"\"\n2pm - 5pm\nPractice Session 4\nBuilding ??, Room ?\n\n\n\n\n\n\nHot & cold drinks will be served during the morning breaks.\nPractical information\nPlease, do bring your laptop as no computer will be available.\nAlso, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions here.\nAcknowledgements\nThe materials presented in this workshops have been prepared drawing from various sources:\n\naaa\nbbb\nccc"
-  },
-  {
-    "objectID": "install.html",
-    "href": "install.html",
-    "title": "Installation and setup",
-    "section": "",
-    "text": "Caution\n\n\n\n\n\nWebsite construction in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine before the workshop.\nBelow is a step by step process that should guide you through the needed installation steps."
-  },
-  {
-    "objectID": "install.html#useful-keyboard-shortcuts-in-rstudio",
-    "href": "install.html#useful-keyboard-shortcuts-in-rstudio",
-    "title": "Installation and setup",
-    "section": "Useful keyboard shortcuts in RStudio",
-    "text": "Useful keyboard shortcuts in RStudio\n\n\n\n\n\n\nDescription\nWindows & Linux\nMac\n\n\n\nInsert code section\nCtrl+Shift+R\nShift+Command+R  or Ctrl+Shift+R\n\n\nRun current line/selection\nCtrl+Enter\nCommand+Return\n\n\nReindent lines\nCtrl+I\nCommand+I\n\n\nInsert &lt;- operator\nAlt+-\nOption+-\n\n\nInsert %&gt;% operator\nCtrl+Shift+M\nShift+Command+M\n\n\nCode completion\nTab\nTab\n\n\nFile path completion (console)\n\"+Tab\n\"+Tab\n\n\n\n\n\n\nHere you find the complete list of RStudio Keyboard Shortcuts"
-  },
-  {
-    "objectID": "lectures/lec02_inference.html",
-    "href": "lectures/lec02_inference.html",
-    "title": "Statistical inference & hypothesis testing",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec02_inference.html#lecture-2-outline",
-    "href": "lectures/lec02_inference.html#lecture-2-outline",
-    "title": "Statistical inference & hypothesis testing",
-    "section": "Lecture 2 Outline",
-    "text": "Lecture 2 Outline\n\nPurpose and foundations of inferential statistics\n\nProbability and random variables\nMeaningful probability distributions\nSampling distributions and Central Limit Theorem\nConfidence Intervals\n\nGetting to know the “language” of hypothesis testing\n\nThe null and alternative hypothesis\nThe probability of error? (α or “significance level”)\nThe p-value probability and tests interpretation\nEffective vs statistical significance\nTypes of errors (Type 1 and Type 2)\n\nHypothesis tests examples\n\nComparing sample mean to a hypothesized population mean (Z test & t test)\nComparing two independent sample means (t test)\nComparing sample means from 3 or more groups (ANOVA) \n\nA closer look at testing assumptions (with examples)\n\nTesting two groups that are not independent\nTesting if the data are not normally distributed: non-parametric tests\nTesting samples without homogeneous variance of observations"
-  },
-  {
-    "objectID": "lectures/lec04_intro_ML.html",
-    "href": "lectures/lec04_intro_ML.html",
-    "title": "Intro to machine learning",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec04_intro_ML.html#lecture-4-outline",
-    "href": "lectures/lec04_intro_ML.html#lecture-4-outline",
-    "title": "Intro to machine learning",
-    "section": "Lecture 4 Outline",
-    "text": "Lecture 4 Outline\n\nFrom association to prediction -&gt; Machine learning algorithms\n\nUnsupervised ML\n\nExamples\n\n\nElements of Statistical Power analysis\nUseful R resources for metabolomics"
-  },
-  {
     "objectID": "me.html",
     "href": "me.html",
     "title": "About the Instructor",
@@ -1145,7 +1173,7 @@
     "href": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Practice session 2: R code (as .R file)",
-    "text": "Practice session 2: R code (as .R file)"
+    "text": "Practice session 2: R code (as .R file)\n\n\n\n Download Lab session 2 as .R file"
   },
   {
     "objectID": "practice/lab04_intro_ML.html",

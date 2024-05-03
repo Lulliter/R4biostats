@@ -1390,7 +1390,7 @@ test
 
 We obtain the test statistic, the p-value and a reminder of the hypothesis tested.
 
-The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are similar before and after the semester (😭).
+The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are similar before and after the workshop (😭).
 
 
 ## Bonus function! 
@@ -1620,12 +1620,12 @@ INTERPRETATION: We therefore have sufficient evidence to say that the level of s
 
 + There are often **many ways to do the same thing in R** (which is both a blessing and a curse in open source software). *Which should you choose?* It depends on the situation, but you may want to consider:
 
-  + how popular/well maintained is a `{package}` (this affects its stability) 
-  + the more a function abstracts away complexity, the easier it is to use, but the harder it will get to handle it inside your own custom functions
-  + different output formats may be more/less suitable for your analysis (check out your peers' choices!)
+  + how recent/popular/well maintained is a `{package}` (this affects its stability) 
+  + the more a function abstracts away complexity, the easier it is to use interactively, but the harder it gets to handle inside your own custom functions
+  + different function outputs may be more/less suitable for your analysis/publication requirements (check out your peers' choices!)
   + *(Always **read the documentation** to assess all of the above)* 
 
-+ With easy equations, computing them "by hand" (at least once) can really help you understand them
++ With easy equations, breaking them down "by hand" (at least once!) can really help you understand them
 
 + It may seem a lot of work to write R code the first time 🥵 (e.g. for a publication-ready plot), but the good news is **once you wrote a script, you will be able to easily re-use it in many more instances** 🙌🏻 😃 
 

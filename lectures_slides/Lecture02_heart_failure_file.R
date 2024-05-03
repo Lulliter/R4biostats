@@ -1106,7 +1106,7 @@ t.test(heart$serum_sodium[heart$DEATH_EVENT == 1],
 # _________--------------------------------------------------------------
 
 # One-way ANOVA -----------------------------------------------------------
-mice <- readxl::read_excel("lectures_slides/mice_exe_ANOVA.xlsx", col_types = c("numeric", "text", "skip"))
+mice <- readxl::read_excel("practice/data_input/02_datasets/mice_exe_ANOVA.xlsx", col_types = c("numeric", "text", "skip"))
 
 
 # ____ Assumptions -------------------------------------------------------------

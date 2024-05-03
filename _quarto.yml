@@ -77,6 +77,9 @@ website:
       - text: "About"
         icon: mortarboard-fill #person-circle # https://icons.getbootstrap.com/?q=home
         href: me.qmd
+      - text: "Acknowledgements"
+        icon: bookmark-heart-fill # code-square # https://icons.getbootstrap.com/?q=home
+        href: license_etc.qmd
         
 # ## ---- non mi piace sul lato 
 #   sidebar:

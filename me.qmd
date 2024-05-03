@@ -17,12 +17,13 @@ about:
     # - icon: github
     #   text: Github (EXE Lula)
     #   href: https://github.com/Lulliter
-    # - text: "{{< fa brands google-scholar >}} Google Scholar"
-    - text: "![](images/icons8-google-scholar-16.jpg) Google Scholar"
+    # https://jpswalsh.github.io/academicons/
+    - text: "{{< ai google-scholar >}} Google Scholar"
+    # - text: "![](images/icons8-google-scholar-16.jpg) Google Scholar"
       href: https://scholar.google.com/citations?user=a5BhtocAAAAJ&hl=en&oi=ao
-    - text: "{{< fa brands researchgate >}} Research Gate"
+    - text: "{{< ai researchgate >}} Research Gate" # fa brands researchgate
       href: https://www.researchgate.net/profile/Maria-Mimmi-2
-    - text: "{{< fa brands orcid >}} Orcid"
+    - text: "{{< ai orcid >}} Orcid"
       href: https://orcid.org/0000-0002-5165-9230
 ---
 

@@ -1,0 +1,221 @@
+---
+title: "Acknowledgments and use of the course materials"
+# general Output Options
+execute:     
+  eval: true
+  echo: false     #  include source code in output?
+  warning: false  #  include warning code in output?
+  error: false    #  include error code in output?
+  output: true   # include output code in output (CHG in BLOCKS)?
+  # include: false   # R still runs but code and results DON"T appear in output  
+  # cache: false
+toc: true
+format:
+  html:
+    code-fold: false # redundant IF echo false 
+    toc-depth: 2
+    toc_float: true
+    toc-location: left
+    toc-title: ""
+    # template: theme/template.tex  
+bibliography: bib/R4biostats.bib
+csl: bib/apa-cv.csl # Very important for complete citations!!!!! 
+## --------- NO END REFERENCES .... other options are redundant!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+suppress-bibliography: true
+# biblio-style: apa # authoryear-icomp # abbrv # alpha #apalike # plain # unsrt #siam
+#reference-section-title: References
+#link-citations: false
+# filters:
+#   - section-bibliographies
+---
+
+::: {.callout-caution collapse="false"}
+Website construction in progress...
+:::
+
+```{r}
+if (!require(pacman)) {install.packages(pacman)} 
+library(pacman)
+
+# pacman::p_ver("bib2df")
+# pacman::p_exists("bib2df")  #TRUE
+# pacman::p_ver_diff("bib2df")
+# p_load_gh("ropensci/bib2df") # otherwise warns `as_data_frame() was deprecated in tibble 2.0.0.`
+
+#remotes::install_github("ropensci/bib2df")
+p_load(RefManageR,
+       #  bib2df,
+       bibtex,
+       janitor,here, paint,
+       glue,
+       tidyverse, # lubridate,
+       htmltools,
+       # distilltools,
+       bib2df
+)
+
+```
+
+```{r}
+# - Load bibliography (exported from Zotero)
+bib_path <- here::here ("bib","R4biostats.bib")
+
+# - as list  (NEEDED for functions later)
+mybib <- RefManageR::ReadBib(bib_path, check = FALSE )  #bibtex::do_read_bib(file = bib_path, encoding = "unknown", srcfile)
+
+# - as dataframe
+mybib_df_raw <- bib2df::bib2df(bib_path)  
+
+# - Format dataframe version of bibliography
+mybib_df <-
+  mybib_df_raw %>%
+  clean_names() %>%
+  select(key = bibtexkey, 
+         date, 
+         author, 
+         title, 
+         category,# THIS MY Zotero's 
+         type, # THIS MY OWN "Extra: tex.type: ..." in zotero 
+         url, 
+         file  ) %>%
+  mutate(
+    # date = parse_date_time(date, "ymd",
+    # 							  #select_formats = .select_formats
+    # 							  drop = FALSE),
+    yyyy_mm = str_sub(date, start = 1, end = 7), # I have some irregularities in format  
+    date_parsed = parse_date_time(yyyy_mm,  "ym", truncated = 2 ),
+    year = year(date_parsed), 
+    month = month(date_parsed)) %>%
+  arrange(desc(year), key) %>% 
+  dplyr::relocate(c("yyyy_mm" ,    "year" ,        "month"  ), .after =date)
+
+   
+# # Set RefManageR options (needed to avoid the "[1]")
+# oldopts <- RefManageR::BibOptions(
+# 	style = "text",
+# 	bib.style = "authoryear", 
+# 	no.print.fields = c("doi", "url", "urldate", "eprint", "eprinttype"),
+# 	max.names = 50, # maximum number of names to display before using “et al.”
+# 	dashed = FALSE, 
+# 	sorting = "ydnt"
+# )
+
+# # - Load additional metadata
+# mybib_meta <- tibble::tribble( 
+# 	~"url_pub", ~"url_pdf",~ "url_rg", ~"url_repo", ~"url_arch", ~"url_osf", ~"url_other", ~"url_blog" ) 
+# mybib_meta[1:nrow(mybib_df), ] <- as.character(NA)
+# 
+# # bind 
+# mybib_df2 <- cbind(mybib_df, mybib_meta)
+# names(mybib_df2)
+# rm(mybib, mybib_df, mybib_df_raw, mybib_meta)
+```
+
+ 
+## Acknowledgements
+
+## Licensing and use of the course materials
+
+something along the lines of [MADA course](https://andreashandel.github.io/MADAcourse/)   
+
+
+## List of great resources 
+
+### Section Article
+
+```{r article}
+#| include: false
+
+mybib_df[mybib_df$type == "article",  1] 
+# 
+# print(mybib[type = "article"], 
+#       .opts = list(bib.style = "authoryear", 
+#                    check.entries = FALSE))
+
+```
+
+ + @wongsaengsak_significance_2019-1  
+ + @kruschke_bayesian_2018     
+ + @mayne_role_1957    
+
+### Section course
+
+```{r course}
+#| include: false
+
+mybib_df[mybib_df$type == "course",  1] 
+
+# print(mybib[type = "course"], 
+#       .opts = list(bib.style = "authoryear", 
+#                    check.entries = FALSE))
+
+```
+
++ @applied_epi_team_applied_2024                              
++ @bobbitt_statology_2024                                     
++ @csunedu_httpwwwcsuneduan73773slidesclass10f09pdf_2024      
++ @cuemath_z-test_2024                                        
++ @datatab_team_datatab_2024                                  
++ @ginolhac_biostatistics_2024                                
++ @httpsstatisticsbyjimcom_statisticsbyjimcom_2024            
++ @matson_icy0006_2024                                        
++ @rafalab_dsbook-part-1_2024                                 
++ @selby_analytical_2024                                      
++ @towardsdatascience_5-ways--increase-statistical-power-_2024
++ @tuos-bio-data-skills_last_scientific-process_2024          
++ @childs_introductory_2022                                   
++ @edanz-learning-team_frequentist_2022                       
++ @shahbaba_biostatistics_2012    
+
+### Section YT course
+
+```{r YT_course}
+#| include: false
+
+mybib_df[mybib_df$type == "YT course",  1] 
+# print(mybib[type = "YT course"], 
+#       .opts = list(bib.style = "authoryear", 
+#                    check.entries = FALSE))
+``` 
+
++ @very_normal_biostatistics_2024
+
+### Section R
+
+```{r R}
+#| include: false
+
+mybib_df[mybib_df$type == "R",  1] 
+
+# print(mybib[type = "R"], 
+#       .opts = list(bib.style = "authoryear", 
+#                    check.entries = FALSE))
+``` 
++ @applied_epi_team_r_2024           
++ @codoni_course_2024                
++ @dplyr_vignette_programming_2024   
++ @rstudio_base-r-cheat-sheetpdf_2024
++ @coolbutuseless_anonymous_2019     
++ @wickham_tidy_2014                 
++ @logan_biostatistical_2010  
+
+### Section Rdataset 
+
+```{r dataset}
+#| include: false
+
+mybib_df[mybib_df$type == "dataset",  1] 
+# print(mybib[type = "dataset"],
+#        .opts = list(bib.style = "authoryear", 
+#                     check.entries = FALSE))
+```
+
++ @chicco_machine_2020           
++ @wongsaengsak_significance_2019
++ @ahmad_survival_2017 
+  
+<!-- <!-- For HTML output -->  
+<!-- ::: {.content-hidden when-format="html"} -->
+<!-- ## References -->
+<!-- ::: -->
+

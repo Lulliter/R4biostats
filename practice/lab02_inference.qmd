@@ -24,7 +24,7 @@ params:
                   # "02_datasets"
                   # "03_datasets"
                   # "04_datasets"
-  lab_R_code: "lab00_code.R"           
+  lab_R_code: "lab02_code.R"           
               # "lab00_code.R"          # default value (placeholder R code)
               # "lab01_code.R"
               # "lab02_code.R"
@@ -103,7 +103,7 @@ download_dir(
 ```{r}
 #| echo: false
 #| eval: true
-#| output: false
+#| output: true
 
 library(fs) 
 
@@ -120,4 +120,4 @@ download_file(
 )
 ```
 
-![](../images/coming_soon.png)
+<!-- ![](../images/coming_soon.png) -->
