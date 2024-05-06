@@ -49,18 +49,20 @@ ul.task-list li input[type="checkbox"] {
 <section id="intro-to-biostatistics-with-r" class="level1">
 <h1>Intro to Biostatistics with R</h1>
 <p>This website collects the materials for a two day workshop taking place during the…..</p>
+</section>
+<section id="quirks" class="level1">
+<h1>Quirks</h1>
+<p>Little things to keep in mind (because semi-automated) about moving form <a href="https://drive.google.com/drive/folders/1mkits-PaRC8SGnDuMn2h_bKHAVTHXI50?usp=drive_link">GoogleDrive</a> (<code>*.pptx</code>) lecture files to R lecture files for sharing (<code>*.pdf</code>). Before every push to GitHub:</p>
+<ol type="1">
+<li>I execute a script <code>R_resources/slides_fromDrive_2_here.R</code> from my shell file <code>___render_deploy.sh</code></li>
+<li>I execute the shell commands to convert <code>*.pptx</code> slides to <code>*.pdf</code> as soon as they are ~ready…</li>
+</ol>
 <section id="to-do" class="level2">
 <h2 class="anchored" data-anchor-id="to-do">TO DO</h2>
 <ul>
-<li><del>size of PDF presentation</del> <!-- + non editable PDF  --></li>
-<li><del>move Lecture 1 inference 2 lecture 2</del></li>
-<li><del>upd <code>practice/Rcode/lab01_code.R</code> based on <code>practice/slides_lab01.qmd</code></del></li>
 <li><strong>Lectures (pptx -&gt; pdf)</strong>
 <ul>
-<li>Lecture 02 (95% done!)
-<ul>
-<li>rifare grafici (9 sl con riquadri rossi)</li>
-</ul></li>
+<li><del>Lecture 02 (99% done!)</del></li>
 <li>Lecture 03<br>
 </li>
 <li>Lecture 04<br>
@@ -68,16 +70,21 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>practice slides (revealjs)</strong>
 <ul>
-<li>(general inserire “Your turn” in practice lab)❓❓</li>
-<li>Practice 02 (97% done!)<br>
+<li><del>(general inserire “Your turn” in practice lab)</del>❓❓</li>
+<li><del>Practice 02 (97% done!)</del><br>
 </li>
 <li>Practice 03<br>
 </li>
 <li>Practice 04<br>
 </li>
 </ul></li>
-<li><strong>[optional]</strong>
+<li><strong>license &amp; acknowledg </strong>
 <ul>
+<li>clean up from Zotero</li>
+</ul></li>
+<li><strong>[CODE refactoring]</strong>
+<ul>
+<li>add Goggle Analytics</li>
 <li>make <code>_variable.yml</code>
 <ul>
 <li>nome sito</li>
@@ -86,7 +93,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><del>practice slides and code Done !</del></li>
 </ul></li>
-<li>decidere dove tengo le immagini</li>
 <li>turn all practice into <code>tidyeval</code> functions (plot etc) to be able to replace with different datasets</li>
 </ul></li>
 </ul>

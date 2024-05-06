@@ -5,8 +5,9 @@ project:
 #  will be rendered (NO .file, _dir/)
   render:
     - "*.qmd"
-    - "!R_stuff/"
+    - "!R_resources/"
     - "!zzz_old"
+    
 
 execute:
   freeze: auto  # Re-render only when source changes

@@ -3,28 +3,33 @@
 This website collects the materials for a two day workshop taking place during the.....
 
 
+# Quirks 
+
+Little things to keep in mind (because semi-automated) about moving form [GoogleDrive](https://drive.google.com/drive/folders/1mkits-PaRC8SGnDuMn2h_bKHAVTHXI50?usp=drive_link) (`*.pptx`) lecture files to R lecture files for sharing (`*.pdf`). Before every push to GitHub:
+
+1. I execute a script `R_resources/slides_fromDrive_2_here.R` from my shell file `___render_deploy.sh`
+2. I execute the shell commands to convert `*.pptx` slides to `*.pdf` as soon as they are ~ready... 
+
+
 ## TO DO
 
-+ ~~size of PDF presentation~~
-<!-- + non editable PDF  -->
-+ ~~move Lecture 1 inference 2 lecture 2~~
-+ ~~upd `practice/Rcode/lab01_code.R` based on `practice/slides_lab01.qmd`~~
 + **Lectures (pptx -> pdf)**
-  + Lecture 02 (95% done!)
-    + rifare grafici (9 sl con riquadri rossi)
+  + ~~Lecture 02 (99% done!)~~
   + Lecture 03  
   + Lecture 04  
 + **practice slides (revealjs)**
-  + (general inserire "Your turn" in practice lab)❓❓ 
-  + Practice 02 (97% done!)  
+  + ~~(general inserire "Your turn" in practice lab)~~❓❓ 
+  + ~~Practice 02 (97% done!)~~  
   + Practice 03  
   + Practice 04  
-+ **[optional]**
++ **license & acknowledg **
+  + clean up from Zotero 
++ **[CODE refactoring]**
+  + add Goggle Analytics 
   + make  `_variable.yml`
     + nome sito 
   + parameterize `.qmd`  
     + ~~practice slides and code Done !~~
-  + decidere dove tengo le immagini
   + turn all practice into `tidyeval` functions (plot etc) to be able to replace with different datasets 
 
 ## How this website was built

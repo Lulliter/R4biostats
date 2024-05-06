@@ -9,15 +9,15 @@ tbl-colwidths: [5,20,75]
 
 <!-- 1/2 DIAPOSITIVA STD (16:9) --> 
 <!-- ```{=html} -->
-<!-- <iframe class="slide-deck" src="../lectures_slides/00_placeholder_pres.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- <iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
 <!-- ``` -->
 
 <!-- 2/2 DIAPOSITIVA STD (4:3) -->
 ```{=html}
-<iframe class="slide-deck" src="../lectures_slides/00_placeholder_pres.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='../lectures_slides/00_placeholder_pres.pdf' target="_blank">View slides in full screen</a>
+<a href='../lectures_slides/Lecture_00.pdf' target="_blank">View slides in full screen</a>
 
 ## Lecture 4 Outline
 

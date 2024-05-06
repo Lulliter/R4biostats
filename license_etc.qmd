@@ -114,9 +114,31 @@ mybib_df <-
  
 ## Acknowledgements
 
+<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-primary">Contact Us</a></p>
+
+***
+<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-secondary">Contact Us</a></p>
+
+<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-success">Contact Us</a></p>
+
+<p><i class="fa fa-home"></i> <a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-warning">Contact Us</a></p>
+
+<p><a href="mailto:lmm76@georgetown.edu" class="email-button">Contact Us</a></p>
+
+ 
 ## Licensing and use of the course materials
 
 something along the lines of [MADA course](https://andreashandel.github.io/MADAcourse/)   
+ 
+<!-- ## Materials -->
+
+<!-- This source code and license for all of the materials on this website can be found on a dedicated Github repo [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats). -->
+
+<!-- ## License -->
+
+<!-- The work presented in this website is licensed under a {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}} [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements. -->
+
+
 
 
 ## List of great resources 

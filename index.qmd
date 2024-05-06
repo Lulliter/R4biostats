@@ -101,19 +101,4 @@ Please, do bring your laptop as no computer will be available.
 Also, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions [here](https://r4biostats.com/install.html).  
 
 
-# Acknowledgements
-
-The materials presented in this workshops have been prepared drawing from various sources: 
-
-* aaa
-* bbb
-* ccc
-
-
-<!-- ## Materials -->
-
-<!-- This source code and license for all of the materials on this website can be found on a dedicated Github repo [{{< fa brands github >}}](https://github.com/Lulliter/R4biostats). -->
-
-<!-- ## License -->
-
-<!-- The work presented in this website is licensed under a {{< fa brands creative-commons >}} {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}} {{< fa brands creative-commons-sa >}} [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/), except for the borrowed and mentioned with proper *"Source:"* statements. -->
+ 

@@ -8,15 +8,15 @@ tbl-colwidths: [5,20,75]
 
 <!-- 1/2 DIAPOSITIVA STD (16:9) --> 
 <!-- ```{=html} -->
-<!-- <iframe class="slide-deck" src="../lectures_slides/00_placeholder_pres.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- <iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
 <!-- ``` -->
 
 <!-- 2/2 DIAPOSITIVA STD (4:3) -->
 ```{=html}
-<iframe class="slide-deck" src="../lectures_slides/00_placeholder_pres.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="../lectures_slides/Lecture_02.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='../lectures_slides/00_placeholder_pres.pdf' target="_blank">View slides in full screen</a>
+<a href='../lectures_slides/Lecture_00.pdf' target="_blank">View slides in full screen</a>
 
 ## Lecture 2 Outline
 
@@ -24,13 +24,13 @@ tbl-colwidths: [5,20,75]
   + Probability and random variables 
   + Meaningful probability distributions
   + Sampling distributions and Central Limit Theorem
-  + Confidence Intervals
 + **Getting to know the “language” of hypothesis testing**
   + The null and alternative hypothesis
   + The probability of error? (*α* or "significance level")
   + The *p-value* probability and tests interpretation
-  + Effective vs statistical significance
+  + Confidence Intervals
   + Types of errors (Type 1 and Type 2)
+  + Effective vs statistical significance
 + **Hypothesis tests examples**
   + Comparing sample mean to a hypothesized population mean (Z test & t test)
   + Comparing two independent sample means (t test)

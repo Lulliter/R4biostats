@@ -31,7 +31,8 @@ execute:
   include: true
   freeze: auto
 bibliography: ../bib/R4biostats.bib
-csl: ../bib/apaV2.csl 
+csl: ../bib/apa-6th-edition.csl 
+suppress-bibliography: true
 ---
 
 
@@ -1211,7 +1212,7 @@ mice %>%
 ```
 
 ## [Preliminary check variance equality ]{.r-stretch}
-
+::: {style="font-size: 85%;"}
 3. **Homogeneity of variance** – ✅ 
   + (Besides visual inspection, confirmed  by Levene test for variance equality)
 
@@ -1227,6 +1228,7 @@ levene
 ```
 
 No evidence of violations of HOV were found, since the p-value for the Levene test (= 0.8427157) is greater than .05, then the variances are not significantly different from each other (i.e., the homogeneity assumption of the variance is met). 
+:::
 
 ## [3 Computation of ANOVA F-ratio]{.r-fit-text} 
 
@@ -1328,7 +1330,7 @@ grades <- data.frame(
 )
 ```
 
-We need to reshape the dataframe into the long form using `tidyr::pivot_longer`
+We may reshape the dataframe into the long form using `tidyr::pivot_longer` (for plotting)
 ```{r}
 # reshape into long form
 grades_long <- grades %>% 
@@ -1367,42 +1369,75 @@ grades_long %>%
        x = "", y  = "")
 ```
 
-## [2 Computation of the Wilcoxon signed-rank test for dependent samples]{.r-fit-text}  
+## [2 Hypotehsis for the PAIRED t-test for dependent samples]{.r-fit-text}  
 
 ::: {style="font-size: 90%;"}
 In this example, it is clear that the two samples are not independent since the same 12 students took the test before and after the workshop.
 
-Supposing also that the normality assumption is violated (and given the small sample size), we thus use the **Wilcoxon test for paired samples**, with the following hypotheses:
+Given that the normality assumption is NOT violated (and given the small sample size), we use the **paired t-test**, with the following hypotheses:
 
-+ $𝑯_𝟎$ : grades before and after the workshop are equal
-+ $𝑯_𝒂$ : grades before and after the workshop are different
- 
-```{r}
-# Wilcoxon signed-rank test 
-test <- stats::wilcox.test(grades_long$grade ~ grades_long$time_f,
-                           paired = TRUE)
-# results
-test
-```
++ $𝑯_𝟎$ : mean grades before and after the workshop are equal
++ $𝑯_𝒂$ : mean grades before and after the workshop are different
+
 :::
+
+## [2 Computation of the PAIRED t-test for dependent samples]{.r-fit-text}   
+
+
+<!-- ```{r} -->
+<!-- # # Wilcoxon signed-rank test  -->
+<!-- # test <- stats::wilcox.test(grades_long$grade ~ grades_long$time_f, -->
+<!-- #                            paired = TRUE) -->
+<!-- # # results -->
+<!-- # test -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- # paired t test  -->
+<!-- n = 12 -->
+<!-- grades_diff <- grades %>%  -->
+<!--   # diff of each pair -->
+<!--   mutate (diff = after-before) -->
+<!-- # the mean value x̄diff is then calculated.  -->
+<!-- x_diff <- mean(grades_diff$diff) # 4.5  -->
+<!-- sd_diff <- sd(grades_diff$diff) # 7.840744 -->
+<!-- stderr <- sd_diff / sqrt(n) # 2.263428 -->
+<!-- t_calc <- (x_diff - 0)/stderr # 1.877683 -->
+<!-- df <- n-1  # 11 -->
+
+<!-- ``` -->
+
+```{r}
+t_stat_paired <- stats::t.test(x = grades$before,
+                               y = grades$after, 
+                               mu = 0, 
+                               alternative = "two.sided",
+                               paired = TRUE
+)
+t_stat_paired
+# extract t_calc from results df
+t_calc_pair   <- t_stat_paired[["statistic"]][["t"]] # -1.877683
+p_value_pair   <- t_stat_paired[["p.value"]] # 0.08717703
+
+```
+
 
 ## 3. Results and interpretation
 
 We obtain the test statistic, the p-value and a reminder of the hypothesis tested.
 
-The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are similar before and after the workshop (😭).
+The calculated **t value** is `r t_calc_pair` The **p-value** is `r p_value_pair`. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are similar before and after the workshop (😭).
 
 
 ## Bonus function! 
 
 It is worth mentioning the `ggstatsplot` package, which combines plots representing the distribution for each group—and the results of the statistical test displayed in the subtitle of the plot. 
 
-Below we check out the `ggwithinstats()` function for paired samples, respectively.
+Below we check out the `ggwithinstats()` function for *paired samples.*
 
 ```{r}
 #| output-location: slide
 #| fig-cap: "The test results are rendered with the plot!"
-
 
 # load package
 library(ggstatsplot)
@@ -1414,7 +1449,7 @@ grades_long %>%
   ggstatsplot::ggwithinstats(.,
                              x = time_f ,
                              y = grade ,
-                             type = "nonparametric", # for wilcoxon
+                             type = "parametric", # for t test 
                              centrality.plotting = FALSE # remove median
   )
 ```
@@ -1633,8 +1668,7 @@ INTERPRETATION: We therefore have sufficient evidence to say that the level of s
  
 :::
   
-
-## References
+ 
 <!-- # FOUNDATIONS OF INFERENCE -->
 
 <!-- (lo lascerei x lab \# 2) -->

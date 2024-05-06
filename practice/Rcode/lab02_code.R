@@ -823,7 +823,7 @@ grades <- data.frame(
   after = c(19, 18, 9, 17, 8, 7, 16, 19, 20, 9, 11, 18)
 )
 
-# We need to reshape the dataframe into the long form using `tidyr::pivot_longer`
+# [For plotting] we need to reshape the dataframe into the long form using `tidyr::pivot_longer`
 # reshape into long form
 grades_long <- grades %>% 
   dplyr::mutate(id = row_number()) %>%
@@ -835,7 +835,6 @@ grades_long <- grades %>%
   dplyr::mutate(time_f = as_factor(time ))  %>% 
   # reorder time_ levels  
   dplyr::mutate(time_f =  fct_relevel(time_f, "after", after =  1))
-
 
 
 ## [1. Question: Is the difference between two PAIRED samples statistically significant?] -----------------------------
@@ -857,21 +856,26 @@ grades_long %>%
 
 
 ## [2 Computation of the Wilcoxon signed-rank test for dependent samples]  --------------------------------------- 
-# In this example, it is clear that the two samples are not independent since the same 12 students took the test before and after the workshop.
-
-# Supposing also that the normality assumption is violated (and given the small sample size), we thus use the **Wilcoxon test for paired samples**, with the following hypotheses:
-
-# Wilcoxon signed-rank test 
-test <- stats::wilcox.test(grades_long$grade ~ grades_long$time_f,
-                           paired = TRUE)
-# results
-test
- 
-## 3. Results and interpretation
-# We obtain the test statistic, the p-value and a reminder of the hypothesis tested.
+# In this example, it is clear that the two samples are not independent since the same 12 students # took the test before and after the workshop.
 # 
-# The **p-value is 0.169**. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the # statistics' grades are similar before and after the workshop (😭).
+# Given that the normality assumption is NOT violated (and given the small sample size), we use the # **paired t-test**, with the following hypotheses:
+  
+t_stat_paired <- stats::t.test(x = grades$before,
+                               y = grades$after, 
+                               mu = 0, 
+                               alternative = "two.sided",
+                               paired = TRUE
+)
+t_stat_paired
 
+# extract t_calc from results df
+t_calc_pair   <- t_stat_paired[["statistic"]][["t"]] # -1.877683
+p_value_pair   <- t_stat_paired[["p.value"]] # 0.08717703
+
+
+## 3. Results and interpretation ----------------------------------------
+# We obtain the test statistic, the p-value and a reminder of the hypothesis tested.
+# The calculated **t value** is -1.877683 The **p-value** is `0.08717703. Therefore, at the 5% significance level, **we do not reject the null hypothesis** that the statistics' grades are # similar before and after the workshop (😭).
 
 ## Bonus function! 
 # load package
@@ -884,7 +888,7 @@ grades_long %>%
   ggstatsplot::ggwithinstats(.,
                              x = time_f ,
                              y = grade ,
-                             type = "nonparametric", # for wilcoxon
+                             type = "parametric", # for t test
                              centrality.plotting = FALSE # remove median
   )
 
