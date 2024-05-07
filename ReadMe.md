@@ -1,6 +1,6 @@
 # Intro to Biostatistics with R
 
-This website collects the materials for a two day workshop taking place during the.....
+This website collects the materials for a 4 day workshop taking place during the MIGEST Summer School of 2024
 
 
 # Quirks 

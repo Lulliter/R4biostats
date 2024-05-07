@@ -113,22 +113,21 @@ mybib_df <-
 
  
 ## Acknowledgements
+<!-- something along the lines of [MADA course](https://andreashandel.github.io/MADAcourse/)    -->
+<!--  https://www.laleggepertutti.it/492987_fair-use-esiste-in-italia -->
 
-<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-primary">Contact Us</a></p>
+I developed this course with a major contribution from [Luisa M. Mimmi](https://luisamimmi.org/) (my sister!), who co-created the practice labs and built this website.
 
-***
-<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-secondary">Contact Us</a></p>
+We are genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities who shared their valuable work and teaching materials. Below is a curated list of great resources (many of which free and openly accessible). 
 
-<p><a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-success">Contact Us</a></p>
+<!-- The following individuals have contributed to improving the course: Ian Bachli (@idbachli), Megan Beaudry (@MeganSarah), Zane Billings (@wzbillings),   -->
 
-<p><i class="fa fa-home"></i> <a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-warning">Contact Us</a></p>
+We would love to hear your feedback, questions, or suggestions about the workshop:  <p> <a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-info"> <i class="fa fa-envelope"></i> &nbsp;&nbsp;contact us</a></p>
 
-<p><a href="mailto:lmm76@georgetown.edu" class="email-button">Contact Us</a></p>
-
- 
 ## Licensing and use of the course materials
 
-something along the lines of [MADA course](https://andreashandel.github.io/MADAcourse/)   
+The course materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All borrowed external materials (images, examples, etc.), are credited with proper "*Source:*" statements and governed by their own licenses. We drew from sources that were published under "open access" or "creative commons" frameworks. If this were not the case for any of material displayed here, please let us know and we will remove it.
+
  
 <!-- ## Materials -->
 
