@@ -25,7 +25,7 @@ Little things to keep in mind (because semi-automated) about moving form [Google
 + **license & acknowledg **
   + clean up from Zotero 
 + **[CODE refactoring]**
-  + add Goggle Analytics 
+  + ~~add Goggle Analytics~~ 
   + make  `_variable.yml`
     + nome sito 
   + parameterize `.qmd`  
