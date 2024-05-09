@@ -57,11 +57,13 @@ p_load(RefManageR,
 ```
 
 ```{r}
+# For this I need the Zotero bib to be exported as BEtter BibLaTex !!!!!!!!!!!!!
+
 # - Load bibliography (exported from Zotero)
 bib_path <- here::here ("bib","R4biostats.bib")
 
 # - as list  (NEEDED for functions later)
-mybib <- RefManageR::ReadBib(bib_path, check = FALSE )  #bibtex::do_read_bib(file = bib_path, encoding = "unknown", srcfile)
+mybib <- RefManageR::ReadBib(bib_path, check = FALSE,.Encoding = "UTF-8" )  #bibtex::do_read_bib(file = bib_path, encoding = "unknown", srcfile)
 
 # - as dataframe
 mybib_df_raw <- bib2df::bib2df(bib_path)  
@@ -77,7 +79,9 @@ mybib_df <-
          category,# THIS MY Zotero's 
          type, # THIS MY OWN "Extra: tex.type: ..." in zotero 
          url, 
-         file  ) %>%
+         file, 
+         include # THIS MY OWN "Extra: tex.include: ..." in zotero 
+         ) %>%
   mutate(
     # date = parse_date_time(date, "ymd",
     # 							  #select_formats = .select_formats
@@ -122,11 +126,11 @@ We are genuinely grateful to many people within the Biostatistics, Epidemiology 
 
 <!-- The following individuals have contributed to improving the course: Ian Bachli (@idbachli), Megan Beaudry (@MeganSarah), Zane Billings (@wzbillings),   -->
 
-We would love to hear your feedback, questions, or suggestions about the workshop:  <p> <a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-info"> <i class="fa fa-envelope"></i> &nbsp;&nbsp;contact us</a></p>
+We would love to hear your feedback, questions, or suggestions about the workshop materials:  <p> <a id="mail-link" href="mailto:lmm76@georgetown.edu"  class="btn btn-info"> <i class="fa fa-envelope"></i> &nbsp;&nbsp;contact us</a></p>
 
 ## Licensing and use of the course materials
 
-The course materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All borrowed external materials (images, examples, etc.), are credited with proper "*Source:*" statements and governed by their own licenses. We drew from sources that were published under "open access" or "creative commons" frameworks. If this were not the case for any of material displayed here, please let us know and we will remove it.
+The course materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All borrowed external materials (images, examples, etc.), are credited with proper "*Source:*" statements and governed by their own licenses. We mostly drew from sources that were published under "open access" or "creative commons" frameworks. If this were not the case for any of material displayed here, please let us know and we will remove it.
 
  
 <!-- ## Materials -->
@@ -142,97 +146,104 @@ The course materials are licensed under the [Creative Commons Attribution-NonCom
 
 ## List of great resources 
 
-### Section Article
+<!-- ### Journal Articles -->
 
 ```{r article}
 #| include: false
 
-mybib_df[mybib_df$type == "article",  1] 
-# 
+#mybib_df[mybib_df$type == "article",  1] 
+mybib_df %>% 
+  filter(!(include %in% "no") & type ==  "article") %>% 
+   select(key)
+
 # print(mybib[type = "article"], 
 #       .opts = list(bib.style = "authoryear", 
 #                    check.entries = FALSE))
 
 ```
 
- + @wongsaengsak_significance_2019-1  
- + @kruschke_bayesian_2018     
- + @mayne_role_1957    
+ <!-- + @mayne_role_1957     -->
 
-### Section course
+### Biostatistics/Epidemiology with R examples
 
 ```{r course}
 #| include: false
 
-mybib_df[mybib_df$type == "course",  1] 
+#mybib_df[mybib_df$type == "course",  1] 
 
+tut <- mybib_df %>% 
+  filter(!(include %in% "no") & type == "course") %>% 
+   select(key, include)
 # print(mybib[type = "course"], 
 #       .opts = list(bib.style = "authoryear", 
 #                    check.entries = FALSE))
+tut
 
 ```
 
-+ @applied_epi_team_applied_2024                              
-+ @bobbitt_statology_2024                                     
-+ @csunedu_httpwwwcsuneduan73773slidesclass10f09pdf_2024      
-+ @cuemath_z-test_2024                                        
-+ @datatab_team_datatab_2024                                  
-+ @ginolhac_biostatistics_2024                                
-+ @httpsstatisticsbyjimcom_statisticsbyjimcom_2024            
-+ @matson_icy0006_2024                                        
-+ @rafalab_dsbook-part-1_2024                                 
-+ @selby_analytical_2024                                      
-+ @towardsdatascience_5-ways--increase-statistical-power-_2024
-+ @tuos-bio-data-skills_last_scientific-process_2024          
-+ @childs_introductory_2022                                   
-+ @edanz-learning-team_frequentist_2022                       
-+ @shahbaba_biostatistics_2012    
 
-### Section YT course
+```{r}
+#map(tut, ~cat (paste0("@", .x), sep = "\n"))
+```
+
++ @applied_epi_team_applied_2024
++ @applied_epi_team_r_2024
++ @bobbitt_statology_2024
++ @selby_analytical_2024                                      
+
+<!-- ### YT video course -->
 
 ```{r YT_course}
 #| include: false
 
-mybib_df[mybib_df$type == "YT course",  1] 
+#mybib_df[mybib_df$type == "YT course",  1] 
+
+
+mybib_df %>% 
+  filter(!(include %in% "no") & type == "YT course") %>% 
+   select(key)
+
 # print(mybib[type = "YT course"], 
 #       .opts = list(bib.style = "authoryear", 
 #                    check.entries = FALSE))
 ``` 
 
-+ @very_normal_biostatistics_2024
+<!-- + @academic_lessons_biostatistics_2024 -->
 
-### Section R
+### R packages & tools
 
 ```{r R}
 #| include: false
 
-mybib_df[mybib_df$type == "R",  1] 
+#mybib_df[mybib_df$type == "R",  1] 
+mybib_df %>% 
+  filter(!(include %in% "no") & type == "R") %>% 
+   select(key, include)
 
 # print(mybib[type = "R"], 
 #       .opts = list(bib.style = "authoryear", 
 #                    check.entries = FALSE))
 ``` 
-+ @applied_epi_team_r_2024           
-+ @codoni_course_2024                
-+ @dplyr_vignette_programming_2024   
-+ @rstudio_base-r-cheat-sheetpdf_2024
-+ @coolbutuseless_anonymous_2019     
-+ @wickham_tidy_2014                 
-+ @logan_biostatistical_2010  
 
-### Section Rdataset 
++ @rstudio_base-r-cheat-sheetpdf_2024    
++ @wickham_programming_2023    
++ @wickham_tidy_2014                
+
+### Sources of practice datasets
 
 ```{r dataset}
 #| include: false
+mybib_df %>% 
+  filter(!(include %in% "no") & type == "dataset") %>% 
+   select(key)
 
-mybib_df[mybib_df$type == "dataset",  1] 
+#mybib_df[mybib_df$type == "dataset",  1] 
 # print(mybib[type = "dataset"],
 #        .opts = list(bib.style = "authoryear", 
 #                     check.entries = FALSE))
 ```
 
 + @chicco_machine_2020           
-+ @wongsaengsak_significance_2019
 + @ahmad_survival_2017 
   
 <!-- <!-- For HTML output -->  
