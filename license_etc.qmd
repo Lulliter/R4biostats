@@ -170,45 +170,21 @@ mybib_df %>%
 #| include: false
 
 #mybib_df[mybib_df$type == "course",  1] 
-
-tut <- mybib_df %>% 
+mybib_df %>% 
   filter(!(include %in% "no") & type == "course") %>% 
-   select(key, include)
-# print(mybib[type = "course"], 
-#       .opts = list(bib.style = "authoryear", 
-#                    check.entries = FALSE))
-tut
-
-```
-
-
-```{r}
-#map(tut, ~cat (paste0("@", .x), sep = "\n"))
+  select(key) %>% 
+  # just to copy by hand
+  map( ~cat (paste0("+ @", .x),
+             fill = FALSE, 
+             labels = NULL, sep = "\n")
+  )
 ```
 
 + @applied_epi_team_applied_2024
 + @applied_epi_team_r_2024
 + @bobbitt_statology_2024
-+ @selby_analytical_2024                                      
++ @selby_analytical_2024                                   
 
-<!-- ### YT video course -->
-
-```{r YT_course}
-#| include: false
-
-#mybib_df[mybib_df$type == "YT course",  1] 
-
-
-mybib_df %>% 
-  filter(!(include %in% "no") & type == "YT course") %>% 
-   select(key)
-
-# print(mybib[type = "YT course"], 
-#       .opts = list(bib.style = "authoryear", 
-#                    check.entries = FALSE))
-``` 
-
-<!-- + @academic_lessons_biostatistics_2024 -->
 
 ### R packages & tools
 
@@ -218,16 +194,17 @@ mybib_df %>%
 #mybib_df[mybib_df$type == "R",  1] 
 mybib_df %>% 
   filter(!(include %in% "no") & type == "R") %>% 
-   select(key, include)
-
-# print(mybib[type = "R"], 
-#       .opts = list(bib.style = "authoryear", 
-#                    check.entries = FALSE))
+   select(key) %>% 
+  # just to copy by hand
+  map( ~cat (paste0("+ @", .x),
+             fill = FALSE, 
+             labels = NULL, sep = "\n")
+  )
 ``` 
 
-+ @rstudio_base-r-cheat-sheetpdf_2024    
-+ @wickham_programming_2023    
-+ @wickham_tidy_2014                
++ @rstudio_base-r-cheat-sheetpdf_2024
++ @wickham_programming_2023
++ @wickham_tidy_2014              
 
 ### Sources of practice datasets
 
@@ -235,12 +212,12 @@ mybib_df %>%
 #| include: false
 mybib_df %>% 
   filter(!(include %in% "no") & type == "dataset") %>% 
-   select(key)
-
-#mybib_df[mybib_df$type == "dataset",  1] 
-# print(mybib[type = "dataset"],
-#        .opts = list(bib.style = "authoryear", 
-#                     check.entries = FALSE))
+   select(key)  %>% 
+  # just to copy by hand
+  map( ~cat (paste0("+ @", .x),
+             fill = FALSE, 
+             labels = NULL, sep = "\n")
+  )
 ```
 
 + @chicco_machine_2020           

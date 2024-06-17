@@ -92,6 +92,7 @@ library(flextable) # Functions for Tabular Reporting
 
 # Statistics
 library(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests
+library(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models
 library(broom) # Convert Statistical Objects into Tidy Tibbles
 library(tidymodels) # not installed on this machine
 # Plotting
@@ -577,7 +578,7 @@ round(test_chi$expected  , digits = 1 )
   
 ::::
 
-## Chi Squared test of `independence` (res)
+## Chi Squared test of `independence` (results)
 
 + Recall that 
   + $H_{0}$: the 2 cat. var. are **independent**
@@ -687,14 +688,17 @@ A comparison of the observed and expected values (or the residuals) indicates th
 
 # 1 CATEGORICAL & 1 NUMERICAL VARIABLES (???)
 
+
+
+
 # FROM CORRELATION/ ASSOCIATION TO CAUSATION 
 
 ## Splitting the sample 
 
 If we seek any causal relationship between an explanatory and outcome variable we should **split** our sample to have:
 
-1. one sample to "train" a model on
-2. one sample to "test" the model on 
+1. one `sample to "train"` a model on
+2. one `sample to "test"` the model on 
 
 + Otherwise out model will seem better than it is (since it will be specifically built to "fit" our data) 
 
@@ -765,50 +769,88 @@ We can save the model and then extract individual output elements from it using 
 #| output: false
 
 # name the model object
-model <- lm(bmi ~ age, data = nhanes_train)
+lr_model <- lm(bmi ~ age, data = nhanes_train)
 
 # extract model output elements
-model$coefficients
-model$residuals
-model$fitted.values
+lr_model$coefficients
+lr_model$residuals
+lr_model$fitted.values
 ```
 
 The command `summary` returns these elements 
 
-+ `Call`: reminding the equation used
-+ `Residuals`: a 5 number summary of the Residuals
-+ `Coefficients`: estimates, and hypothesis testing  
++ `Call`: reminds the equation used for this regression model
++ `Residuals`: a 5 number summary of the distribution of residuals from the regression model
++ `Coefficients`:displays the estimated coefficients of the regression model and relative hypothesis testing, given for:  
   + intercept 
-  + explanatory variable slope
+  + explanatory variable(s) slope
 
 ## Linear regression models interpretation: coefficients
 
 + The model tests the null hypothesis that a coefficient is 0
-+ `Coefficients`: estimates, std. error of these estimates, t value and p-value
++ `Coefficients` results display: estimate, std. error, t-statistic, p-value that corresponds to the t-statistic for:
   + intercept 
-  + explanatory variable slope
-
-+ In regression, the population parameter of interest is typically the slope parameter 
+  + explanatory variable(s) slope
++ In regression, the population **parameter of interest** is typically the slope parameter 
   + here age doesn't appear significantly ≠ 0 
 
 ```{r}
-#| output-location: slide
-
-summary(model)
+summary(lr_model)$coefficients 
 ```
-  
+
+## Linear regression models interpretation: Residual Standard error 
+
++ `Std. Error` of coefficients = `Residual Standard Error` (see below) divided by the square root of the sum of the square of that particular x variable.
++ `t-statistic` Estimate divided by Std. Error 
++ `p-value` for the `t-statistic`
+
+Recall that `Residual standard error` (the average distance that the observed values fall from the regression line) *with a twist* 
+
+```{r}
+# Residual Standard error (Like Standard Deviation)
+
+# ---  inputs 
+k = length(lr_model$coefficients)-1 #Subtract one to ignore intercept
+n =length(lr_model$residuals)
+df = n-(1+k)
+# Squared Sum of Errors
+SSE =sum(lr_model$residuals**2) # 17375.27
+
+# --- Residual Standard Error
+sqrt(SSE/df)  # 6.843509
+```
+
+# >>>> qui 
+
+https://www.youtube.com/watch?v=ebHLMyqC2UY
+
+## Linear regression models outputs: $R^2$ and $Adj. R^2$ 
+
+
+```{r}
+summary(lr_model)$r.squared
+```
+
+
+```{r}
+summary(lr_model)$adj.r.squared
+```
+
+
 ## Linear regression models outputs: fitted values 
 
 ```{r}
-model$fitted.values
+lr_model$fitted.values
 ```
 
 ## Linear regression models outputs: residuals
 
-
 ```{r}
-model$residuals 
+lr_model$residuals 
 ```
+
+
+
 
 # DIAGNOSTIC PLOTS 
 
@@ -819,7 +861,6 @@ The following plots help us assessing that (some of) the assumptions of linear r
 <!-- 2. Independence: The residuals are independent. In particular, there is no correlation between consecutive residuals in time series data. -->
 
 
-## Linear regression diagnostic plots: residuals v. fitted  values 1/4
 
 >**ASSUMPTION 1**: there exists a linear relationship between the independent variable, x, and the dependent variable, y
 
@@ -827,14 +868,14 @@ The following plots help us assessing that (some of) the assumptions of linear r
 For an observation $(x_i, y_i)$, where $\hat{y}_i$ is the `predicted value` according to the line $\hat{y} = b_0 + b_1x$, the `residual` is the value
 $e_i = y_i - \hat{y}_i$
 
-+ A linear model is a particularly good fit for the data when the residual plot shows random scatter above and below the horizontal line.
++ A linear lr_model is a particularly good fit for the data when the residual plot shows random scatter above and below the horizontal line.
   + (In this R plot, we look for a red line that is fairly straight)
 ```{r}
 #| output-location: slide
 #| fig-cap: "" 
 
 # residual plot
-plot(model, which = 1 )
+plot(lr_model, which = 1 )
 ```
 
 
@@ -850,7 +891,7 @@ With the quantile-quantile plot (Q_Q) we can checking normality of the residuals
 #| fig-cap: "The data appear roughly normal, but there are deviations from normality in the tails, particularly the upper tail. " 
 
 # quantile-quantile plot
-plot(model, which = 2 )
+plot(lr_model, which = 2 )
 ```
 
 
@@ -864,9 +905,32 @@ This one is called a **Spread-location plot**: shows if residuals are spread equ
 #| fig-cap: "" 
 
 # Spread-location plot
-plot(model, which = 3 )
+plot(lr_model, which = 3 )
 ```
 
+
+## Test for Homoscedasticity 
+
+Besides visual check, we can perform the `Breusch-Pagan test` to verify the assumption of homoscedasticity. In this case:
+
+  + $H_{0}$: residuals are distributed with **equal variance** 
+  + $H_{1}$: residuals are distributed with **UNequal variance**  
+
++ we use `bptest` function from the `lmtest` package
+ 
+
+<!--  https://www.codingprof.com/3-easy-ways-to-test-for-heteroscedasticity-in-r-examples/ -->
+
+
+```{r}
+# Breusch-Pagan test against heteroskedasticity 
+lmtest::bptest(lr_model)
+
+# BP = 1.5798, df = 1, p-value = 0.2088
+
+# Because the test statistic (BP) is small and the p-value is not significant  (p-value > 0.05)  WE DO NOT REJECT THE NULL HYP
+```
+Because the test statistic (BP) is small and the p-value is not significant  (p-value > 0.05): WE DO NOT REJECT THE NULL HYP
 
 ## Linear regression diagnostic plots: leverage 4/4
 
@@ -880,6 +944,124 @@ This last diagnostic plot is actually **not** referred to any assumptions but ha
 ```{r}
 #| output-location: slide
 #| fig-cap: "In this particular case, there is no influential case, or cases" 
-plot(model, which = 5 )
+plot(lr_model, which = 5 )
+```
+
+## [(Small digression on the `broom` package)]{.r-fit-text}
+
++ The `broom` package introduces the *tidy* approach to regression modeling code and outputs, allowing to convert/save them in the form of `tibbles`
++ the function `augment` will show a lot of results for the model attached to each observation 
+  + this is very useful for further use of such objects, like `ggplot2` etc. 
+
+```{r}
+# render model as a dataframe 
+broom::tidy(lr_model)
+
+# see overal performance 
+broom::glance(lr_model)
+
+# save an object with all the model output elements 
+model_aug <- broom::augment(lr_model)
+```
+
+
+
+::: {.callout-warning icon=false}
+### {{< bi terminal-fill color=rgba(155,103,35,1.00) >}} You try...
+...run `View(model_aug)` to check 
+:::
+
+## Linear regression performance 
+
+We can start looking at how the model performs by applying it to our `nhanes_test` sub-sample, utilizing the function `predict`
+ 
+```{r}
+# recall the dataset size 
+nrow(nhanes_test) # 125 
+# obtain 125 predicted observations 
+predict(lr_model, nhanes_test)
+```
+
+## Linear regression performance: predicted values in test sample
+
++ We can look the 95% CI of any predicted values 
+```{r}
+# obtain 125 predicted observations + 95% 
+pred_val_test <- predict(lr_model, nhanes_test, interval = "confidence")
+# print out first 6 predicted values and CI boundaries 
+head(pred_val_test)
+```
+
++ We can look the CI 95% of a single predicted values 
+```{r}
+# obtain 125 predicted observations + 95% 
+pred_val_test <- predict(lr_model, nhanes_test, interval = "prediction")
+# print out first 6 predicted values and CI boundaries 
+head(pred_val_test)
+```
+
+## Linear regression performance: RMSE
+
+Basically we are asking: **"how does the prediction compare to the actual test dataset?"**
+
+For this we take the difference between the predicted and the actual value as 
+
+`RMSE = Root Means Squared Error` 
+
+```{r}
+# --- testing sample 
+RMSE <- sqrt(mean(
+  (nhanes_test$bmi - predict(lr_model, nhanes_test))^2,
+  na.rm = T))
+
+RMSE # 7.451677
+```
+
+> This is quite close to the **Residual standard error** that we got from the regression model summary (6.843) -- despite that was taken from **training data** and this comes from testing data 
+
+```{r}
+#| eval: false
+#| echo: false
+#| output: false
+
+# --- training !!!! sample 
+k = length(lr_model$coefficients)-1 #Subtract one to ignore intercept
+n =length(lr_model$residuals)
+df = n-(1+k)
+# Squared Sum of Errors
+SSE =sum(lr_model$residuals**2) # 17375.27
+
+# --- Residual Standard Error
+sqrt(SSE/df)  # 6.843509
+```
+
+
+<!-- 
+instead of dividing by df (like in Residual Standard Error) I take the SUM of SQUARE ERR divided by n(train)
+so it makes sense that it is a bit higher  -->
+
+## Linear regression performance: $R^2$
+
+```{r}
+#Multiple R-Squared (Coefficient of Determination)
+SSyy=sum((nhanes_test$bmi - mean(nhanes_test$bmi, na.rm = T))**2)
+SSE=sum(lr_model$residuals**2)
+(SSyy-SSE)/SSyy
+#Alternatively
+1-SSE/SSyy
+```
+
+## Linear regression models outputs: model fit 
+
+```{r}
+str(summary(lr_model)) 
+names(summary(lr_model))
+
+summary(lr_model)$sigma
+summary(lr_model)$df
+summary(lr_model)$r.squared
+summary(lr_model)$adj.r.squared
+summary(lr_model)$fstatistic
+summary(lr_model)$cov.unscaled  ##lm 
 ```
 

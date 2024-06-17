@@ -3,11 +3,11 @@ title: "About the Instructor"
 about:
   id: hero-heading #about-block 
   template: jolla
-  image: images/dog-watch-mondo.png
+  image: images/Chiara_luglio_2023.png
   links:
-    - icon: file-pdf
-      text: CV (tbd)
-      href: https://www.linkedin.com/in/maria-chiara-mimmi-b0aa9233/  
+    # - icon: file-pdf
+    #   text: CV (tbd)
+    #   href: https://www.linkedin.com/in/maria-chiara-mimmi-b0aa9233/  
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/maria-chiara-mimmi-b0aa9233/

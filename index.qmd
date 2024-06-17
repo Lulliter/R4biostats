@@ -92,7 +92,7 @@ schedule %>%
   kable_styling()
 ```
  
-Hot & cold drinks will be served during the morning breaks.
+<!-- Hot & cold drinks will be served during the morning breaks. -->
 
 # Practical information
 
