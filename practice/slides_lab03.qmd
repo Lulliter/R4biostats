@@ -1,6 +1,6 @@
 ---
 title: "Lab 3: Modeling correlation and regression"
-subtitle: "<span style='font-size:2em;'> Practice session covering topics discussed in Lecture 1 </span>"
+subtitle: "<span style='font-size:2em;'> Practice session covering topics discussed in Lecture 3 </span>"
 author: "<a href='https://r4biostats.com/me.html' style='color:#72aed8;font-weight:600;'>M. Chiara Mimmi, Ph.D.</a>&ensp;|&ensp;Università degli Studi di Pavia"
 date: 2024-07-27
 date-format: long
@@ -37,20 +37,22 @@ suppress-bibliography: true
 
 # GOAL OF TODAY'S PRACTICE SESSION
 
+::: {style="font-size: 85%;"}
+::: {.hand .large}
+[Understand .....  ]{style="color:#77501a"}
+:::
+:::
 
-The examples and code from this lab session follow very closely the book:  
-
+::: {style="font-size: 65%;"}
+The examples and code from this lab session follow very closely the open book:  
 + Vu, J., & Harrington, D. (2021). **Introductory Statistics for the Life and Biomedical Sciences**. [https://www.openintro.org/book/biostat/](https://www.openintro.org/book/biostat)
+:::
 
 
 ## Topics discussed in Lecture # 3
 
+
 ::: {style="font-size: 75%;"}
-::: {.hand .large}
-[understand ]{style="color:#77501a"}
-:::
-
-
 **Lecture 3: topics** 
 
 + Testing for a **correlation** hypothesis (relationship of variables)
@@ -70,7 +72,7 @@ The examples and code from this lab session follow very closely the book:
     
 :::  
 
-#  R ENVIRONMENT SET UP & DATA
+# R ENVIRONMENT SET UP & DATA
 
 ## Needed R Packages
 ::: {style="font-size: 80%;"}
@@ -98,12 +100,12 @@ library(tidymodels) # not installed on this machine
 # Plotting
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics
 library(ggpubr) # 'ggplot2' Based Publication Ready Plots
-
-# Data 
-# devtools::install_github("OI-Biostat/oi_biostat_data")
-#library(oibiostat) 
 ```
 
+
+<!-- # Data  -->
+<!-- # devtools::install_github("OI-Biostat/oi_biostat_data") -->
+<!-- #library(oibiostat)  -->
 ```{r}
 # load some colors
 colors <- readRDS(here::here("practice", "data_input", "03_datasets","colors.rds"))
@@ -112,7 +114,7 @@ colors <- readRDS(here::here("practice", "data_input", "03_datasets","colors.rds
 # DATASETS for today
 
  
-## Importing Dataset 1 (NHANES)
+## [Importing Dataset 1 (NHANES)]{.r-fit-text}
  
 + Adapting the function `here` to match your own folder structure
 ```{r}
@@ -162,7 +164,7 @@ nhanes_samp <- read.csv(file = here::here("practice", "data_input", "03_datasets
                           row.names = NULL) 
 ```
  
-## -  [*NHANES* Variables and their description]{.r-fit-text}
+## [*NHANES* Variables and their description]{.r-fit-text}
 ::: {style="font-size: 90%;"}
 
 ```{r}
@@ -260,7 +262,7 @@ kableExtra::kable(nanes_desc)
 :::
 
 
-## Importing Dataset 2 (PREVEND)
+## [Importing Dataset 2 (PREVEND)]{.r-fit-text}
 
 Data from the **Prevention of Renal and Vascular End-stage Disease (PREVEND)** study, which took place in the Netherlands. The study collected various demographic and cardiovascular risk factors. This dataset is from the third survey, which participants completed in 2003-2006; data is provided for 4,095 individuals who completed cognitive testing.
 
@@ -280,7 +282,7 @@ prevend <- read.csv(file = here::here("practice", "data_input", "03_datasets",
                           row.names = NULL) 
 ```
 
-## -  [*PREVEND* Variables and their description]{.r-fit-text}
+## [*PREVEND* Variables and their description]{.r-fit-text}
 ::: {style="font-size: 90%;"}
 
 ```{r}
@@ -298,7 +300,7 @@ kableExtra::kable(famuss_desc)
 
 :::
 
-## Importing Dataset 3 (FAMuSS)
+## [Importing Dataset 3 (FAMuSS)]{.r-fit-text}
 **Name**: FAMuSS (Functional SNPs Associated with Muscle Size and Strength) examine the association of demographic, physiological and genetic characteristics with muscle strength -- including data on race and genotype at a specific locus on the ACTN3 gene (the "sports gene").  
 **Documentation**: [dataset3](https://www.openintro.org/data/index.php?data=famuss)  
 **Sampling details**: the DATASET includes 595 observations on 9 variables
@@ -316,7 +318,7 @@ famuss <- read.csv(file = here::here("practice", "data_input", "03_datasets",
                           row.names = NULL) 
 ```
 
-## -  [*FAMuSS* Variables and their description]{.r-fit-text}
+## [*FAMuSS* Variables and their description]{.r-fit-text}
 ::: {style="font-size: 90%;"}
 
 ```{r}
@@ -346,7 +348,7 @@ kableExtra::kable(famuss_desc)
 
 # CORRELATION
 
-## Explore relationships between two variables
+## [Explore relationships between two variables]{.r-fit-text}
 Approaches for summarizing relationships between two variables vary depending on variable types...
 
 - Two **numerical** variables
@@ -360,7 +362,7 @@ Two variables $x$ and $y$ are
 
 # TWO NUMERICAL VARIABLES (NHANES)
 
-## Two numerical variables (plot)
+## [Two numerical variables (plot)]{.r-fit-text}
 
 **Height** and **weight** (taken from the `nhanes_samp` dataset) are positively associated.
 
@@ -378,7 +380,7 @@ plot(nhanes$height, nhanes$weight,
      xlab = "Height (cm)", ylab = "Weight (kg)", cex = 0.8)  
 ```
 
-## Two numerical variables: correlation (with `stats::cor`)
+## [Two numerical variables: correlation (with `stats::cor`)]{.r-fit-text}
 
 **Correlation** is a numerical summary that measures the strength of a linear relationship between two variables.
 
@@ -401,7 +403,7 @@ cor(x = nhanes$height, y =  nhanes$weight,
     method = "pearson")
 ```
 
-## Two numerical variables: correlation (or with `stats::cor.test`)
+## [Two numerical variables: correlation (with `stats::cor.test`)]{.r-fit-text}
 
 + Here we compute the **Pearson rho (parametric)**, with the function `cor.test` (the same we used for testing paired samples)
   + implicitely takes care on `NAs`  
@@ -426,7 +428,7 @@ ggpubr::ggscatter(nhanes, x = "height", y = "weight",
 ```
 
 
-## Spearman rank-order correlation 
+## [Spearman rank-order correlation]{.r-fit-text} 
 The **Spearman's rank-order correlation is the nonparametric version** of the `Pearson` correlation. 
 
 Spearman's correlation coefficient, ($ρ$, also signified by $rs$) measures the strength and direction of association between two ranked variables.
@@ -436,7 +438,7 @@ Spearman's correlation coefficient, ($ρ$, also signified by $rs$) measures the 
 
 > To compute it, we simply calculate Pearson’s correlation of the rankings of the raw data (instead of the data).
 
-## Spearman rank-order correlation (example)
+## [Spearman rank-order correlation (example)]{.r-fit-text}
 
 Let's say we want to get Spearman's correlation with ordinal factors `Education` and `HealthGen` in the `NHANES` sample. 
 I have to convert them to their underlying numeric code, to compare rankings. 
@@ -468,7 +470,7 @@ table(nhanes$health_ord, useNA = "ifany" )
 table(nhanes$health_rank,  useNA = "ifany" )
 ```
 
-## Spearman rank-order correlation (example cont.)
+## [Spearman rank-order correlation (example cont.)]{.r-fit-text}
 Now we can actually compute it 
 
 + After setting up the variables correctly (`as.numeric`), just specify `method = "spearman"`
@@ -485,7 +487,7 @@ cor_test_result_sp
 
 # TWO CATEGORICAL VARIABLES (FAMuSS)
 
-## Two categorical variables (plot)
+## [Two categorical variables (plot)]{.r-fit-text}
 In the `famuss` dataset, the variables `race`, and `actn3.r577x` are categorical variables.
 
 ```{r}
@@ -499,7 +501,7 @@ legend("topright", inset=c(.05, 0), fill=colors[c(7, 4, 1, 2, 3)],
        legend=rownames(genotype.race))
 ```
 
-## Two categorical variables (contingency table)
+## [Two categorical variables (contingency table)]{.r-fit-text}
 
 Specifically, the variable `actn3.r577x` takes on three possible levels (`CC`, `CT`, or `TT`) which indicate the distribution of genotype at location `r577x` on the `ACTN3` gene for the FAMuSS study participants.
 
@@ -516,7 +518,7 @@ table(famuss$actn3.r577x)
 addmargins(table(famuss$race, famuss$actn3.r577x))
 ```
 
-## Two categorical variables (contingency table prop)
+## [Two categorical variables (contingency table prop)]{.r-fit-text}
 
 Contingency tables can also be converted to show *proportions*. Since there are 2 variables, it is necessary to specify whether the proportions are calculated according to the row variable or the column variable.
   + using the `margin = ` argument in the `base::prop.table` function (1 indicates rows, 2 indicates columns)
@@ -529,7 +531,7 @@ addmargins(prop.table(table(famuss$race, famuss$actn3.r577x), margin =  1))
 addmargins(prop.table(table(famuss$race, famuss$actn3.r577x),margin =  2))
 ```
 
-## Chi Squared test of `independence`
+## [Chi Squared test of `independence`]{.r-fit-text}
 
 The **Chi-squared test** is a hypothesis test used to determine whether there is a relationship between **two categorical variables**. 
 
@@ -554,7 +556,7 @@ the obtained result (`test_chi`) is a list of objects...
 :::
 
 
-## Chi Squared test of `independence` (cont)
+## [Chi Squared test of `independence` (cont)]{.r-fit-text}
 
 Within `test_chi` results there are:
 
@@ -578,7 +580,7 @@ round(test_chi$expected  , digits = 1 )
   
 ::::
 
-## Chi Squared test of `independence` (results)
+## [Chi Squared test of `independence` (results)]{.r-fit-text}
 
 + Recall that 
   + $H_{0}$: the 2 cat. var. are **independent**
@@ -599,7 +601,7 @@ test_chi
 <!-- test_chi$stdres      -->
 <!-- ``` -->
 
-## Computing Cramer's V after test of independence (by hand)
+## [Computing Cramer's V after test of independence]{.r-fit-text}
 
 Recall that **Crammer's V** is a way in which we can measure *effect size* of the test of independence (i.e. a measure of the **strength of association** between two nominal variables)
 
@@ -614,7 +616,7 @@ where:
 + $n$ is the sample size involved in the test and
 + $k$ is the lesser number of categories of either variable
 
-## Computing Cramer's V after test of independence (2 ways)
+## [Computing Cramer's V after test of independence (2 ways)]{.r-fit-text}
 
 + ✍🏻 By hand" first to see the steps 
 ```{r}
@@ -638,7 +640,7 @@ rstatix::cramer_v(test_chi$observed)
 
 A **Cramer’s V of  0.12**  indicates a relatively weak association between the two categorical variables. It suggests that while there may be some relationship between the variables, it is not particularly strong
 
-## Chi Squared test of `goodness of fit`
+## [Chi Squared test of `goodness of fit`]{.r-fit-text}
 
 In this case, we are conducting a type of Pearson’s Chi-square test
 
@@ -646,7 +648,7 @@ In this case, we are conducting a type of Pearson’s Chi-square test
 + the statistic is based on the discrepancies between observed and expected counts
 
 
-## Chi Squared test of `goodness of fit` (example)
+## [Chi Squared test of `goodness of fit` (example)]{.r-fit-text}
 
 Since the participants of the FAMuSS study where volunteers at a university, they did not come from a "representative" sample of the US population 
 
@@ -665,7 +667,7 @@ We use the formula $\chi^{2} = \sum_{k}\frac{(Observed - Expected)^{2}}{Expected
 under $H_{0}$ = the sample proportions should equal the population proportions.
 
 
-## Chi Squared test of `goodness of fit` (example)
+## [Chi Squared test of `goodness of fit` (example)]{.r-fit-text}
 
 ```{r} 
 # Subset the vectors of frequencies from the 2 rows  
@@ -686,33 +688,12 @@ p_value
 The calculated $\chi^{2}$ statistic is very large, and the `p_value` is close to 0. Hence, There is more than sufficient evidence to **reject the null hypothesis** that the sample is representative of the general population.  
 A comparison of the observed and expected values (or the residuals) indicates that the largest discrepancy is with the over-representation of Asian participants.
 
-# 1 CATEGORICAL & 1 NUMERICAL VARIABLES (???)
-
-
-
+<!-- # 1 CATEGORICAL & 1 NUMERICAL VARIABLES (???) -->
 
 # FROM CORRELATION/ ASSOCIATION TO CAUSATION 
 
-## Splitting the sample 
 
-If we seek any causal relationship between an explanatory and outcome variable we should **split** our sample to have:
-
-1. one `sample to "train"` a model on
-2. one `sample to "test"` the model on 
-
-+ Otherwise out model will seem better than it is (since it will be specifically built to "fit" our data) 
-
-+ The function `rsample::initial_split` will assist in that
-```{r}
-
-nhanes_split <- rsample::initial_split(nhanes)
-# default = 75%  of observations 
-nhanes_train <- rsample::training(nhanes_split)
-# default = 25%  of observations 
-nhanes_test <- rsample::testing(nhanes_split)
-```
-
-## Visualize the data 
+## Visualize the data
 
 We are mainly looking for a "vaguely" linear shape here 
 
@@ -721,7 +702,7 @@ We are mainly looking for a "vaguely" linear shape here
 #| echo: true
 #| output-location: slide
 
-ggplot(nhanes_train, aes (x = age, 
+ggplot(nhanes, aes (x = age, 
                           y = bmi)) + 
   geom_point() + 
   geom_smooth(method = lm,  
@@ -730,7 +711,7 @@ ggplot(nhanes_train, aes (x = age,
 ```
 
 
-## Linear regression models
+## [Linear regression models]{.r-fit-text}
 The `lm()` function is used to fit linear models has the following generic structure:
 
 ```{r}
@@ -743,23 +724,23 @@ where:
 + the 1st argument `y ~ x` specifies the variables used in the model (here the model regresses a **response variable**  $y$ against an **explanatory variable** $x$. 
 + The 2nd argument `data` is used only when the dataframe name is not already specified in the first argument. 
 
-## Linear regression models syntax
+## [Linear regression models syntax]{.r-fit-text}
 
-The following example shows fitting a linear model that predicts **BMI** from **age (in years)** using data from `nhanes_train` adult sample (individuals 21 years of age or older from the NHANES data). 
+The following example shows fitting a linear model that predicts **BMI** from **age (in years)** using data from `nhanes` adult sample (individuals 21 years of age or older from the NHANES data). 
 ```{r}
 #| eval: false
 #fitting linear model
-lm(nhanes_train$bmi ~ nhanes_train$age)
+lm(nhanes$bmi ~ nhanes$age)
 ```
 
 ```{r}
 #equivalently...
-lm(bmi ~ age, data = nhanes_train)
+lm(bmi ~ age, data = nhanes)
 ```
 + Running the function creates an *object* (of class `lm`) that contains several components (model coefficients, etc), either directly displayed or accessible with `summary()` notation or specific functions.
 
 
-## Linear regression models syntax
+## [Linear regression models syntax]{.r-fit-text}
 
 <!-- https://www.youtube.com/watch?v=4wS3n54Kon0 -->
 We can save the model and then extract individual output elements from it using the `$` syntax 
@@ -769,7 +750,7 @@ We can save the model and then extract individual output elements from it using 
 #| output: false
 
 # name the model object
-lr_model <- lm(bmi ~ age, data = nhanes_train)
+lr_model <- lm(bmi ~ age, data = nhanes)
 
 # extract model output elements
 lr_model$coefficients
@@ -785,7 +766,7 @@ The command `summary` returns these elements
   + intercept 
   + explanatory variable(s) slope
 
-## Linear regression models interpretation: coefficients
+## [Linear regression models interpretation: coefficients]{.r-fit-text}
 
 + The model tests the null hypothesis that a coefficient is 0
 + `Coefficients` results display: estimate, std. error, t-statistic, p-value that corresponds to the t-statistic for:
@@ -798,59 +779,109 @@ The command `summary` returns these elements
 summary(lr_model)$coefficients 
 ```
 
-## Linear regression models interpretation: Residual Standard error 
+## [Linear regression models interpretation: Coefficients 2 ]{.r-fit-text}
 
-+ `Std. Error` of coefficients = `Residual Standard Error` (see below) divided by the square root of the sum of the square of that particular x variable.
-+ `t-statistic` Estimate divided by Std. Error 
-+ `p-value` for the `t-statistic`
+For the the estimated coefficients of the regression model, we get:
 
-Recall that `Residual standard error` (the average distance that the observed values fall from the regression line) *with a twist* 
++ `Estimate` = the average increase in the response variable associated with a one unit increase in the predictor variable, (assuming all other predictor variables are held constant).
++ `Std. Error` = a measure of the uncertainty in our estimate of the coefficient.
+<!-- `Std. Error` = of coefficients = `Residual Standard Error` (see below) divided by the square root of the sum of the square of that particular x variable. -->
++ `t value`  = the t-statistic for the predictor variable, calculated as (Estimate) / (Std. Error).
++ `Pr(>|t|)` = the p-value that corresponds to the t-statistic. If less than some alpha level (e.g. 0.05). the predictor variable is said to be *statistically significant*. 
+
+
+## [Linear regression models outputs: fitted values]{.r-fit-text}
+
+Here we see $\hat{y}_i$, i.e. the **fitted $y$ value for the $i$-th individual**
+
+```{r}
+fit_val <- lr_model$fitted.values
+# print the first 6 elements
+head(fit_val)
+```
+
+## [Linear regression models outputs: residuals]{.r-fit-text}
+
+Here we see $e_i = y_i - \hat{y}_i$, i.e. the **residual value for the $i$-th individual**
+
+```{r}
+resid_val <- lr_model$residuals 
+# print the first 6 elements
+head(resid_val)
+```
+
+
+## [Linear regression model's fit: Residual standard error]{.r-fit-text}
+
++ The `Residual standard error` (an estimate of the parameter $\sigma$) tells the average distance that the observed values fall from the regression line (we are assuming constant variance). 
+  + *The smaller it is, the better the model fits the dataset!*
+
+We can compute it manually as: 
+
+${\rm SE}_{resid}=\ \sqrt{\frac{\sum_{i=1}^{n}{(y_i-{\hat{y}}_i)}^2}{{\rm df}_{resid}}}$
 
 ```{r}
 # Residual Standard error (Like Standard Deviation)
 
 # ---  inputs 
-k = length(lr_model$coefficients)-1 #Subtract one to ignore intercept
+# sample size
 n =length(lr_model$residuals)
-df = n-(1+k)
+# n of parameters in the model
+k = length(lr_model$coefficients)-1 #Subtract one to ignore intercept
+# degrees of freedom of the the residuals 
+df_resid = n-k-1
 # Squared Sum of Errors
-SSE =sum(lr_model$residuals**2) # 17375.27
+SSE =sum(lr_model$residuals^2) # 22991.19
 
 # --- Residual Standard Error
-sqrt(SSE/df)  # 6.843509
+ResStdErr <- sqrt(SSE/df_resid)  # 6.815192
+ResStdErr
 ```
 
-# >>>> qui 
 
-https://www.youtube.com/watch?v=ebHLMyqC2UY
+## [Linear regression model's fit: : $R^2$ and $Adj. R^2$]{.r-fit-text} 
 
-## Linear regression models outputs: $R^2$ and $Adj. R^2$ 
+The **$R^2$** tells us the proportion of the variance in the response variable that can be explained by the predictor variable(s).
 
++ if $R^2$ close to 0 -> data more spread
++ if $R^2$ close to 1 -> data more tight around the regression line
 
 ```{r}
+# --- R^2
 summary(lr_model)$r.squared
 ```
 
+The **$Adj. R^2$** is a modified version of R-squared that has been adjusted for the number of predictors in the model. It is always lower than the R-squared.
+
++ it can be useful for comparing the fit of different regression models that use different numbers of predictor variables.
 
 ```{r}
+# --- Adj. R^2
 summary(lr_model)$adj.r.squared
 ```
 
+## [Linear regression model's fit: : F statistic]{.r-fit-text}
+The **F-statistic** indicates whether the regression model provides a better fit to the data than a model that contains no independent variables. In essence, it tests if the regression model as a whole is useful.
 
-## Linear regression models outputs: fitted values 
 
 ```{r}
-lr_model$fitted.values
+# extract only F statistic 
+summary(lr_model)$fstatistic 
+
+# define function to extract overall p-value of model
+overall_p <- function(my_model) {
+    f <- summary(my_model)$fstatistic
+    p <- pf(f[1],f[2],f[3],lower.tail=F)
+    attributes(p) <- NULL
+    return(p)
+}
+
+# extract overall p-value of model
+overall_p(lr_model)
+
 ```
 
-## Linear regression models outputs: residuals
-
-```{r}
-lr_model$residuals 
-```
-
-
-
+Given the **p-value is > 0.05**, this indicate that the predictor variable is not useful for predicting the value of the response variable
 
 # DIAGNOSTIC PLOTS 
 
@@ -860,10 +891,9 @@ The following plots help us assessing that (some of) the assumptions of linear r
 
 <!-- 2. Independence: The residuals are independent. In particular, there is no correlation between consecutive residuals in time series data. -->
 
-
+## [Linear regression diagnostic plots: residuals 1/4]{.r-fit-text}
 
 >**ASSUMPTION 1**: there exists a linear relationship between the independent variable, x, and the dependent variable, y
-
 
 For an observation $(x_i, y_i)$, where $\hat{y}_i$ is the `predicted value` according to the line $\hat{y} = b_0 + b_1x$, the `residual` is the value
 $e_i = y_i - \hat{y}_i$
@@ -878,9 +908,7 @@ $e_i = y_i - \hat{y}_i$
 plot(lr_model, which = 1 )
 ```
 
-
-
-## Linear regression diagnostic plots: normality of residuals 2/4
+## [Linear regression diagnostic plots: normality of residuals 2/4]{.r-fit-text}
 
 >**ASSUMPTION 2**: The residuals of the model are normally distributed
 
@@ -895,7 +923,7 @@ plot(lr_model, which = 2 )
 ```
 
 
-## Linear regression diagnostic plots: Homoscedasticity 3/4
+## [Linear regression diagnostic plots: Homoscedasticity 3/4]{.r-fit-text}
 
 >**ASSUMPTION 3**: The residuals have constant variance at every level of x ("*homoscedasticity*")
 
@@ -909,7 +937,7 @@ plot(lr_model, which = 3 )
 ```
 
 
-## Test for Homoscedasticity 
+## [Test for Homoscedasticity]{.r-fit-text} 
 
 Besides visual check, we can perform the `Breusch-Pagan test` to verify the assumption of homoscedasticity. In this case:
 
@@ -932,7 +960,7 @@ lmtest::bptest(lr_model)
 ```
 Because the test statistic (BP) is small and the p-value is not significant  (p-value > 0.05): WE DO NOT REJECT THE NULL HYP
 
-## Linear regression diagnostic plots: leverage 4/4
+## [Linear regression diagnostic plots: leverage 4/4]{.r-fit-text}
 
 This last diagnostic plot is actually **not** referred to any assumptions but has to do with **outliers**: 
 
@@ -964,12 +992,37 @@ broom::glance(lr_model)
 model_aug <- broom::augment(lr_model)
 ```
 
-
-
 ::: {.callout-warning icon=false}
 ### {{< bi terminal-fill color=rgba(155,103,35,1.00) >}} You try...
 ...run `View(model_aug)` to check 
 :::
+
+# _______ >>>>> SALTO  
+
+
+https://www.statology.org/interpret-regression-output-in-r/
+https://www.youtube.com/watch?v=ebHLMyqC2UY
+https://www.learnbymarketing.com/tutorials/explaining-the-lm-summary-in-r/
+
+## Splitting the sample 
+
+If we seek any causal relationship between an explanatory and outcome variable we should **split** our sample to have:
+
+1. one `sample to "train"` a model on
+2. one `sample to "test"` the model on 
+
++ Otherwise out model will seem better than it is (since it will be specifically built to "fit" our data) 
+
++ The function `rsample::initial_split` will assist in that
+```{r}
+
+nhanes_split <- rsample::initial_split(nhanes)
+# default = 75%  of observations 
+nhanes_train <- rsample::training(nhanes_split)
+# default = 25%  of observations 
+nhanes_test <- rsample::testing(nhanes_split)
+```
+
 
 ## Linear regression performance 
 
@@ -1040,6 +1093,7 @@ sqrt(SSE/df)  # 6.843509
 instead of dividing by df (like in Residual Standard Error) I take the SUM of SQUARE ERR divided by n(train)
 so it makes sense that it is a bit higher  -->
 
+
 ## Linear regression performance: $R^2$
 
 ```{r}
@@ -1064,4 +1118,6 @@ summary(lr_model)$adj.r.squared
 summary(lr_model)$fstatistic
 summary(lr_model)$cov.unscaled  ##lm 
 ```
+
+# _______SALTO<<<<<
 
