@@ -20,7 +20,7 @@ format:
 ---
 
 ::: {.callout-caution collapse="false"}
-Website construction in progress...
+Webpage construction in progress...
 :::
 
 This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. 
@@ -103,27 +103,52 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 Below are the R packages, that we will need for the workshop's practical sessions. Ideally, you can pre-install them... it will also serve as a test to check whether the R version you have is compatible. 
 
-
++ Beware, R may ask you to install some related packages (`dependencies`): follow instructions by responding directly in the R console. 
 ```{r}
 #| eval: false
 #| echo: true
 
-# Installing (only the 1st time you use them)
-pkg_list <- c("here", "fs", "janitor", "skimr",
-              "dplyr", "tidyr","forcats", "ggplot2","ggridges")
+# Installing (**ONLY** the 1st time you use them)
+pkg_list <- c("here", "fs", "janitor", "skimr","openxlsx","flextable",
+              "dplyr", "tidyr","forcats", 
+              "ggplot2", "ggstatsplot", "ggpubr", "patchwork", "viridis",
+              "ggthemes" ,"ggridges", 
+              "BSDA", "rstatix", "car", "multcomp", "lmtest" , "broom", 
+              "performance" )
 
 install.packages(pkg_list)
 
 # Loading a package (at the beginning of every R session) 
-library(here)     # A Simpler Way to Find Your Files      
-library(fs)       # Cross-Platform File System Operations     
-library(janitor)  # Simple Tools for Examining and Cleaning Data   
-library(skimr)    # Compact and Flexible Summaries of Data     
+# General 
+library(here)         # tools find your project's files, based on working directory
+library(fs)           # file/directory interactions
+library(janitor)      # tools for examining and cleaning data
+library(skimr)        # Compact and Flexible Summaries of Data     
+library(openxlsx)     # Read, Write and Edit xlsx Files
+library(flextable)    # Functions for Tabular Reporting
+
+# Tidiverse 
 library(dplyr)    # {tidyverse} A Grammar of Data Manipulation     
-library(tidyr)    # {tidyverse} Tools tocreate tidy data 
+library(tidyr)    # {tidyverse} Tools to create tidy data 
 library(forcats)  # {tidyverse} Tools for Categorical Var.(Factors)   
-library(ggplot2)  # {tidyverse} Tools for Data Visualizations    
-library(ggridges) # Ridgeline Plots in 'ggplot2' (density functions)
+
+# Plotting
+library(ggplot2)      # {tidyverse} tools for plotting
+library(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details 
+library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
+library(patchwork)    # Functions for ""Grid" Graphics"composing" plots 
+library(viridis)      # Colorblind-Friendly Color Maps for R 
+library(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'
+library(ggridges)     # Ridgeline Plots in 'ggplot2' (density functions)
+
+# Statistics
+library(BSDA)   
+library(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests
+library(car)          # Companion to Applied Regression
+library(multcomp)     # Simultaneous Inference in General Parametric Models 
+library(lmtest)       # Testing Linear Regression Models  
+library(broom)        # Convert Statistical Objects into Tidy Tibbles
+library(performance)  # Assessment of Regression Models Performance 
 ```
 
 

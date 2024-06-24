@@ -12,7 +12,7 @@ execute:
 tbl-colwidths: [5,20,75]
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab00.html" 
+  src_slide_file: "slides_lab03.html" 
                   # "slides_lab00.html" # default value (placeholder slide)
                   # "slides_lab01.html"
                   # "slides_lab02.html"
@@ -23,7 +23,7 @@ params:
                   # "02_datasets"
                   # "03_datasets"
                   # "04_datasets"
-  lab_R_code: "lab00_code.R"           
+  lab_R_code: "lab03_code.R"           
               # "lab00_code.R"          # default value (placeholder R code)
               # "lab01_code.R"
               # "lab02_code.R"
@@ -46,8 +46,8 @@ params:
 quarto::quarto_render(
   input = here::here("practice", "lab03_inference.qmd"),
   execute_params =  list(
-    src_slide_file =  "slides_lab02.html", # "slides_lab00.html" ,
-    lab_R_code = "lab00_code.R"))
+    src_slide_file =  "slides_lab03.html", # "slides_lab00.html" ,
+    lab_R_code = "lab03_code.R"))
 ```
 
 <!-- 1/2 DIAPOSITIVA WIDE (16:9) # param -->
@@ -79,14 +79,14 @@ library(downloadthis)
 ## Practice session 3: input data (as `subfolder`)
 <!-- #| output: false  -->
 ```{r}
-#| eval: true
 #| echo: false
-#| output: false
+#| eval: true
+#| output: true
 
 download_dir(
   path = here::here("practice", "data_input", params$lab_data_dir), # param
   output_name = "labs input data",
-  button_label = "Download input data directory",
+  button_label = "Download input data Lab 3",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",
@@ -101,7 +101,7 @@ download_dir(
 ```{r}
 #| echo: false
 #| eval: true
-#| output: false
+#| output: true
 
 library(fs) 
 
@@ -110,7 +110,7 @@ download_file(
   path =  here::here("practice", "Rcode", params$lab_R_code ), # param
   output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
   output_extension = ".R",  
-  button_label = "Download Lab session 2 as .R file",
+  button_label = "Download Lab session 3 as .R file",
   button_type = "primary",
   has_icon = TRUE,
   icon = "fa-brands fa-r-project",

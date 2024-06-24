@@ -27,10 +27,10 @@ about:
       href: https://orcid.org/0000-0002-5165-9230
 ---
 
-::: {.callout-caution collapse="false"}
-Website construction in progress...
-:::
- 
+<!-- ::: {.callout-caution collapse="false"} -->
+<!-- Website construction in progress... -->
+<!-- ::: -->
+
 
 :::{#hero-heading}
 

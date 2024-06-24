@@ -83,14 +83,14 @@ library(downloadthis)
 ## Practice session 1: input data (as `subfolder`)
 
 ```{r}
-#| eval: true
 #| echo: false
+#| eval: true
 #| output: true
 
 download_dir(
   path = here::here("practice", "data_input", params$lab_data_dir),# param
   output_name = "labs input data",
-  button_label = "Download input data 1",
+  button_label = "Download input data Lab 1",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",
@@ -110,7 +110,7 @@ library(fs)
 # using a param for which file 
 download_file(
   path =  here::here("practice", "Rcode", params$lab_R_code ), # param
-  output_name = fs::path_ext_remove ( params$lab_R_code), # param + no extension.... 
+  output_name = fs::path_ext_remove (params$lab_R_code), # param + no extension.... 
   output_extension = ".R",  
   button_label = "Download Lab session 1 as .R file",
   button_type = "primary",

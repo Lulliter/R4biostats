@@ -23,7 +23,7 @@ params:
                   # "02_datasets"
                   # "03_datasets"
                   # "04_datasets"
-  lab_R_code: "lab00_code.R"           
+  lab_R_code: "lab04_code.R"           
               # "lab00_code.R"          # default value (placeholder R code)
               # "lab01_code.R"
               # "lab02_code.R"
@@ -44,10 +44,11 @@ params:
 ## --- Con Knitr (fa automaticamente quello in YAMl)
 ## --- Con Quarto 
 quarto::quarto_render(
-  input = here::here("practice", "lab02_inference.qmd"),
+  input = here::here("practice", "lab04_inference.qmd"),
   execute_params =  list(
-    src_slide_file =  "slides_lab02.html", # "slides_lab00.html" ,
-    lab_R_code = "lab00_code.R"))
+    src_slide_file =  "slides_lab04.html", # "slides_lab00.html" ,
+    lab_data_dir= "04_datasets",
+    lab_R_code = "lab04_code.R"))
 ```
 
 
@@ -82,14 +83,14 @@ library(downloadthis)
 
 <!-- #| output: false  -->
 ```{r}
-#| eval: true
 #| echo: false
-#| output: false 
+#| eval: true
+#| output: true
 
 download_dir(
   path = here::here("practice", "data_input", params$lab_data_dir), # param
   output_name = "labs input data",
-  button_label = "Download input data 4 directory",
+  button_label = "Download input data Lab 4",
   button_type = "success",
   has_icon = TRUE,
   icon = "fa-solid fa-folder-open",
@@ -104,7 +105,7 @@ download_dir(
 ```{r}
 #| echo: false
 #| eval: true
-#| output: false
+#| output: true
 
 library(fs) 
 

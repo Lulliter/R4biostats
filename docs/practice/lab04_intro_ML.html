@@ -52,7 +52,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-51QEQ3S83R', { 'anonymize_ip': true});
-</script>
+</script><script src="../site_libs/font-awesome-5.13.0/js/script.js"></script>
 </head>
 <body class="floating nav-fixed">
 
@@ -187,12 +187,38 @@ gtag('config', 'G-51QEQ3S83R', { 'anonymize_ip': true});
 <section id="practice-session-4-input-data-as-subfolder" class="level2"><h2 class="anchored" data-anchor-id="practice-session-4-input-data-as-subfolder">Practice session 4: input data (as <code>subfolder</code>)</h2>
 <!-- #| output: false  -->
 <div class="cell">
-
+<div class="cell-output-display">
+<button class="btn btn-success" onclick="fetch('data:application/zip;base64,UEsDBAAAAAgAAJqFmlgAAAAAAAAAAAAAAAAMAAAAMDRfZGF0YXNldHMvUEsBAhcDAAAACAAAmoWaWAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAQAO1BAAAAADA0X2RhdGFzZXRzL1BLBQYAAAAAAQABADoAAAAqAAAAAAA=').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none'; // Hide the link
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'labs input data.zip';
+      a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+      return false;
+    });"><i class="fa-solid fa-folder-open"></i> Download input data Lab 4</button>
+</div>
 </div>
 </section><section id="practice-session-4-r-code-as-.r-file" class="level2"><h2 class="anchored" data-anchor-id="practice-session-4-r-code-as-.r-file">Practice session 4: R code (as <code>.R</code> file)</h2>
 <!-- #| output: false  -->
 <div class="cell">
-
+<div class="cell-output-display">
+<button class="btn btn-primary" onclick="fetch('data:text/plain;base64,IyBMYWIgNDogTW9kZWxpbmcgY29ycmVsYXRpb24gYW5kIHJlZ3Jlc3Npb24gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiMgUHJhY3RpY2Ugc2Vzc2lvbiBjb3ZlcmluZyB0b3BpY3MgZGlzY3Vzc2VkIGluIExlY3R1cmUgNCAKCgojIEdPQUwgT0YgVE9EQVknUyBQUkFDVElDRSBTRVNTSU9OIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIAojIFRoZSBleGFtcGxlcyBhbmQgY29kZSBmcm9tIHRoaXMgbGFiIHNlc3Npb24gZm9sbG93IHZlcnkgY2xvc2VseSB0aGUgb3BlbiBhY2Nlc3MgYm9vazogIAogCiMgX19fX19fX19fLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCgojIFIgRU5WSVJPTk1FTlQgU0VUIFVQICYgREFUQSAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCiMjICBMb2FkIHBja2dzIGZvciB0aGlzIFIgc2Vzc2lvbiAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyBHZW5lcmFsIApsaWJyYXJ5KGZzKSAgICAgICMgZmlsZS9kaXJlY3RvcnkgaW50ZXJhY3Rpb25zCmxpYnJhcnkoaGVyZSkgICAgIyB0b29scyBmaW5kIHlvdXIgcHJvamVjdCdzIGZpbGVzLCBiYXNlZCBvbiB3b3JraW5nIGRpcmVjdG9yeQpsaWJyYXJ5KHBhaW50KSAjIHBhaW50IGRhdGEuZnJhbWVzIHN1bW1hcmllcyBpbiBjb2xvdXIKbGlicmFyeShqYW5pdG9yKSAjIHRvb2xzIGZvciBleGFtaW5pbmcgYW5kIGNsZWFuaW5nIGRhdGEKbGlicmFyeShkcGx5cikgICAjIHt0aWR5dmVyc2V9IHRvb2xzIGZvciBtYW5pcHVsYXRpbmcgYW5kIHN1bW1hcml6aW5nIHRpZHkgZGF0YSAKbGlicmFyeShmb3JjYXRzKSAjIHt0aWR5dmVyc2V9IHRvb2wgZm9yIGhhbmRsaW5nIGZhY3RvcnMKbGlicmFyeShvcGVueGxzeCkgIyBSZWFkLCBXcml0ZSBhbmQgRWRpdCB4bHN4IEZpbGVzCmxpYnJhcnkoZmxleHRhYmxlKSAjIEZ1bmN0aW9ucyBmb3IgVGFidWxhciBSZXBvcnRpbmcKCiMgU3RhdGlzdGljcwpsaWJyYXJ5KHJzdGF0aXgpICMgUGlwZS1GcmllbmRseSBGcmFtZXdvcmsgZm9yIEJhc2ljIFN0YXRpc3RpY2FsIFRlc3RzCmxpYnJhcnkobG10ZXN0KSAjIFRlc3RpbmcgTGluZWFyIFJlZ3Jlc3Npb24gTW9kZWxzICMgVGVzdGluZyBMaW5lYXIgUmVncmVzc2lvbiBNb2RlbHMKbGlicmFyeShicm9vbSkgIyBDb252ZXJ0IFN0YXRpc3RpY2FsIE9iamVjdHMgaW50byBUaWR5IFRpYmJsZXMKbGlicmFyeSh0aWR5bW9kZWxzKSAjIG5vdCBpbnN0YWxsZWQgb24gdGhpcyBtYWNoaW5lCmxpYnJhcnkocGVyZm9ybWFuY2UpICMgQXNzZXNzbWVudCBvZiBSZWdyZXNzaW9uIE1vZGVscyBQZXJmb3JtYW5jZSAKCiMgUGxvdHRpbmcKbGlicmFyeShnZ3Bsb3QyKSAjIENyZWF0ZSBFbGVnYW50IERhdGEgVmlzdWFsaXNhdGlvbnMgVXNpbmcgdGhlIEdyYW1tYXIgb2YgR3JhcGhpY3MKIAoKIyMgT3VyIGRhdGFzZXQgZm9yIHRvZGF5ICAtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KIyMgSW1wb3J0aW5nIGZyb20geW91ciBwcm9qZWN0IGZvbGRlciAocHJldmlvdXNseSBkb3dubG9hZGVkIGZpbGUpIC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQojIE1ha2Ugc3VyZSB0byBtYXRjaCB5b3VyIG93biBmb2xkZXIgc3RydWN0dXJlIChhcmd1bWVudCBvZiBmdW5jdGlvbiBgaGVyZWApCgojIyAgSW1wb3J0aW5nIERhdGFzZXQgMSAoTkhBTkVTKSAtLS0tCgojIFVzZSBgaGVyZWAgaW4gc3BlY2lmeWluZyBhbGwgdGhlIHN1YmZvbGRlcnMgQUZURVIgdGhlIHdvcmtpbmcgZGlyZWN0b3J5IApuaGFuZXNfc2FtcCA8LSByZWFkLmNzdihmaWxlID0gaGVyZTo6aGVyZSgicHJhY3RpY2UiLCAiZGF0YV9pbnB1dCIsICIwM19kYXRhc2V0cyIsIm5oYW5lcy5zYW1wLmNzdiIpLCAKICAgICAgICAgICAgICAgICAgICAgICAgaGVhZGVyID0gVFJVRSwgIyAxc3QgbGluZSBpcyB0aGUgbmFtZSBvZiB0aGUgdmFyaWFibGVzCiAgICAgICAgICAgICAgICAgICAgICAgIHNlcCA9ICIsIiwgIyB3aGljaCBpcyB0aGUgZmllbGQgc2VwYXJhdG9yIGNoYXJhY3Rlci4KICAgICAgICAgICAgICAgICAgICAgICAgbmEuc3RyaW5ncyA9IGMoIj8iLCJOQSIgKSwgIyBzcGVjaWZpYyBNSVNTSU5HIHZhbHVlcyAgCiAgICAgICAgICAgICAgICAgICAgICAgIHJvdy5uYW1lcyA9IE5VTEwpIAoKICAKIyBfX19fX19fX18tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KCg==').then(res => res.blob()).then(blob => {
+      const downloadURL = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none'; // Hide the link
+      document.body.appendChild(a);
+      a.href = downloadURL;
+      a.download = 'lab04_code.R';
+      a.click();
+      window.URL.revokeObjectURL(downloadURL);
+      document.body.removeChild(a);
+      return false;
+    });" output_extension=".R"><i class="fa-brands fa-r-project"></i> Download Lab session 4 as .R file</button>
+</div>
 </div>
 <p><img src="../images/coming_soon.png" class="img-fluid"></p>
 

@@ -1,5 +1,5 @@
 # Lab 2 STATISTICAL INFERENCE & HYOPTHESIS TESTING------------------------------
-# Practice session covering topics discussed in Lecture 1 
+# Practice session covering topics discussed in Lecture 2 
 
 
 # GOAL OF TODAY'S PRACTICE SESSION ----------------------------------------

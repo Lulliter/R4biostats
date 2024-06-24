@@ -1,71 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://r4biostats.com/practice/slides_lab03.html</loc>
-    <lastmod>2024-06-18T18:07:17.650Z</lastmod>
+    <loc>http://r4biostats.com/practice/slides_lab04.html</loc>
+    <lastmod>2024-06-24T17:36:31.496Z</lastmod>
   </url>
   <url>
-    <loc>http://r4biostats.com/practice/slides_lab01.html</loc>
-    <lastmod>2024-04-25T21:33:33.547Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/practice/lab04_intro_ML.html</loc>
-    <lastmod>2024-04-26T14:51:12.170Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/practice/lab02_inference.html</loc>
-    <lastmod>2024-05-03T15:01:16.943Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/me.html</loc>
-    <lastmod>2024-06-17T16:25:23.393Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/lectures_slides/000_exe_mine.html</loc>
-    <lastmod>2024-03-26T09:44:14.908Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/lectures/lec03_corr_regress.html</loc>
-    <lastmod>2024-05-06T20:27:50.557Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/lectures/lec01_data_with_R.html</loc>
-    <lastmod>2024-04-03T09:34:03.473Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/index.html</loc>
-    <lastmod>2024-06-14T20:58:21.844Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/install.html</loc>
-    <lastmod>2024-03-29T11:51:45.132Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/lectures/lec02_inference.html</loc>
-    <lastmod>2024-05-06T20:41:32.126Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/lectures/lec04_intro_ML.html</loc>
-    <lastmod>2024-05-06T20:27:50.558Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/license_etc.html</loc>
-    <lastmod>2024-05-09T17:36:41.825Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/practice/lab01_data_with_R.html</loc>
-    <lastmod>2024-04-26T14:38:59.297Z</lastmod>
-  </url>
-  <url>
-    <loc>http://r4biostats.com/practice/lab03_corr_regress.html</loc>
-    <lastmod>2024-04-26T14:51:12.152Z</lastmod>
+    <loc>http://r4biostats.com/practice/slides_lab02.html</loc>
+    <lastmod>2024-05-06T19:32:31.823Z</lastmod>
   </url>
   <url>
     <loc>http://r4biostats.com/practice/slides_lab00.html</loc>
     <lastmod>2024-04-02T17:37:47.741Z</lastmod>
   </url>
   <url>
-    <loc>http://r4biostats.com/practice/slides_lab02.html</loc>
-    <lastmod>2024-05-06T19:32:31.823Z</lastmod>
+    <loc>http://r4biostats.com/practice/lab03_corr_regress.html</loc>
+    <lastmod>2024-06-24T18:11:51.477Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/practice/lab01_data_with_R.html</loc>
+    <lastmod>2024-06-24T18:03:57.825Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/license_etc.html</loc>
+    <lastmod>2024-06-19T08:12:58.629Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/lectures/lec04_intro_ML.html</loc>
+    <lastmod>2024-05-06T20:27:50.558Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/lectures/lec02_inference.html</loc>
+    <lastmod>2024-05-06T20:41:32.126Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/install.html</loc>
+    <lastmod>2024-06-24T17:58:42.466Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/index.html</loc>
+    <lastmod>2024-06-24T17:45:22.693Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/lectures/lec01_data_with_R.html</loc>
+    <lastmod>2024-04-03T09:34:03.473Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/lectures/lec03_corr_regress.html</loc>
+    <lastmod>2024-05-06T20:27:50.557Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/lectures_slides/000_exe_mine.html</loc>
+    <lastmod>2024-03-26T09:44:14.908Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/me.html</loc>
+    <lastmod>2024-06-19T08:13:00.683Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/practice/lab02_inference.html</loc>
+    <lastmod>2024-06-24T18:04:22.287Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/practice/lab04_intro_ML.html</loc>
+    <lastmod>2024-06-24T18:11:21.346Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/practice/slides_lab01.html</loc>
+    <lastmod>2024-04-25T21:33:33.547Z</lastmod>
+  </url>
+  <url>
+    <loc>http://r4biostats.com/practice/slides_lab03.html</loc>
+    <lastmod>2024-06-24T17:30:50.226Z</lastmod>
   </url>
 </urlset>

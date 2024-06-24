@@ -24,7 +24,7 @@ format:
 
 
 ::: {.callout-caution collapse="false"}
-Website construction in progress...
+Webpage construction in progress...
 :::
 
 
@@ -72,18 +72,19 @@ library (kableExtra)
 library(stringr)
 
 schedule <- tibble::tribble(
-   ~Day,            ~Time,            ~Activity, ~Location,
-   "24 July, 2024", "9am - 12am", "Lesson 1 ~ Working with data (in R)",  "Building ??, Room ?",
-   "\"\"", "2pm - 5pm", "Practice Session 1",   "Building ??, Room ?",
+   ~Day,             ~Time,            ~Activity, #~Location,
+   "24 July, 2024",  "9am - 12am", "Lesson 1 ~ Working with data (in R)", # "Building ??, Room ?",
+   "24 July, 2024",  "2pm - 5pm",  "Practice Session 1",                  #"Building ??, Room ?",
 
-      "25 July, 2024", "9am - 12am", "Lesson 2 ~ Inference",  "Building ??, Room ?",
-   "\"\"", "2pm - 5pm", "Practice Session 2", "Building ??, Room ?",
+   "25 July, 2024",  "9am - 12am", "Lesson 2 ~ Inferential statistics",               # "Building ??, Room ?",
+   "25 July, 2024",  "2pm - 5pm",  "Practice Session 2",                 #"Building ??, Room ?",
 
-      "26 July, 2024", "9am - 12am", "Lesson 3 ~ Modeling correlation and regression",  "Building ??, Room ?",
-   "\"\"", "2pm - 5pm", "Practice Session 3",  "Building ??, Room ?",
+   "26 July, 2024",  "9am - 12am", "Lesson 3 ~ Modeling correlation and regression",#  "Building ??, Room ?",
+   "26 July, 2024",  "2pm - 5pm",  "Practice Session 3",                  #"Building ??, Room ?",
 
-      "27 July, 2024", "9am - 12am", "Lesson 4 ~ Intro to machine learning",  "Building ??, Room ?",
-   "\"\"", "2pm - 5pm", "Practice Session 4", "Building ??, Room ?")
+   "27 July, 2024",  "9am - 12am", "Lesson 4 ~ Intro to machine learning",  #   "Building ??, Room ?",
+   "27 July, 2024",  "2pm - 5pm", "Practice Session 4"                   #"Building ??, Room ?"
+   )
 
 schedule %>% 
  kbl(caption = "Tentative Schedule") %>% 
