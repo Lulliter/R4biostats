@@ -51,7 +51,6 @@ quarto::quarto_render(
     lab_R_code = "lab04_code.R"))
 ```
 
-
 <!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
 ```{=html}
 <iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
