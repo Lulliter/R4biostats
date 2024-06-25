@@ -760,7 +760,7 @@
     "href": "license_etc.html#acknowledgements",
     "title": "Acknowledgments and use of the course materials",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\n\n\nI developed this course with the help of Luisa M. Mimmi (my sister!), who co-created the practice labs and built this website.\nWe are genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work and teaching materials. Below is a curated list of great resources (many of which free and openly accessible) you can peruse on your own.\n\nWe would love to hear your feedback, questions, or suggestions about the workshop:\n\n    contact us"
+    "text": "Acknowledgements\n\n\nI am genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work and teaching materials. A special thanks to Luisa M. Mimmi (my sister!), who revised the workshop materials and built this website.\nBelow is a curated list of great resources (many of which free and openly accessible) you can peruse on your own.\n\nI would love to hear your feedback, questions, or suggestions about the workshop:\n\n    contact us"
   },
   {
     "objectID": "license_etc.html#licensing-and-use-of-the-workshop-materials",
@@ -774,7 +774,7 @@
     "href": "license_etc.html#selected-resources-for-self-guided-learning",
     "title": "Acknowledgments and use of the course materials",
     "section": "Selected resources for self-guided learning",
-    "text": "Selected resources for self-guided learning\n\n\nBiostatistics/Epidemiology with R examples\n\nApplied Epi Team (2024). Applied Epi - Elevating frontline epidemiology [Course]. Training, support, tools. https://www.appliedepi.org/\nApplied Epi Team (2024). R for applied epidemiology and public health The Epidemiologist R Handbook [Course]. https://epirhandbook.com/en/\nBobbitt, Z. (2024). Statology [Course]. Statology. https://www.statology.org/\nSelby, D., & 2021 (2024). Analytical Epidemiology II [Course]. David Selby. https://personalpages.manchester.ac.uk/staff/david.selby/analysis/2021-03-30-inference/\nR packages & tools\n\nPOSIT (2024). POSIT resources [R]. https://posit.co/resources/.\nRStudio, & Posit (2024). Base-r-cheat-sheet.pdf [R]. https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf\nVarious contributors (2024). Bioconductor - Open source software for Bioinformatics [R]. Bioconductor - Open source software for Bioinformatics. https://www.bioconductor.org/\nWickham, H., François, R., Müller, K., & Vaughan, D. (2023). Programming with dplyr [R]. dplyr. https://dplyr.tidyverse.org/articles/programming.html#tidy-selection\nWickham, H. (2014). Tidy Data [R]. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\nSources of practice datasets\n\nVanderbilt Department of Biostatistics (2023, September 17). Vanderbilt Biostatistics Datasets [Dataset]. https://hbiostat.org/data/\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone [Dataset]. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study [Dataset]. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001"
+    "text": "Selected resources for self-guided learning\n\n\nBiostatistics/Epidemiology with R examples\n\nApplied Epi Team (2024). Applied Epi - Elevating frontline epidemiology [Course]. Training, support, tools. https://www.appliedepi.org/\nApplied Epi Team (2024). R for applied epidemiology and public health The Epidemiologist R Handbook [Course]. https://epirhandbook.com/en/\nBobbitt, Z. (2024). Statology [Course]. Statology. https://www.statology.org/\nÇetinkaya-Rundel, M., & Hardim, J. (2023). Introduction to Modern Statistics (1st Ed) [Book]. https://openintro-ims.netlify.app/\nChilds, D. Z., Hindle, B. J., & Warren, P. H. (2022). Introductory Biostatistics with R [Book]. https://github.com/rstudio/bookdown\n\nSelby, D., & 2021 (2024). Analytical Epidemiology II [Course]. David Selby. https://personalpages.manchester.ac.uk/staff/david.selby/analysis/2021-03-30-inference/\n\nVu, J., & Harrington, D. (2021). Introductory Statistics for the Life and Biomedical Sciences [Book]. https://www.openintro.org/book/biostat/\nR packages & tools\n\nPOSIT (2024). POSIT resources [R]. https://posit.co/resources/.\nRStudio, & Posit (2024). Base-r-cheat-sheet.pdf [R]. https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf\nVarious contributors (2024). Bioconductor - Open source software for Bioinformatics [R]. Bioconductor - Open source software for Bioinformatics. https://www.bioconductor.org/\nWickham, H., François, R., Müller, K., & Vaughan, D. (2023). Programming with dplyr [R]. dplyr. https://dplyr.tidyverse.org/articles/programming.html#tidy-selection\nWickham, H. (2014). Tidy Data [R]. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\nSources of practice datasets\n\nVanderbilt Department of Biostatistics (2023, September 17). Vanderbilt Biostatistics Datasets [Dataset]. https://hbiostat.org/data/\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone [Dataset]. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study [Dataset]. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001"
   },
   {
     "objectID": "lectures/lec04_intro_ML.html",
@@ -2041,7 +2041,7 @@
     "href": "practice/slides_lab03.html#needed-r-packages",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\nlibrary(tidymodels) # not installed on this machine\nlibrary(performance) # Assessment of Regression Models Performance \n# Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\nlibrary(tidymodels) # not installed on this machine\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n\n\n✔ dials        1.2.1      ✔ rsample      1.2.1 \n✔ ggplot2      3.5.1      ✔ tibble       3.2.1 \n✔ infer        1.0.7      ✔ tidyr        1.3.1 \n✔ modeldata    1.3.0      ✔ tune         1.2.1 \n✔ parsnip      1.2.1      ✔ workflows    1.1.4 \n✔ purrr        1.0.2      ✔ workflowsets 1.1.0 \n✔ recipes      1.0.10     ✔ yardstick    1.3.1 \n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ infer::chisq_test() masks rstatix::chisq_test()\n✖ purrr::compose()    masks flextable::compose()\n✖ purrr::discard()    masks scales::discard()\n✖ rstatix::filter()   masks dplyr::filter(), stats::filter()\n✖ dials::get_n()      masks rstatix::get_n()\n✖ dplyr::lag()        masks stats::lag()\n✖ infer::prop_test()  masks rstatix::prop_test()\n✖ recipes::step()     masks stats::step()\n✖ infer::t_test()     masks rstatix::t_test()\n• Use suppressPackageStartupMessages() to eliminate package startup messages\n\nlibrary(performance) # Assessment of Regression Models Performance \n\n\nAttaching package: 'performance'\n\n\nThe following objects are masked from 'package:yardstick':\n\n    mae, rmse\n\n# Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
   },
   {
     "objectID": "practice/slides_lab03.html#importing-dataset-1-nhanes",
@@ -2118,14 +2118,14 @@
     "href": "practice/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Two numerical variables: correlation (with stats::cor.test)",
-    "text": "Two numerical variables: correlation (with stats::cor.test)\n\nHere we compute the Pearson rho (parametric), with the function cor.test (the same we used for testing paired samples)\n\nimplicitely takes care on NAs\n\n\n\n\n\n# using `stats` package \ncor_test_result &lt;- cor.test(x = nhanes$height, y =  nhanes$weight, \n                            method = \"pearson\")\n\n# looking at the cor estimate\ncor_test_result[[\"estimate\"]][[\"cor\"]]\n\n[1] 0.4102269\n\n\n\nThe function ggpubr::ggscatter gives us all in one (scatter plot + \\(r\\) (“R”))! 🤯\n\n\nlibrary(\"ggpubr\") # 'ggplot2' Based Publication Ready Plots\nggpubr::ggscatter(nhanes, x = \"height\", y = \"weight\", \n                  cor.coef = TRUE, cor.method = \"pearson\", #cor.coef.coord = 2,\n                  xlab = \"Height (in)\", ylab = \"Weight (lb)\")"
+    "text": "Two numerical variables: correlation (with stats::cor.test)\n\nHere we compute the Pearson rho (parametric), with the function cor.test (the same we used for testing paired samples)\n\nimplicitely takes care on NAs\n\n\n\n\n\n# using `stats` package \ncor_test_result &lt;- cor.test(x = nhanes$height, y =  nhanes$weight, \n                            method = \"pearson\")\n\n# looking at the cor estimate\ncor_test_result[[\"estimate\"]][[\"cor\"]]\n\n[1] 0.4102269\n\n\n\nThe function ggpubr::ggscatter gives us all in one (scatter plot + \\(r\\) (“R”))! 🤯\n\n\nlibrary(\"ggpubr\") # 'ggplot2' Based Publication Ready Plots"
   },
   {
     "objectID": "practice/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test-output",
     "href": "practice/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Two numerical variables: correlation (with stats::cor.test)",
-    "text": "Two numerical variables: correlation (with stats::cor.test)"
+    "text": "Two numerical variables: correlation (with stats::cor.test)\n\n\nAttaching package: 'ggpubr'\n\n\nThe following objects are masked from 'package:flextable':\n\n    border, font, rotate\n\nggpubr::ggscatter(nhanes, x = \"height\", y = \"weight\", \n                  cor.coef = TRUE, cor.method = \"pearson\", #cor.coef.coord = 2,\n                  xlab = \"Height (in)\", ylab = \"Weight (lb)\")\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_cor()`).\n\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "practice/slides_lab03.html#spearman-rank-order-correlation",
@@ -2244,7 +2244,7 @@
     "href": "practice/slides_lab03.html#visualize-the-data-bmi-and-age-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Visualize the data: BMI and age",
-    "text": "Visualize the data: BMI and age"
+    "text": "Visualize the data: BMI and age\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "practice/slides_lab03.html#linear-regression-model",
@@ -2401,18 +2401,18 @@
     "text": "Visualize the data: Statin use and cognitive function\n\n\nThe boxplot suggests that statin user (red) present lower cognitive ability score, on average"
   },
   {
+    "objectID": "practice/slides_lab03.html#confirm-visual-intuition-with-independent-sample-t-test",
+    "href": "practice/slides_lab03.html#confirm-visual-intuition-with-independent-sample-t-test",
+    "title": "Lab 3: Modeling correlation and regression",
+    "section": "Confirm visual intuition with independent sample t-test",
+    "text": "Confirm visual intuition with independent sample t-test\nWe could use an independent t-test to confirm what the boxplot shows\n\nt_test_w &lt;- t.test(prevend$rfft[prevend$statin == 1], \n                   prevend$rfft[prevend$statin == 0],\n                   # here we specify the situation\n                   var.equal = TRUE,\n                   paired = FALSE, alternative = \"two.sided\") \n\nt_test_w\n\n\n    Two Sample t-test\n\ndata:  prevend$rfft[prevend$statin == 1] and prevend$rfft[prevend$statin == 0]\nt = -3.4917, df = 498, p-value = 0.0005226\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -15.710276  -4.396556\nsample estimates:\nmean of x mean of y \n 60.66087  70.71429 \n\n\n…statistically significant difference in means (Statin use: yes and no) do exist"
+  },
+  {
     "objectID": "practice/slides_lab03.html#consider-simple-linear-regression-statin-use-and-cognitive-function",
     "href": "practice/slides_lab03.html#consider-simple-linear-regression-statin-use-and-cognitive-function",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Consider Simple Linear regression: Statin use and cognitive function",
-    "text": "Consider Simple Linear regression: Statin use and cognitive function\nWe could use an independent t-test to confirm what the boxplot shows\n\nt_test_w &lt;- t.test(prevend$rfft[prevend$statin == 1], \n                   prevend$rfft[prevend$statin == 0],\n                   # here we specify the situation\n                   var.equal = TRUE,\n                   paired = FALSE, alternative = \"two.sided\") \n\nt_test_w\n\n\n    Two Sample t-test\n\ndata:  prevend$rfft[prevend$statin == 1] and prevend$rfft[prevend$statin == 0]\nt = -3.4917, df = 498, p-value = 0.0005226\nalternative hypothesis: true difference in means is not equal to 0\n95 percent confidence interval:\n -15.710276  -4.396556\nsample estimates:\nmean of x mean of y \n 60.66087  70.71429 \n\n\n(statistically significant difference in means do exist)…"
-  },
-  {
-    "objectID": "practice/slides_lab03.html#consider-simple-linear-regression-statin-use-and-cognitive-function-1",
-    "href": "practice/slides_lab03.html#consider-simple-linear-regression-statin-use-and-cognitive-function-1",
-    "title": "Lab 3: Modeling correlation and regression",
-    "section": "Consider Simple Linear regression: Statin use and cognitive function",
-    "text": "Consider Simple Linear regression: Statin use and cognitive function\n\n… and build a simple linear regression model like so:\n\\[E(RFFT) = b_0 + b_{statin} {(Statin\\ use)}\\]\n\n#fit the linear model\nmodel_1 &lt;- lm(rfft ~ statin, data=prevend)\nsummary(model_1)\n\n\nCall:\nlm(formula = rfft ~ statin, data = prevend)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-56.714 -22.714   0.286  18.299  73.339 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   70.714      1.381  51.212  &lt; 2e-16 ***\nstatin       -10.053      2.879  -3.492 0.000523 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 27.09 on 498 degrees of freedom\nMultiple R-squared:  0.0239,    Adjusted R-squared:  0.02194 \nF-statistic: 12.19 on 1 and 498 DF,  p-value: 0.0005226\n\n\n\nThis preliminary model shows that, on average, statin users score approximately 10 points lower on the RFFT cognitive test"
+    "text": "Consider Simple Linear regression: Statin use and cognitive function\n\n… and build a simple linear regression model like so:\n\\[E(RFFT) = b_0 + b_{statin} {(Statin\\ use)}\\]\n\n#fit the linear model\nmodel_1 &lt;- lm(rfft ~ statin, data=prevend)\nsummary(model_1)\n\n\nCall:\nlm(formula = rfft ~ statin, data = prevend)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-56.714 -22.714   0.286  18.299  73.339 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   70.714      1.381  51.212  &lt; 2e-16 ***\nstatin       -10.053      2.879  -3.492 0.000523 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 27.09 on 498 degrees of freedom\nMultiple R-squared:  0.0239,    Adjusted R-squared:  0.02194 \nF-statistic: 12.19 on 1 and 498 DF,  p-value: 0.0005226\n\n\n\nThis preliminary model shows that, on average, statin users score approximately 10 points lower on the RFFT cognitive test (and the statin coefficient is highly significant!)"
   },
   {
     "objectID": "practice/slides_lab03.html#visualize-the-data-statin-use-and-cognitive-function-age",
@@ -2433,7 +2433,7 @@
     "href": "practice/slides_lab03.html#multiple-linear-regression-model",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Multiple linear regression model",
-    "text": "Multiple linear regression model\nMultiple regression allows for a (richer) model that incorporates both statin use and age:\n\\[E(RFFT) = b_0 + b_{statin} {(Statin\\ use)}+ b_{age} {(Age)}\\]\n\nor (in statistical terms) the association between RFFT and Statin is being estimated after adjusting for Age\n\n\nThe R syntax is very easy: simply use + to add covariates\n\n# fit the (multiple) linear model\nmodel_2 &lt;- lm(rfft ~ statin + age , data=prevend)"
+    "text": "Multiple linear regression model\nMultiple regression allows for a (richer) model that incorporates both statin use and age:\n\\[E(RFFT) = b_0 + b_{statin} {(Statin\\ use)}+ b_{age} {(Age)}\\]\n\nor (in statistical terms) the association between RFFT and Statin use is being estimated after adjusting for Age\n\n\nThe R syntax is very easy: simply use + to add covariates\n\n# fit the (multiple) linear model\nmodel_2 &lt;- lm(rfft ~ statin + age , data=prevend)"
   },
   {
     "objectID": "practice/slides_lab03.html#rfft-vs.-statin-use-age",
@@ -2517,21 +2517,21 @@
     "href": "practice/slides_lab03.html#assumption-of-no-multicollinearity",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Assumption of NO MULTICOLLINEARITY",
-    "text": "Assumption of NO MULTICOLLINEARITY\n\n\nASSUMPTION 5: Each set of observations \\((y, x_1, x_2, \\dots, x_p)\\) is independent.\n\nThe R package performance actually provides a very helpful function check_model() which tests these assumptions all at the same time\n\n\nMulticollinearity is not an issue (based on a general threshold of 10 for VIF, all of them are below 10)\n\n\n# return and store a list of single plots\ndiagnostic_plots &lt;- plot(performance::check_model(model_2, panel = FALSE))\n\n# see multicollinearity plot \ndiagnostic_plots[[5]]"
+    "text": "Assumption of NO MULTICOLLINEARITY\n\n\nASSUMPTION 5: Each set of observations \\((y, x_1, x_2, \\dots, x_p)\\) is independent.\n\nThe R package performance actually provides a very helpful function check_model() which tests these assumptions all at the same time\n\n\nMulticollinearity is not an issue (based on a general threshold of 10 for VIF, all of them are below 10)\n\n\n# return and store a list of single plots\ndiagnostic_plots &lt;- plot(performance::check_model(model_2, panel = FALSE))"
   },
   {
     "objectID": "practice/slides_lab03.html#assumption-of-no-multicollinearity-output",
     "href": "practice/slides_lab03.html#assumption-of-no-multicollinearity-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Assumption of NO MULTICOLLINEARITY",
-    "text": "Assumption of NO MULTICOLLINEARITY"
+    "text": "Assumption of NO MULTICOLLINEARITY\n\nFor confidence bands, please install `qqplotr`.\n\n# see multicollinearity plot \ndiagnostic_plots[[5]]"
   },
   {
     "objectID": "practice/slides_lab03.html#checking-out-the-performance-r-package",
     "href": "practice/slides_lab03.html#checking-out-the-performance-r-package",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Checking out the performance R package",
-    "text": "Checking out the performance R package\n\nFind more info on the performance R package here\n\n\n\n\n\n You try…\n\n\nRun also the following commands\n\nDiagnostic plot of linearity diagnostic_plots[[2]]\n\nDiagnostic plot of influential observations - outliers diagnostic_plots[[4]]\n\nDiagnostic plot of normally distributed residuals diagnostic_plots[[6]]"
+    "text": "Checking out the performance R package\n\nFind more info on the helpful performance R package here for verifying assumptions and model’s quality and goodness of fit.\n\n\n\n\n You try…\n\n\nRun also the following commands\n\nDiagnostic plot of linearity diagnostic_plots[[2]]\n\nDiagnostic plot of influential observations - outliers diagnostic_plots[[4]]\n\nDiagnostic plot of normally distributed residuals diagnostic_plots[[6]]"
   },
   {
     "objectID": "practice/slides_lab03.html#r2-with-multiple-regression",
@@ -2594,7 +2594,7 @@
     "href": "practice/slides_lab03.html#interaction-in-regression---visual-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Interaction in regression - visual",
-    "text": "Interaction in regression - visual\n\n\nUsers in two categories are represented points; linear relationship is representated by ONE golden line for ALL SAMPLE"
+    "text": "Interaction in regression - visual\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 27 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\nUsers in two categories are represented points; linear relationship is representated by ONE golden line for ALL SAMPLE"
   },
   {
     "objectID": "practice/slides_lab03.html#interaction-in-regression---visual-rethinking",
@@ -2608,7 +2608,7 @@
     "href": "practice/slides_lab03.html#interaction-in-regression---visual-rethinking-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Interaction in regression - visual (RETHINKING)",
-    "text": "Interaction in regression - visual (RETHINKING)\n\n\nUsers in two categories are represented points; linear relationship is representated by 2 respective line according to diabetes status… the association has DIFFERENT DIRECTION!"
+    "text": "Interaction in regression - visual (RETHINKING)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 27 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\nUsers in two categories are represented points; linear relationship is representated by 2 respective line according to diabetes status… the association has DIFFERENT DIRECTION!"
   },
   {
     "objectID": "practice/slides_lab03.html#interaction-in-regression---adding-term-in-model",

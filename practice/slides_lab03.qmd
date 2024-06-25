@@ -1168,7 +1168,7 @@ ggplot(prevend,
 ```
 
 
-## [Consider Simple Linear regression: Statin use and cognitive function]{.r-fit-text}
+## [Confirm visual intuition with independent sample t-test]{.r-fit-text}
 We could use an independent t-test to confirm what the boxplot shows 
 
 ```{r}
@@ -1181,7 +1181,7 @@ t_test_w <- t.test(prevend$rfft[prevend$statin == 1],
 t_test_w
 ```
 
-(statistically significant difference in means do exist)...
+...statistically significant difference in means (Statin use: yes and no) do exist 
 
 ## [Consider Simple Linear regression: Statin use and cognitive function]{.r-fit-text}
 ::: {style="font-size: 80%;"}
@@ -1196,7 +1196,8 @@ model_1 <- lm(rfft ~ statin, data=prevend)
 summary(model_1)
 ```
 
-+ This preliminary model shows that, on average, statin users score approximately 10 points lower on the RFFT cognitive test
++ This preliminary model shows that, on average, **statin** users score approximately 10 points lower on the RFFT cognitive test (and the statin coefficient is **highly significant**!)
+  
 :::
 
 ## [Visualize the data: Statin use and cognitive function + age]{.r-fit-text}
@@ -1258,7 +1259,7 @@ Multiple regression allows for a (richer) model that incorporates both statin us
 
  $$E(RFFT) = b_0 + b_{statin} {(Statin\ use)}+ b_{age} {(Age)}$$
 
- + or (*in statistical terms*) the association between **RFFT** and **Statin** is being estimated `after adjusting` for **Age**
+ + or (*in statistical terms*) the association between **RFFT** and **Statin use** is being estimated `after adjusting` for **Age**
 
 The R syntax is very easy: simply use `+` to add covariates
 ```{r}
@@ -1400,7 +1401,7 @@ diagnostic_plots[[5]]
 :::
 ## [Checking out the `performance` R package ]{.r-fit-text}
 
-+ Find more info on the `performance` R package [here](https://easystats.github.io/performance/index.html) 
++ Find more info on the helpful `performance` R package [here](https://easystats.github.io/performance/index.html) for verifying assumptions and model's quality and goodness of fit. 
 
 ::: {.callout-warning icon=false}
 ### {{< bi terminal-fill color=rgba(155,103,35,1.00) >}} You try...
