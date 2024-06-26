@@ -16,7 +16,7 @@ tbl-colwidths: [5,20,75]
 <iframe class="slide-deck" src="../lectures_slides/Lecture_02.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='../lectures_slides/Lecture_00.pdf' target="_blank">View slides in full screen</a>
+<a href='../lectures_slides/Lecture_02.pdf' target="_blank">View slides in full screen</a>
 
 ## Lecture 2 Outline
 

@@ -32,8 +32,8 @@ Webpage construction in progress...
 
 This website collects the materials for a four day workshop organized by [MITGEST Doctoral Network](https://www.mitgest.eu/) in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.
 
-- [Location:]{.smallcaps} Radboud Center for Mitochondrial Medicine, xxxxx Nijmegen, Netherland
-- [Time:]{.smallcaps} 9 am - 5 pm July 24^th^ to July 27^th^, 2024
+- [Location:]{.smallcaps} Radboud Center for Mitochondrial Medicine, Nijmegen, Netherland
+- [Time:]{.smallcaps} 9 am - 4 pm July 24^th^ to July 27^th^, 2024.
 
 
 # Workshop Overview
@@ -74,16 +74,16 @@ library(stringr)
 schedule <- tibble::tribble(
    ~Day,             ~Time,            ~Activity, #~Location,
    "24 July, 2024",  "9am - 12am", "Lesson 1 ~ Working with data (in R)", # "Building ??, Room ?",
-   "24 July, 2024",  "2pm - 5pm",  "Practice Session 1",                  #"Building ??, Room ?",
+   "24 July, 2024",  "1pm - 4pm",  "Practice Session 1",                  #"Building ??, Room ?",
 
    "25 July, 2024",  "9am - 12am", "Lesson 2 ~ Inferential statistics",               # "Building ??, Room ?",
-   "25 July, 2024",  "2pm - 5pm",  "Practice Session 2",                 #"Building ??, Room ?",
+   "25 July, 2024",  "1pm - 4pm",  "Practice Session 2",                 #"Building ??, Room ?",
 
    "26 July, 2024",  "9am - 12am", "Lesson 3 ~ Modeling correlation and regression",#  "Building ??, Room ?",
-   "26 July, 2024",  "2pm - 5pm",  "Practice Session 3",                  #"Building ??, Room ?",
+   "26 July, 2024",  "1pm - 4pm",  "Practice Session 3",                  #"Building ??, Room ?",
 
    "27 July, 2024",  "9am - 12am", "Lesson 4 ~ Intro to machine learning",  #   "Building ??, Room ?",
-   "27 July, 2024",  "2pm - 5pm", "Practice Session 4"                   #"Building ??, Room ?"
+   "27 July, 2024",  "1pm - 4pm", "Practice Session 4"                   #"Building ??, Room ?"
    )
 
 schedule %>% 

@@ -1,5 +1,6 @@
 ---
 title: "Lab 3: Modeling correlation and regression"
+subtitle: "<span class='code'>2024-07-26</span>"
 ## ------  general Output Options
 execute:     
   eval: true
@@ -12,7 +13,7 @@ execute:
 tbl-colwidths: [5,20,75]
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab03.html" 
+  src_slide_file: "practice_slides/slides_lab03.html" 
                   # "slides_lab00.html" # default value (placeholder slide)
                   # "slides_lab01.html"
                   # "slides_lab02.html"
@@ -118,4 +119,4 @@ download_file(
 )
 ```
 
-![](../images/coming_soon.png)
+<!-- ![](../images/coming_soon.png) -->

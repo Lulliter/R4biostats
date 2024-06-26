@@ -1,5 +1,5 @@
 ---
-title: "Intro to machine learning"
+title: "Introduction to machine learning"
 subtitle: "<span class='code'>2024-07-27</span>"
 # date: "2024-07-27"
 # image: "images/04-guide.png"
@@ -9,23 +9,25 @@ tbl-colwidths: [5,20,75]
 
 <!-- 1/2 DIAPOSITIVA STD (16:9) --> 
 <!-- ```{=html} -->
-<!-- <iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
+<!-- <iframe class="slide-deck" src="../lectures_slides/Lecture_04.pdf" height="420" width="747" style="border: 1px solid #2e3846;"></iframe> -->
 <!-- ``` -->
 
 <!-- 2/2 DIAPOSITIVA STD (4:3) -->
 ```{=html}
-<iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="../lectures_slides/Lecture_04.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='../lectures_slides/Lecture_00.pdf' target="_blank">View slides in full screen</a>
+<a href='../lectures_slides/Lecture_04.pdf' target="_blank">View slides in full screen</a>
 
 ## Lecture 4 Outline
 
-+ From association to prediction  -> Machine learning algorithms
-    + Unsupervised ML 
-      + Examples 
-+ Elements of Statistical Power analysis
++ Shifting the emphasis on **empirical prediction** 
+  + Distinction between supervised & **unsupervised** algorithms
+    + Unsupervised ML Example
+      + PCA 
 + Useful R resources for metabolomics 
+  + Introduction to `MetaboAnalyst` software
++ Elements of statistical power analysis
 
   <!-- + `metaboanalyst`  -->
   <!-- + `MetSizeR` -->

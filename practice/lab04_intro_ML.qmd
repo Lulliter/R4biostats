@@ -1,5 +1,6 @@
 ---
 title: "Lab 4: Intro to machine learning"
+subtitle: "<span class='code'>2024-07-27</span>"
 ## ------  general Output Options
 execute:     
   eval: true
@@ -12,7 +13,7 @@ execute:
 tbl-colwidths: [5,20,75]
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab00.html" 
+  src_slide_file: "practice_slides/slides_lab04.html" 
                   # "slides_lab00.html" # default value (placeholder slide)
                   # "slides_lab01.html"
                   # "slides_lab02.html"
@@ -121,4 +122,4 @@ download_file(
 )
 ```
 
-![](../images/coming_soon.png)
+<!-- ![](../images/coming_soon.png) -->

@@ -13,7 +13,7 @@ execute:
 tbl-colwidths: [5,20,75]
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab02.html" 
+  src_slide_file: "practice_slides/slides_lab02.html" 
                   # "slides_lab00.html" # default value (placeholder slide)
                   # "slides_lab01.html"
                   # "slides_lab02.html"

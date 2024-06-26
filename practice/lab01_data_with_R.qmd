@@ -14,14 +14,14 @@ execute:
   cache: false # normalmnte false
 ## ------  parameters (for disclorsure or not of files)
 params:
-  src_slide_file: "slides_lab01.html" 
+  src_slide_file: "practice_slides/slides_lab01.html" 
                   # "slides_lab00.html" # default value (placeholder slide)
                   # "slides_lab01.html"
                   # "slides_lab02.html"
                   # "slides_lab03.html"
                   # "slides_lab04.html"
   lab_data_dir: "01_datasets"
-                  # "01_datasets" # default value (placeholder slide)
+                  # "01_datasets"  
                   # "02_datasets"
                   # "03_datasets"
                   # "04_datasets"
@@ -54,7 +54,7 @@ quarto::quarto_render(
 ```
 
 
-<!-- 1/2 DIAPOSITIVA WIDE (16:9) -->
+<!-- 1/2 DIAPOSITIVA WIDE (16:9)  -->
 ```{=html}
 <iframe class="slide-deck" src= `r params$src_slide_file` height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```

@@ -120,9 +120,9 @@ mybib_df <-
 <!-- something along the lines of [MADA course](https://andreashandel.github.io/MADAcourse/)    -->
 <!--  https://www.laleggepertutti.it/492987_fair-use-esiste-in-italia -->
 
-I am genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work and teaching materials. A special thanks to [Luisa M. Mimmi](https://luisamimmi.org/) (my sister!), who revised the workshop materials and built this website. 
+I am genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work, open source software, and training resources. Special thanks to [Luisa M. Mimmi](https://luisamimmi.org/) (my sister!) who revised the workshop content and built this dedicated website. 
 
-Below is a curated list of great resources (many of which free and openly accessible) you can peruse on your own. 
+Below is a curated list of great resources (most of which free and openly accessible) you can peruse on your own. 
 
 <!-- The following individuals have contributed to improving the course: Ian Bachli (@idbachli), Megan Beaudry (@MeganSarah), Zane Billings (@wzbillings),   -->
 
@@ -130,7 +130,7 @@ I would love to hear your feedback, questions, or suggestions about the workshop
 
 ## Licensing and use of the workshop materials
 
-The workshop materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All borrowed external materials (images, examples, etc.), are credited with proper "*Source:*" statements and governed by their own licenses. We mostly drew from sources that were published under "open access" or "creative commons" frameworks. If this were not the case for any content piece displayed here, please let us know and we will remove it.
+The workshop materials are licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/). All borrowed external materials (images, worked examples, etc.), are credited with proper "*Source*" statements and governed by their own licenses. To my knowledge, all the consulted materials were published under "open access" or "creative commons" frameworks. If this were not the case for any content piece displayed here, please let me know and it will be  removed.
 
  
 <!-- ## Materials -->

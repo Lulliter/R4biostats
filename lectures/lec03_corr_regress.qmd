@@ -21,21 +21,28 @@ tbl-colwidths: [5,20,75]
 
 <!-- 2/2 DIAPOSITIVA STD (4:3) -->
 ```{=html}
-<iframe class="slide-deck" src="../lectures_slides/Lecture_00.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
+<iframe class="slide-deck" src="../lectures_slides/Lecture_03.pdf" height="418" width="560" style="border: 1px solid #2e3846;"></iframe>
 ```
 
-<a href='../lectures_slides/Lecture_00.pdf' target="_blank">View slides in full screen</a>
+<a href='../lectures_slides/Lecture_03.pdf' target="_blank">View slides in full screen</a>
 
 ## Lecture 3 Outline
 
-+ Testing for a correlation hypothesis (relationship of variables)
-  + Pearson rho analysis (param)
-  + Spearman test (no param)
-+ Measures of association 
++ Testing and summarizing relationship between 2 variables (**correlation**)
+  + Pearson $r$ analysis (param)
+     + (numerical variables)
+  + Spearman's test (no param)
++ Measures of **association** 
+  + Chi-Square Test of Independence 
+    + (categorical variables)
   + Fisher’s Exact Test
-  + Chi-Square Test of Independence
-+ From association to prediction  -> Machine learning algorithms
-  + Supervised ML 
-    + Examples  
++ From correlation/association to **prediction/causation** 
+  + The purpose of observational and experimental studies
++ Widely used analytical tools
+  + Simple linear regression models
+  + Multiple Linear Regression models
++ Shifting the emphasis on **empirical prediction** 
+  + Introduction to Machine Learning (ML)
+  + Distinction between Supervised & Unsupervised algorithms
 
 
