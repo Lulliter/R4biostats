@@ -4,14 +4,14 @@
     "href": "practice/practice_slides/slides_lab04.html#topics-discussed-in-lecture-4",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Topics discussed in Lecture # 4",
-    "text": "Topics discussed in Lecture # 4\n\nLecture 4: topics"
+    "text": "Topics discussed in Lecture # 4\n\nLecture 4: topics\n\nShifting the emphasis on empirical prediction\n\nDistinction between supervised & unsupervised algorithms\n\nUnsupervised ML Example\n\nPCA\n\n\n\n\n\n\nUseful R resources for metabolomics\n\nIntroduction to MetaboAnalyst software\n\n\nElements of statistical power analysis"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#needed-r-packages",
     "href": "practice/practice_slides/slides_lab04.html#needed-r-packages",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\nlibrary(tidymodels) # not installed on this machine\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n\n\n✔ dials        1.2.1      ✔ rsample      1.2.1 \n✔ ggplot2      3.5.1      ✔ tibble       3.2.1 \n✔ infer        1.0.7      ✔ tidyr        1.3.1 \n✔ modeldata    1.3.0      ✔ tune         1.2.1 \n✔ parsnip      1.2.1      ✔ workflows    1.1.4 \n✔ purrr        1.0.2      ✔ workflowsets 1.1.0 \n✔ recipes      1.0.10     ✔ yardstick    1.3.1 \n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ infer::chisq_test() masks rstatix::chisq_test()\n✖ purrr::compose()    masks flextable::compose()\n✖ purrr::discard()    masks scales::discard()\n✖ rstatix::filter()   masks dplyr::filter(), stats::filter()\n✖ dials::get_n()      masks rstatix::get_n()\n✖ dplyr::lag()        masks stats::lag()\n✖ infer::prop_test()  masks rstatix::prop_test()\n✖ recipes::step()     masks stats::step()\n✖ infer::t_test()     masks rstatix::t_test()\n• Search for functions across packages at https://www.tidymodels.org/find/\n\nlibrary(performance) # Assessment of Regression Models Performance \n\n\nAttaching package: 'performance'\n\n\nThe following objects are masked from 'package:yardstick':\n\n    mae, rmse\n\n# Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\n#library(tidymodels) # not installed on this machine\nlibrary(performance) # Assessment of Regression Models Performance \n# Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#importing-dataset-1-nhanes",
@@ -28,46 +28,137 @@
     "text": "NHANES Variables and their description\n\n[EXCERPT: see complete file in Input Data Folder]"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#splitting-the-sample",
-    "href": "practice/practice_slides/slides_lab04.html#splitting-the-sample",
+    "objectID": "practice/practice_slides/slides_lab04.html#section",
+    "href": "practice/practice_slides/slides_lab04.html#section",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Splitting the sample",
-    "text": "Splitting the sample\nIf we seek any causal relationship between an explanatory and outcome variable we should split our sample to have:\n\none sample to \"train\" a model on\none sample to \"test\" the model on\n\n\nOtherwise out model will seem better than it is (since it will be specifically built to “fit” our data)\nThe function rsample::initial_split will assist in that"
+    "section": "…",
+    "text": "…"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-performance",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-performance",
+    "objectID": "practice/practice_slides/slides_lab04.html#section-1",
+    "href": "practice/practice_slides/slides_lab04.html#section-1",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear regression performance",
-    "text": "Linear regression performance\nWe can start looking at how the model performs by applying it to our nhanes_test sub-sample, utilizing the function predict"
+    "section": "…",
+    "text": "…"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-performance-predicted-values-in-test-sample",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-performance-predicted-values-in-test-sample",
+    "objectID": "practice/practice_slides/slides_lab04.html#section-2",
+    "href": "practice/practice_slides/slides_lab04.html#section-2",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear regression performance: predicted values in test sample",
-    "text": "Linear regression performance: predicted values in test sample\n\nWe can look the 95% CI of any predicted values\n\n\nWe can look the CI 95% of a single predicted values"
+    "section": "…",
+    "text": "…"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-performance-rmse",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-performance-rmse",
+    "objectID": "practice/practice_slides/slides_lab04.html#section-3",
+    "href": "practice/practice_slides/slides_lab04.html#section-3",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear regression performance: RMSE",
-    "text": "Linear regression performance: RMSE\nBasically we are asking: “how does the prediction compare to the actual test dataset?”\nFor this we take the difference between the predicted and the actual value as\nRMSE = Root Means Squared Error\n\nThis is quite close to the Residual standard error that we got from the regression model summary (6.843) – despite that was taken from training data and this comes from testing data"
+    "section": "…",
+    "text": "…"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-performance-r2",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-performance-r2",
+    "objectID": "practice/practice_slides/slides_lab04.html#splitting-the-dataset-into-training-and-testing-samples",
+    "href": "practice/practice_slides/slides_lab04.html#splitting-the-dataset-into-training-and-testing-samples",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear regression performance: \\(R^2\\)\n",
-    "text": "Linear regression performance: \\(R^2\\)"
+    "section": "Splitting the dataset into training and testing samples",
+    "text": "Splitting the dataset into training and testing samples\nJulia Silge https://supervised-ml-course.netlify.app/"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-models-outputs-model-fit",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-models-outputs-model-fit",
+    "objectID": "practice/practice_slides/slides_lab04.html#section-4",
+    "href": "practice/practice_slides/slides_lab04.html#section-4",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear regression models outputs: model fit",
-    "text": "Linear regression models outputs: model fit"
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-5",
+    "href": "practice/practice_slides/slides_lab04.html#section-5",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-6",
+    "href": "practice/practice_slides/slides_lab04.html#section-6",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-7",
+    "href": "practice/practice_slides/slides_lab04.html#section-7",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-9",
+    "href": "practice/practice_slides/slides_lab04.html#section-9",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-10",
+    "href": "practice/practice_slides/slides_lab04.html#section-10",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-11",
+    "href": "practice/practice_slides/slides_lab04.html#section-11",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-12",
+    "href": "practice/practice_slides/slides_lab04.html#section-12",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-14",
+    "href": "practice/practice_slides/slides_lab04.html#section-14",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-15",
+    "href": "practice/practice_slides/slides_lab04.html#section-15",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-16",
+    "href": "practice/practice_slides/slides_lab04.html#section-16",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-17",
+    "href": "practice/practice_slides/slides_lab04.html#section-17",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#section-20",
+    "href": "practice/practice_slides/slides_lab04.html#section-20",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "…",
+    "text": "…"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#final-thoughtsrecommendations",
+    "href": "practice/practice_slides/slides_lab04.html#final-thoughtsrecommendations",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "Final thoughts/recommendations",
+    "text": "Final thoughts/recommendations\n\n\n\nThe analyses proposed in this Lab are very similar to the process we go through in real life. The following steps are always included:\n\nThorough understanding of the input data and the data collection process\nBivariate analysis of correlation / association to form an intuition of which explanatory variable(s) may or may not affect the response variable\n\nDiagnostic plots to verify if the necessary assumptions are met for a linear model to be suitable\nUpon verifying the assumptions, we fit data to hypothesized (linear) model\n\nAssessment of the model performance (\\(R^2\\), \\(Adj. R^2\\), \\(F-Statistic\\), etc.)\n\n\nAs we saw with hypothesis testing, the assumptions we make (and require) for regression are of utter importance\n\nClearly, we only scratched the surface in terms of all the possible predictive models, but we got a hang of the fundamental steps and some useful tools that might serve us also in more advanced analysis\n\ne.g. broom (within tidymodels), performace rstatix, lmtest\n\n\n\n\n\n\n\n\nR 4 Biostatistics | MITGEST::training(2024)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#goal-of-todays-practice-session",
@@ -81,7 +172,7 @@
     "href": "practice/practice_slides/slides_lab02.html#needed-r-packages",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(janitor)      # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats)      # {tidyverse} tool for handling factors\n\n# Statistics\nlibrary(BSDA)   \n\nLoading required package: lattice\n\n\n\nAttaching package: 'BSDA'\n\n\nThe following object is masked from 'package:datasets':\n\n    Orange\n\nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(car)          # Companion to Applied Regression\n\nLoading required package: carData\n\n\n\nAttaching package: 'carData'\n\n\nThe following objects are masked from 'package:BSDA':\n\n    Vocab, Wool\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\nLoading required package: mvtnorm\n\n\nLoading required package: survival\n\n\nLoading required package: TH.data\n\n\nLoading required package: MASS\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:rstatix':\n\n    select\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\n\nAttaching package: 'TH.data'\n\n\nThe following object is masked from 'package:MASS':\n\n    geyser\n\n# Plotting\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details \n\nYou can cite this package as:\n     Patil, I. (2021). Visualizations with statistical details: The 'ggstatsplot' approach.\n     Journal of Open Source Software, 6(61), 3167, doi:10.21105/joss.03167\n\nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \n\n\nAttaching package: 'patchwork'\n\n\nThe following object is masked from 'package:MASS':\n\n    area\n\nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \n\nLoading required package: viridisLite\n\nlibrary(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(janitor)      # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats)      # {tidyverse} tool for handling factors\nlibrary(tidyr)        # Tidy Messy Data       \n\n# Statistics\nlibrary(BSDA)         # Basic Statistics and Data Analysis   \n\nLoading required package: lattice\n\n\n\nAttaching package: 'BSDA'\n\n\nThe following object is masked from 'package:datasets':\n\n    Orange\n\nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(car)          # Companion to Applied Regression\n\nLoading required package: carData\n\n\n\nAttaching package: 'carData'\n\n\nThe following objects are masked from 'package:BSDA':\n\n    Vocab, Wool\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\nLoading required package: mvtnorm\n\n\nLoading required package: survival\n\n\nLoading required package: TH.data\n\n\nLoading required package: MASS\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:rstatix':\n\n    select\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\n\nAttaching package: 'TH.data'\n\n\nThe following object is masked from 'package:MASS':\n\n    geyser\n\n# Plotting\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  # 'ggplot2' Based Plots with Statistical Details \n\nYou can cite this package as:\n     Patil, I. (2021). Visualizations with statistical details: The 'ggstatsplot' approach.\n     Journal of Open Source Software, 6(61), 3167, doi:10.21105/joss.03167\n\nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \n\n\nAttaching package: 'patchwork'\n\n\nThe following object is masked from 'package:MASS':\n\n    area\n\nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \n\nLoading required package: viridisLite\n\nlibrary(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#our-dataset-for-today",
@@ -158,7 +249,7 @@
     "href": "practice/practice_slides/slides_lab02.html#age",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Age",
-    "text": "Age\nIntroducing the handy R package patchwork which lets us compose different plots in a very simple and intuitive way\n\n(check it out with ??patchwork)\n\n\nage &lt;-ggplot(heart_failure,aes(x = age ))+\n  geom_histogram(binwidth = 5, color = \"white\", fill = \"grey\",alpha = 0.5)+\n  geom_vline(aes(xintercept = mean(age)), color = \"#4c4c4c\")+\n  theme_fivethirtyeight()+\n  labs(title = \"Age Distribution\" )+\n  scale_x_continuous(breaks = seq(40,100,5))  \n\nage2 &lt;-ggplot(heart_failure, aes(x = age, fill = DEATH_EVENT_f))+\n  geom_histogram(binwidth = 5, position = \"identity\",alpha = 0.5,color = \"white\")+\n  geom_vline(aes(xintercept = mean(age[DEATH_EVENT == 0])), color = \"#4c4c4c\")+\n  geom_vline(aes(xintercept = mean(age[DEATH_EVENT==1])), color = \"#d8717b\")+\n  theme_fivethirtyeight()+\n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))+\n  labs(title =  \"Age Distribution by group (Death Event)\")+\n  scale_x_continuous(breaks = seq(40,100,5))\n\n# patchwork\nlibrary(patchwork)\nage + age2 + plot_layout(ncol = 1)"
+    "text": "Age\nIntroducing the handy R package patchwork which lets us compose different plots in a very simple and intuitive way\n\n(check it out with ??patchwork)\n\n\nage &lt;-ggplot(heart_failure,aes(x = age ))+\n  geom_histogram(binwidth = 5, color = \"white\", fill = \"grey\",alpha = 0.5)+\n  geom_vline(aes(xintercept = mean(age)), color = \"#4c4c4c\")+\n  theme_fivethirtyeight()+\n  labs(title = \"Age Distribution\" )+\n  scale_x_continuous(breaks = seq(40,100,5))  \n\nage2 &lt;-ggplot(heart_failure, aes(x = age, fill = DEATH_EVENT_f))+\n  geom_histogram(binwidth = 5, position = \"identity\",alpha = 0.5,color = \"white\")+\n  geom_vline(aes(xintercept = mean(age[DEATH_EVENT == 0])), color = \"#4c4c4c\")+\n  geom_vline(aes(xintercept = mean(age[DEATH_EVENT==1])), color = \"#d8717b\")+\n  theme_fivethirtyeight()+\n  scale_fill_manual(values = c(\"#999999\", \"#d8717b\"))+\n  labs(title =  \"Age Distribution by group (Death Event)\")+\n  scale_x_continuous(breaks = seq(40,100,5))\n\n# patchwork\nlibrary(patchwork) # The Composer of Plots\nage + age2 + plot_layout(ncol = 1)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#age-output",
@@ -578,7 +669,7 @@
     "href": "practice/practice_slides/slides_lab02.html#bonus-function",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Bonus function!",
-    "text": "Bonus function!\nIt is worth mentioning the ggstatsplot package, which combines plots representing the distribution for each group—and the results of the statistical test displayed in the subtitle of the plot.\nBelow we check out the ggwithinstats() function for paired samples.\n\n# load package\nlibrary(ggstatsplot)\n\n# plot with statistical results\ngrades_long %&gt;% \n  # must ungroup the dataframe or it will give an error\n  ungroup () %&gt;% \n  ggstatsplot::ggwithinstats(.,\n                             x = time_f ,\n                             y = grade ,\n                             type = \"parametric\", # for t test \n                             centrality.plotting = FALSE # remove median\n  )"
+    "text": "Bonus function!\nIt is worth mentioning the ggstatsplot package, which combines plots representing the distribution for each group—and the results of the statistical test displayed in the subtitle of the plot.\nBelow we check out the ggwithinstats() function for paired samples.\n\n# load package\nlibrary(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details\n\n# plot with statistical results\ngrades_long %&gt;% \n  # must ungroup the dataframe or it will give an error\n  ungroup () %&gt;% \n  ggstatsplot::ggwithinstats(.,\n                             x = time_f ,\n                             y = grade ,\n                             type = \"parametric\", # for t test \n                             centrality.plotting = FALSE # remove median\n  )"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#bonus-function-output",
@@ -1148,6 +1239,27 @@
     "text": "Caution\n\n\n\n\n\nWebpage construction in progress…\nThis workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine before the workshop.\nBelow is a step by step process that should guide you through the needed installation steps."
   },
   {
+    "objectID": "install.html#installing-packages-1st-time-you-use-an-r-package",
+    "href": "install.html#installing-packages-1st-time-you-use-an-r-package",
+    "title": "Installation and setup",
+    "section": "Installing packages (1st time you use an R Package)",
+    "text": "Installing packages (1st time you use an R Package)\nYou could install one package at a time…\n\n# Installing (**ONLY** the 1st time you use them)\ninstall.packages(\"name_of_package_here\" ) \n\n… or in bulk, like so (it might take a few moments more):\n\n# ---- Installing R pckgs for 1st LAB (**ONLY** the 1st time you use them)\npkg_list_lab_1 &lt;- c(\"fs\",\"here\", \"janitor\", \"skimr\", \n                   \"dplyr\", \"forcats\", \n                   \"ggplot2\",  \"ggridges\")\n\ninstall.packages(pkg_list_lab_1)\n\n\n# ---- Installing (more) R pckgs for 2nd LAB (**ONLY** the 1st time you use them)\npkg_list_lab_2 &lt;- c(\"tidyr\", \"patchwork\",\n                    \"ggthemes\", \"ggstatsplot\", \"ggpubr\",  \"viridis\",\n                    \"BSDA\", \"rstatix\", \"car\", \"multcomp\") \n\ninstall.packages(pkg_list_lab_2)\n\n\n# ----  Installing (more) R pckgs for 3rd LAB (**ONLY** the 1st time you use them)\npkg_list_lab_3 &lt;- c(\"openxlsx\", \n                    \"lmtest\" , \n                    \"broom\", \n                    \"performance\")\n\ninstall.packages(pkg_list_lab_3)\n\n\n# ----  Installing (more) R pckgs for 4th LAB (**ONLY** the 1st time you use them)\n# pkg_list_lab_4 &lt;- c(\"\" )\n# \n# install.packages(pkg_list_lab_4)"
+  },
+  {
+    "objectID": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
+    "href": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
+    "title": "Installation and setup",
+    "section": "Loading a package (at the beginning of every R session)",
+    "text": "Loading a package (at the beginning of every R session)\nWith the commands below (that we will be executing at the beginning of our Labs), you load the specific R packages that you are going to need in any given R session.\n\n# Loading a package (at the beginning of every R session) \n# --- General \nlibrary(here)       # tools find your project's files, based on working directory\nlibrary(fs)         # file/directory interactions\nlibrary(janitor)    # tools for examining and cleaning data\nlibrary(skimr)      # Compact and Flexible Summaries of Data     \nlibrary(openxlsx)   # Read, Write and Edit xlsx Files\n\n# --- Tidyverse \nlibrary(dplyr)      # {tidyverse} A Grammar of Data Manipulation     \nlibrary(tidyr)      # {tidyverse} Tools to create tidy data \nlibrary(forcats)    # {tidyverse} Tools for Categorical Var.(Factors)   \n\n# --- Plotting\nlibrary(ggplot2)    # {tidyverse} tools for plotting\nlibrary(ggstatsplot)# 'ggplot2' Based Plots with Statistical Details \nlibrary(ggpubr)     # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)  # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)    # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)   # Extra Themes, Scales and Geoms for 'ggplot2'\nlibrary(ggridges)   # Ridgeline Plots in 'ggplot2' (density functions)\n\n# --- Statistics\nlibrary(BSDA)   \nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)        # Companion to Applied Regression\nlibrary(multcomp)   # Simultaneous Inference in General Parametric Models \nlibrary(lmtest)     # Testing Linear Regression Models  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles\nlibrary(performance)# Assessment of Regression Models Performance"
+  },
+  {
+    "objectID": "install.html#learning-about-a-package-after-installation",
+    "href": "install.html#learning-about-a-package-after-installation",
+    "title": "Installation and setup",
+    "section": "Learning about a package (after installation)",
+    "text": "Learning about a package (after installation)\nOnce an R package is installed, you can check out the documentation about it directly inside the RStudio ID. Try running for example:\n\n# - To ask about a package\n?here\n\n# -- To ask about a specific function\n?janitor::clean_names\n\n?dplyr::group_by"
+  },
+  {
     "objectID": "install.html#useful-keyboard-shortcuts-in-rstudio",
     "href": "install.html#useful-keyboard-shortcuts-in-rstudio",
     "title": "Installation and setup",
@@ -1320,7 +1432,7 @@
     "href": "practice/practice_slides/slides_lab01.html#use-r-packages",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Use R Packages",
-    "text": "Use R Packages\n\nWe will be using {base} & {utils} (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n# Load them for this R session\nlibrary(here)      # tools find your project's files, based on working directory\nlibrary(janitor)   # tools for examining and cleaning data\nlibrary(skimr)     # tools for summary statistics \nlibrary(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(ggplot2)   # {tidyverse} tools for plotting\nlibrary(forcats)   # {tidyverse} tool for handling factors\nlibrary(ggridges)  # alternative to plot density functions \nlibrary(fs)        # file/directory interactions"
+    "text": "Use R Packages\n\nWe will be using {base} & {utils} (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n# Load them for this R session\nlibrary(fs)        # file/directory interactions\nlibrary(here)      # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(janitor)   # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(skimr)     # tools for summary statistics \nlibrary(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats)   # {tidyverse} tool for handling factors\nlibrary(ggplot2)   # {tidyverse} tools for plotting\nlibrary(ggridges)  # alternative to plot density functions"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#help-on-r-packagefunction",
@@ -1397,7 +1509,7 @@
     "href": "practice/practice_slides/slides_lab01.html#optional-clean-up-my-workspace",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "(optional) Clean up my workspace",
-    "text": "(optional) Clean up my workspace\n\n# what do I have in the environment? \nls() \n\n[1] \"autism_data\"      \"autism_data_file\" \"autism_pids\"     \n\n# remove all EXCEPT for \"autism_pids\" \nrm(\"autism_data\", \"autism_data_file\", \"autism_data_url\" ) \n\n\n\n\n(Warning: mind that after rm(), you will not have these objects in your workspace anymore.)"
+    "text": "(optional) Clean up my workspace\n\n# what do I have in the environment? \nls() \n\n[1] \"autism_data\"      \"autism_data_file\" \"autism_pids\"     \n\n# remove all EXCEPT for \"autism_pids\" \nrm(\"autism_data\", \"autism_data_file\", \"autism_data_url\" ) \n\nWarning in rm(\"autism_data\", \"autism_data_file\", \"autism_data_url\"): object\n'autism_data_url' not found\n\n\n\n\n\n(Warning: mind that after rm(), you will not have these objects in your workspace anymore.)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#option-1-extract-cols-with",
@@ -1621,28 +1733,28 @@
     "href": "practice/practice_slides/slides_lab01.html#grouping-and-summarizing-with-base-r-1",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Grouping and summarizing with base R",
-    "text": "Grouping and summarizing with base R\nUsing functions from the “apply()” family (sapply(), lapply (), tapply():\n\nAll of these functions allow us to iterate over a data structure, (a list, a matrix, an array, a DataFrame, etc.) and perform the same operation at each element.\n\nOption 2) using tapply (it returns a vector)\n\n# i.e. apply a function to subsets of a vector or array, split by one or more factors.\ntapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)\n\n       f        m \n29.60237 28.98365 \n\n\n\nOption 3) using split + sapply (it returns a vector)\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
+    "text": "Grouping and summarizing with base R\n\nUsing functions from the apply() family (sapply, lapply, tapply):\n\nAll of these functions allow us to iterate over a data structure, (a list, a matrix, an array, a DataFrame, etc.) and perform the same operation at each element.\n\nOption 2) using tapply\n\n(to apply a function to subsets of a vector where subsets are defined by some other vector, usually a factor)\n\n# i.e. apply a function to subsets of a vector or array, split by one or more factors.\ntapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)\n\n       f        m \n29.60237 28.98365 \n\n\nOption 3) using split + sapply\n\n(it returns a vector)\n\n# sapply(split(data$column, data$grouping_column), mean)\nsapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector\n\n       f        m \n29.60237 28.98365"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#grouping-and-summarizing-with-dplyr",
     "href": "practice/practice_slides/slides_lab01.html#grouping-and-summarizing-with-dplyr",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Grouping and summarizing with dplyr\n",
-    "text": "Grouping and summarizing with dplyr\n\n\n\n\nautism_pids %&gt;% \n  dplyr::group_by(gender) %&gt;% \n  dplyr::summarise(mean(age_inputed))  # returns a dataframe!\n\n# A tibble: 2 × 2\n  gender `mean(age_inputed)`\n  &lt;fct&gt;                &lt;dbl&gt;\n1 f                     29.6\n2 m                     29.0\n\n\nI could add more statistics to the grouped summary…\n\nautism_pids %&gt;% \n  dplyr::group_by(gender) %&gt;% \n  dplyr::summarise(mean_age = mean(age_inputed),  \n                   N_obs = n(), \n                   N_with_autism = sum(autism_dummy == 1)\n  ) \n\n# A tibble: 2 × 4\n  gender mean_age N_obs N_with_autism\n  &lt;fct&gt;     &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;\n1 f          29.6   337            54\n2 m          29.0   367            37"
+    "text": "Grouping and summarizing with dplyr\n\n\n\nUsing functions from the dplyr() package which “concatenates” each step\n\nautism_pids %&gt;% \n  dplyr::group_by(gender) %&gt;% \n  dplyr::summarise(mean(age_inputed))  # returns a dataframe!\n\n# A tibble: 2 × 2\n  gender `mean(age_inputed)`\n  &lt;fct&gt;                &lt;dbl&gt;\n1 f                     29.6\n2 m                     29.0\n\n\nI could add more statistics to the grouped summary…\n\nautism_pids %&gt;% \n  dplyr::group_by(gender) %&gt;% \n  dplyr::summarise(mean_age = mean(age_inputed),  \n                   N_obs = n(), \n                   N_with_autism = sum(autism_dummy == 1)\n  ) \n\n# A tibble: 2 × 4\n  gender mean_age N_obs N_with_autism\n  &lt;fct&gt;     &lt;dbl&gt; &lt;int&gt;         &lt;int&gt;\n1 f          29.6   337            54\n2 m          29.0   367            37"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#mean-and-median",
     "href": "practice/practice_slides/slides_lab01.html#mean-and-median",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Mean and median",
-    "text": "Mean and median\nRecall that: \nPopulation MEAN \\(\\mu=\\frac{\\sum_{i=1}^n x_{i}}n\\)Sample MEAN \\(\\bar{x}=\\frac{\\sum_{i=1}^n x_{i}}n\\) Sample MEDIAN\nFor uneven \\(n\\): \\(Mdn = \\frac{x_{(n+1)}}2\\)\nFor even \\(n\\): \\(Mdn = \\frac{x_{(n/2)} + x_{(n/2+1)}}2\\)"
+    "text": "Mean and median\nRecall that: \nPopulation MEAN \\(\\mu=\\frac{\\sum_{i=1}^n x_{i}}n\\)Sample MEAN \\(\\bar{x}=\\frac{\\sum_{i=1}^n x_{i}}n\\)\n\nSample MEDIAN\nFor uneven \\(n\\): \\(Mdn = \\frac{x_{(n+1)}}2\\)\nFor even \\(n\\): \\(Mdn = \\frac{x_{(n/2)} + x_{(n/2+1)}}2\\)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#meanmedian-using-base-r",
     "href": "practice/practice_slides/slides_lab01.html#meanmedian-using-base-r",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Mean/Median using base R",
-    "text": "Mean/Median using base R\n\nImportant to specify the argument na.rm = TRUE or the functions won’t work\n\n\n## Let's use `age` and `age_inputed` to see what inputed missing values did \nmean(autism_pids$age)\n\n[1] NA\n\nmedian(autism_pids$age)\n\n[1] NA\n\nmean(autism_pids$age, na.rm = TRUE)\n\n[1] 29.20655\n\nmedian(autism_pids$age, na.rm = TRUE)\n\n[1] 27\n\nmean(autism_pids$age_inputed)\n\n[1] 29.27983\n\nmedian(autism_pids$age_inputed)\n\n[1] 27"
+    "text": "Mean/Median using base R\n\n\nUsing age (original variable)\n\nYou must specify the argument na.rm = TRUE or the functions won’t work!\n\n\n\n\n## Using `age` (original variable) \nmean(autism_pids$age)\n\n[1] NA\n\nmedian(autism_pids$age)\n\n[1] NA\n\n# specify to omit NA observations \nmean(autism_pids$age, na.rm = TRUE)\n\n[1] 29.20655\n\nmedian(autism_pids$age, na.rm = TRUE)\n\n[1] 27\n\n\n\nUsing age_inputed to see what inputed missing values did\n\n\n## Using `age_inputed` to see what inputed missing values did \nmean(autism_pids$age_inputed)\n\n[1] 29.27983\n\nmedian(autism_pids$age_inputed)\n\n[1] 27"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#create-custom-function-to-calculate-statistical-mode-12",
@@ -1663,7 +1775,7 @@
     "href": "practice/practice_slides/slides_lab01.html#variance-and-standard-deviation",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Variance and Standard deviation",
-    "text": "Variance and Standard deviation\nRecall that: Population Variance \\(\\sigma^2 = \\frac{\\displaystyle\\sum_{i=1}^{n}(x_i - \\mu)^2} {n}\\) Sample Variance \\(s^2 =\\frac{\\sum{(x_i-\\bar{x})^2}}{n-1}\\)Population Standard deviation \\(\\sigma = \\sqrt\\frac{\\displaystyle\\sum_{i=1}^{n}(x_i - \\mu)^2} {n}\\) Sample Standard deviation \\(s = \\sqrt\\frac{\\sum{(x_i-\\bar{x})^2}}{n-1}\\)"
+    "text": "Variance and Standard deviation\nRecall that: Population Variance \\(\\sigma^2 = \\frac{\\displaystyle\\sum_{i=1}^{n}(x_i - \\mu)^2} {n}\\) Sample Variance \\(s^2 =\\frac{\\sum{(x_i-\\bar{x})^2}}{n-1}\\)Population Standard deviation \\(\\sigma = \\sqrt{\\frac{\\displaystyle\\sum_{i=1}^{n}(x_i - \\mu)^2} {n}}\\) Sample Standard deviation \\(s = \\sqrt\\frac{\\sum{(x_i-\\bar{x})^2}}{n-1}\\)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#variance-and-standard-deviation-using-base-r",
@@ -1673,11 +1785,11 @@
     "text": "Variance and Standard deviation using base R\n\nImportant to specify the argument na.rm = TRUE or the functions won’t work (or use the age_inputed variable)\n\n\nvar(autism_pids$age, na.rm = TRUE)\n\n[1] 94.28966\n\nvar(autism_pids$age_inputed)\n\n[1] 96.19328\n\nsd(autism_pids$age, na.rm = TRUE)\n\n[1] 9.710286\n\nsd(autism_pids$age_inputed)\n\n[1] 9.807817"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab01.html#plotting-with-ggplot2",
-    "href": "practice/practice_slides/slides_lab01.html#plotting-with-ggplot2",
+    "objectID": "practice/practice_slides/slides_lab01.html#introducing-r-package-ggplot2-for-graphics",
+    "href": "practice/practice_slides/slides_lab01.html#introducing-r-package-ggplot2-for-graphics",
     "title": "Lab 1: Intro to R and data analysis",
-    "section": "Plotting with ggplot2",
-    "text": "Plotting with ggplot2\n\nggplot2 provides a set of tools to map data to visual elements on a plot, to specify the kind of plot you want, and then subsequently to control the fine details of how it will be displayed. It basically allows to build a plot layer by layer (Figure 2).\n\n\ndata -&gt; specify what the dataset is\n\naesthetic mappings (or just aesthetics) -&gt; specify which dataset’s variables will turn into the plot elements (e.g. \\(x\\) and \\(y\\) values, or categorical variable into colors, points, and shapes).\n\ngeom -&gt; the overall type of plot, e.g. geom_point() makes scatterplots, geom_bar() makes barplots, geom_boxplot() makes boxplots.\n\nAdditional (optional) pieces:\n\ninformation about the scales,\nthe labels of legends and axes\nother guides that help people to read the plot,"
+    "section": "Introducing R package ggplot2 for graphics",
+    "text": "Introducing R package ggplot2 for graphics\n\nggplot2 provides a set of tools to map data to visual elements on a plot, to specify the kind of plot you want, and then subsequently to control the fine details of how it will be displayed. It basically allows to build a plot layer by layer (Figure 2).\n\n\ndata -&gt; specify what the dataset is\n\naesthetic mappings (or just aesthetics) -&gt; specify which dataset’s variables will turn into the plot elements (e.g. \\(x\\) and \\(y\\) values, or categorical variable into colors, points, and shapes).\n\ngeom -&gt; the overall type of plot, e.g. geom_point() makes scatterplots, geom_bar() makes barplots, geom_boxplot() makes boxplots.\n\nAdditional (optional) pieces:\n\ninformation about the scales,\nthe labels of legends and axes\nother guides that help people to read the plot,"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#plotting-with-ggplot2-cont.",
@@ -1705,7 +1817,7 @@
     "href": "practice/practice_slides/slides_lab01.html#histograms-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Histograms",
-    "text": "Histograms"
+    "text": "Histograms\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#define-bin-width",
@@ -1733,7 +1845,7 @@
     "href": "practice/practice_slides/slides_lab01.html#add-mean-and-std-dev-vertical-lines-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "… add mean and std dev vertical lines",
-    "text": "… add mean and std dev vertical lines"
+    "text": "… add mean and std dev vertical lines\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\nWarning: Use of `autism_pids$age_inputed` is discouraged.\nℹ Use `age_inputed` instead.\nUse of `autism_pids$age_inputed` is discouraged.\nℹ Use `age_inputed` instead.\nUse of `autism_pids$age_inputed` is discouraged.\nℹ Use `age_inputed` instead.\nUse of `autism_pids$age_inputed` is discouraged.\nℹ Use `age_inputed` instead."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#density-plot",
@@ -1817,7 +1929,7 @@
     "href": "practice/practice_slides/slides_lab01.html#facet-by-gender-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "…facet by gender",
-    "text": "…facet by gender"
+    "text": "…facet by gender\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#adding-2-meanmedian-vert-lines-by-gender",
@@ -1859,7 +1971,7 @@
     "href": "practice/practice_slides/slides_lab01.html#finishing-touches-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "… finishing touches",
-    "text": "… finishing touches"
+    "text": "… finishing touches\n\nWarning: Removed 4 rows containing missing values or values outside the scale range\n(`geom_bar()`)."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#density-ggridges-package",
@@ -1873,7 +1985,7 @@
     "href": "practice/practice_slides/slides_lab01.html#density-ggridges-package-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Density ggridges package",
-    "text": "Density ggridges package"
+    "text": "Density ggridges package\n\nPicking joint bandwidth of 2.66\nPicking joint bandwidth of 2.66"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#barchart",
@@ -1992,7 +2104,7 @@
     "href": "practice/practice_slides/slides_lab01.html#violin-plot-example-output",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Violin plot example",
-    "text": "Violin plot example"
+    "text": "Violin plot example\n\nWarning: Groups with fewer than two datapoints have been dropped.\nℹ Set `drop = FALSE` to consider such groups for position adjustment purposes."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#saving-one-plot",
@@ -2013,7 +2125,7 @@
     "href": "practice/practice_slides/slides_lab01.html#final-thoughtsrecommendations",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Final thoughts/recommendations",
-    "text": "Final thoughts/recommendations\n\nAlways read the documentation (?package::function, especially the examples at the bottom)\nAlways inspect the data / variables before and after making changes\n\nBetter rename (i.e. create a new R object) when you recode/manipulate a column or a dataset\n\n(this promotes reproducibility, since you will be able to retrace your coding steps)\n\n\nAlways plot distributions for visual data exploration\nMake changes in small increments (like we saw in building ggplot2 graph in subsequent layers)\n\n\n\n\nR 4 Biostatistics | MITGEST::training(2024)"
+    "text": "Final thoughts/recommendations\n\nAlways read the documentation (?package::function, especially the examples at the bottom)\nAlways inspect the data / variables before and after making changes\n\nIt is advisable to rename (i.e. create a new R object) when you recode/manipulate a variable or a dataset\n\nthis promotes reproducibility, since you(or others) will be able to retrace your coding steps\n\n\nAlways plot distributions for visual data exploration\nMake changes in small increments (like we saw in building ggplot2 graph in subsequent layers)\n\n\n\n\nR 4 Biostatistics | MITGEST::training(2024)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#topics-discussed-in-lecture-3",
@@ -2027,7 +2139,7 @@
     "href": "practice/practice_slides/slides_lab03.html#needed-r-packages",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\n\nhere() starts at /Users/luisamimmi/Github/R4biostats\n\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\n\n\nAttaching package: 'janitor'\n\n\nThe following objects are masked from 'package:stats':\n\n    chisq.test, fisher.test\n\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\n\n\nAttaching package: 'rstatix'\n\n\nThe following object is masked from 'package:janitor':\n\n    make_clean_names\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\n\nLoading required package: zoo\n\n\n\nAttaching package: 'zoo'\n\n\nThe following objects are masked from 'package:base':\n\n    as.Date, as.Date.numeric\n\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\nlibrary(tidymodels) # not installed on this machine\n\n── Attaching packages ────────────────────────────────────── tidymodels 1.2.0 ──\n\n\n✔ dials        1.2.1      ✔ rsample      1.2.1 \n✔ ggplot2      3.5.1      ✔ tibble       3.2.1 \n✔ infer        1.0.7      ✔ tidyr        1.3.1 \n✔ modeldata    1.3.0      ✔ tune         1.2.1 \n✔ parsnip      1.2.1      ✔ workflows    1.1.4 \n✔ purrr        1.0.2      ✔ workflowsets 1.1.0 \n✔ recipes      1.0.10     ✔ yardstick    1.3.1 \n\n\n── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──\n✖ infer::chisq_test() masks rstatix::chisq_test()\n✖ purrr::compose()    masks flextable::compose()\n✖ purrr::discard()    masks scales::discard()\n✖ rstatix::filter()   masks dplyr::filter(), stats::filter()\n✖ dials::get_n()      masks rstatix::get_n()\n✖ dplyr::lag()        masks stats::lag()\n✖ infer::prop_test()  masks rstatix::prop_test()\n✖ recipes::step()     masks stats::step()\n✖ infer::t_test()     masks rstatix::t_test()\n• Search for functions across packages at https://www.tidymodels.org/find/\n\nlibrary(performance) # Assessment of Regression Models Performance \n\n\nAttaching package: 'performance'\n\n\nThe following objects are masked from 'package:yardstick':\n\n    mae, rmse\n\n# Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# -- General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# -- Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models\nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\n#library(tidymodels) # not installed on this machine\nlibrary(performance) # Assessment of Regression Models Performance \n# -- Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#importing-dataset-1-nhanes",
@@ -2104,14 +2216,14 @@
     "href": "practice/practice_slides/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Two numerical variables: correlation (with stats::cor.test)",
-    "text": "Two numerical variables: correlation (with stats::cor.test)\n\nHere we compute the Pearson rho (parametric), with the function cor.test (the same we used for testing paired samples)\n\nimplicitely takes care on NAs\n\n\n\n\n\n# using `stats` package \ncor_test_result &lt;- cor.test(x = nhanes$height, y =  nhanes$weight, \n                            method = \"pearson\")\n\n# looking at the cor estimate\ncor_test_result[[\"estimate\"]][[\"cor\"]]\n\n[1] 0.4102269\n\n\n\nThe function ggpubr::ggscatter gives us all in one (scatter plot + \\(r\\) (“R”))! 🤯\n\n\nlibrary(\"ggpubr\") # 'ggplot2' Based Publication Ready Plots"
+    "text": "Two numerical variables: correlation (with stats::cor.test)\n\nHere we compute the Pearson rho (parametric), with the function cor.test (the same we used for testing paired samples)\n\nimplicitely takes care on NAs\n\n\n\n\n\n# using `stats` package \ncor_test_result &lt;- cor.test(x = nhanes$height, y =  nhanes$weight, \n                            method = \"pearson\")\n\n# looking at the cor estimate\ncor_test_result[[\"estimate\"]][[\"cor\"]]\n\n[1] 0.4102269\n\n\n\nThe function ggpubr::ggscatter gives us all in one (scatter plot + \\(r\\) (“R”))! 🤯\n\n\nlibrary(\"ggpubr\") # 'ggplot2' Based Publication Ready Plots\nggpubr::ggscatter(nhanes, x = \"height\", y = \"weight\", \n                  cor.coef = TRUE, cor.method = \"pearson\", #cor.coef.coord = 2,\n                  xlab = \"Height (in)\", ylab = \"Weight (lb)\")"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test-output",
     "href": "practice/practice_slides/slides_lab03.html#two-numerical-variables-correlation-with-statscor.test-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Two numerical variables: correlation (with stats::cor.test)",
-    "text": "Two numerical variables: correlation (with stats::cor.test)\n\n\nAttaching package: 'ggpubr'\n\n\nThe following objects are masked from 'package:flextable':\n\n    border, font, rotate\n\nggpubr::ggscatter(nhanes, x = \"height\", y = \"weight\", \n                  cor.coef = TRUE, cor.method = \"pearson\", #cor.coef.coord = 2,\n                  xlab = \"Height (in)\", ylab = \"Weight (lb)\")\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_cor()`).\n\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Two numerical variables: correlation (with stats::cor.test)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#spearman-rank-order-correlation",
@@ -2230,7 +2342,7 @@
     "href": "practice/practice_slides/slides_lab03.html#visualize-the-data-bmi-and-age-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Visualize the data: BMI and age",
-    "text": "Visualize the data: BMI and age\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 3 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`)."
+    "text": "Visualize the data: BMI and age"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#linear-regression-model",
@@ -2503,14 +2615,14 @@
     "href": "practice/practice_slides/slides_lab03.html#assumption-of-no-multicollinearity",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Assumption of NO MULTICOLLINEARITY",
-    "text": "Assumption of NO MULTICOLLINEARITY\n\n\nASSUMPTION 5: Each set of observations \\((y, x_1, x_2, \\dots, x_p)\\) is independent.\n\nThe R package performance actually provides a very helpful function check_model() which tests these assumptions all at the same time\n\n\nMulticollinearity is not an issue (based on a general threshold of 10 for VIF, all of them are below 10)\n\n\n# return and store a list of single plots\ndiagnostic_plots &lt;- plot(performance::check_model(model_2, panel = FALSE))"
+    "text": "Assumption of NO MULTICOLLINEARITY\n\n\nASSUMPTION 5: Each set of observations \\((y, x_1, x_2, \\dots, x_p)\\) is independent.\n\nThe R package performance actually provides a very helpful function check_model() which tests these assumptions all at the same time\n\n\nMulticollinearity is not an issue (based on a general threshold of 10 for VIF, all of them are below 10)\n\n\n# return and store a list of single plots\ndiagnostic_plots &lt;- plot(performance::check_model(model_2, panel = FALSE))\n\n# see multicollinearity plot \ndiagnostic_plots[[5]]"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#assumption-of-no-multicollinearity-output",
     "href": "practice/practice_slides/slides_lab03.html#assumption-of-no-multicollinearity-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Assumption of NO MULTICOLLINEARITY",
-    "text": "Assumption of NO MULTICOLLINEARITY\n\nFor confidence bands, please install `qqplotr`.\n\n# see multicollinearity plot \ndiagnostic_plots[[5]]"
+    "text": "Assumption of NO MULTICOLLINEARITY"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#checking-out-the-performance-r-package",
@@ -2580,7 +2692,7 @@
     "href": "practice/practice_slides/slides_lab03.html#interaction-in-regression---visual-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Interaction in regression - visual",
-    "text": "Interaction in regression - visual\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 27 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\nUsers in two categories are represented points; linear relationship is representated by ONE golden line for ALL SAMPLE"
+    "text": "Interaction in regression - visual\n\n\nUsers in two categories are represented points; linear relationship is representated by ONE golden line for ALL SAMPLE"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#interaction-in-regression---visual-rethinking",
@@ -2594,7 +2706,7 @@
     "href": "practice/practice_slides/slides_lab03.html#interaction-in-regression---visual-rethinking-output",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Interaction in regression - visual (RETHINKING)",
-    "text": "Interaction in regression - visual (RETHINKING)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\nWarning: Removed 27 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\nUsers in two categories are represented points; linear relationship is representated by 2 respective line according to diabetes status… the association has DIFFERENT DIRECTION!"
+    "text": "Interaction in regression - visual (RETHINKING)\n\n\nUsers in two categories are represented points; linear relationship is representated by 2 respective line according to diabetes status… the association has DIFFERENT DIRECTION!"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#interaction-in-regression---adding-term-in-model",

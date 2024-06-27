@@ -66,7 +66,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/bootstrap-icons-1.11.1/all.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -160,7 +161,14 @@ gtag('config', 'G-51QEQ3S83R', { 'anonymize_ip': true});
 <li><a href="#install" id="toc-install" class="nav-link active" data-scroll-target="#install">Install <svg aria-hidden="true" role="img" viewbox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#5F85A7;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"></path></svg></a></li>
   <li><a href="#install-rstudio-ide" id="toc-install-rstudio-ide" class="nav-link" data-scroll-target="#install-rstudio-ide">Install RStudio IDE</a></li>
   <li><a href="#install-r-packages-from-the-cran" id="toc-install-r-packages-from-the-cran" class="nav-link" data-scroll-target="#install-r-packages-from-the-cran">Install R packages from the CRAN</a></li>
-  <li><a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a></li>
+  <li>
+<a href="#r-packages-that-will-be-required-for-the-workshop" id="toc-r-packages-that-will-be-required-for-the-workshop" class="nav-link" data-scroll-target="#r-packages-that-will-be-required-for-the-workshop">R packages that will be required for the workshop</a>
+  <ul class="collapse">
+<li><a href="#installing-packages-1st-time-you-use-an-r-package" id="toc-installing-packages-1st-time-you-use-an-r-package" class="nav-link" data-scroll-target="#installing-packages-1st-time-you-use-an-r-package">Installing packages (1st time you use an R Package)</a></li>
+  <li><a href="#loading-a-package-at-the-beginning-of-every-r-session" id="toc-loading-a-package-at-the-beginning-of-every-r-session" class="nav-link" data-scroll-target="#loading-a-package-at-the-beginning-of-every-r-session">Loading a package (at the beginning of every R session)</a></li>
+  <li><a href="#learning-about-a-package-after-installation" id="toc-learning-about-a-package-after-installation" class="nav-link" data-scroll-target="#learning-about-a-package-after-installation">Learning about a package (after installation)</a></li>
+  </ul>
+</li>
   <li>
 <a href="#r-coding-tips-and-tricks" id="toc-r-coding-tips-and-tricks" class="nav-link" data-scroll-target="#r-coding-tips-and-tricks">R coding tips and tricks</a>
   <ul class="collapse">
@@ -214,7 +222,7 @@ Caution
 <!-- `<svg aria-hidden="true" role="img" viewBox="0 0 384 512" style="height:1em;width:0.75em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>`{=html} -->
 <p><strong>R</strong> is available for free for Windows <span style="color:#d8717b"><i class="fa-brands fa-windows" aria-label="windows"></i></span>, GNU/Linux <span style="color:#d8717b"><i class="fa-brands fa-linux" aria-label="linux"></i></span>, and macOS <span style="color:#d8717b"><i class="fa-brands fa-apple" aria-label="apple"></i></span>.</p>
 <ul>
-<li>To install <strong>R</strong>, you can go to this <a href="https://cloud.r-project.org/"><strong>link</strong></a>. The latest available release is <strong>R 4.3.3 “Angel Food Cake” released on 2024-02/29</strong>, but any (fairly recent) version will do.</li>
+<li>To install <strong>R</strong>, you can go to this <a href="https://cloud.r-project.org/"><strong>link</strong></a>. The latest available release is <strong>R 4.4.1 “Race for Your Life” released on 2024/06/14</strong>, but any (fairly recent) version will do.</li>
 </ul>
 <p>If you have previously installed R on your machine, you can check which version you are running by executing this command in <code>R</code>:</p>
 <div class="cell">
@@ -248,7 +256,7 @@ Tip
 </div>
 <ul>
 <li>To install <strong>RStudio</strong> you can go to this <a href="https://posit.co/download/rstudio-desktop/"><strong>link</strong></a>.</li>
-<li>The free <strong>RStudio DEsktop</strong> version contains everything you need.</li>
+<li>The free <strong>RStudio Desktop</strong> version contains everything you need.</li>
 <li>Again, you don’t need to have the latest RStudio version, but I recommend <strong>v2022.07.1</strong> or later (it also includes the installation of Quarto)</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -282,105 +290,175 @@ Tip
 <strong>CRAN</strong> - the Comprehensive R Archive Network - is the general package repository for R: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>
 </li>
 </ul>
-<p>(We only use packages from CRAN for our purposes)</p>
+<p>(We will only use packages from CRAN for our purposes)</p>
 <ul>
 <li><p><strong>Bioconductor</strong> - a package repository geared towards biostatistics: <a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></p></li>
 <li><p><strong>Github</strong> - a repository where you can find developer’s version of a package: <a href="https://github.com/">https://github.com/</a></p></li>
-</ul></section><section id="r-packages-that-will-be-required-for-the-workshop" class="level1"><h1>R packages that will be required for the workshop</h1>
-<p>Below are the R packages, that we will need for the workshop’s practical sessions. Ideally, you can pre-install them… it will also serve as a test to check whether the R version you have is compatible.</p>
-<ul>
-<li>Beware, R may ask you to install some related packages (<code>dependencies</code>): follow instructions by responding directly in the R console.</li>
-</ul>
+</ul></section><section id="r-packages-that-will-be-required-for-the-workshop" class="level1 page-columns page-full"><h1>R packages that will be required for the workshop</h1>
+<p>Below are the R packages, that we will need for the workshop’s practical sessions. Ideally, you can pre-install them (at least the ones needed fo Lab # 1)… it will also serve as a test to check whether the R version you have is compatible.</p>
+<p>A couple of things to be aware of when installing R packages:</p>
+<ol type="1">
+<li>By default, the RStudio IDE uses the <strong>RStudio CRAN global mirror</strong> (i.e.&nbsp;a particular instance of the repository with all the packages code), but you can also override such default CRAN mirror and choose another one (perhaps one mirror hosted at an institution near you) – see below.</li>
+</ol>
+<!-- ::: {.callout-tip collapse="true"} --><!-- R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface. --><!-- ::: --><div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="bi-terminal-fill " style="color: rgba(155,103,35,1.00);" role="img" aria-hidden="true"></i> [OPTIONAL] Choose CRAN mirror from RStudio
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>[You don’t have to, but] you can access and chose a CRAN repository of your choice from the RStudio IDE.</p>
+<ol type="1">
+<li><div class="quarto-figure quarto-figure-center">
+<figure class="figure" aria-labelledby="-caption"><p><img src="images/CRAN_mirror1.png" class="img-fluid figure-img"></p>
+</figure>
+</div></li>
+<li>
+<img src="images/CRAN_mirror2.png" class="img-fluid" alt="Select from menu - close to you"><br>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="-caption" class="margin-figure-caption column-margin callout-4-contents callout-collapse collapse callout-margin-content">Access CRAN mirror selection</div><ol start="2" type="1">
+<li><p>R may ask you to install some related packages (<code>dependencies</code>): if so, follow instructions by responding directly in the R console (normally you are asked to type “Yes” or “No”)</p></li>
+<li><p>At the end of the installation process you will get a message (bottom of the R Console) indicating were the source code for the package(s) has been stored on your machine.</p></li>
+</ol>
+<section id="installing-packages-1st-time-you-use-an-r-package" class="level2"><h2 class="anchored" data-anchor-id="installing-packages-1st-time-you-use-an-r-package">Installing packages (1st time you use an R Package)</h2>
+<p>You could install one package at a time…</p>
 <div class="cell">
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Installing (**ONLY** the 1st time you use them)</span></span>
-<span><span class="va">pkg_list</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"here"</span>, <span class="st">"fs"</span>, <span class="st">"janitor"</span>, <span class="st">"skimr"</span>,<span class="st">"openxlsx"</span>,<span class="st">"flextable"</span>,</span>
-<span>              <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>,<span class="st">"forcats"</span>, </span>
-<span>              <span class="st">"ggplot2"</span>, <span class="st">"ggstatsplot"</span>, <span class="st">"ggpubr"</span>, <span class="st">"patchwork"</span>, <span class="st">"viridis"</span>,</span>
-<span>              <span class="st">"ggthemes"</span> ,<span class="st">"ggridges"</span>, </span>
-<span>              <span class="st">"BSDA"</span>, <span class="st">"rstatix"</span>, <span class="st">"car"</span>, <span class="st">"multcomp"</span>, <span class="st">"lmtest"</span> , <span class="st">"broom"</span>, </span>
-<span>              <span class="st">"performance"</span> <span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Loading a package (at the beginning of every R session) </span></span>
-<span><span class="co"># General </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span>         <span class="co"># tools find your project's files, based on working directory</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span>           <span class="co"># file/directory interactions</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span>      <span class="co"># tools for examining and cleaning data</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span>        <span class="co"># Compact and Flexible Summaries of Data     </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span>     <span class="co"># Read, Write and Edit xlsx Files</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ardata-fr.github.io/flextable-book/">flextable</a></span><span class="op">)</span>    <span class="co"># Functions for Tabular Reporting</span></span>
-<span></span>
-<span><span class="co"># Tidiverse </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>    <span class="co"># {tidyverse} A Grammar of Data Manipulation     </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>    <span class="co"># {tidyverse} Tools to create tidy data </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span>  <span class="co"># {tidyverse} Tools for Categorical Var.(Factors)   </span></span>
-<span></span>
-<span><span class="co"># Plotting</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>      <span class="co"># {tidyverse} tools for plotting</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://indrajeetpatil.github.io/ggstatsplot/">ggstatsplot</a></span><span class="op">)</span>  <span class="co"># 'ggplot2' Based Plots with Statistical Details </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>       <span class="co"># 'ggplot2' Based Publication Ready Plots </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>    <span class="co"># Functions for ""Grid" Graphics"composing" plots </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span>      <span class="co"># Colorblind-Friendly Color Maps for R </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span>     <span class="co"># Extra Themes, Scales and Geoms for 'ggplot2'</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggridges/">ggridges</a></span><span class="op">)</span>     <span class="co"># Ridgeline Plots in 'ggplot2' (density functions)</span></span>
-<span></span>
-<span><span class="co"># Statistics</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/alanarnholt/BSDA">BSDA</a></span><span class="op">)</span>   </span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/rstatix/">rstatix</a></span><span class="op">)</span>      <span class="co"># Pipe-Friendly Framework for Basic Statistical Tests</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span>          <span class="co"># Companion to Applied Regression</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://multcomp.R-forge.R-project.org">multcomp</a></span><span class="op">)</span>     <span class="co"># Simultaneous Inference in General Parametric Models </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span>       <span class="co"># Testing Linear Regression Models  </span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span>        <span class="co"># Convert Statistical Objects into Tidy Tibbles</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/performance/">performance</a></span><span class="op">)</span>  <span class="co"># Assessment of Regression Models Performance </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"name_of_package_here"</span> <span class="op">)</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="r-coding-tips-and-tricks" class="level1"><h1>R coding tips and tricks</h1>
+<p>… or in bulk, like so (it might take a few moments more):</p>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># ---- Installing R pckgs for 1st LAB (**ONLY** the 1st time you use them)</span></span>
+<span><span class="va">pkg_list_lab_1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"fs"</span>,<span class="st">"here"</span>, <span class="st">"janitor"</span>, <span class="st">"skimr"</span>, </span>
+<span>                   <span class="st">"dplyr"</span>, <span class="st">"forcats"</span>, </span>
+<span>                   <span class="st">"ggplot2"</span>,  <span class="st">"ggridges"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list_lab_1</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># ---- Installing (more) R pckgs for 2nd LAB (**ONLY** the 1st time you use them)</span></span>
+<span><span class="va">pkg_list_lab_2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"tidyr"</span>, <span class="st">"patchwork"</span>,</span>
+<span>                    <span class="st">"ggthemes"</span>, <span class="st">"ggstatsplot"</span>, <span class="st">"ggpubr"</span>,  <span class="st">"viridis"</span>,</span>
+<span>                    <span class="st">"BSDA"</span>, <span class="st">"rstatix"</span>, <span class="st">"car"</span>, <span class="st">"multcomp"</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list_lab_2</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># ----  Installing (more) R pckgs for 3rd LAB (**ONLY** the 1st time you use them)</span></span>
+<span><span class="va">pkg_list_lab_3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"openxlsx"</span>, </span>
+<span>                    <span class="st">"lmtest"</span> , </span>
+<span>                    <span class="st">"broom"</span>, </span>
+<span>                    <span class="st">"performance"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="va">pkg_list_lab_3</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="co"># ----  Installing (more) R pckgs for 4th LAB (**ONLY** the 1st time you use them)</span></span>
+<span><span class="co"># pkg_list_lab_4 &lt;- c("" )</span></span>
+<span><span class="co"># </span></span>
+<span><span class="co"># install.packages(pkg_list_lab_4)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="loading-a-package-at-the-beginning-of-every-r-session" class="level2"><h2 class="anchored" data-anchor-id="loading-a-package-at-the-beginning-of-every-r-session">Loading a package (at the beginning of every R session)</h2>
+<p>With the commands below (that we will be executing at the beginning of our Labs), you load the specific R packages that you are going to need in any given R session.</p>
+<div class="cell">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Loading a package (at the beginning of every R session) </span></span>
+<span><span class="co"># --- General </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://here.r-lib.org/">here</a></span><span class="op">)</span>       <span class="co"># tools find your project's files, based on working directory</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://fs.r-lib.org">fs</a></span><span class="op">)</span>         <span class="co"># file/directory interactions</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor">janitor</a></span><span class="op">)</span>    <span class="co"># tools for examining and cleaning data</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/skimr/">skimr</a></span><span class="op">)</span>      <span class="co"># Compact and Flexible Summaries of Data     </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span>   <span class="co"># Read, Write and Edit xlsx Files</span></span>
+<span></span>
+<span><span class="co"># --- Tidyverse </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>      <span class="co"># {tidyverse} A Grammar of Data Manipulation     </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org">tidyr</a></span><span class="op">)</span>      <span class="co"># {tidyverse} Tools to create tidy data </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://forcats.tidyverse.org/">forcats</a></span><span class="op">)</span>    <span class="co"># {tidyverse} Tools for Categorical Var.(Factors)   </span></span>
+<span></span>
+<span><span class="co"># --- Plotting</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>    <span class="co"># {tidyverse} tools for plotting</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://indrajeetpatil.github.io/ggstatsplot/">ggstatsplot</a></span><span class="op">)</span><span class="co"># 'ggplot2' Based Plots with Statistical Details </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/ggpubr/">ggpubr</a></span><span class="op">)</span>     <span class="co"># 'ggplot2' Based Publication Ready Plots </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://patchwork.data-imaginist.com">patchwork</a></span><span class="op">)</span>  <span class="co"># Functions for ""Grid" Graphics"composing" plots </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://sjmgarnier.github.io/viridis/">viridis</a></span><span class="op">)</span>    <span class="co"># Colorblind-Friendly Color Maps for R </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://jrnold.github.io/ggthemes/">ggthemes</a></span><span class="op">)</span>   <span class="co"># Extra Themes, Scales and Geoms for 'ggplot2'</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/ggridges/">ggridges</a></span><span class="op">)</span>   <span class="co"># Ridgeline Plots in 'ggplot2' (density functions)</span></span>
+<span></span>
+<span><span class="co"># --- Statistics</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/alanarnholt/BSDA">BSDA</a></span><span class="op">)</span>   </span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rpkgs.datanovia.com/rstatix/">rstatix</a></span><span class="op">)</span>    <span class="co"># Pipe-Friendly Framework for Basic Statistical Tests</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-forge.r-project.org/projects/car/">car</a></span><span class="op">)</span>        <span class="co"># Companion to Applied Regression</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://multcomp.R-forge.R-project.org">multcomp</a></span><span class="op">)</span>   <span class="co"># Simultaneous Inference in General Parametric Models </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">lmtest</span><span class="op">)</span>     <span class="co"># Testing Linear Regression Models  </span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://broom.tidymodels.org/">broom</a></span><span class="op">)</span>      <span class="co"># Convert Statistical Objects into Tidy Tibbles</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/performance/">performance</a></span><span class="op">)</span><span class="co"># Assessment of Regression Models Performance </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section><section id="learning-about-a-package-after-installation" class="level2"><h2 class="anchored" data-anchor-id="learning-about-a-package-after-installation">Learning about a package (after installation)</h2>
+<p>Once an R package is installed, you can check out the documentation about it directly inside the RStudio ID. Try running for example:</p>
+<div class="cell">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># - To ask about a package</span></span>
+<span><span class="op">?</span><span class="va">here</span></span>
+<span></span>
+<span><span class="co"># -- To ask about a specific function</span></span>
+<span><span class="op">?</span><span class="fu">janitor</span><span class="fu">::</span><span class="va"><a href="https://sfirke.github.io/janitor/reference/clean_names.html">clean_names</a></span></span>
+<span></span>
+<span><span class="op">?</span><span class="fu">dplyr</span><span class="fu">::</span><span class="va"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section><section id="r-coding-tips-and-tricks" class="level1"><h1>R coding tips and tricks</h1>
 <section id="useful-keyboard-shortcuts-in-rstudio" class="level2"><h2 class="anchored" data-anchor-id="useful-keyboard-shortcuts-in-rstudio">Useful keyboard shortcuts in RStudio</h2>
 <div class="cell">
 <div class="cell-output-display">
 <div class="tabwid">
-<style>.cl-66e236fa{}.cl-66dcbff4{font-family:'Helvetica';font-size:14pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-66dcc01c{font-family:'Helvetica';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-66df5e26{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-66df6bf0{width:2.508in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6bf1{width:1.905in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6bf2{width:2.897in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6bfa{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6bfb{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6bfc{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c04{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c05{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c06{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c0e{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c0f{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c10{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c11{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c18{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c19{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c1a{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c22{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-66df6c23{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
-<table data-quarto-disable-processing="true" class="cl-66e236fa">
+<style>.cl-e0d611c8{}.cl-e0d0fecc{font-family:'Helvetica';font-size:14pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-e0d0feea{font-family:'Helvetica';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e0d351cc{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e0d35e6a{width:2.508in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e6b{width:1.905in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e6c{width:2.897in;background-color:rgba(216, 113, 123, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e74{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e75{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e76{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e7e{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e7f{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e80{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e88{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e89{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e8a{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e8b{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e92{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e93{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e94{width:2.508in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e95{width:1.905in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e0d35e9c{width:2.897in;background-color:rgba(242, 242, 242, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style>
+<table data-quarto-disable-processing="true" class="cl-e0d611c8">
 <thead><tr style="overflow-wrap:break-word;">
-<th class="cl-66df6bf0"><p class="cl-66df5e26"><span class="cl-66dcbff4">Description</span></p></th>
-<th class="cl-66df6bf1"><p class="cl-66df5e26"><span class="cl-66dcbff4">Windows &amp; Linux</span></p></th>
-<th class="cl-66df6bf2"><p class="cl-66df5e26"><span class="cl-66dcbff4">Mac</span></p></th>
+<th class="cl-e0d35e6a"><p class="cl-e0d351cc"><span class="cl-e0d0fecc">Description</span></p></th>
+<th class="cl-e0d35e6b"><p class="cl-e0d351cc"><span class="cl-e0d0fecc">Windows &amp; Linux</span></p></th>
+<th class="cl-e0d35e6c"><p class="cl-e0d351cc"><span class="cl-e0d0fecc">Mac</span></p></th>
 </tr></thead>
 <tbody>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6bfa"><p class="cl-66df5e26"><span class="cl-66dcc01c">Insert code section</span></p></td>
-<td class="cl-66df6bfb"><p class="cl-66df5e26"><span class="cl-66dcc01c">Ctrl+Shift+R</span></p></td>
-<td class="cl-66df6bfc"><p class="cl-66df5e26"><span class="cl-66dcc01c">Shift+Command+R  or Ctrl+Shift+R</span></p></td>
+<td class="cl-e0d35e74"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Insert code section</span></p></td>
+<td class="cl-e0d35e75"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Ctrl+Shift+R</span></p></td>
+<td class="cl-e0d35e76"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Shift+Command+R  or Ctrl+Shift+R</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c04"><p class="cl-66df5e26"><span class="cl-66dcc01c">Run current line/selection</span></p></td>
-<td class="cl-66df6c05"><p class="cl-66df5e26"><span class="cl-66dcc01c">Ctrl+Enter</span></p></td>
-<td class="cl-66df6c06"><p class="cl-66df5e26"><span class="cl-66dcc01c">Command+Return</span></p></td>
+<td class="cl-e0d35e7e"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Run current line/selection</span></p></td>
+<td class="cl-e0d35e7f"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Ctrl+Enter</span></p></td>
+<td class="cl-e0d35e80"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Command+Return</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c04"><p class="cl-66df5e26"><span class="cl-66dcc01c">Reindent lines</span></p></td>
-<td class="cl-66df6c05"><p class="cl-66df5e26"><span class="cl-66dcc01c">Ctrl+I</span></p></td>
-<td class="cl-66df6c06"><p class="cl-66df5e26"><span class="cl-66dcc01c">Command+I</span></p></td>
+<td class="cl-e0d35e7e"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Reindent lines</span></p></td>
+<td class="cl-e0d35e7f"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Ctrl+I</span></p></td>
+<td class="cl-e0d35e80"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Command+I</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c0e"><p class="cl-66df5e26"><span class="cl-66dcc01c">Insert &lt;- operator</span></p></td>
-<td class="cl-66df6c0f"><p class="cl-66df5e26"><span class="cl-66dcc01c">Alt+-</span></p></td>
-<td class="cl-66df6c10"><p class="cl-66df5e26"><span class="cl-66dcc01c">Option+-</span></p></td>
+<td class="cl-e0d35e88"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Insert &lt;- operator</span></p></td>
+<td class="cl-e0d35e89"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Alt+-</span></p></td>
+<td class="cl-e0d35e8a"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Option+-</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c11"><p class="cl-66df5e26"><span class="cl-66dcc01c">Insert %&gt;% operator</span></p></td>
-<td class="cl-66df6c18"><p class="cl-66df5e26"><span class="cl-66dcc01c">Ctrl+Shift+M</span></p></td>
-<td class="cl-66df6c19"><p class="cl-66df5e26"><span class="cl-66dcc01c">Shift+Command+M</span></p></td>
+<td class="cl-e0d35e8b"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Insert %&gt;% operator</span></p></td>
+<td class="cl-e0d35e92"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Ctrl+Shift+M</span></p></td>
+<td class="cl-e0d35e93"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Shift+Command+M</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c0e"><p class="cl-66df5e26"><span class="cl-66dcc01c">Code completion</span></p></td>
-<td class="cl-66df6c0f"><p class="cl-66df5e26"><span class="cl-66dcc01c">Tab</span></p></td>
-<td class="cl-66df6c10"><p class="cl-66df5e26"><span class="cl-66dcc01c">Tab</span></p></td>
+<td class="cl-e0d35e88"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Code completion</span></p></td>
+<td class="cl-e0d35e89"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Tab</span></p></td>
+<td class="cl-e0d35e8a"><p class="cl-e0d351cc"><span class="cl-e0d0feea">Tab</span></p></td>
 </tr>
 <tr style="overflow-wrap:break-word;">
-<td class="cl-66df6c1a"><p class="cl-66df5e26"><span class="cl-66dcc01c">File path completion (console)</span></p></td>
-<td class="cl-66df6c22"><p class="cl-66df5e26"><span class="cl-66dcc01c">"+Tab</span></p></td>
-<td class="cl-66df6c23"><p class="cl-66df5e26"><span class="cl-66dcc01c">"+Tab</span></p></td>
+<td class="cl-e0d35e94"><p class="cl-e0d351cc"><span class="cl-e0d0feea">File path completion (console)</span></p></td>
+<td class="cl-e0d35e95"><p class="cl-e0d351cc"><span class="cl-e0d0feea">"+Tab</span></p></td>
+<td class="cl-e0d35e9c"><p class="cl-e0d351cc"><span class="cl-e0d0feea">"+Tab</span></p></td>
 </tr>
 </tbody>
 </table>

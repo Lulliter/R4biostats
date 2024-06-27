@@ -39,7 +39,7 @@ Below is a step by step process that should guide you through the needed install
 
 **R** is available for free for Windows [{{< fa brands windows >}}]{style="color:#d8717b"}, GNU/Linux [{{< fa brands linux >}}]{style="color:#d8717b"}, and macOS [{{< fa brands apple >}}]{style="color:#d8717b"}.
 
--   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.3.3 "Angel Food Cake" released on 2024-02/29**, but any (fairly recent) version will do.
+-   To install **R**, you can go to this [**link**](https://cloud.r-project.org/). The latest available release is **R 4.4.1 "Race for Your Life" released on 2024/06/14**, but any (fairly recent) version will do.
 
 If you have previously installed R on your machine, you can check which version you are running by executing this command in `R`:
 
@@ -72,7 +72,7 @@ R, which is a command line driven program, can be executed via its native interf
 :::
 
 - To install **RStudio** you can go to this [**link**](https://posit.co/download/rstudio-desktop/).
-- The free **RStudio DEsktop** version contains everything you need.
+- The free **RStudio Desktop** version contains everything you need.
 - Again, you don't need to have the latest RStudio version, but I recommend **v2022.07.1** or later (it also includes the installation of Quarto)
 
 ::: {.callout-tip collapse="true"}
@@ -92,7 +92,7 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 -   **CRAN** - the Comprehensive R Archive Network - is the general package repository for R: [https://cran.r-project.org/](https://cran.r-project.org/)
 
-(We only use packages from CRAN for our purposes) 
+(We will only use packages from CRAN for our purposes) 
 
 -   **Bioconductor** - a  package repository geared towards biostatistics: [https://www.bioconductor.org/](https://www.bioconductor.org/)
 
@@ -101,54 +101,130 @@ An **R *package*** is a shareable bundle of functions. Besides the basic built-i
 
 # R packages that will be required for the workshop
 
-Below are the R packages, that we will need for the workshop's practical sessions. Ideally, you can pre-install them... it will also serve as a test to check whether the R version you have is compatible. 
+Below are the R packages, that we will need for the workshop's practical sessions. Ideally, you can pre-install them (at least the ones needed fo Lab # 1)... it will also serve as a test to check whether the R version you have is compatible. 
 
-+ Beware, R may ask you to install some related packages (`dependencies`): follow instructions by responding directly in the R console. 
+A couple of things to be aware of when installing R packages: 
+
+1. By default, the RStudio IDE uses the **RStudio CRAN global mirror** (i.e. a particular instance of the repository with all the packages code), but you can also override such default CRAN mirror and choose another one (perhaps one mirror hosted at an institution near you) -- see below. 
+
+<!-- ::: {.callout-tip collapse="true"} -->
+<!-- R, which is a command line driven program, can be executed via its native interface (**R GUI**), as well as from many other code editors, like **VS Code**, **Sublime Text**, **Jupyter Notebook**, etc. **RStudio** remains the most widely used by beginners and advanced programmers alike, because of its intuitive and integrated interface. -->
+<!-- ::: -->
+
+::: {.callout-warning icon=false collapse="true"}
+### {{< bi terminal-fill color=rgba(155,103,35,1.00) >}} [OPTIONAL] Choose CRAN mirror from RStudio
+[You don't have to, but] you can access and chose a CRAN repository of your choice from the RStudio IDE.
+
+1. ![Access CRAN mirror selection](images/CRAN_mirror1.png) 
+2. ![Select from menu - close to you](images/CRAN_mirror2.png)  
+:::
+
+2. R may ask you to install some related packages (`dependencies`): if so, follow instructions by responding directly in the R console (normally you are asked to type "Yes" or "No")
+
+3. At the end of the installation process you will get a message (bottom of the R Console) indicating were the source code for the package(s) has been stored on your machine. 
+
+## Installing packages (1st time you use an R Package)
+
+You could install one package at a time...
 ```{r}
 #| eval: false
 #| echo: true
 
 # Installing (**ONLY** the 1st time you use them)
-pkg_list <- c("here", "fs", "janitor", "skimr","openxlsx","flextable",
-              "dplyr", "tidyr","forcats", 
-              "ggplot2", "ggstatsplot", "ggpubr", "patchwork", "viridis",
-              "ggthemes" ,"ggridges", 
-              "BSDA", "rstatix", "car", "multcomp", "lmtest" , "broom", 
-              "performance" )
+install.packages("name_of_package_here" ) 
 
-install.packages(pkg_list)
+```
+
+... or in bulk, like so (it might take a few moments more):
+```{r}
+#| eval: false
+#| echo: true
+
+# ---- Installing R pckgs for 1st LAB (**ONLY** the 1st time you use them)
+pkg_list_lab_1 <- c("fs","here", "janitor", "skimr", 
+                   "dplyr", "forcats", 
+                   "ggplot2",  "ggridges")
+
+install.packages(pkg_list_lab_1)
+
+
+# ---- Installing (more) R pckgs for 2nd LAB (**ONLY** the 1st time you use them)
+pkg_list_lab_2 <- c("tidyr", "patchwork",
+                    "ggthemes", "ggstatsplot", "ggpubr",  "viridis",
+                    "BSDA", "rstatix", "car", "multcomp") 
+
+install.packages(pkg_list_lab_2)
+
+
+# ----  Installing (more) R pckgs for 3rd LAB (**ONLY** the 1st time you use them)
+pkg_list_lab_3 <- c("openxlsx", 
+                    "lmtest" , 
+                    "broom", 
+                    "performance")
+
+install.packages(pkg_list_lab_3)
+
+
+# ----  Installing (more) R pckgs for 4th LAB (**ONLY** the 1st time you use them)
+# pkg_list_lab_4 <- c("" )
+# 
+# install.packages(pkg_list_lab_4)
+```
+
+## Loading a package (at the beginning of every R session)
+With the commands below (that we will be executing at the beginning of our Labs), you load the specific R packages that you are going to need in any given R session. 
+
+```{r}
+#| eval: false
+#| echo: true
 
 # Loading a package (at the beginning of every R session) 
-# General 
-library(here)         # tools find your project's files, based on working directory
-library(fs)           # file/directory interactions
-library(janitor)      # tools for examining and cleaning data
-library(skimr)        # Compact and Flexible Summaries of Data     
-library(openxlsx)     # Read, Write and Edit xlsx Files
-library(flextable)    # Functions for Tabular Reporting
+# --- General 
+library(here)       # tools find your project's files, based on working directory
+library(fs)         # file/directory interactions
+library(janitor)    # tools for examining and cleaning data
+library(skimr)      # Compact and Flexible Summaries of Data     
+library(openxlsx)   # Read, Write and Edit xlsx Files
 
-# Tidiverse 
-library(dplyr)    # {tidyverse} A Grammar of Data Manipulation     
-library(tidyr)    # {tidyverse} Tools to create tidy data 
-library(forcats)  # {tidyverse} Tools for Categorical Var.(Factors)   
+# --- Tidyverse 
+library(dplyr)      # {tidyverse} A Grammar of Data Manipulation     
+library(tidyr)      # {tidyverse} Tools to create tidy data 
+library(forcats)    # {tidyverse} Tools for Categorical Var.(Factors)   
 
-# Plotting
-library(ggplot2)      # {tidyverse} tools for plotting
-library(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details 
-library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
-library(patchwork)    # Functions for ""Grid" Graphics"composing" plots 
-library(viridis)      # Colorblind-Friendly Color Maps for R 
-library(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'
-library(ggridges)     # Ridgeline Plots in 'ggplot2' (density functions)
+# --- Plotting
+library(ggplot2)    # {tidyverse} tools for plotting
+library(ggstatsplot)# 'ggplot2' Based Plots with Statistical Details 
+library(ggpubr)     # 'ggplot2' Based Publication Ready Plots 
+library(patchwork)  # Functions for ""Grid" Graphics"composing" plots 
+library(viridis)    # Colorblind-Friendly Color Maps for R 
+library(ggthemes)   # Extra Themes, Scales and Geoms for 'ggplot2'
+library(ggridges)   # Ridgeline Plots in 'ggplot2' (density functions)
 
-# Statistics
+# --- Statistics
 library(BSDA)   
-library(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests
-library(car)          # Companion to Applied Regression
-library(multcomp)     # Simultaneous Inference in General Parametric Models 
-library(lmtest)       # Testing Linear Regression Models  
-library(broom)        # Convert Statistical Objects into Tidy Tibbles
-library(performance)  # Assessment of Regression Models Performance 
+library(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests
+library(car)        # Companion to Applied Regression
+library(multcomp)   # Simultaneous Inference in General Parametric Models 
+library(lmtest)     # Testing Linear Regression Models  
+library(broom)      # Convert Statistical Objects into Tidy Tibbles
+library(performance)# Assessment of Regression Models Performance 
+```
+
+## Learning about a package (after installation)
+
+Once an R package is installed, you can check out the documentation about it directly inside the RStudio ID. Try running for example:
+
+```{r}
+#| eval: false
+#| echo: true
+
+# - To ask about a package
+?here
+
+# -- To ask about a specific function
+?janitor::clean_names
+
+?dplyr::group_by
 ```
 
 

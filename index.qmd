@@ -102,4 +102,3 @@ Please, do bring your laptop as no computer will be available.
 Also, please make sure to have the required software installed ahead of the workshop. You can find step-by-step instructions [here](https://r4biostats.com/install.html).  
 
 
- 

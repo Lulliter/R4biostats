@@ -97,7 +97,7 @@ To install **RStudio**, go to this link [**https://posit.co/download/rstudio-des
 
 ## Use RStudio IDE
 
-![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](../images/rstudio-panes-labeled.jpeg)
+![RStudio Pane Layout [Source: Posit's RStudio User Guide](https://docs.posit.co/ide/user/ide/guide/ui/ui-panes.html)](../../images/rstudio-panes-labeled.jpeg)
 
 ## Creating an R Project \[in Rstudio\]
 An **R Project** will keep all the files associated with a project (including invisible ones!) organized together -- input data, R scripts, analytical results, figures. Besides being common practice, this has the advantage of implicitly setting the "working directory", which is incredibly important when you need to load or output files, specifying their file path.
@@ -109,7 +109,7 @@ In @fig-Rproj_cre you can see how easy it is just following RStudio prompts:
 
 ## [Creating an R Project \[in Rstudio\] (cont.)]{.r-fit-text}
 
-![Creating an R project](../images/RProj_new_proj.png){#fig-Rproj_cre}
+![Creating an R project](../../images/RProj_new_proj.png){#fig-Rproj_cre}
 
 ::: {.notes}
 Notice that, now, in the `Files` tab you see file with the extension `.Rproj` which is telling R that all folder's files belong together.
@@ -139,7 +139,7 @@ Here you are actually using a ***function*** (`install.packages`) of a pre-insta
 
 In alternative, you can install/update packages using the `Packages` tab on the lower right pane of RStudio.
 
-![Screenshot Install/Update pckgs from RStudio](../images/RStudio_install_pckg_2way.png)
+![Screenshot Install/Update pckgs from RStudio](../../images/RStudio_install_pckg_2way.png)
 
 ## [Install R packages from GitHub (testing version)]{.r-fit-text}
 
@@ -179,7 +179,7 @@ library(paint)
 paint::paint(mtcars)
 ``` 
 
-![](../images/paint.png)
+![](../../images/paint.png)
 :::
 :::: 
  
@@ -191,14 +191,14 @@ paint::paint(mtcars)
 
 ```{r}
 # Load them for this R session
+library(fs)        # file/directory interactions
 library(here)      # tools find your project's files, based on working directory
 library(janitor)   # tools for examining and cleaning data
 library(skimr)     # tools for summary statistics 
 library(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data 
-library(ggplot2)   # {tidyverse} tools for plotting
 library(forcats)   # {tidyverse} tool for handling factors
+library(ggplot2)   # {tidyverse} tools for plotting
 library(ggridges)  # alternative to plot density functions 
-library(fs)        # file/directory interactions
 ```
 
 ## Help on R package/function
@@ -830,32 +830,35 @@ by(data = autism_pids$age_inputed, INDICES = autism_pids$gender, FUN = mean)
 
 ## [Grouping and summarizing with `base` R]{.r-fit-text}
 
-Using functions from the "`apply()`" family (`sapply()`, `lapply ()`, `tapply()`:
+::: {style="font-size: 80%;"}
+Using functions from the `apply()` family (`sapply`, `lapply`, `tapply`):
 
   + All of these functions allow us to *iterate over a data structure*, (a list, a matrix, an array, a DataFrame, etc.) and perform the same operation at each element.
 
-#### Option 2) using `tapply` (it returns a vector)
+#### Option 2) using `tapply` 
+(to apply a function to subsets of a vector where subsets are defined by some other vector, usually a factor)
 
 ```{r}
 # i.e. apply a function to subsets of a vector or array, split by one or more factors.
 tapply(X = autism_pids$age_inputed, INDEX = autism_pids$gender, FUN = mean)
 ```
 
-<br> 
 
-#### Option 3) using `split` + `sapply` (it returns a vector)
+#### Option 3) using `split` + `sapply` 
+(it returns a vector)
 
 ```{r}
 # sapply(split(data$column, data$grouping_column), mean)
 sapply(X = split(autism_pids$age_inputed, autism_pids$gender),FUN = mean) # returns a vector
 ```
  
+:::
 
 ## Grouping and summarizing with `dplyr`
 
 <!-- -   {dplyr} is a key package in the {tidyverse} collection -->
 <!-- -   it uses the "pipe" `%>%` and doesn't require to specify the `dataframe$col_name` but simply `col_name` -->
-
+Using functions from the `dplyr()` package which *"concatenates"* each step
 ```{r}
 autism_pids %>% 
   dplyr::group_by(gender) %>% 
@@ -882,7 +885,9 @@ Recall that: <br><br>
 
 **Population MEAN** $\mu=\frac{\sum_{i=1}^n x_{i}}n$  
 **Sample MEAN** $\bar{x}=\frac{\sum_{i=1}^n x_{i}}n$ 
+
 <br><br>
+
 **Sample MEDIAN** 
 
 For uneven $n$: $Mdn = \frac{x_{(n+1)}}2$ 
@@ -891,25 +896,32 @@ For even $n$: $Mdn = \frac{x_{(n/2)} + x_{(n/2+1)}}2$
 
 ## Mean/Median using `base` R
 
-+ Important to specify the argument `na.rm = TRUE` or the functions won't work
+::: {style="font-size: 85%;"}
++ Using `age` (original variable) 
+  + You must specify the argument `na.rm = TRUE` or the functions won't work!
 ```{r}
-## Let's use `age` and `age_inputed` to see what inputed missing values did 
+## Using `age` (original variable) 
 mean(autism_pids$age)
 median(autism_pids$age)
 
-
+# specify to omit NA observations 
 mean(autism_pids$age, na.rm = TRUE)
 median(autism_pids$age, na.rm = TRUE)
+```
 
++  Using `age_inputed` to see what inputed missing values did 
+```{r}
+## Using `age_inputed` to see what inputed missing values did 
 mean(autism_pids$age_inputed)
 median(autism_pids$age_inputed)
 ```
+::: 
 
 ## Create custom function to calculate statistical mode 1/2
 
-R doesn't have a built-in function for the statistical mode, so we can create a custom one: `f_calc_mode`
+R doesn't have a built-in function for the statistical **mode**, so we can create a custom one: `f_calc_mode`
  
-### Define the custom function
+#### Define the custom function
 
 ```{r}
 f_calc_mode  <- function(x) { 
@@ -926,7 +938,7 @@ f_calc_mode  <- function(x) {
 
 ## Create custom function to calculate statistical mode 2/2
 
-### Call the custom function
+#### Call the custom function
 
 ```{r}
 f_calc_mode(autism_pids$age)
@@ -943,7 +955,8 @@ Recall that: <br>
 **Population Variance** $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$ <br><br>
 **Sample Variance** $s^2 =\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
 <br><br>
-**Population Standard deviation** $\sigma = \sqrt\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$ <br><br>
+**Population Standard deviation** $\sigma = \sqrt{\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}}$ 
+<br><br>
 **Sample Standard deviation**  $s = \sqrt\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
 
 ## Variance and Standard deviation using `base` R
@@ -960,7 +973,7 @@ sd(autism_pids$age_inputed)
 
 # VISUAL DATA EXPLORATION
 
-## Plotting with ggplot2
+## Introducing R package `ggplot2` for graphics
 
 ::: {style="font-size: 90%;"}
 `ggplot2` provides a set of tools to map data to visual elements on a plot, to specify the kind of plot you want, and then subsequently to control the fine details of how it will be displayed. It basically allows to build a plot layer by layer (@fig-ggplot_lay).
@@ -980,7 +993,7 @@ Additional (optional) pieces:
 ## Plotting with ggplot2 (cont.)
 a layered approach!
 
-![ggplot2 layers [Source: Mine Çetinkaya-Rundel' Data Viz class](https://vizdata.org/slides/03/03-wrangling-tidying-I.html#/todays-focus)](../images/gglayers.png){#fig-ggplot_lay}
+![ggplot2 layers [Source: Mine Çetinkaya-Rundel' Data Viz class](https://vizdata.org/slides/03/03-wrangling-tidying-I.html#/todays-focus)](../../images/gglayers.png){#fig-ggplot_lay}
 
 ## Save some colors (for customizing plots)
 
@@ -1299,7 +1312,7 @@ autism_pids %>%
 
 Bar charts provide a visual presentation of categorical data, with `geom_bar()` (height of the bar proportional to the number of cases in each group) 
 
-![Difference barchart v. histogram Source: [https://www.biorender.com/](https://www.biorender.com/template/bar-chart-vs-histogram)](../images/bar_v_hist.png){#fig-hist_bar}
+![Difference barchart v. histogram Source: [https://www.biorender.com/](https://www.biorender.com/template/bar-chart-vs-histogram)](../../images/bar_v_hist.png){#fig-hist_bar}
 
 ## Barchart (cont.)
 
@@ -1412,7 +1425,7 @@ The boxplot is one of the simplest ways of representing a distribution of a cont
 + **Whiskers** — Lines extending from both ends of the box (minimum/maximum whisker values are calculated as Q1/Q3 -/+ 1.5 * IQR)
 + Everything outside is represented as an **outlier**
 
-![Boxplot Source: [https://www.appsilon.com/post/ggplot2-boxplots](https://www.appsilon.com/post/ggplot2-boxplots)](../images/boxplot.png){#fig-boxplot}
+![Boxplot Source: [https://www.appsilon.com/post/ggplot2-boxplots](https://www.appsilon.com/post/ggplot2-boxplots)](../../images/boxplot.png){#fig-boxplot}
 
 
 ## Boxplot example 1
@@ -1536,9 +1549,9 @@ notice I renamed while saving: next time I load it it will be called "autism_pid
 
 + Always **read the documentation** (`?package::function`, especially the examples at the bottom)
 + Always **inspect the data** / variables **before** and **after** making changes 
-+ **Better rename** (i.e. create a new R object) when you recode/manipulate a column or a dataset
++ It is advisable to **rename** (i.e. create a new R object) when you recode/manipulate a variable or a dataset
 
-  - *(this promotes reproducibility, since you will be able to retrace your coding steps)*
+  - *this promotes reproducibility, since you(or others) will be able to retrace your coding steps*
 
 + Always plot distributions for **visual data exploration** 
 + Make changes in **small increments** (like we saw in building `ggplot2` graph in subsequent layers)

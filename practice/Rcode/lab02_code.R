@@ -143,7 +143,7 @@ age2 <-ggplot(heart_failure, aes(x = age, fill = DEATH_EVENT_f))+
 
 # patchwork
 library(patchwork)
-age + age2 + plot_layout(ncol = 1)
+age + age2 + patchwork::plot_layout	(ncol = 1)
 
 
 

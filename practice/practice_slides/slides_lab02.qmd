@@ -86,20 +86,21 @@ library(here)         # tools find your project's files, based on working direct
 library(janitor)      # tools for examining and cleaning data
 library(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data 
 library(forcats)      # {tidyverse} tool for handling factors
+library(tidyr)        # Tidy Messy Data       
 
 # Statistics
-library(BSDA)   
+library(BSDA)         # Basic Statistics and Data Analysis   
 library(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests
 library(car)          # Companion to Applied Regression
 library(multcomp)     # Simultaneous Inference in General Parametric Models 
 
 # Plotting
 library(ggplot2)      # {tidyverse} tools for plotting
-library(ggstatsplot)  # 'ggplot2' Based Plots with Statistical Details 
+library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  # 'ggplot2' Based Plots with Statistical Details 
 library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
 library(patchwork)    # Functions for ""Grid" Graphics"composing" plots 
 library(viridis)      # Colorblind-Friendly Color Maps for R 
-library(ggthemes)    # Extra Themes, Scales and Geoms for 'ggplot2'
+library(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'
 ```
 
 
@@ -153,7 +154,7 @@ Table 1 from the second article [@chicco_machine_2020, p.3] offers a synthetic e
 
 
 
-![](../images/HEART_FAIL_vars.png) 
+![](../../images/HEART_FAIL_vars.png) 
 
 
 ## Look into the dataset just loaded in the R environment
@@ -345,7 +346,7 @@ age2 <-ggplot(heart_failure, aes(x = age, fill = DEATH_EVENT_f))+
   scale_x_continuous(breaks = seq(40,100,5))
 
 # patchwork
-library(patchwork)
+library(patchwork) # The Composer of Plots
 age + age2 + plot_layout(ncol = 1)
 
 ```
@@ -1440,7 +1441,7 @@ Below we check out the `ggwithinstats()` function for *paired samples.*
 #| fig-cap: "The test results are rendered with the plot!"
 
 # load package
-library(ggstatsplot)
+library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details
 
 # plot with statistical results
 grades_long %>% 
@@ -1672,3 +1673,4 @@ INTERPRETATION: We therefore have sufficient evidence to say that the level of s
 <!-- # FOUNDATIONS OF INFERENCE -->
 
 <!-- (lo lascerei x lab \# 2) -->
+

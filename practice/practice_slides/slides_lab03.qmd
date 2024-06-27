@@ -92,7 +92,7 @@ The examples and code from this lab session follow very closely the open access 
 ```{r}
 # Load them for this R session
 
-# General 
+# -- General 
 library(fs)      # file/directory interactions
 library(here)    # tools find your project's files, based on working directory
 library(paint) # paint data.frames summaries in colour
@@ -101,13 +101,13 @@ library(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data
 library(forcats) # {tidyverse} tool for handling factors
 library(openxlsx) # Read, Write and Edit xlsx Files
 library(flextable) # Functions for Tabular Reporting
-# Statistics
+# -- Statistics
 library(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests
 library(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models
 library(broom) # Convert Statistical Objects into Tidy Tibbles
-library(tidymodels) # not installed on this machine
+#library(tidymodels) # not installed on this machine
 library(performance) # Assessment of Regression Models Performance 
-# Plotting
+# -- Plotting
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics
 ```
 

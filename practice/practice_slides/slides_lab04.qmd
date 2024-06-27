@@ -51,19 +51,25 @@ suppress-bibliography: true
 <br><br>
 
 ::: {style="font-size: 70%;"}
-The examples and code from this lab session follow very closely the open access book:  
+The examples and code from this lab session follow very closely .....:  
 
-+ Vu, J., & Harrington, D. (2021). **Introductory Statistics for the Life and Biomedical Sciences**. [https://www.openintro.org/book/biostat/](https://www.openintro.org/book/biostat)
++  
 :::
 
 
 ## Topics discussed in Lecture # 4
 
 
-::: {style="font-size: 75%;"}
+::: {style="font-size: 95%;"}
 **Lecture 4: topics** 
 
- 
++ Shifting the emphasis on **empirical prediction** 
+  + Distinction between supervised & **unsupervised** algorithms
+    + Unsupervised ML Example
+      + PCA 
++ Useful R resources for metabolomics 
+  + Introduction to `MetaboAnalyst` software
++ Elements of statistical power analysis 
 
 :::  
 
@@ -91,7 +97,7 @@ library(flextable) # Functions for Tabular Reporting
 library(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests
 library(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models
 library(broom) # Convert Statistical Objects into Tidy Tibbles
-library(tidymodels) # not installed on this machine
+#library(tidymodels) # not installed on this machine
 library(performance) # Assessment of Regression Models Performance 
 # Plotting
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics
@@ -107,9 +113,7 @@ library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graph
 ::: {style="font-size: 70%;"}
 We will use examples (with adapted datasets) from real clinical studies, provided among the learning materials of the open access books:  
 
-+ Vu, J., & Harrington, D. (2021). **Introductory Statistics for the Life and Biomedical Sciences**. [https://www.openintro.org/book/biostat/](https://www.openintro.org/book/biostat)
-+ Çetinkaya-Rundel, M., & Hardim, J. (2023). **Introduction to Modern Statistics (1st Ed)**. [https://openintro-ims.netlify.app/](https://openintro-ims.netlify.app/)
-
+ 
 :::
 
 <!-- FATTO IO MA LORO NON VEDONO -->
@@ -118,37 +122,7 @@ We will use examples (with adapted datasets) from real clinical studies, provide
 #| output: false
 #| echo: false
 
-library(oibiostat) # Data Package for OpenIntro Biostatistics
-library(openintro) # Data Sets and Supplemental Functions from 'OpenIntro' Textbooks and Labs 
-data(famuss)
-data(prevend)
-data(prevend.samp)
-data(nhanes.samp.adult.500 )
-
-
-# li salvo nel mio folder per poi darglieli 
-
-nhanes.samp.adult.500 
-write.csv(nhanes.samp.adult.500, file = here::here("practice", "data_input", "03_datasets",
-                                      "nhanes.samp.csv"))
-
-prevend
-write.csv(prevend, file = here::here("practice", "data_input", "03_datasets",
-                                      "prevend.csv"))
-
-prevend.samp
-write.csv(prevend.samp, file = here::here("practice", "data_input", "03_datasets",
-                                      "prevend.samp.csv"))
-
-famuss
-write.csv(famuss, file = here::here("practice", "data_input", "03_datasets",
-                                      "famuss.csv"))
-
-data(COL)
-colors <- COL 
-saveRDS(colors, file = here::here("practice", "data_input", "03_datasets",
-                                       "colors.rds"))
-
+ 
 ```
 
  
@@ -191,86 +165,7 @@ nhanes_samp <- read.csv(file = here::here("practice", "data_input", "03_datasets
 nhanes_desc <- tribble(
   ~Variable, ~ Type, ~Description,
 "X"                ,"int", "xxxx", 
-"ID"               ,"int", "xxxxx", 
-"SurveyYr"         ,"chr", "yyyy_mm. Ex. 2011_12",    
-"Gender"           ,"chr", "Gender (sex) of study participant coded as male or female",
-"Age"              ,"int", "##", 
-"AgeDecade"        ,"chr", "yy-yy es 20-29",   
-# "AgeMonths"        ,"int", "### es 471", 
-#"Race1"            ,"chr", "Reported race of study participant: Mexican, Hispanic, White, #Black, or Other",
-#"Race3"            ,"chr", "Reported race of study participant... Not availale for #2009-10", 
-
-"Education"        ,"chr", "[>= 20 yro]. Ex. 8thGrade, 9-11thGrade, HighSchool, SomeCollege, or CollegeGrad.", 
-# "MaritalStatus"    ,"chr", "[>= 20 yro]. Ex. Married, Widowed, Divorced, Separated, # NeverMarried, or LivePartner",  
-# "HHIncome"         ,"chr","Total annual gross income for the household in US dollars", 
-# "HHIncomeMid"      ,"int", "Numerical version of HHIncome derived from the middle income # in each category. Ex. 12500 40000" ,   
-# "Poverty"          ,"dbl", "A ratio of family income to poverty guidelines. Smaller # numbers indicate more poverty Ex.. 0.95 1.74 4.99" , 
-# "HomeRooms"        ,"int", "How many rooms are in home of study participant (counting # kitchen but not bath room).", 
-# "HomeOwn"          ,"chr", "One of Home, Rent, or Other", 
-# "Work"             ,"chr", "NotWorking Working" ,
-  
-"Weight"           ,"dbl", "Weight in kg",
-# "Length"           ,"lgl", "Recumbent length in cm. Reported for participants aged 0 - 3 years", 
-# "HeadCirc"         ,"lgl", "Head circumference in cm. Reported for participants aged 0 years (0 - 6 months)", 
-"Height"           ,"dbl",  "Standing height in cm. Reported for participants aged 2 years or older.",
-"BMI"              ,"dbl",  "Body mass index (weight/height2 in kg/m2). Reported for participants aged 2 years or older", 
-# "BMICatUnder20yrs" ,"lgl",  "Body mass index category. Reported for participants aged 2 to 19 years", 
-# "BMI_WHO"          ,"chr",  "Body mass index category. Reported for participants aged 2 years or older", 
-"Pulse"            ,"int",  "60 second pulse rate",
-# "BPSysAve"         ,"int", "Combined systolic blood pressure reading, following the # procedure outlined for BPXSAR",
-# "BPDiaAve"         ,"int", "Combined diastolic blood pressure reading, following the # procedure outlined for BPXDAR",
-#"BPSys1"           ,"int", "Systolic blood pressure in mm Hg – first reading",
-#"BPDia1"           ,"int", "Diastolic blood pressure in mm Hg – second reading (consecutive readings)",
-#"BPSys2"           ,"int", "Systolic blood pressure in mm Hg – second reading (consecutive readings)",
-#"BPDia2"           ,"int", "Diastolic blood pressure in mm Hg – second reading",
-#"BPSys3"           ,"int", "Systolic blood pressure in mm Hg third reading (consecutive readings)",
-#"BPDia3"           ,"int", "Diastolic blood pressure in mm Hg – third reading (consecutive readings)",
-#"Testosterone"     ,"dbl", "Testerone total (ng/dL). Reported for participants aged 6 years or older. Not available for 2009-2010",
-#
-"DirectChol"       ,"dbl","Direct HDL cholesterol in mmol/L. Reported for participants aged 6 years or older", 
-"TotChol"          ,"dbl","Total HDL cholesterol in mmol/L. Reported for participants aged 6 years or older", 
-#"UrineVol1"        ,"int", "Urine volume in mL – first test. Reported for participants aged 6 years or older", 
-#"UrineFlow1"       ,"dbl", "Urine flow rate in mL/min – first test. Reported for participants aged 6 years or older", 
-#"UrineVol2"        ,"int", "Urine volume in mL – second test",
-#"UrineFlow2"       ,"dbl","Urine flow rate (urine volume/time since last urination) in mL/min – second test",
-"Diabetes"         ,"chr","Study participant told by a doctor or health professional that they have diabetes", 
-"DiabetesAge"      ,"int", "Age of study participant when first told they had diabetes", 
-"HealthGen"        ,"chr", "Self-reported rating of health: Excellent, Vgood, Good, Fair, or Poor Fair" , 
-#"DaysPhysHlthBad"  ,"int", "Self-reported # of days participant’s physical health was not good out of the past 30 days", 
-#"DaysMentHlthBad " ,"int", "Self-reported # of days participant’s mental health was not good out of the past 30 days", 
-#"LittleInterest"   ,"chr", "Self-reported # of days where participant had little interest in doing things. Among: None, Several, Majority, #or AlmostAll", 
-#"Depressed"        ,"chr", "Self-reported # of days where participant felt down, depressed or hopeless. Among: None, Several, Majority, or #AlmostAll", 
-#"nPregnancies"     ,"int", "# times participant has been pregnant",
-#"nBabies"          ,"int", "# deliveries resulted in live births", 
-#"PregnantNow"      ,"chr", "Pregnancy status ascertained for females 8-59 years of age", 
-#
-#"Age1stBaby"       ,"int",  "Age of participant at time of first live birth",
-#"SleepHrsNight"    ,"int",  "Self-reported # of hours study participant gets at night on weekdays or workdays. For participants aged 16 #years and older", 
-#"SleepTrouble"     ,"chr", "Participant [16 years and older] has had trouble sleeping. Coded as Yes or No." ,  
-#"PhysActive"       ,"chr", "Participant does moderate or vigorous-intensity sports, fitness or recreational activities (Yes or No)." ,  
-#"PhysActiveDays"   ,"int", "Number of days in a typical week that participant does moderate or vigorous intensity activity. ", 
-#"TVHrsDay"         ,"chr", "Number of hours per day on average participant watched TV over the past 30 days.",
-#"CompHrsDay"       ,"chr", "Number of hours per day on average participant used a computer or gaming device over the past 30 day", 
-#"TVHrsDayChild"    ,"lgl", "[2-11 yro] Number of hours per day on average participant watched TV over the past 30 days.",
-#"CompHrsDayChild"  ,"lgl", "[2-11 yro] Number of hours per day on average participant used a computer or gaming device over the past 30 #day", 
-"Alcohol12PlusYr"  ,"chr",  "Participant has consumed at least 12 drinks of any type of alcoholic beverage in any one year", 
-#"AlcoholDay"       ,"int",  "Average number of drinks consumed on days that participant drank alcoholic beverages", 
-#"AlcoholYear"      ,"int",  "[>+ 18yro] Estimated number of days over the past year that participant drank alcoholic beverages", 
-#"SmokeNow"         ,"chr", "Study participant currently smokes cigarettes regularly. (Yes or No)",  
-#"Smoke100"         ,"chr", "Study participant has smoked at least 100 cigarettes in their entire life. (Yes pr No)",  
-#"Smoke100n"        ,"chr", " Smoker Non-Smoker" , 
-#"SmokeAge"         ,"int", "Age study participant first started to smoke cigarettes fairly regularly", 
-#"Marijuana"        ,"chr",  "Participant has tried marijuana", 
-#"AgeFirstMarij"    ,"int", "Age Participant has tried marijuana first", 
-#"RegularMarij"     ,"chr", "Participant has been/is a regular marijuana user (used at least once a month for a year) (Yes or No)",
-#"AgeRegMarij"      ,"int", "Age of participant when first started regularly using marijuana", 
-#"HardDrugs"        ,"chr", "Participant has tried cocaine, crack cocaine, heroin or methamphetamine (Yes or No)" ,
-#"SexEver"          ,"chr", "Participant had had  sex (Yes or No)" ,
-#"SexAge"           ,"int", "Age Participant had had sex first time" ,
-#"SexNumPartnLife"  ,"int", "Number of opposite sex partners participant has had",
-#"SexNumPartYear"   ,"int", "Number of opposite sex partners over the past 12 months",
-#"SameSex"          ,"chr", "Participant has had any kind of sex with a same sex partne(Yes or No)" ,
-#"SexOrientation"   ,"chr",  "Participant’s sexual orientation One of Heterosexual, Homosexual, Bisexual", 
+ 
 "..."  ,"...",  "..."#, 
 )
 
@@ -279,168 +174,118 @@ kableExtra::kable(nhanes_desc)
 :::
 
 
-## []{.r-fit-text}
-## []{.r-fit-text}
+# MACHINE LEARNING: A FOCUS ON PREDICTION
 
+## [ ... ]{.r-fit-text}
 
-# _______ qui 
-## []{.r-fit-text}
+## [ ... ]{.r-fit-text}
 
+## [ ... ]{.r-fit-text}
 
-# _______ >>>>> SALTO  
+## [ ... ]{.r-fit-text}
 
-
-https://www.statology.org/interpret-regression-output-in-r/
-https://www.youtube.com/watch?v=ebHLMyqC2UY
-https://www.learnbymarketing.com/tutorials/explaining-the-lm-summary-in-r/
-
-## Splitting the sample 
-
-If we seek any causal relationship between an explanatory and outcome variable we should **split** our sample to have:
-
-1. one `sample to "train"` a model on
-2. one `sample to "test"` the model on 
-
-+ Otherwise out model will seem better than it is (since it will be specifically built to "fit" our data) 
-
-+ The function `rsample::initial_split` will assist in that
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
-nhanes_split <- rsample::initial_split(nhanes)
-# default = 75%  of observations 
-nhanes_train <- rsample::training(nhanes_split)
-# default = 25%  of observations 
-nhanes_test <- rsample::testing(nhanes_split)
-```
-
-
-## Linear regression performance 
-
-We can start looking at how the model performs by applying it to our `nhanes_test` sub-sample, utilizing the function `predict`
- 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
-
-
-# recall the dataset size 
-nrow(nhanes_test) # 125 
-# obtain 125 predicted observations 
-predict(lr_model, nhanes_test)
-```
-
-## Linear regression performance: predicted values in test sample
-
-+ We can look the 95% CI of any predicted values 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
-
-
-pred_val_test <- predict(lr_model, nhanes_test, interval = "confidence")
-# print out first 6 predicted values and CI boundaries 
-head(pred_val_test)
-```
-
-+ We can look the CI 95% of a single predicted values 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
-
-
-# obtain 125 predicted observations + 95% 
-pred_val_test <- predict(lr_model, nhanes_test, interval = "prediction")
-# print out first 6 predicted values and CI boundaries 
-head(pred_val_test)
-```
-
-## Linear regression performance: RMSE
-
-Basically we are asking: **"how does the prediction compare to the actual test dataset?"**
-
-For this we take the difference between the predicted and the actual value as 
-
-`RMSE = Root Means Squared Error` 
+## Splitting the dataset into training and testing samples
+Julia Silge https://supervised-ml-course.netlify.app/
 
 ```{r}
 #| eval: false
 #| output: false
 #| echo: false
+library(tidymodels)
 
+car_split <- car_vars %>%
+    initial_split(prop = 0.8,
+                  strata = aspiration)
 
-# --- testing sample 
-RMSE <- sqrt(mean(
-  (nhanes_test$bmi - predict(lr_model, nhanes_test))^2,
-  na.rm = T))
-
-RMSE # 7.451677
+car_train <- training(car_split)
+car_test <- testing(car_split)
 ```
 
-> This is quite close to the **Residual standard error** that we got from the regression model summary (6.843) -- despite that was taken from **training data** and this comes from testing data 
+## [ ... ]{.r-fit-text}
 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
+## [ ... ]{.r-fit-text}
 
-# --- training !!!! sample 
-k = length(lr_model$coefficients)-1 #Subtract one to ignore intercept
-n =length(lr_model$residuals)
-df = n-(1+k)
-# Squared Sum of Errors
-SSE =sum(lr_model$residuals**2) # 17375.27
+## [ ... ]{.r-fit-text}
 
-# --- Residual Standard Error
-sqrt(SSE/df)  # 6.843509
-```
+## [ ... ]{.r-fit-text}
 
 
-<!-- 
-instead of dividing by df (like in Residual Standard Error) I take the SUM of SQUARE ERR divided by n(train)
-so it makes sense that it is a bit higher  -->
+# _______  
 
 
-## Linear regression performance: $R^2$
+# ML WITH SUPERVISED ALGORITHMS
 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
+## [ ... ]{.r-fit-text}
 
+# PCA: step by step (example)
 
-#Multiple R-Squared (Coefficient of Determination)
-SSyy=sum((nhanes_test$bmi - mean(nhanes_test$bmi, na.rm = T))**2)
-SSE=sum(lr_model$residuals**2)
-(SSyy-SSE)/SSyy
-#Alternatively
-1-SSE/SSyy
-```
+1) PCA fatta a mano.
+PCA step by step come in Statology ma con il data set della Lecture nmr_bins…csv 
 
-## Linear regression models outputs: model fit 
+https://www.statology.org/principal-components-analysis-in-r/
 
-```{r}
-#| eval: false
-#| output: false
-#| echo: false
+Probabilmente non viene proprio uguale perchè in MA fa normalizzazione e scaling mentre Statology fa solo scaling, ma fa niente, diciamo che ci serve per vedere la differenza
 
+## [ ... ]{.r-fit-text}
 
-str(summary(lr_model)) 
-names(summary(lr_model))
+## [ ... ]{.r-fit-text}
 
-summary(lr_model)$sigma
-summary(lr_model)$df
-summary(lr_model)$r.squared
-summary(lr_model)$adj.r.squared
-summary(lr_model)$fstatistic
-summary(lr_model)$cov.unscaled  ##lm 
-```
+## [ ... ]{.r-fit-text}
 
-# _______SALTO<<<<<
+# PLS-DA: step by step (example)
+1) PCA + PLS_DA + CLuster 
+https://rpubs.com/Anita_0736/PD_ANALYSIS 
+
+2) PLS fatta a mano
+PLS step by step come in Statology ma con il data set della Lecture nmr_bins…csv 
+
+https://www.statology.org/partial-least-squares-in-r/
+
+In MetaboAnalyst usano la PLS-DA che non so cosa ha di diverso ma può essere anche carino vedere la differenza
+
+# _______  
 
 
 
+# ML WITH UNSUPERVISED ALGORITHMS
+
+# Hierarchical Clustering (example)
+3) Hierarchical Clustering fatto a mano come in Statology ma con il data set della Lecture nmr_bins…csv 
+
+https://www.statology.org/hierarchical-clustering-in-r/
+
+Se non hai tempo o non si riesce l’alternativa è che li faccio giocare anche loro con il MetaboAnalyst anche nelle esercitazioni, sperando che la rete regga e la piattaforma pure..
+
+## [ ... ]{.r-fit-text}
+
+## [ ... ]{.r-fit-text}
+
+## [ ... ]{.r-fit-text}
+
+## [ ... ]{.r-fit-text}
+
+# _______  
+
+# SAMPLE SIZE... 🙀 a.k.a. "the 1,000,000 $ question"!
+
+# _______  
+
+## [ ... ]{.r-fit-text}
+
+
+## Final thoughts/recommendations
+
+::: {style="font-size: 85%;"}
+
++ The analyses proposed in this Lab are very similar to the process we go through in real life. The following steps are always included:
+  + Thorough **understanding of the input data** and the data collection process 
+  + Bivariate **analysis of correlation / association** to form an intuition of which explanatory variable(s) may or may not affect the response variable 
+  + **Diagnostic plots** to verify if the necessary assumptions are met for a linear model to be suitable 
+  + Upon verifying the assumptions, we **fit data** to hypothesized (linear) model 
+  + **Assessment of the model performance** ($R^2$, $Adj. R^2$, $F-Statistic$, etc.)
+
++ As we saw with hypothesis testing, the **assumptions** we make (and require) for regression are of utter importance
+
++ Clearly, we only scratched the surface in terms of all the possible predictive models, but we got a hang of the **fundamental steps** and some **useful tools** that might serve us also in more advanced analysis 
+  + e.g. `broom` (within `tidymodels`), `performace` `rstatix`, `lmtest`
+:::
