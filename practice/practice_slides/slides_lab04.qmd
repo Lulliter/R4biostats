@@ -84,7 +84,7 @@ The examples and code from this lab session follow very closely .....:
 ```{r}
 # Load them for this R session
 
-# General 
+# --- General 
 library(fs)      # file/directory interactions
 library(here)    # tools find your project's files, based on working directory
 library(paint) # paint data.frames summaries in colour
@@ -93,12 +93,17 @@ library(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data
 library(forcats) # {tidyverse} tool for handling factors
 library(openxlsx) # Read, Write and Edit xlsx Files
 library(flextable) # Functions for Tabular Reporting
-# Statistics
+
+# --- Statistics
 library(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests
 library(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models
-library(broom) # Convert Statistical Objects into Tidy Tibbles
-#library(tidymodels) # not installed on this machine
 library(performance) # Assessment of Regression Models Performance 
+
+# --- Tidymodels (meta package)
+#library(tidymodels) # not installed on this machine
+library(rsample) # not installed on this machine
+library(broom) # Convert Statistical Objects into Tidy Tibbles
+
 # Plotting
 library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics
 ```
@@ -126,24 +131,21 @@ We will use examples (with adapted datasets) from real clinical studies, provide
 ```
 
  
-## [Importing Dataset 1 (NHANES)]{.r-fit-text}
+## [Importing Dataset 1 (NMR output)]{.r-fit-text}
 
 ::: {style="font-size: 85%;"}
-**Name**: NHANES (National Health and Nutrition Examination Survey) combines interviews and physical examinations to assess the health and nutritional status of adults and children in the United States. Sterted in the 1960s, it became a continuous program in 1999.  
-**Documentation**: [dataset1](https://wwwn.cdc.gov/nchs/nhanes/Default.aspx)  
-**Sampling details**: Here we use a sample of 500 adults from NHANES 2009-2010 & 2011-2012 (`nhanes.samp.adult.500` in the R `oibiostat` package, which has been adjusted so that it can be viewed as a random sample of the US population)
+**Name**: ... .  
+**Documentation**:  ...  
+**Sampling details**:  ...
+
 ::: 
 ```{r}
-#| eval: false
-#| output: false
-#| echo: false
-#| 
 # Check my working directory location
 # here::here()
 
 # Use `here` in specifying all the subfolders AFTER the working directory 
-nhanes_samp <- read.csv(file = here::here("practice", "data_input", "03_datasets",
-                                      "nhanes.samp.csv"), 
+nmr <- read.csv(file = here::here("practice", "data_input", "04_datasets",
+                                      "nmr_bins_test_data_PCA_PLSDA.csv"), 
                           header = TRUE, # 1st line is the name of the variables
                           sep = ",", # which is the field separator character.
                           na.strings = c("?","NA" ), # specific MISSING values  
@@ -153,23 +155,19 @@ nhanes_samp <- read.csv(file = here::here("practice", "data_input", "03_datasets
  
 + Adapting the function `here` to match your own folder structure
  
-## [*NHANES* Variables and their description]{.r-fit-text}
+## [*NMR output* Variables and their description]{.r-fit-text}
 ::: {style="font-size: 60%;"}
-[[EXCERPT: see complete file in Input Data Folder]]{style="color:#77501a"}
+<!-- [[EXCERPT: see complete file in Input Data Folder]]{style="color:#77501a"} -->
 
 ```{r}
-#| eval: false
-#| output: false
-#| echo: false
-#| 
-nhanes_desc <- tribble(
+nmr_desc <- tribble(
   ~Variable, ~ Type, ~Description,
 "X"                ,"int", "xxxx", 
  
 "..."  ,"...",  "..."#, 
 )
 
-kableExtra::kable(nhanes_desc)
+kableExtra::kable(nmr_desc)
 ```
 :::
 
@@ -184,21 +182,43 @@ kableExtra::kable(nhanes_desc)
 
 ## [ ... ]{.r-fit-text}
 
+## Introducing R (metapackage) `tidymodels` for modeling and ML
+
+::: {style="font-size: 90%;"}
+`tidymodels` (much like the `tidyverse` was to data manipulation) is an ecosystem of packages meant to enable a wide variety of approaches for modeling and statistical analysis that shares the underlying design philosophy, grammar, and data structures of the `tidyverse`.
+
+Also in this case we could install them al in one `install.packages("tidymodels")`, or one by one (my preference) to appreciate what each contributes to the process. (@fig-tidymodels).
+
+-    
+
+:::
+
+## Introducing R (metapackage) `tidymodels` (cont.)
+a layered approach!
+
+![Tidymodels ecosystem](../../images/tidymodels.png){#fig-tidymodels}
+
+
 ## Splitting the dataset into training and testing samples
-Julia Silge https://supervised-ml-course.netlify.app/
+<!-- Julia Silge https://supervised-ml-course.netlify.app/ -->
+
++ 🚫 In ML, training models based on **all of the data at once** is typically not a good choice. 
++ 👍🏻 Instead, you can create subsets of your data that you use for different purposes, such as `training` your model and then `testing` your model. 
+
+  So, when you evaluate your model on data that *it was not trained on*, you get a better estimate of how it will perform on new data.
 
 ```{r}
 #| eval: false
 #| output: false
 #| echo: false
+
 library(tidymodels)
 
-car_split <- car_vars %>%
-    initial_split(prop = 0.8,
-                  strata = aspiration)
+nmr_split <- nmr %>%
+    rsample::initial_split(prop = 0.75)
 
-car_train <- training(car_split)
-car_test <- testing(car_split)
+nmr_train <- training(nmr_split)
+nmr_test <- testing(nmr_split)
 ```
 
 ## [ ... ]{.r-fit-text}
