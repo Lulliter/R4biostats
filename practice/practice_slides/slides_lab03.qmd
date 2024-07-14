@@ -103,7 +103,7 @@ library(openxlsx) # Read, Write and Edit xlsx Files
 library(flextable) # Functions for Tabular Reporting
 # -- Statistics
 library(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests
-library(lmtest) # Testing Linear Regression Models # Testing Linear Regression Models
+library(lmtest) # Testing Linear Regression Models 
 library(broom) # Convert Statistical Objects into Tidy Tibbles
 #library(tidymodels) # not installed on this machine
 library(performance) # Assessment of Regression Models Performance 
@@ -117,14 +117,13 @@ library(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graph
 <!-- #library(oibiostat) # Data Package for OpenIntro Biostatistics  -->
 
 
-# DATASETS for today
+# DATASETS FOR TODAY
 
 ::: {style="font-size: 70%;"}
 We will use examples (with adapted datasets) from real clinical studies, provided among the learning materials of the open access books:  
 
 + Vu, J., & Harrington, D. (2021). **Introductory Statistics for the Life and Biomedical Sciences**. [https://www.openintro.org/book/biostat/](https://www.openintro.org/book/biostat)
 + Çetinkaya-Rundel, M., & Hardim, J. (2023). **Introduction to Modern Statistics (1st Ed)**. [https://openintro-ims.netlify.app/](https://openintro-ims.netlify.app/)
-
 :::
 
 <!-- FATTO IO MA LORO NON VEDONO -->

@@ -48,12 +48,12 @@ here::here()
 # (check the function documentation)
 ?fs::dir_create
 # here we will save input files
-fs::dir_create(here("practice", "data", "data_input"))
+fs::dir_create(here::here("practice", "data", "data_input"))
 # here we will save output files at the end
-fs::dir_create(here("practice", "data", "data_output")) 
+fs::dir_create(here::here("practice", "data", "data_output")) 
 
 ## --- [Then I remove, because I have them already]
-fs::dir_delete(here("practice", "data" ))
+fs::dir_delete(here::here("practice", "data" ))
 
 # _________---------------------------------------------------------------------
 # R OBJECTS, FUNCTIONS, PACKAGES -----------------------------------------------
@@ -70,8 +70,7 @@ autism_data_url <- read.csv(file = "https://raw.githubusercontent.com/Sydney-Inf
                                header = TRUE, # 1st line is the name of the variables
                                sep = ",", # which is the field separator character.
                                na.strings = c("?")  # specific values I want R to interpret as missing, i.s. NA
-                              
-) 
+                            ) 
 
 #### Option 2/2 from my folder (upon downloading)------------------------------- 
 # Check my working directory location

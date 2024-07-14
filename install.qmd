@@ -19,9 +19,9 @@ format:
     toc-title: ""
 ---
 
-::: {.callout-caution collapse="false"}
-Webpage construction in progress...
-:::
+<!-- ::: {.callout-caution collapse="false"} -->
+<!-- Webpage construction in progress... -->
+<!-- ::: -->
 
 This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language {{< fa brands r-project >}}. Each session of the workshop features exercises that will help you learn by doing. 
 
@@ -179,7 +179,13 @@ install.packages(pkg_list_lab_3)
 
 
 # ----  Installing (more) R pckgs for 4th LAB  
-pkg_list_lab_4 <- c("rsample" )
+pkg_list_lab_4 <- c("rsample",
+                    "MASS",
+                    "FactoMineR",
+                    "factoextra",
+                    "ggfortify",
+                    "scatterplot3d",
+                    "pwr" )
 
 install.packages(pkg_list_lab_4)
 ```
@@ -220,13 +226,14 @@ library(ggthemes)   # Extra Themes, Scales and Geoms for 'ggplot2'
 library(ggridges)   # Ridgeline Plots in 'ggplot2' (density functions)
 
 # --- Statistics
-library(BSDA)   
+library(BSDA)       # Basic Statistics and Data Analysis   
 library(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests
 library(car)        # Companion to Applied Regression
 library(multcomp)   # Simultaneous Inference in General Parametric Models 
 library(lmtest)     # Testing Linear Regression Models  
 library(broom)      # Convert Statistical Objects into Tidy Tibbles
 library(performance)# Assessment of Regression Models Performance 
+library(pwr)        # Basic Functions for Power Analysis
 ```
 
 
@@ -258,8 +265,8 @@ Congrats! You are all done! 🙌🏻
 #| echo: false
 #| output: true
 
-library(tibble)
-library(flextable)
+library(tibble) # Simple Data Frames
+library(flextable) # Functions for Tabular Reporting
 
 key_short <- tibble::tribble (
   ~Description, 	             ~'Windows & Linux',     ~'Mac', 
@@ -305,5 +312,6 @@ Here you find the complete list of [RStudio Keyboard Shortcuts](https://docs.pos
 <!--   - Install/Update TinyTeX for PDFs with `quarto install tool tinytex` -->
 
 <!--   - Install/Update Chromium with `quarto install tool chromium` -->
+
 
 

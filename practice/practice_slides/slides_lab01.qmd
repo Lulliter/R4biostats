@@ -271,13 +271,18 @@ fs::dir_delete(here("practice", "data"))
 
 ## Importing data into R workspace
 
-We are using real data provided by Thabtah,Fadi. (2017). Autism Screening Adult. UCI Machine Learning Repository. [https://doi.org/10.24432/C5F019](https://doi.org/10.24432/C5F019)
-<br><br>
 We use `utils::read.csv` to load a csv file
 
 ```{r}
 ?read.csv # to learn about function and arguments 
 ```
+
+
+# DATASETS FOR TODAY
+
+::: {style="font-size: 80%;"}
+We are using real data provided by Thabtah,Fadi. (2017). Autism Screening Adult. UCI Machine Learning Repository. [https://doi.org/10.24432/C5F019](https://doi.org/10.24432/C5F019)
+:::
 
 ## Option 1: Importing from a url
 
@@ -333,7 +338,7 @@ class(autism_data_file)
 base::colnames(autism_data_file)
 ```
 
-+ Notice the var name formatting inconsistency: `Class.ASD`
++ Notice the variable name formatting inconsistency: `Class.ASD`
 
 ## Manipulate / clean the dataframe
 
@@ -386,7 +391,7 @@ dim(autism_data)
 dim(autism_pids)
 ```
 
-## (optional) Clean up my workspace
+## (optional) Clean up workspace
 
 ```{r}
 # what do I have in the environment? 
@@ -719,7 +724,7 @@ twocond_dplyr_subset
 
 ## Input values where missing
 ::: {style="font-size: 90%;"} 
-⚠️ **`WARNING︎`: This is a very delicate & risky step** ⚠️  
+⚠️ **`WARNING︎`: This is a very delicate & substantial step** ⚠️  
 
 + any modified/imputed data (beyond the *original collection*) can affect subsequent analysis and statistical modeling 
 + it will be necessary to document and justify whichever approach is used to deal with missing data.
@@ -951,13 +956,19 @@ f_calc_mode(autism_pids$ethnicity)
 
 ## Variance and Standard deviation
 
-Recall that: <br>
-**Population Variance** $\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$ <br><br>
-**Sample Variance** $s^2 =\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
-<br><br>
-**Population Standard deviation** $\sigma = \sqrt{\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}}$ 
-<br><br>
-**Sample Standard deviation**  $s = \sqrt\frac{\sum{(x_i-\bar{x})^2}}{n-1}$  
+::: {style="font-size: 70%;"}
+
+
+**Population Variance** 
+$$\sigma^2 = \frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}$$  
+**Sample Variance** 
+$$s^2 =\frac{\sum{(x_i-\bar{x})^2}}{n-1}$$
+**Population Standard deviation** 
+$$\sigma = \sqrt{\frac{\displaystyle\sum_{i=1}^{n}(x_i - \mu)^2} {n}}$$ 
+**Sample Standard deviation**  
+$$s = \sqrt\frac{\sum{(x_i-\bar{x})^2}}{n-1}$$
+
+:::
 
 ## Variance and Standard deviation using `base` R
 
@@ -973,7 +984,7 @@ sd(autism_pids$age_inputed)
 
 # VISUAL DATA EXPLORATION
 
-## Introducing R package `ggplot2` for graphics
+## [Introducing R package `ggplot2` for graphics]{.r-fit-text}
 
 ::: {style="font-size: 90%;"}
 `ggplot2` provides a set of tools to map data to visual elements on a plot, to specify the kind of plot you want, and then subsequently to control the fine details of how it will be displayed. It basically allows to build a plot layer by layer (@fig-ggplot_lay).
@@ -990,7 +1001,7 @@ Additional (optional) pieces:
 
 :::
 
-## Plotting with ggplot2 (cont.)
+## [R package `ggplot2` for graphics (cont.)]{.r-fit-text}
 a layered approach!
 
 ![ggplot2 layers [Source: Mine Çetinkaya-Rundel' Data Viz class](https://vizdata.org/slides/03/03-wrangling-tidying-I.html#/todays-focus)](../../images/gglayers.png){#fig-ggplot_lay}

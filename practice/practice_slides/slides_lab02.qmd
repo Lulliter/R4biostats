@@ -96,7 +96,7 @@ library(multcomp)     # Simultaneous Inference in General Parametric Models
 
 # Plotting
 library(ggplot2)      # {tidyverse} tools for plotting
-library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  # 'ggplot2' Based Plots with Statistical Details 
+library(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  
 library(ggpubr)       # 'ggplot2' Based Publication Ready Plots 
 library(patchwork)    # Functions for ""Grid" Graphics"composing" plots 
 library(viridis)      # Colorblind-Friendly Color Maps for R 
@@ -104,29 +104,22 @@ library(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'
 ```
 
 
-## Our dataset for today 
 
+# DATASETS FOR TODAY
+
+::: {style="font-size: 80%;"}
 For the most part, we will refer to a real clinical dataset (for which a *Creative Commons license* was granted) discussed in two articles (also open access) :  
 
 + Ahmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). ***Survival analysis of heart failure patients: A case study***. PLOS ONE, 12(7), e0181001. [https://doi.org/10.1371/journal.pone.0181001](https://doi.org/10.1371/journal.pone.0181001)
 + Chicco, D., & Jurman, G. (2020). ***Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone***. BMC Medical Informatics and Decision Making, 20(1), 16. [https://doi.org/10.1186/s12911-020-1023-5](https://doi.org/10.1186/s12911-020-1023-5)
-
-Here is the link to the dataset (or download from workshop website)
-
-+ From the UC Irvine Machine Learning Repository [Heart Failure Clinical Records](https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records)
-
-<br><br>
- 
- 
-## Importing from your project folder (previously downloaded file)
-
-::: {.callout-tip}
-Make sure to match your own folder structure! 
 :::
 
-<br>
+## [Importing from project folder (previously downloaded file)]{.r-fit-text}
 
-+ The function `here` lets me specify the complete path of the destination folder
+You can access the dataset either:  
+
++ From the UC Irvine Machine Learning Repository [Heart Failure Clinical Records](https://archive.ics.uci.edu/dataset/519/heart+failure+clinical+records)
++ From the workshop website: use function `here` to specify the complete path of the input data folder
 
 ```{r}
 # Check my working directory location
@@ -142,19 +135,19 @@ heart_failure <- read.csv(file = here::here("practice", "data_input", "02_datase
 ```
  
 
+::: {.callout-tip}
+Make sure to match your own folder structure! 
+:::
+
 # INSPECTING THE "HEART FAILURE" DATASET
 
 ## [What are the variables and their levels of measurement?]{.r-fit-text}
 
 ::: {style="font-size: 70%;"}
-The data, containing the medical records of 299 heart failure patient, were collected at the Faisalabad Institute of Cardiology and at the Allied Hospital in Faisalabad (Punjab, Pakistan), during April–December 2015.  
-
-Table 1 from the second article [@chicco_machine_2020, p.3] offers a synthetic explanation of hte observed variables.
+The data, with medical records of **299 heart failure patient**, were collected at the Faisalabad Institute of Cardiology and at the Allied Hospital in Faisalabad (Punjab, Pakistan), during April–December 2015. See @tbl-heart_vars [@chicco_machine_2020, p.3].
 :::
 
-
-
-![](../../images/HEART_FAIL_vars.png) 
+![](../../images/HEART_FAIL_vars.png){#tbl-heart_vars} 
 
 
 ## Look into the dataset just loaded in the R environment
@@ -170,14 +163,14 @@ nrow(heart_failure)
 dim(heart_failure)
 ```
 
-## Inspect the dataframe structure (`base R`)
+## [Inspect the dataframe structure (`base R`)]{.r-fit-text}
 
 ```{r}
 # What does the dataframe look like?
 str(heart_failure)
 ```
 
-## Inspect the dataframe structure (`skimr`)
+## [Inspect the dataframe structure (`skimr`)]{.r-fit-text}
 
 Remember the `skimr` function `skim`?
 
@@ -201,7 +194,7 @@ Run `skimr::skim()` on your own either on the whole dataset or on any specific v
 
 + notice there are no (missing values) `NAs` in any of the variables
 
-## Recode some variables for later ease of analysis 
+## [Recode some variables for later ease of analysis]{.r-fit-text} 
 
 ::: {style="font-size: 85%;"}
 I may need some variables coded as `factor` (e.g. categorical variables for plotting), and, while I am at it, I can add clearer labels for the variables' levels. Here, we are:
@@ -1167,7 +1160,6 @@ Assumptions for the results of a one-way ANOVA to be valid:
 
 ## [Preliminary check for normality (visual)]{.r-stretch}
 
- 
 2. **Normally-distributed response variable**  ✅ 
 
   + (confirmed by visual inspection )
@@ -1198,7 +1190,7 @@ stats::shapiro.test(mice[mice$group == "Treatment 2", "surv_days", drop=TRUE])
 
 ## [Preliminary check for normality (test) with `rstatix::shapiro_test`]{.r-stretch}
 
-(same thing, but using a different R function)
+_(same thing, but using a different R function)_
 
 2. **Normally-distributed response variable** – ✅ 
   + (confirmed by Shapiro-Wilk normality test)

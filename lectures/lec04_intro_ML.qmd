@@ -21,13 +21,17 @@ tbl-colwidths: [5,20,75]
 
 ## Lecture 4 Outline
 
-+ Shifting the emphasis on **empirical prediction** 
-  + Distinction between supervised & **unsupervised** algorithms
-    + Unsupervised ML Example
-      + PCA 
-+ Useful R resources for metabolomics 
-  + Introduction to `MetaboAnalyst` software
-+ Elements of statistical power analysis
++ PCA
+  + An example of "unsupervised" ML algorithm 
+  
+<!-- + Shifting the emphasis on **empirical prediction**  -->
+<!--   + Distinction between supervised & **unsupervised** algorithms -->
+<!--     + Unsupervised ML Example -->
+<!--       + PCA  -->
++ Introduction to `MetaboAnalyst` software
+  + A useful R-based resources for metabolomics 
++ Elements of statistical Power Analysis
++ Workshop Conclusions
 
   <!-- + `metaboanalyst`  -->
   <!-- + `MetSizeR` -->
