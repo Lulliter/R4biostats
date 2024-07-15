@@ -107,6 +107,9 @@ In @fig-Rproj_cre you can see how easy it is just following RStudio prompts:
 -   Create a new directory for each project
 -   Select parent folder
 
+
+# R ENVIRONMENT SET UP & DATA 
+
 ## [Creating an R Project \[in Rstudio\] (cont.)]{.r-fit-text}
 
 ![Creating an R project](../../images/RProj_new_proj.png){#fig-Rproj_cre}
@@ -116,7 +119,7 @@ Notice that, now, in the `Files` tab you see file with the extension `.Rproj` wh
 ::: 
 
 ## Install R packages from CRAN (stable version)
-An **R  package* ** is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the `base` package), many useful R functions come in free libraries of code (or *packages*) written by R's users. You can find them in different repositories:
+An **R  package* ** is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the `base`, `stats`, `utils` packages), many useful R functions come in free libraries of code (or *packages*) written by R's users. You can find them in different repositories:
 
 To install a package use `utils` function `install.packages("package_name)`
 
@@ -190,7 +193,7 @@ paint::paint(mtcars)
 + We will also use the packages below (specifying `package::function` for clarity).
 
 ```{r}
-# Load them for this R session
+# Load pckgs for this R session
 library(fs)        # file/directory interactions
 library(here)      # tools find your project's files, based on working directory
 library(janitor)   # tools for examining and cleaning data

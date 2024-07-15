@@ -78,7 +78,7 @@ suppress-bibliography: true
 :::
 
 ```{r}
-# Load them for this R session
+# Load pckgs for this R session
 
 # General 
 library(fs)           # file/directory interactions

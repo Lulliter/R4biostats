@@ -90,7 +90,7 @@ The examples and code from this lab session follow very closely the open access 
 :::
 
 ```{r}
-# Load them for this R session
+# Load pckgs for this R session
 
 # -- General 
 library(fs)      # file/directory interactions
@@ -163,7 +163,6 @@ write.csv(famuss, file = here::here("practice", "data_input", "03_datasets",
 #                                        "colors.rds"))
 
 ```
-
  
 ## [Importing Dataset 1 (NHANES)]{.r-fit-text}
 

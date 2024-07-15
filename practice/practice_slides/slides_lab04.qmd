@@ -84,7 +84,7 @@ The examples and datasets in this Lab session follow very closely two sources:
 
 
 ```{r}
-# Load them for this R session
+# Load pckgs for this R session
 
 # --- General 
 library(here)     # tools find your project's files, based on working directory
@@ -125,25 +125,6 @@ In this tutorial, we will use:
 + a few clean datasets used in the "Core Statistics using R" course by: [Martin van Rongen](https://github.com/mvanrongen/corestats-in-r_tidyverse)
 
 :::
-
-
-<!-- OLD COCCA DATA -->
-```{r}
-#| eval: false
-#| echo: false
-#| output: false
-
-# Check my working directory location
-# here::here()
-
-# Use `here` in specifying all the subfolders AFTER the working directory 
-nmr <- read.csv(file = here::here("practice", "data_input", "04_datasets",
-                                      "nmr_bins_test_data_PCA_PLSDA.csv"), 
-                          header = TRUE, # 1st line is the name of the variables
-                          sep = ",", # which is the field separator character.
-                          na.strings = c("?","NA" ), # specific MISSING values  
-                          row.names = NULL) 
-```
 
 
 ## [Dataset on Breast Cancer Biopsy]{.r-fit-text}
@@ -197,7 +178,7 @@ nmr <- read.csv(file = here::here("practice", "data_input", "04_datasets",
 
 ```{r}
 # (after loading pckg)
-library(MASS) # Support Functions and Datasets for Venables and Ripley's MASS
+# library(MASS)  
 
 # I can call 
 utils::data(biopsy)
@@ -250,8 +231,9 @@ There is also one incomplete variable `V6`
 
   + remember the package `skimr` for exploring a dataframe?
 ```{r}
-# check vars with missing values
+# check if vars have missing values
 biopsy %>% 
+  # select only variables starting with "V"
   skimr::skim(starts_with("V")) %>%
   dplyr::select(skim_variable, 
                 n_missing)
@@ -263,9 +245,8 @@ biopsy %>%
 #| echo: false
 #| output: false
 
-
 # [or] check vars with missing values
-purrr::map (biopsy , skimr::n_missing  )
+purrr::map (biopsy, skimr::n_missing  )
 ```
 
 :::
@@ -287,8 +268,8 @@ We will:
 #### with `base` R (more compact)
 ```{r}
 #| eval: false
-#| 
-# new dataset 
+
+# new (manipulated) dataset 
 data_biopsy <- na.omit(biopsy[,-c(1,11)])
 ```
 :::
@@ -296,7 +277,7 @@ data_biopsy <- na.omit(biopsy[,-c(1,11)])
 ::: {.column width="50%"}
 #### with `dplyr` (more explicit)
 ```{r}
-# new dataset 
+# new (manipulated) dataset 
 data_biopsy <- biopsy %>% 
   # drop incomplete & non-integer columns
   dplyr::select(-ID, -class) %>% 
@@ -316,9 +297,7 @@ We obtained a new dataset with 9 variables and 683 observations (instead of the 
 str(data_biopsy)
 ```
 
-# ML: EXAMPLE of UNSUPERVISED ALGORITHM
-
-# PCA in R
+# PCA: EXAMPLE of UNSUPERVISED ML ALGORITHM
 
 Reducing high-dimensional data to a lower number of variables
 <!-- 1) PCA fatta a mano. -->
@@ -410,7 +389,7 @@ summary(biopsy_pca)$importance[3,]
 > Once you computed the PCA in R you must decide the number of components to retain based on the obtained results.
 
 
-# VISUALIZING OUTPUTS
+# VISUALIZING PCA OUTPUTS
 
 ## Scree plot
 
@@ -433,30 +412,33 @@ factoextra::fviz_eig(biopsy_pca,
 
 > Visualization is essential in the interpretation of PCA results. Based on the number of retained principal components, which is usually the first few, the observations expressed in component scores can be plotted in several ways.
 
-## [Principal Component `Scores` plot]{.r-fit-text}
+## [Principal Component `Scores`]{.r-fit-text}
 
 After a PCA, the observations are expressed as **principal component scores**.   
-It is also important to visualize the observations along the new axes (principal components) to interpret the relations in the dataset:
 
-1. We need to retrieve the principal component scores by calling `biopsy_pca$x`, and  store them in a data set called `PC_scores`.
+1. We can retrieve the principal component scores for each Variable by calling `biopsy_pca$x`, and  store them in a new dataframe `PC_scores`.
 2. Next we draw a `scatterplot` of the observations -- expressed in terms of principal components 
 
 ```{r}
 #| output-location: slide
 
+# Create new object with PC_scores
 PC_scores <- as.data.frame(biopsy_pca$x)
 head(PC_scores)
 ```
 
+It is also important to visualize the observations along the new axes (principal components) to interpret the relations in the dataset:
+
 ## [Principal Component `Scores` plot (adding label variable)]{.r-fit-text}
 
-3. In addition, if the data includes a factor variable, like in this case, it may be interesting to show the grouping on the plot as well.
+3. When data includes a factor variable, like in our case, it may be interesting to show the grouping on the plot as well.
 
   + In such cases, the label variable `class` can be added to the PC set as follows.
 
 ```{r}
+# retrieve class variable
 biopsy_no_na <- na.omit(biopsy)
-# adding grouping variable
+# adding class grouping variable to PC_scores
 PC_scores$Label <- biopsy_no_na$class
 ```
 
@@ -465,11 +447,15 @@ The visualization of the observation points (point cloud) could be in 2D or 3D.
 
 ## [Principal Component `Scores` plot (2D)]{.r-fit-text}
 
-The Scores Plot can be visualized via the ggplot2 package. The grouping is indicated by the color argument (Label); the geom_point() is used to plot the point cloud.
+The Scores Plot can be visualized via the `ggplot2` package. 
+
++ grouping is indicated by argument the `color = Label`; 
++ `geom_point()` is used for the point cloud.
 
 
 ```{r}
 #| output-location: slide
+#| fig-cap: "Figure 1 shows the observations projected into the new data space made up of principal components"
 
 ggplot(PC_scores, 
        aes(x = PC1, 
@@ -481,7 +467,7 @@ ggplot(PC_scores,
   theme_bw()
 ```
 
-Figure 1 shows the observations projected into the new data space made up of principal components
+
 
 ## [Principal Component `Scores` (2D Ellipse Plot)]{.r-fit-text}
 
@@ -493,6 +479,7 @@ Confidence ellipses can also be added to a grouped scatter plot visualized after
 
 ```{r}
 #| output-location: slide
+#| fig-cap: "Figure 2 shows the observations projected into the new data space made up of principal components, with 95% confidence regions displayed." 
 
 ggplot(PC_scores, 
        aes(x = PC1, 
@@ -505,18 +492,20 @@ ggplot(PC_scores,
   theme_bw()
 ```
 
-Figure 2 shows the observations projected into the new data space made up of principal components, with 95% confidence regions displayed. 
+
 
 ## [Principal Component `Scores` plot (3D)]{.r-fit-text}
 
 ::: {style="font-size: 80%;"}
-A 3D scatterplot of observations shows the first three principal components’ scores. 
+A 3D scatterplot of observations shows the first **3 principal components’ scores**. 
 
-+ We use the `scatterplot3d()` function of the `scatterplot3d` package, with the color argument assigned to the Label variable
-+ To add a legend, we  use the `legend()` function and specify its coordinates via the `xyz.convert()` function.
++ For this one, we need the `scatterplot3d()` function of the `scatterplot3d` package;
++ The color argument assigned to the Label variable;
++ To add a legend, we use the `legend()` function and specify its coordinates via the `xyz.convert()` function.
 
 ```{r}
 #| output-location: slide
+#| fig-cap: "Figure 3 shows the observations projected into the new 3D data space made up of principal components." 
 
 # 3D scatterplot ...
 plot_3d <- with(PC_scores, 
@@ -539,16 +528,17 @@ legend(plot_3d$xyz.convert(0.5, 0.7, 0.5),
        col = seq_along(levels(PC_scores$Label)))
 ```
 
-Figure 3 shows the observations projected into the new 3D data space made up of principal components.
+
 :::
 
 ## [Biplot: principal components v. original variables]{.r-fit-text}
 
-Next, we use another special type of scatterplot (a **biplot**) to understand the relationship between the principal components and the original variables. 
+Next, we create another special type of scatterplot (a **biplot**) to understand the relationship between the principal components and the original variables.  
+In the `biplot` each of the observations is projected onto a scatterplot that uses the ***first and second principal components as the axes***.
 
-+ For this we have the `fviz_pca_biplot()` function from the `factoextra` package 
-+ We will specify the color for the variables, or rather, for the "loading vectors"
-+ The `habillage` argument allows to highlight with color the grouping by `class`
++ For this plot, we use the `fviz_pca_biplot()` function from the `factoextra` package 
+  + We will specify the color for the variables, or rather, for the "loading vectors"
+  + The `habillage` argument allows to highlight with color the grouping by `class`
 
 ```{r}
 #| output-location: slide
@@ -563,14 +553,13 @@ factoextra::fviz_pca_biplot(biopsy_pca,
 
 ## Interpreting biplot output
 ::: {style="font-size: 95%;"}
-Biplots have two components: **scores** and **loading vectors**. 
-As in the scores plot each point represents a sample in the space of principal components.
+Biplots have two key elements: **scores** (the 2 axes) and **loadings** (the vectors). 
+As in the scores plot, each point represents an observation projected in the space of principal components where:
 
-+ Biopsies of the same class are located closer to each other, which indicates that they have similar principal component scores. 
++ Biopsies of the same class are located closer to each other, which indicates that they have similar **scores**  referred to the 2 main principal components; 
++ The **loading vectors** show strength and direction of association of original variables with new PC variables.
 
-+ The loading vectors represent the original variables in the space of principal components. As expected from PCA, the single `PC1` accounts for variance in almost all original variables, while `V9` has the major projection along `PC2`.
-
-+ The loading vectors represent strength and direction of association of original variables with new PC variables.
+> As expected from PCA, the single `PC1` accounts for variance in almost all original variables, while `V9` has the major projection along `PC2`.
 
 :::
 
@@ -624,11 +613,34 @@ loadings[ ,1:2]
 <!--   + each test ends with power analsyis  -->
 
 
-# SAMPLE SIZE DETERMINATION IN INFERENTIAL STATISTICS 
+# POWER ANALYSIS 
+
+
+<br>
+
+::: {style="font-size: 80%;"}
+In this section, we will use: 
+
++ the *NHANES* clinical data, we already analysed in Lab # 3 
++ a few, tidy *"fish-related"* datasets 🍥🦑 🐠 🍤 🎏  that we will load on the go
+  + Source: the materials of the "Core Statistics using R" by: [Martin van Rongen](https://github.com/mvanrongen/corestats-in-r_tidyverse)
+
+:::
+
+
+
+
+## Sample Size determination in Inferential statistics 
+
+<br><br>
 
 ::: {.r-fit-text}
-> *"OK, but how big of a sample do I need?* 
-> ...the 1,000,000 $ question"!* 🙀
+::: {style="font-size: 80%;"}
+
+> *"OK, so how big of a sample do I need?"* <br><br>
+> ...the 1,000,000 $ question"! 🙀
+
+:::
 :::
 
 <!-- http://www.biostathandbook.com/power.html -->
@@ -720,12 +732,12 @@ GOAL: Imagine this is a *pilot study*, in which we tested fish is (on average) d
 The `guanapo_data` dataset contains information on fish lengths from the Guanapo river pilot
 
 ```{r}
-# Load data 
+# Load data on river fish length 
 fishlength_data <- readr::read_csv(here::here("practice", "data_input", "04_datasets", 
                                               "fishlength.csv"),
                               show_col_types = FALSE)
 
-# Select a portion of the (pilot) data
+# Select a portion of the data (i.e. out "pilot" experiment) 
 guanapo_data <- fishlength_data %>% 
   dplyr::filter(river == "Guanapo")
 
@@ -742,9 +754,9 @@ sd_sample
 ::: {style="font-size: 85%;"}
 Let's compute the one sample t-test with `stats::t.test` against a hypothetical average fish length ($mean\_H_o = 20$ )
 ```{r}
-# Hypothetical length mean H0
+# Hypothetical fish population length mean (H0)
 mean_H0 <- 20
-
+# one-sample mean t-test 
 t_stat <- stats::t.test(x = guanapo_data$length,
                         mu = mean_H0,
                         alternative = "two.sided")
@@ -866,7 +878,7 @@ pwr::pwr.t.test(d = 0.94, power = 0.8, sig.level = 0.05,
  
 > The `n` output ( = **19 observations per group**) -as opposed to 39 + 29- would be sufficient if we wanted to confidently detect the difference observed in the previous study  
 
-## [Two Paired Samples t-test: EXE data]{.r-fit-text}
+## [Two Paired Samples: EXE data]{.r-fit-text}
 ::: {style="font-size: 85%;"}
 The `cortisol_data` dataset contains information about cortisol levels measured on 20 participants in the morning and evening
 
@@ -928,7 +940,7 @@ pwr::pwr.t.test(n = 20,
 
 :::
 
-## [Two Paired Samples t-test: EXAMPLE cont.]{.r-fit-text}
+## [Two Paired Samples t-test: POWER ANALYSIS on given `n`]{.r-fit-text}
 
 Looking instead at the **actual sample data**, what would be the observed effect size?
 
@@ -943,7 +955,7 @@ d
 
 The obtained `d` (-1.16) is extremely large, so ***we likely have more participants in this study than actually needed*** given such a large effect. 
 
-## [Two Paired Samples t-test: POWER ANALYSIS (`n`)]{.r-fit-text}
+## [Two Paired Samples t-test: POWER ANALYSIS gives sufficient `n`]{.r-fit-text}
 
 Let's re-compute the power analysis, but leave `n` as the unknown quantity, given the effect size (`d`) we have observed  
 ```{r}
@@ -956,9 +968,7 @@ pwr::pwr.t.test(# n = 20,
 
 ```
 
-> As a matter of fact, would have only needed ` n = 8` pairs of observations in this study, given the size of effect we were trying to detect.
-
-
+> As a matter of fact, ` n = 8` pairs of observations would have sufficed in this study, given the size of effect we were trying to detect.
 
 
 ## [One-way ANOVA test: EXE data]{.r-fit-text}
@@ -1121,8 +1131,6 @@ $$ f^2=\ \frac{R^2}{1-\ R^2}$$
 # define the linear model
 lm_mussels <- lm(length ~ location, 
                  data = mussels_data)
-
-
 ```
 
 ```{r}
@@ -1139,8 +1147,11 @@ summary(lm_mussels)
 From the linear model we get that the $R^2$ value is 0.4559 and we can use this to calculate Cohen’s $f^2$ value using the formula 
 
 ```{r}
-f2 <- 0.4559 / (1 - 0.4559)
-f2
+# Extract R squared
+R_2 <- summary(lm_mussels)$r.squared
+# compute f squared
+f_2 <- R_2 / (1 - R_2)
+f_2
 ```
 
 Our model has 5 parameters (because we have 5 groups) and so the numerator degrees of freedom $u$ will be 4 (5−1=4). 
@@ -1148,7 +1159,7 @@ Our model has 5 parameters (because we have 5 groups) and so the numerator degre
 Hence, we carry out the power analysis with the function `pwr.f2.test`:
 
 ```{r}
-#| eval: false
+# power analysis for overall linear model 
 pwr::pwr.f2.test(u = 4, v = NULL, 
                  f2 = 0.8378974,
                  sig.level = 0.05 , power = 0.8)
@@ -1156,7 +1167,7 @@ pwr::pwr.f2.test(u = 4, v = NULL,
 
 :::
 
-## [Linear Regression with grouped data: POWER ANALYSIS interpret]{.r-fit-text}
+## [Linear Regression with grouped data: POWER ANALYSIS interpret.]{.r-fit-text}
 ::: {style="font-size: 90%;"}
 
 Recall that, in the F statistic evaluating the model, 
@@ -1164,6 +1175,7 @@ Recall that, in the F statistic evaluating the model,
 + **u** the df for the numerator: $df_{between} =k−1 = 5-1 = 4$ 
 + **v** the df for the denominator: $df_{within} = n-k = ?$ 
   + so $n = v+5$ 
+
 ```{r}
 pwr::pwr.f2.test(u = 4, f2 = 0.8378974,
             sig.level = 0.05 , power = 0.8)
@@ -1302,12 +1314,16 @@ nhanes <- read.csv(file = here::here("practice", "data_input", "03_datasets",
   <!-- So, when you evaluate your model on data that *it was not trained on*, you get a better estimate of how it will perform on new data. -->
 
 ```{r}
+# ensure we always get the same result when sampling (for convenience )
+set.seed(12345)
+
 nhanes_split <- nhanes %>%
   # define the training proportion as 75%
   rsample::initial_split(prop = 0.75,
   # ensuring both sets are balanced in gender
                          strata = Gender)
 
+# resulting datasets
 nhanes_train <- rsample::training(nhanes_split)
 dim(nhanes_train)
 nhanes_test <- rsample::testing(nhanes_split)
@@ -1343,7 +1359,6 @@ pred_bmi <- stats::predict(lin_mod,
                newdata = nhanes_test,
                interval = "confidence" )
 head(pred_bmi)
-
 ```
 
 :::
@@ -1374,24 +1389,23 @@ A common measure used is the `RMSE (Root Mean Square Error)` = a measure of the 
 
 ```{r}
 # Computing the Root Mean Square Error
-
 RMSE_test <- sqrt(mean((nhanes_test$BMI - predict(lin_mod, nhanes_test))^2, na.rm = T))
-RMSE_test # 6.579572
+RMSE_test # 6.170518
 ```
 
-> The RMSE (= 6.579572) tells us, (roughly speaking) by how much, on average, the new observed BMI values differ from those predicted by our model
+> The RMSE (= 6.170518) tells us, (roughly speaking) by how much, on average, the new observed BMI values differ from those predicted by our model
 :::
 
 
-## [... and what about in trainig data?]{.r-fit-text}
+## [... and what about RMSE in training data?]{.r-fit-text}
 Let's see the RMSE in the training dataset (for comparison)
 
 ```{r}
 RMSE_train <- sqrt(mean((nhanes_train$BMI - predict(lin_mod, nhanes_train))^2, na.rm = T))
-RMSE_train # 6.736376
+RMSE_train # 6.866044
 
 # R squared is also quite low 
-summary(lin_mod)$r.squared     # R^2 0.03374094
+summary(lin_mod)$r.squared     # R^2 0.0341589
 ```
 
 > This is not what expected 🤔, since RMSE on the training data is sliglthly bigger that in the testing data! 

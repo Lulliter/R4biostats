@@ -11,7 +11,7 @@
     "href": "practice/practice_slides/slides_lab04.html#needed-r-packages",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe may also use the packages below (specifying package::function for clarity).\n\n\n# Load them for this R session\n\n# --- General \nlibrary(here)     # tools find your project's files, based on working directory\nlibrary(dplyr)    # A Grammar of Data Manipulation\nlibrary(skimr)    # Compact and Flexible Summaries of Data\nlibrary(magrittr) # A Forward-Pipe Operator for R \nlibrary(readr)    # A Forward-Pipe Operator for R \n\n# Plotting & data visualization\nlibrary(ggplot2)      # Create Elegant Data Visualisations Using the Grammar of Graphics\nlibrary(ggfortify)     # Data Visualization Tools for Statistical Analysis Results\nlibrary(scatterplot3d) # 3D Scatter Plot\n\n# --- Statistics\nlibrary(MASS)       # Support Functions and Datasets for Venables and Ripley's MASS\nlibrary(factoextra) # Extract and Visualize the Results of Multivariate Data Analyses\nlibrary(FactoMineR) # Multivariate Exploratory Data Analysis and Data Mining\nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\n\n# --- Tidymodels (meta package)\nlibrary(rsample)    # General Resampling Infrastructure  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe may also use the packages below (specifying package::function for clarity).\n\n\n# Load pckgs for this R session\n\n# --- General \nlibrary(here)     # tools find your project's files, based on working directory\nlibrary(dplyr)    # A Grammar of Data Manipulation\nlibrary(skimr)    # Compact and Flexible Summaries of Data\nlibrary(magrittr) # A Forward-Pipe Operator for R \nlibrary(readr)    # A Forward-Pipe Operator for R \n\n# Plotting & data visualization\nlibrary(ggplot2)      # Create Elegant Data Visualisations Using the Grammar of Graphics\nlibrary(ggfortify)     # Data Visualization Tools for Statistical Analysis Results\nlibrary(scatterplot3d) # 3D Scatter Plot\n\n# --- Statistics\nlibrary(MASS)       # Support Functions and Datasets for Venables and Ripley's MASS\nlibrary(factoextra) # Extract and Visualize the Results of Multivariate Data Analyses\nlibrary(FactoMineR) # Multivariate Exploratory Data Analysis and Data Mining\nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\n\n# --- Tidymodels (meta package)\nlibrary(rsample)    # General Resampling Infrastructure  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#dataset-on-breast-cancer-biopsy",
@@ -25,7 +25,7 @@
     "href": "practice/practice_slides/slides_lab04.html#importing-dataset-biopsy",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Importing Dataset biopsy",
-    "text": "Importing Dataset biopsy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe data can be interactively obtained form the MASS R package\n\n\n# (after loading pckg)\nlibrary(MASS) # Support Functions and Datasets for Venables and Ripley's MASS\n\n# I can call \nutils::data(biopsy)"
+    "text": "Importing Dataset biopsy\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe data can be interactively obtained form the MASS R package\n\n\n# (after loading pckg)\n# library(MASS)  \n\n# I can call \nutils::data(biopsy)"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#biopsy-variables-with-description",
@@ -46,14 +46,14 @@
     "href": "practice/practice_slides/slides_lab04.html#biopsy-variables-exploration-22",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "biopsy variables exploration 2/2",
-    "text": "biopsy variables exploration 2/2\n\nThere is also one incomplete variable V6\n\nremember the package skimr for exploring a dataframe?\n\n\n# check vars with missing values\nbiopsy %&gt;% \n  skimr::skim(starts_with(\"V\")) %&gt;%\n  dplyr::select(skim_variable, \n                n_missing)\n\n# A tibble: 9 × 2\n  skim_variable n_missing\n  &lt;chr&gt;             &lt;int&gt;\n1 V1                    0\n2 V2                    0\n3 V3                    0\n4 V4                    0\n5 V5                    0\n6 V6                   16\n7 V7                    0\n8 V8                    0\n9 V9                    0"
+    "text": "biopsy variables exploration 2/2\n\nThere is also one incomplete variable V6\n\nremember the package skimr for exploring a dataframe?\n\n\n# check if vars have missing values\nbiopsy %&gt;% \n  # select only variables starting with \"V\"\n  skimr::skim(starts_with(\"V\")) %&gt;%\n  dplyr::select(skim_variable, \n                n_missing)\n\n# A tibble: 9 × 2\n  skim_variable n_missing\n  &lt;chr&gt;             &lt;int&gt;\n1 V1                    0\n2 V2                    0\n3 V3                    0\n4 V4                    0\n5 V5                    0\n6 V6                   16\n7 V7                    0\n8 V8                    0\n9 V9                    0"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#biopsy-dataset-manipulation",
     "href": "practice/practice_slides/slides_lab04.html#biopsy-dataset-manipulation",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "biopsy dataset manipulation",
-    "text": "biopsy dataset manipulation\nWe will:\n\nexclude the non-numerical variables (ID and class) before conducting the PCA.\nexclude the individuals with missing values using the na.omit() or filter(complete.cases() functions.\nWe can do both in 2 equivalent ways:\n\n\n\n\nwith base R (more compact)\n\n# new dataset \ndata_biopsy &lt;- na.omit(biopsy[,-c(1,11)])\n\n\nwith dplyr (more explicit)\n\n# new dataset \ndata_biopsy &lt;- biopsy %&gt;% \n  # drop incomplete & non-integer columns\n  dplyr::select(-ID, -class) %&gt;% \n  # drop incomplete observations (rows)\n  dplyr::filter(complete.cases(.))"
+    "text": "biopsy dataset manipulation\nWe will:\n\nexclude the non-numerical variables (ID and class) before conducting the PCA.\nexclude the individuals with missing values using the na.omit() or filter(complete.cases() functions.\nWe can do both in 2 equivalent ways:\n\n\n\n\nwith base R (more compact)\n\n# new (manipulated) dataset \ndata_biopsy &lt;- na.omit(biopsy[,-c(1,11)])\n\n\nwith dplyr (more explicit)\n\n# new (manipulated) dataset \ndata_biopsy &lt;- biopsy %&gt;% \n  # drop incomplete & non-integer columns\n  dplyr::select(-ID, -class) %&gt;% \n  # drop incomplete observations (rows)\n  dplyr::filter(complete.cases(.))"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#biopsy-dataset-manipulation-1",
@@ -112,74 +112,74 @@
     "text": "Scree plot\n\n\nThe obtained scree plot simply visualizes the output of summary(biopsy_pca)."
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot",
-    "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot",
+    "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores",
+    "href": "practice/practice_slides/slides_lab04.html#principal-component-scores",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Principal Component Scores plot",
-    "text": "Principal Component Scores plot\nAfter a PCA, the observations are expressed as principal component scores.\nIt is also important to visualize the observations along the new axes (principal components) to interpret the relations in the dataset:\n\nWe need to retrieve the principal component scores by calling biopsy_pca$x, and store them in a data set called PC_scores.\nNext we draw a scatterplot of the observations – expressed in terms of principal components\n\n\nPC_scores &lt;- as.data.frame(biopsy_pca$x)\nhead(PC_scores)"
+    "section": "Principal Component Scores",
+    "text": "Principal Component Scores\nAfter a PCA, the observations are expressed as principal component scores.\n\nWe can retrieve the principal component scores for each Variable by calling biopsy_pca$x, and store them in a new dataframe PC_scores.\nNext we draw a scatterplot of the observations – expressed in terms of principal components\n\n\n# Create new object with PC_scores\nPC_scores &lt;- as.data.frame(biopsy_pca$x)\nhead(PC_scores)\n\n\nIt is also important to visualize the observations along the new axes (principal components) to interpret the relations in the dataset:"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-output",
-    "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-output",
+    "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-output",
+    "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-output",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Principal Component Scores plot",
-    "text": "Principal Component Scores plot\n\n        PC1         PC2         PC3         PC4         PC5         PC6\n1  1.469095 -0.10419679  0.56527102 -0.03193593  0.15088743 -0.05997679\n2 -1.440990 -0.56972390 -0.23642767 -0.47779958 -1.64188188  0.48268150\n3  1.591311 -0.07606412 -0.04882192 -0.09232038  0.05969539  0.27916615\n4 -1.478728 -0.52806481  0.60260642  1.40979365  0.56032669 -0.06298211\n5  1.343877 -0.09065261 -0.02997533 -0.33803588  0.10874960 -0.43105416\n6 -5.010654 -1.53379305 -0.46067165  0.29517264 -0.39155544 -0.11527442\n         PC7        PC8          PC9\n1 -0.3491471  0.4200360  0.005687222\n2  1.1150819  0.3792992 -0.023409926\n3 -0.2325697  0.2096465 -0.013361828\n4  0.2109599 -1.6059184 -0.182642900\n5 -0.2596714  0.4463277  0.038791241\n6 -0.3842529 -0.1489917  0.042953075"
+    "section": "Principal Component Scores",
+    "text": "Principal Component Scores\n\n        PC1         PC2         PC3         PC4         PC5         PC6\n1  1.469095 -0.10419679  0.56527102 -0.03193593  0.15088743 -0.05997679\n2 -1.440990 -0.56972390 -0.23642767 -0.47779958 -1.64188188  0.48268150\n3  1.591311 -0.07606412 -0.04882192 -0.09232038  0.05969539  0.27916615\n4 -1.478728 -0.52806481  0.60260642  1.40979365  0.56032669 -0.06298211\n5  1.343877 -0.09065261 -0.02997533 -0.33803588  0.10874960 -0.43105416\n6 -5.010654 -1.53379305 -0.46067165  0.29517264 -0.39155544 -0.11527442\n         PC7        PC8          PC9\n1 -0.3491471  0.4200360  0.005687222\n2  1.1150819  0.3792992 -0.023409926\n3 -0.2325697  0.2096465 -0.013361828\n4  0.2109599 -1.6059184 -0.182642900\n5 -0.2596714  0.4463277  0.038791241\n6 -0.3842529 -0.1489917  0.042953075"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-adding-label-variable",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-adding-label-variable",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores plot (adding label variable)",
-    "text": "Principal Component Scores plot (adding label variable)\n\nIn addition, if the data includes a factor variable, like in this case, it may be interesting to show the grouping on the plot as well.\n\n\nIn such cases, the label variable class can be added to the PC set as follows.\n\n\nbiopsy_no_na &lt;- na.omit(biopsy)\n# adding grouping variable\nPC_scores$Label &lt;- biopsy_no_na$class\n\n The visualization of the observation points (point cloud) could be in 2D or 3D."
+    "text": "Principal Component Scores plot (adding label variable)\n\nWhen data includes a factor variable, like in our case, it may be interesting to show the grouping on the plot as well.\n\n\nIn such cases, the label variable class can be added to the PC set as follows.\n\n\n# retrieve class variable\nbiopsy_no_na &lt;- na.omit(biopsy)\n# adding class grouping variable to PC_scores\nPC_scores$Label &lt;- biopsy_no_na$class\n\n The visualization of the observation points (point cloud) could be in 2D or 3D."
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-2d",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-2d",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores plot (2D)",
-    "text": "Principal Component Scores plot (2D)\nThe Scores Plot can be visualized via the ggplot2 package. The grouping is indicated by the color argument (Label); the geom_point() is used to plot the point cloud.\n\nggplot(PC_scores, \n       aes(x = PC1, \n           y = PC2, \n           color = Label)) +\n  geom_point() +\n  scale_color_manual(values=c(\"#245048\", \"#CC0066\")) +\n  ggtitle(\"Figure 1: Scores Plot\") +\n  theme_bw()\n\n\nFigure 1 shows the observations projected into the new data space made up of principal components"
+    "text": "Principal Component Scores plot (2D)\nThe Scores Plot can be visualized via the ggplot2 package.\n\ngrouping is indicated by argument the color = Label;\n\ngeom_point() is used for the point cloud.\n\n\nggplot(PC_scores, \n       aes(x = PC1, \n           y = PC2, \n           color = Label)) +\n  geom_point() +\n  scale_color_manual(values=c(\"#245048\", \"#CC0066\")) +\n  ggtitle(\"Figure 1: Scores Plot\") +\n  theme_bw()"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-2d-output",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-2d-output",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores plot (2D)",
-    "text": "Principal Component Scores plot (2D)"
+    "text": "Principal Component Scores plot (2D)\n\n\nFigure 1 shows the observations projected into the new data space made up of principal components"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-2d-ellipse-plot",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-2d-ellipse-plot",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores (2D Ellipse Plot)",
-    "text": "Principal Component Scores (2D Ellipse Plot)\nConfidence ellipses can also be added to a grouped scatter plot visualized after a PCA. We use the ggplot2 package.\n\ngrouping is indicated by argument the color = Label;\n\ngeom_point() is used for the point cloud;\nthe stat_ellipse() function is called to add the ellipses per biopsy group.\n\n\nggplot(PC_scores, \n       aes(x = PC1, \n           y = PC2, \n           color = Label)) +\n  geom_point() +\n  scale_color_manual(values=c(\"#245048\", \"#CC0066\")) +\n  stat_ellipse() + \n  ggtitle(\"Figure 2: Ellipse Plot\") +\n  theme_bw()\n\n\nFigure 2 shows the observations projected into the new data space made up of principal components, with 95% confidence regions displayed."
+    "text": "Principal Component Scores (2D Ellipse Plot)\nConfidence ellipses can also be added to a grouped scatter plot visualized after a PCA. We use the ggplot2 package.\n\ngrouping is indicated by argument the color = Label;\n\ngeom_point() is used for the point cloud;\nthe stat_ellipse() function is called to add the ellipses per biopsy group.\n\n\nggplot(PC_scores, \n       aes(x = PC1, \n           y = PC2, \n           color = Label)) +\n  geom_point() +\n  scale_color_manual(values=c(\"#245048\", \"#CC0066\")) +\n  stat_ellipse() + \n  ggtitle(\"Figure 2: Ellipse Plot\") +\n  theme_bw()"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-2d-ellipse-plot-output",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-2d-ellipse-plot-output",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores (2D Ellipse Plot)",
-    "text": "Principal Component Scores (2D Ellipse Plot)"
+    "text": "Principal Component Scores (2D Ellipse Plot)\n\n\nFigure 2 shows the observations projected into the new data space made up of principal components, with 95% confidence regions displayed."
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-3d",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-3d",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores plot (3D)",
-    "text": "Principal Component Scores plot (3D)\n\nA 3D scatterplot of observations shows the first three principal components’ scores.\n\nWe use the scatterplot3d() function of the scatterplot3d package, with the color argument assigned to the Label variable\nTo add a legend, we use the legend() function and specify its coordinates via the xyz.convert() function.\n\n\n# 3D scatterplot ...\nplot_3d &lt;- with(PC_scores, \n                scatterplot3d::scatterplot3d(PC_scores$PC1, \n                                             PC_scores$PC2, \n                                             PC_scores$PC3, \n                                             color = as.numeric(Label), \n                                             pch = 19, \n                                             main =\"Figure 3: 3D Scatter Plot\", \n                                             xlab=\"PC1\",\n                                             ylab=\"PC2\",\n                                             zlab=\"PC3\"))\n\n# ... + legend\nlegend(plot_3d$xyz.convert(0.5, 0.7, 0.5), \n       pch = 19, \n       yjust=-0.6,\n       xjust=-0.9,\n       legend = levels(PC_scores$Label), \n       col = seq_along(levels(PC_scores$Label)))\n\n\nFigure 3 shows the observations projected into the new 3D data space made up of principal components."
+    "text": "Principal Component Scores plot (3D)\n\nA 3D scatterplot of observations shows the first 3 principal components’ scores.\n\nFor this one, we need the scatterplot3d() function of the scatterplot3d package;\nThe color argument assigned to the Label variable;\nTo add a legend, we use the legend() function and specify its coordinates via the xyz.convert() function.\n\n\n# 3D scatterplot ...\nplot_3d &lt;- with(PC_scores, \n                scatterplot3d::scatterplot3d(PC_scores$PC1, \n                                             PC_scores$PC2, \n                                             PC_scores$PC3, \n                                             color = as.numeric(Label), \n                                             pch = 19, \n                                             main =\"Figure 3: 3D Scatter Plot\", \n                                             xlab=\"PC1\",\n                                             ylab=\"PC2\",\n                                             zlab=\"PC3\"))\n\n# ... + legend\nlegend(plot_3d$xyz.convert(0.5, 0.7, 0.5), \n       pch = 19, \n       yjust=-0.6,\n       xjust=-0.9,\n       legend = levels(PC_scores$Label), \n       col = seq_along(levels(PC_scores$Label)))"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-3d-output",
     "href": "practice/practice_slides/slides_lab04.html#principal-component-scores-plot-3d-output",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Principal Component Scores plot (3D)",
-    "text": "Principal Component Scores plot (3D)"
+    "text": "Principal Component Scores plot (3D)\n\n\nFigure 3 shows the observations projected into the new 3D data space made up of principal components."
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#biplot-principal-components-v.-original-variables",
     "href": "practice/practice_slides/slides_lab04.html#biplot-principal-components-v.-original-variables",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Biplot: principal components v. original variables",
-    "text": "Biplot: principal components v. original variables\nNext, we use another special type of scatterplot (a biplot) to understand the relationship between the principal components and the original variables.\n\nFor this we have the fviz_pca_biplot() function from the factoextra package\nWe will specify the color for the variables, or rather, for the “loading vectors”\nThe habillage argument allows to highlight with color the grouping by class\n\n\n\nfactoextra::fviz_pca_biplot(biopsy_pca, \n                repel = TRUE,\n                col.var = \"black\",\n                habillage = biopsy_no_na$class,\n                title = \"Figure 4: Biplot\", geom=\"point\")"
+    "text": "Biplot: principal components v. original variables\nNext, we create another special type of scatterplot (a biplot) to understand the relationship between the principal components and the original variables.\nIn the biplot each of the observations is projected onto a scatterplot that uses the first and second principal components as the axes.\n\nFor this plot, we use the fviz_pca_biplot() function from the factoextra package\n\nWe will specify the color for the variables, or rather, for the “loading vectors”\nThe habillage argument allows to highlight with color the grouping by class\n\n\n\n\n\nfactoextra::fviz_pca_biplot(biopsy_pca, \n                repel = TRUE,\n                col.var = \"black\",\n                habillage = biopsy_no_na$class,\n                title = \"Figure 4: Biplot\", geom=\"point\")"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#biplot-principal-components-v.-original-variables-output",
@@ -193,7 +193,7 @@
     "href": "practice/practice_slides/slides_lab04.html#interpreting-biplot-output",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Interpreting biplot output",
-    "text": "Interpreting biplot output\n\nBiplots have two components: scores and loading vectors. As in the scores plot each point represents a sample in the space of principal components.\n\nBiopsies of the same class are located closer to each other, which indicates that they have similar principal component scores.\nThe loading vectors represent the original variables in the space of principal components. As expected from PCA, the single PC1 accounts for variance in almost all original variables, while V9 has the major projection along PC2.\nThe loading vectors represent strength and direction of association of original variables with new PC variables."
+    "text": "Interpreting biplot output\n\nBiplots have two key elements: scores (the 2 axes) and loadings (the vectors). As in the scores plot, each point represents an observation projected in the space of principal components where:\n\nBiopsies of the same class are located closer to each other, which indicates that they have similar scores referred to the 2 main principal components;\nThe loading vectors show strength and direction of association of original variables with new PC variables.\n\n\nAs expected from PCA, the single PC1 accounts for variance in almost all original variables, while V9 has the major projection along PC2."
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#interpreting-biplot-output-cont.",
@@ -201,6 +201,13 @@
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Interpreting biplot output (cont.)",
     "text": "Interpreting biplot output (cont.)\n\nscores &lt;- biopsy_pca$x\n\nloadings &lt;- biopsy_pca$rotation\n# excerpt of first 2 components\nloadings[ ,1:2] \n\n          PC1         PC2\nV1 -0.3020626 -0.14080053\nV2 -0.3807930 -0.04664031\nV3 -0.3775825 -0.08242247\nV4 -0.3327236 -0.05209438\nV5 -0.3362340  0.16440439\nV6 -0.3350675 -0.26126062\nV7 -0.3457474 -0.22807676\nV8 -0.3355914  0.03396582\nV9 -0.2302064  0.90555729"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_lab04.html#sample-size-determination-in-inferential-statistics",
+    "href": "practice/practice_slides/slides_lab04.html#sample-size-determination-in-inferential-statistics",
+    "title": "Lab 4: Intro to Machine Learning",
+    "section": "Sample Size determination in Inferential statistics",
+    "text": "Sample Size determination in Inferential statistics\n\n\n\n\n“OK, so how big of a sample do I need?”  …the 1,000,000 $ question”! 🙀"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#purpose-and-challenges-of-power-analysis",
@@ -242,14 +249,14 @@
     "href": "practice/practice_slides/slides_lab04.html#one-sample-mean-exe-data",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "One Sample Mean: EXE data",
-    "text": "One Sample Mean: EXE data\n\n\nGOAL: Imagine this is a pilot study, in which we tested fish is (on average) different form 20 cm in length.\nThe guanapo_data dataset contains information on fish lengths from the Guanapo river pilot\n\n# Load data \nfishlength_data &lt;- readr::read_csv(here::here(\"practice\", \"data_input\", \"04_datasets\", \n                                              \"fishlength.csv\"),\n                              show_col_types = FALSE)\n\n# Select a portion of the (pilot) data\nguanapo_data &lt;- fishlength_data %&gt;% \n  dplyr::filter(river == \"Guanapo\")\n\n# Pilot experiment data \nnames(guanapo_data)\n\n[1] \"id\"     \"river\"  \"length\"\n\nmean_H1 &lt;-  mean(guanapo_data$length) # 18.29655\nmean_H1\n\n[1] 18.29655\n\nsd_sample &lt;- sd(guanapo_data$length)  # 2.584636\nsd_sample\n\n[1] 2.584636"
+    "text": "One Sample Mean: EXE data\n\n\nGOAL: Imagine this is a pilot study, in which we tested fish is (on average) different form 20 cm in length.\nThe guanapo_data dataset contains information on fish lengths from the Guanapo river pilot\n\n# Load data on river fish length \nfishlength_data &lt;- readr::read_csv(here::here(\"practice\", \"data_input\", \"04_datasets\", \n                                              \"fishlength.csv\"),\n                              show_col_types = FALSE)\n\n# Select a portion of the data (i.e. out \"pilot\" experiment) \nguanapo_data &lt;- fishlength_data %&gt;% \n  dplyr::filter(river == \"Guanapo\")\n\n# Pilot experiment data \nnames(guanapo_data)\n\n[1] \"id\"     \"river\"  \"length\"\n\nmean_H1 &lt;-  mean(guanapo_data$length) # 18.29655\nmean_H1\n\n[1] 18.29655\n\nsd_sample &lt;- sd(guanapo_data$length)  # 2.584636\nsd_sample\n\n[1] 2.584636"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#one-sample-mean-t-test-example-cont.",
     "href": "practice/practice_slides/slides_lab04.html#one-sample-mean-t-test-example-cont.",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "One Sample Mean t-test: EXAMPLE cont.",
-    "text": "One Sample Mean t-test: EXAMPLE cont.\n\nLet’s compute the one sample t-test with stats::t.test against a hypothetical average fish length (\\(mean\\_H_o = 20\\) )\n\n# Hypothetical length mean H0\nmean_H0 &lt;- 20\n\nt_stat &lt;- stats::t.test(x = guanapo_data$length,\n                        mu = mean_H0,\n                        alternative = \"two.sided\")\n# one-sample t-test results\nt_stat\n\n\n    One Sample t-test\n\ndata:  guanapo_data$length\nt = -3.5492, df = 28, p-value = 0.001387\nalternative hypothesis: true mean is not equal to 20\n95 percent confidence interval:\n 17.31341 19.27969\nsample estimates:\nmean of x \n 18.29655 \n\n\n\nThere appear to be a statistically significant result here: the mean length of the fish appears to be different from 20 cm.\n\nQUESTION: In a new study of the same fish, what sample size n would you need to get a comparable result?"
+    "text": "One Sample Mean t-test: EXAMPLE cont.\n\nLet’s compute the one sample t-test with stats::t.test against a hypothetical average fish length (\\(mean\\_H_o = 20\\) )\n\n# Hypothetical fish population length mean (H0)\nmean_H0 &lt;- 20\n# one-sample mean t-test \nt_stat &lt;- stats::t.test(x = guanapo_data$length,\n                        mu = mean_H0,\n                        alternative = \"two.sided\")\n# one-sample t-test results\nt_stat\n\n\n    One Sample t-test\n\ndata:  guanapo_data$length\nt = -3.5492, df = 28, p-value = 0.001387\nalternative hypothesis: true mean is not equal to 20\n95 percent confidence interval:\n 17.31341 19.27969\nsample estimates:\nmean of x \n 18.29655 \n\n\n\nThere appear to be a statistically significant result here: the mean length of the fish appears to be different from 20 cm.\n\nQUESTION: In a new study of the same fish, what sample size n would you need to get a comparable result?"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#one-sample-mean-t-test-power-analysis-n",
@@ -301,11 +308,11 @@
     "text": "Two Independent Samples: POWER ANALYSIS 2/2 (n)\n\nActually answer the question about how many fish we really need to catch in the future\n\n\n# run power analysis \npwr::pwr.t.test(d = 0.94, power = 0.8, sig.level = 0.05,\n           type = \"two.sample\", alternative = \"two.sided\")\n\n\n     Two-sample t test power calculation \n\n              n = 18.77618\n              d = 0.94\n      sig.level = 0.05\n          power = 0.8\n    alternative = two.sided\n\nNOTE: n is number in *each* group\n\n\n\nThe n output ( = 19 observations per group) -as opposed to 39 + 29- would be sufficient if we wanted to confidently detect the difference observed in the previous study"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-exe-data",
-    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-exe-data",
+    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-exe-data",
+    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-exe-data",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Two Paired Samples t-test: EXE data",
-    "text": "Two Paired Samples t-test: EXE data\n\nThe cortisol_data dataset contains information about cortisol levels measured on 20 participants in the morning and evening\n\n# Load data \ncortisol_data &lt;- read.csv(file = here::here(\"practice\", \"data_input\", \"04_datasets\", \n                                        \"cortisol.csv\"), \n                          header = TRUE, # 1st line is the name of the variables\n                          sep = \",\", # which is the field separator character.\n                          na.strings = c(\"?\",\"NA\" ), # specific MISSING values  \n                          row.names = NULL) \n\n# Explore data \nnames(cortisol_data)\n\n[1] \"patient_id\" \"time\"       \"cortisol\"  \n\ncortisol_data %&gt;% \n  dplyr::group_by (time) %&gt;% \n  dplyr::summarise (\n    N = n(), \n    mean_cort = mean(cortisol),\n    sd_cort = sd(cortisol)) \n\n# A tibble: 2 × 4\n  time        N mean_cort sd_cort\n  &lt;chr&gt;   &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 evening    20      197.    87.5\n2 morning    20      313.    73.8\n\n\n\nNotice the difference in the paired sample means is quite large"
+    "section": "Two Paired Samples: EXE data",
+    "text": "Two Paired Samples: EXE data\n\nThe cortisol_data dataset contains information about cortisol levels measured on 20 participants in the morning and evening\n\n# Load data \ncortisol_data &lt;- read.csv(file = here::here(\"practice\", \"data_input\", \"04_datasets\", \n                                        \"cortisol.csv\"), \n                          header = TRUE, # 1st line is the name of the variables\n                          sep = \",\", # which is the field separator character.\n                          na.strings = c(\"?\",\"NA\" ), # specific MISSING values  \n                          row.names = NULL) \n\n# Explore data \nnames(cortisol_data)\n\n[1] \"patient_id\" \"time\"       \"cortisol\"  \n\ncortisol_data %&gt;% \n  dplyr::group_by (time) %&gt;% \n  dplyr::summarise (\n    N = n(), \n    mean_cort = mean(cortisol),\n    sd_cort = sd(cortisol)) \n\n# A tibble: 2 × 4\n  time        N mean_cort sd_cort\n  &lt;chr&gt;   &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 evening    20      197.    87.5\n2 morning    20      313.    73.8\n\n\n\nNotice the difference in the paired sample means is quite large"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-visualization",
@@ -322,18 +329,18 @@
     "text": "Two Paired Samples: POWER ANALYSIS (d)\n\nGOAL: Flipping the question, if we know the given n (20 patients observed twice): How big should the effect size be to be detected at power of 0.8 and significance level 0.05?\n\nWe use pwr::pwr.t.test, with the argument specification type = \"paired\", but this time to estimate the effect size \n\n\n\n# power analysis to actually calculate the effect size at the desired conditions:\npwr::pwr.t.test(n = 20, \n                #d =  eff_size, \n                sig.level = 0.05, \n                power = 0.8,\n                type = \"paired\")\n\n\n     Paired t test power calculation \n\n              n = 20\n              d = 0.6604413\n      sig.level = 0.05\n          power = 0.8\n    alternative = two.sided\n\nNOTE: n is number of *pairs*\n\n\n\nThe functions returns the effect size (Cohen’s metric): d = 0.6604413. So, with this experimental design we would be able to detect a medium-large effect size."
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-example-cont.",
-    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-example-cont.",
+    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-on-given-n",
+    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-on-given-n",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Two Paired Samples t-test: EXAMPLE cont.",
-    "text": "Two Paired Samples t-test: EXAMPLE cont.\nLooking instead at the actual sample data, what would be the observed effect size?\n\nTo compute “observed d” we can use the function rstatix::cohens_d\n\n\n\nd &lt;- cortisol_data %&gt;% \n  # estimate cohen's d\n  rstatix::cohens_d(cortisol ~ time, paired = TRUE)\n\nd\n\n# A tibble: 1 × 7\n  .y.      group1  group2  effsize    n1    n2 magnitude\n* &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;ord&gt;    \n1 cortisol evening morning   -1.16    20    20 large    \n\n\nThe obtained d (-1.16) is extremely large, so we likely have more participants in this study than actually needed given such a large effect."
+    "section": "Two Paired Samples t-test: POWER ANALYSIS on given n",
+    "text": "Two Paired Samples t-test: POWER ANALYSIS on given n\nLooking instead at the actual sample data, what would be the observed effect size?\n\nTo compute “observed d” we can use the function rstatix::cohens_d\n\n\n\nd &lt;- cortisol_data %&gt;% \n  # estimate cohen's d\n  rstatix::cohens_d(cortisol ~ time, paired = TRUE)\n\nd\n\n# A tibble: 1 × 7\n  .y.      group1  group2  effsize    n1    n2 magnitude\n* &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;ord&gt;    \n1 cortisol evening morning   -1.16    20    20 large    \n\n\nThe obtained d (-1.16) is extremely large, so we likely have more participants in this study than actually needed given such a large effect."
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-n",
-    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-n",
+    "objectID": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-gives-sufficient-n",
+    "href": "practice/practice_slides/slides_lab04.html#two-paired-samples-t-test-power-analysis-gives-sufficient-n",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Two Paired Samples t-test: POWER ANALYSIS (n)",
-    "text": "Two Paired Samples t-test: POWER ANALYSIS (n)\nLet’s re-compute the power analysis, but leave n as the unknown quantity, given the effect size (d) we have observed\n\n# power analysis to calculate minimunm n given the observed effect size in the sample \npwr::pwr.t.test(# n = 20, \n                d =  -1.16, \n                sig.level = 0.05, \n                power = 0.8,\n                type = \"paired\")\n\n\n     Paired t test power calculation \n\n              n = 7.960846\n              d = 1.16\n      sig.level = 0.05\n          power = 0.8\n    alternative = two.sided\n\nNOTE: n is number of *pairs*\n\n\n\nAs a matter of fact, would have only needed n = 8 pairs of observations in this study, given the size of effect we were trying to detect."
+    "section": "Two Paired Samples t-test: POWER ANALYSIS gives sufficient n",
+    "text": "Two Paired Samples t-test: POWER ANALYSIS gives sufficient n\nLet’s re-compute the power analysis, but leave n as the unknown quantity, given the effect size (d) we have observed\n\n# power analysis to calculate minimunm n given the observed effect size in the sample \npwr::pwr.t.test(# n = 20, \n                d =  -1.16, \n                sig.level = 0.05, \n                power = 0.8,\n                type = \"paired\")\n\n\n     Paired t test power calculation \n\n              n = 7.960846\n              d = 1.16\n      sig.level = 0.05\n          power = 0.8\n    alternative = two.sided\n\nNOTE: n is number of *pairs*\n\n\n\nAs a matter of fact, n = 8 pairs of observations would have sufficed in this study, given the size of effect we were trying to detect."
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#one-way-anova-test-exe-data",
@@ -396,14 +403,14 @@
     "href": "practice/practice_slides/slides_lab04.html#linear-regression-with-grouped-data-power-analysis",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Linear Regression with grouped data: POWER ANALYSIS",
-    "text": "Linear Regression with grouped data: POWER ANALYSIS\n\nFrom the linear model we get that the \\(R^2\\) value is 0.4559 and we can use this to calculate Cohen’s \\(f^2\\) value using the formula\n\nf2 &lt;- 0.4559 / (1 - 0.4559)\nf2\n\n[1] 0.8378974\n\n\nOur model has 5 parameters (because we have 5 groups) and so the numerator degrees of freedom \\(u\\) will be 4 (5−1=4).\nHence, we carry out the power analysis with the function pwr.f2.test:\n\npwr::pwr.f2.test(u = 4, v = NULL, \n                 f2 = 0.8378974,\n                 sig.level = 0.05 , power = 0.8)"
+    "text": "Linear Regression with grouped data: POWER ANALYSIS\n\nFrom the linear model we get that the \\(R^2\\) value is 0.4559 and we can use this to calculate Cohen’s \\(f^2\\) value using the formula\n\n# Extract R squared\nR_2 &lt;- summary(lm_mussels)$r.squared\n# compute f squared\nf_2 &lt;- R_2 / (1 - R_2)\nf_2\n\n[1] 0.837767\n\n\nOur model has 5 parameters (because we have 5 groups) and so the numerator degrees of freedom \\(u\\) will be 4 (5−1=4).\nHence, we carry out the power analysis with the function pwr.f2.test:\n\n# power analysis for overall linear model \npwr::pwr.f2.test(u = 4, v = NULL, \n                 f2 = 0.8378974,\n                 sig.level = 0.05 , power = 0.8)\n\n\n     Multiple regression power calculation \n\n              u = 4\n              v = 14.62182\n             f2 = 0.8378974\n      sig.level = 0.05\n          power = 0.8"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-with-grouped-data-power-analysis-interpret",
-    "href": "practice/practice_slides/slides_lab04.html#linear-regression-with-grouped-data-power-analysis-interpret",
+    "objectID": "practice/practice_slides/slides_lab04.html#linear-regression-with-grouped-data-power-analysis-interpret.",
+    "href": "practice/practice_slides/slides_lab04.html#linear-regression-with-grouped-data-power-analysis-interpret.",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "Linear Regression with grouped data: POWER ANALYSIS interpret",
-    "text": "Linear Regression with grouped data: POWER ANALYSIS interpret\n\nRecall that, in the F statistic evaluating the model,\n\n\nu the df for the numerator: \\(df_{between} =k−1 = 5-1 = 4\\)\n\n\nv the df for the denominator: \\(df_{within} = n-k = ?\\)\n\nso \\(n = v+5\\)\n\n\n\n\n\npwr::pwr.f2.test(u = 4, f2 = 0.8378974,\n            sig.level = 0.05 , power = 0.8)\n\n\n     Multiple regression power calculation \n\n              u = 4\n              v = 14.62182\n             f2 = 0.8378974\n      sig.level = 0.05\n          power = 0.8\n\n\n\nThis tells us that the denominator degrees of freedom v should be 15 (14.62 rounded up), and this means that we would only need 20 observations n = v+5 in total across all 5 groups to detect this effect size"
+    "section": "Linear Regression with grouped data: POWER ANALYSIS interpret.",
+    "text": "Linear Regression with grouped data: POWER ANALYSIS interpret.\n\nRecall that, in the F statistic evaluating the model,\n\n\nu the df for the numerator: \\(df_{between} =k−1 = 5-1 = 4\\)\n\n\nv the df for the denominator: \\(df_{within} = n-k = ?\\)\n\nso \\(n = v+5\\)\n\n\n\n\n\npwr::pwr.f2.test(u = 4, f2 = 0.8378974,\n            sig.level = 0.05 , power = 0.8)\n\n\n     Multiple regression power calculation \n\n              u = 4\n              v = 14.62182\n             f2 = 0.8378974\n      sig.level = 0.05\n          power = 0.8\n\n\n\nThis tells us that the denominator degrees of freedom v should be 15 (14.62 rounded up), and this means that we would only need 20 observations n = v+5 in total across all 5 groups to detect this effect size"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#different-approaches-with-different-takes-on-empirical-data",
@@ -438,35 +445,35 @@
     "href": "practice/practice_slides/slides_lab04.html#splitting-the-dataset-into-training-and-testing-samples",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Splitting the dataset into training and testing samples",
-    "text": "Splitting the dataset into training and testing samples\n\n\nWith this approach, it is best practice to “hold back” some data for testing to get a better estimate of how models will perform on new data\n\nWe can easily specify training and testing sets using rsample’s function initial_split\n\n\n\n\nnhanes_split &lt;- nhanes %&gt;%\n  # define the training proportion as 75%\n  rsample::initial_split(prop = 0.75,\n  # ensuring both sets are balanced in gender\n                         strata = Gender)\n\nnhanes_train &lt;- rsample::training(nhanes_split)\ndim(nhanes_train)\n\n[1] 374  77\n\nnhanes_test &lt;- rsample::testing(nhanes_split)\ndim(nhanes_test)\n\n[1] 126  77"
+    "text": "Splitting the dataset into training and testing samples\n\n\nWith this approach, it is best practice to “hold back” some data for testing to get a better estimate of how models will perform on new data\n\nWe can easily specify training and testing sets using rsample’s function initial_split\n\n\n\n\n# ensure we always get the same result when sampling (for convenience )\nset.seed(12345)\n\nnhanes_split &lt;- nhanes %&gt;%\n  # define the training proportion as 75%\n  rsample::initial_split(prop = 0.75,\n  # ensuring both sets are balanced in gender\n                         strata = Gender)\n\n# resulting datasets\nnhanes_train &lt;- rsample::training(nhanes_split)\ndim(nhanes_train)\n\n[1] 374  77\n\nnhanes_test &lt;- rsample::testing(nhanes_split)\ndim(nhanes_test)\n\n[1] 126  77"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#fitting-a-linear-model-on-the-training-data",
     "href": "practice/practice_slides/slides_lab04.html#fitting-a-linear-model-on-the-training-data",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Fitting a linear model on the training data",
-    "text": "Fitting a linear model on the training data\n\nIn this case the regression models serves for predicting numeric, continuous quantities\n\n# fitting  linear regression model specification\nlin_mod &lt;- lm(BMI ~ Age + Gender + PhysActive, data = nhanes_train)\n\nsummary(lin_mod)\n\n\nCall:\nlm(formula = BMI ~ Age + Gender + PhysActive, data = nhanes_train)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-13.031  -4.657  -1.152   4.024  37.691 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   30.54367    1.27063  24.038  &lt; 2e-16 ***\nAge            0.01199    0.02133   0.562  0.57445    \nGendermale    -0.96772    0.73068  -1.324  0.18619    \nPhysActiveYes -2.04670    0.73970  -2.767  0.00594 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6.94 on 368 degrees of freedom\n  (2 observations deleted due to missingness)\nMultiple R-squared:  0.03158,   Adjusted R-squared:  0.02368 \nF-statistic:     4 on 3 and 368 DF,  p-value: 0.008011"
+    "text": "Fitting a linear model on the training data\n\nIn this case the regression models serves for predicting numeric, continuous quantities\n\n# fitting  linear regression model specification\nlin_mod &lt;- lm(BMI ~ Age + Gender + PhysActive, data = nhanes_train)\n\nsummary(lin_mod)\n\n\nCall:\nlm(formula = BMI ~ Age + Gender + PhysActive, data = nhanes_train)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-12.685  -4.674  -1.419   4.257  38.016 \n\nCoefficients:\n              Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)   30.14217    1.30426  23.110  &lt; 2e-16 ***\nAge            0.01429    0.02198   0.650  0.51596    \nGendermale    -0.72960    0.72176  -1.011  0.31275    \nPhysActiveYes -2.26539    0.73620  -3.077  0.00225 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 6.903 on 367 degrees of freedom\n  (3 observations deleted due to missingness)\nMultiple R-squared:  0.03416,   Adjusted R-squared:  0.02626 \nF-statistic: 4.327 on 3 and 367 DF,  p-value: 0.005155"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#predicting-bmi-estimates-for-new-data-set",
     "href": "practice/practice_slides/slides_lab04.html#predicting-bmi-estimates-for-new-data-set",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Predicting BMI estimates for new data set",
-    "text": "Predicting BMI estimates for new data set\n\nUsing the above model, we can predict the BMI for different individuals (those left in the testing data)\n\nwith the function predict, where we specify the argument newdata = nhanes_test)\nadding the prediction interval (the 95% CI), which gives uncertainty around a single value of the prediction\n\n\n# Obtain predictions from the results of a model fitting function\npred_bmi &lt;- stats::predict(lin_mod, \n               newdata = nhanes_test,\n               interval = \"confidence\" )\nhead(pred_bmi)\n\n       fit      lwr      upr\n1 29.06036 27.77712 30.34359\n2 27.86489 26.40850 29.32128\n3 29.09632 27.80792 30.38471\n4 27.99674 26.74223 29.25125\n5 30.46299 28.88405 32.04193\n6 29.19221 27.83200 30.55242"
+    "text": "Predicting BMI estimates for new data set\n\nUsing the above model, we can predict the BMI for different individuals (those left in the testing data)\n\nwith the function predict, where we specify the argument newdata = nhanes_test)\nadding the prediction interval (the 95% CI), which gives uncertainty around a single value of the prediction\n\n\n# Obtain predictions from the results of a model fitting function\npred_bmi &lt;- stats::predict(lin_mod, \n               newdata = nhanes_test,\n               interval = \"confidence\" )\nhead(pred_bmi)\n\n       fit      lwr      upr\n1 28.59148 27.33499 29.84797\n2 27.70464 26.45051 28.95878\n3 30.88546 29.72888 32.04203\n4 28.01911 26.64955 29.38867\n5 29.78421 28.04027 31.52815\n6 27.60459 26.24230 28.96688"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#evaluating-the-predictive-performance-in-testing-data",
     "href": "practice/practice_slides/slides_lab04.html#evaluating-the-predictive-performance-in-testing-data",
     "title": "Lab 4: Intro to Machine Learning",
     "section": "Evaluating the predictive performance in testing data",
-    "text": "Evaluating the predictive performance in testing data\n\nThe ultimate goal of holding data back from the model training process was to evaluate its predictive performance on new data. \n\nA common measure used is the RMSE (Root Mean Square Error) = a measure of the distance between observed values and predicted values in the testing dataset\n\n# Computing the Root Mean Square Error\n\nRMSE_test &lt;- sqrt(mean((nhanes_test$BMI - predict(lin_mod, nhanes_test))^2, na.rm = T))\nRMSE_test # 6.579572\n\n[1] 6.069719\n\n\n\nThe RMSE (= 6.579572) tells us, (roughly speaking) by how much, on average, the new observed BMI values differ from those predicted by our model"
+    "text": "Evaluating the predictive performance in testing data\n\nThe ultimate goal of holding data back from the model training process was to evaluate its predictive performance on new data. \n\nA common measure used is the RMSE (Root Mean Square Error) = a measure of the distance between observed values and predicted values in the testing dataset\n\n# Computing the Root Mean Square Error\nRMSE_test &lt;- sqrt(mean((nhanes_test$BMI - predict(lin_mod, nhanes_test))^2, na.rm = T))\nRMSE_test # 6.170518\n\n[1] 6.170518\n\n\n\nThe RMSE (= 6.170518) tells us, (roughly speaking) by how much, on average, the new observed BMI values differ from those predicted by our model"
   },
   {
-    "objectID": "practice/practice_slides/slides_lab04.html#and-what-about-in-trainig-data",
-    "href": "practice/practice_slides/slides_lab04.html#and-what-about-in-trainig-data",
+    "objectID": "practice/practice_slides/slides_lab04.html#and-what-about-rmse-in-training-data",
+    "href": "practice/practice_slides/slides_lab04.html#and-what-about-rmse-in-training-data",
     "title": "Lab 4: Intro to Machine Learning",
-    "section": "… and what about in trainig data?",
-    "text": "… and what about in trainig data?\nLet’s see the RMSE in the training dataset (for comparison)\n\nRMSE_train &lt;- sqrt(mean((nhanes_train$BMI - predict(lin_mod, nhanes_train))^2, na.rm = T))\nRMSE_train # 6.736376\n\n[1] 6.902941\n\n# R squared is also quite low \nsummary(lin_mod)$r.squared     # R^2 0.03374094\n\n[1] 0.03157804\n\n\n\nThis is not what expected 🤔, since RMSE on the training data is sliglthly bigger that in the testing data!\n\nA possible explanation is that out model is underfitting in the first place (model’s \\({R}^2\\) was quite low too), so we should definitely try different models…"
+    "section": "… and what about RMSE in training data?",
+    "text": "… and what about RMSE in training data?\nLet’s see the RMSE in the training dataset (for comparison)\n\nRMSE_train &lt;- sqrt(mean((nhanes_train$BMI - predict(lin_mod, nhanes_train))^2, na.rm = T))\nRMSE_train # 6.866044\n\n[1] 6.866044\n\n# R squared is also quite low \nsummary(lin_mod)$r.squared     # R^2 0.0341589\n\n[1] 0.0341589\n\n\n\nThis is not what expected 🤔, since RMSE on the training data is sliglthly bigger that in the testing data!\n\nA possible explanation is that out model is underfitting in the first place (model’s \\({R}^2\\) was quite low too), so we should definitely try different models…"
   },
   {
     "objectID": "practice/practice_slides/slides_lab04.html#recap-of-the-workshops-content",
@@ -494,7 +501,7 @@
     "href": "practice/practice_slides/slides_lab02.html#needed-r-packages",
     "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# General \nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\nlibrary(janitor)      # tools for examining and cleaning data\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)      # {tidyverse} tool for handling factors\nlibrary(tidyr)        # Tidy Messy Data       \n\n# Statistics\nlibrary(BSDA)         # Basic Statistics and Data Analysis   \nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)          # Companion to Applied Regression\nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\n# Plotting\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  \nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load pckgs for this R session\n\n# General \nlibrary(fs)           # file/directory interactions\nlibrary(here)         # tools find your project's files, based on working directory\nlibrary(janitor)      # tools for examining and cleaning data\nlibrary(dplyr)        # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)      # {tidyverse} tool for handling factors\nlibrary(tidyr)        # Tidy Messy Data       \n\n# Statistics\nlibrary(BSDA)         # Basic Statistics and Data Analysis   \nlibrary(rstatix)      # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)          # Companion to Applied Regression\nlibrary(multcomp)     # Simultaneous Inference in General Parametric Models \n\n# Plotting\nlibrary(ggplot2)      # {tidyverse} tools for plotting\nlibrary(ggstatsplot) # 'ggplot2' Based Plots with Statistical Details  \nlibrary(ggpubr)       # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)    # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)      # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)     # Extra Themes, Scales and Geoms for 'ggplot2'"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#importing-from-project-folder-previously-downloaded-file",
@@ -1726,7 +1733,7 @@
     "href": "practice/practice_slides/slides_lab01.html#install-r-packages-from-cran-stable-version",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Install R packages from CRAN (stable version)",
-    "text": "Install R packages from CRAN (stable version)\nAn R package*  is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the base package), many useful R functions come in free libraries of code (or packages) written by R’s users. You can find them in different repositories:\nTo install a package use utils function install.packages(\"package_name)\n\n# Installing (ONLY the 1st time)\nutils::install.packages('here')\n\n# OR (same)\ninstall.packages('here')\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name. This prevents any ambiguity in case of duplicate function name… also helps you see what you are using."
+    "text": "Install R packages from CRAN (stable version)\nAn R package*  is a shareable bundle of functions. Besides the basic built-in functions already contained in the program (i.e. the base, stats, utils packages), many useful R functions come in free libraries of code (or packages) written by R’s users. You can find them in different repositories:\nTo install a package use utils function install.packages(\"package_name)\n\n# Installing (ONLY the 1st time)\nutils::install.packages('here')\n\n# OR (same)\ninstall.packages('here')\n\n\n\nHere you are actually using a function (install.packages) of a pre-installed package (utils) using the syntax packagename::function_name. This prevents any ambiguity in case of duplicate function name… also helps you see what you are using."
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#install-r-packages-rstudio-pane",
@@ -1747,7 +1754,7 @@
     "href": "practice/practice_slides/slides_lab01.html#use-r-packages",
     "title": "Lab 1: Intro to R and data analysis",
     "section": "Use R Packages",
-    "text": "Use R Packages\n\nWe will be using {base} & {utils} (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n# Load them for this R session\nlibrary(fs)        # file/directory interactions\nlibrary(here)      # tools find your project's files, based on working directory\nlibrary(janitor)   # tools for examining and cleaning data\nlibrary(skimr)     # tools for summary statistics \nlibrary(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)   # {tidyverse} tool for handling factors\nlibrary(ggplot2)   # {tidyverse} tools for plotting\nlibrary(ggridges)  # alternative to plot density functions"
+    "text": "Use R Packages\n\nWe will be using {base} & {utils} (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n# Load pckgs for this R session\nlibrary(fs)        # file/directory interactions\nlibrary(here)      # tools find your project's files, based on working directory\nlibrary(janitor)   # tools for examining and cleaning data\nlibrary(skimr)     # tools for summary statistics \nlibrary(dplyr)     # {tidyverse} tools for manipulating and summarising tidy data \nlibrary(forcats)   # {tidyverse} tool for handling factors\nlibrary(ggplot2)   # {tidyverse} tools for plotting\nlibrary(ggridges)  # alternative to plot density functions"
   },
   {
     "objectID": "practice/practice_slides/slides_lab01.html#help-on-r-packagefunction",
@@ -2454,7 +2461,7 @@
     "href": "practice/practice_slides/slides_lab03.html#needed-r-packages",
     "title": "Lab 3: Modeling correlation and regression",
     "section": "Needed R Packages",
-    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load them for this R session\n\n# -- General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# -- Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(lmtest) # Testing Linear Regression Models \nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\n#library(tidymodels) # not installed on this machine\nlibrary(performance) # Assessment of Regression Models Performance \n# -- Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe will also use the packages below (specifying package::function for clarity).\n\n\n\n# Load pckgs for this R session\n\n# -- General \nlibrary(fs)      # file/directory interactions\nlibrary(here)    # tools find your project's files, based on working directory\nlibrary(paint) # paint data.frames summaries in colour\nlibrary(janitor) # tools for examining and cleaning data\nlibrary(dplyr)   # {tidyverse} tools for manipulating and summarizing tidy data \nlibrary(forcats) # {tidyverse} tool for handling factors\nlibrary(openxlsx) # Read, Write and Edit xlsx Files\nlibrary(flextable) # Functions for Tabular Reporting\n# -- Statistics\nlibrary(rstatix) # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(lmtest) # Testing Linear Regression Models \nlibrary(broom) # Convert Statistical Objects into Tidy Tibbles\n#library(tidymodels) # not installed on this machine\nlibrary(performance) # Assessment of Regression Models Performance \n# -- Plotting\nlibrary(ggplot2) # Create Elegant Data Visualisations Using the Grammar of Graphics"
   },
   {
     "objectID": "practice/practice_slides/slides_lab03.html#importing-dataset-1-nhanes",
