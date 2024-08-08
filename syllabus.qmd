@@ -37,9 +37,9 @@ suppress-bibliography: true
 
 This is an intensive course originally designed for PhD students and researchers dealing with biological datasets to help them consolidate their practical understanding of frequently implemented data analysis and statistical modeling for academic research purposes. This course focuses on empowering participants to conduct **end-to-end data analyses**, guiding them through reproducible data storage, cleaning, exploration, analysis, and interpretation cycle. 
 
-Beyond with **conceptual foundations**, participants engage in **hands-on coding sessions** in the R software with real-world datasets and solved questions, validating in practice the skills needed to confidently acquire and communicate insights throughout the analytical process.   
+Beyond the **conceptual foundations**, participants engage in **hands-on coding sessions** in the R software with real-world datasets and solved questions, validating in practice the skills needed to confidently acquire and communicate insights throughout the analytical process.   
 
-Particular emphasis will be placed on developing an understanding of the statistical methods used, when to apply them, and how to interpret them, in close connection to “real life” situations for a research scientists. <!-- By the course’s conclusion, participants will be equipped with a concise and powerful toolkit for unlocking the full potential of complex biological datasets. -->
+Particular emphasis is placed on developing an understanding of the statistical methods used, when to apply them, and how to interpret them, in close connection to “real life” situations for a research scientists. <!-- By the course’s conclusion, participants will be equipped with a concise and powerful toolkit for unlocking the full potential of complex biological datasets. -->
 
 <!-- # Course Objectives -->
 
@@ -75,7 +75,7 @@ The target audience for this course is graduate students, post-doctoral fellows,
 
 While there are no specific prerequisites, because of the intensive nature of this course, participants will make the most of it if they have prior exposure to quantitative work in the biology/life science field. Similarly, some prior exposure to R programming will make the lab sessions more engaging.
 
-Detailed [instructions](https://r4biostats.com/install.html) are provided to complete the required installation of R and RStudio ahead of the workshop, if the participants want to follow along the practical coding modules.
+Detailed [instructions](https://r4biostats.com/install.html) are provided to complete the required installation of R and RStudio ahead of the workshop, so that participants can follow along the lab sessions.
 
 # Course Outline
 
@@ -150,7 +150,6 @@ Detailed [instructions](https://r4biostats.com/install.html) are provided to com
 + Examples of Machine Learning algorithms 
   + **PCA** -- "unsupervised" ML algorithm for dimensionality reduction
   + **PLS-Discriminant Analysis** -- "supervised" alternative to PCA performing simultaneous dimensionality reduction and classification
-  
 <!-- + Shifting the emphasis on **empirical prediction**  -->
 <!--   + Distinction between supervised & **unsupervised** algorithms -->
 <!--     + Unsupervised ML Example -->
@@ -163,7 +162,6 @@ Detailed [instructions](https://r4biostats.com/install.html) are provided to com
   + Review of *type I* and *type II* decision errors, contextualizing them in experimental settings
   + Understanding the test's *statistical power* in connection to the *effect size* of an experiment  
 
-# ___ 
 
 ::: {style="color:#77501a"}
 
