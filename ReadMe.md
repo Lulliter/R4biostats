@@ -1,7 +1,6 @@
 # Intro to Biostatistics with R
 
-This website collects the materials for a 4 day workshop taking place during the MIGEST Summer School of 2024
-
+This website collects the materials for a 4 day workshop taking place during the MIGEST Summer School in July of 2024
 
 # Quirks 
 
@@ -13,24 +12,13 @@ Little things to keep in mind (because semi-automated) about moving form [Google
 
 ## TO DO
 
-+ **Lectures (pptx -> pdf)**
-  + ~~Lecture 02 (99% done!)~~
-  + Lecture 03  
-  + Lecture 04  
-+ **practice slides (revealjs)**
-  + ~~(general inserire "Your turn" in practice lab)~~❓❓ 
-  + ~~Practice 02 (97% done!)~~  
-  + Practice 03  
-  + Practice 04  
-+ **license & acknowledg **
-  + clean up from Zotero 
 + **[CODE refactoring]**
   + ~~add Goggle Analytics~~ 
   + make  `_variable.yml`
     + nome sito 
-  + parameterize `.qmd`  
-    + ~~practice slides and code Done !~~
-  + turn all practice into `tidyeval` functions (plot etc) to be able to replace with different datasets 
++ Cancell **parameterize** practicel slides `.qmd`  
+    + it doesn't make any sense 
++ turn re-usable practice slides code into `tidyeval` functions (plot etc) to be able to replace with different datasets 
 
 ## How this website was built
 
@@ -75,14 +63,14 @@ I acknowledge inputs received from these very valuable sources:
 
 - [R package {metabolic}](https://fmmattioni.github.io/metabolic/) by Felipe Mattioni Maturana, Ph.D
 
-## Quarto relevant resources
+## Quarto specific resources
 
-- Mandy Norrbo's **tutorial** [Generate multiple presentations with Quarto parameters](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
 - Mine Çetinkaya-Rundel's **blog** [ A Quarto tip a day](https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/)
 - Cornell University's **lesson** [Publishing reproducible documents with Quarto](https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance) 
 https://mine-cetinkaya-rundel.github.io/quarto-tip-a-day/
 https://info5940.infosci.cornell.edu/slides/publishing-reproducible-documents/#/themesappearance
 - Parameterized reports/slides 
+  + Mandy Norrbo's **tutorial** [Generate multiple presentations with Quarto parameters](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)
   + **Jadey Ryan Talk** [website](https://jadeyryan.quarto.pub/rladies-dc-quarto-params/materials.html)
   + **R Medicine David Keyes workshop** [Presentation](https://static.sched.com/hosted_files/rmed2023a/9c/parameterized-reporting-slides.pdf)
   + **Jumping Rivers Mandy Norrbo** [Presentation](https://www.jumpingrivers.com/blog/r-parameterised-presentations-quarto/)

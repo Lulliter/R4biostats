@@ -1,5 +1,5 @@
 ---
-title: "Acknowledgments and use of the course materials"
+title: "Acknowledgments and resources"
 # general Output Options
 execute:     
   eval: true

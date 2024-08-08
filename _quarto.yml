@@ -63,6 +63,9 @@ website:
       - text: "Pre-Workshop"
         icon: download # code-square # https://icons.getbootstrap.com/?q=home
         href: install.qmd
+      - text: "Syllabus"
+        icon: book-fill # code-square # https://icons.getbootstrap.com/?q=home
+        href: syllabus.qmd
       - text: "Lectures"
         icon: easel-fill # https://icons.getbootstrap.com/?q=home
         menu: 

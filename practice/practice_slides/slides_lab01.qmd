@@ -39,9 +39,8 @@ execute:
 :::
 
 ::: {style="font-size: 85%;"}
-<br>
 
-#### Lecture 1: topics 
+**Lecture 1: topics**
 
 -   **Introduction to R and R-studio**
     -   Why R?
