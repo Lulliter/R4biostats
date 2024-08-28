@@ -1386,165 +1386,60 @@
     "text": "Final thoughts/recommendations\n\nAlways read the documentation (?package::function, especially the examples at the bottom)\nAlways inspect the data / variables before and after making changes\n\nIt is advisable to rename (i.e. create a new R object) when you recode/manipulate a variable or a dataset\n\nthis promotes reproducibility, since you(or others) will be able to retrace your coding steps\n\n\nAlways plot distributions for visual data exploration\nMake changes in small increments (like we saw in building ggplot2 graph in subsequent layers)\n\n\n\n\nR 4 Biostatistics | MITGEST::training(2024)"
   },
   {
-    "objectID": "practice/lab03_corr_regress.html",
-    "href": "practice/lab03_corr_regress.html",
-    "title": "Lab 3: Modeling correlation and regression",
+    "objectID": "practice/lab04_intro_ML.html",
+    "href": "practice/lab04_intro_ML.html",
+    "title": "Lab 4: Intro to machine learning",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
-    "href": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
-    "title": "Lab 3: Modeling correlation and regression",
-    "section": "Practice session 3: input data (as subfolder)",
-    "text": "Practice session 3: input data (as subfolder)\n\n\n\n Download input data Lab 3"
+    "objectID": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
+    "href": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
+    "title": "Lab 4: Intro to machine learning",
+    "section": "Practice session 4: input data (as subfolder)",
+    "text": "Practice session 4: input data (as subfolder)\n\n\n\n Download input data Lab 4"
   },
   {
-    "objectID": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
-    "href": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
-    "title": "Lab 3: Modeling correlation and regression",
-    "section": "Practice session 3: R code (as .R file)",
-    "text": "Practice session 3: R code (as .R file)\n\n\n\n Download Lab session 3 as .R file"
+    "objectID": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
+    "href": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
+    "title": "Lab 4: Intro to machine learning",
+    "section": "Practice session 4: R code (as .R file)",
+    "text": "Practice session 4: R code (as .R file)\n\n\n\n Download Lab session 4 as .R file"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html",
-    "href": "practice/lab01_data_with_R.html",
-    "title": "Lab 1: Intro to R and data analysis",
+    "objectID": "practice/lab02_inference.html",
+    "href": "practice/lab02_inference.html",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
-    "href": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Practice session 1: input data (as subfolder)",
-    "text": "Practice session 1: input data (as subfolder)\n\n\n Download input data Lab 1"
+    "objectID": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
+    "href": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Practice session 2: input data (as subfolder)",
+    "text": "Practice session 2: input data (as subfolder)\n\n\n\n Download input data Lab 2"
   },
   {
-    "objectID": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
-    "href": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
-    "title": "Lab 1: Intro to R and data analysis",
-    "section": "Practice session 1: R code (as .R file)",
-    "text": "Practice session 1: R code (as .R file)\n\n\n Download Lab session 1 as .R file"
+    "objectID": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
+    "href": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
+    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "section": "Practice session 2: R code (as .R file)",
+    "text": "Practice session 2: R code (as .R file)\n\n\n\n Download Lab session 2 as .R file"
   },
   {
-    "objectID": "license_etc.html#acknowledgements",
-    "href": "license_etc.html#acknowledgements",
-    "title": "Acknowledgments and resources",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\n\n\nI am genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work, open source software, and training resources. Special thanks to Luisa M. Mimmi (my sister!) who revised the workshop content and built this dedicated website.\nBelow is a curated list of great resources (most of which free and openly accessible) you can peruse on your own.\n\nI would love to hear your feedback, questions, or suggestions about the workshop:\n\n    contact us"
-  },
-  {
-    "objectID": "license_etc.html#licensing-and-use-of-the-workshop-materials",
-    "href": "license_etc.html#licensing-and-use-of-the-workshop-materials",
-    "title": "Acknowledgments and resources",
-    "section": "Licensing and use of the workshop materials",
-    "text": "Licensing and use of the workshop materials\nThe workshop materials are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. All borrowed external materials (images, worked examples, etc.), are credited with proper “Source” statements and governed by their own licenses. To my knowledge, all the consulted materials were published under “open access” or “creative commons” frameworks. If this were not the case for any content piece displayed here, please let me know and it will be removed."
-  },
-  {
-    "objectID": "license_etc.html#selected-resources-for-self-guided-learning",
-    "href": "license_etc.html#selected-resources-for-self-guided-learning",
-    "title": "Acknowledgments and resources",
-    "section": "Selected resources for self-guided learning",
-    "text": "Selected resources for self-guided learning\n\n\nBiostatistics/Epidemiology with R examples\n\nApplied Epi Team (2024). Applied Epi - Elevating frontline epidemiology [Course]. Training, support, tools. https://www.appliedepi.org/\nApplied Epi Team (2024). R for applied epidemiology and public health The Epidemiologist R Handbook [Course]. https://epirhandbook.com/en/\nBobbitt, Z. (2024). Statology [Course]. Statology. https://www.statology.org/\nÇetinkaya-Rundel, M., & Hardim, J. (2023). Introduction to Modern Statistics (1st Ed) [Book]. https://openintro-ims.netlify.app/\nChilds, D. Z., Hindle, B. J., & Warren, P. H. (2022). Introductory Biostatistics with R [Book]. https://github.com/rstudio/bookdown\n\nSelby, D., & 2021 (2024). Analytical Epidemiology II [Course]. David Selby. https://personalpages.manchester.ac.uk/staff/david.selby/analysis/2021-03-30-inference/\n\nVu, J., & Harrington, D. (2021). Introductory Statistics for the Life and Biomedical Sciences [Book]. https://www.openintro.org/book/biostat/\nR packages & tools\n\nPOSIT (2024). POSIT resources [R]. https://posit.co/resources/.\nRStudio, & Posit (2024). Base-r-cheat-sheet.pdf [R]. https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf\nVarious contributors (2024). Bioconductor - Open source software for Bioinformatics [R]. Bioconductor - Open source software for Bioinformatics. https://www.bioconductor.org/\nWickham, H., François, R., Müller, K., & Vaughan, D. (2023). Programming with dplyr [R]. dplyr. https://dplyr.tidyverse.org/articles/programming.html#tidy-selection\nWickham, H. (2014). Tidy Data [R]. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\nSources of practice datasets\n\nVanderbilt Department of Biostatistics (2023, September 17). Vanderbilt Biostatistics Datasets [Dataset]. https://hbiostat.org/data/\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone [Dataset]. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study [Dataset]. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001"
-  },
-  {
-    "objectID": "lectures/lec04_intro_ML.html",
-    "href": "lectures/lec04_intro_ML.html",
-    "title": "Introduction to machine learning",
+    "objectID": "me.html",
+    "href": "me.html",
+    "title": "About the Instructor",
     "section": "",
-    "text": "View slides in full screen"
+    "text": "Maria Chiara Mimmi, Ph.D., is a Research Fellow at University of Pavia - Dept. of Molecular Medicine, as well as NMR Expert at Fondazione IRCCS Policlinico San Matteo. She has twenty years of experience working in life science research, with a focus on NMR and Mass Spectrometry applied to metabolomics/lipidomics.\nIn 2020, she joined the University of Pavia, at the Molecular Medicine Dept., to work with the recently acquired 700 MHz NMR spectrometer. Since then she focused on NMR applied to either metabolomics and to structure/dynamics of amyloidogenic proteins.\n\n\nUniversità degli Studi di Pavia | Pavia, Italy Master of Biostatistics and Epidemiology | 2018-2019\nUniversità degli Studi di Milano | Milano, Italy Ph.D. in Chemical Sciences | 2001 - 2003\nInstitut National de la Recherche Agronomique | Versailles-Grignon, France Visiting scholar | 2003 - 2003\nUniversità degli Studi di Pavia | Pavia, Italy BSc Degree in Chemistry | 1994 - 2000\nUniversiteit Leiden | Leiden, The Netherlands Erasmus exchange student (6 months) | 1999 - 1999\n\n \n  \n   \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n  \n      Google Scholar\n  \n  \n      Research Gate\n  \n  \n      Orcid"
   },
   {
-    "objectID": "lectures/lec04_intro_ML.html#lecture-4-outline",
-    "href": "lectures/lec04_intro_ML.html#lecture-4-outline",
-    "title": "Introduction to machine learning",
-    "section": "Lecture 4 Outline",
-    "text": "Lecture 4 Outline\n\nPCA\n\nAn example of “unsupervised” ML algorithm\n\n\n\n\n\n\n\nIntroduction to MetaboAnalyst software\n\nA useful R-based resources for metabolomics\n\nElements of statistical Power Analysis\nWorkshop Conclusions"
-  },
-  {
-    "objectID": "lectures/lec02_inference.html",
-    "href": "lectures/lec02_inference.html",
-    "title": "Statistical inference & hypothesis testing",
+    "objectID": "me.html#education",
+    "href": "me.html#education",
+    "title": "About the Instructor",
     "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec02_inference.html#lecture-2-outline",
-    "href": "lectures/lec02_inference.html#lecture-2-outline",
-    "title": "Statistical inference & hypothesis testing",
-    "section": "Lecture 2 Outline",
-    "text": "Lecture 2 Outline\n\nPurpose and foundations of inferential statistics\n\nProbability and random variables\nMeaningful probability distributions\nSampling distributions and Central Limit Theorem\n\nGetting to know the “language” of hypothesis testing\n\nThe null and alternative hypothesis\nThe probability of error? (α or “significance level”)\nThe p-value probability and tests interpretation\nConfidence Intervals\nTypes of errors (Type 1 and Type 2)\nEffective vs statistical significance\n\nHypothesis tests examples\n\nComparing sample mean to a hypothesized population mean (Z test & t test)\nComparing two independent sample means (t test)\nComparing sample means from 3 or more groups (ANOVA) \n\nA closer look at testing assumptions (with examples)\n\nTesting two groups that are not independent\nTesting if the data are not normally distributed: non-parametric tests\nTesting samples without homogeneous variance of observations"
-  },
-  {
-    "objectID": "install.html",
-    "href": "install.html",
-    "title": "Installation and setup",
-    "section": "",
-    "text": "This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine before the workshop.\nBelow is a step by step process that should guide you through the needed installation steps."
-  },
-  {
-    "objectID": "install.html#installing-packages-1st-time-you-use-an-r-package",
-    "href": "install.html#installing-packages-1st-time-you-use-an-r-package",
-    "title": "Installation and setup",
-    "section": "Installing packages (1st time you use an R Package)",
-    "text": "Installing packages (1st time you use an R Package)\nOption 1)\nYou could install one package at a time via the function install.packages()…\n\n# (**ONLY** the 1st time you use them)\n\n# Installing \ninstall.packages(\"name_of_package_here\" ) \n\n# [OPTIONAL ARGUMENT] Installing (with specification for dependencies)\ninstall.packages(\"name_of_package_here\" , dependencies = TRUE)\n\n… or in bulk, like so (it might take a few moments more):\n\n# (**ONLY** the 1st time you use them)\n\n# ---- Installing R pckgs for 1st LAB \npkg_list_lab_1 &lt;- c(\"fs\",\"here\", \"janitor\", \"skimr\", \n                   \"dplyr\", \"forcats\", \n                   \"ggplot2\",  \"ggridges\")\n\ninstall.packages(pkg_list_lab_1)\n\n\n# ---- Installing (more) R pckgs for 2nd LAB  \npkg_list_lab_2 &lt;- c(\"tidyr\", \"patchwork\",\n                    \"ggthemes\", \"ggstatsplot\", \"ggpubr\",  \"viridis\",\n                    \"BSDA\", \"rstatix\", \"car\", \"multcomp\") \n\ninstall.packages(pkg_list_lab_2)\n\n\n# ----  Installing (more) R pckgs for 3rd LAB  \npkg_list_lab_3 &lt;- c(\"openxlsx\", \n                    \"lmtest\" , \n                    \"broom\", \n                    \"performance\")\n\ninstall.packages(pkg_list_lab_3)\n\n\n# ----  Installing (more) R pckgs for 4th LAB  \npkg_list_lab_4 &lt;- c(\"rsample\",\n                    \"MASS\",\n                    \"FactoMineR\",\n                    \"factoextra\",\n                    \"ggfortify\",\n                    \"scatterplot3d\",\n                    \"pwr\" )\n\ninstall.packages(pkg_list_lab_4)\n\nOption 2)\nIn alternative, you could install each package separately, using the RStudio GUI, from the Packages tab in the bottom right pane as indicated here:\n\n\nScreenshot Install/Update pckgs from RStudio"
-  },
-  {
-    "objectID": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
-    "href": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
-    "title": "Installation and setup",
-    "section": "Loading a package (at the beginning of every R session)",
-    "text": "Loading a package (at the beginning of every R session)\nOnce packages have been installed, with the command library() loads the specific R packages that you are going to need in any given R session.\n\n# Loading a package (at the beginning of every R session) \n# --- General \nlibrary(here)       # tools find your project's files, based on working directory\nlibrary(fs)         # file/directory interactions\nlibrary(janitor)    # tools for examining and cleaning data\nlibrary(skimr)      # Compact and Flexible Summaries of Data     \nlibrary(openxlsx)   # Read, Write and Edit xlsx Files\n\n# --- Tidyverse \nlibrary(dplyr)      # {tidyverse} A Grammar of Data Manipulation     \nlibrary(tidyr)      # {tidyverse} Tools to create tidy data \nlibrary(forcats)    # {tidyverse} Tools for Categorical Var.(Factors)   \n\n# --- Plotting\nlibrary(ggplot2)    # {tidyverse} tools for plotting\nlibrary(ggstatsplot)# 'ggplot2' Based Plots with Statistical Details \nlibrary(ggpubr)     # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)  # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)    # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)   # Extra Themes, Scales and Geoms for 'ggplot2'\nlibrary(ggridges)   # Ridgeline Plots in 'ggplot2' (density functions)\n\n# --- Statistics\nlibrary(BSDA)       # Basic Statistics and Data Analysis   \nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)        # Companion to Applied Regression\nlibrary(multcomp)   # Simultaneous Inference in General Parametric Models \nlibrary(lmtest)     # Testing Linear Regression Models  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles\nlibrary(performance)# Assessment of Regression Models Performance \nlibrary(pwr)        # Basic Functions for Power Analysis"
-  },
-  {
-    "objectID": "install.html#learning-about-a-package-after-installation",
-    "href": "install.html#learning-about-a-package-after-installation",
-    "title": "Installation and setup",
-    "section": "Learning about a package (after installation)",
-    "text": "Learning about a package (after installation)\nOnce an R package is installed, you can also read the documentation about it directly inside the RStudio IDE. For example, try running in your Console:\n\n# - To ask about a package\n?here\n\n# -- To ask about a specific function\n?janitor::clean_names\n\n?dplyr::group_by\n\nCongrats! You are all done! 🙌🏻"
-  },
-  {
-    "objectID": "install.html#useful-keyboard-shortcuts-in-rstudio",
-    "href": "install.html#useful-keyboard-shortcuts-in-rstudio",
-    "title": "Installation and setup",
-    "section": "Useful keyboard shortcuts in RStudio",
-    "text": "Useful keyboard shortcuts in RStudio\n\n\n\n\n\n\nDescription\nWindows & Linux\nMac\n\n\n\nInsert code section\nCtrl+Shift+R\nShift+Command+R  or Ctrl+Shift+R\n\n\nRun current line/selection\nCtrl+Enter\nCommand+Return\n\n\nReindent lines\nCtrl+I\nCommand+I\n\n\nInsert &lt;- operator\nAlt+-\nOption+-\n\n\nInsert %&gt;% operator\nCtrl+Shift+M\nShift+Command+M\n\n\nCode completion\nTab\nTab\n\n\nFile path completion (console)\n\"+Tab\n\"+Tab\n\n\n\n\n\n\nHere you find the complete list of RStudio Keyboard Shortcuts"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Intro to Biostatistics with R",
-    "section": "",
-    "text": "Welcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, Nijmegen, Netherland\n\nTime: 9 am - 4 pm July 24th to July 27th, 2024.\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, hypothesis testing and statistical inference applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding and classifying data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\n\nDay\nTime\nActivity\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (with intro to R)\n\n\n24 July, 2024\n1pm - 4pm\nPractice Session 1\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inferential statistics\n\n\n25 July, 2024\n1pm - 4pm\nPractice Session 2\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\n\n\n26 July, 2024\n1pm - 4pm\nPractice Session 3\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning (with R and MetaboAnalyst)\n\n\n27 July, 2024\n1pm - 4pm\nPractice Session 4\n\n\n\n\n\n\n\nPractical information\nParticipants will need to bring their own laptop and make sure to have the required software installed ahead of the workshop.\nStep-by-step installation instructions are provided here."
-  },
-  {
-    "objectID": "lectures/lec01_data_with_R.html",
-    "href": "lectures/lec01_data_with_R.html",
-    "title": "Lecture 1: Intro to R and data analysis",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec01_data_with_R.html#lecture-1-outline",
-    "href": "lectures/lec01_data_with_R.html#lecture-1-outline",
-    "title": "Lecture 1: Intro to R and data analysis",
-    "section": "Lecture 1 Outline",
-    "text": "Lecture 1 Outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
-  },
-  {
-    "objectID": "lectures/lec03_corr_regress.html",
-    "href": "lectures/lec03_corr_regress.html",
-    "title": "Modeling correlation and regression",
-    "section": "",
-    "text": "View slides in full screen"
-  },
-  {
-    "objectID": "lectures/lec03_corr_regress.html#lecture-3-outline",
-    "href": "lectures/lec03_corr_regress.html#lecture-3-outline",
-    "title": "Modeling correlation and regression",
-    "section": "Lecture 3 Outline",
-    "text": "Lecture 3 Outline\n\nTesting and summarizing relationship between 2 variables (correlation)\n\nPearson \\(r\\) analysis (param)\n\n(numerical variables)\n\nSpearman’s test (no param)\n\nMeasures of association\n\nChi-Square Test of Independence\n\n(categorical variables)\n\nFisher’s Exact Test\n\nFrom correlation/association to prediction/causation\n\nThe purpose of observational and experimental studies\n\nWidely used analytical tools\n\nSimple linear regression models\nMultiple Linear Regression models\n\nShifting the emphasis on empirical prediction\n\nIntroduction to Machine Learning (ML)\nDistinction between Supervised & Unsupervised algorithms"
+    "text": "Università degli Studi di Pavia | Pavia, Italy Master of Biostatistics and Epidemiology | 2018-2019\nUniversità degli Studi di Milano | Milano, Italy Ph.D. in Chemical Sciences | 2001 - 2003\nInstitut National de la Recherche Agronomique | Versailles-Grignon, France Visiting scholar | 2003 - 2003\nUniversità degli Studi di Pavia | Pavia, Italy BSc Degree in Chemistry | 1994 - 2000\nUniversiteit Leiden | Leiden, The Netherlands Erasmus exchange student (6 months) | 1999 - 1999"
   },
   {
     "objectID": "lectures_slides/000_exe_mine.html#collaborators",
@@ -1897,60 +1792,200 @@
     "text": "coda\n\n\n\nWe are all converts to the tidyverse and have made a conscious choice to use it in our research and our teaching. We each learned R without the tidyverse and have all spent quite a few years teaching without it at a variety of levels from undergraduate introductory statistics courses to graduate statistical computing courses. This paper is a synthesis of the reasons supporting our tidyverse choice, along with benefits and challenges associated with teaching statistics with the tidyverse.\n\n\n\n\n\n\n\nÇetinkaya-Rundel, M., Hardin, J., Baumer, B. S., McNamara, A., Horton, N. J., & Rundel, C. (2021). An educator’s perspective of the tidyverse. arXiv preprint arXiv:2108.03510. arxiv.org/abs/2108.03510"
   },
   {
-    "objectID": "me.html",
-    "href": "me.html",
-    "title": "About the Instructor",
-    "section": "",
-    "text": "Maria Chiara Mimmi, Ph.D., is a Research Fellow at University of Pavia - Dept. of Molecular Medicine, as well as NMR Expert at Fondazione IRCCS Policlinico San Matteo. She has twenty years of experience working in life science research, with a focus on NMR and Mass Spectrometry applied to metabolomics/lipidomics.\nIn 2020, she joined the University of Pavia, at the Molecular Medicine Dept., to work with the recently acquired 700 MHz NMR spectrometer. Since then she focused on NMR applied to either metabolomics and to structure/dynamics of amyloidogenic proteins.\n\n\nUniversità degli Studi di Pavia | Pavia, Italy Master of Biostatistics and Epidemiology | 2018-2019\nUniversità degli Studi di Milano | Milano, Italy Ph.D. in Chemical Sciences | 2001 - 2003\nInstitut National de la Recherche Agronomique | Versailles-Grignon, France Visiting scholar | 2003 - 2003\nUniversità degli Studi di Pavia | Pavia, Italy BSc Degree in Chemistry | 1994 - 2000\nUniversiteit Leiden | Leiden, The Netherlands Erasmus exchange student (6 months) | 1999 - 1999\n\n \n  \n   \n  \n    \n     LinkedIn\n  \n  \n    \n     Email\n  \n  \n      Google Scholar\n  \n  \n      Research Gate\n  \n  \n      Orcid"
-  },
-  {
-    "objectID": "me.html#education",
-    "href": "me.html#education",
-    "title": "About the Instructor",
-    "section": "",
-    "text": "Università degli Studi di Pavia | Pavia, Italy Master of Biostatistics and Epidemiology | 2018-2019\nUniversità degli Studi di Milano | Milano, Italy Ph.D. in Chemical Sciences | 2001 - 2003\nInstitut National de la Recherche Agronomique | Versailles-Grignon, France Visiting scholar | 2003 - 2003\nUniversità degli Studi di Pavia | Pavia, Italy BSc Degree in Chemistry | 1994 - 2000\nUniversiteit Leiden | Leiden, The Netherlands Erasmus exchange student (6 months) | 1999 - 1999"
-  },
-  {
-    "objectID": "practice/lab02_inference.html",
-    "href": "practice/lab02_inference.html",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
+    "objectID": "lectures/lec03_corr_regress.html",
+    "href": "lectures/lec03_corr_regress.html",
+    "title": "Modeling correlation and regression",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
-    "href": "practice/lab02_inference.html#practice-session-2-input-data-as-subfolder",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Practice session 2: input data (as subfolder)",
-    "text": "Practice session 2: input data (as subfolder)\n\n\n\n Download input data Lab 2"
+    "objectID": "lectures/lec03_corr_regress.html#lecture-3-outline",
+    "href": "lectures/lec03_corr_regress.html#lecture-3-outline",
+    "title": "Modeling correlation and regression",
+    "section": "Lecture 3 Outline",
+    "text": "Lecture 3 Outline\n\nTesting and summarizing relationship between 2 variables (correlation)\n\nPearson \\(r\\) analysis (param)\n\n(numerical variables)\n\nSpearman’s test (no param)\n\nMeasures of association\n\nChi-Square Test of Independence\n\n(categorical variables)\n\nFisher’s Exact Test\n\nFrom correlation/association to prediction/causation\n\nThe purpose of observational and experimental studies\n\nWidely used analytical tools\n\nSimple linear regression models\nMultiple Linear Regression models\n\nShifting the emphasis on empirical prediction\n\nIntroduction to Machine Learning (ML)\nDistinction between Supervised & Unsupervised algorithms"
   },
   {
-    "objectID": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
-    "href": "practice/lab02_inference.html#practice-session-2-r-code-as-.r-file",
-    "title": "Lab 2: Statistical inference & hypothesis testing",
-    "section": "Practice session 2: R code (as .R file)",
-    "text": "Practice session 2: R code (as .R file)\n\n\n\n Download Lab session 2 as .R file"
-  },
-  {
-    "objectID": "practice/lab04_intro_ML.html",
-    "href": "practice/lab04_intro_ML.html",
-    "title": "Lab 4: Intro to machine learning",
+    "objectID": "lectures/lec01_data_with_R.html",
+    "href": "lectures/lec01_data_with_R.html",
+    "title": "Lecture 1: Intro to R and data analysis",
     "section": "",
     "text": "View slides in full screen"
   },
   {
-    "objectID": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
-    "href": "practice/lab04_intro_ML.html#practice-session-4-input-data-as-subfolder",
-    "title": "Lab 4: Intro to machine learning",
-    "section": "Practice session 4: input data (as subfolder)",
-    "text": "Practice session 4: input data (as subfolder)\n\n\n\n Download input data Lab 4"
+    "objectID": "lectures/lec01_data_with_R.html#lecture-1-outline",
+    "href": "lectures/lec01_data_with_R.html#lecture-1-outline",
+    "title": "Lecture 1: Intro to R and data analysis",
+    "section": "Lecture 1 Outline",
+    "text": "Lecture 1 Outline\n\nIntroduction to R and R-studio\n\nWhy R?\nPrinciples of reproducible analysis with R + RStudio\n\nR objects, functions, packages\nUnderstanding different types of variables\n\nPrinciples of “tidy data”\nData cleaning and manipulation\n\nDescriptive statistics\n\nMeasures of central tendency, measures of variability (or spread), and\n\nFrequency distribution\nVisual data exploration\n\n{ggplot2}"
   },
   {
-    "objectID": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
-    "href": "practice/lab04_intro_ML.html#practice-session-4-r-code-as-.r-file",
-    "title": "Lab 4: Intro to machine learning",
-    "section": "Practice session 4: R code (as .R file)",
-    "text": "Practice session 4: R code (as .R file)\n\n\n\n Download Lab session 4 as .R file"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Intro to Biostatistics with R",
+    "section": "",
+    "text": "Welcome!\nThis website collects the materials for a four day workshop organized by MITGEST Doctoral Network in July 2024, hosted by the Radboud Center for Mitochondrial Medicine, Nijmegen, Netherlands.\n\n\nLocation: Radboud Center for Mitochondrial Medicine, Nijmegen, Netherland\n\nTime: 9 am - 4 pm July 24th to July 27th, 2024.\nWorkshop Overview\nThis Biostatistics workshop provides an introduction to selected topics in biostatistical concepts and reasoning. This course aims to introduce to the field and gives a solid understanding of data and data types, hypothesis testing and statistical inference applied to life sciences.\nSpecific topics covered include: tools for describing central tendency and variability in data; methods for performing inference on population means and proportions via sample data; statistical hypothesis testing and its application to group comparisons; issues of power and sample size in study designs; elements of machine learning algorithms for understanding and classifying data.\nWhile there are some formulae and computational elements to the course, the emphasis is on applications of acquired concepts to “real life” of research scientists.\nThough the vast majority of what you will learn in this course can be applied in any software package, the seminar will use R for empirical examples and exercises.\n\n\n\n\n\n\nSchedule\n\n\n\n\n\nDay\nTime\nActivity\n\n\n\n24 July, 2024\n9am - 12am\nLesson 1 ~ Working with data (with intro to R)\n\n\n24 July, 2024\n1pm - 4pm\nPractice Session 1\n\n\n25 July, 2024\n9am - 12am\nLesson 2 ~ Inferential statistics\n\n\n25 July, 2024\n1pm - 4pm\nPractice Session 2\n\n\n26 July, 2024\n9am - 12am\nLesson 3 ~ Modeling correlation and regression\n\n\n26 July, 2024\n1pm - 4pm\nPractice Session 3\n\n\n27 July, 2024\n9am - 12am\nLesson 4 ~ Intro to machine learning (with R and MetaboAnalyst)\n\n\n27 July, 2024\n1pm - 4pm\nPractice Session 4\n\n\n\n\n\n\n\nPractical information\nParticipants will need to bring their own laptop and make sure to have the required software installed ahead of the workshop.\nStep-by-step installation instructions are provided here."
+  },
+  {
+    "objectID": "install.html",
+    "href": "install.html",
+    "title": "Installation and setup",
+    "section": "",
+    "text": "This workshop showcases introductory bio statistics concepts using the open source (and free!) programming language . Each session of the workshop features exercises that will help you learn by doing.\nWe will quickly go over this at our first Practice session, but you are expected to have the required software installed on your machine before the workshop.\nBelow is a step by step process that should guide you through the needed installation steps."
+  },
+  {
+    "objectID": "install.html#installing-packages-1st-time-you-use-an-r-package",
+    "href": "install.html#installing-packages-1st-time-you-use-an-r-package",
+    "title": "Installation and setup",
+    "section": "Installing packages (1st time you use an R Package)",
+    "text": "Installing packages (1st time you use an R Package)\nOption 1)\nYou could install one package at a time via the function install.packages()…\n\n# (**ONLY** the 1st time you use them)\n\n# Installing \ninstall.packages(\"name_of_package_here\" ) \n\n# [OPTIONAL ARGUMENT] Installing (with specification for dependencies)\ninstall.packages(\"name_of_package_here\" , dependencies = TRUE)\n\n… or in bulk, like so (it might take a few moments more):\n\n# (**ONLY** the 1st time you use them)\n\n# ---- Installing R pckgs for 1st LAB \npkg_list_lab_1 &lt;- c(\"fs\",\"here\", \"janitor\", \"skimr\", \n                   \"dplyr\", \"forcats\", \n                   \"ggplot2\",  \"ggridges\")\n\ninstall.packages(pkg_list_lab_1)\n\n\n# ---- Installing (more) R pckgs for 2nd LAB  \npkg_list_lab_2 &lt;- c(\"tidyr\", \"patchwork\",\n                    \"ggthemes\", \"ggstatsplot\", \"ggpubr\",  \"viridis\",\n                    \"BSDA\", \"rstatix\", \"car\", \"multcomp\") \n\ninstall.packages(pkg_list_lab_2)\n\n\n# ----  Installing (more) R pckgs for 3rd LAB  \npkg_list_lab_3 &lt;- c(\"openxlsx\", \n                    \"lmtest\" , \n                    \"broom\", \n                    \"performance\")\n\ninstall.packages(pkg_list_lab_3)\n\n\n# ----  Installing (more) R pckgs for 4th LAB  \npkg_list_lab_4 &lt;- c(\"rsample\",\n                    \"MASS\",\n                    \"FactoMineR\",\n                    \"factoextra\",\n                    \"ggfortify\",\n                    \"scatterplot3d\",\n                    \"pwr\" )\n\ninstall.packages(pkg_list_lab_4)\n\nOption 2)\nIn alternative, you could install each package separately, using the RStudio GUI, from the Packages tab in the bottom right pane as indicated here:\n\n\nScreenshot Install/Update pckgs from RStudio"
+  },
+  {
+    "objectID": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
+    "href": "install.html#loading-a-package-at-the-beginning-of-every-r-session",
+    "title": "Installation and setup",
+    "section": "Loading a package (at the beginning of every R session)",
+    "text": "Loading a package (at the beginning of every R session)\nOnce packages have been installed, with the command library() loads the specific R packages that you are going to need in any given R session.\n\n# Loading a package (at the beginning of every R session) \n# --- General \nlibrary(here)       # tools find your project's files, based on working directory\nlibrary(fs)         # file/directory interactions\nlibrary(janitor)    # tools for examining and cleaning data\nlibrary(skimr)      # Compact and Flexible Summaries of Data     \nlibrary(openxlsx)   # Read, Write and Edit xlsx Files\n\n# --- Tidyverse \nlibrary(dplyr)      # {tidyverse} A Grammar of Data Manipulation     \nlibrary(tidyr)      # {tidyverse} Tools to create tidy data \nlibrary(forcats)    # {tidyverse} Tools for Categorical Var.(Factors)   \n\n# --- Plotting\nlibrary(ggplot2)    # {tidyverse} tools for plotting\nlibrary(ggstatsplot)# 'ggplot2' Based Plots with Statistical Details \nlibrary(ggpubr)     # 'ggplot2' Based Publication Ready Plots \nlibrary(patchwork)  # Functions for \"\"Grid\" Graphics\"composing\" plots \nlibrary(viridis)    # Colorblind-Friendly Color Maps for R \nlibrary(ggthemes)   # Extra Themes, Scales and Geoms for 'ggplot2'\nlibrary(ggridges)   # Ridgeline Plots in 'ggplot2' (density functions)\n\n# --- Statistics\nlibrary(BSDA)       # Basic Statistics and Data Analysis   \nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\nlibrary(car)        # Companion to Applied Regression\nlibrary(multcomp)   # Simultaneous Inference in General Parametric Models \nlibrary(lmtest)     # Testing Linear Regression Models  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles\nlibrary(performance)# Assessment of Regression Models Performance \nlibrary(pwr)        # Basic Functions for Power Analysis"
+  },
+  {
+    "objectID": "install.html#learning-about-a-package-after-installation",
+    "href": "install.html#learning-about-a-package-after-installation",
+    "title": "Installation and setup",
+    "section": "Learning about a package (after installation)",
+    "text": "Learning about a package (after installation)\nOnce an R package is installed, you can also read the documentation about it directly inside the RStudio IDE. For example, try running in your Console:\n\n# - To ask about a package\n?here\n\n# -- To ask about a specific function\n?janitor::clean_names\n\n?dplyr::group_by\n\nCongrats! You are all done! 🙌🏻"
+  },
+  {
+    "objectID": "install.html#useful-keyboard-shortcuts-in-rstudio",
+    "href": "install.html#useful-keyboard-shortcuts-in-rstudio",
+    "title": "Installation and setup",
+    "section": "Useful keyboard shortcuts in RStudio",
+    "text": "Useful keyboard shortcuts in RStudio\n\n\n\n\n\n\nDescription\nWindows & Linux\nMac\n\n\n\nInsert code section\nCtrl+Shift+R\nShift+Command+R  or Ctrl+Shift+R\n\n\nRun current line/selection\nCtrl+Enter\nCommand+Return\n\n\nReindent lines\nCtrl+I\nCommand+I\n\n\nInsert &lt;- operator\nAlt+-\nOption+-\n\n\nInsert %&gt;% operator\nCtrl+Shift+M\nShift+Command+M\n\n\nCode completion\nTab\nTab\n\n\nFile path completion (console)\n\"+Tab\n\"+Tab\n\n\n\n\n\n\nHere you find the complete list of RStudio Keyboard Shortcuts"
+  },
+  {
+    "objectID": "lectures/lec02_inference.html",
+    "href": "lectures/lec02_inference.html",
+    "title": "Statistical inference & hypothesis testing",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec02_inference.html#lecture-2-outline",
+    "href": "lectures/lec02_inference.html#lecture-2-outline",
+    "title": "Statistical inference & hypothesis testing",
+    "section": "Lecture 2 Outline",
+    "text": "Lecture 2 Outline\n\nPurpose and foundations of inferential statistics\n\nProbability and random variables\nMeaningful probability distributions\nSampling distributions and Central Limit Theorem\n\nGetting to know the “language” of hypothesis testing\n\nThe null and alternative hypothesis\nThe probability of error? (α or “significance level”)\nThe p-value probability and tests interpretation\nConfidence Intervals\nTypes of errors (Type 1 and Type 2)\nEffective vs statistical significance\n\nHypothesis tests examples\n\nComparing sample mean to a hypothesized population mean (Z test & t test)\nComparing two independent sample means (t test)\nComparing sample means from 3 or more groups (ANOVA) \n\nA closer look at testing assumptions (with examples)\n\nTesting two groups that are not independent\nTesting if the data are not normally distributed: non-parametric tests\nTesting samples without homogeneous variance of observations"
+  },
+  {
+    "objectID": "lectures/lec04_intro_ML.html",
+    "href": "lectures/lec04_intro_ML.html",
+    "title": "Introduction to machine learning",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "lectures/lec04_intro_ML.html#lecture-4-outline",
+    "href": "lectures/lec04_intro_ML.html#lecture-4-outline",
+    "title": "Introduction to machine learning",
+    "section": "Lecture 4 Outline",
+    "text": "Lecture 4 Outline\n\nPCA\n\nAn example of “unsupervised” ML algorithm\n\n\n\n\n\n\n\nIntroduction to MetaboAnalyst software\n\nA useful R-based resources for metabolomics\n\nElements of statistical Power Analysis\nWorkshop Conclusions"
+  },
+  {
+    "objectID": "license_etc.html#acknowledgements",
+    "href": "license_etc.html#acknowledgements",
+    "title": "Acknowledgments and resources",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\n\n\nI am genuinely grateful to many people within the Biostatistics, Epidemiology and R programming communities, who shared their valuable work, open source software, and training resources. Special thanks to Luisa M. Mimmi (my sister!) who revised the workshop content and built this dedicated website.\nBelow is a curated list of great resources (most of which free and openly accessible) you can peruse on your own.\n\nI would love to hear your feedback, questions, or suggestions about the workshop:\n\n    contact us"
+  },
+  {
+    "objectID": "license_etc.html#licensing-and-use-of-the-workshop-materials",
+    "href": "license_etc.html#licensing-and-use-of-the-workshop-materials",
+    "title": "Acknowledgments and resources",
+    "section": "Licensing and use of the workshop materials",
+    "text": "Licensing and use of the workshop materials\nThe workshop materials are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. All borrowed external materials (images, worked examples, etc.), are credited with proper “Source” statements and governed by their own licenses. To my knowledge, all the consulted materials were published under “open access” or “creative commons” frameworks. If this were not the case for any content piece displayed here, please let me know and it will be removed."
+  },
+  {
+    "objectID": "license_etc.html#selected-resources-for-self-guided-learning",
+    "href": "license_etc.html#selected-resources-for-self-guided-learning",
+    "title": "Acknowledgments and resources",
+    "section": "Selected resources for self-guided learning",
+    "text": "Selected resources for self-guided learning\n\n\nBiostatistics/Epidemiology with R examples\n\nApplied Epi Team (2024). Applied Epi - Elevating frontline epidemiology [Course]. Training, support, tools. https://www.appliedepi.org/\nApplied Epi Team (2024). R for applied epidemiology and public health The Epidemiologist R Handbook [Course]. https://epirhandbook.com/en/\nBobbitt, Z. (2024). Statology [Course]. Statology. https://www.statology.org/\nÇetinkaya-Rundel, M., & Hardim, J. (2023). Introduction to Modern Statistics (1st Ed) [Book]. https://openintro-ims.netlify.app/\nChilds, D. Z., Hindle, B. J., & Warren, P. H. (2022). Introductory Biostatistics with R [Book]. https://github.com/rstudio/bookdown\n\nSelby, D., & 2021 (2024). Analytical Epidemiology II [Course]. David Selby. https://personalpages.manchester.ac.uk/staff/david.selby/analysis/2021-03-30-inference/\n\nVu, J., & Harrington, D. (2021). Introductory Statistics for the Life and Biomedical Sciences [Book]. https://www.openintro.org/book/biostat/\nR packages & tools\n\nPOSIT (2024). POSIT resources [R]. https://posit.co/resources/.\nRStudio, & Posit (2024). Base-r-cheat-sheet.pdf [R]. https://iqss.github.io/dss-workshops/R/Rintro/base-r-cheat-sheet.pdf\nVarious contributors (2024). Bioconductor - Open source software for Bioinformatics [R]. Bioconductor - Open source software for Bioinformatics. https://www.bioconductor.org/\nWickham, H., François, R., Müller, K., & Vaughan, D. (2023). Programming with dplyr [R]. dplyr. https://dplyr.tidyverse.org/articles/programming.html#tidy-selection\nWickham, H. (2014). Tidy Data [R]. Journal of Statistical Software, 59(10). https://doi.org/10.18637/jss.v059.i10\nSources of practice datasets\n\nVanderbilt Department of Biostatistics (2023, September 17). Vanderbilt Biostatistics Datasets [Dataset]. https://hbiostat.org/data/\nChicco, D., & Jurman, G. (2020). Machine learning can predict survival of patients with heart failure from serum creatinine and ejection fraction alone [Dataset]. BMC Medical Informatics and Decision Making, 20(1), 16. https://doi.org/10.1186/s12911-020-1023-5\nAhmad, T., Munir, A., Bhatti, S. H., Aftab, M., & Raza, M. A. (2017). Survival analysis of heart failure patients: A case study [Dataset]. PLOS ONE, 12(7), e0181001. https://doi.org/10.1371/journal.pone.0181001"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html",
+    "href": "practice/lab01_data_with_R.html",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
+    "href": "practice/lab01_data_with_R.html#practice-session-1-input-data-as-subfolder",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Practice session 1: input data (as subfolder)",
+    "text": "Practice session 1: input data (as subfolder)\n\n\n Download input data Lab 1"
+  },
+  {
+    "objectID": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
+    "href": "practice/lab01_data_with_R.html#practice-session-1-r-code-as-.r-file",
+    "title": "Lab 1: Intro to R and data analysis",
+    "section": "Practice session 1: R code (as .R file)",
+    "text": "Practice session 1: R code (as .R file)\n\n\n Download Lab session 1 as .R file"
+  },
+  {
+    "objectID": "practice/lab03_corr_regress.html",
+    "href": "practice/lab03_corr_regress.html",
+    "title": "Lab 3: Modeling correlation and regression",
+    "section": "",
+    "text": "View slides in full screen"
+  },
+  {
+    "objectID": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
+    "href": "practice/lab03_corr_regress.html#practice-session-3-input-data-as-subfolder",
+    "title": "Lab 3: Modeling correlation and regression",
+    "section": "Practice session 3: input data (as subfolder)",
+    "text": "Practice session 3: input data (as subfolder)\n\n\n\n Download input data Lab 3"
+  },
+  {
+    "objectID": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
+    "href": "practice/lab03_corr_regress.html#practice-session-3-r-code-as-.r-file",
+    "title": "Lab 3: Modeling correlation and regression",
+    "section": "Practice session 3: R code (as .R file)",
+    "text": "Practice session 3: R code (as .R file)\n\n\n\n Download Lab session 3 as .R file"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_extra_01.html#needed-r-packages",
+    "href": "practice/practice_slides/slides_extra_01.html#needed-r-packages",
+    "title": "Diving deeper into Causal Analysis",
+    "section": "Needed R Packages",
+    "text": "Needed R Packages\n\n\nWe will use functions from packages base, utils, and stats (pre-installed and pre-loaded)\nWe may also use the packages below (specifying package::function for clarity).\n\n\n# Load pckgs for this R session\n\n# --- General \nlibrary(here)     # tools find your project's files, based on working directory\nlibrary(dplyr)    # A Grammar of Data Manipulation\nlibrary(skimr)    # Compact and Flexible Summaries of Data\nlibrary(magrittr) # A Forward-Pipe Operator for R \nlibrary(readr)    # A Forward-Pipe Operator for R \n\n# Plotting & data visualization\nlibrary(ggplot2)      # Create Elegant Data Visualisations Using the Grammar of Graphics\nlibrary(ggfortify)     # Data Visualization Tools for Statistical Analysis Results\nlibrary(scatterplot3d) # 3D Scatter Plot\n\n# --- Statistics\nlibrary(MASS)       # Support Functions and Datasets for Venables and Ripley's MASS\nlibrary(factoextra) # Extract and Visualize the Results of Multivariate Data Analyses\nlibrary(FactoMineR) # Multivariate Exploratory Data Analysis and Data Mining\nlibrary(rstatix)    # Pipe-Friendly Framework for Basic Statistical Tests\n\n# --- Tidymodels (meta package)\nlibrary(rsample)    # General Resampling Infrastructure  \nlibrary(broom)      # Convert Statistical Objects into Tidy Tibbles"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_extra_01.html#dataset-on-.",
+    "href": "practice/practice_slides/slides_extra_01.html#dataset-on-.",
+    "title": "Diving deeper into Causal Analysis",
+    "section": "Dataset on ….",
+    "text": "Dataset on ….\n\nName: …. Documentation: …. Sampling details: …."
+  },
+  {
+    "objectID": "practice/practice_slides/slides_extra_01.html#importing-dataset-....",
+    "href": "practice/practice_slides/slides_extra_01.html#importing-dataset-....",
+    "title": "Diving deeper into Causal Analysis",
+    "section": "Importing Dataset ....",
+    "text": "Importing Dataset ....\n.\n\nThe data can be interactively obtained form the MASS R package\n\n\n# (after loading pckg)\n# library(MASS)  \n\n# I can call \n# utils::data(biopsy)"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_extra_01.html#section",
+    "href": "practice/practice_slides/slides_extra_01.html#section",
+    "title": "Diving deeper into Causal Analysis",
+    "section": "",
+    "text": "We define:\n\nthe individual treatment effect\n\nthe average treatment effect\n\nand the average treatment effect on the treated"
+  },
+  {
+    "objectID": "practice/practice_slides/slides_extra_01.html#final-thoughts",
+    "href": "practice/practice_slides/slides_extra_01.html#final-thoughts",
+    "title": "Diving deeper into Causal Analysis",
+    "section": "Final thoughts",
+    "text": "Final thoughts\n\n\n\n…..\n\n…\n\n\n…\n\n\n\n\n\n\nhttps://r4biostats.com/ | R 4 stats"
   },
   {
     "objectID": "practice/practice_slides/slides_lab02.html#goal-of-todays-practice-session",
