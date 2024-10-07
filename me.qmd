@@ -3,7 +3,7 @@ title: "About the Instructor"
 about:
   id: hero-heading #about-block 
   template: jolla
-  image: images/Chiara_luglio_2023.png
+#  image: images/Chiara_luglio_2023.png
   links:
     # - icon: file-pdf
     #   text: CV (tbd)
