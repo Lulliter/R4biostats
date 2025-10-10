@@ -1,3 +1,7 @@
+# ------------ OKKIO 
+# Quarto does not support shortcodes ({{< var ... >}}) inside YAML, because YAML is parsed before shortcodes are evaluated.
+
+
 # SEE https://quarto.org/docs/authoring/variables.html
 # If you are using a Quarto project, the `var` shortcode enables you to insert
 # content from a project-level _variables.yml file into the _quarto.yml file
